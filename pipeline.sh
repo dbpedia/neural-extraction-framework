@@ -8,7 +8,7 @@ if [ ! "${PWD##*/}" = "GSOC_RelationExtraction_github" ]; then
 fi
 
 
-#!---------------- download the datasets for Tast 01 -----------------!#
+#!---------------- download the datasets for Procedure 01 -----------------!#
 ### the source link could also be found with manually download <https://drive.google.com/file/d/0B_jQiLugGTAkMDQ5ZjZiMTUtMzQ1Yy00YWNmLWJlZDYtOWY1ZDMwY2U4YjFk/view?sort=name&layout=list&num=50&resourcekey=0-k0OTSIGrF9UAcrTFfInlrw>
 
 DATA_URL='https://docs.google.com/uc?export=download&id=0B_jQiLugGTAkMDQ5ZjZiMTUtMzQ1Yy00YWNmLWJlZDYtOWY1ZDMwY2U4YjFk'
@@ -31,7 +31,7 @@ if [ "$RELOAD" = true ]; then
 fi
 
 
-#!----------------  download the datasets for Tast 02 ---------------- !#
+#!----------------  download the datasets for Procedure 02  ---------------- !#
 
 # If this path cannot be found, please try this link to get the lastest version that are available <https://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/> or you can find other resources in your closest mirror <https://meta.wikimedia.org/wiki/Mirroring_Wikimedia_project_XML_dumps#Current_Mirrors>
 
@@ -66,6 +66,28 @@ fi
 
 
 
+#!----------------  run Procedures  ---------------- !#
+
+#1. proecedure 01 to get the seed information from SemEval dataset
+python 01_seed_preparation.py
+
+#2. proecedure 02 to get the semi-structured information from WikiPage dataset
+
+prepro_exist="./res/df_enwiki_causality_AA.pkl"
+
+if [ ! -e $prepro_exist ]; then
+    # run this document but really time consuming 
+    python 02_data_preparation.py
+else
+    # directly download the processed data
+#! wait for DEBUGing (cannot download from Google drive) 
+    wget https://drive.google.com/file/d/1Oaqg1mnnGTrk_OKnbULzd1c6BPDdDy3f/view?usp=sharing
+    gzip -d part-r-00000.gz
+fi
+  
+
+#3. proecedure 03 to train classifiers on those datasets
+python 03_classification_models.py 1
 
 
 

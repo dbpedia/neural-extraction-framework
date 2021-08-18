@@ -4,17 +4,7 @@ import pandas as pd
 import numpy as np
 import re
 import random
-
-
-
-### define the path of dataset
-
-path_here = os.getcwd()
-path_semEval2010 = path_here +'/data/SemEval2010_task8_all_data/'
-# training pairs
-path_semEval2010_train = path_semEval2010 +'SemEval2010_task8_training/TRAIN_FILE.TXT'
-# test pairs
-path_semEval2010_test = path_semEval2010 +'SemEval2010_task8_testing_keys/TEST_FILE_FULL.TXT'
+import pickle
 
 
 
@@ -98,15 +88,42 @@ def getSentSemEval(path_semEval2010):
     
     return df_pairsPN
     
-       
 
-        
-# get the casual sentences/pairs from train files and test files of semEval2010
-df_train_semEval = getSentSemEval(path_semEval2010_train)
-df_test_semEval = getSentSemEval(path_semEval2010_test)
+    
+def main():
 
-# save to 
-df_train_semEval.to_csv(path_here + '/res/df_train_semEval.csv')
-df_test_semEval.to_csv(path_here + '/res/df_test_semEval.csv')
+    print("---------------Procedure 01: prepare seed causal pairs from SemEval Dataset--------------")
+    
+    ### define the path of dataset
+    path_here = os.getcwd()
+    path_semEval2010 = path_here +'/data/SemEval2010_task8_all_data/'
+    # training pairs
+    path_semEval2010_train = path_semEval2010 +'SemEval2010_task8_training/TRAIN_FILE.TXT'
+    # test pairs
+    path_semEval2010_test = path_semEval2010 +'SemEval2010_task8_testing_keys/TEST_FILE_FULL.TXT'
 
 
+    # get the casual sentences/pairs from train files and test files of semEval2010
+    df_train_semEval = getSentSemEval(path_semEval2010_train)
+    df_test_semEval = getSentSemEval(path_semEval2010_test)
+
+    # save to 
+    df_train_semEval.to_csv(path_here + '/res/df_train_semEval.csv')
+    df_train_semEval.to_pickle(path_here + '/res/df_train_semEval.pkl')
+    df_test_semEval.to_csv(path_here + '/res/df_test_semEval.csv')
+    df_test_semEval.to_pickle(path_here + '/res/df_test_semEval.pkl')
+    
+    # get the seed pairs in train set
+    causality_pairs_list = []
+    for inx_r, row in df_train_semEval[df_train_semEval['Label']==1].iterrows():
+        causality_pairs_list.append([row['Cause'], row['Effect']])
+    with open(path_here+'/res/causality_pairs_list.pickle', 'wb') as f:
+        pickle.dump(causality_pairs_list, f)
+    
+
+    print("The processed SemEval datasets are saved to -->  ./res/df_train_semEval and ./res/df_test_semEval")
+
+if __name__ == "__main__":
+    main()
+
+    

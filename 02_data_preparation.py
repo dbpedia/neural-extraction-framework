@@ -178,44 +178,50 @@ def twoEntites_sentence_file2(df_file, df_enwiki_causality, causality_pairs_list
 ###!-------------------- main function --------------------!###
 
 
-path_here = os.getcwd()
-# wikipedia: Part of the whole Dataset (please see details in <download_data.sh>)
-enwiki_data = path_here + 'data/enwiki_20210601/text/'
-# get the seed pairs
-with open(path_here+'/res/causality_pairs_list.pickle', 'rb') as f:
-    causality_pairs_list = pickle.load(f)
+def main():
 
-
-# the dataframe to store the sentences info with CORRECT causal pairs            
-df_enwiki_causality_AA = pd.DataFrame()
-
-# To proceed with each segmentation file
-dir_str = 'AA'
-for filename in glob.iglob(enwiki_data+dir_str+'/*',recursive = True):
-    round_start = time.time()
-    with open(filename, 'r') as f:
-        content = f.readlines()
-        content = [x.strip() for x in content] 
-        print('-----------SegmentationFile: '+filename+'------------')
-        
-        # process segmentation into separate files with info
-        df_file = parse_segmt_file(content)
-        print('segmentate into separate files')
-        
-        # extract sentences where causal pairs appear
-        df_enwiki_causality_AA = twoEntites_sentence_file2(df_file, df_enwiki_causality_AA, causality_pairs_list)
-        print('------------Finished this file----------------')
+    print("---------------Procedure 02: pre-process the Wikipages Dataset--------------")
     
-    round_end = time.time()
-    print('This round use '+ str((round_end-round_start) / 60) +'mins')
+    path_here = os.getcwd()
+    # wikipedia: Part of the whole Dataset (please see details in <download_data.sh>)
+    enwiki_data = path_here + 'data/enwiki_20210601/text/'
+    # get the seed pairs
+    with open(path_here+'/res/causality_pairs_list.pickle', 'rb') as f:
+        causality_pairs_list = pickle.load(f)
 
+
+    # the dataframe to store the sentences info with CORRECT causal pairs            
+    df_enwiki_causality_AA = pd.DataFrame()
+
+    # To proceed with each segmentation file
+    dir_str = 'AA'
+    for filename in glob.iglob(enwiki_data+dir_str+'/*',recursive = True):
+        round_start = time.time()
+        with open(filename, 'r') as f:
+            content = f.readlines()
+            content = [x.strip() for x in content] 
+            print('-----------SegmentationFile: '+filename+'------------')
+
+            # process segmentation into separate files with info
+            df_file = parse_segmt_file(content)
+            print('segmentate into separate files')
+
+            # extract sentences where causal pairs appear
+            df_enwiki_causality_AA = twoEntites_sentence_file2(df_file, df_enwiki_causality_AA, causality_pairs_list)
+            print('------------Finished this file----------------')
+
+        round_end = time.time()
+        print('This round use '+ str((round_end-round_start) / 60) +'mins')
+
+
+    # save to the disk 
+    df_enwiki_causality_AA.to_csv(path_here + '/res/df_enwiki_causality_AA.csv')
+    df_enwiki_causality_AA.to_pickle(path_here + '/res/df_enwiki_causality_AA.pkl')
+
+    print("The processed WikiPages datasets are saved to -->  ./res/df_enwiki_causality_AA")
     
-# save to the disk 
-df_enwiki_causality_AA.to_csv(path_here + '/res/df_enwiki_causality_AA.csv')
-df_enwiki_causality_AA.to_pickle(path_here + '/res/df_enwiki_causality_AA.pkl')
-
-
-
+if __name__ == "__main__":
+    main()
 
 
 
