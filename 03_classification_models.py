@@ -43,8 +43,7 @@ path_here = os.getcwd()
 
 # to install if you don't install yet
 # !{sys.executable} -m pip install tensorflow
-from tf_model_03 import get_model, get_feature_arrays
-from utils_03 import get_n_epochs
+from tf_model import get_model, get_feature_arrays, get_n_epochs
 
 
 #----------------------------------functions----------------------------------#
@@ -163,17 +162,15 @@ def TagCausalDirec(df):
 
 def main():
     
+    ### the inputting parameters
+    project_series = sys.argv[1]
+    Vector_Size = int(sys.argv[2])
+    evaluation_times = int(sys.argv[3])
+
+    
     print("---------------Procedure 03: classification models--------------")
     
-    ### the inputting parameters
-    nb_round = sys.argv[1]
-    # if this parameter is missing, set the default iterations as 3.
-    if nb_round is None:
-        nb_round = 3
-    else:
-        nb_round = int(nb_round)
-        
-    print("a. The model will be trained for **{}** iterations".format(nb_round))
+    print("a. The model will be trained for **{}** iterations".format(evaluation_times))
 
     
     ### the initialized parameters
@@ -197,17 +194,17 @@ def main():
     Y_test_semEval = df_test_semEval['Label'].tolist()
 
 
-    print("b. start to train Logic Regression Model with **{}** iterations".format(nb_round))
+    print("b. start to train Logic Regression Model with **{}** iterations".format(evaluation_times))
     
-    for rd in range(nb_round):
+    for rd in range(evaluation_times):
 
-        NameTag = 'LR_Round{}'.format(rd)
+        NameTag = '{}_LR_Round{}'.format(project_series, rd)
 
         ### try to embedding the sentences by doc2ve
         doc_list = df_train_semEval['Sent'].tolist()
         doc_list.extend(df_test_semEval['Sent'].tolist())
         documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(doc_list)]
-        model_doc2vec = Doc2Vec(documents, vector_size=50, window=5, min_count=2, workers=4)
+        model_doc2vec = Doc2Vec(documents, vector_size = Vector_Size, window=5, min_count=2, workers=4)
 
         ### get the sentence embedding 
         wv_semEval_train = GetEmb(df_train_semEval, model_doc2vec)
@@ -254,22 +251,21 @@ def main():
     df_test_semEval2 = addInxcolDf(df_test_semEval)
     df_test_semEval3 = add3colDf(df_test_semEval2)
 
-    Y_binary = np.array(list(zip([1 if i ==0 else 0 for i in Y_train_semEval], Y_train_semEval)))
 
-    
-    print("c . start to train LSTM Model with **{}** iterations".format(nb_round))
+    print("c . start to train LSTM Model with **{}** iterations".format(evaluation_times))
 
-    for rd in range(nb_round):
+    for rd in range(evaluation_times):
 
-        NameTag = 'LSTM_Round{}'.format(rd)
-
+        NameTag = '{}_LSTM_Round{}'.format(project_series, rd)
+        Y_binary = np.array(list(zip([1 if i ==0 else 0 for i in Y_train_semEval], Y_train_semEval)))
 
         ### train the LSTM classifer and evaluate
         X_train = get_feature_arrays(df_train_semEval3)
         model = get_model()
         batch_size = 64
         model.fit(X_train, Y_binary, batch_size=batch_size, epochs=get_n_epochs())
-
+       
+            
         ### evaluate this classifer
         X_test = get_feature_arrays(df_test_semEval3)
         probs_test = model.predict(X_test)
@@ -291,44 +287,45 @@ def main():
         
         
         
-        print("d . start to train directional LSTM Model with **{}** iterations".format(nb_round))
+        print("d . start to train directional LSTM Model with **{}** iterations".format(evaluation_times))
         
         
         ### train the LSTM classifer twice to get the causal direction prediction
         
-        NameTag = 'LSTM_Round{}_Dir'.format(rd)
+        NameTag = '{}_LSTM_Round{}_Dir'.format(project_series, rd)
         
         df_train_semEval4 = TagCausalDirec(df_train_semEval3)
         # only use the test that are tagged as positive by the last LSTM
         df_test_semEval4 = TagCausalDirec(df_test_semEval3[[True if i == 1 else False for i in preds_test]])
 
         # get the real labels for those dataframe
-        Y_train_semEval = np.array(df_train_semEval4['Label'].to_list())
-        Y_binary = np.array(list(zip([1 if i ==0 else 0 for i in Y_train_semEval], Y_train_semEval)))
-        Y_test_semEval = np.array(df_test_semEval4['Label'].to_list())
+        Y_train_semEval4 = np.array(df_train_semEval4['Label'].to_list())
+        Y_binary4 = np.array(list(zip([1 if i ==0 else 0 for i in Y_train_semEval4], Y_train_semEval4)))
+        Y_test_semEval4 = np.array(df_test_semEval4['Label'].to_list())
 
 
 
-        ### train the LogisticRegression classifer and evaluate
-        X_train = get_feature_arrays(df_train_semEval4)
+        ### evaluate
+        X_train4 = get_feature_arrays(df_train_semEval4)
         model = get_model()
         batch_size = 64
-        model.fit(X_train, Y_binary, batch_size=batch_size, epochs=get_n_epochs())
-
+        model.fit(X_train4, Y_binary4, batch_size=batch_size, epochs=get_n_epochs())
+        
+            
         ### evaluate this classifer
-        X_test = get_feature_arrays(df_test_semEval4)
-        probs_test = model.predict(X_test)
+        X_test4 = get_feature_arrays(df_test_semEval4)
+        probs_test = model.predict(X_test4)
         preds_test = np.array([1 if r[1] > r[0] else 0 for r in probs_test])
 
         df_res_dev = df_res_dev.append({'tag': NameTag,
                                         # TODO: add one column : all samples; predicted postive , real postive, overlap postive
-                                        'Nb:allsamp,predpos,realpos,overlap': [len(preds_test), Counter(preds_test)[1], Counter(Y_test_semEval)[1], 
-                                        len([i for inx, i in enumerate(preds_test) if i == Y_test_semEval[inx]])],
+                                        'Nb:allsamp,predpos,realpos,overlap': [len(preds_test), Counter(preds_test)[1], Counter(Y_test_semEval4)[1], 
+                                        len([i for inx, i in enumerate(preds_test) if i == Y_test_semEval4[inx]])],
                                         # metrics values
-                                        'accuracy': metrics.accuracy_score(Y_test_semEval, preds_test), 
-                                        'precision': metrics.precision_score(Y_test_semEval, preds_test),
-                                        'recall': metrics.recall_score(Y_test_semEval, preds_test),
-                                        'F1': metrics.f1_score(Y_test_semEval, preds_test),
+                                        'accuracy': metrics.accuracy_score(Y_test_semEval4, preds_test), 
+                                        'precision': metrics.precision_score(Y_test_semEval4, preds_test),
+                                        'recall': metrics.recall_score(Y_test_semEval4, preds_test),
+                                        'F1': metrics.f1_score(Y_test_semEval4, preds_test),
                                        }, ignore_index=True)
         
         
@@ -342,24 +339,17 @@ def main():
                 print("ground truth: ", rows['Cause'], " --> ", rows['Effect'])
                 print("predict: ", rows['Effect'], " --> ", rows['Cause'])
                 print(rows['Sent'])
-
+        print("---------------------Finished-------------------")
     
     # save results to disk
-    df_res_dev.to_csv(path_here+ "/res/df_res_dev_iter{}.csv".format(nb_round))
-    df_res_dev.to_pickle(path_here+ "/res/df_res_dev_iter{}.pkl".format(nb_round))
-    print("The evaluation results are saved to -->  ./res/df_res_dev_iter{}.pkl".format(nb_round))
+    df_res_dev.to_csv(path_here+ "/res/df_res_proj{}_dim{}_iter{}.csv".format(project_series, Vector_Size, evaluation_times))
+    df_res_dev.to_pickle(path_here+ "/res/df_res_proj{}_dim{}_iter{}.pkl".format(project_series, Vector_Size, evaluation_times))
+    print("The evaluation results are saved to -->  ./res/df_res_proj{}_dim{}_iter{}.pkl/csv".format(project_series, Vector_Size, evaluation_times))
     
-
-
-  
+ 
     
 if __name__ == "__main__":
     main()
-
-
-
-
-
 
 
 

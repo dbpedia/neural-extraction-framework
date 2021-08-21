@@ -123,6 +123,7 @@ def main():
 
     print("The processed SemEval datasets are saved to -->  ./res/df_train_semEval and ./res/df_test_semEval")
 
+    print("--------------------------Procedure 01: Finished-------------------------")
 if __name__ == "__main__":
     main()
 

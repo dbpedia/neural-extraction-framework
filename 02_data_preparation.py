@@ -30,7 +30,7 @@ nlp.add_pipe("entityLinker", last=True)   # to make use of the entityLinker
 ### purpose: process big file into separate text for each wikipage 
 ### input: each big file 
 ### output: the dataframe(columns= ['Directory','file_ID', 'file_title', 'file_text'])
-def parse_segmt_file(content):
+def parse_segmt_file(content, dir_str):
 
     # the dataframe to store the separate file for each segmentation
     df_file = pd.DataFrame(columns= ['Directory','file_ID', 'file_title', 'file_text'])
@@ -184,12 +184,14 @@ def main():
     
     path_here = os.getcwd()
     # wikipedia: Part of the whole Dataset (please see details in <download_data.sh>)
-    enwiki_data = path_here + 'data/enwiki_20210601/text/'
+    enwiki_data = path_here + '/data/enwiki_20210601/text/'
     # get the seed pairs
     with open(path_here+'/res/causality_pairs_list.pickle', 'rb') as f:
         causality_pairs_list = pickle.load(f)
 
-
+    print('-----------Attention: 100 segmentations, 60mins-150 mins required------------')
+    print('-----------If time limited, please choose "FastMode" to skip this step------------')
+    
     # the dataframe to store the sentences info with CORRECT causal pairs            
     df_enwiki_causality_AA = pd.DataFrame()
 
@@ -203,8 +205,8 @@ def main():
             print('-----------SegmentationFile: '+filename+'------------')
 
             # process segmentation into separate files with info
-            df_file = parse_segmt_file(content)
-            print('segmentate into separate files')
+            df_file = parse_segmt_file(content, dir_str)
+            print('separating this segmentation file into independent files ... ')
 
             # extract sentences where causal pairs appear
             df_enwiki_causality_AA = twoEntites_sentence_file2(df_file, df_enwiki_causality_AA, causality_pairs_list)
@@ -214,9 +216,9 @@ def main():
         print('This round use '+ str((round_end-round_start) / 60) +'mins')
 
 
-    # save to the disk 
-    df_enwiki_causality_AA.to_csv(path_here + '/res/df_enwiki_causality_AA.csv')
-    df_enwiki_causality_AA.to_pickle(path_here + '/res/df_enwiki_causality_AA.pkl')
+        # save to the disk 
+        df_enwiki_causality_AA.to_csv(path_here + '/res/df_enwiki_causality_AA.csv')
+        df_enwiki_causality_AA.to_pickle(path_here + '/res/df_enwiki_causality_AA.pkl')
 
     print("The processed WikiPages datasets are saved to -->  ./res/df_enwiki_causality_AA")
     

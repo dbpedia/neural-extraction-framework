@@ -1,0 +1,17 @@
+
+###### Requirements for data download ######`
+gdown     #https://github.com/wkentaro/gdown
+
+###### Requirements for data preprocessing and model training ######`
+pandas
+numpy
+spacy
+gensim
+sklearn
+
+
+
+
+
+
+
