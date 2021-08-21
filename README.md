@@ -1,5 +1,12 @@
 # Causal Relation Classifier
 
+## Background
+This project is prepared during Google Summer of Code 2021 with other three mentors, Tommaso SORU, Thiago Castro FERREIRA and Zheyuan BAI. 
+* This is the [project description](https://summerofcode.withgoogle.com/projects/#5166362588086272) in Google Summer of Code 2021
+* This is the corresponding [blog post](https://zoenantes.github.io/GSoc2021-DBpedia-NeuralExtraction/) 
+
+
+
 ## Introduction
 * Purposes
   * find the __cause-effect relations__ among entities in text by using deep learning techniques
