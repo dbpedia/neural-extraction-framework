@@ -54,5 +54,5 @@ sh pipeline.sh 'Test2' 50 'FastMode' 3 1
 ```
 
 # Attention
-* In this repository, the directory'./data' is empty. The datasets will be downloaded when you run the <__pipleline.sh__>
+* In this repository, the directory of dataset is empty. They will be downloaded when you run the <__pipleline.sh__>
 * For simplified, please just run 'FastMode'.
