@@ -13,8 +13,8 @@ It uses the [REBEL model](https://huggingface.co/Babelscape/rebel-large) from th
 
 Summary of the Project tasks:
 1. Scraped the text from the Wikipedia article
-2. Perform Coreference Resolution
-3. Tokenises articles into Sentences
+2. Performed Coreference Resolution
+3. Tokenised articles into Sentences
 4. REBEL model is run on each Sentence
 5. The confidence level for each triple is calculated
 6. Corresponding Head and Tail entities are matched to their respective URLs
