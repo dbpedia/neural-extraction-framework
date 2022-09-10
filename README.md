@@ -1,58 +1,78 @@
-# Causal Relation Classifier
+# Neural extraction Framework @DBpedia
+This is my GSoC’22 project on building Knowledge Graph using NLP.
 
-## Background
-This project is prepared during Google Summer of Code 2021 with other three mentors, Tommaso SORU, Thiago Castro FERREIRA and Zheyuan BAI. 
-* This is the [project description](https://summerofcode.withgoogle.com/projects/#5166362588086272) in Google Summer of Code 2021
-* This is the corresponding [blog post](https://zoenantes.github.io/GSoc2021-DBpedia-NeuralExtraction/) 
-
-
-
-## Introduction
-* Purposes
-  * find the __cause-effect relations__ among entities in text by using deep learning techniques
-  * e.g. Given a sentence, _"Suicide is one of the leading causes of death among pre-adolescents and teens."_, we expect to predict that entity __'suicide'__ has cause-effect relation to entity __'death'__.
-
-* Problems
-  * no widely used train set and test set
-  * hard to choose the suitable entity pairs from a lot of entities in a sentence
-  * complex to apply deep learning techniques for relation extraction task
-
-* Solutions
-  * <**01_seed_preparation.py**>: pre-process the dataset of [SemEval-2010 Task 8 Dataset](https://www.kaggle.com/drtoshi/semeval2010-task-8-dataset) into semi-structured format.
-  * <**02_data_preparation.py**>: deal with partial WikiPages dump in English by using 'name entity recognition' spaCy tools, and store sentences into semi-structured format.
-  * <**03_classification_models.py**>: train classifiers by applying different sentence embeddings to Logistic Regression Model and to LSTM, and evaluate the classification performance.
-  * <**04_classification_bootstrapping.py**>: train the mentioned classifiers with bootstrapping techniques.
+|   Project Details     | |
+|-------------|-------------|
+| GSoC Project | [Neural Extraction Framework GSoC'22 @DBpedia](https://summerofcode.withgoogle.com/programs/2022/projects/HIqpMFb3)        |
+| Mentors | [Tommaso Soru](https://github.com/mommi84), [Diego Moussallem](https://github.com/DiegoMoussallem), [Ziwei Xu](https://github.com/zoeNantes)|
+| Blogs | [Neural Extraction Framework GSoC'22 by Ananya](https://ananyaiitbhilai.github.io/DBpedia_GSoC2022_Neural_Extraction_Framework) |
 
 
-## One-Command Pipeline
 
-The following command will install the packages according to the configuration file <__requirements.txt__>.
-```bash
-pip install -r requirements.txt
+It uses the [REBEL model](https://huggingface.co/Babelscape/rebel-large) from the hugging face library. The REBEL model performs both NER and Relation Extraction. It takes input as a sentence and outputs a triple *{head, type, tail}*.
+
+Summary of the Project tasks:
+1. Scraped the text from the Wikipedia article
+2. Perform Coreference Resolution
+3. Tokenises articles into Sentences
+4. REBEL model is run on each Sentence
+5. The confidence level for each triple is calculated
+6. Corresponding Head and Tail entities are matched to their respective URLs
+
+## Installations
+
+### For .ipynb
+You can find the **neural_extraction_framework.ipynb** notebook. You can either use your local machine or Google Colab to run the notebook by cloning the repo.
+
+Installation of the libraries used:
+```
+!pip install wikipedia
+!pip install transformers
+!pip install nltk
+!pip install fuzzywuzzy
+!pip install rdflib
+!pip install SPARQLWrapper
+```
+Install spaCy and neuralcoref with correct versions
+```
+!pip install -U spacy==2.1.0 
+!python -m spacy download en
+!pip uninstall -y neuralcoref 
+!pip install neuralcoref --no-binary neuralcoref
+```
+However, all the commands to install the dependencies is present in the notebook, you only have to run all the cells. In the `url_link` variable enter the URL of the Wikipedia article for which you want to extract the triples, and run all the cells. In the end, you will get a table consisting of the triple along with the confidence level of the relation between the entities. Here is an image of what the table would look like:
+
+
+### For .py
+Or you can use the **neural_extraction_framework.py** file. Here, the user have to input the URL of the Wikipedia article. To install the dependencies, you have to run shell file `cmd.sh` with the help of the following command:
+```
+bash cmd.sh
+```
+In this case, the user gives the input of the URL of the Wikipedia article for which it wants to extract the Triples.
+```
+python neural_extraction_framework.py
 ```
 
-To run the complete pipeline, please use the command:
-
-```bash
-sh pipeline.sh [$1 Project_series] [$2 Dimensions_of_sentence_embeddings] [$3 Experiment_mode] [$4 Evaluation_times] [$5 Random_times]
-```
-| Parameter | Description | Type | Default |
-| :--------:|-------------|------|--------:|
-| $1 | The project's Series | String | Required
-| $2 | Dimension of the sentence embeddings | Integer {50,100,200,300} | 50 |
-| $3 | Experiment mode | String {'FastMode', 'CompleteMode'} | 'CompleteMode' |
-| $4 | Evaluation times |Integer | 3 |
-| $5 | Random times | Integer | 1 |
-
-Examples:
-
-```bash
-sh pipeline.sh 'Test1'
-```
-```bash
-sh pipeline.sh 'Test2' 50 'FastMode' 3 1
+In case you are not able to install the dependencies in your local system, you can use the google colab and run the following commands in the cells:
 ```
 
-# Attention
-* In this repository, the directory of dataset is empty. They will be downloaded when you run the <__pipleline.sh__>
-* For simplified, please just run 'FastMode'.
+```
+```
+!bash cmd.sh
+```
+```
+!python neural_extraction_framework.py
+```
+*Please note: It only works for the English language Wikipedia articles and the Triple extraction is carried out only for the first 10 sentences since it takes some time to execute. But you can increase the number of sentences for which you want to extract the triples by changing the number of iterations to the length of the list containing all the sentences present in the article. You can also change the value of parameters:  "num_beams": 10,
+    "num_return_sequences": 10*
+
+## Future Goals
+I would continue contributing to the Neural Extraction Framework Project
+- Storing triples in a Graph Database
+- If a pronoun text is anchored to a URL(relatively very few instances) then we miss out on those URLs while matching it in the coreference resolved text.  For this, we can use a list to store such instances.
+- Making coreference resolution better
+- Extracting all the correct URLs corresponding to the entities
+
+I would love to build a model that could predict a new relation after accomplishing the above tasks.
+
+Overall, it was an amazing and enriching experience for me, I got to learn a lot during GSoC. My all mentors were highly supportive, and knowledgeable and guided me along the path. I look forward to working and learning with them.
