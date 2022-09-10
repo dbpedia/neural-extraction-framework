@@ -53,10 +53,7 @@ In this case, the user gives the input of the URL of the Wikipedia article for w
 python neural_extraction_framework.py
 ```
 
-In case you are not able to install the dependencies in your local system, you can use the google colab and run the following commands in the cells:
-```
-
-```
+In case you are not able to install the dependencies in your local system, you can use the google colab. You can clone the repositary using the commands preceeded by a `!` on google colab and then run the cells or upload both these files(`cmd.sh`, `neural_extraction_framework.py` ) in the root path and then run the following commands:
 ```
 !bash cmd.sh
 ```
