@@ -1,0 +1,2136 @@
+,head,type,tail,Confidence
+0,rocket engine,subclass of,jet engine,0.09090909090909091
+1,jet engine,subclass of,rocket engine,0.09090909090909091
+2,jet engine,uses,thrust,0.09090909090909091
+3,jet engine,subclass of,aircraft,0.18181818181818182
+4,jet engine,part of,aircraft,0.09090909090909091
+5,fixed-wing aircraft,subclass of,airplane,0.09090909090909091
+6,jet engine,has parts of the class,rocket engine,0.09090909090909091
+7,fixed-wing,subclass of,aircraft,0.09090909090909091
+8,plane,subclass of,fixed-wing aircraft,0.09090909090909091
+9,rocket engine,subclass of,aircraft,0.09090909090909091
+10,wing,part of,Plane,0.1
+11,wing configuration,part of,Plane,0.1
+12,wing configurations,part of,Plane,0.1
+13,wing configuration,part of,Airplane,0.1
+14,wing configurations,part of,Airplane,0.1
+15,Wing,part of,Plane,0.1
+16,wing,part of,Airplane,0.1
+17,wing,part of,Aircraft,0.1
+18,wing configuration,part of,Aircraft,0.1
+19,wing configurations,part of,Aircraft,0.1
+20,recreation,uses,transportation,0.1
+21,recreation,subclass of,transportation,0.1
+22,recreation,has part,people,0.1
+23,recreation,has part,transportation,0.1
+24,recreation,subclass of,transportation of goods and people,0.1
+25,recreation,use,transportation,0.1
+26,recreation,uses,airplanes,0.1
+27,transportation,used by,people,0.1
+28,people,use,transportation,0.1
+29,recreation,facet of,transportation,0.1
+30,airliners,use,commercial aviation,0.25
+31,airliners,part of,commercial aviation,0.08333333333333333
+32,commercial aviation,item operated,airliners,0.16666666666666666
+33,airliner,use,commercial aviation,0.16666666666666666
+34,airline,use,commercial aviation,0.08333333333333333
+35,airliners,use,cargo,0.08333333333333333
+36,airliners,use,cargo movement,0.08333333333333333
+37,commercial aviation,uses,airliners,0.08333333333333333
+38,drone,subclass of,remotely or computer-controlled,0.1
+39,drone,subclass of,remotely,0.1
+40,drone,use,remotely,0.1
+41,drones,subclass of,remotely or computer-controlled,0.1
+42,drones,subclass of,remotely,0.1
+43,drone,subclass of,computer-controlled,0.1
+44,pilot,item operated,airplane,0.1
+45,pilot,uses,airplane,0.1
+46,remotely,subclass of,computer-controlled,0.1
+47,drones,subclass of,computer-controlled,0.1
+48,Wright brothers,notable work,first airplane,0.125
+49,first airplane,designed by,Wright brothers,0.125
+50,Wright brothers,work period (start),1903,0.0625
+51,Wright brothers,inception,1903,0.0625
+52,first airplane,manufacturer,Wright brothers,0.0625
+53,Wright brothers,product or material produced,airplane,0.1875
+54,airplane,discoverer or inventor,Wright brothers,0.125
+55,airplane,designed by,Wright brothers,0.125
+56,Wright brothers,notable work,airplane,0.125
+57,Otto Lilienthal,field of work,human aviation,0.09090909090909091
+58,George Cayley,work period (start),1799,0.09090909090909091
+59,Otto Lilienthal,country of citizenship,German,0.09090909090909091
+60,George Cayley,field of work,airplane,0.09090909090909091
+61,George Cayley,product or material produced,airplane,0.09090909090909091
+62,George Cayley,influenced by,Otto Lilienthal,0.09090909090909091
+63,George Cayley,student,Otto Lilienthal,0.18181818181818182
+64,George Cayley,inception,1799,0.09090909090909091
+65,Otto Lilienthal,influenced by,George Cayley,0.09090909090909091
+66,Otto Lilienthal,student of,George Cayley,0.09090909090909091
+67,Lilienthal's flight attempts in 1891,point in time,1891,0.18181818181818182
+68,Lilienthal's flight attempts,point in time,1891,0.09090909090909091
+69,Lilienthal's flight attempts,instance of,human flight,0.09090909090909091
+70,Lilienthal's flight attempts in 1891,instance of,human flight,0.18181818181818182
+71,flight attempts in 1891,point in time,1891,0.09090909090909091
+72,Lilienthal's flight,instance of,human flight,0.09090909090909091
+73,1891,point in time,1891,0.09090909090909091
+74,human flight,inception,1891,0.09090909090909091
+75,Lilienthal's flight,point in time,1891,0.09090909090909091
+76,World War I,followed by,World War II,0.18181818181818182
+77,World War II,follows,World War I,0.09090909090909091
+78,aircraft technology continued to develop,conflict,World War I,0.09090909090909091
+79,aircraft technology continued to develop,facet of,World War I,0.09090909090909091
+80,limited use,conflict,World War I,0.09090909090909091
+81,aircraft technology,conflict,World War I,0.09090909090909091
+82,limited use,facet of,World War I,0.09090909090909091
+83,1940,point in time,1940,0.09090909090909091
+84,World War I,has effect,limited use,0.09090909090909091
+85,aircraft,conflict,World War I,0.09090909090909091
+86,Airplane,conflict,World War II,0.09090909090909091
+87,major battles,part of,World War II,0.18181818181818182
+88,Airplanes,conflict,World War II,0.09090909090909091
+89,Airplanes had a presence,conflict,World War II,0.09090909090909091
+90,World War II,has part,major battles,0.18181818181818182
+91,Airplanes had a presence in all the major battles,conflict,World War II,0.09090909090909091
+92,Airplanes had a presence in all the major battles of World War II,conflict,World War II,0.09090909090909091
+93,Airplane had a presence,conflict,World War II,0.09090909090909091
+94,World War II,has part,Airplane,0.09090909090909091
+95,Heinkel He 178,service entry,1939,0.25
+96,Heinkel He 178,country,German,0.08333333333333333
+97,Heinkel He 178,country of origin,German,0.16666666666666666
+98,Heinkel He 178,inception,1939,0.08333333333333333
+99,Heinkel He 178,subclass of,jet aircraft,0.08333333333333333
+100,1939,point in time,1939,0.16666666666666666
+101,He 178,manufacturer,Heinkel,0.08333333333333333
+102,Heinkel He 178,start time,1939,0.08333333333333333
+103,de Havilland Comet,service entry,1952,0.3076923076923077
+104,de Havilland Comet,inception,1952,0.07692307692307693
+105,de Havilland Comet,subclass of,airliner,0.15384615384615385
+106,de Havilland Comet,subclass of,jet airliner,0.15384615384615385
+107,de Havilland Comet,start time,1952,0.07692307692307693
+108,1952,point in time,1952,0.15384615384615385
+109,de Havilland Comet,instance of,airliner,0.07692307692307693
+110,Boeing 707,service entry,1958,0.23076923076923078
+111,Boeing 707,subclass of,commercial jet,0.15384615384615385
+112,Boeing 707,instance of,commercial jet,0.15384615384615385
+113,Boeing 707,start time,1958,0.07692307692307693
+114,1958,point in time,1958,0.15384615384615385
+115,Boeing 707,inception,1958,0.07692307692307693
+116,2013,point in time,2013,0.07692307692307693
+117,Boeing 707,subclass of,airliner,0.07692307692307693
+118,aéroplane,subclass of,aeroplane,0.09090909090909091
+119,aéroplane,subclass of,airplane,0.09090909090909091
+120,aéroplane,named after,French,0.09090909090909091
+121,aéroplane,country of origin,French,0.09090909090909091
+122,airplane,named after,aéroplane,0.09090909090909091
+123,aéroplane,subclass of,French,0.09090909090909091
+124,French aéroplane,subclass of,airplane,0.09090909090909091
+125,airplane,named after,French aéroplane,0.09090909090909091
+126,airplane,said to be the same as,aéroplane,0.09090909090909091
+127,aéroplane,said to be the same as,airplane,0.09090909090909091
+128,airplane,subclass of,aeroplane,0.09090909090909091
+129,Aéroplane,subclass of,plane,0.25
+130,Aéroplane,has part,wing,0.125
+131,wing,part of,Aéroplane,0.125
+132,plane,has part,Aéroplane,0.0625
+133,wing,part of,plane,0.25
+134,plane,has part,wing,0.125
+135,Aéroplane,has parts of the class,wing,0.0625
+136,wing,part of,aircraft,0.23076923076923078
+137,aircraft,has part,wing,0.15384615384615385
+138,Synecdoche,instance of,synecdoche,0.07692307692307693
+139,aircraft,has parts of the class,wing,0.07692307692307693
+140,Wing,part of,aircraft,0.07692307692307693
+141,Synecdoche,subclass of,synecdoche,0.07692307692307693
+142,the wing,part of,aircraft,0.07692307692307693
+143,wing,part of,entire aircraft,0.07692307692307693
+144,entire aircraft,has part,wing,0.07692307692307693
+145,synecdoche,instance of,word,0.07692307692307693
+146,fixed-wing aircraft,subclass of,aircraft,0.1
+147,fixed-wing aircraft,subclass of,plane,0.1
+148,fixed-wing aircraft,subclass of,powered,0.1
+149,powered,subclass of,aircraft,0.1
+150,fixed-wing,subclass of,aircraft,0.1
+151,powered fixed-wing aircraft,subclass of,plane,0.1
+152,aircraft,subclass of,powered,0.1
+153,fixed-wing aircraft,subclass of,airplane,0.1
+154,United States,diplomatic relation,Canada,0.1
+155,United States,shares border with,Canada,0.1
+156,United Kingdom,member of,Commonwealth,0.3157894736842105
+157,Ireland,member of,Commonwealth,0.21052631578947367
+158,Ireland,country,United Kingdom,0.3157894736842105
+159,Commonwealth,has part,United Kingdom,0.05263157894736842
+160,United Kingdom and Ireland,member of,Commonwealth,0.05263157894736842
+161,Commonwealth,country,United Kingdom,0.05263157894736842
+162,Icarus,student,Daedalus,0.16666666666666666
+163,Daedalus,student of,Icarus,0.16666666666666666
+164,Daedalus,student,Icarus,0.08333333333333333
+165,Vimana,instance of,epics,0.08333333333333333
+166,Vimana,instance of,Indian epics,0.08333333333333333
+167,Vimana,part of,Indian epics,0.08333333333333333
+168,Vimana,instance of,epic,0.08333333333333333
+169,Icarus,sibling,Daedalus,0.08333333333333333
+170,Daedalus,sibling,Icarus,0.08333333333333333
+171,Icarus,relative,Daedalus,0.08333333333333333
+172,Archytas,country of citizenship,Greece,0.08333333333333333
+173,Archytas,time period,Greece,0.08333333333333333
+174,Archytas,place of birth,Greece,0.08333333333333333
+175,self-propelled flying device,discoverer or inventor,Archytas,0.08333333333333333
+176,Archytas,notable work,"artificial, self-propelled flying device",0.25
+177,"artificial, self-propelled flying device",discoverer or inventor,Archytas,0.08333333333333333
+178,Archytas,work location,Greece,0.08333333333333333
+179,Archytas,field of work,artificial,0.08333333333333333
+180,"artificial, self-propelled flying device",creator,Archytas,0.08333333333333333
+181,Archytas,field of work,flying device,0.08333333333333333
+182,Andalusian,language used,Arabic-language,0.18181818181818182
+183,Abbas ibn Firnas,country of citizenship,Andalusian,0.09090909090909091
+184,Arabic-language,country,Andalusian,0.18181818181818182
+185,Andalusia,language used,Arabic-language,0.09090909090909091
+186,Andalusian,language used,Arabic,0.09090909090909091
+187,Arabic,country,Andalusian,0.09090909090909091
+188,Abbas ibn Firnas,place of birth,Andalusian,0.09090909090909091
+189,Eilmer of Malmesbury,occupation,monk,0.09090909090909091
+190,Andalusia,language used,Arabic,0.09090909090909091
+191,Codex on the Flight of Birds,author,Leonardo da Vinci,0.29411764705882354
+192,Leonardo da Vinci,notable work,Codex on the Flight of Birds,0.23529411764705882
+193,Codex on the Flight of Birds,creator,Leonardo da Vinci,0.11764705882352941
+194,Codex on the Flight of Birds (1502),author,Leonardo da Vinci,0.11764705882352941
+195,Codex on the Flight of Birds,main subject,man-powered aircraft,0.11764705882352941
+196,Leonardo da Vinci,notable work,Codex on the Flight of Birds (1502),0.058823529411764705
+197,Codex on the Flight of Birds,depicts,man-powered aircraft,0.058823529411764705
+198,airplane,discoverer or inventor,George Cayley,0.18181818181818182
+199,George Cayley,field of work,airplane,0.18181818181818182
+200,George Cayley,instance of,airplane,0.09090909090909091
+201,airplane,subclass of,flying machine,0.09090909090909091
+202,flying machine,discoverer or inventor,George Cayley,0.09090909090909091
+203,George Cayley,field of work,flying machine,0.09090909090909091
+204,fixed-wing flying machine,discoverer or inventor,George Cayley,0.09090909090909091
+205,George Cayley,work period (start),1799,0.09090909090909091
+206,1799,point in time,1799,0.09090909090909091
+207,glider,subclass of,fixed-wing aircraft,0.09090909090909091
+208,1853,point in time,1853,0.18181818181818182
+209,1803,point in time,1803,0.18181818181818182
+210,glider,subclass of,aircraft,0.09090909090909091
+211,a successful passenger-carrying glider,service entry,1853,0.09090909090909091
+212,flying models,subclass of,fixed-wing aircraft,0.09090909090909091
+213,glider,subclass of,flying model,0.09090909090909091
+214,a successful passenger-carrying glider,inception,1853,0.09090909090909091
+215,flying model,subclass of,fixed-wing aircraft,0.09090909090909091
+216,Jean-Marie Le Bris,country of citizenship,Frenchman,0.1
+217,Jean-Marie Le Bris,country of citizenship,French,0.1
+218,Jean-Marie Le Bris,field of work,powered flight,0.1
+219,Jean-Marie Le Bris,instance of,glider,0.1
+220,L'Albatros artificiel,operator,Jean-Marie Le Bris,0.1
+221,L'Albatros artificiel,owned by,Jean-Marie Le Bris,0.1
+222,L'Albatros artificiel,designed by,Jean-Marie Le Bris,0.1
+223,Jean-Marie Le Bris,country of citizenship,France,0.1
+224,Jean-Marie Le Bris,instance of,powered flight,0.1
+225,L'Albatros artificiel,manufacturer,Jean-Marie Le Bris,0.1
+226,Alexander F. Mozhaisky,country of citizenship,Russia,0.1
+227,Alexander F. Mozhaisky,country of citizenship,Russian,0.1
+228,Alexander F. Mozhaisky,ethnic group,Russian,0.1
+229,Alexander F. Mozhaisky,work location,Russia,0.1
+230,Mozhaisky,named after,Alexander F. Mozhaisky,0.1
+231,Russian,founded by,Alexander F. Mozhaisky,0.1
+232,Alexander F. Mozhaisky,work location,Moscow,0.1
+233,Russia,head of state,Alexander F. Mozhaisky,0.1
+234,Russian,head of state,Alexander F. Mozhaisky,0.1
+235,Russian,country,Russia,0.1
+236,John J. Montgomery,country of citizenship,American,0.25
+237,1883,point in time,1883,0.08333333333333333
+238,John J. Montgomery,sport,glider,0.16666666666666666
+239,glider,use,controlled flight,0.08333333333333333
+240,John J. Montgomery,instance of,glider,0.08333333333333333
+241,glider,subclass of,controlled flight,0.08333333333333333
+242,John J. Montgomery,item operated,glider,0.16666666666666666
+243,John J. Montgomery,instrument,glider,0.08333333333333333
+244,Otto Lilienthal,occupation,aviators,0.16666666666666666
+245,Otto Lilienthal,occupation,aviator,0.16666666666666666
+246,Percy Pilcher,occupation,aviators,0.16666666666666666
+247,Octave Chanute,occupation,aviators,0.05555555555555555
+248,Percy Pilcher,occupation,aviator,0.16666666666666666
+249,Octave Chanute,occupation,aviator,0.1111111111111111
+250,Otto Lilienthal,sport,aviators,0.05555555555555555
+251,Percy Pilcher,sport,aviators,0.05555555555555555
+252,Octave Chanute,sport,aviators,0.05555555555555555
+253,steam engine,has part,propellers,0.16666666666666666
+254,Hiram Maxim,field of work,steam engine,0.08333333333333333
+255,steam engines,has part,propellers,0.08333333333333333
+256,propellers,part of,steam engine,0.08333333333333333
+257,Hiram Maxim,field of work,steam engines,0.08333333333333333
+258,a craft,designed by,Hiram Maxim,0.16666666666666666
+259,steam engine,has part,propeller,0.08333333333333333
+260,Hiram Maxim,instance of,flying boat,0.08333333333333333
+261,Hiram Maxim,field of work,designed,0.08333333333333333
+262,Hiram Maxim,notable work,a craft,0.08333333333333333
+263,1894,point in time,1894,0.1
+264,In 1894,point in time,1894,0.1
+265,1880,point in time,1880,0.1
+266,1893 World's Fair,point in time,1893,0.1
+267,1890,point in time,1890,0.1
+268,"In 1894, his machine was tested",point in time,1894,0.1
+269,1892,point in time,1892,0.1
+270,1893 World's Fair in Chicago,point in time,1893,0.1
+271,his machine,has part,overhead rails,0.1
+272,"In 1894, his machine was tested with overhead rails",point in time,1894,0.1
+273,test,uses,lift,0.1
+274,1976,point in time,1976,0.1
+275,1973,point in time,1973,0.1
+276,1970,point in time,1970,0.1
+277,2000,point in time,2000,0.1
+278,2000 Summer Olympics,point in time,2000,0.1
+279,test,subclass of,lift,0.1
+280,test,has part,lift,0.1
+281,Lufthansa,country,Germany,0.1
+282,test,subclass of,take off,0.1
+283,box kite,discoverer or inventor,Lawrence Hargrave,0.1
+284,box kite,designed by,Lawrence Hargrave,0.1
+285,box kite,developer,Lawrence Hargrave,0.1
+286,box kite,creator,Lawrence Hargrave,0.1
+287,box kite,manufacturer,Lawrence Hargrave,0.1
+288,box kite,named after,Lawrence Hargrave,0.1
+289,box kite,subclass of,kite,0.1
+290,box kite,subclass of,wing structure,0.1
+291,Box kite,discoverer or inventor,Lawrence Hargrave,0.1
+292,Box kite,designed by,Lawrence Hargrave,0.1
+293,box kite,subclass of,kite,0.1
+294,box kite,instance of,kite,0.1
+295,kite,uses,box kite,0.1
+296,kite,uses,box,0.1
+297,Box kite,subclass of,kite,0.1
+298,kite,subclass of,box kite,0.1
+299,box,subclass of,kite,0.1
+300,box kite,subclass of,kite design,0.1
+301,kite,based on,box kite,0.1
+302,box kite,subclass of,kite designs,0.1
+303,Otto Lilienthal,field of work,human aviation,0.25
+304,Otto Lilienthal,country of citizenship,German,0.16666666666666666
+305,Otto Lilienthal,field of work,heavier-than-air flight,0.08333333333333333
+306,human aviation,discoverer or inventor,Otto Lilienthal,0.08333333333333333
+307,Otto Lilienthal,sport,human aviation,0.08333333333333333
+308,Otto Lilienthal,occupation,human aviation,0.08333333333333333
+309,Otto Lilienthal,field of work,aviation,0.08333333333333333
+310,Otto Lilienthal,field of work,heavy-than-air flight,0.08333333333333333
+311,Otto Lilienthal,work period (start),1867,0.08333333333333333
+312,gliding,subclass of,flights,0.1
+313,gliding,subclass of,flight,0.1
+314,repeated,subclass of,gliding,0.1
+315,gliding flight,subclass of,repeated,0.1
+316,gliding,uses,repeated,0.1
+317,gliding,subclass of,repeated,0.1
+318,gliding flight,has parts of the class,repeated,0.1
+319,glider flight,subclass of,repeated,0.1
+320,successful gliding flights,subclass of,gliding,0.1
+321,gliding flight,uses,repeated,0.1
+322,Wright brothers,field of work,human flight,0.16666666666666666
+323,Wright brothers,notable work,Lilienthal Normalsegelapparat,0.08333333333333333
+324,Wright brothers,notable work,flight attempts in 1891,0.08333333333333333
+325,Wright brothers,notable work,human flight,0.08333333333333333
+326,Lilienthal Normalsegelapparat,designed by,Lilienthal,0.25
+327,Wright brothers,product or material produced,airplane,0.08333333333333333
+328,Wright brothers,notable work,wing,0.08333333333333333
+329,wing,use,human flight,0.08333333333333333
+330,Lilienthal Normalsegelapparat,manufacturer,Lilienthal,0.08333333333333333
+331,Éole,designed by,Clement Ader,0.25
+332,Éole,instance of,flying machine,0.08333333333333333
+333,Clement Ader,country of citizenship,Frenchman,0.08333333333333333
+334,Éole,manufacturer,Clement Ader,0.08333333333333333
+335,Clement Ader,notable work,Éole,0.16666666666666666
+336,Éole,developer,Clement Ader,0.08333333333333333
+337,Éole,discoverer or inventor,Clement Ader,0.08333333333333333
+338,Éole,service entry,1886,0.08333333333333333
+339,Éole,instance of,flying machines,0.08333333333333333
+340,steam engine,has part,cylinders,0.15384615384615385
+341,cylinders,part of,steam engine,0.23076923076923078
+342,four cylinders,part of,steam engine,0.07692307692307693
+343,cylinder,part of,steam engine,0.15384615384615385
+344,steam engine,has part,cylinder,0.15384615384615385
+345,propeller,part of,steam engine,0.07692307692307693
+346,steam engine,has parts of the class,cylinders,0.07692307692307693
+347,four-blade,subclass of,propeller,0.07692307692307693
+348,kilowatt,has part,hp,0.1111111111111111
+349,kilowatt,has part,pound,0.1111111111111111
+350,kilowatt,has part,pounds,0.1111111111111111
+351,kilowatt,has part,lb/hp,0.1111111111111111
+352,kilowatt,has part,kg,0.1111111111111111
+353,kilowatt,said to be the same as,lb/hp,0.1111111111111111
+354,kg,has part,pound,0.1111111111111111
+355,kilowatt,subclass of,pound,0.1111111111111111
+356,kilowatt,has part,horsepower,0.1111111111111111
+357,span,facet of,wings,0.1
+358,14,instance of,span,0.1
+359,span,facet of,wing,0.1
+360,span,subclass of,wings,0.1
+361,14 m,instance of,span,0.1
+362,span,part of,wings,0.1
+363,span,part of,wing,0.1
+364,wings,instance of,span,0.1
+365,Span,facet of,wings,0.1
+366,wings,part of,span,0.1
+367,2008 Summer Olympics,point in time,2008,0.18181818181818182
+368,1984 Summer Olympics,point in time,1984,0.09090909090909091
+369,2000 Summer Olympics,point in time,2000,0.09090909090909091
+370,2004 Summer Olympics,point in time,2004,0.09090909090909091
+371,1988 Summer Olympics,point in time,1988,0.09090909090909091
+372,1976 Summer Olympics,point in time,1976,0.09090909090909091
+373,2012 Summer Olympics,point in time,2012,0.09090909090909091
+374,1996 Summer Olympics,point in time,1996,0.09090909090909091
+375,1988 Commonwealth Games,point in time,1988,0.09090909090909091
+376,2008 Summer Olympics,location,Beijing,0.09090909090909091
+377,Éole,point in time,9 October 1890,0.1
+378,Éole,start time,9 October 1890,0.1
+379,9 October 1890,point in time,9 October 1890,0.1
+380,Éole,operator,Ader,0.1
+381,attempted to fly the Éole,point in time,9 October 1890,0.1
+382,Ader,item operated,Éole,0.1
+383,Éole,inception,9 October 1890,0.1
+384,Éole,manufacturer,Ader,0.1
+385,attempted to fly,point in time,9 October 1890,0.1
+386,Ader attempted to fly the Éole,point in time,9 October 1890,0.1
+387,hop,subclass of,powered take-off,0.08333333333333333
+388,hop,subclass of,take-off,0.08333333333333333
+389,powered take-off,subclass of,hop,0.08333333333333333
+390,powered take-off,different from,hop,0.16666666666666666
+391,hop,different from,powered take-off,0.08333333333333333
+392,powered take-off,followed by,hop,0.08333333333333333
+393,take-off,part of,Aviation,0.08333333333333333
+394,powered take-off,different from,uncontrolled hop,0.08333333333333333
+395,uncontrolled hop,different from,powered take-off,0.08333333333333333
+396,uncontrolled hop,opposite of,powered take-off,0.08333333333333333
+397,powered take-off,has part,hop,0.08333333333333333
+398,1903,point in time,1903,0.18181818181818182
+399,Wright brothers flights in 1903,point in time,1903,0.09090909090909091
+400,Wright brothers,field of work,aeronautics,0.09090909090909091
+401,Wright brothers,work period (start),1903,0.09090909090909091
+402,Wright brothers flights,point in time,1903,0.09090909090909091
+403,Wright brothers,significant event,1903,0.09090909090909091
+404,Fédération Aéronautique Internationale,field of work,aeronautics,0.09090909090909091
+405,1903,participant,Wright brothers,0.18181818181818182
+406,1903,operator,Wright brothers,0.09090909090909091
+407,Wright Flyer III,service entry,1905,0.1
+408,1905,point in time,1905,0.1
+409,Wright Flyer III,inception,1905,0.1
+410,Wright Flyer,service entry,1905,0.1
+411,Wright Flyer III,start time,1905,0.1
+412,Wright Flyer,inception,1905,0.1
+413,controllable,subclass of,flight,0.1
+414,Wright Flyer III,publication date,1905,0.1
+415,Wright Flyer III,use,controllable,0.1
+416,stable flight,subclass of,controllable,0.1
+417,Wright brothers,influenced by,Otto Lilienthal,0.2857142857142857
+418,Otto Lilienthal,influenced by,Wright brothers,0.14285714285714285
+419,Wright brothers,field of work,manned flight,0.21428571428571427
+420,Otto Lilienthal,student,Wright brothers,0.14285714285714285
+421,The Wright brothers,influenced by,Otto Lilienthal,0.07142857142857142
+422,Otto Lilienthal,field of work,manned flight,0.07142857142857142
+423,the Wright brothers,influenced by,Otto Lilienthal,0.07142857142857142
+424,Alberto Santos-Dumont,country of citizenship,Brazil,0.25
+425,Alberto Santos-Dumont,country of citizenship,Brazilian,0.08333333333333333
+426,Alberto Santos-Dumont,member of,Aéro-Club de France,0.16666666666666666
+427,Alberto Santos-Dumont,work period (start),1906,0.08333333333333333
+428,Aéro-Club de France,inception,1906,0.16666666666666666
+429,Alberto Santos-Dumont,date of birth,1906,0.08333333333333333
+430,1906,point in time,1906,0.08333333333333333
+431,Alberto Santos-Dumont,country,Brazil,0.08333333333333333
+432,Blériot VIII,service entry,1908,0.18181818181818182
+433,1908,point in time,1908,0.18181818181818182
+434,Blériot VIII,inception,1908,0.09090909090909091
+435,Blériot VIII,manufacturer,FAI,0.09090909090909091
+436,Blériot VIII,operator,FAI,0.09090909090909091
+437,Blériot VIII,start time,1908,0.09090909090909091
+438,Blériot VIII,subclass of,monoplane tractor,0.09090909090909091
+439,Blériot VIII,instance of,monoplane tractor,0.09090909090909091
+440,Blériot VIII,designed by,FAI,0.09090909090909091
+441,ailerons,use,wing warping,0.1
+442,ailerons,use,roll control,0.1
+443,ailerons,part of,wing warping,0.1
+444,ailerons,subclass of,wing warping,0.1
+445,wing warping,subclass of,roll control,0.1
+446,aileron,use,roll control,0.1
+447,aileron,use,wing warping,0.1
+448,ailerons,uses,wing warping,0.1
+449,aileron,part of,wing warping,0.1
+450,pilot,item operated,joystick,0.1
+451,Blériot XI,service entry,1909,0.1
+452,Blériot XI Channel-crossing aircraft,service entry,1909,0.1
+453,1909,point in time,1909,0.1
+454,Blériot XI,conflict,World War I,0.1
+455,Blériot XI,inception,1909,0.1
+456,Blériot XI Channel-crossing aircraft,conflict,World War I,0.1
+457,Blériot XI Channel,service entry,1909,0.1
+458,Blériot XI Channel-crossing aircraft,inception,1909,0.1
+459,Blériot XI,start time,1909,0.1
+460,Blériot XI Channel-crossing,service entry,1909,0.1
+461,Airplane,subclass of,machines of war,0.1
+462,machines of war,has part,Airplane,0.1
+463,Aircraft,subclass of,machines of war,0.1
+464,machines of war,has part,Aircraft,0.1
+465,machines of war,has parts of the class,Airplane,0.1
+466,machines of war,has parts of the class,Aircraft,0.1
+467,machine of war,has part,Airplane,0.1
+468,Airplane,subclass of,machine of war,0.1
+469,Airplane,instance of,machines of war,0.1
+470,casualties to the enemy,subclass of,machines of war,0.1
+471,Kurt Wintgens,military branch,Luftstreitkräfte,0.2857142857142857
+472,Luftstreitkräfte,country,German,0.21428571428571427
+473,Kurt Wintgens,military rank,Leutnant,0.14285714285714285
+474,Luftstreitkräfte,inception,1915,0.07142857142857142
+475,1915,point in time,1915,0.07142857142857142
+476,Kurt Wintgens,work period (start),1915,0.07142857142857142
+477,Kurt Wintgens,country of citizenship,German,0.07142857142857142
+478,Kurt Wintgens,military branch,German Luftstreitkräfte,0.07142857142857142
+479,Manfred von Richthofen,occupation,Fighter ace,0.1
+480,Manfred von Richthofen,military rank,Fighter ace,0.1
+481,Manfred von Richthofen,occupation,Fighter aces,0.1
+482,Manfred von Richthofen,field of work,Aerial Combat,0.1
+483,Manfred von Richthofen,sport,Fighter ace,0.1
+484,Manfred von Richthofen,occupation,fighter ace,0.1
+485,Manfred von Richthofen,position held,Fighter ace,0.1
+486,Manfred von Richthofen,field of work,Fighter ace,0.1
+487,Manfred von Richthofen,conflict,Aerial Combat,0.1
+488,Manfred von Richthofen,conflict,Aerial Combat victories,0.1
+489,aircraft technology continued to develop,facet of,WWI,0.07142857142857142
+490,World War I,followed by,World War II,0.21428571428571427
+491,World War II,follows,World War I,0.14285714285714285
+492,aircraft technology continued to develop,conflict,WWI,0.07142857142857142
+493,1918,point in time,1918,0.07142857142857142
+494,World War I,followed by,WWII,0.07142857142857142
+495,WWII,follows,World War I,0.07142857142857142
+496,WWI,followed by,World War II,0.07142857142857142
+497,World War II,follows,WWI,0.14285714285714285
+498,1940,point in time,1940,0.07142857142857142
+499,1919,point in time,1919,0.1
+500,crossed the Atlantic non-stop,point in time,1919,0.1
+501,crossed the Atlantic non-stop for the first time in 1919,point in time,1919,0.1
+502,crossed the Atlantic,point in time,1919,0.1
+503,in 1919,point in time,1919,0.1
+504,crossed the Atlantic non-stop for the first time,point in time,1919,0.1
+505,first time in 1919,point in time,1919,0.1
+506,crossed the Atlantic non-stop,inception,1919,0.1
+507,crossed,location,Atlantic,0.1
+508,1919,location,Atlantic,0.1
+509,United States,diplomatic relation,Canada,0.21428571428571427
+510,Canada,diplomatic relation,United States,0.21428571428571427
+511,United States,shares border with,Canada,0.21428571428571427
+512,Canada,shares border with,United States,0.21428571428571427
+513,United States,significant event,World War II,0.07142857142857142
+514,first international commercial flights,point in time,1919,0.07142857142857142
+515,Japanese,participant in,Pacific War,0.19047619047619047
+516,Pacific War,participant,Japanese,0.14285714285714285
+517,The Battle of Britain,part of,Pacific War,0.14285714285714285
+518,Japanese aircraft carrier campaigns,part of,Pacific War,0.047619047619047616
+519,American,participant in,Pacific War,0.14285714285714285
+520,Pacific War,participant,American,0.09523809523809523
+521,Pacific War,has part,The Battle of Britain,0.047619047619047616
+522,The Battle of Britain,part of,Blitzkrieg,0.09523809523809523
+523,Blitzkrieg,has part,The Battle of Britain,0.09523809523809523
+524,Heinkel He 178,country,German,0.16666666666666666
+525,Heinkel He 178,service entry,1939,0.25
+526,Heinkel He 178,country of origin,German,0.16666666666666666
+527,Heinkel He 178,subclass of,jet aircraft,0.08333333333333333
+528,1939,point in time,1939,0.08333333333333333
+529,Heinkel He 178,instance of,jet aircraft,0.08333333333333333
+530,Heinkel He 178,inception,1939,0.08333333333333333
+531,Heinkel He 178,country,Germany,0.08333333333333333
+532,Messerschmitt Me 262,operator,Luftwaffe,0.42105263157894735
+533,Messerschmitt Me 262,service entry,1943,0.21052631578947367
+534,Luftwaffe,item operated,Messerschmitt Me 262,0.10526315789473684
+535,Messerschmitt Me 262,operator,German Luftwaffe,0.05263157894736842
+536,Luftwaffe,inception,1943,0.10526315789473684
+537,Luftwaffe,country,German,0.05263157894736842
+538,Messerschmitt Me 262,subclass of,fighter aircraft,0.05263157894736842
+539,de Havilland Comet,service entry,1952,0.3076923076923077
+540,de Havilland Comet,inception,1952,0.07692307692307693
+541,de Havilland Comet,subclass of,airliner,0.15384615384615385
+542,de Havilland Comet,subclass of,jet airliner,0.15384615384615385
+543,de Havilland Comet,start time,1952,0.07692307692307693
+544,1952,point in time,1952,0.15384615384615385
+545,de Havilland Comet,instance of,airliner,0.07692307692307693
+546,Boeing 707,service entry,1958,0.16666666666666666
+547,Boeing 707,subclass of,commercial jet,0.16666666666666666
+548,Boeing 707,instance of,commercial jet,0.08333333333333333
+549,1958,point in time,1958,0.16666666666666666
+550,2010,point in time,2010,0.08333333333333333
+551,Boeing 707,start time,1958,0.08333333333333333
+552,Boeing 707,inception,1958,0.08333333333333333
+553,1958 to 2010,item operated,Boeing 707,0.08333333333333333
+554,1958 to 2010,facet of,Boeing 707,0.08333333333333333
+555,Boeing 747,followed by,Airbus A380,0.2
+556,Airbus A380,follows,Boeing 747,0.2
+557,Airbus A380,based on,Boeing 747,0.06666666666666667
+558,Airbus A380,replaces,Boeing 747,0.13333333333333333
+559,Boeing 747,replaced by,Airbus A380,0.06666666666666667
+560,Airbus A380,service entry,2005,0.06666666666666667
+561,Boeing 747,service entry,1970,0.13333333333333333
+562,Airbus,product or material produced,A380,0.06666666666666667
+563,A380,manufacturer,Airbus,0.06666666666666667
+564,Concorde,subclass of,Supersonic airliner,0.3076923076923077
+565,Concorde,instance of,Supersonic airliner,0.07692307692307693
+566,Concorde,subclass of,Supersonic,0.07692307692307693
+567,sonic boom,facet of,Supersonic airliner,0.07692307692307693
+568,Concorde,use,Supersonic,0.07692307692307693
+569,supersonic speed,subclass of,Supersonic airliner,0.07692307692307693
+570,sonic boom,facet of,Concorde,0.07692307692307693
+571,Concorde,uses,Concorde,0.07692307692307693
+572,Concorde,instance of,Supersonic,0.07692307692307693
+573,Concorde,use,Supersonic airliner,0.07692307692307693
+574,deadly crash,item operated,Concorde,0.15384615384615385
+575,deadly crash in 2000,item operated,Concorde,0.15384615384615385
+576,a deadly crash in 2000,item operated,Concorde,0.15384615384615385
+577,a deadly crash,item operated,Concorde,0.07692307692307693
+578,Concorde,"dissolved, abolished or demolished date",2000,0.07692307692307693
+579,Concorde,significant event,deadly crash,0.07692307692307693
+580,Concorde,significant event,deadly crash in 2000,0.07692307692307693
+581,crash in 2000,item operated,Concorde,0.07692307692307693
+582,deadly crash,facet of,Concorde,0.07692307692307693
+583,Concorde,significant event,a deadly crash in 2000,0.07692307692307693
+584,aircraft propeller,subclass of,airscrew,0.09090909090909091
+585,aircraft propeller,subclass of,propeller,0.09090909090909091
+586,airscrew,uses,aircraft propeller,0.09090909090909091
+587,aircraft propeller,uses,propeller,0.18181818181818182
+588,propeller,part of,aircraft,0.09090909090909091
+589,aircraft propeller,part of,airscrew,0.09090909090909091
+590,aircraft propeller,subclass of,rotary motion,0.09090909090909091
+591,airscrew,subclass of,aircraft propeller,0.09090909090909091
+592,aircraft propeller,part of,propeller,0.09090909090909091
+593,propeller,use,aircraft propeller,0.09090909090909091
+594,radial,subclass of,airfoil,0.09090909090909091
+595,radial airfoil,subclass of,blades,0.09090909090909091
+596,radial airfoil,has part,blades,0.18181818181818182
+597,radial,part of,airfoil,0.09090909090909091
+598,blades,part of,radial airfoil,0.18181818181818182
+599,blades,part of,airfoil,0.09090909090909091
+600,radial,subclass of,blades,0.09090909090909091
+601,radial airfoil,has parts of the class,blades,0.09090909090909091
+602,radial airfoil,has part,blade,0.09090909090909091
+603,reciprocating engine,subclass of,aviation engine,0.35294117647058826
+604,piston engine,subclass of,reciprocating engine,0.058823529411764705
+605,reciprocating engine,subclass of,piston engine,0.11764705882352941
+606,piston engine,subclass of,aviation engine,0.17647058823529413
+607,piston engines,subclass of,reciprocating engines,0.058823529411764705
+608,electric motor,subclass of,aviation engine,0.058823529411764705
+609,reciprocating engine,subclass of,gas turbine,0.058823529411764705
+610,gas turbine,subclass of,aviation engine,0.11764705882352941
+611,disk area,part of,propeller,0.1
+612,blades,part of,propeller,0.1
+613,disk,part of,propeller,0.1
+614,disk area,subclass of,thrust,0.1
+615,disk area,facet of,propeller,0.1
+616,blade,part of,propeller,0.1
+617,disk area,use,thrust,0.1
+618,blades rotate,part of,propeller,0.1
+619,disk area,facet of,blades,0.1
+620,disk area,has effect,thrust,0.1
+621,shock wave,has effect,speed of sound,0.08333333333333333
+622,speed of sound,subclass of,shock wave,0.08333333333333333
+623,shock wave,subclass of,speed of sound,0.08333333333333333
+624,speed of sound,facet of,speed of sound,0.08333333333333333
+625,speed of sound,has effect,shock wave,0.16666666666666666
+626,blade tip,part of,propeller,0.16666666666666666
+627,speed of sound,has part,speed of sound,0.08333333333333333
+628,speed of sound,has part,shock wave,0.08333333333333333
+629,propeller,has part,blade tip,0.08333333333333333
+630,shock wave,has cause,speed of sound,0.08333333333333333
+631,tip speed,subclass of,rpm,0.1
+632,propeller,use,tip speed,0.1
+633,propeller,part of,tip speed,0.1
+634,diameter,part of,propeller,0.1
+635,propeller,subclass of,tip speed,0.1
+636,rpm,facet of,tip speed,0.1
+637,rpm,part of,tip speed,0.1
+638,rpm,subclass of,tip speed,0.1
+639,propeller,has effect,tip speed,0.1
+640,propeller,has part,tip speed,0.1
+641,Mach 0.6,instance of,speed limit,0.1
+642,Mach 0,instance of,speed limit,0.1
+643,Mach 0,subclass of,speed limit,0.1
+644,Mach,instance of,speed limit,0.1
+645,Mach 0.6,subclass of,speed limit,0.1
+646,Mach,subclass of,speed limit,0.1
+647,Mach,subclass of,speed,0.1
+648,propeller,part of,aircraft,0.1
+649,Mach 0,subclass of,speed,0.1
+650,Mach,facet of,speed limit,0.1
+651,jet engine,subclass of,Aircraft,0.1
+652,jet engine,part of,Aircraft,0.1
+653,jet engines,subclass of,Aircraft,0.1
+654,jet engine,use,Aircraft designed to go faster than that,0.1
+655,jet engine,subclass of,Aircraft designed to go faster than that,0.1
+656,jet engines,part of,Aircraft,0.1
+657,jet engines,use,Aircraft designed to go faster than that,0.1
+658,jet engines,subclass of,Aircraft designed to go faster than that,0.1
+659,jet engine,part of,Aircraft designed to go faster than that,0.1
+660,Jet engine,subclass of,Aircraft,0.1
+661,radial,subclass of,Reciprocating engine,0.4444444444444444
+662,in-line,subclass of,Reciprocating engine,0.2222222222222222
+663,horizontally opposed engine,subclass of,Reciprocating engine,0.1111111111111111
+664,horizontally opposed,subclass of,Reciprocating engine,0.16666666666666666
+665,radial,use,Reciprocating engine,0.05555555555555555
+666,reciprocating,subclass of,internal combustion engine,0.375
+667,radial engine,subclass of,internal combustion engine,0.2916666666666667
+668,gas turbine,subclass of,internal combustion engine,0.125
+669,aircraft engine,subclass of,internal combustion engine,0.125
+670,radial engine,subclass of,reciprocating,0.041666666666666664
+671,gas turbine engine,subclass of,internal combustion engine,0.041666666666666664
+672,reciprocating engine,has part,cylinders,0.375
+673,reciprocating engine,has part,cylinder,0.125
+674,cylinders,part of,reciprocating engine,0.1875
+675,reciprocating engine,subclass of,cylinders,0.0625
+676,reciprocating engine,uses,cylinder,0.0625
+677,reciprocating engine,has parts of the class,cylinders,0.0625
+678,reciprocating engine,uses,cylinders,0.0625
+679,cylinder,part of,reciprocating engine,0.0625
+680,cylinders,part of,internal combustion engine,0.16666666666666666
+681,cylinder,part of,internal combustion engine,0.16666666666666666
+682,cylinders,use,internal combustion engine,0.08333333333333333
+683,internal combustion engine,has part,cylinders,0.16666666666666666
+684,flat engine,subclass of,internal combustion engine,0.08333333333333333
+685,cylinder,use,internal combustion engine,0.08333333333333333
+686,horizontally-opposed cylinders,part of,internal combustion engine,0.08333333333333333
+687,internal combustion engine,has part,cylinder,0.16666666666666666
+688,turboprop,subclass of,Gas turbine,0.08333333333333333
+689,Gas turbine,has part,turbine,0.25
+690,turbine,part of,Gas turbine,0.16666666666666666
+691,propeller,part of,Gas turbine,0.08333333333333333
+692,turbine,subclass of,Gas turbine,0.08333333333333333
+693,Gas turbine,subclass of,turbine,0.08333333333333333
+694,turbine,has part,compressor,0.08333333333333333
+695,Gas turbine,has parts of the class,turbine,0.08333333333333333
+696,Gas turbine,has part,propeller,0.08333333333333333
+697,turboprop,subclass of,thrust,0.1
+698,turboprop,has part,thrust,0.1
+699,turboprop,has part,nozzle,0.1
+700,turboprop,uses,thrust,0.1
+701,turboprop,subclass of,thrust generated,0.1
+702,turboprop,has part,propelling nozzle,0.1
+703,propelling nozzle,part of,turboprop,0.1
+704,thrust,part of,turboprop,0.1
+705,turboprop,has parts of the class,thrust,0.1
+706,turboprop,has part,thrust generated,0.1
+707,electric motor,part of,electric aircraft,0.16666666666666666
+708,electric motor,has part,batteries,0.16666666666666666
+709,electric aircraft,has part,electric motor,0.16666666666666666
+710,electric motor,part of,aircraft,0.08333333333333333
+711,batteries,part of,electric motor,0.08333333333333333
+712,Electric motor,part of,electric aircraft,0.08333333333333333
+713,ultracapacitors,subclass of,batteries,0.08333333333333333
+714,Electric motor,subclass of,electric motor,0.08333333333333333
+715,batteries,use,electricity,0.08333333333333333
+716,unmanned aerial vehicle,subclass of,flying electric aircraft,0.1
+717,unmanned aerial vehicles,subclass of,flying electric aircraft,0.1
+718,unmanned,subclass of,aerial vehicle,0.1
+719,unmanned,subclass of,aerial vehicles,0.1
+720,manned,subclass of,unmanned aerial vehicle,0.1
+721,unmanned aerial vehicle,subclass of,experimental,0.1
+722,manned,subclass of,unmanned aerial vehicles,0.1
+723,unmanned aerial vehicle,subclass of,manned,0.1
+724,unmanned aerial vehicle,subclass of,flying,0.1
+725,unmanned aerial vehicle,subclass of,flying aircraft,0.1
+726,Jet engine,part of,Jet aircraft,0.07142857142857142
+727,Jet aircraft,has part,jet engine,0.14285714285714285
+728,jet engine,part of,Jet aircraft,0.21428571428571427
+729,Jet,has part,jet engine,0.21428571428571427
+730,jet engine,part of,Jet,0.07142857142857142
+731,Jet engine,part of,jet aircraft,0.07142857142857142
+732,jet engine,part of,jet aircraft,0.07142857142857142
+733,jet engine,use,Jet,0.07142857142857142
+734,Jet aircraft,has parts of the class,jet engine,0.07142857142857142
+735,reciprocating engine,subclass of,engine,0.2727272727272727
+736,reciprocating engine,subclass of,engines,0.09090909090909091
+737,reciprocating,subclass of,engine,0.09090909090909091
+738,reciprocating engine,instance of,engine,0.09090909090909091
+739,reciprocating engine,subclass of,diesel engine,0.09090909090909091
+740,reciprocating engine,subclass of,turbojet,0.09090909090909091
+741,reciprocating engine,instance of,engines,0.09090909090909091
+742,reciprocating engine,subclass of,turbine,0.09090909090909091
+743,reciprocating engine,part of,engine,0.09090909090909091
+744,ramjet,subclass of,jet engine,0.3333333333333333
+745,scramjet,subclass of,jet engine,0.2777777777777778
+746,ramjet,subclass of,scramjet,0.05555555555555555
+747,scramjet,subclass of,ramjet,0.1111111111111111
+748,ramjet,subclass of,turbojet,0.05555555555555555
+749,scramjet,instance of,jet engine,0.05555555555555555
+750,intake geometry,part of,jet engine,0.05555555555555555
+751,intake geometry,subclass of,jet engine,0.05555555555555555
+752,nozzle,part of,Rocket motor,0.15384615384615385
+753,Rocket motor,has part,nozzle,0.15384615384615385
+754,oxidizer,subclass of,fuel,0.07692307692307693
+755,rocket,has part,nozzle,0.15384615384615385
+756,nozzle,part of,rocket,0.07692307692307693
+757,Rocket motor,uses,thrust,0.07692307692307693
+758,rocket motor,has part,nozzle,0.15384615384615385
+759,nozzle,part of,rocket motor,0.07692307692307693
+760,nozzle,part of,Rocket motors,0.07692307692307693
+761,turbofan,subclass of,gas turbine,0.21428571428571427
+762,turbofan,subclass of,jet engine,0.2857142857142857
+763,turbofan jet engine,subclass of,gas turbine,0.07142857142857142
+764,turbofan,subclass of,jet engines,0.07142857142857142
+765,jet engine,has part,gas turbine,0.14285714285714285
+766,turbofan jet engines,subclass of,gas turbine,0.07142857142857142
+767,turbine,subclass of,gas turbine,0.07142857142857142
+768,jet engine,has parts of the class,gas turbine,0.07142857142857142
+769,turbine,has part,air,0.1
+770,turbine,uses,air,0.1
+771,by-pass ratio,instance of,ratio,0.1
+772,turbine,has parts of the class,air,0.1
+773,by-pass ratio,subclass of,air passing around the turbine,0.1
+774,by-pass ratio,facet of,turbine,0.1
+775,by-pass ratio,subclass of,ratio,0.1
+776,by-pass ratio,facet of,air passing around the turbine,0.1
+777,turbine,uses,by-pass ratio,0.1
+778,by-pass ratio,subclass of,air passing,0.1
+779,turbojet,subclass of,aircraft propulsion,0.14285714285714285
+780,turboprop,subclass of,aircraft propulsion,0.07142857142857142
+781,turbojet,different from,turboprop,0.14285714285714285
+782,turboprop,different from,turbojet,0.07142857142857142
+783,turbojet,opposite of,turboprop,0.14285714285714285
+784,turboprop,opposite of,turbojet,0.14285714285714285
+785,turboprop,subclass of,turbojet,0.07142857142857142
+786,turbojet,use,aircraft propulsion,0.14285714285714285
+787,turboprop,use,aircraft propulsion,0.07142857142857142
+788,jet fighters,subclass of,Supersonic aircraft,0.1
+789,jet fighter,subclass of,Supersonic aircraft,0.1
+790,jet fighters,has parts of the class,turbofan,0.1
+791,jet,has parts of the class,turbofan,0.1
+792,jet fighter,has parts of the class,turbofan,0.1
+793,fighter,subclass of,Supersonic aircraft,0.1
+794,jet fighters,subclass of,Supersonic,0.1
+795,jet fighter,subclass of,Supersonic,0.1
+796,jet fighters,has parts of the class,turbofans,0.1
+797,jet,has part,turbofan,0.1
+798,subsonic speed,followed by,supersonic speeds,0.07692307692307693
+799,subsonic speed,opposite of,supersonic speeds,0.23076923076923078
+800,subsonic speed,followed by,supersonic speed,0.07692307692307693
+801,subsonic speed,opposite of,supersonic speed,0.07692307692307693
+802,subsonic speed,follows,supersonic speeds,0.23076923076923078
+803,subsonic speed,follows,supersonic speed,0.07692307692307693
+804,subsonic speed,subclass of,supersonic speeds,0.07692307692307693
+805,supersonic,opposite of,subsonic speed,0.07692307692307693
+806,subsonic speed,opposite of,supersonic,0.07692307692307693
+807,exhaust gas,has part,fuel,0.1
+808,afterburner,part of,combat aircraft,0.1
+809,exhaust gases,has part,fuel,0.1
+810,afterburner,uses,fuel,0.1
+811,combat aircraft,uses,fuel,0.1
+812,exhaust gas,part of,combat aircraft,0.1
+813,hot exhaust gases,has part,fuel,0.1
+814,exhaust gas,subclass of,fuel,0.1
+815,afterburner,facet of,combat aircraft,0.1
+816,exhaust gases,part of,combat aircraft,0.1
+817,thrust reverser,part of,jet aircraft,0.1
+818,thrust reversal,part of,jet aircraft,0.1
+819,thrust reverser,subclass of,jet aircraft,0.1
+820,thrust reversers,part of,jet aircraft,0.1
+821,thrust reverser,facet of,jet aircraft,0.1
+822,thrust reverser,use,landing,0.1
+823,jet aircraft,use,landing,0.1
+824,thrust reversal,subclass of,jet aircraft,0.1
+825,jet,subclass of,aircraft,0.1
+826,thrust reversal,facet of,jet aircraft,0.1
+827,Ramjet,subclass of,jet engine,0.5
+828,ramjet,subclass of,jet engine,0.125
+829,jet engine,has parts of the class,moving parts,0.0625
+830,jet engine,subclass of,engine,0.0625
+831,jet engine,has part,moving parts,0.125
+832,Ramjet,instance of,jet engine,0.0625
+833,Ramjet,subclass of,engine,0.0625
+834,Ramjet,subclass of,propulsion,0.09090909090909091
+835,Ramjet,uses,thrust,0.18181818181818182
+836,Ramjet,use,propulsion,0.09090909090909091
+837,Ramjet,instance of,propulsion,0.09090909090909091
+838,Ramjet,uses,propulsion,0.09090909090909091
+839,Ramjet,has part,thrust,0.09090909090909091
+840,Ramjet,has part,propulsion,0.09090909090909091
+841,thrust,used by,Ramjet,0.09090909090909091
+842,Ramjet,subclass of,forward motion,0.09090909090909091
+843,Ramjet,subclass of,other forms of propulsion,0.09090909090909091
+844,Lockheed D-21,subclass of,reconnaissance drone,0.18181818181818182
+845,Lockheed D-21,subclass of,drone,0.09090909090909091
+846,Lockheed D-21,instance of,reconnaissance drone,0.09090909090909091
+847,Lockheed D-21,subclass of,ramjet-powered,0.18181818181818182
+848,Lockheed D-21,use,reconnaissance,0.09090909090909091
+849,Lockheed D-21,subclass of,ramjet,0.09090909090909091
+850,Lockheed D-21,instance of,drone,0.09090909090909091
+851,Lockheed D-21,use,reconnaissance drone,0.09090909090909091
+852,D-21,manufacturer,Lockheed,0.09090909090909091
+853,turbine,has part,vanes,0.18181818181818182
+854,vanes,different from,turbines,0.09090909090909091
+855,vanes,subclass of,turbines,0.09090909090909091
+856,vanes,part of,turbines,0.09090909090909091
+857,vanes,subclass of,turbine,0.09090909090909091
+858,vanes,opposite of,turbines,0.09090909090909091
+859,vanes,part of,turbine,0.18181818181818182
+860,turbines,has part,vanes,0.09090909090909091
+861,vanes,different from,turbine,0.09090909090909091
+862,ignited,has part,Fuel,0.15384615384615385
+863,ignited,has effect,thrust,0.15384615384615385
+864,ignited,product or material produced,Fuel,0.07692307692307693
+865,ignited,item operated,Fuel,0.07692307692307693
+866,ignited,uses,Fuel,0.07692307692307693
+867,thrust,has part,Fuel,0.15384615384615385
+868,ignited,has effect,heats,0.07692307692307693
+869,thrust,has cause,ignited,0.07692307692307693
+870,Fuel,has effect,ignited,0.07692307692307693
+871,ignited,has cause,Fuel,0.07692307692307693
+872,scramjet,subclass of,ramjet,0.08333333333333333
+873,Scramjet,subclass of,ramjet,0.08333333333333333
+874,ramjet,has part,exhaust,0.25
+875,exhaust,part of,ramjet,0.08333333333333333
+876,ramjet,subclass of,airflow,0.08333333333333333
+877,exhaust,subclass of,ramjet,0.08333333333333333
+878,ramjet,subclass of,external supersonic airflow,0.08333333333333333
+879,ramjet,subclass of,internal supersonic airflow,0.08333333333333333
+880,ramjet,uses,external supersonic airflow,0.08333333333333333
+881,ramjet,uses,internal supersonic airflow,0.08333333333333333
+882,supersonic,subclass of,speeds,0.1
+883,supersonic,instance of,speeds,0.1
+884,supersonic,subclass of,speeds only,0.1
+885,supersonic,subclass of,speed,0.1
+886,supersonic speeds,subclass of,engine,0.1
+887,supersonic,instance of,speeds only,0.1
+888,supersonic,instance of,speed,0.1
+889,supersonic speed,subclass of,engine,0.1
+890,supersonic speeds,instance of,engine,0.1
+891,supersonic speed,instance of,engine,0.1
+892,X-43,operator,NASA,0.21428571428571427
+893,NASA X-43,subclass of,scramjet,0.14285714285714285
+894,NASA X-43,instance of,scramjet,0.07142857142857142
+895,NASA X-43,subclass of,unmanned,0.21428571428571427
+896,X-43,manufacturer,NASA,0.07142857142857142
+897,X-43,subclass of,unmanned,0.07142857142857142
+898,X-43,subclass of,scramjet,0.07142857142857142
+899,NASA X-43,instance of,unmanned,0.07142857142857142
+900,unmanned,subclass of,aircraft,0.07142857142857142
+901,rocket aircraft,opposite of,jet aircraft,0.16666666666666666
+902,jet aircraft,has part,atmosphere,0.08333333333333333
+903,Rocket,has part,oxidant,0.08333333333333333
+904,jet aircraft,uses,atmosphere,0.08333333333333333
+905,jet aircraft,opposite of,rocket aircraft,0.16666666666666666
+906,oxidant,different from,fuel,0.08333333333333333
+907,fuel,different from,oxidant,0.08333333333333333
+908,fuel,has part,oxidant,0.08333333333333333
+909,jet aircraft,location,atmosphere,0.08333333333333333
+910,fuel,part of,atmosphere,0.08333333333333333
+911,combustion chamber,has part,fuel chamber,0.13333333333333333
+912,fuel chamber,part of,combustion chamber,0.06666666666666667
+913,combustion chamber,part of,fuel chamber,0.13333333333333333
+914,fuel chamber,has part,combustion chamber,0.06666666666666667
+915,combustion chamber,subclass of,fuel chamber,0.06666666666666667
+916,Liquid fuel,part of,combustion chamber,0.13333333333333333
+917,combustion chamber,has part,Liquid fuel,0.13333333333333333
+918,combustion chamber,different from,fuel chamber,0.06666666666666667
+919,fuel chamber,different from,combustion chamber,0.06666666666666667
+920,Liquid fuel,opposite of,solid fuel,0.06666666666666667
+921,solid fuel,opposite of,Liquid fuel,0.06666666666666667
+922,Me 163 Komet,conflict,World War II,0.35714285714285715
+923,Germans,participant in,World War II,0.14285714285714285
+924,Me 163 Komet,country,Germany,0.07142857142857142
+925,Me 163 Komet,subclass of,rocket-powered aircraft,0.07142857142857142
+926,German,participant in,World War II,0.07142857142857142
+927,Germany,participant in,World War II,0.07142857142857142
+928,Me 163 Komet rocket-powered aircraft,conflict,World War II,0.07142857142857142
+929,Me 163 Komet,country,German,0.07142857142857142
+930,Me 163 Komet rocket,conflict,World War II,0.07142857142857142
+931,Bell X-1,service entry,1948,0.3076923076923077
+932,Bell X-1,subclass of,rocket plane,0.15384615384615385
+933,Bell X-1,instance of,rocket plane,0.15384615384615385
+934,Bell X-1,inception,1948,0.07692307692307693
+935,1948,point in time,1948,0.15384615384615385
+936,Bell X-1,start time,1948,0.07692307692307693
+937,X-1,manufacturer,Bell,0.07692307692307693
+938,1960s,point in time,1960,0.18181818181818182
+939,North American X-15,service entry,1960,0.18181818181818182
+940,X-15,manufacturer,North American,0.09090909090909091
+941,North American X-15,inception,1960,0.09090909090909091
+942,North American X-15,instance of,aircraft,0.09090909090909091
+943,North American X-15,start time,1960,0.09090909090909091
+944,X-15,developer,North American,0.09090909090909091
+945,North American X-15,subclass of,aircraft,0.09090909090909091
+946,North American X-15,instance of,spacecraft,0.09090909090909091
+947,rocket-assisted take off,subclass of,Military transport aircraft,0.1
+948,rocket-assisted takeoff,subclass of,Military transport aircraft,0.1
+949,rocket-assisted take offs,subclass of,Military transport aircraft,0.1
+950,rocket-assisted take off,use,Military transport aircraft,0.1
+951,Military transport aircraft,uses,rocket-assisted take off,0.1
+952,rocket-assisted takeoff,subclass of,take off,0.1
+953,rocket-assisted take off,subclass of,take off,0.1
+954,rocket-assisted take off,subclass of,Military transport,0.1
+955,rocket-assisted take off,part of,Military transport aircraft,0.1
+956,Military transport,subclass of,aircraft,0.1
+957,SpaceShipTwo,subclass of,spaceplane,0.23076923076923078
+958,SpaceShipTwo,instance of,spaceplane,0.15384615384615385
+959,SpaceShipTwo,subclass of,spaceplanes,0.07692307692307693
+960,Rocket Racing League,sport,sport aircraft,0.15384615384615385
+961,SpaceShipTwo,instance of,spaceplanes,0.07692307692307693
+962,spaceplane,subclass of,rocket aircraft,0.23076923076923078
+963,sport aircraft,subclass of,rocket aircraft,0.07692307692307693
+964,Design and manufacture,product or material produced,airplanes,0.08333333333333333
+965,Design and manufacture,product or material produced,airplane,0.08333333333333333
+966,Design and manufacture,product or material produced,constructed,0.16666666666666666
+967,Design,part of,manufacture,0.16666666666666666
+968,manufacture,has part,Design,0.08333333333333333
+969,Design and manufacture,subclass of,constructed,0.08333333333333333
+970,constructed,part of,Design and manufacture,0.08333333333333333
+971,Design and manufacture,product or material produced,aircraft,0.08333333333333333
+972,Design and manufacture,part of,constructed,0.08333333333333333
+973,Design and manufacture,facet of,constructed,0.08333333333333333
+974,safety test,part of,design and planning process,0.18181818181818182
+975,safety test,subclass of,design and planning process,0.09090909090909091
+976,safety test,part of,design,0.09090909090909091
+977,design,has part,planning,0.09090909090909091
+978,safety tests,part of,design and planning process,0.09090909090909091
+979,design,part of,planning,0.09090909090909091
+980,design and planning process,has part,safety test,0.18181818181818182
+981,safety test,part of,design and planning,0.09090909090909091
+982,turboprop,subclass of,small,0.09090909090909091
+983,design specifications,part of,objectives,0.1
+984,specification,part of,design,0.1
+985,specifications,part of,design,0.1
+986,specifications,part of,objectives,0.1
+987,design specifications,facet of,objectives,0.1
+988,design specifications,subclass of,objectives,0.1
+989,designed specifications,part of,objectives,0.1
+990,requirements,subclass of,design specifications,0.1
+991,specification,part of,objectives,0.1
+992,design specifications,has part,objectives,0.1
+993,wind tunnel,subclass of,simulation,0.1
+994,wind tunnel,subclass of,simulations,0.1
+995,wind tunnel,use,simulation,0.1
+996,wind tunnel test,subclass of,simulation,0.1
+997,wind tunnel test,subclass of,simulations,0.1
+998,wind tunnel,use,simulations,0.1
+999,simulation,uses,wind tunnel,0.1
+1000,simulation,subclass of,simulation,0.1
+1001,wind tunnel,instance of,simulation,0.1
+1002,wind tunnel tests,subclass of,simulations,0.1
+1003,simulations,subclass of,Computer,0.2
+1004,simulations,subclass of,Computers,0.1
+1005,simulation,subclass of,Computer,0.1
+1006,simulations,uses,Computer,0.1
+1007,simulations,uses,Computers,0.1
+1008,simulations,subclass of,Computing,0.1
+1009,simulation,uses,Computer,0.1
+1010,simulations,has part,Computer,0.1
+1011,simulation,subclass of,Computers,0.1
+1012,wind tunnel,use,aerodynamics,0.1
+1013,wind tunnels,use,aerodynamics,0.1
+1014,wind tunnel,part of,aerodynamics,0.1
+1015,wind tunnel,studied by,aerodynamics,0.1
+1016,wind tunnel,facet of,aerodynamics,0.1
+1017,wind tunnel,field of work,aerodynamics,0.1
+1018,wind tunnels,part of,aerodynamics,0.1
+1019,wind tunnels,studied by,aerodynamics,0.1
+1020,wind tunnel,subclass of,aerodynamics,0.1
+1021,mockup,studied by,aerodynamics,0.1
+1022,prototypes,use,testing,0.1
+1023,prototypes,part of,design,0.1
+1024,prototype,use,testing,0.1
+1025,prototypes,subclass of,design,0.1
+1026,prototypes,studied by,design,0.1
+1027,prototype,subclass of,design,0.1
+1028,prototypes,use,testing on the ground,0.1
+1029,prototypes,subclass of,testing,0.1
+1030,prototype,part of,design,0.1
+1031,prototypes,instance of,design,0.1
+1032,governing agency,field of work,aviation,0.1111111111111111
+1033,governing agency,industry,aviation,0.1111111111111111
+1034,aviation governing agency,subclass of,Representatives,0.1111111111111111
+1035,aviation governing agency,has part,Representatives,0.1111111111111111
+1036,governing agency,facet of,aviation,0.1111111111111111
+1037,governing agency,product or material produced,aviation,0.1111111111111111
+1038,governing agency,field of this occupation,aviation,0.1111111111111111
+1039,governing agency,subclass of,governing agency,0.1111111111111111
+1040,FAA,instance of,governing agency,0.1111111111111111
+1041,2000,point in time,2000,0.09090909090909091
+1042,flight test,facet of,requirements,0.09090909090909091
+1043,Flight test,facet of,requirements,0.09090909090909091
+1044,Flight Test,subclass of,simulation,0.09090909090909091
+1045,Flight tests,item operated,aircraft,0.09090909090909091
+1046,flight test,uses,requirements,0.09090909090909091
+1047,flight test,subclass of,requirements,0.09090909090909091
+1048,flight test,part of,requirements,0.09090909090909091
+1049,flight test,has part,requirements,0.18181818181818182
+1050,requirements,part of,flight test,0.09090909090909091
+1051,governing public agency,country,country,0.1
+1052,governing public agency,applies to jurisdiction,country,0.1
+1053,aviation,country,country,0.1
+1054,public agency,country,country,0.1
+1055,aviation,location,country,0.1
+1056,public agency,applies to jurisdiction,country,0.1
+1057,governing public agency,industry,aviation,0.1
+1058,governing public agency,field of work,aviation,0.1
+1059,public,country,country,0.1
+1060,governing public agency of aviation,country,country,0.1
+1061,Federal Aviation Administration,country,United States,0.23076923076923078
+1062,Federal Aviation Administration,applies to jurisdiction,United States,0.15384615384615385
+1063,Federal Aviation Administration (FAA),country,United States,0.07692307692307693
+1064,United States,subsidiary,Federal Aviation Administration,0.23076923076923078
+1065,Federal Aviation Administration (FAA),applies to jurisdiction,United States,0.07692307692307693
+1066,FAA,country,United States,0.07692307692307693
+1067,Federal Aviation Administration,instance of,agency,0.07692307692307693
+1068,Federal Aviation Administration,country,the United States,0.07692307692307693
+1069,European Aviation Safety Agency,applies to jurisdiction,European Union,0.23529411764705882
+1070,Civil Aviation Authority,country,United Kingdom,0.35294117647058826
+1071,United Kingdom,member of,European Union,0.17647058823529413
+1072,European Aviation Safety Agency,parent organization,European Union,0.11764705882352941
+1073,European Aviation Safety Agency,country,European Union,0.058823529411764705
+1074,European Aviation Safety Agency,country,United Kingdom,0.058823529411764705
+1075,Civil Aviation Authority,country,Canada,0.3
+1076,Transport Canada,country,Canada,0.2
+1077,Transport Canada,subsidiary,Civil Aviation Authority,0.25
+1078,Civil Aviation Authority,parent organization,Transport Canada,0.15
+1079,Transport Canada's,country,Canada,0.1
+1080,quality management,has part,quality assurance,0.125
+1081,quality assurance,part of,quality management,0.25
+1082,quality management,facet of,quality assurance,0.25
+1083,quality management,studies,quality assurance,0.0625
+1084,quality assurance,studied by,quality management,0.0625
+1085,quality assurance,facet of,quality management,0.0625
+1086,quality management,subclass of,quality assurance,0.125
+1087,quality assurance,subclass of,quality management,0.0625
+1088,FAA,applies to jurisdiction,United States,0.3076923076923077
+1089,Airbus,country,European Union,0.15384615384615385
+1090,FAA,country,United States,0.07692307692307693
+1091,European Union,continent,European,0.07692307692307693
+1092,EASA,applies to jurisdiction,European Union,0.15384615384615385
+1093,Airbus,country,European,0.07692307692307693
+1094,Boeing,country,United States,0.07692307692307693
+1095,European Union,continent,Europe,0.07692307692307693
+1096,noise pollution,has cause,noise,0.1
+1097,noise pollution,subclass of,noise,0.1
+1098,airport,use,air traffic,0.1
+1099,noise pollution,has cause,increased noise,0.1
+1100,airport,part of,air traffic,0.1
+1101,noise pollution,has part,increased noise,0.1
+1102,aircraft engine,has effect,noise pollution,0.1
+1103,noise pollution,has part,noise,0.1
+1104,noise pollution,facet of,noise,0.1
+1105,homebuilts,subclass of,aircraft,0.1
+1106,pre-manufactured kits,product or material produced,homebuilt aircraft,0.1
+1107,kit,subclass of,homebuilt aircraft,0.1
+1108,kit,subclass of,pre-manufactured,0.1
+1109,kits,use,homebuilt aircraft,0.1
+1110,kits,product or material produced,homebuilt aircraft,0.1
+1111,kits,subclass of,homebuilt aircraft,0.1
+1112,kits,subclass of,pre-manufactured,0.1
+1113,kit,use,homebuilt aircraft,0.1
+1114,pre-manufactured,product or material produced,kit,0.1
+1115,pre-manufactured kits,subclass of,homebuilt aircraft,0.1
+1116,plants,product or material produced,parts,0.1
+1117,plants,part of,companies,0.1
+1118,plant,product or material produced,parts,0.1
+1119,plant,use,production,0.1
+1120,parts,part of,plane,0.1
+1121,plants,use,production,0.1
+1122,plants,part of,production,0.1
+1123,plant,part of,production,0.1
+1124,plants,subclass of,companies,0.1
+1125,plant,product or material produced,plant,0.1
+1126,radar,part of,landing gear,0.08333333333333333
+1127,radar,subclass of,landing gear,0.08333333333333333
+1128,radar,connects with,landing gear,0.16666666666666666
+1129,landing gear,has part,radar,0.08333333333333333
+1130,landing gear,connects with,radar,0.16666666666666666
+1131,landing gear,different from,radar,0.16666666666666666
+1132,radar,different from,landing gear,0.16666666666666666
+1133,radar,has part,landing gear,0.08333333333333333
+1134,main plant,instance of,production line,0.09090909090909091
+1135,main plant,industry,plane manufacturing companies,0.09090909090909091
+1136,main plant,part of,plane company,0.09090909090909091
+1137,main plant,has part,production line,0.09090909090909091
+1138,production line,part of,main plant,0.09090909090909091
+1139,main plant,part of,production line,0.09090909090909091
+1140,main plant,product or material produced,production line,0.09090909090909091
+1141,main plant,part of,company,0.09090909090909091
+1142,main plant,part of,plane manufacturing companies,0.09090909090909091
+1143,main plant,owned by,plane company,0.09090909090909091
+1144,main plant,operator,plane company,0.09090909090909091
+1145,fuselage,connects with,wings,0.15384615384615385
+1146,fuselage,connects with,wing,0.15384615384615385
+1147,fuselage,part of,plane,0.15384615384615385
+1148,wings,connects with,fuselage,0.15384615384615385
+1149,fuselage,has part,wings,0.07692307692307693
+1150,wing,connects with,fuselage,0.07692307692307693
+1151,plane,has part,fuselage,0.07692307692307693
+1152,wings,part of,fuselage,0.07692307692307693
+1153,fuselage,has part,wing,0.07692307692307693
+1154,test,subclass of,flight,0.1
+1155,flight test,subclass of,inspectors,0.1
+1156,flight test,used by,inspectors,0.1
+1157,flight test,subclass of,inspection,0.1
+1158,flight test,practiced by,inspectors,0.1
+1159,test,part of,flight,0.1
+1160,flight test,part of,inspectors,0.1
+1161,flight test,uses,system,0.1
+1162,test,subclass of,inspection,0.1
+1163,flight tests,used by,inspectors,0.1
+1164,painting,part of,configuration,0.1
+1165,final touchups,part of,configuration,0.1
+1166,painting,facet of,configuration,0.1
+1167,final touchups,facet of,configuration,0.1
+1168,final touchups,subclass of,configuration,0.1
+1169,final touchups,subclass of,painting,0.1
+1170,1968,point in time,1968,0.1
+1171,1978,point in time,1978,0.1
+1172,1982,point in time,1982,0.1
+1173,painting,part of,internal configuration,0.1
+1174,manufacturer,product or material produced,product,0.1111111111111111
+1175,manufacturer,product or material produced,service,0.1111111111111111
+1176,manufacturer,product or material produced,customer,0.1111111111111111
+1177,manufacturer,product or material produced,market,0.1111111111111111
+1178,Kraków,country,Poland,0.1111111111111111
+1179,CERN,country,Switzerland,0.1111111111111111
+1180,Ljubljana,country,Slovenia,0.1111111111111111
+1181,CNC,subclass of,CNC,0.1111111111111111
+1182,CNC,uses,CNC,0.1111111111111111
+1183,airframe,part of,fixed-wing aircraft,0.08333333333333333
+1184,airframe,part of,aircraft,0.08333333333333333
+1185,Airframe,part of,airframe,0.16666666666666666
+1186,airframe,has part,Airframe,0.08333333333333333
+1187,airframe,part of,fixed-wing,0.08333333333333333
+1188,airframe,subclass of,fixed-wing aircraft,0.08333333333333333
+1189,airframe,subclass of,structural parts,0.08333333333333333
+1190,fixed-wing aircraft,has part,airframe,0.08333333333333333
+1191,Airframe,part of,fixed-wing aircraft,0.08333333333333333
+1192,Airframe,part of,aircraft,0.08333333333333333
+1193,aircraft,has part,Airframe,0.08333333333333333
+1194,type,subclass of,purpose,0.09090909090909091
+1195,type,part of,purpose,0.09090909090909091
+1196,type,different from,purpose,0.18181818181818182
+1197,type,instance of,purpose,0.09090909090909091
+1198,aircraft,has parts of the class,parts,0.09090909090909091
+1199,Type,subclass of,purpose,0.09090909090909091
+1200,type,use,purpose,0.09090909090909091
+1201,purpose,different from,type,0.09090909090909091
+1202,type,has part,purpose,0.09090909090909091
+1203,type,facet of,purpose,0.09090909090909091
+1204,engine,use,powered flight,0.09090909090909091
+1205,wood,different from,fabric,0.18181818181818182
+1206,fabric,different from,wood,0.09090909090909091
+1207,wood,subclass of,fabric,0.09090909090909091
+1208,engines,use,powered flight,0.09090909090909091
+1209,fabric,subclass of,wood,0.09090909090909091
+1210,fabric,subclass of,wing surface,0.09090909090909091
+1211,fabric,part of,wing,0.09090909090909091
+1212,fabric,part of,wing surface,0.09090909090909091
+1213,fabric,subclass of,wing surfaces,0.09090909090909091
+1214,all-metal aircraft,conflict,WWII,0.1
+1215,all-metal aircraft,time period,WWII,0.1
+1216,All-metal aircraft,conflict,WWII,0.1
+1217,all-metal aircraft,use,WWII,0.1
+1218,all-metal,subclass of,metal,0.1
+1219,all-metal aircraft,subclass of,metal,0.1
+1220,all-metal aircraft,facet of,WWII,0.1
+1221,1940,point in time,1940,0.1
+1222,all-metal aircraft,part of,WWII,0.1
+1223,1940 Summer Olympics,point in time,1940,0.1
+1224,composite material,subclass of,materials,0.1
+1225,composite,subclass of,materials,0.1
+1226,composite materials,subclass of,materials,0.1
+1227,composite material,subclass of,material,0.1
+1228,composite,subclass of,material,0.1
+1229,composite materials,subclass of,material,0.1
+1230,composite material,subclass of,building material,0.1
+1231,composites,subclass of,materials,0.1
+1232,composite material,subclass of,composite,0.1
+1233,composite material,time period,modern times,0.1
+1234,airfoil,subclass of,wing,0.1
+1235,airfoil,has part,wings,0.1
+1236,airfoil,subclass of,wings,0.1
+1237,airfoil,has part,wing,0.1
+1238,horizontal wing,subclass of,airfoil,0.1
+1239,wing,subclass of,airfoil,0.1
+1240,wings,subclass of,airfoil,0.1
+1241,horizontal wing,subclass of,cross-section,0.1
+1242,horizontal wings,subclass of,airfoil,0.1
+1243,wings,part of,airfoil,0.1
+1244,lifting force,use,flight,0.16666666666666666
+1245,lifting force,part of,flight,0.16666666666666666
+1246,lift force,use,flight,0.08333333333333333
+1247,lift force,part of,flight,0.08333333333333333
+1248,lifting force,use,lift,0.08333333333333333
+1249,flight,uses,lifting force,0.08333333333333333
+1250,lift,use,flight,0.08333333333333333
+1251,lift,part of,flight,0.08333333333333333
+1252,flight,has part,lifting force,0.08333333333333333
+1253,lifting force,facet of,flight,0.08333333333333333
+1254,roll,subclass of,stability,0.1
+1255,roll,has effect,stability,0.1
+1256,stability in roll,subclass of,rolling,0.1
+1257,roll,facet of,stability,0.1
+1258,stability in roll,subclass of,roll,0.1
+1259,roll,part of,stability,0.1
+1260,stability in roll,part of,flight,0.1
+1261,stability in roll,facet of,flight,0.1
+1262,stability in roll,facet of,steady flight,0.1
+1263,stability in roll,part of,steady flight,0.1
+1264,fuselage,use,aerodynamically smooth,0.09090909090909091
+1265,fuselage,subclass of,body,0.09090909090909091
+1266,fuselage,part of,aerodynamically smooth,0.09090909090909091
+1267,fuselage,has part,body,0.18181818181818182
+1268,body,part of,fuselage,0.09090909090909091
+1269,aerodynamically,studies,fuselage,0.09090909090909091
+1270,fuselage,part of,aerodynamically,0.09090909090909091
+1271,fuselage,use,aerodynamically,0.09090909090909091
+1272,fuselage,studied by,aerodynamically,0.09090909090909091
+1273,fuselage,subclass of,aerodynamically smooth,0.09090909090909091
+1274,fuselage,part of,airframe,0.07142857142857142
+1275,airframe,has part,fuselage,0.14285714285714285
+1276,payload,part of,airframe,0.07142857142857142
+1277,pilot,part of,flight system,0.14285714285714285
+1278,flight system,has part,pilot,0.14285714285714285
+1279,fuselage,connects with,airframe,0.07142857142857142
+1280,airframe,connects with,fuselage,0.14285714285714285
+1281,payload,part of,flight system,0.07142857142857142
+1282,pilot,field of this occupation,flight,0.07142857142857142
+1283,flight,practiced by,pilot,0.07142857142857142
+1284,wing,part of,plane,0.18181818181818182
+1285,wing-like,part of,plane,0.09090909090909091
+1286,plane,has part,wing,0.18181818181818182
+1287,vertical stabilizer,subclass of,wing,0.09090909090909091
+1288,vertical stabilizer,subclass of,wing-like,0.09090909090909091
+1289,wing-like surface,part of,plane,0.09090909090909091
+1290,fin,part of,plane,0.09090909090909091
+1291,vertical stabilizer,subclass of,wing-like surface,0.09090909090909091
+1292,vertical stabilizer,part of,plane,0.09090909090909091
+1293,yaw,subclass of,rotation,0.08333333333333333
+1294,yaw,part of,rotation,0.08333333333333333
+1295,yaw,opposite of,rotation,0.16666666666666666
+1296,rudder,subclass of,fin,0.08333333333333333
+1297,rudder,use,stabilizes,0.08333333333333333
+1298,rudder,subclass of,stabilizes,0.08333333333333333
+1299,rotation,opposite of,yaw,0.16666666666666666
+1300,yaw,facet of,rotation,0.08333333333333333
+1301,yaw,different from,rotation,0.08333333333333333
+1302,rotation,different from,yaw,0.08333333333333333
+1303,horizontal stabilizer,part of,tailplane,0.15384615384615385
+1304,tailplane,has part,horizontal stabilizer,0.23076923076923078
+1305,tailplane,has part,vertical stabilizer,0.07692307692307693
+1306,tailplane,part of,tail,0.07692307692307693
+1307,tailplane,has part,tail,0.07692307692307693
+1308,horizontal stabilizer,subclass of,tailplane,0.07692307692307693
+1309,horizontal stabilizer,opposite of,vertical stabilizer,0.15384615384615385
+1310,vertical stabilizer,opposite of,horizontal stabilizer,0.07692307692307693
+1311,tailplane,subclass of,tail,0.07692307692307693
+1312,elevator,use,pitch control,0.1
+1313,pitch control,uses,pitch,0.1
+1314,pitch control,use,pitch,0.1
+1315,horizontal stabilizer,use,pitch control,0.1
+1316,pitch control,facet of,pitch,0.1
+1317,horizontal stabilizer,part of,elevator,0.1
+1318,pitch control,uses,elevator,0.1
+1319,tilt,subclass of,pitch,0.1
+1320,pitch control,subclass of,stabilizer,0.1
+1321,pitch control,has part,stabilizer,0.1
+1322,Landing gear,part of,plane,0.21428571428571427
+1323,skids,subclass of,Landing gear,0.07142857142857142
+1324,skid,subclass of,Landing gear,0.07142857142857142
+1325,plane,has part,Landing gear,0.14285714285714285
+1326,skid,subclass of,landing gear,0.07142857142857142
+1327,landing gear,part of,plane,0.14285714285714285
+1328,skids,part of,Landing gear,0.07142857142857142
+1329,plane,has parts of the class,Landing gear,0.07142857142857142
+1330,Landing gear,has part,wheel,0.07142857142857142
+1331,Landing gear,has part,skid,0.07142857142857142
+1332,fuselage,part of,seaplane,0.18181818181818182
+1333,float,part of,fuselage,0.09090909090909091
+1334,fuselage,part of,plane,0.09090909090909091
+1335,float,part of,seaplane,0.09090909090909091
+1336,pontoons,part of,fuselage,0.09090909090909091
+1337,seaplane,has part,fuselage,0.09090909090909091
+1338,pontoons,subclass of,floats,0.09090909090909091
+1339,float,subclass of,pontoons,0.09090909090909091
+1340,fuselage,part of,float,0.09090909090909091
+1341,fuselage,has part,float,0.09090909090909091
+1342,retracts,part of,landing gear,0.1
+1343,retracts,subclass of,landing gear,0.1
+1344,retracts,facet of,landing gear,0.1
+1345,landing gear,has effect,drag,0.1
+1346,retracts,has part,landing gear,0.1
+1347,retracts during flight,has effect,drag,0.1
+1348,retracts during flight,subclass of,drag,0.1
+1349,landing gear,facet of,drag,0.1
+1350,retracts,location,landing gear,0.1
+1351,retracts during flight,facet of,drag,0.1
+1352,fixed-wing aircraft,subclass of,plane,0.07692307692307693
+1353,fixed-wing aircraft,subclass of,aircraft,0.07692307692307693
+1354,plane,subclass of,fixed-wing aircraft,0.07692307692307693
+1355,Wings,part of,fixed-wing aircraft,0.15384615384615385
+1356,fixed-wing aircraft,has part,Wings,0.07692307692307693
+1357,fixed-wing,subclass of,aircraft,0.07692307692307693
+1358,static plane,subclass of,fixed-wing aircraft,0.07692307692307693
+1359,wings,part of,fixed-wing aircraft,0.15384615384615385
+1360,fixed-wing aircraft,has part,wings,0.07692307692307693
+1361,wing,part of,fixed-wing aircraft,0.07692307692307693
+1362,fixed-wing aircraft,has part,wing,0.07692307692307693
+1363,lift,subclass of,air flows,0.1
+1364,wing,use,lift,0.1
+1365,wings,use,lift,0.1
+1366,lift,uses,air flows,0.1
+1367,lift,has cause,air flows,0.1
+1368,lift,has part,air flows,0.1
+1369,lift,has cause,lift,0.1
+1370,lift,part of,air flows,0.1
+1371,lift,subclass of,air flow,0.1
+1372,lift,use,lift,0.1
+1373,airfoil,subclass of,wing,0.08333333333333333
+1374,wing,part of,bird,0.08333333333333333
+1375,wing,part of,bird's,0.08333333333333333
+1376,wing,part of,airfoil,0.16666666666666666
+1377,airfoil,has part,wing,0.16666666666666666
+1378,bird's wing,subclass of,airfoil,0.08333333333333333
+1379,wing,subclass of,airfoil,0.08333333333333333
+1380,airfoil,said to be the same as,wing,0.08333333333333333
+1381,wing,said to be the same as,airfoil,0.08333333333333333
+1382,wing,used by,bird's,0.08333333333333333
+1383,Wing structure,part of,Airplane,0.13333333333333333
+1384,Wing structure,part of,Aircraft,0.13333333333333333
+1385,Wing structure,part of,Plane,0.13333333333333333
+1386,Plane,has part,Wing structure,0.06666666666666667
+1387,Airplane,has part,wing,0.06666666666666667
+1388,wing,part of,Airplane,0.13333333333333333
+1389,Airplane,has part,Wing structure,0.06666666666666667
+1390,Aircraft,has part,Wing structure,0.06666666666666667
+1391,wing,part of,Plane,0.06666666666666667
+1392,Aircraft,has part,wing,0.06666666666666667
+1393,wing,part of,Aircraft,0.06666666666666667
+1394,wing,part of,aircraft,0.21428571428571427
+1395,wing surfaces,part of,aircraft,0.07142857142857142
+1396,wing surface,part of,aircraft,0.07142857142857142
+1397,aircraft,has part,wing,0.21428571428571427
+1398,wing,connects with,fuselage,0.07142857142857142
+1399,fuselage,connects with,wing,0.07142857142857142
+1400,wing,part of,plane,0.14285714285714285
+1401,plane,has part,wing,0.07142857142857142
+1402,wing surfaces,part of,wing,0.07142857142857142
+1403,frame,part of,wing,0.09090909090909091
+1404,rigid,subclass of,wing,0.09090909090909091
+1405,rigid,opposite of,flexible,0.09090909090909091
+1406,wing surface,part of,wing,0.09090909090909091
+1407,flexible,opposite of,rigid,0.09090909090909091
+1408,wing surface,use,lift,0.09090909090909091
+1409,lift,subclass of,transfer,0.09090909090909091
+1410,rigid,different from,flexible,0.18181818181818182
+1411,flexible,different from,rigid,0.18181818181818182
+1412,ribs,connects with,spars,0.18181818181818182
+1413,ribs,has part,spars,0.09090909090909091
+1414,rib,connects with,spars,0.09090909090909091
+1415,ribs,subclass of,structural element,0.09090909090909091
+1416,rib,subclass of,structural element,0.09090909090909091
+1417,ribs,subclass of,structural elements,0.09090909090909091
+1418,ribs,connects with,spar,0.09090909090909091
+1419,rib,connects with,spar,0.09090909090909091
+1420,spars,connects with,ribs,0.09090909090909091
+1421,rib,subclass of,structural elements,0.09090909090909091
+1422,airplane engine,uses,power,0.1
+1423,lightness,opposite of,power,0.1
+1424,lightness,facet of,airplane engine,0.1
+1425,airplane engine,has part,power,0.1
+1426,engine,part of,airplane,0.1
+1427,airplane,has part,engine,0.1
+1428,power,facet of,airplane engine,0.1
+1429,early airplane engine,subclass of,lightness,0.1
+1430,early airplane engines,subclass of,lightness,0.1
+1431,early airplane engines,part of,airplane,0.1
+1432,airfoil,connects with,frame,0.15384615384615385
+1433,frame,connects with,airfoil,0.07692307692307693
+1434,airfoil,has part,frame,0.15384615384615385
+1435,frame,part of,airfoil,0.07692307692307693
+1436,Airfoil,has part,frame,0.15384615384615385
+1437,early airfoil,subclass of,frame,0.07692307692307693
+1438,frame,part of,Airfoil,0.07692307692307693
+1439,1928 Summer Olympics,point in time,1928,0.07692307692307693
+1440,early airfoil,subclass of,airframe,0.07692307692307693
+1441,early airfoil,has part,frame,0.07692307692307693
+1442,bracing,part of,wing,0.1
+1443,1930s,point in time,1930,0.1
+1444,external bracing,part of,wing,0.1
+1445,external bracing struts and wires,part of,wing,0.1
+1446,wires,subclass of,bracing,0.1
+1447,wire,subclass of,struts,0.1
+1448,wire,subclass of,bracing,0.1
+1449,struts,subclass of,bracing,0.1
+1450,bracing struts,subclass of,wires,0.1
+1451,external bracing struts and wires,part of,wings,0.1
+1452,1920s,point in time,1920,0.35294117647058826
+1453,30s,point in time,30,0.11764705882352941
+1454,1920s and 30s,point in time,1920,0.058823529411764705
+1455,1920s,followed by,30s,0.11764705882352941
+1456,30s,follows,1920s,0.11764705882352941
+1457,1920,point in time,1920,0.11764705882352941
+1458,1930s,point in time,30,0.058823529411764705
+1459,30s,point in time,1930,0.058823529411764705
+1460,cantilever wing,subclass of,unbraced wing,0.38461538461538464
+1461,unbraced wing,subclass of,cantilever wing,0.15384615384615385
+1462,cantilever wing,subclass of,wing,0.07692307692307693
+1463,cantilever wing,subclass of,unbraced,0.07692307692307693
+1464,cantilever wing,instance of,unbraced wing,0.07692307692307693
+1465,unbraced wing,said to be the same as,cantilever wing,0.15384615384615385
+1466,cantilever,subclass of,unbraced wing,0.07692307692307693
+1467,Wing configuration,depicts,wings,0.09090909090909091
+1468,Wing configuration,facet of,wings,0.09090909090909091
+1469,Wing configuration,has part,wings,0.18181818181818182
+1470,type,subclass of,Wing configuration,0.09090909090909091
+1471,types,subclass of,Wing configuration,0.09090909090909091
+1472,wings,part of,Wing configuration,0.18181818181818182
+1473,Wing configuration,subclass of,wings,0.09090909090909091
+1474,Wing configuration,has parts of the class,wings,0.09090909090909091
+1475,types,instance of,Wing configuration,0.09090909090909091
+1476,fuselage,connects with,wing plane,0.14285714285714285
+1477,wing plane,connects with,fuselage,0.07142857142857142
+1478,fuselage,part of,wing plane,0.14285714285714285
+1479,fuselage,connects with,wing,0.14285714285714285
+1480,wing,connects with,fuselage,0.07142857142857142
+1481,fuselage,has part,wing,0.07142857142857142
+1482,fuselage,has part,wing plane,0.07142857142857142
+1483,fuselage,connects with,wings,0.07142857142857142
+1484,wings,connects with,fuselage,0.07142857142857142
+1485,fuselage,has part,wings,0.07142857142857142
+1486,wing plane,has part,fuselage,0.07142857142857142
+1487,three-winged triplane,conflict,WWI,0.1
+1488,triplane,conflict,WWI,0.1
+1489,Three-winged triplane,conflict,WWI,0.1
+1490,Triplane,subclass of,triplane,0.1
+1491,Triplane,conflict,WWI,0.1
+1492,triplane,subclass of,triplane,0.1
+1493,three-winged triplane,use,WWI,0.1
+1494,three-winged,subclass of,triplane,0.1
+1495,3-winged triplane,conflict,WWI,0.1
+1496,triplane,subclass of,three-winged,0.1
+1497,quadruplane,subclass of,multiplane,0.1
+1498,four-winged quadruplane,subclass of,multiplane,0.1
+1499,quadruplane,subclass of,multiplane designs,0.1
+1500,quadruplane,subclass of,four-winged,0.1
+1501,quadruplane,subclass of,multiplane design,0.1
+1502,multiplane,subclass of,quadruplane,0.1
+1503,four-winged,subclass of,multiplane,0.1
+1504,four-winged,subclass of,quadruplane,0.1
+1505,quadplane,subclass of,multiplane,0.1
+1506,four-winged quadruplane,subclass of,multiplane designs,0.1
+1507,monoplane,opposite of,biplane,0.19047619047619047
+1508,biplane,opposite of,monoplane,0.14285714285714285
+1509,monoplane,subclass of,plane,0.14285714285714285
+1510,biplane,subclass of,plane,0.09523809523809523
+1511,tandem wing,subclass of,plane,0.047619047619047616
+1512,monoplane,followed by,biplane,0.09523809523809523
+1513,biplane,follows,monoplane,0.047619047619047616
+1514,monoplane,different from,biplane,0.047619047619047616
+1515,biplane,different from,monoplane,0.047619047619047616
+1516,biplane,opposite of,tandem wing,0.047619047619047616
+1517,tandem wing,opposite of,biplane,0.047619047619047616
+1518,tandem wing,subclass of,wing plane,0.047619047619047616
+1519,1920s,point in time,1920,0.3076923076923077
+1520,30s,point in time,30,0.07692307692307693
+1521,1920s and 30s,point in time,1920,0.07692307692307693
+1522,cantilever monoplane,subclass of,unbraced,0.07692307692307693
+1523,unbraced,subclass of,cantilever monoplane,0.07692307692307693
+1524,cantilever,subclass of,monoplane,0.07692307692307693
+1525,30s,point in time,1930,0.07692307692307693
+1526,unbraced,subclass of,monoplane,0.07692307692307693
+1527,cantilever monoplane,subclass of,monoplane,0.07692307692307693
+1528,1930s,point in time,1930,0.07692307692307693
+1529,wing planform,subclass of,shape,0.1
+1530,wing planform,instance of,shape,0.1
+1531,wing,subclass of,planform,0.1
+1532,planform,subclass of,shape,0.1
+1533,planform,part of,wing,0.1
+1534,wing,instance of,planform,0.1
+1535,shape,subclass of,planform,0.1
+1536,planform,part of,shape,0.1
+1537,wing planform,facet of,shape,0.1
+1538,wing planform,subclass of,shape when seen from above,0.1
+1539,chord,instance of,aspect ratio,0.1
+1540,chord,subclass of,aspect ratio,0.1
+1541,chord,facet of,aerodynamically efficient,0.1
+1542,chord,part of,wing,0.1
+1543,chord,part of,aerodynamically efficient,0.1
+1544,chord,subclass of,chord,0.1
+1545,chord,use,aerodynamically efficient,0.1
+1546,chord,subclass of,aerodynamically efficient,0.1
+1547,chord,part of,aspect ratio,0.1
+1548,chord,facet of,aspect ratio,0.1
+1549,aspect ratio,subclass of,span,0.1
+1550,low aspect ratio,subclass of,span,0.1
+1551,aspect ratio,subclass of,area,0.1
+1552,aspect ratio,facet of,lift,0.1
+1553,aspect ratio,facet of,span,0.1
+1554,aspect ratio,has part,span,0.1
+1555,low aspect ratio,facet of,wing,0.1
+1556,aspect ratio,opposite of,span,0.1
+1557,low aspect ratio,subclass of,wing,0.1
+1558,aspect ratio,facet of,area,0.1
+1559,supersonic,subclass of,shock wave,0.1
+1560,supersonic,subclass of,shock waves,0.1
+1561,transonic speeds,subclass of,speed of sound,0.1
+1562,transonic speed,subclass of,speed of sound,0.1
+1563,speed of sound,followed by,transonic speeds,0.1
+1564,speed of sound,subclass of,transonic speeds,0.1
+1565,speed of sound,followed by,transonic speed,0.1
+1566,speed of sound,has effect,shock wave,0.1
+1567,speed of sound,different from,transonic speeds,0.1
+1568,speed of sound,different from,transonic speed,0.1
+1569,swept wing,subclass of,wing,0.18181818181818182
+1570,swept wing,subclass of,straight wing,0.09090909090909091
+1571,straight wing,subclass of,swept,0.09090909090909091
+1572,swept,subclass of,wing,0.09090909090909091
+1573,swept,subclass of,straight wing,0.09090909090909091
+1574,swept wing,instance of,wing,0.09090909090909091
+1575,forward,opposite of,backwards,0.09090909090909091
+1576,wing,subclass of,straight,0.09090909090909091
+1577,straight wing,subclass of,swept wing,0.09090909090909091
+1578,swept wing,subclass of,swept,0.09090909090909091
+1579,delta wing,subclass of,triangle,0.1
+1580,delta wing,instance of,triangle,0.1
+1581,delta wing,subclass of,triangle shape,0.1
+1582,delta wing,has part,triangle,0.1
+1583,triangle,instance of,shape,0.1
+1584,triangle,part of,delta wing,0.1
+1585,delta wing,instance of,triangle shape,0.1
+1586,triangle,subclass of,delta wing,0.1
+1587,triangle,has part,delta wing,0.1
+1588,delta wing,based on,triangle,0.1
+1589,kites,subclass of,ultralight aircraft,0.16666666666666666
+1590,kite,subclass of,ultralight aircraft,0.08333333333333333
+1591,Rogallo wing,use,ultralight aircraft,0.25
+1592,Rogallo wing,subclass of,ultralight aircraft,0.08333333333333333
+1593,ultralight aircraft,subclass of,kites,0.08333333333333333
+1594,Rogallo wing,use,kites,0.08333333333333333
+1595,kites,use,ultralight aircraft,0.08333333333333333
+1596,kites,instance of,ultralight aircraft,0.08333333333333333
+1597,kite,use,ultralight aircraft,0.08333333333333333
+1598,supersonic,subclass of,jet,0.1
+1599,fast jets,subclass of,supersonic,0.1
+1600,fast jets,subclass of,supersonic wing,0.1
+1601,fast jet,subclass of,supersonic,0.1
+1602,jet,subclass of,supersonic,0.1
+1603,jet,has part,wing,0.1
+1604,fast jet,subclass of,supersonic wing,0.1
+1605,fast jets,subclass of,wing,0.1
+1606,fast jets,has part,wing,0.1
+1607,fast jets,has parts of the class,wing,0.1
+1608,wing,use,flight,0.18181818181818182
+1609,variable geometry wing,subclass of,wing,0.09090909090909091
+1610,variable geometry wing,use,flight,0.09090909090909091
+1611,wing,part of,flight,0.09090909090909091
+1612,variable geometry,subclass of,wing,0.09090909090909091
+1613,variable geometry,facet of,wing,0.09090909090909091
+1614,flight,has part,wing,0.09090909090909091
+1615,flight,item operated,wing,0.09090909090909091
+1616,flight,uses,wing,0.18181818181818182
+1617,low-drag swept,subclass of,high-speed flight,0.1
+1618,swept,subclass of,wing,0.1
+1619,swept configuration,opposite of,straight configuration,0.1
+1620,swept configuration,subclass of,low-drag,0.1
+1621,swept configuration,subclass of,wing,0.1
+1622,low-drag swept configuration,subclass of,high-speed flight,0.1
+1623,sweep,subclass of,wing,0.1
+1624,takeoff,followed by,landing,0.1
+1625,low-drag swept configuration,opposite of,straight configuration,0.1
+1626,low-drag,subclass of,high-speed flight,0.1
+1627,variable planform,use,flown,0.1
+1628,variable planform,subclass of,planform,0.1
+1629,research stage,subclass of,flown,0.1
+1630,variable,subclass of,planform,0.1
+1631,variable planform,use,research stage,0.1
+1632,variable planform,subclass of,flown,0.1
+1633,variable planform,instance of,flown,0.1
+1634,research stage,subclass of,fly,0.1
+1635,research,subclass of,development,0.1
+1636,variable planform,instance of,research stage,0.1
+1637,Fuselage,part of,fuselage,0.16666666666666666
+1638,fuselage,has part,Fuselage,0.08333333333333333
+1639,fuselage,part of,aerodynamically smooth,0.08333333333333333
+1640,fuselage,use,aerodynamically smooth,0.08333333333333333
+1641,fuselage,part of,aerodynamically,0.08333333333333333
+1642,Fuselage,subclass of,fuselage,0.08333333333333333
+1643,fuselage,subclass of,aerodynamically smooth,0.08333333333333333
+1644,fuselage,use,aerodynamically,0.08333333333333333
+1645,Fuselage,different from,fuselage,0.08333333333333333
+1646,fuselage,different from,Fuselage,0.08333333333333333
+1647,fuselage,facet of,aerodynamically,0.08333333333333333
+1648,payload,used by,passengers,0.09090909090909091
+1649,cargo,used by,passengers,0.09090909090909091
+1650,passengers,has part,flight crew,0.09090909090909091
+1651,passengers,part of,flight crew,0.18181818181818182
+1652,payload,has part,passengers,0.09090909090909091
+1653,crew,has part,passengers,0.09090909090909091
+1654,cargo,subclass of,payload,0.09090909090909091
+1655,payload,subclass of,passengers,0.09090909090909091
+1656,flight crew,has part,passengers,0.18181818181818182
+1657,cockpit,part of,fuselage,0.125
+1658,cockpit,has part,controls,0.1875
+1659,controls,part of,cockpit,0.125
+1660,cockpit,used by,pilot,0.125
+1661,cockpit,used by,pilots,0.0625
+1662,cockpit,has part,instruments,0.0625
+1663,instruments,part of,cockpit,0.0625
+1664,cockpit,part of,cockpit,0.0625
+1665,fuselage,has part,cockpit,0.0625
+1666,cockpit,part of,aircraft,0.0625
+1667,pilot,uses,cockpit,0.0625
+1668,tail,connects with,fuselage,0.3333333333333333
+1669,tail,part of,fuselage,0.26666666666666666
+1670,fuselage,connects with,tail,0.13333333333333333
+1671,tail,part of,plane,0.06666666666666667
+1672,tail,connects with,boom,0.06666666666666667
+1673,tail,subclass of,fuselage,0.06666666666666667
+1674,tail,part of,boom,0.06666666666666667
+1675,Flying wing,subclass of,tailless aircraft,0.15384615384615385
+1676,tailless,opposite of,fuselage,0.15384615384615385
+1677,Flying wing,subclass of,tailless,0.07692307692307693
+1678,tailless aircraft,opposite of,fuselage,0.23076923076923078
+1679,flying wing,subclass of,tailless aircraft,0.07692307692307693
+1680,fuselage,part of,aircraft,0.07692307692307693
+1681,tailless,subclass of,aircraft,0.07692307692307693
+1682,fuselage,opposite of,tailless,0.07692307692307693
+1683,fuselage,opposite of,tailless aircraft,0.07692307692307693
+1684,Horten brothers,country,Germany,0.15384615384615385
+1685,Jack Northrop,country of citizenship,United States,0.15384615384615385
+1686,Cheston L. Eshelman,country of citizenship,United States,0.15384615384615385
+1687,Alexander Lippisch,country of citizenship,Germany,0.15384615384615385
+1688,Horten brothers,product or material produced,flying wing,0.07692307692307693
+1689,Alexander Lippisch,sibling,Horten brothers,0.07692307692307693
+1690,Horten brothers,sibling,Alexander Lippisch,0.07692307692307693
+1691,Horten brothers,country of origin,Germany,0.07692307692307693
+1692,Horten,country,Germany,0.07692307692307693
+1693,experimental designs,subclass of,flying wing,0.1
+1694,experimental designs,uses,flying wing,0.1
+1695,experimental,subclass of,flying wing,0.1
+1696,experimental,uses,flying wing,0.1
+1697,flying wing,subclass of,aircraft,0.1
+1698,several experimental designs,subclass of,flying wing,0.1
+1699,flying wing,subclass of,experimental designs,0.1
+1700,experimental design,subclass of,flying wing,0.1
+1701,experimental designs,has part,flying wing,0.1
+1702,experimental designs,has parts of the class,flying wing,0.1
+1703,Convair B-36,service entry,1950,0.14285714285714285
+1704,B-52 Stratofortress,based on,Convair B-36,0.14285714285714285
+1705,Convair B-36,derivative work,B-52 Stratofortress,0.07142857142857142
+1706,Convair B-36,subclass of,B-52 Stratofortress,0.07142857142857142
+1707,Convair B-36,followed by,B-52 Stratofortress,0.14285714285714285
+1708,B-52 Stratofortress,follows,Convair B-36,0.07142857142857142
+1709,B-36,manufacturer,Convair,0.07142857142857142
+1710,Convair B-36,subclass of,"""conventional""",0.14285714285714285
+1711,B-52 Stratofortress,service entry,1950,0.07142857142857142
+1712,B-52 Stratofortress,subclass of,"""conventional""",0.07142857142857142
+1713,tactical,subclass of,airlifter,0.1
+1714,tactical airlifter,subclass of,flying wing,0.1
+1715,deep wing,subclass of,flying wing,0.1
+1716,flying wing,use,tactical airlifter,0.1
+1717,tactical airlifter,uses,flying wing,0.1
+1718,flying wing,use,airlifter,0.1
+1719,low-to-medium speed range,subclass of,tactical airlifter,0.1
+1720,tactical airlifter,has part,flying wing,0.1
+1721,tactical,use,airlifter,0.1
+1722,airlifter,has part,flying wing,0.1
+1723,1980s,point in time,1980,0.1
+1724,radar reflection,subclass of,cross-section,0.1
+1725,radar reflection cross-section,subclass of,flying wing,0.1
+1726,radar reflection cross-section,facet of,flying wing,0.1
+1727,low radar reflection cross-section,subclass of,flying wing,0.1
+1728,radar,subclass of,reflection,0.1
+1729,flying wing,uses,radar reflection,0.1
+1730,low radar reflection,subclass of,flying wing,0.1
+1731,radar reflection,instance of,cross-section,0.1
+1732,flying wing,subclass of,radar reflection cross-section,0.1
+1733,radar,has part,receiver,0.16666666666666666
+1734,receiver,part of,radar,0.08333333333333333
+1735,reflect,used by,radar,0.08333333333333333
+1736,reflect,use,radar,0.08333333333333333
+1737,radar receiver,use,radar,0.08333333333333333
+1738,Radar,has part,receiver,0.16666666666666666
+1739,receiver,part of,Radar,0.08333333333333333
+1740,radar receiver,part of,radar,0.08333333333333333
+1741,reflect radar waves,used by,radar receiver,0.08333333333333333
+1742,reflect radar,used by,radar receiver,0.08333333333333333
+1743,Northrop B-2 Spirit,subclass of,stealth bomber,0.08333333333333333
+1744,Northrop B-2 Spirit,use,stealth bomber,0.08333333333333333
+1745,B-2 Spirit,manufacturer,Northrop,0.16666666666666666
+1746,Northrop B-2 Spirit,instance of,stealth bomber,0.08333333333333333
+1747,B-2 Spirit,subclass of,stealth bomber,0.25
+1748,Northrop B-2 Spirit,subclass of,stealth,0.08333333333333333
+1749,B-2 Spirit,developer,Northrop,0.16666666666666666
+1750,Northrop B-2 Spirit,use,stealth,0.08333333333333333
+1751,flying wing,subclass of,aerodynamic advantages,0.08333333333333333
+1752,flying wing,subclass of,aerodynamic,0.08333333333333333
+1753,flying wing,use,aerodynamic,0.08333333333333333
+1754,flying wing,studied by,aerodynamic,0.16666666666666666
+1755,flying wing,subclass of,aerodynamic advantage,0.08333333333333333
+1756,flying wing,use,aerodynamic advantages,0.08333333333333333
+1757,aerodynamic,studies,flying wing,0.08333333333333333
+1758,aerodynamic advantages,facet of,flying wing,0.08333333333333333
+1759,aerodynamic advantages,different from,flying wing,0.16666666666666666
+1760,flying wing,different from,aerodynamic advantages,0.08333333333333333
+1761,fly-by-wire,subclass of,computer-controlled,0.09090909090909091
+1762,computer-controlled,subclass of,fly-by-wire,0.09090909090909091
+1763,computer-controlled,subclass of,fly-by-wire systems,0.09090909090909091
+1764,computer-controlled,uses,fly-by-wire,0.18181818181818182
+1765,computer-controlled,use,fly-by-wire,0.09090909090909091
+1766,flying wing,use,bomber,0.09090909090909091
+1767,fly-by-wire systems,subclass of,computer-controlled,0.09090909090909091
+1768,computer-controlled,has part,fly-by-wire,0.09090909090909091
+1769,computer-controlled,has parts of the class,fly-by-wire,0.09090909090909091
+1770,fly-by-wire,use,computer-controlled,0.09090909090909091
+1771,airfoil,part of,wing,0.18181818181818182
+1772,Blended wing body,subclass of,aircraft,0.09090909090909091
+1773,airfoil,subclass of,wing,0.09090909090909091
+1774,airfoil,part of,wing structure,0.09090909090909091
+1775,wing,has part,airfoil,0.09090909090909091
+1776,airfoil,subclass of,wing structure,0.09090909090909091
+1777,Blended wing body,subclass of,Aircraft,0.09090909090909091
+1778,airfoil,subclass of,wing structures,0.09090909090909091
+1779,airfoil,subclass of,wings,0.09090909090909091
+1780,airfoil,part of,wing structures,0.09090909090909091
+1781,flying wing,subclass of,fuselage,0.08333333333333333
+1782,fuselage,connects with,flying wing,0.16666666666666666
+1783,flying wing,connects with,fuselage,0.08333333333333333
+1784,fuselage,connects with,wing,0.16666666666666666
+1785,flying wing,subclass of,wing bodied aircraft,0.08333333333333333
+1786,fuselage,has part,flying wing,0.08333333333333333
+1787,flying wing design,subclass of,fuselage,0.08333333333333333
+1788,flying wing,subclass of,wing,0.08333333333333333
+1789,flying wing,has part,fuselage,0.08333333333333333
+1790,fuselage,part of,wing bodied aircraft,0.08333333333333333
+1791,airfoil,part of,wing,0.1
+1792,airfoil,subclass of,wing,0.1
+1793,airfoil,subclass of,wings,0.1
+1794,high-lift,subclass of,wing,0.1
+1795,high-lift,subclass of,wings,0.1
+1796,high-lift wing,subclass of,airfoil,0.1
+1797,wing,subclass of,airfoil,0.1
+1798,wings,subclass of,airfoil,0.1
+1799,airfoil,part of,wings,0.1
+1800,wing,has part,airfoil,0.1
+1801,lift generation,has effect,fuel economy,0.18181818181818182
+1802,lift generation,facet of,fuel economy,0.09090909090909091
+1803,lift generation,subclass of,fuel economy,0.09090909090909091
+1804,lift generation,instance of,fuel economy,0.09090909090909091
+1805,lift generation,use,fuel economy,0.09090909090909091
+1806,fuel economy,has cause,lift generation,0.09090909090909091
+1807,lift generation,has part,fuel economy,0.09090909090909091
+1808,fuel economy,facet of,lift generation,0.09090909090909091
+1809,lift generation,part of,fuel economy,0.09090909090909091
+1810,lift,use,lift generation,0.09090909090909091
+1811,Lifting body,uses,lift,0.1111111111111111
+1812,Lifting body,subclass of,lift,0.1111111111111111
+1813,Lifting body,use,lift,0.1111111111111111
+1814,Lifting body,subclass of,lifting body,0.1111111111111111
+1815,Lifting body,has effect,lift,0.1111111111111111
+1816,Lifting body,has part,lift,0.1111111111111111
+1817,Lifting body,facet of,lift,0.1111111111111111
+1818,Lifting body,instance of,configuration,0.1111111111111111
+1819,Lifting body,subclass of,configuration,0.1111111111111111
+1820,flying wing,subclass of,fuselage,0.21428571428571427
+1821,flying wing,subclass of,wing,0.07142857142857142
+1822,fuselage,different from,wing,0.14285714285714285
+1823,flying wing,different from,fuselage,0.07142857142857142
+1824,fuselage,different from,flying wing,0.14285714285714285
+1825,fuselage,opposite of,wing,0.14285714285714285
+1826,flying wing,has part,fuselage,0.07142857142857142
+1827,flying wing,opposite of,fuselage,0.07142857142857142
+1828,fuselage,opposite of,flying wing,0.07142857142857142
+1829,supersonic,followed by,hypersonic flight,0.09090909090909091
+1830,hypersonic flight,subclass of,cruise efficiency,0.09090909090909091
+1831,supersonic,followed by,hypersonic,0.09090909090909091
+1832,subsonic,followed by,supersonic,0.09090909090909091
+1833,subsonic,subclass of,cruise efficiency,0.18181818181818182
+1834,supersonic,follows,subsonic,0.09090909090909091
+1835,subsonic speeds,followed by,supersonic,0.09090909090909091
+1836,supersonic,subclass of,cruise efficiency,0.18181818181818182
+1837,supersonic,follows,subsonic speeds,0.09090909090909091
+1838,flight stability,facet of,flight regime,0.1
+1839,flight stability,subclass of,flight regime,0.1
+1840,flight stability,facet of,flight regimes,0.1
+1841,flight stability,part of,flight regime,0.1
+1842,flight stability,subclass of,flight regimes,0.1
+1843,flight stability,instance of,flight regime,0.1
+1844,flight stability,part of,flight regimes,0.1
+1845,flight stability,instance of,flight regimes,0.1
+1846,flight regime,facet of,flight stability,0.1
+1847,flight stability,facet of,flight,0.1
+1848,1960s and 70s,point in time,1960,0.08333333333333333
+1849,1960s,point in time,1960,0.25
+1850,70s,point in time,70,0.08333333333333333
+1851,Lifting bodies,subclass of,crewed spacecraft,0.08333333333333333
+1852,70s,point in time,1970,0.08333333333333333
+1853,lifting bodies,subclass of,spacecraft,0.08333333333333333
+1854,lifting bodies,subclass of,crewed spacecraft,0.08333333333333333
+1855,Lifting bodies,subclass of,spacecraft,0.08333333333333333
+1856,Lifting bodies,instance of,spacecraft,0.08333333333333333
+1857,Lifted bodies,subclass of,crewed spacecraft,0.08333333333333333
+1858,US,located in or next to body of water,Pacific,0.25
+1859,lifting body rocket,subclass of,rocket,0.08333333333333333
+1860,lifting body rocket,subclass of,rocket-launched re-entry vehicle,0.08333333333333333
+1861,lifting body rocket,country of origin,US,0.08333333333333333
+1862,lifting body,subclass of,rocket,0.08333333333333333
+1863,lifting body rocket plane,country,US,0.08333333333333333
+1864,lifting body rocket planes,country,US,0.08333333333333333
+1865,lifting body rocket,country,US,0.08333333333333333
+1866,rocket-launched re-entry vehicle,subclass of,lifting body rocket,0.08333333333333333
+1867,lifting body,subclass of,rocket plane,0.08333333333333333
+1868,Space Shuttle,operator,US Air Force,0.16666666666666666
+1869,Space Shuttle design process,operator,US Air Force,0.08333333333333333
+1870,Space Shuttle,has part,fuselage,0.25
+1871,crewed mission,operator,US Air Force,0.08333333333333333
+1872,fuselage,part of,Space Shuttle,0.08333333333333333
+1873,Shuttle,operator,US Air Force,0.08333333333333333
+1874,space shuttle,operator,US Air Force,0.08333333333333333
+1875,Space Shuttle design process,participant,US Air Force,0.08333333333333333
+1876,Space Shuttle,operator,USAF,0.08333333333333333
+1877,airfoil,part of,wing,0.16666666666666666
+1878,wing,has part,airfoil,0.16666666666666666
+1879,foreplane,subclass of,wing,0.08333333333333333
+1880,wing,subclass of,airfoil,0.08333333333333333
+1881,section wing,subclass of,airfoil,0.08333333333333333
+1882,Empennage,connects with,foreplane,0.08333333333333333
+1883,foreplane,connects with,Empennage,0.08333333333333333
+1884,foreplane,subclass of,airfoil,0.08333333333333333
+1885,Empennage,part of,wing,0.08333333333333333
+1886,foreplane,part of,wing,0.08333333333333333
+1887,Flexible-wing,has part,anchor line,0.08333333333333333
+1888,pilot,field of this occupation,attitude,0.16666666666666666
+1889,attitude,practiced by,pilot,0.08333333333333333
+1890,pilot,uses,attitude,0.16666666666666666
+1891,anchor line,part of,Flexible-wing,0.08333333333333333
+1892,attitude,used by,pilot,0.08333333333333333
+1893,anchor line,subclass of,Flexible-wing,0.08333333333333333
+1894,Flexible-wing,used by,pilot,0.08333333333333333
+1895,Flexible-wing,uses,anchor line,0.08333333333333333
+1896,Anchor line,subclass of,Flexible-wing,0.08333333333333333
+1897,electronic artificial stability,subclass of,airfoil,0.1
+1898,electronic artificial stability,instance of,airfoil,0.1
+1899,electronic artificial stability,uses,airfoil,0.1
+1900,electronic artificial stability,facet of,airfoil,0.1
+1901,electronic artificial stability,part of,airfoil,0.1
+1902,electronic artificial stability,subclass of,stable,0.1
+1903,electronic artificial stability,has part,airfoil,0.1
+1904,electronic artificial stability,subclass of,adapted airfoil,0.1
+1905,electronic artificial stability,subclass of,artificial stability,0.1
+1906,artificial stability,subclass of,electronic,0.1
+1907,tailplane,subclass of,empennage,0.14285714285714285
+1908,fin,part of,empennage,0.2857142857142857
+1909,elevator,part of,empennage,0.07142857142857142
+1910,tailplane,part of,empennage,0.21428571428571427
+1911,rudder,part of,empennage,0.14285714285714285
+1912,fin,subclass of,rudder,0.07142857142857142
+1913,empennage,has part,tailplane,0.07142857142857142
+1914,trim,subclass of,control surface,0.1
+1915,trim,subclass of,control surfaces,0.1
+1916,trimming,subclass of,control surface,0.1
+1917,trim,facet of,control surface,0.1
+1918,trimming,subclass of,control surfaces,0.1
+1919,trim,part of,control surface,0.1
+1920,trim,facet of,control surfaces,0.1
+1921,trimming,facet of,control surface,0.1
+1922,trimmed,subclass of,control surface,0.1
+1923,trimmed,subclass of,control surfaces,0.1
+1924,conventional layout,instance of,layout,0.1
+1925,conventional layout,subclass of,layout,0.1
+1926,conventional layout,instance of,common,0.1
+1927,conventional layout,subclass of,common,0.1
+1928,conventional layout,instance of,conventional,0.1
+1929,conventional layout,instance of,conventional layout,0.1
+1930,conventional layout,facet of,layout,0.1
+1931,conventional layout,said to be the same as,common,0.1
+1932,conventional layout,subclass of,conventional,0.1
+1933,conventional layout,subclass of,conventional layout,0.1
+1934,tailplane,has part,fin,0.16666666666666666
+1935,tailplane,has part,fins,0.16666666666666666
+1936,tailplane,subclass of,fin,0.08333333333333333
+1937,tailplane,has parts of the class,fin,0.08333333333333333
+1938,fins,part of,tailplane,0.16666666666666666
+1939,fin,part of,tailplane,0.16666666666666666
+1940,tailplane,subclass of,fins,0.08333333333333333
+1941,tailplane,has parts of the class,fins,0.08333333333333333
+1942,foreplane,subclass of,wing,0.07142857142857142
+1943,foreplane,follows,main wing,0.07142857142857142
+1944,main wing,followed by,foreplane,0.07142857142857142
+1945,foreplane,connects with,main wing,0.14285714285714285
+1946,main wing,connects with,foreplane,0.14285714285714285
+1947,foreplane,part of,wing,0.14285714285714285
+1948,main wing,has part,foreplane,0.07142857142857142
+1949,canard,subclass of,foreplane,0.07142857142857142
+1950,foreplane,connects with,wing,0.07142857142857142
+1951,wing,connects with,foreplane,0.07142857142857142
+1952,wing,has part,foreplane,0.07142857142857142
+1953,trim,part of,control,0.1
+1954,trim,has part,lift,0.1
+1955,trim,subclass of,control,0.1
+1956,trim,use,control,0.1
+1957,trim,facet of,control,0.1
+1958,trim,subclass of,lift,0.1
+1959,trim,part of,lift,0.1
+1960,trim,use,lift,0.1
+1961,trim,part of,control of the aircraft,0.1
+1962,trim,part of,aircraft,0.1
+1963,flight control system,part of,Aircraft,0.18181818181818182
+1964,flight control system,part of,Airplane,0.09090909090909091
+1965,Aircraft,has part,flight control system,0.18181818181818182
+1966,Flight control system,part of,Airplane,0.09090909090909091
+1967,flight control,part of,Aircraft,0.09090909090909091
+1968,Flight control system,part of,Aircraft,0.09090909090909091
+1969,flight control systems,part of,Aircraft,0.09090909090909091
+1970,Flight control,part of,Aircraft,0.09090909090909091
+1971,Instrument,part of,Plane,0.09090909090909091
+1972,attitude,used by,pilot,0.07142857142857142
+1973,pilot,item operated,aircraft,0.14285714285714285
+1974,pilot,field of this occupation,aircraft in the air,0.07142857142857142
+1975,aircraft in the air,practiced by,pilot,0.07142857142857142
+1976,main controls,used by,pilot,0.14285714285714285
+1977,aircraft,operator,pilot,0.07142857142857142
+1978,attitude,facet of,pilot,0.07142857142857142
+1979,pilot,uses,aircraft,0.14285714285714285
+1980,aircraft,used by,pilot,0.07142857142857142
+1981,pilot,uses,main controls,0.07142857142857142
+1982,pilot,item operated,aircraft in the air,0.07142857142857142
+1983,cockpit instrument,use,flight data,0.09090909090909091
+1984,pilot,item operated,aircraft,0.09090909090909091
+1985,cockpit instruments,use,flight data,0.09090909090909091
+1986,navigation,practiced by,pilots,0.09090909090909091
+1987,cockpit,part of,aircraft,0.18181818181818182
+1988,flight data,has part,cockpit instrument,0.09090909090909091
+1989,flight data,has part,cockpit instruments,0.09090909090909091
+1990,aircraft,has part,cockpit,0.09090909090909091
+1991,flight data,used by,pilots,0.09090909090909091
+1992,navigation,has part,flight data,0.09090909090909091
+1993,deaths per passenger kilometer,facet of,Safety,0.1111111111111111
+1994,Safety,has part,risk,0.1111111111111111
+1995,deaths per passenger kilometer,subclass of,risk,0.1111111111111111
+1996,air travel,opposite of,rail,0.1111111111111111
+1997,Safety,subclass of,risk,0.1111111111111111
+1998,risk,facet of,Safety,0.1111111111111111
+1999,Safety,facet of,risk,0.1111111111111111
+2000,deaths,subclass of,risk,0.1111111111111111
+2001,deaths per passenger kilometer,facet of,risk,0.1111111111111111
+2002,deaths per journey statistic,facet of,air travel,0.07692307692307693
+2003,car,different from,rail,0.15384615384615385
+2004,rail,different from,car,0.15384615384615385
+2005,air travel,different from,rail,0.15384615384615385
+2006,rail,different from,air travel,0.07692307692307693
+2007,train,different from,rail,0.07692307692307693
+2008,air travel,opposite of,rail,0.07692307692307693
+2009,air travel,opposite of,car,0.07692307692307693
+2010,air travel,different from,car,0.07692307692307693
+2011,car,different from,air travel,0.07692307692307693
+2012,Air travel insurance,subclass of,insurance,0.08333333333333333
+2013,deaths per journey statistic,facet of,Air travel insurance,0.08333333333333333
+2014,Air travel insurance,instance of,insurance,0.08333333333333333
+2015,Air travel insurance,subclass of,insurers,0.08333333333333333
+2016,deaths per journey statistic,facet of,Insurance,0.08333333333333333
+2017,insurance,practiced by,insurer,0.08333333333333333
+2018,insurer,field of this occupation,insurance,0.08333333333333333
+2019,deaths per journey statistic,facet of,insurance,0.08333333333333333
+2020,Air travel insurance,instance of,insurers,0.08333333333333333
+2021,insurance,practiced by,insurers,0.08333333333333333
+2022,insurers,field of this occupation,insurance,0.08333333333333333
+2023,Air travel insurance,subclass of,Insurance,0.08333333333333333
+2024,per-mile statistic,facet of,safety,0.08333333333333333
+2025,private plane,subclass of,airliner,0.08333333333333333
+2026,private planes,subclass of,airliner,0.08333333333333333
+2027,smaller private planes,subclass of,airliners,0.08333333333333333
+2028,per-mile statistic,facet of,safety of airliners,0.08333333333333333
+2029,private plane,subclass of,plane,0.08333333333333333
+2030,safety of airliners,instance of,per-mile statistic,0.08333333333333333
+2031,per-mile statistic,instance of,safety,0.08333333333333333
+2032,smaller private planes,different from,smaller planes,0.08333333333333333
+2033,smaller planes,different from,smaller private planes,0.08333333333333333
+2034,airliners,opposite of,smaller private planes,0.08333333333333333
+2035,smaller private planes,opposite of,airliners,0.08333333333333333
+2036,soot,subclass of,pollutants,0.18181818181818182
+2037,soot,instance of,pollutants,0.09090909090909091
+2038,combustion,has effect,pollutants,0.18181818181818182
+2039,combustion,has effect,pollution,0.09090909090909091
+2040,soot,subject has role,pollutants,0.09090909090909091
+2041,combustion,has effect,soot,0.09090909090909091
+2042,pollutants,has effect,Environmental impact,0.09090909090909091
+2043,soot,has parts of the class,pollutants,0.09090909090909091
+2044,pollution,has effect,soot,0.09090909090909091
+2045,carbon dioxide,instance of,Greenhouse gas,0.1
+2046,carbon dioxide,instance of,Greenhouse gases,0.1
+2047,carbon dioxide,subject has role,Greenhouse gases,0.1
+2048,carbon dioxide,subject has role,Greenhouse gas,0.1
+2049,carbon dioxide,subclass of,Greenhouse gases,0.1
+2050,carbon dioxide,subclass of,Greenhouse gas,0.1
+2051,carbon dioxide,subject has role,greenhouse gas,0.1
+2052,carbon dioxide (CO2),instance of,Greenhouse gas,0.1
+2053,carbon dioxide,subject has role,greenhouse gases,0.1
+2054,carbon dioxide (CO2),instance of,Greenhouse gases,0.1
+2055,contrails,part of,Aircraft,0.1
+2056,contrail,part of,Airplane,0.1
+2057,contrails,part of,Airplane,0.1
+2058,contrail,part of,Aircraft,0.1
+2059,cirrus cloud,subclass of,cloud cover,0.1
+2060,contrail,has part,aerosol,0.1
+2061,contrail,has part,aerosols,0.1
+2062,contrail,subclass of,aerosols,0.1
+2063,tropopause,has effect,cirrus cloud,0.1
+2064,tropopause,has part,cirrus cloud,0.1
+2065,ozone,subject has role,greenhouse gas,0.1
+2066,ozone,instance of,greenhouse gas,0.1
+2067,ozone,subclass of,greenhouse gas,0.1
+2068,ozone,instance of,greenhouse gases,0.1
+2069,ozone,subject has role,greenhouse gases,0.1
+2070,ozone,subclass of,greenhouse gases,0.1
+2071,nitrogen,subject has role,greenhouse gas,0.1
+2072,ozone,part of,greenhouse gas,0.1
+2073,nitrogen compounds,subject has role,greenhouse gases,0.1
+2074,nitrogen compound,subject has role,greenhouse gas,0.1
+2075,avgas,has part,tetraethyllead,0.25
+2076,tetraethyllead,use,avgas,0.16666666666666666
+2077,tetraethyllead,subject has role,avgas,0.08333333333333333
+2078,tetraethyllead,part of,avgas,0.16666666666666666
+2079,tetraethyllead,instance of,avgas,0.08333333333333333
+2080,tetraethyllead,subclass of,avgas,0.08333333333333333
+2081,avgas,has part,tetraethyllead (TEL),0.08333333333333333
+2082,tetraethyllead,has part,avgas,0.08333333333333333
+2083,turbine engine,subclass of,piston engine,0.09090909090909091
+2084,turbine engine,opposite of,piston engine,0.18181818181818182
+2085,diesel engine,opposite of,piston engine,0.18181818181818182
+2086,mogas,subclass of,piston engine,0.09090909090909091
+2087,turbine engines,opposite of,piston engines,0.09090909090909091
+2088,turbine engines,subclass of,piston engines,0.09090909090909091
+2089,mogas,subclass of,piston engines,0.09090909090909091
+2090,diesel engines,opposite of,piston engines,0.09090909090909091
+2091,moga,subclass of,piston engine,0.09090909090909091
+2092,noise pollution,subclass of,pollution,0.08333333333333333
+2093,noise pollution,has cause,taking off and landing,0.16666666666666666
+2094,taking off and landing,has effect,noise pollution,0.08333333333333333
+2095,noise pollution,subclass of,environmental impact,0.08333333333333333
+2096,noise pollution,has cause,taking off,0.16666666666666666
+2097,taking off,has effect,noise pollution,0.08333333333333333
+2098,noise pollution,instance of,pollution,0.08333333333333333
+2099,noise pollution,facet of,pollution,0.08333333333333333
+2100,noise pollution,subclass of,pollutants,0.08333333333333333
+2101,noise pollution,has cause,pollution,0.08333333333333333
+2102,Aircraft flight mechanics,studies,Aircraft,0.13333333333333333
+2103,Aircraft,studied by,Aircraft flight mechanics,0.06666666666666667
+2104,Aircraft flight mechanics,field of this occupation,Aviation,0.13333333333333333
+2105,Aviation,practiced by,Aircraft flight mechanics,0.06666666666666667
+2106,Aircraft flight mechanics,facet of,Aircraft,0.06666666666666667
+2107,Aircraft flight mechanics,product or material produced,Aircraft,0.06666666666666667
+2108,Aircraft flight mechanics,studies,Aircraft type,0.06666666666666667
+2109,Aircraft type,studied by,Aircraft flight mechanics,0.06666666666666667
+2110,Aircraft flight mechanics,field of this occupation,Aircraft,0.06666666666666667
+2111,Aircraft,practiced by,Aircraft flight mechanics,0.06666666666666667
+2112,Aircraft flight mechanics,item operated,Aircraft,0.06666666666666667
+2113,Aircraft flight mechanics,uses,Aircraft,0.06666666666666667
+2114,Aircraft,used by,Aircraft flight mechanics,0.06666666666666667
+2115,The Flying Book,main subject,Flying On Airplanes,0.1
+2116,The Flying Book,main subject,Everything You've Ever Wondered About Flying On Airplanes,0.1
+2117,The Flying Book,main subject,Flying,0.1
+2118,The Flying Book,genre,Flying On Airplanes,0.1
+2119,The Flying Book,author,Everything You've Ever Wondered About Flying On Airplanes,0.1
+2120,The Flying Book,part of the series,Everything You've Ever Wondered About Flying On Airplanes,0.1
+2121,The Flying Book,main subject,Flying On Airplane,0.1
+2122,Flying On Airplanes,followed by,The Flying Book,0.1
+2123,Flying On Airplanes,has part,The Flying Book,0.1
+2124,The Flying Book,genre,Everything You've Ever Wondered About Flying On Airplanes,0.1
+2125,0-8027-7691-4,publisher,Aeroplane centre,0.09090909090909091
+2126,0-8027-7691-4,main subject,Aeroplane,0.09090909090909091
+2127,How Airplanes Work – Howstuffworks.org,instance of,Aerospaceweb,0.09090909090909091
+2128,How Airplanes Work,publisher,Aeroplane centre,0.09090909090909091
+2129,0-8027-7691-4,publisher,Aeroplane centre TAMADRAAirliners.net,0.09090909090909091
+2130,0-8027-7691-4,publisher,Aerospaceweb,0.09090909090909091
+2131,0-8027-7691-4,part of,Aeroplane centre,0.18181818181818182
+2132,How Airplanes Work – Howstuffworks.org,publisher,Aeroplane centre,0.09090909090909091
+2133,0-8027-7691-4,part of,Aerospaceweb,0.09090909090909091
+2134,Aeroplane centre,has part,0-8027-7691-4,0.09090909090909091
