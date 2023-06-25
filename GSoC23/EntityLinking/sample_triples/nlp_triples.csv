@@ -1,0 +1,1779 @@
+,head,type,tail,Confidence
+0,natural language,studied by,linguistics,0.029411764705882353
+1,computer science,has part,artificial intelligence,0.23529411764705882
+2,artificial intelligence,part of,computer science,0.23529411764705882
+3,Natural language processing,subclass of,linguistics,0.14705882352941177
+4,Natural language processing,subclass of,artificial intelligence,0.14705882352941177
+5,Natural language processing,subclass of,computer science,0.08823529411764706
+6,Natural language processing,part of,computer science,0.029411764705882353
+7,Natural language processing,part of,artificial intelligence,0.029411764705882353
+8,Natural language processing,studies,natural language,0.029411764705882353
+9,natural language,studied by,Natural language processing,0.029411764705882353
+10,language,part of,documents,0.1
+11,language,part of,document,0.1
+12,context,facet of,language,0.1
+13,language,used by,documents,0.1
+14,contextual nuances,facet of,language,0.1
+15,contextual nuances,subclass of,language,0.1
+16,context,subclass of,language,0.1
+17,language,use,documents,0.1
+18,context,part of,language,0.1
+19,understanding,facet of,language,0.1
+20,insights,subclass of,information,0.09090909090909091
+21,insight,subclass of,information,0.09090909090909091
+22,information,has effect,insights,0.18181818181818182
+23,insights,has cause,information,0.09090909090909091
+24,classify,part of,organize,0.09090909090909091
+25,insights,facet of,information,0.09090909090909091
+26,categorize,part of,organize,0.09090909090909091
+27,insights,subclass of,extract information,0.09090909090909091
+28,insights contained in the documents,subclass of,information,0.09090909090909091
+29,categorize,subclass of,organize,0.09090909090909091
+30,speech recognition,part of,natural language processing,0.0625
+31,speech recognition,subclass of,natural language processing,0.0625
+32,natural-language understanding,studies,speech recognition,0.0625
+33,natural-language generation,part of,natural language processing,0.0625
+34,natural-language generation,facet of,natural language processing,0.0625
+35,natural-language understanding,studied by,natural language processing,0.125
+36,natural-language generation,subclass of,natural language processing,0.0625
+37,natural language processing,studies,speech recognition,0.1875
+38,speech recognition,studied by,natural language processing,0.125
+39,natural language processing,studies,natural-language understanding,0.0625
+40,natural language processing,studies,natural-language generation,0.0625
+41,natural-language generation,studied by,natural language processing,0.0625
+42,1950s,point in time,1950,0.1
+43,Natural language processing,inception,1950,0.1
+44,Language processing,inception,1950,0.1
+45,Natural language processing,start time,1950,0.1
+46,History,facet of,Natural language processing,0.1
+47,natural language processing,inception,1950,0.1
+48,History,start time,1950,0.1
+49,History,point in time,1950,0.1
+50,Language processing,part of,Natural,0.1
+51,Language processing,studies,Natural language,0.1
+52,Turing test,named after,Alan Turing,0.34782608695652173
+53,Alan Turing,notable work,Turing test,0.17391304347826086
+54,Computing Machinery and Intelligence,publication date,1950,0.13043478260869565
+55,Computing Machinery and Intelligence,author,Alan Turing,0.17391304347826086
+56,Turing test,discoverer or inventor,Alan Turing,0.08695652173913043
+57,Turing test,facet of,artificial intelligence,0.043478260869565216
+58,Alan Turing,field of work,artificial intelligence,0.043478260869565216
+59,natural language,studied by,interpretation,0.16666666666666666
+60,natural language,subclass of,interpretation,0.08333333333333333
+61,natural language,use,interpretation,0.08333333333333333
+62,interpretation,facet of,natural language,0.08333333333333333
+63,natural language,instance of,interpretation,0.08333333333333333
+64,interpretation,studies,natural language,0.08333333333333333
+65,automated interpretation,facet of,natural language,0.08333333333333333
+66,interpretation,uses,natural language,0.16666666666666666
+67,natural language,used by,interpretation,0.16666666666666666
+68,Chinese room experiment,discoverer or inventor,John Searle,0.1
+69,Chinese room experiment,named after,John Searle,0.1
+70,Chinese room experiment,creator,John Searle,0.1
+71,Chinese room experiment,developer,John Searle,0.1
+72,Chinese room experiment,author,John Searle,0.1
+73,Chinese room experiment,discoverer or inventor,John Searle's,0.1
+74,Chinese room experiment,designed by,John Searle,0.1
+75,Chinese room experiment,named after,John Searle's,0.1
+76,Chinese room experiment,participant,John Searle,0.1
+77,Chinese room experiment,creator,John Searle's,0.1
+78,Georgetown experiment,point in time,1954,0.18181818181818182
+79,Georgetown experiment,publication date,1954,0.09090909090909091
+80,Georgetown experiment,inception,1954,0.09090909090909091
+81,Georgetown experiment,start time,1954,0.09090909090909091
+82,The Georgetown experiment,point in time,1954,0.09090909090909091
+83,The Georgetown experiment,publication date,1954,0.09090909090909091
+84,Georgetown experiment,instance of,fully automatic translation,0.18181818181818182
+85,Georgetown experiment in 1954,point in time,1954,0.09090909090909091
+86,The Georgetown experiment,inception,1954,0.09090909090909091
+87,machine translation,subclass of,problem,0.1
+88,translation,subclass of,machine translation,0.1
+89,machine translation,subclass of,solved problem,0.1
+90,machine translation,instance of,solved problem,0.1
+91,2008 Summer Olympics,point in time,2008,0.1
+92,solved problem,facet of,machine translation,0.1
+93,solved problem,subclass of,machine translation,0.1
+94,machine translation,instance of,problem,0.1
+95,translation,facet of,machine translation,0.1
+96,CERN,country,Switzerland,0.1
+97,ALPAC report,publication date,1966,0.1
+98,ALPAC,publication date,1966,0.1
+99,ALPAC report in 1966,publication date,1966,0.1
+100,ALPAC report,main subject,machine translation,0.1
+101,ALPAC report,point in time,1966,0.1
+102,ALPAC report in 1966,point in time,1966,0.1
+103,ALPAC,field of work,machine translation,0.1
+104,ALPAC report,inception,1966,0.1
+105,ALPAC,inception,1966,0.1
+106,ALPAC,point in time,1966,0.1
+107,statistical machine translation,subclass of,machine translation,0.23076923076923078
+108,1980s,point in time,1980,0.07692307692307693
+109,first statistical machine translation systems,use,machine translation,0.23076923076923078
+110,statistical machine translation,instance of,machine translation,0.23076923076923078
+111,first statistical machine translation systems,publication date,1980,0.07692307692307693
+112,machine translation systems,use,machine translation,0.07692307692307693
+113,statistical machine translation,use,machine translation,0.07692307692307693
+114,ELIZA,developer,Joseph Weizenbaum,0.2
+115,SHRDLU,developer,Joseph Weizenbaum,0.26666666666666666
+116,ELIZA,creator,Joseph Weizenbaum,0.2
+117,ELIZA,designed by,Joseph Weizenbaum,0.13333333333333333
+118,Joseph Weizenbaum,notable work,ELIZA,0.06666666666666667
+119,SHRDLU,creator,Joseph Weizenbaum,0.13333333333333333
+120,emotion,subclass of,thought,0.09090909090909091
+121,emotion,part of,thought,0.09090909090909091
+122,emotion,facet of,thought,0.09090909090909091
+123,thought,different from,emotion,0.18181818181818182
+124,emotion,different from,thought,0.18181818181818182
+125,emotion,has effect,thought,0.09090909090909091
+126,thought,has effect,emotion,0.09090909090909091
+127,emotion,part of,human thought,0.09090909090909091
+128,emotion,instance of,thought,0.09090909090909091
+129,My head hurts,said to be the same as,Why do you say your head hurts?,0.25
+130,Why do you say your head hurts?,said to be the same as,My head hurts,0.08333333333333333
+131,My head hurts,instance of,Why do you say your head hurts?,0.08333333333333333
+132,"Why do you say your head hurts?"".",said to be the same as,My head hurts,0.08333333333333333
+133,ELIZA,use,generic response,0.08333333333333333
+134,My head hurts,has part,Why do you say your head hurts?,0.08333333333333333
+135,Why do you say your head hurts?,facet of,My head hurts,0.08333333333333333
+136,Why do you say your head hurts?,main subject,My head hurts,0.08333333333333333
+137,My head hurts,subclass of,Why do you say your head hurts?,0.08333333333333333
+138,ELIZA,use,My head hurts,0.08333333333333333
+139,1970s,point in time,1970,0.25
+140,ontologies,subclass of,structured real-world information,0.08333333333333333
+141,conceptual ontologies,subclass of,structured real-world information,0.16666666666666666
+142,ontologies,subclass of,structured,0.08333333333333333
+143,conceptual ontologies,inception,1970,0.16666666666666666
+144,ontologies,subclass of,computer-understandable data,0.08333333333333333
+145,conceptual ontologies,subclass of,structured,0.08333333333333333
+146,computer-understandable data,subclass of,structured real-world information,0.08333333333333333
+147,MARGIE,developer,Schank,0.25
+148,Plot Units,publication date,1981,0.0625
+149,MARGIE,author,Schank,0.0625
+150,MARGIE,creator,Schank,0.0625
+151,MARGIE,designed by,Schank,0.0625
+152,SAM,developer,Cullingford,0.1875
+153,MARGIE,publication date,1975,0.0625
+154,Plot Units,inception,1981,0.0625
+155,PAM,developer,Wilensky,0.125
+156,TaleSpin,developer,Meehan,0.0625
+157,PARRY,instance of,chatterbot,0.1
+158,PARRY,instance of,chatterbots,0.1
+159,PARRY,use,chatterbot,0.1
+160,PARRY,use,chatterbots,0.1
+161,PARRY,subclass of,chatterbot,0.1
+162,PARRY,subclass of,chatterbots,0.1
+163,PARRY,genre,chatterbot,0.1
+164,PARRY,genre,chatterbots,0.1
+165,PARRY,uses,chatterbot,0.1
+166,PARRY,product or material produced,chatterbot,0.1
+167,1980s,point in time,1980,0.6
+168,1990s,point in time,1990,0.15
+169,1980s,followed by,1990s,0.1
+170,1990s,follows,1980s,0.05
+171,symbolic methods,subclass of,NLP,0.05
+172,symbolic methods,part of,NLP,0.05
+173,two-level morphology,subclass of,morphology,0.08333333333333333
+174,two-level morphology,part of,morphology,0.08333333333333333
+175,Lesk algorithm,use,parsing,0.08333333333333333
+176,Lesk algorithm,instance of,parsing,0.08333333333333333
+177,syntax,studied by,natural language understanding,0.08333333333333333
+178,natural language understanding,studies,syntax,0.08333333333333333
+179,two-level morphology,facet of,morphology,0.08333333333333333
+180,syntax,part of,natural language understanding,0.08333333333333333
+181,parsing,studied by,natural language understanding,0.08333333333333333
+182,natural language understanding,studies,parsing,0.08333333333333333
+183,Centering Theory,facet of,natural language understanding,0.08333333333333333
+184,Centering Theory,subclass of,natural language understanding,0.08333333333333333
+185,Racter,instance of,chatterbot,0.15384615384615385
+186,Jabberwacky,instance of,chatterbot,0.15384615384615385
+187,Racter,instance of,chatterbots,0.15384615384615385
+188,Jabberwacky,instance of,chatterbots,0.15384615384615385
+189,Racter,subclass of,chatterbot,0.15384615384615385
+190,Racter,use,chatterbot,0.07692307692307693
+191,Jabberwacky,subclass of,chatterbot,0.07692307692307693
+192,Racter,use,chatterbots,0.07692307692307693
+193,1990s,point in time,1990,0.1
+194,quantitative evaluation,part of,statistical,0.1
+195,quantitative evaluation,subclass of,statistical,0.1
+196,statistical turn in the 1990s,point in time,1990,0.1
+197,statistical turn,facet of,quantitative evaluation,0.1
+198,quantitative evaluation,part of,statistical turn,0.1
+199,quantitative,subclass of,evaluation,0.1
+200,quantitative evaluation,facet of,statistical,0.1
+201,quantitative,part of,statistical,0.1
+202,Statistical turn,facet of,quantitative evaluation,0.1
+203,Statistical NLP,subclass of,natural language processing,0.1
+204,NLP,subclass of,natural language processing,0.1
+205,natural language processing,has part,Statistical NLP,0.1
+206,Natural language processing,has part,Statistical NLP,0.1
+207,Statistical NLP,part of,natural language processing,0.1
+208,Statistical NLP (1990s–2010s),subclass of,natural language processing,0.1
+209,Statistical NLP,instance of,natural language processing,0.1
+210,Statistical NLP,facet of,natural language processing,0.1
+211,Natural language processing,has part,NLP,0.1
+212,NLP,part of,natural language processing,0.1
+213,machine learning,part of,natural language processing,0.18181818181818182
+214,natural language processing,subclass of,language processing,0.09090909090909091
+215,machine learning,influenced by,natural language processing,0.09090909090909091
+216,machine learning,subclass of,algorithms,0.09090909090909091
+217,machine learning,subclass of,algorithm,0.09090909090909091
+218,natural language processing,subclass of,machine learning,0.09090909090909091
+219,machine learning,use,natural language processing,0.09090909090909091
+220,machine learning,part of,language processing,0.18181818181818182
+221,machine learning algorithms,part of,natural language processing,0.09090909090909091
+222,Chomskyan,field of work,theories of linguistics,0.1
+223,Chomskyan,field of work,linguistics,0.1
+224,Moore's law,facet of,computational power,0.1
+225,Moore's law,has effect,computational power,0.1
+226,Chomskyan theories,field of work,linguistics,0.1
+227,Moore's law,subclass of,computational power,0.1
+228,Chomskyan,genre,theories of linguistics,0.1
+229,Chomskyan theories of linguistics,facet of,Moore's law,0.1
+230,Moore's law,main subject,computational power,0.1
+231,Moore's law,has cause,computational power,0.1
+232,machine-learning,part of,language processing,0.13333333333333333
+233,language processing,has part,machine-learning,0.2
+234,machine-learning,use,language processing,0.2
+235,machine-learning,subclass of,language processing,0.13333333333333333
+236,language processing,uses,machine-learning,0.06666666666666667
+237,machine-learning approach,part of,language processing,0.13333333333333333
+238,language processing,has part,machine-learning approach,0.06666666666666667
+239,machine-learning approach,subclass of,language processing,0.06666666666666667
+240,IBM alignment models,developer,IBM Research,0.16666666666666666
+241,IBM alignment model,developer,IBM Research,0.16666666666666666
+242,IBM alignment models,use,machine translation,0.16666666666666666
+243,IBM alignment model,use,machine translation,0.16666666666666666
+244,IBM Research,field of work,machine translation,0.08333333333333333
+245,IBM alignment,developer,IBM Research,0.08333333333333333
+246,IBM alignment models,creator,IBM Research,0.08333333333333333
+247,IBM alignment models,facet of,machine translation,0.08333333333333333
+248,European Union,legislative body,Parliament of Canada,0.07692307692307693
+249,Parliament of Canada,field of work,official language,0.07692307692307693
+250,European Union,instance of,official language,0.07692307692307693
+251,Parliament of Canada,field of work,official languages,0.07692307692307693
+252,Parliament of Canada,instance of,systems of government,0.07692307692307693
+253,Canada,diplomatic relation,European Union,0.07692307692307693
+254,European Union,diplomatic relation,Canada,0.07692307692307693
+255,Parliament of Canada,part of,systems of government,0.15384615384615385
+256,Parliament,country,Canada,0.07692307692307693
+257,Canada,legislative body,Parliament,0.07692307692307693
+258,systems of government,has part,Parliament of Canada,0.07692307692307693
+259,Parliament of Canada,part of,European Union,0.07692307692307693
+260,corpora,subclass of,systems,0.08333333333333333
+261,corpora,part of,systems,0.16666666666666666
+262,corpora,part of,system,0.16666666666666666
+263,systems,has part,corpora,0.16666666666666666
+264,corpora,instance of,systems,0.08333333333333333
+265,corpora,subclass of,system,0.08333333333333333
+266,corpora,facet of,systems,0.08333333333333333
+267,system,has part,corpora,0.16666666666666666
+268,data,use,learning,0.08333333333333333
+269,learning,uses,data,0.16666666666666666
+270,learning,studies,data,0.08333333333333333
+271,data,studied by,learning,0.08333333333333333
+272,data,has effect,learning,0.08333333333333333
+273,learning,has part,data,0.08333333333333333
+274,more effectively learning,uses,data,0.08333333333333333
+275,data,used by,learning,0.08333333333333333
+276,data,facet of,learning,0.08333333333333333
+277,limited amounts of data,subclass of,learning,0.08333333333333333
+278,methods of more effectively learning,uses,data,0.08333333333333333
+279,2000s,point in time,2000,0.2727272727272727
+280,web,inception,2000,0.09090909090909091
+281,web,point in time,2000,0.09090909090909091
+282,web,start time,2000,0.09090909090909091
+283,1990s,followed by,2000s,0.09090909090909091
+284,growth of the web,point in time,2000,0.09090909090909091
+285,web,has part,data,0.09090909090909091
+286,web,publication date,2000,0.09090909090909091
+287,language data,subclass of,raw,0.09090909090909091
+288,semi-supervised learning,subclass of,unsupervised,0.06666666666666667
+289,unsupervised,subclass of,semi-supervised learning,0.06666666666666667
+290,semi-supervised,subclass of,unsupervised,0.06666666666666667
+291,semi-supervised learning,subclass of,algorithms,0.13333333333333333
+292,unsupervised,subclass of,algorithms,0.13333333333333333
+293,semi-supervised learning,subclass of,algorithm,0.06666666666666667
+294,semi-supervised,subclass of,algorithms,0.06666666666666667
+295,unsupervised,subclass of,learning algorithms,0.06666666666666667
+296,semi-supervised,subclass of,learning algorithms,0.06666666666666667
+297,unsupervised,subclass of,learning algorithm,0.06666666666666667
+298,semi-supervised,subclass of,learning algorithm,0.06666666666666667
+299,unsupervised,subclass of,algorithm,0.06666666666666667
+300,semi-supervised,subclass of,algorithm,0.06666666666666667
+301,annotated,subclass of,learn,0.09090909090909091
+302,learn,subclass of,algorithm,0.09090909090909091
+303,annotated,different from,hand-annotated,0.18181818181818182
+304,hand-annotated,subclass of,learn,0.09090909090909091
+305,non-annotated data,subclass of,learn,0.09090909090909091
+306,learn from data,subclass of,algorithm,0.09090909090909091
+307,annotated,subclass of,data,0.09090909090909091
+308,annotated,use,learn,0.09090909090909091
+309,hand-annotated,subclass of,learn from data,0.09090909090909091
+310,non-annotated,different from,hand-annotated,0.09090909090909091
+311,supervised learning,uses,input data,0.16666666666666666
+312,input data,used by,supervised learning,0.08333333333333333
+313,supervised learning,has part,input data,0.08333333333333333
+314,supervised learning,uses,data,0.08333333333333333
+315,less accurate results,facet of,supervised learning,0.08333333333333333
+316,more difficult,opposite of,supervised learning,0.08333333333333333
+317,more difficult,different from,supervised learning,0.16666666666666666
+318,supervised learning,different from,more difficult,0.08333333333333333
+319,less accurate results,subclass of,supervised learning,0.08333333333333333
+320,supervised learning,subclass of,input data,0.08333333333333333
+321,World Wide Web,has part,non-annotated data,0.09090909090909091
+322,entire content,part of,World Wide Web,0.18181818181818182
+323,entire content,facet of,World Wide Web,0.09090909090909091
+324,content,part of,World Wide Web,0.09090909090909091
+325,non-annotated data,part of,World Wide Web,0.09090909090909091
+326,data,part of,World Wide Web,0.09090909090909091
+327,World Wide Web,has part,entire content,0.09090909090909091
+328,entire content of the World Wide Web,subclass of,non-annotated data,0.09090909090909091
+329,World Wide Web,has part,data,0.09090909090909091
+330,data,used by,algorithm,0.09090909090909091
+331,Yoshua Bengio,field of work,NLP,0.1
+332,n-gram,subclass of,statistical alogrithm,0.1
+333,n-gram model,subclass of,statistical alogrithm,0.1
+334,n-gram model,instance of,statistical alogrithm,0.1
+335,n-gram,instance of,statistical alogrithm,0.1
+336,Yoshua Bengio,field of work,Neural NLP,0.1
+337,n-gram models,subclass of,statistical alogrithm,0.1
+338,n-gram models,instance of,statistical alogrithm,0.1
+339,NLP,subclass of,language modelling,0.1
+340,Hidden layer,subclass of,multi-layer,0.1
+341,Word2vec,developer,Tomáš Mikolov,0.23076923076923078
+342,Tomáš Mikolov,educated at,Brno University of Technology,0.23076923076923078
+343,Word2vec,creator,Tomáš Mikolov,0.07692307692307693
+344,Word2vec,inception,2010,0.07692307692307693
+345,Tomáš Mikolov,notable work,Word2vec,0.07692307692307693
+346,word2vec,developer,Tomáš Mikolov,0.07692307692307693
+347,Word2vec,designed by,Tomáš Mikolov,0.07692307692307693
+348,Word2vec,discoverer or inventor,Tomáš Mikolov,0.07692307692307693
+349,Word2vec,founded by,Tomáš Mikolov,0.07692307692307693
+350,deep neural network,subclass of,machine learning,0.26666666666666666
+351,deep neural network,use,machine learning,0.2
+352,deep neural network,facet of,machine learning,0.06666666666666667
+353,deep neural network,part of,machine learning,0.06666666666666667
+354,representation learning,subclass of,machine learning,0.13333333333333333
+355,hidden layers,facet of,machine learning,0.13333333333333333
+356,deep neural network,studied by,machine learning,0.06666666666666667
+357,hidden layers,part of,deep neural network,0.06666666666666667
+358,parsing,facet of,natural language,0.09090909090909091
+359,parsing,uses,natural language,0.09090909090909091
+360,parsing,studies,natural language,0.18181818181818182
+361,natural language,studied by,parsing,0.18181818181818182
+362,parsing,part of,natural language,0.09090909090909091
+363,language modeling,facet of,natural language,0.09090909090909091
+364,parsing,use,natural language,0.09090909090909091
+365,parsing,subclass of,natural language tasks,0.09090909090909091
+366,language modeling,studies,natural language,0.09090909090909091
+367,healthcare,facet of,medicine,0.21428571428571427
+368,medicine,facet of,healthcare,0.14285714285714285
+369,medicine,part of,healthcare,0.21428571428571427
+370,healthcare,has part,medicine,0.07142857142857142
+371,medicine,has part,healthcare,0.14285714285714285
+372,healthcare,part of,medicine,0.07142857142857142
+373,healthcare,subclass of,medicine,0.07142857142857142
+374,medicine,use,healthcare,0.07142857142857142
+375,stemming,subclass of,symbolic methods,0.1
+376,stemming,subclass of,language-processing,0.1
+377,stemming,part of,symbolic methods,0.1
+378,stemming,part of,language-processing,0.1
+379,stemming,instance of,symbolic methods,0.1
+380,stemming,part of,statistics,0.1
+381,stemming,subclass of,symbolic method,0.1
+382,stemming,instance of,language-processing,0.1
+383,stemming,subclass of,heuristic,0.1
+384,stemming,instance of,heuristic,0.1
+385,machine-learning,subclass of,algorithms,0.07142857142857142
+386,machine-learning,subclass of,algorithm,0.07142857142857142
+387,machine-learning algorithms,part of,machine learning,0.07142857142857142
+388,machine learning,has part,machine-learning algorithms,0.07142857142857142
+389,machine-learning algorithms,use,machine learning,0.14285714285714285
+390,algorithm,use,machine learning,0.07142857142857142
+391,machine-learning algorithm,use,machine learning,0.14285714285714285
+392,machine learning,uses,machine-learning algorithm,0.07142857142857142
+393,algorithms,use,machine learning,0.07142857142857142
+394,machine learning,uses,machine-learning algorithms,0.07142857142857142
+395,machine-learning algorithm,part of,machine learning,0.07142857142857142
+396,machine learning,has part,machine-learning algorithm,0.07142857142857142
+397,statistical inference,subclass of,algorithms,0.1
+398,statistical inference,subclass of,algorithm,0.1
+399,robust,subclass of,models,0.1
+400,Automatic learning,subclass of,statistical inference,0.2
+401,Automatic learning,use,statistical inference,0.1
+402,statistical inference,subclass of,Automatic learning,0.1
+403,Automatic learning,subclass of,statistical inference algorithm,0.1
+404,Automatic learning,uses,statistical inference,0.1
+405,Automatic learning,has part,statistical inference,0.1
+406,structures,has part,words,0.16666666666666666
+407,structures,subclass of,words,0.08333333333333333
+408,structures,different from,words,0.16666666666666666
+409,structures,has part,word,0.08333333333333333
+410,words,subclass of,structures,0.08333333333333333
+411,words,different from,structures,0.08333333333333333
+412,words,part of,structures,0.16666666666666666
+413,word,subclass of,structures,0.08333333333333333
+414,words,has part,structures,0.08333333333333333
+415,accidentally omitted,subclass of,misspelled,0.08333333333333333
+416,misspelled,has effect,accidentally omitted,0.16666666666666666
+417,accidentally omitted,instance of,misspelled,0.08333333333333333
+418,misspelled,has cause,accidentally omitted,0.16666666666666666
+419,accidentally omitted,has effect,misspelled,0.16666666666666666
+420,accidentally omitted,subclass of,misspelled words,0.08333333333333333
+421,accidentally omitted,has cause,misspelled,0.08333333333333333
+422,misspelled,subclass of,accidentally omitted,0.08333333333333333
+423,accidentally omitted,subclass of,misspelled word,0.08333333333333333
+424,error-prone,subclass of,time-consuming,0.09090909090909091
+425,error-prone,facet of,time-consuming,0.09090909090909091
+426,error-prone,has effect,time-consuming,0.18181818181818182
+427,errors,has effect,time-consuming,0.09090909090909091
+428,soft decisions,subclass of,handwritten rules,0.09090909090909091
+429,error-prone,instance of,time-consuming,0.09090909090909091
+430,errors,facet of,time-consuming,0.09090909090909091
+431,soft decision,subclass of,decision,0.09090909090909091
+432,time-consuming,has cause,error-prone,0.09090909090909091
+433,error-prone,subclass of,difficult,0.09090909090909091
+434,automatically learning,subclass of,System,0.1
+435,learning,subclass of,automatically,0.1
+436,automatically learning,subclass of,Systems,0.1
+437,Learning,subclass of,automatically,0.1
+438,automatically learning,part of,System,0.1
+439,learning,part of,System,0.1
+440,automatically learning,subclass of,systems,0.1
+441,automatically learning,facet of,System,0.1
+442,learning,subclass of,Systems,0.1
+443,learning,subclass of,System,0.1
+444,complexity,has effect,accuracy,0.1
+445,complexity,subclass of,accuracy,0.1
+446,complexity,opposite of,accuracy,0.1
+447,complexity of the rules,has effect,accuracy,0.1
+448,complexity,has effect,error,0.1
+449,complexity,different from,accuracy,0.1
+450,complexity,subclass of,error,0.1
+451,complexity of the rules,subclass of,accuracy,0.1
+452,complexity,has part,accuracy,0.1
+453,handwritten rules,subclass of,complexity of the rules,0.1
+454,unmanageable,subclass of,complexity,0.1
+455,handwritten rules,subclass of,complexity,0.1
+456,limit,subclass of,complexity,0.1
+457,limit,facet of,complexity,0.1
+458,handwritten rules,instance of,complexity,0.1
+459,limit,subclass of,unmanageable,0.1
+460,complexity,subclass of,unmanageable,0.1
+461,handwritten rules,has effect,complexity,0.1
+462,handwritten rules,facet of,complexity,0.1
+463,limit,facet of,unmanageable,0.1
+464,Apertium,use,machine translation,0.18181818181818182
+465,Apertium system,use,machine translation,0.09090909090909091
+466,Apertium,instance of,machine translation,0.09090909090909091
+467,machine translation,subclass of,machine learning,0.18181818181818182
+468,Apertium system,instance of,machine translation,0.09090909090909091
+469,machine translation,facet of,machine learning,0.09090909090909091
+470,machine translation,studied by,machine learning,0.09090909090909091
+471,machine translation,part of,machine learning,0.09090909090909091
+472,machine translation,subclass of,machine-learning,0.09090909090909091
+473,machine learning,part of,Statistical methods,0.15384615384615385
+474,Statistical methods,facet of,machine learning,0.07692307692307693
+475,machine learning,subclass of,Statistical methods,0.07692307692307693
+476,Statistical methods,subclass of,machine learning,0.07692307692307693
+477,Statistical methods,part of,machine learning,0.07692307692307693
+478,natural language processing,has part,machine learning,0.15384615384615385
+479,natural language processing,subclass of,machine learning,0.07692307692307693
+480,machine learning,part of,natural language processing,0.07692307692307693
+481,Statistical methods,has part,machine learning,0.07692307692307693
+482,Statistical methods,used by,machine learning,0.07692307692307693
+483,machine learning,uses,Statistical methods,0.07692307692307693
+484,large corpora,subclass of,corpus,0.08333333333333333
+485,machine-learning,has part,statistical inference,0.16666666666666666
+486,statistical inference,part of,machine-learning,0.16666666666666666
+487,statistical inference,subclass of,machine-learning,0.08333333333333333
+488,machine-learning paradigm,has part,statistical inference,0.16666666666666666
+489,statistical inference,part of,machine-learning paradigm,0.16666666666666666
+490,large corpus,subclass of,corpus,0.08333333333333333
+491,large corpora,instance of,corpus,0.08333333333333333
+492,machine-learning,subclass of,algorithm,0.08333333333333333
+493,machine-learning,subclass of,algorithms,0.08333333333333333
+494,machine-learning,use,natural-language-processing,0.16666666666666666
+495,natural-language-processing,has part,machine-learning,0.16666666666666666
+496,natural-language-processing,uses,machine-learning,0.16666666666666666
+497,machine-learning,part of,natural-language-processing,0.16666666666666666
+498,natural-language-processing,subclass of,machine-learning,0.08333333333333333
+499,machine-learning algorithms,use,natural-language-processing,0.08333333333333333
+500,features,part of,algorithm,0.1
+501,features,facet of,algorithm,0.1
+502,feature,part of,algorithm,0.1
+503,features,subclass of,algorithm,0.1
+504,feature,subclass of,algorithm,0.1
+505,input data,part of,algorithm,0.1
+506,features,part of,algorithms,0.1
+507,features,subclass of,algorithms,0.1
+508,input data,facet of,algorithm,0.1
+509,"""features""",part of,algorithm,0.1
+510,complex-valued embedding,subclass of,neural network,0.1
+511,neural network,subclass of,statistical model,0.1
+512,embedding,part of,neural network,0.1
+513,complex-valued embedding,subclass of,neural networks,0.1
+514,embedding,subclass of,neural network,0.1
+515,complex-valued embedding,subclass of,statistical model,0.1
+516,embedding,facet of,neural network,0.1
+517,complex-valued embedding,facet of,neural network,0.1
+518,complex-valued embedding,instance of,statistical model,0.1
+519,neural network,uses,complex-valued embedding,0.1
+520,speech,subclass of,speech,0.07692307692307693
+521,speech,subclass of,language,0.07692307692307693
+522,speech,part of,speech,0.07692307692307693
+523,speech,facet of,speech,0.07692307692307693
+524,Speech,subclass of,speech,0.07692307692307693
+525,Shakespeare,notable work,Hamlet,0.07692307692307693
+526,Hamlet,author,Shakespeare,0.07692307692307693
+527,William Shakespeare,notable work,Cymbeline,0.07692307692307693
+528,Cymbeline,author,William Shakespeare,0.07692307692307693
+529,Shakespeare,notable work,Cymbeline,0.07692307692307693
+530,Cymbeline,author,Shakespeare,0.07692307692307693
+531,speech,has part,language,0.07692307692307693
+532,speech,has part,speech,0.07692307692307693
+533,relative certainty,subclass of,certainty,0.09090909090909091
+534,relative certainty,subclass of,uncertainty,0.09090909090909091
+535,relative certainty,instance of,certainty,0.09090909090909091
+536,relative certainty,different from,only one,0.18181818181818182
+537,only one,different from,relative certainty,0.09090909090909091
+538,relative certainty,subclass of,confidence,0.09090909090909091
+539,relative certainty,subclass of,probability,0.09090909090909091
+540,relative certainty,facet of,certainty,0.09090909090909091
+541,certainty,subclass of,relative,0.09090909090909091
+542,many different possible answers,subclass of,certainty,0.09090909090909091
+543,decision tree,facet of,machine learning,0.09090909090909091
+544,decision tree,part of,machine learning,0.09090909090909091
+545,algorithm,part of,machine learning,0.09090909090909091
+546,decision tree,use,machine learning,0.09090909090909091
+547,decision tree,studied by,machine learning,0.09090909090909091
+548,decision tree,subclass of,algorithm,0.09090909090909091
+549,decision tree,subclass of,machine learning,0.09090909090909091
+550,algorithm,use,machine learning,0.09090909090909091
+551,decision tree,instance of,algorithm,0.09090909090909091
+552,machine learning,subclass of,algorithm,0.09090909090909091
+553,algorithm,has part,machine learning,0.09090909090909091
+554,hidden Markov model,instance of,statistical model,0.09090909090909091
+555,hidden Markov model,subclass of,statistical model,0.09090909090909091
+556,hidden Markov model,use,natural language processing,0.09090909090909091
+557,Markov model,instance of,statistical model,0.09090909090909091
+558,Markov model,subclass of,statistical model,0.09090909090909091
+559,hidden Markov model,facet of,natural language processing,0.09090909090909091
+560,hidden Markov models,subclass of,statistical model,0.09090909090909091
+561,hidden Markov models,instance of,statistical model,0.09090909090909091
+562,natural language processing,studies,features,0.09090909090909091
+563,features,studied by,natural language processing,0.09090909090909091
+564,hidden Markov model,subclass of,statistical models,0.09090909090909091
+565,cache language,use,speech recognition,0.1
+566,cache language,facet of,speech recognition,0.1
+567,cache language models,use,speech recognition,0.1
+568,cache language model,use,speech recognition,0.1
+569,cache language,part of,speech recognition,0.1
+570,cache language,subclass of,speech recognition,0.1
+571,cache language,used by,speech recognition,0.1
+572,cache language model,facet of,speech recognition,0.1
+573,cache language models,facet of,speech recognition,0.1
+574,cache language,use,speech recognition systems,0.1
+575,errors,facet of,real-world data,0.1
+576,errors,subclass of,input,0.1
+577,errors,subclass of,real-world data,0.1
+578,errors,part of,real-world data,0.1
+579,errors,subclass of,data,0.1
+580,error,facet of,real-world data,0.1
+581,errors,has cause,input,0.1
+582,subtasks,part of,system,0.1
+583,error,subclass of,input,0.1
+584,errors,has effect,real-world data,0.1
+585,neural networks,subclass of,statistical methods,0.1
+586,neural networks,facet of,neural turn,0.1
+587,neural networks,use,NLP,0.1
+588,neural network,subclass of,statistical methods,0.1
+589,neural network,facet of,neural turn,0.1
+590,neural networks,opposite of,statistical methods,0.1
+591,neural networks,part of,NLP,0.1
+592,neural networks,part of,neural turn,0.1
+593,neural turn,facet of,neural networks,0.1
+594,neural networks,subclass of,statistical methods in NLP,0.1
+595,interpretability,part of,statistical,0.18181818181818182
+596,interpretability,facet of,statistical,0.09090909090909091
+597,interpretability,studied by,statistical,0.09090909090909091
+598,interpretability,subclass of,statistical,0.09090909090909091
+599,transparency,subclass of,interpretability,0.09090909090909091
+600,transparency,facet of,interpretability,0.09090909090909091
+601,statistical interpretability,facet of,transparency,0.09090909090909091
+602,interpretability,subclass of,transparency,0.09090909090909091
+603,statistical interpretability,subclass of,transparency,0.09090909090909091
+604,transparency,part of,statistical,0.09090909090909091
+605,Neural network,subclass of,statistical methods,0.09090909090909091
+606,Neural network,part of,statistical methods,0.09090909090909091
+607,Neural network,studied by,feature engineering,0.18181818181818182
+608,feature engineering,studies,Neural network,0.09090909090909091
+609,Neural network,instance of,statistical methods,0.09090909090909091
+610,Neural networks,subclass of,statistical methods,0.09090909090909091
+611,feature engineering,facet of,Neural network,0.09090909090909091
+612,Neural network,subclass of,Statistical methods,0.09090909090909091
+613,Feature engineering,facet of,Neural network,0.09090909090909091
+614,Neural network,studied by,statistical methods,0.09090909090909091
+615,neural network,part of,machine learning,0.21428571428571427
+616,machine learning,has part,neural network,0.07142857142857142
+617,neural networks,part of,machine learning,0.14285714285714285
+618,machine learning,has part,neural networks,0.07142857142857142
+619,neural network,use,machine learning,0.14285714285714285
+620,neural network,subclass of,machine learning,0.07142857142857142
+621,neural networks,use,machine learning,0.07142857142857142
+622,neural networks,subclass of,machine learning,0.07142857142857142
+623,machine learning,studies,neural network,0.14285714285714285
+624,end-to-end learning,opposite of,intermediate tasks,0.18181818181818182
+625,intermediate tasks,opposite of,end-to-end learning,0.09090909090909091
+626,word embedding,use,semantic,0.09090909090909091
+627,end-to-end,subclass of,learning,0.09090909090909091
+628,word embedding,subclass of,semantic,0.09090909090909091
+629,word embedding,facet of,semantic,0.09090909090909091
+630,end-to-end learning,opposite of,intermediate task,0.09090909090909091
+631,end-to-end learning,opposite of,pipeline,0.09090909090909091
+632,word embedding,use,semantic properties,0.09090909090909091
+633,end-to-end learning,subclass of,intermediate tasks,0.09090909090909091
+634,deep neural network,use,natural language processing,0.18181818181818182
+635,natural language processing,subclass of,NLP,0.18181818181818182
+636,natural language processing,different from,statistical,0.09090909090909091
+637,natural language processing,subclass of,statistical,0.09090909090909091
+638,deep neural network,use,statistical natural language processing,0.09090909090909091
+639,natural language processing,opposite of,statistical,0.09090909090909091
+640,statistical natural language processing,subclass of,NLP,0.09090909090909091
+641,natural language processing,has part,statistical,0.09090909090909091
+642,deep neural network,part of,natural language processing,0.09090909090909091
+643,neural machine translation,subclass of,machine translation,0.16666666666666666
+644,deep learning,use,machine translation,0.16666666666666666
+645,statistical machine translation,subclass of,machine translation,0.25
+646,neural machine translation,based on,deep learning,0.08333333333333333
+647,neural machine translation,facet of,deep learning,0.08333333333333333
+648,neural machine translation,uses,deep learning,0.08333333333333333
+649,neural machine translation,instance of,machine translation,0.08333333333333333
+650,deep learning,use,statistical machine translation,0.08333333333333333
+651,Common NLP tasks,facet of,natural language processing,0.1
+652,Common NLP tasks,use,natural language processing,0.1
+653,Common NLP tasks,part of,natural language processing,0.1
+654,Common NLP tasks,field of work,natural language processing,0.1
+655,Common NLP tasks,studied by,natural language processing,0.1
+656,Common NLP tasks,used by,natural language processing,0.1
+657,Common NLP tasks,subclass of,natural language processing,0.1
+658,Common NLP tasks,subclass of,tasks,0.1
+659,NLP tasks,facet of,natural language processing,0.1
+660,Common NLP tasks,is a list of,tasks,0.1
+661,subtasks,subclass of,tasks,0.18181818181818182
+662,subtasks,subclass of,real-world applications,0.09090909090909091
+663,subtasks,subclass of,task,0.09090909090909091
+664,subtasks,subclass of,solving larger tasks,0.09090909090909091
+665,subtasks,part of,tasks,0.09090909090909091
+666,subtasks,subclass of,applications,0.09090909090909091
+667,solving larger tasks,subclass of,subtasks,0.09090909090909091
+668,subtasks,subclass of,solutions,0.09090909090909091
+669,subtasks,use,solving larger tasks,0.09090909090909091
+670,tasks,has part,subtasks,0.09090909090909091
+671,categories,facet of,natural language processing,0.08333333333333333
+672,categories,part of,natural language processing,0.16666666666666666
+673,categories,studied by,natural language processing,0.16666666666666666
+674,natural language processing,studies,categories,0.08333333333333333
+675,categories for convenience,facet of,natural language processing,0.08333333333333333
+676,categories,use,natural language processing,0.08333333333333333
+677,categories,subclass of,natural language processing,0.08333333333333333
+678,categories for convenience,part of,natural language processing,0.08333333333333333
+679,categories for convenience,subclass of,natural language processing,0.08333333333333333
+680,natural language processing,has part,categories,0.08333333333333333
+681,coarse division,subclass of,division,0.18181818181818182
+682,coarse division,instance of,division,0.09090909090909091
+683,division,subclass of,coarse,0.09090909090909091
+684,coarse division,facet of,division,0.09090909090909091
+685,coarse,subclass of,division,0.09090909090909091
+686,coarse division,subclass of,divisions,0.09090909090909091
+687,coarse division,subclass of,coarse division,0.09090909090909091
+688,A coarse division,subclass of,division,0.09090909090909091
+689,division,has part,coarse division,0.09090909090909091
+690,coarse division,part of,division,0.09090909090909091
+691,Optical character recognition,part of,Text and speech processing,0.08333333333333333
+692,Speech recognition,subclass of,speech processing,0.08333333333333333
+693,Speech recognition,part of,speech processing,0.08333333333333333
+694,Optical character recognition,subclass of,Text and speech processing,0.08333333333333333
+695,Optical character recognition,studied by,Text and speech processing,0.08333333333333333
+696,Optical character recognition,use,Text and speech processing,0.08333333333333333
+697,Optical character recognition,instance of,Text and speech processing,0.08333333333333333
+698,Text and speech processing,has part,Speech recognition,0.16666666666666666
+699,Speech recognition,part of,Text and speech processing,0.08333333333333333
+700,Text and speech processing,studies,Speech recognition,0.08333333333333333
+701,Speech recognition,studied by,Text and speech processing,0.08333333333333333
+702,text to speech,said to be the same as,AI-complete,0.15384615384615385
+703,AI-complete,said to be the same as,text to speech,0.07692307692307693
+704,text to speech,facet of,AI-complete,0.07692307692307693
+705,text to speech,opposite of,AI-complete,0.15384615384615385
+706,AI-complete,opposite of,text to speech,0.07692307692307693
+707,text to speech,instance of,AI-complete,0.07692307692307693
+708,AI-complete,subclass of,extremely difficult problems,0.07692307692307693
+709,text to speech,part of,AI-complete,0.07692307692307693
+710,speech,opposite of,text,0.07692307692307693
+711,text to speech,different from,AI-complete,0.07692307692307693
+712,AI-complete,different from,text to speech,0.07692307692307693
+713,speech segmentation,facet of,speech recognition,0.1
+714,speech segmentation,part of,speech recognition,0.1
+715,speech segmentation,subclass of,speech recognition,0.1
+716,speech segmentation,use,speech recognition,0.1
+717,pauses,part of,natural speech,0.1
+718,pauses,facet of,natural speech,0.1
+719,speech segmentation,studied by,speech recognition,0.1
+720,pauses,part of,speech,0.1
+721,natural speech,has parts of the class,pauses,0.1
+722,pauses,facet of,speech recognition,0.1
+723,coarticulation,subclass of,sounds,0.1
+724,coarticulation,subclass of,sound,0.1
+725,coarticulation,instance of,sounds,0.1
+726,coarticulation,subclass of,blends,0.1
+727,coarticulation,facet of,sounds,0.1
+728,coarticulation,subclass of,sounds representing successive letters,0.1
+729,coarticulation,instance of,sound,0.1
+730,language,has part,sounds,0.1
+731,letters,subclass of,sounds,0.1
+732,coarticulation,facet of,language,0.1
+733,speech recognition,subclass of,software,0.1
+734,accents,subclass of,language,0.1
+735,accents,facet of,language,0.1
+736,recognize,facet of,speech recognition,0.1
+737,accents,part of,language,0.1
+738,speech recognition software,use,recognition,0.1
+739,recognition,facet of,speech recognition,0.1
+740,recognize,use,speech recognition,0.1
+741,speech recognition software,use,recognize,0.1
+742,recognize,facet of,speech recognition software,0.1
+743,Speech segmentation,subclass of,separate it into words,0.1
+744,word,subclass of,sound,0.1
+745,Speech segmentation,subclass of,separate it,0.1
+746,words,subclass of,sound,0.1
+747,sound clip,subclass of,sound,0.1
+748,sound,has part,words,0.1
+749,sound clip,subclass of,Speech segmentation,0.1
+750,sound clip,use,Speech segmentation,0.1
+751,sound clip,subclass of,word,0.1
+752,sound clip,subclass of,separate it into words,0.1
+753,Text-to-speech,subclass of,speech recognition,0.18181818181818182
+754,Text-to-speech,part of,speech recognition,0.09090909090909091
+755,Text-to-speech,facet of,speech recognition,0.09090909090909091
+756,Text-to-speech,use,speech recognition,0.09090909090909091
+757,Text-to-speech,instance of,speech recognition,0.09090909090909091
+758,Text-to-speech,studied by,speech recognition,0.09090909090909091
+759,Text-to-speech,subclass of,spoken representation,0.18181818181818182
+760,text,subclass of,spoken representation,0.09090909090909091
+761,Text-to-speech,used by,speech recognition,0.09090909090909091
+762,Word segmentation,subclass of,Text-to-speech,0.1
+763,Word segmentation,part of,Text-to-speech,0.1
+764,Word segmentation,facet of,Text-to-speech,0.1
+765,Word segmentation,use,Text-to-speech,0.1
+766,Word segmentation (Tokenization),subclass of,Text-to-speech,0.1
+767,Text-to-speech,used by,visually impaired,0.1
+768,Text-to-speech,facet of,visually impaired,0.1
+769,Text-to-speech,use,visually impaired,0.1
+770,word,part of,text,0.1
+771,Tokenization,subclass of,Text-to-speech,0.1
+772,English,uses,space,0.1
+773,English,has part,space,0.1
+774,English,has parts of the class,space,0.1
+775,English,has part,spaces,0.1
+776,space,part of,word,0.1
+777,space,part of,words,0.1
+778,English,instance of,language,0.1
+779,English,uses,spaces,0.1
+780,English,has parts of the class,word,0.1
+781,English,has parts of the class,spaces,0.1
+782,morphology,studies,vocabulary,0.07692307692307693
+783,morphology,part of,vocabulary,0.07692307692307693
+784,morphology,facet of,vocabulary,0.07692307692307693
+785,morphology,has part,vocabulary,0.07692307692307693
+786,Japanese,influenced by,Chinese,0.07692307692307693
+787,Chinese,influenced by,Japanese,0.07692307692307693
+788,Thai,instance of,written language,0.15384615384615385
+789,morphology,studies,words,0.07692307692307693
+790,words,studied by,morphology,0.07692307692307693
+791,Chinese,instance of,written language,0.15384615384615385
+792,Japanese,instance of,written language,0.07692307692307693
+793,bag of words,use,data mining,0.18181818181818182
+794,bag of words,subclass of,data mining,0.09090909090909091
+795,bag of words,facet of,data mining,0.09090909090909091
+796,bag of words,part of,data mining,0.09090909090909091
+797,bag of words,instance of,data mining,0.09090909090909091
+798,bag of words,studied by,data mining,0.09090909090909091
+799,bag of words,used by,data mining,0.09090909090909091
+800,bag of words (BOW),use,data mining,0.09090909090909091
+801,bag of words,field of work,data mining,0.09090909090909091
+802,data mining,uses,bag of words,0.09090909090909091
+803,Lemmatization,subclass of,lemma,0.08333333333333333
+804,lemma,subclass of,Lemmatization,0.08333333333333333
+805,Lemmatization,instance of,lemma,0.08333333333333333
+806,lemma,subclass of,inflectional endings,0.08333333333333333
+807,Lemmatization,uses,lemma,0.16666666666666666
+808,lemma,facet of,Lemmatization,0.08333333333333333
+809,lemma,used by,Lemmatization,0.08333333333333333
+810,Lemmatization,said to be the same as,lemma,0.08333333333333333
+811,lemma,said to be the same as,Lemmatization,0.08333333333333333
+812,lemma,uses,inflectional endings,0.08333333333333333
+813,lemma,instance of,Lemmatization,0.08333333333333333
+814,normalized form,subclass of,reducing words,0.1
+815,normalized form,subclass of,reducing,0.1
+816,Lemmatization,subclass of,reducing words to their normalized form,0.1
+817,normalized form,subclass of,reducing words to their normalized form,0.1
+818,normalized,subclass of,reducing,0.1
+819,Lemmatization,subclass of,normalized form,0.1
+820,Lemmatization,subclass of,reducing words,0.1
+821,normalized form,subclass of,reduced,0.1
+822,normalized,subclass of,reducing words,0.1
+823,Lemmatization,instance of,reducing words to their normalized form,0.1
+824,map,part of,dictionary,0.1
+825,map,used by,dictionary,0.1
+826,map,subclass of,dictionary,0.1
+827,map,facet of,dictionary,0.1
+828,dictionary,subclass of,map,0.1
+829,map,use,dictionary,0.1
+830,dictionary,instance of,map,0.1
+831,dictionary,use,map,0.1
+832,map,subclass of,map,0.1
+833,dictionary,uses,map,0.1
+834,Morphological segmentation,facet of,word,0.09090909090909091
+835,Morphological segmentation,subclass of,segmentation,0.09090909090909091
+836,Morphological segmentation,facet of,morphemes,0.09090909090909091
+837,Morphological segmentation,subclass of,word,0.09090909090909091
+838,Morphological segmentation,subclass of,Separate words,0.09090909090909091
+839,Morphological segmentation,part of,morphological,0.09090909090909091
+840,Morphological segmentation,subclass of,morphological,0.09090909090909091
+841,Morphological segmentation,studies,morphemes,0.09090909090909091
+842,morphemes,studied by,Morphological segmentation,0.09090909090909091
+843,Morphological segmentation,facet of,morphological,0.09090909090909091
+844,Morphological segmentation,uses,morphemes,0.09090909090909091
+845,morphology,studies,language,0.14285714285714285
+846,language,studied by,morphology,0.07142857142857142
+847,morphology,studies,word,0.07142857142857142
+848,word,studied by,morphology,0.14285714285714285
+849,structure of words,part of,morphology,0.07142857142857142
+850,morphology,studies,structure of words,0.07142857142857142
+851,structure of words,studied by,morphology,0.14285714285714285
+852,morphology,studies,words,0.07142857142857142
+853,words,studied by,morphology,0.07142857142857142
+854,structure of words,subclass of,morphology,0.07142857142857142
+855,morphology,facet of,language,0.07142857142857142
+856,inflectional morphology,subclass of,morphology,0.09090909090909091
+857,inflectional morphology,part of,morphology,0.18181818181818182
+858,inflectional morphology,facet of,morphology,0.09090909090909091
+859,inflectional,part of,morphology,0.09090909090909091
+860,inflectional,subclass of,morphology,0.09090909090909091
+861,inflectional morphology,instance of,morphology,0.09090909090909091
+862,morphology,has part,inflectional morphology,0.09090909090909091
+863,inflectional morphology,studied by,morphology,0.09090909090909091
+864,inflectional morphology,facet of,English,0.09090909090909091
+865,inflection,part of,morphology,0.09090909090909091
+866,Meitei,subclass of,Indian language,0.25
+867,Meitei,instance of,agglutinated,0.16666666666666666
+868,Indian language,has part,Meitei,0.08333333333333333
+869,Meitei,part of,Indian language,0.08333333333333333
+870,Meitei,subclass of,highly agglutinated Indian language,0.08333333333333333
+871,Meitei,instance of,highly agglutinated,0.08333333333333333
+872,Meitei,instance of,Indian language,0.08333333333333333
+873,Meitei,subclass of,agglutinated,0.08333333333333333
+874,Meitei,country,India,0.08333333333333333
+875,Part-of-speech tagging,facet of,part of speech,0.09090909090909091
+876,Part-of-speech tagging,uses,part of speech,0.09090909090909091
+877,sentence,has part,word,0.18181818181818182
+878,word,part of,sentence,0.18181818181818182
+879,sentence,has part,part of speech,0.09090909090909091
+880,Part-of-speech tagging,use,part of speech,0.09090909090909091
+881,Part-of-speech tagging,main subject,part of speech,0.09090909090909091
+882,part of speech,part of,sentence,0.09090909090909091
+883,Part-of-speech tagging,instance of,part of speech,0.09090909090909091
+884,parts of speech,subclass of,word,0.1
+885,parts of speech,has part,word,0.1
+886,many words,subclass of,parts of speech,0.1
+887,common ones,instance of,parts of speech,0.1
+888,words,subclass of,parts of speech,0.1
+889,parts of speech,has part,words,0.1
+890,word,subclass of,parts of speech,0.1
+891,parts of speech,subclass of,words,0.1
+892,common ones,subclass of,parts of speech,0.1
+893,many words,instance of,parts of speech,0.1
+894,root,part of,word,0.07692307692307693
+895,noun,instance of,parts of speech,0.15384615384615385
+896,verb,instance of,parts of speech,0.15384615384615385
+897,adjective,instance of,parts of speech,0.07692307692307693
+898,root,subclass of,word,0.07692307692307693
+899,base form,subclass of,inflected,0.07692307692307693
+900,root,subclass of,inflected,0.07692307692307693
+901,root,part of,parts of speech,0.07692307692307693
+902,derived,subclass of,inflected,0.07692307692307693
+903,root,part of,part of speech,0.07692307692307693
+904,closed,instance of,root,0.07692307692307693
+905,Stemming,subclass of,lemmatization,0.07692307692307693
+906,rules,different from,dictionary,0.15384615384615385
+907,Stemming,different from,lemmatization,0.15384615384615385
+908,lemmatization,different from,Stemming,0.07692307692307693
+909,Stemming,opposite of,lemmatization,0.15384615384615385
+910,dictionary,different from,rules,0.07692307692307693
+911,rules,opposite of,dictionary,0.07692307692307693
+912,lemmatization,opposite of,Stemming,0.07692307692307693
+913,Stemming,instance of,lemmatization,0.07692307692307693
+914,lemmatization,subclass of,Stemming,0.07692307692307693
+915,syntax,part of,formal grammar,0.21428571428571427
+916,formal grammar,uses,syntax,0.21428571428571427
+917,syntax,used by,formal grammar,0.07142857142857142
+918,formal grammar,has part,syntax,0.14285714285714285
+919,formal grammar,subclass of,syntax,0.07142857142857142
+920,Syntactic analysis,studies,syntax,0.07142857142857142
+921,syntax,studied by,Syntactic analysis,0.07142857142857142
+922,formal grammar,part of,syntax,0.07142857142857142
+923,Grammar induction,subclass of,formal grammar,0.07142857142857142
+924,Sentence breaking,subclass of,disambiguation,0.08333333333333333
+925,Sentence breaking,facet of,sentence boundaries,0.08333333333333333
+926,Sentence breaking,subclass of,sentence boundary disambiguation,0.08333333333333333
+927,Sentence breaking,instance of,disambiguation,0.08333333333333333
+928,Sentence breaking,uses,sentence boundaries,0.16666666666666666
+929,Sentence breaking,uses,sentence boundary,0.16666666666666666
+930,Sentence breaking,facet of,sentence boundary,0.08333333333333333
+931,sentence boundaries,used by,Sentence breaking,0.08333333333333333
+932,Sentence breaking,use,disambiguation,0.08333333333333333
+933,sentence boundary,used by,Sentence breaking,0.08333333333333333
+934,periods,subclass of,punctuation marks,0.14285714285714285
+935,periods,instance of,punctuation marks,0.14285714285714285
+936,periods,subclass of,punctuation mark,0.14285714285714285
+937,period,subclass of,punctuation marks,0.14285714285714285
+938,period,subclass of,punctuation mark,0.07142857142857142
+939,abbreviations,subclass of,punctuation marks,0.21428571428571427
+940,periods,instance of,punctuation mark,0.07142857142857142
+941,abbreviations,subclass of,punctuation mark,0.07142857142857142
+942,parse tree,subclass of,grammatical analysis,0.14285714285714285
+943,parse tree,subclass of,Grammatical analysis,0.14285714285714285
+944,parse tree,instance of,grammatical analysis,0.14285714285714285
+945,parse tree,use,Grammatical analysis,0.14285714285714285
+946,parse tree,instance of,Grammatical analysis,0.14285714285714285
+947,Parsing,studies,parse tree,0.14285714285714285
+948,parse tree,studied by,Parsing,0.14285714285714285
+949,parses,part of,analyses,0.1
+950,ambiguous,subclass of,grammar,0.1
+951,parses,subclass of,analyses,0.1
+952,parses,part of,analysis,0.1
+953,ambiguous,instance of,grammar,0.1
+954,parses,part of,grammar,0.1
+955,parses,use,analyses,0.1
+956,ambiguous,facet of,grammar,0.1
+957,ambiguous,part of,grammar,0.1
+958,natural language,studied by,parses,0.1
+959,dependency parsing,subclass of,parsing,0.35294117647058826
+960,constituency parsing,subclass of,parsing,0.35294117647058826
+961,constituency parsing,subclass of,dependency parsing,0.058823529411764705
+962,dependency parsing,instance of,parsing,0.11764705882352941
+963,constituency parsing,instance of,parsing,0.11764705882352941
+964,Dependency parsing,opposite of,constituency parsing,0.16666666666666666
+965,constituency parsing,opposite of,Dependency parsing,0.08333333333333333
+966,Probabilistic context-free grammar,subclass of,stochastic grammar,0.08333333333333333
+967,stochastic grammar,subclass of,probabilistic context-free grammar,0.08333333333333333
+968,probabilistic context-free grammar,subclass of,stochastic grammar,0.08333333333333333
+969,Probabilistic context-free grammar,instance of,stochastic grammar,0.08333333333333333
+970,stochastic grammar,uses,probabilistic context-free grammar,0.08333333333333333
+971,dependency parsing,opposite of,constituency parsing,0.08333333333333333
+972,constituency parsing,opposite of,dependency parsing,0.08333333333333333
+973,stochastic grammar,instance of,probabilistic context-free grammar,0.08333333333333333
+974,Context-free grammar,subclass of,stochastic grammar,0.08333333333333333
+975,Lexical semantics (of individual words in context),part of,Lexical semantics,0.2
+976,Lexical semantics,has part,Lexical semantics (of individual words in context),0.1
+977,Lexical semantics (of individual words in context),subclass of,Lexical semantics,0.1
+978,Lexical semantics (of individual words in context),facet of,Lexical semantics,0.1
+979,Lexical semantics (of individual words in context),part of,Lexical semantics (of individual words in context),0.1
+980,Lexical semantics,subclass of,computational meaning,0.1
+981,computational meaning,part of,Lexical semantics,0.1
+982,computational,subclass of,meaning,0.1
+983,Lexical semantics (of individual words in context),instance of,Lexical semantics,0.1
+984,Distributional semantics,facet of,semantic representation,0.1
+985,Distributional semantics,facet of,semantic representations,0.1
+986,Distributional semantics,subclass of,semantic representation,0.1
+987,Distributional semantics,subclass of,semantic representations,0.1
+988,Distributional semantics,use,semantic representation,0.1
+989,Distributional semantics,subclass of,learn semantic representations,0.1
+990,Distributional semantics,use,semantic representations,0.1
+991,Distributional semantics,instance of,semantic representation,0.1
+992,Distributional semantics,facet of,semantic,0.1
+993,Distributional semantics,subclass of,learn semantic representations from data,0.1
+994,people,instance of,proper name,0.15384615384615385
+995,type,facet of,proper name,0.07692307692307693
+996,proper name,subclass of,name,0.07692307692307693
+997,people,uses,proper name,0.23076923076923078
+998,places,instance of,proper name,0.07692307692307693
+999,person,instance of,proper name,0.07692307692307693
+1000,type,subclass of,proper name,0.07692307692307693
+1001,people,has part,proper name,0.07692307692307693
+1002,places,used by,proper name,0.07692307692307693
+1003,places,uses,proper name,0.07692307692307693
+1004,organization,has part,person,0.2
+1005,organization,location,location,0.1
+1006,location,has part,person,0.2
+1007,organization,subclass of,person,0.1
+1008,location,facet of,person,0.1
+1009,location,subclass of,person,0.1
+1010,organization,has parts of the class,person,0.1
+1011,location,is a list of,person,0.1
+1012,English,uses,capitalization,0.1
+1013,English,instance of,language,0.1
+1014,English,instance of,languages,0.1
+1015,English,writing system,capitalization,0.1
+1016,English,has part,capitalization,0.1
+1017,English,instance of,capitalization,0.1
+1018,English,has parts of the class,capitalization,0.1
+1019,capitalization,facet of,English,0.1
+1020,English,instance of,named entities,0.1
+1021,named entities,has cause,capitalization,0.1
+1022,first letter,part of,sentence,0.14285714285714285
+1023,sentence,has part,word,0.14285714285714285
+1024,word,part of,sentence,0.21428571428571427
+1025,sentence,has part,first letter,0.14285714285714285
+1026,sentence,has part,letter,0.07142857142857142
+1027,sentence,part of,word,0.07142857142857142
+1028,sentence,has parts of the class,word,0.07142857142857142
+1029,sentence,has part,words,0.07142857142857142
+1030,words,part of,sentence,0.07142857142857142
+1031,non-Western scripts,subclass of,languages,0.1
+1032,Western scripts,subclass of,languages,0.1
+1033,Western script,subclass of,languages,0.1
+1034,non-Western,subclass of,scripts,0.1
+1035,Western,subclass of,scripts,0.1
+1036,Western,instance of,scripts,0.1
+1037,languages in non-Western scripts,subclass of,scripts,0.1
+1038,languages,subclass of,non-Western scripts,0.1
+1039,languages,writing system,Western scripts,0.1
+1040,languages in non-Western scripts,subclass of,Western scripts,0.1
+1041,Arabic,instance of,languages with capitalization,0.14285714285714285
+1042,Arabic,different from,Chinese,0.14285714285714285
+1043,Arabic,influenced by,Chinese,0.07142857142857142
+1044,Arabic,instance of,languages,0.07142857142857142
+1045,Chinese,instance of,languages with capitalization,0.14285714285714285
+1046,Chinese,uses,capitalization,0.14285714285714285
+1047,Arabic,uses,capitalization,0.07142857142857142
+1048,Chinese,different from,Arabic,0.07142857142857142
+1049,Chinese,instance of,language,0.07142857142857142
+1050,Arabic,instance of,language,0.07142857142857142
+1051,noun,different from,names,0.15384615384615385
+1052,names,different from,noun,0.07692307692307693
+1053,noun,different from,name,0.15384615384615385
+1054,name,different from,noun,0.07692307692307693
+1055,nouns,different from,names,0.15384615384615385
+1056,names,different from,nouns,0.07692307692307693
+1057,noun,opposite of,adjective,0.07692307692307693
+1058,names,has part,noun,0.07692307692307693
+1059,noun,subclass of,names,0.07692307692307693
+1060,noun,opposite of,adjectives,0.07692307692307693
+1061,Multimodal sentiment analysis,subclass of,Sentiment analysis,0.14285714285714285
+1062,Sentiment analysis,subclass of,Multimodal sentiment analysis,0.07142857142857142
+1063,Sentiment analysis,part of,Multimodal sentiment analysis,0.14285714285714285
+1064,Sentiment analysis,subclass of,sentiment analysis,0.07142857142857142
+1065,Sentiment analysis,studies,sentiment,0.07142857142857142
+1066,sentiment,studied by,Sentiment analysis,0.07142857142857142
+1067,Multimodal sentiment analysis,has part,Sentiment analysis,0.07142857142857142
+1068,Sentiment analysis,has part,Multimodal sentiment analysis,0.07142857142857142
+1069,Multimodal sentiment analysis,part of,Sentiment analysis,0.07142857142857142
+1070,Sentiment analysis,said to be the same as,Multimodal sentiment analysis,0.07142857142857142
+1071,Multimodal sentiment analysis,said to be the same as,Sentiment analysis,0.07142857142857142
+1072,Multimodal sentiment analysis,facet of,Sentiment analysis,0.07142857142857142
+1073,social media,instance of,marketing,0.16666666666666666
+1074,marketing,has part,social media,0.25
+1075,social media,part of,marketing,0.16666666666666666
+1076,marketing,facet of,social media,0.08333333333333333
+1077,social media,subclass of,marketing,0.08333333333333333
+1078,social media,use,marketing,0.08333333333333333
+1079,marketing,uses,social media,0.08333333333333333
+1080,social media,facet of,marketing,0.08333333333333333
+1081,Terminology extraction,subclass of,terminology extraction,0.1
+1082,Terminology extraction,use,terminology extraction,0.1
+1083,Terminology extraction,instance of,terminology extraction,0.1
+1084,Terminology extraction,facet of,corpus,0.1
+1085,Terminology extraction,uses,corpus,0.1
+1086,Terminology extraction,uses,terminology extraction,0.1
+1087,Terminology extraction,facet of,terminology extraction,0.1
+1088,Terminology extraction,subclass of,automatically extract relevant terms,0.1
+1089,Terminology extraction,subclass of,extraction,0.1
+1090,Terminology extraction,subclass of,extract,0.1
+1091,context,subclass of,meaning,0.1
+1092,context,facet of,word,0.1
+1093,context,has part,word,0.1
+1094,more than one meaning,subclass of,word,0.1
+1095,context,facet of,meaning,0.1
+1096,meaning,part of,context,0.1
+1097,context,subclass of,word,0.1
+1098,Word-sense disambiguation,uses,word,0.1
+1099,context,has part,meaning,0.1
+1100,context,part of,meaning,0.1
+1101,word senses,facet of,word,0.1
+1102,word senses,has part,word,0.1
+1103,word senses,uses,word,0.1
+1104,word sense,uses,word,0.1
+1105,word senses,subclass of,word,0.1
+1106,word sense,facet of,word,0.1
+1107,word senses,part of,word,0.1
+1108,word sense,studies,word,0.1
+1109,word sense,has part,word,0.1
+1110,word,has part,word senses,0.1
+1111,WordNet,instance of,online resource,0.18181818181818182
+1112,WordNet,instance of,online,0.09090909090909091
+1113,WordNet,use,online resource,0.09090909090909091
+1114,dictionary,subclass of,online resource,0.18181818181818182
+1115,WordNet,industry,online resource,0.09090909090909091
+1116,WordNet,instance of,dictionary,0.09090909090909091
+1117,wordNet,instance of,online resource,0.09090909090909091
+1118,WordNet,genre,online resource,0.09090909090909091
+1119,WordNet,product or material produced,online resource,0.09090909090909091
+1120,named entities,subclass of,entity,0.1
+1121,named entities,use,Entity linking,0.1
+1122,named entities,facet of,Entity linking,0.1
+1123,proper name,facet of,named entities,0.1
+1124,named entities,subclass of,Entity linking,0.1
+1125,named entities,subclass of,entities,0.1
+1126,named entities,uses,proper name,0.1
+1127,proper name,facet of,entity,0.1
+1128,named entities,has part,proper name,0.1
+1129,proper name,has part,named entities,0.1
+1130,context,subclass of,referred to,0.1
+1131,referred to,part of,context,0.1
+1132,context,subclass of,referred,0.1
+1133,context,part of,referred to,0.1
+1134,referred to,instance of,context,0.1
+1135,referred to,facet of,context,0.1
+1136,context,subclass of,referred to in context,0.1
+1137,context,facet of,referred to,0.1
+1138,referred to,subclass of,context,0.1
+1139,referred to in context,facet of,context,0.1
+1140,sentences,subclass of,text,0.125
+1141,sentences,part of,text,0.125
+1142,sentence,part of,text,0.125
+1143,Sentences,subclass of,text,0.125
+1144,Relationship extraction,part of,Semantics,0.125
+1145,Relationship extraction,facet of,Relationship,0.125
+1146,Relationship extraction,subclass of,Semantics,0.125
+1147,Relationship extraction,part of,Relational semantics,0.125
+1148,spouse,spouse,whom,0.07142857142857142
+1149,whom,spouse,spouse,0.07142857142857142
+1150,married,facet of,whom,0.07142857142857142
+1151,married,has part,whom,0.14285714285714285
+1152,whom,part of,married,0.07142857142857142
+1153,spouse,has part,whom,0.14285714285714285
+1154,whom,part of,spouse,0.07142857142857142
+1155,married to whom,facet of,whom,0.07142857142857142
+1156,spouse,facet of,whom,0.07142857142857142
+1157,married,spouse,whom,0.07142857142857142
+1158,whom,spouse,married,0.07142857142857142
+1159,marriage,participant,whom,0.07142857142857142
+1160,sentence,subclass of,text,0.1
+1161,graph,subclass of,formal representation,0.1
+1162,logical formalism,subclass of,formal representation,0.1
+1163,Semantic parsing,subclass of,formal representation,0.1
+1164,Semantic parsing,uses,formal representation,0.1
+1165,logic,has part,formal representation,0.1
+1166,formal representation,part of,logical formalism,0.1
+1167,logic,subclass of,formal representation,0.1
+1168,logical formalism,has part,formal representation,0.1
+1169,formal representation,facet of,logical formalism,0.1
+1170,coreference,subclass of,discourse analysis,0.2
+1171,coreference,part of,discourse analysis,0.2
+1172,discourse analysis,facet of,Natural language understanding,0.13333333333333333
+1173,discourse analysis,part of,Natural language understanding,0.13333333333333333
+1174,coreference,facet of,Natural language understanding,0.06666666666666667
+1175,coreference,facet of,discourse analysis,0.06666666666666667
+1176,coreference,part of,Natural language understanding,0.06666666666666667
+1177,NLP,studies,Natural language understanding,0.06666666666666667
+1178,Natural language understanding,studied by,NLP,0.06666666666666667
+1179,Semantic role labelling,facet of,semantic role,0.08333333333333333
+1180,implicit semantic role labelling,subclass of,Semantic role labelling,0.08333333333333333
+1181,Semantic role labelling,uses,semantic role,0.08333333333333333
+1182,Semantic role labelling,has part,implicit semantic role labelling,0.16666666666666666
+1183,Semantic role labelling,followed by,implicit semantic role labelling,0.08333333333333333
+1184,semantic role,part of,sentence,0.08333333333333333
+1185,implicit semantic role labelling,part of,Semantic role labelling,0.08333333333333333
+1186,Semantic role labelling,part of,implicit semantic role labelling,0.08333333333333333
+1187,Semantic role labelling,follows,implicit semantic role labelling,0.08333333333333333
+1188,implicit semantic role labelling,followed by,Semantic role labelling,0.08333333333333333
+1189,Semantic role labelling,subclass of,implicit semantic role labelling,0.08333333333333333
+1190,Sentences,studied by,Semantics,0.25
+1191,word,part of,Sentences,0.25
+1192,Sentences,part of,Semantics,0.25
+1193,words,part of,sentences,0.25
+1194,names,has part,noun,0.07692307692307693
+1195,noun,said to be the same as,names,0.15384615384615385
+1196,names,said to be the same as,noun,0.07692307692307693
+1197,Anaphora resolution,subclass of,matching up pronouns,0.07692307692307693
+1198,names,has part,nouns,0.07692307692307693
+1199,noun,different from,names,0.07692307692307693
+1200,names,different from,noun,0.07692307692307693
+1201,noun,part of,names,0.07692307692307693
+1202,Anaphora resolution,instance of,matching up pronouns,0.07692307692307693
+1203,noun,followed by,names,0.07692307692307693
+1204,nouns,said to be the same as,names,0.07692307692307693
+1205,names,said to be the same as,nouns,0.07692307692307693
+1206,referring expression,subclass of,relationships,0.16666666666666666
+1207,referring expressions,subclass of,relationships,0.16666666666666666
+1208,referring expression,subclass of,relationship,0.16666666666666666
+1209,referring expressions,subclass of,bridges,0.16666666666666666
+1210,referring expression,subclass of,bridges,0.16666666666666666
+1211,referring expressions,subclass of,relationship,0.16666666666666666
+1212,referring expression,subclass of,bridging relationship,0.07692307692307693
+1213,front door,instance of,referring expression,0.07692307692307693
+1214,John's house,named after,John's house,0.23076923076923078
+1215,He entered John's house through the front door,instance of,referring expression,0.07692307692307693
+1216,referring expression,instance of,bridging relationship,0.07692307692307693
+1217,front door,subclass of,referring expression,0.07692307692307693
+1218,He entered John's house,instance of,referring expression,0.07692307692307693
+1219,John,residence,John's house,0.15384615384615385
+1220,John's house,occupant,John,0.07692307692307693
+1221,John's house,owned by,John,0.07692307692307693
+1222,Discourse analysis,instance of,rubric,0.08333333333333333
+1223,Discourse analysis,subclass of,rubric,0.08333333333333333
+1224,discourse analysis,instance of,rubric,0.08333333333333333
+1225,discourse analysis,subclass of,rubric,0.08333333333333333
+1226,Discourse analysis,part of,rubric,0.08333333333333333
+1227,Dialogue analysis,studies,discourse,0.16666666666666666
+1228,discourse,studied by,Dialogue analysis,0.08333333333333333
+1229,discourse,studied by,Discourse analysis,0.16666666666666666
+1230,Dialogue analysis,instance of,rubric,0.08333333333333333
+1231,Discourse analysis,studies,discourse,0.08333333333333333
+1232,discourse parsing,studies,discourse,0.16666666666666666
+1233,discourse,studied by,discourse parsing,0.16666666666666666
+1234,discourse parsing,facet of,discourse,0.08333333333333333
+1235,discourse parsing,studies,discourse structure,0.16666666666666666
+1236,discourse structure,studied by,discourse parsing,0.08333333333333333
+1237,discourse structure,facet of,discourse,0.08333333333333333
+1238,discourse parsing,facet of,discourse structure,0.08333333333333333
+1239,discourse,part of,text,0.08333333333333333
+1240,connected text,subclass of,discourse,0.08333333333333333
+1241,sentences,part of,discourse,0.14285714285714285
+1242,sentence,part of,discourse,0.14285714285714285
+1243,discourse,has part,sentences,0.14285714285714285
+1244,discourse,studies,sentences,0.07142857142857142
+1245,sentences,studied by,discourse,0.07142857142857142
+1246,discourse,has part,sentence,0.14285714285714285
+1247,sentences,facet of,discourse,0.07142857142857142
+1248,discourse,studies,sentence,0.07142857142857142
+1249,sentence,studied by,discourse,0.07142857142857142
+1250,sentences,use,discourse,0.07142857142857142
+1251,explanation,has part,contrast,0.18181818181818182
+1252,explanation,subclass of,contrast,0.09090909090909091
+1253,contrast,subclass of,explanation,0.09090909090909091
+1254,contrast,part of,explanation,0.18181818181818182
+1255,explanation,subclass of,elaboration,0.09090909090909091
+1256,explanation,uses,contrast,0.09090909090909091
+1257,contrast,instance of,explanation,0.09090909090909091
+1258,explanation,part of,contrast,0.09090909090909091
+1259,explanation,facet of,contrast,0.09090909090909091
+1260,classifying,subclass of,recognizing,0.08333333333333333
+1261,text,part of,speech,0.16666666666666666
+1262,classifying,facet of,speech,0.08333333333333333
+1263,text,has part,speech,0.08333333333333333
+1264,speech,part of,text,0.08333333333333333
+1265,classifying,has part,recognizing,0.08333333333333333
+1266,classifying,subclass of,recognizing and classifying,0.08333333333333333
+1267,speech,has part,acts,0.08333333333333333
+1268,acts,part of,speech,0.08333333333333333
+1269,classifying the speech acts,subclass of,recognizing,0.08333333333333333
+1270,speech,has part,text,0.08333333333333333
+1271,yes-no question,subclass of,content question,0.1
+1272,content question,subclass of,yes-no question,0.1
+1273,yes-no question,instance of,content question,0.1
+1274,statement,subclass of,assertion,0.1
+1275,assertion,subclass of,statement,0.1
+1276,content question,instance of,yes-no question,0.1
+1277,statement,has part,assertion,0.1
+1278,content question,subclass of,statement,0.1
+1279,content question,subclass of,question,0.1
+1280,content question,has part,yes-no question,0.1
+1281,Semantic role labelling,has part,Implicit semantic role labelling,0.1111111111111111
+1282,Semantic role labelling,facet of,semantic predicates,0.1111111111111111
+1283,Semantic role labelling,uses,Implicit semantic role labelling,0.1111111111111111
+1284,Semantic role labelling,subclass of,Implicit semantic role labelling,0.1111111111111111
+1285,Semantic role labelling,uses,semantic predicates,0.1111111111111111
+1286,Semantic role labelling,uses,Semantic role labelling,0.1111111111111111
+1287,semantic predicates,use,Semantic role labelling,0.1111111111111111
+1288,Semantic role labelling,facet of,Semantic role labelling,0.1111111111111111
+1289,semantic predicate,use,Semantic role labelling,0.1111111111111111
+1290,semantic,studies,arguments,0.07692307692307693
+1291,arguments,studied by,semantic,0.15384615384615385
+1292,semantic roles,subclass of,arguments,0.07692307692307693
+1293,semantic roles,has part,arguments,0.15384615384615385
+1294,arguments,part of,semantic roles,0.07692307692307693
+1295,semantic roles,facet of,arguments,0.07692307692307693
+1296,arguments,part of,semantic,0.07692307692307693
+1297,semantic,studies,argument,0.07692307692307693
+1298,argument,studied by,semantic,0.07692307692307693
+1299,semantics,part of,semantic,0.07692307692307693
+1300,semantic roles,has part,argument,0.07692307692307693
+1301,Topic segmentation and recognition,uses,topic,0.15384615384615385
+1302,Topic segmentation and recognition,facet of,topic,0.07692307692307693
+1303,Topic segmentation,facet of,topic,0.07692307692307693
+1304,Topic segmentation,uses,topic,0.15384615384615385
+1305,topic,subclass of,text,0.07692307692307693
+1306,Topic segmentation and recognition,studies,topic,0.07692307692307693
+1307,topic,studied by,Topic segmentation and recognition,0.07692307692307693
+1308,topic,used by,Topic segmentation and recognition,0.07692307692307693
+1309,topic,used by,Topic segmentation,0.07692307692307693
+1310,coreference resolution,subclass of,zero anaphora resolution,0.07692307692307693
+1311,Article mining,subclass of,argument mining,0.07692307692307693
+1312,counter-argument,part of,discourse,0.07692307692307693
+1313,conclusion,subclass of,premise,0.07692307692307693
+1314,premise,part of,conclusion,0.15384615384615385
+1315,premise,subclass of,conclusion,0.07692307692307693
+1316,conclusion,has part,premise,0.15384615384615385
+1317,conclusion,part of,premise,0.15384615384615385
+1318,premise,has part,conclusion,0.15384615384615385
+1319,premise,has effect,conclusion,0.07692307692307693
+1320,conclusion,has cause,premise,0.07692307692307693
+1321,Automatic summarization,use,summary,0.2
+1322,Automatic summarization,subclass of,summary,0.2
+1323,Automatic summarization,instance of,summary,0.1
+1324,Text summarization,subclass of,summarization,0.1
+1325,Automatic summarization,use,text summarization,0.1
+1326,Automatic summarization,subclass of,text summarization,0.1
+1327,Automatic summarization,subclass of,summarization,0.1
+1328,Text summarization,subclass of,Automatic summarization,0.1
+1329,financial section,part of,newspaper,0.18181818181818182
+1330,financial section,subclass of,newspaper,0.09090909090909091
+1331,financial section,facet of,newspaper,0.09090909090909091
+1332,newspaper,has part,financial section,0.18181818181818182
+1333,financial section of a newspaper,subclass of,articles,0.09090909090909091
+1334,Financial section,part of,newspaper,0.09090909090909091
+1335,research papers,part of,newspaper,0.09090909090909091
+1336,Financial section,subclass of,newspaper,0.09090909090909091
+1337,financial section of a newspaper,subclass of,text,0.09090909090909091
+1338,morphology,part of,linguistic analysis,0.17857142857142858
+1339,orthography,part of,philonology,0.03571428571428571
+1340,pragmatics,part of,linguistic analysis,0.07142857142857142
+1341,phonology,part of,linguistic analysis,0.03571428571428571
+1342,orthography,part of,linguistic analysis,0.10714285714285714
+1343,linguistics,has part,morphology,0.03571428571428571
+1344,linguistics,has part,syntax,0.03571428571428571
+1345,linguistics,has part,pragmatics,0.03571428571428571
+1346,morphology,part of,linguistics,0.03571428571428571
+1347,syntax,part of,linguistics,0.03571428571428571
+1348,pragmatics,part of,linguistics,0.03571428571428571
+1349,philonology,part of,linguistic analysis,0.03571428571428571
+1350,syntax,part of,linguistic analysis,0.10714285714285714
+1351,philonology,subclass of,linguistic analysis,0.03571428571428571
+1352,linguistic analysis,has part,morphology,0.07142857142857142
+1353,linguistic analysis,has part,syntax,0.07142857142857142
+1354,linguistic analysis,has part,pragmatics,0.03571428571428571
+1355,English,instance of,second language,0.15384615384615385
+1356,English,subclass of,second language,0.15384615384615385
+1357,English as a second language,subclass of,use,0.07692307692307693
+1358,English as a second language,instance of,use,0.07692307692307693
+1359,English,said to be the same as,second language,0.15384615384615385
+1360,second language,said to be the same as,English,0.07692307692307693
+1361,second language,has part,English,0.15384615384615385
+1362,second language,subclass of,English,0.07692307692307693
+1363,English as a second language,subclass of,use or acquire,0.07692307692307693
+1364,2011,point in time,2011,0.1
+1365,shared tasks,inception,2011,0.1
+1366,shared tasks,start time,2011,0.1
+1367,shared task,inception,2011,0.1
+1368,Shared tasks,inception,2011,0.1
+1369,shared tasks,publication date,2011,0.1
+1370,shared tasks,point in time,2011,0.1
+1371,shared tasks since 2011,inception,2011,0.1
+1372,2008 Summer Olympics,point in time,2008,0.1
+1373,2010,point in time,2010,0.1
+1374,orthography,part of,morphology,0.3076923076923077
+1375,GPT-2,instance of,neural language model,0.15384615384615385
+1376,GPT-2,instance of,neural language models,0.07692307692307693
+1377,syntax,part of,morphology,0.15384615384615385
+1378,orthography,subclass of,morphology,0.07692307692307693
+1379,morphology,has part,orthography,0.15384615384615385
+1380,GPT-2,use,neural language models,0.07692307692307693
+1381,Machine translation,subclass of,automatically translate,0.2
+1382,Machine translation,subclass of,translate,0.1
+1383,Machine translation,subclass of,Automatically translate,0.1
+1384,Machine translation,subclass of,Translation,0.1
+1385,Machine translation,subclass of,manually translate,0.1
+1386,Machine translation,subclass of,automate,0.1
+1387,Machine translation,subclass of,Translate,0.1
+1388,Machine translation,instance of,automatically translate,0.1
+1389,automatically translate,has part,Machine translation,0.1
+1390,AI-complete,subclass of,difficult problems,0.1
+1391,AI-complete,subclass of,difficult problem,0.1
+1392,AI-complete,instance of,class,0.1
+1393,most difficult problems,subclass of,AI-complete,0.1
+1394,AI-complete,instance of,class of problems,0.1
+1395,AI-complete,subclass of,problem,0.1
+1396,AI-complete,subclass of,problems,0.1
+1397,AI-complete,subclass of,difficult,0.1
+1398,AI-complete,subclass of,most difficult problems,0.1
+1399,one of the most difficult problems,subclass of,AI-complete,0.1
+1400,grammar,subclass of,knowledge,0.21428571428571427
+1401,semantics,subclass of,knowledge,0.07142857142857142
+1402,semantics,part of,grammar,0.14285714285714285
+1403,knowledge,has part,facts,0.14285714285714285
+1404,semantics,has part,grammar,0.07142857142857142
+1405,semantics,subclass of,grammar,0.07142857142857142
+1406,grammar,part of,semantics,0.07142857142857142
+1407,grammar,instance of,knowledge,0.07142857142857142
+1408,semantics,instance of,knowledge,0.07142857142857142
+1409,facts,subclass of,knowledge,0.07142857142857142
+1410,solve properly,subclass of,solve,0.1
+1411,solution,part of,problem,0.1
+1412,solve properly,facet of,problem,0.1
+1413,solve properly,subclass of,problem,0.1
+1414,solution,use,solve,0.1
+1415,solve properly,use,solve,0.1
+1416,puzzle,subclass of,solve,0.1
+1417,solve properly,subclass of,solution,0.1
+1418,problem,subclass of,solve,0.1
+1419,solve,facet of,problem,0.1
+1420,Natural-language understanding,uses,logic structure,0.14285714285714285
+1421,logic structure,used by,Natural-language understanding,0.07142857142857142
+1422,Natural-language understanding,uses,logic structures,0.14285714285714285
+1423,logic structures,used by,Natural-language understanding,0.07142857142857142
+1424,Natural-language understanding,subclass of,computer program,0.07142857142857142
+1425,Natural-language understanding,studies,logic structure,0.07142857142857142
+1426,logic structure,studied by,Natural-language understanding,0.07142857142857142
+1427,Natural-language understanding,uses,formal representation,0.07142857142857142
+1428,Natural-language understanding,studies,text,0.14285714285714285
+1429,text,studied by,Natural-language understanding,0.07142857142857142
+1430,first-order logic structure,use,Natural-language understanding,0.07142857142857142
+1431,semantic,part of,semantics,0.13333333333333333
+1432,semantics,has part,semantic,0.13333333333333333
+1433,semantic,studied by,semantics,0.06666666666666667
+1434,semantics,studies,semantic,0.06666666666666667
+1435,semantics,subclass of,semantic,0.06666666666666667
+1436,semantic,subclass of,semantics,0.13333333333333333
+1437,semantics,part of,semantic,0.13333333333333333
+1438,Natural language understanding,studies,natural language,0.06666666666666667
+1439,natural language,studied by,Natural language understanding,0.06666666666666667
+1440,semantic,has part,semantics,0.06666666666666667
+1441,natural language expression,studied by,Natural language understanding,0.06666666666666667
+1442,ontology,part of,metamodel,0.16666666666666666
+1443,ontology,facet of,metamodel,0.08333333333333333
+1444,ontology,subclass of,metamodel,0.08333333333333333
+1445,metamodel,part of,ontology,0.16666666666666666
+1446,ontology,has part,metamodel,0.16666666666666666
+1447,ontology,uses,metamodel,0.08333333333333333
+1448,ontology,influenced by,metamodel,0.08333333333333333
+1449,metamodel,has part,ontology,0.08333333333333333
+1450,metamodel,followed by,ontology,0.08333333333333333
+1451,Yes/No,different from,True/False,0.16666666666666666
+1452,True/False,different from,Yes/No,0.16666666666666666
+1453,Yes/No,opposite of,True/False,0.16666666666666666
+1454,explicit formalization,opposite of,implicit assumption,0.08333333333333333
+1455,True/False,opposite of,Yes/No,0.16666666666666666
+1456,explicit formalization,opposite of,implicit assumptions,0.08333333333333333
+1457,True/False,instance of,Yes/No,0.08333333333333333
+1458,True/False,instance of,subjective,0.08333333333333333
+1459,Natural-language generation,facet of,human language,0.08333333333333333
+1460,Natural-language generation,uses,human language,0.16666666666666666
+1461,Natural-language generation,subclass of,human language,0.08333333333333333
+1462,human language,used by,Natural-language generation,0.08333333333333333
+1463,Natural-language generation,uses,computer database,0.08333333333333333
+1464,Natural-language generation,facet of,natural language,0.08333333333333333
+1465,natural language generation,facet of,human language,0.08333333333333333
+1466,Natural-language generation,studies,human language,0.16666666666666666
+1467,human language,studied by,Natural-language generation,0.08333333333333333
+1468,Natural-language generation,use,human language,0.08333333333333333
+1469,Book generation,subclass of,natural language generation,0.07142857142857142
+1470,natural language generation,part of,NLP,0.21428571428571427
+1471,natural language generation,subclass of,NLP,0.21428571428571427
+1472,Book generation,part of,natural language generation,0.07142857142857142
+1473,Book generation,facet of,natural language generation,0.07142857142857142
+1474,natural language generation,studied by,NLP,0.21428571428571427
+1475,natural language generation,facet of,NLP,0.14285714285714285
+1476,1984,point in time,1984,0.18181818181818182
+1477,Racter,publication date,1984,0.18181818181818182
+1478,Racter,inception,1984,0.09090909090909091
+1479,first machine-generated book,publication date,1984,0.09090909090909091
+1480,"Racter, The policeman's beard is half-constructed",publication date,1984,0.09090909090909091
+1481,The policeman's beard is half-constructed,publication date,1984,0.09090909090909091
+1482,Racer,publication date,1984,0.09090909090909091
+1483,Racter,start time,1984,0.09090909090909091
+1484,the first machine-generated book,publication date,1984,0.09090909090909091
+1485,1 the Road,publication date,2018,0.25
+1486,1 the Road,genre,novel,0.16666666666666666
+1487,1 the Road,inception,2018,0.08333333333333333
+1488,2018,point in time,2018,0.16666666666666666
+1489,published in 2018,point in time,2018,0.08333333333333333
+1490,1 the Road,instance of,published in 2018,0.08333333333333333
+1491,novel,subclass of,published work,0.08333333333333333
+1492,1 the Road,instance of,novel,0.08333333333333333
+1493,semantic-free,subclass of,language model,0.3333333333333333
+1494,semantic-free,instance of,language model,0.3333333333333333
+1495,semantic-free,subclass of,language models,0.3333333333333333
+1496,Beta Writer,publisher,Springer,0.16666666666666666
+1497,Lithium-Ion Batteries,publisher,Springer,0.08333333333333333
+1498,2019,point in time,2019,0.08333333333333333
+1499,Cham,parent organization,Springer,0.16666666666666666
+1500,Beta Writer,publication date,2019,0.16666666666666666
+1501,Springer,subsidiary,Cham,0.16666666666666666
+1502,Cham,publisher,Springer,0.08333333333333333
+1503,Cham,owned by,Springer,0.08333333333333333
+1504,text summarization,subclass of,factual knowledge,0.09090909090909091
+1505,Racter,different from,1 the Road,0.18181818181818182
+1506,1 the Road,different from,Racter,0.18181818181818182
+1507,Racter,instance of,text summarization,0.09090909090909091
+1508,text summarization,facet of,factual knowledge,0.09090909090909091
+1509,1 the Road,influenced by,Racter,0.09090909090909091
+1510,1 the Road,instance of,text summarization,0.09090909090909091
+1511,Racter,use,text summarization,0.09090909090909091
+1512,Racter,instance of,factual knowledge,0.09090909090909091
+1513,machine learning,part of,artificial intelligence,0.47058823529411764
+1514,artificial intelligence,has part,machine learning,0.11764705882352941
+1515,Machine learning,part of,artificial intelligence,0.058823529411764705
+1516,train a computer,facet of,artificial intelligence,0.058823529411764705
+1517,NLP,subclass of,artificial intelligence,0.11764705882352941
+1518,train a computer,part of,artificial intelligence,0.058823529411764705
+1519,NLP,part of,artificial intelligence,0.11764705882352941
+1520,NLP,use,Document AI,0.18181818181818182
+1521,Document AI,uses,NLP,0.18181818181818182
+1522,accountants,subclass of,lawyers,0.09090909090909091
+1523,Document AI,subclass of,NLP,0.09090909090909091
+1524,NLP,used by,Document AI,0.09090909090909091
+1525,NLP,part of,Document AI,0.09090909090909091
+1526,Document AI,based on,NLP,0.09090909090909091
+1527,Document AI,part of,NLP,0.09090909090909091
+1528,NLP,facet of,Document AI,0.09090909090909091
+1529,Dialogue management,facet of,converse,0.1
+1530,Dialogue management,facet of,Computer systems,0.1
+1531,Dialogue management,facet of,converse with a human,0.1
+1532,Dialogue management,use,converse,0.1
+1533,Dialogue management,facet of,computer systems,0.1
+1534,dialogue,subclass of,converse,0.1
+1535,Dialogue management,facet of,Computer system,0.1
+1536,Dialogue management,facet of,systems,0.1
+1537,Dialogue management,subclass of,systems,0.1
+1538,Dialogue management,part of,Computer systems,0.1
+1539,Question answering,facet of,question,0.07692307692307693
+1540,Question answering,uses,question,0.15384615384615385
+1541,Question answering,uses,answer,0.15384615384615385
+1542,answer,used by,Question answering,0.07692307692307693
+1543,question,used by,Question answering,0.07692307692307693
+1544,Question answering,subclass of,answer,0.07692307692307693
+1545,Question answering,facet of,human-language question,0.07692307692307693
+1546,Question answering,facet of,human-language,0.07692307692307693
+1547,Question answering,subclass of,determine its answer,0.07692307692307693
+1548,Question answering,studies,question,0.07692307692307693
+1549,question,studied by,Question answering,0.07692307692307693
+1550,What is the capital of Canada?,country,Canada,0.07692307692307693
+1551,Canada,capital,capital,0.15384615384615385
+1552,What is the capital of Canada?,instance of,right answer,0.07692307692307693
+1553,What is the capital of Canada?,instance of,questions,0.07692307692307693
+1554,What is the capital of,country,Canada,0.15384615384615385
+1555,What is the capital of Canada?,instance of,question,0.07692307692307693
+1556,Canada,capital,What is the capital of,0.07692307692307693
+1557,Canada,instance of,capital,0.07692307692307693
+1558,capital,country,Canada,0.07692307692307693
+1559,capital of Canada,country,Canada,0.07692307692307693
+1560,Canada,capital,capital of Canada,0.07692307692307693
+1561,What is the meaning of life?,subclass of,open-ended questions,0.1
+1562,What is the meaning of life?,instance of,open-ended questions,0.1
+1563,What is the meaning of life?,instance of,open-ended question,0.1
+1564,What is the meaning of life?,subclass of,open-ended question,0.1
+1565,meaning of life,subclass of,open-ended questions,0.1
+1566,meaning of life,subclass of,open-ended question,0.1
+1567,meaning of life,subclass of,questions,0.1
+1568,What is the meaning of life,subclass of,open-ended questions,0.1
+1569,What is the meaning of life,instance of,open-ended questions,0.1
+1570,What is the meaning of life?,instance of,open-ended,0.1
+1571,Text-to-image generation,product or material produced,image,0.1
+1572,Text-to-image generation,subclass of,image,0.1
+1573,Text-to-image generation,facet of,image,0.1
+1574,Text-to-image generation,use,image,0.1
+1575,Text-to-image generation,subclass of,generate an image,0.1
+1576,Text-to-image generation,uses,image,0.1
+1577,Text-to-image,subclass of,image,0.1
+1578,Text-to-image generation,instance of,image,0.1
+1579,image,used by,Text-to-image generation,0.1
+1580,Text-to-image generation,use,generate an image,0.1
+1581,Text-to-scene generation,subclass of,3D model,0.1
+1582,Text-to-scene generation,use,3D model,0.1
+1583,Text-to-scene generation,instance of,3D model,0.1
+1584,3D model,part of,scene,0.1
+1585,Text-to-scene generation,facet of,3D model,0.1
+1586,text-to-scene generation,subclass of,3D model,0.1
+1587,Text-to-scene generation,product or material produced,3D model,0.1
+1588,Text-to-scene generation,uses,3D model,0.1
+1589,3D model,use,Text-to-scene generation,0.1
+1590,3D model,used by,Text-to-scene generation,0.1
+1591,Text-to-video,subclass of,video,0.2727272727272727
+1592,Text-to-video,use,video,0.09090909090909091
+1593,Text-to-video,instance of,video,0.09090909090909091
+1594,text-to-video,subclass of,video,0.09090909090909091
+1595,Text-to-video,subclass of,Video,0.09090909090909091
+1596,Text-to-video,uses,description,0.09090909090909091
+1597,Text-to-video,product or material produced,video,0.09090909090909091
+1598,Text-to-video,uses,video,0.09090909090909091
+1599,Text-to-video,facet of,video,0.09090909090909091
+1600,General tendencies and (possible) future directions,facet of,NLP,0.1
+1601,Future directions,facet of,NLP,0.1
+1602,General tendencies and (possible) future directions,instance of,trends,0.1
+1603,General tendencies,instance of,trends,0.1
+1604,General tendencies and (possible) future directions,instance of,trends in the field,0.1
+1605,General tendencies,subclass of,trends,0.1
+1606,future directions,facet of,NLP,0.1
+1607,General tendencies and (possible) future directions,subclass of,trends,0.1
+1608,Future Directions,facet of,NLP,0.1
+1609,General tendencies and (possible) future directions,facet of,trends,0.1
+1610,semantic role labelling,facet of,natural language,0.1
+1611,semantic role labelling,studies,natural language,0.1
+1612,semantic role labelling,part of,natural language,0.1
+1613,shallow parsing,followed by,semantic parsing,0.1
+1614,semantic role labelling,facet of,cognitive,0.1
+1615,semantic role labelling,studied by,cognitive,0.1
+1616,shallow parsing,facet of,natural language,0.1
+1617,named entity recognition,facet of,natural language,0.1
+1618,semantic role labelling,subclass of,cognitive,0.1
+1619,semantic role labelling,part of,semantic parsing,0.1
+1620,NLP,studies,Cognition,0.15384615384615385
+1621,Cognition,studied by,NLP,0.15384615384615385
+1622,multilinguality,said to be the same as,multimodality,0.15384615384615385
+1623,multimodality,said to be the same as,multilinguality,0.07692307692307693
+1624,NLP,use,Cognition,0.07692307692307693
+1625,multilinguality,subclass of,multimodality,0.07692307692307693
+1626,recognition learning,studies,symbolic representation,0.07692307692307693
+1627,Multilingual,facet of,multilinguality,0.07692307692307693
+1628,Cognition,studies,language,0.07692307692307693
+1629,language,studied by,Cognition,0.07692307692307693
+1630,CoNLL shared tasks,facet of,NLP,0.1
+1631,CoNLL shared tasks,part of,NLP,0.1
+1632,CoNLL shared tasks,subclass of,NLP,0.1
+1633,CoNLL,subclass of,NLP,0.1
+1634,CoNLL shared tasks,studied by,NLP,0.1
+1635,CoNLL,part of,NLP,0.1
+1636,CoNLL shared tasks,facet of,cognitive behaviour,0.1
+1637,CoNLL shared tasks,use,NLP,0.1
+1638,NLP,studies,cognitive behaviour,0.1
+1639,CoNLL shared tasks above,facet of,NLP,0.1
+1640,experience,has effect,knowledge,0.26666666666666666
+1641,understanding,subclass of,knowledge,0.13333333333333333
+1642,knowledge,has effect,understanding,0.2
+1643,understanding,has cause,knowledge,0.06666666666666667
+1644,Understanding,subclass of,knowledge,0.06666666666666667
+1645,Cognition,subclass of,knowledge,0.06666666666666667
+1646,understanding,facet of,knowledge,0.06666666666666667
+1647,experience,has effect,senses,0.06666666666666667
+1648,experience,has part,senses,0.06666666666666667
+1649,Cognitive science,studies,mind,0.0625
+1650,mind,studied by,Cognitive science,0.125
+1651,Cognitive science,subclass of,scientific study of the mind,0.1875
+1652,cognitive science,studies,mind,0.125
+1653,mind,studied by,cognitive science,0.0625
+1654,cognitive science,subclass of,scientific study of the mind,0.0625
+1655,Cognitive science,instance of,scientific,0.0625
+1656,Cognitive science,subclass of,scientific study,0.125
+1657,scientific study of the mind,has part,Cognitive science,0.0625
+1658,interdisciplinary,subclass of,scientific study of the mind,0.0625
+1659,scientific study,has part,Cognitive science,0.0625
+1660,Cognitive linguistics,subclass of,linguistics,0.4666666666666667
+1661,cognitive linguistics,subclass of,linguistics,0.06666666666666667
+1662,Cognitive linguistics,part of,linguistics,0.06666666666666667
+1663,interdisciplinary,subclass of,linguistics,0.13333333333333333
+1664,interdisciplinary,part of,linguistics,0.13333333333333333
+1665,linguistics,has part,Cognitive linguistics,0.06666666666666667
+1666,interdisciplinary,facet of,linguistics,0.06666666666666667
+1667,symbolic NLP,subclass of,computational linguistics,0.08333333333333333
+1668,NLP,subclass of,computational linguistics,0.08333333333333333
+1669,NLP,part of,computational linguistics,0.16666666666666666
+1670,symbolic NLP,part of,computational linguistics,0.08333333333333333
+1671,cognitive studies,subclass of,computational linguistics,0.08333333333333333
+1672,cognitive studies,part of,computational linguistics,0.08333333333333333
+1673,computational linguistics,part of,cognitive studies,0.16666666666666666
+1674,cognitive studies,has part,computational linguistics,0.16666666666666666
+1675,computational linguistics,has part,NLP,0.08333333333333333
+1676,natural language processing,part of,cognitive linguistics,0.2857142857142857
+1677,George Lakoff,field of work,cognitive linguistics,0.14285714285714285
+1678,cognitive linguistics,part of,cognitive science,0.21428571428571427
+1679,natural language processing,subclass of,cognitive linguistics,0.14285714285714285
+1680,cognitive linguistics,has part,natural language processing,0.07142857142857142
+1681,cognitive linguistics,subclass of,cognitive science,0.07142857142857142
+1682,George Lakoff,field of work,cognitive science,0.07142857142857142
+1683,big,language of work or name,English,0.1
+1684,big,language used,English,0.1
+1685,big,facet of,English,0.1
+1686,big,instance of,English word,0.1
+1687,big,part of,English,0.1
+1688,big,use,English,0.1
+1689,big,instance of,English,0.1
+1690,big,used by,English,0.1
+1691,big.,language of work or name,English,0.1
+1692,big,part of,English word,0.1
+1693,That is a big tree,instance of,comparison,0.1
+1694,That is a big tree,depicts,tree,0.1
+1695,That is a big tree,subclass of,comparison,0.1
+1696,That is a big tree,use,comparison,0.1
+1697,That is a big tree,facet of,tree,0.1
+1698,That is a big tree,is a list of,tree,0.1
+1699,That is a big tree,instance of,tree,0.1
+1700,That is a big tree,uses,comparison,0.1
+1701,that is a big tree,instance of,comparison,0.1
+1702,That is a big tree,depicts,trees,0.1
+1703,Tomorrow is a big day,instance of,metaphorically,0.1
+1704,Tomorrow is a big day,instance of,metaphor,0.1
+1705,Tomorrow,instance of,big day,0.1
+1706,big day,instance of,metaphorically,0.1
+1707,metaphorically,subclass of,meaning,0.1
+1708,metaphorically,subclass of,intent,0.1
+1709,metaphor,use,implication,0.1
+1710,metaphorically,part of,intent,0.1
+1711,metaphorically,subclass of,implication,0.1
+1712,metaphorically,instance of,meaning,0.1
+1713,She is a big person,instance of,NLP,0.1
+1714,NLP,subclass of,algorithm,0.1
+1715,cognitive NLP,subclass of,algorithm,0.1
+1716,She is a big person,instance of,NLP algorithm,0.1
+1717,She is a big person,facet of,NLP,0.1
+1718,She is a big person,use,NLP,0.1
+1719,She is a big person,instance of,algorithm,0.1
+1720,NLP,instance of,algorithm,0.1
+1721,algorithm,use,cognitive NLP,0.1
+1722,She is a big person,instance of,ambiguous,0.1
+1723,phrase,part of,sentence,0.26666666666666666
+1724,sentence,has part,phrase,0.13333333333333333
+1725,sentence,has part,word,0.26666666666666666
+1726,word,part of,sentence,0.13333333333333333
+1727,phrase,has part,word,0.13333333333333333
+1728,phrase,subclass of,word,0.06666666666666667
+1729,9269,point in time,9269,0.08333333333333333
+1730,M,country,Italy,0.08333333333333333
+1731,P,subclass of,calculator,0.08333333333333333
+1732,M,country,Spain,0.08333333333333333
+1733,P,has part,M,0.16666666666666666
+1734,P,instance of,calculator,0.08333333333333333
+1735,P,different from,M,0.16666666666666666
+1736,M,different from,P,0.08333333333333333
+1737,M,part of,P,0.08333333333333333
+1738,M,has part,P,0.08333333333333333
+1739,ACT-R,organizer,ACL,0.1
+1740,ACT-R,main subject,NLP,0.1
+1741,cognitive grammar,part of,computational psycholinguistics,0.1
+1742,construction grammar,subclass of,cognitive grammar,0.1
+1743,ACT-R,field of work,NLP,0.1
+1744,cognitive grammar,part of,cognitive neuroscience,0.1
+1745,cognitive grammar,subclass of,functional grammar,0.1
+1746,cognitive grammar,part of,functional grammar,0.1
+1747,functional grammar,subclass of,cognitive grammar,0.1
+1748,ACT-R,field of work,cognitive grammar,0.1
+1749,cognitive AI,subclass of,NLP,0.1
+1750,cognitive AI,uses,cognitive NLP,0.1
+1751,cognitive AI,has part,cognitive NLP,0.1
+1752,cognitive AI,subclass of,cognitive NLP,0.1
+1753,cognitive AI,influenced by,NLP,0.1
+1754,cognitive AI,influenced by,cognitive NLP,0.1
+1755,cognitive AI,facet of,cognitive NLP,0.1
+1756,cognitive NLP,facet of,cognitive AI,0.1
+1757,cognitive AI,uses,NLP,0.1
+1758,cognitive AI,facet of,NLP,0.1
+1759,Large language model,facet of,Artificial intelligence,0.1
+1760,Large language model,subclass of,Artificial intelligence,0.1
+1761,Large language model,use,Artificial intelligence,0.1
+1762,Large language model,part of,Artificial intelligence,0.1
+1763,Large language model approaches,facet of,Artificial intelligence,0.1
+1764,Large language model approaches,subclass of,Artificial intelligence,0.1
+1765,Large language model approaches,use,Artificial intelligence,0.1
+1766,Large language model approaches,part of,Artificial intelligence,0.1
+1767,Large language model,studied by,Artificial intelligence,0.1
+1768,Large language model,facet of,artificial intelligence,0.1
+1769,Wikimedia Commons,field of work,Natural language processing,0.09090909090909091
+1770,Media related to Natural language processing at Wikimedia Commons,part of,Wikimedia Commons,0.09090909090909091
+1771,Wikimedia Commons,has part,Media related to Natural language processing at Wikimedia Commons,0.09090909090909091
+1772,Wikimedia Commons,has part,Media related to Natural language processing,0.18181818181818182
+1773,Media related to Natural language processing,part of,Wikimedia Commons,0.18181818181818182
+1774,Media related to Natural language processing at Wikimedia Commons,owned by,Wikimedia Commons,0.09090909090909091
+1775,Wikimedia Commons,owner of,Media related to Natural language processing at Wikimedia Commons,0.09090909090909091
+1776,Wikimedia Commons,part of,Wikimedia Commons,0.09090909090909091
+1777,Wikimedia Commons,main subject,Natural language processing,0.09090909090909091

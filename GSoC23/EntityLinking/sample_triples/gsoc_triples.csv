@@ -1,0 +1,922 @@
+,head,type,tail,Confidence
+0,Google Summer of Code,organizer,Google,0.15384615384615385
+1,Google Summer of Code,conferred by,Google,0.07692307692307693
+2,Google Summer of Code,founded by,Google,0.07692307692307693
+3,Google Summer of Code,creator,Google,0.07692307692307693
+4,Google Summer of Code,named after,Google,0.07692307692307693
+5,free,said to be the same as,open-source,0.15384615384615385
+6,open-source,said to be the same as,free,0.07692307692307693
+7,Google,participant in,Google Summer of Code,0.07692307692307693
+8,free,said to be the same as,open-source software,0.07692307692307693
+9,open-source software,said to be the same as,free,0.07692307692307693
+10,Google Summer of Code,operator,Google,0.07692307692307693
+11,2022,point in time,2022,0.08333333333333333
+12,recent graduates,subclass of,students,0.08333333333333333
+13,graduates,subclass of,students,0.08333333333333333
+14,students,different from,graduates,0.16666666666666666
+15,graduates,different from,students,0.08333333333333333
+16,2016 Summer Olympics,point in time,2016,0.08333333333333333
+17,students,different from,recent graduates,0.16666666666666666
+18,recent graduates,different from,students,0.08333333333333333
+19,students,followed by,graduates,0.08333333333333333
+20,2020 Summer Olympics,point in time,2020,0.08333333333333333
+21,2005,followed by,August 2005,0.16666666666666666
+22,August 2005,point in time,August 2005,0.08333333333333333
+23,August 2005,follows,2005,0.08333333333333333
+24,2005,point in time,2005,0.08333333333333333
+25,2005,point in time,August 2005,0.08333333333333333
+26,2004 Summer Olympics,point in time,2004,0.08333333333333333
+27,2008 Summer Olympics,point in time,2008,0.08333333333333333
+28,May to August 2005,end time,August 2005,0.08333333333333333
+29,2006 Commonwealth Games,point in time,2006,0.08333333333333333
+30,May,followed by,August 2005,0.08333333333333333
+31,August 2005,follows,May,0.08333333333333333
+32,purchasing power parity,country,country,0.1
+33,purchasing power parity,country,country where they are located,0.1
+34,purchasing power parity,facet of,country where they are located,0.1
+35,purchasing power parity,facet of,country,0.1
+36,purchasing power parity,applies to jurisdiction,country,0.1
+37,purchasing power parity,applies to jurisdiction,country where they are located,0.1
+38,parity,subclass of,purchasing power,0.1
+39,purchasing power parity,location,country where they are located,0.1
+40,parity,facet of,purchasing power,0.1
+41,purchasing power parity,location,country,0.1
+42,open-source,subclass of,software development,0.1
+43,host organization,field of work,open-source software,0.1
+44,open-source software,developer,host organization,0.1
+45,host organization,field of work,software development,0.1
+46,host organization,field of work,open-source software development,0.1
+47,open-source software,has part,host organization,0.1
+48,host organizations,field of work,open-source software,0.1
+49,host organizations,field of work,open-source software development,0.1
+50,open-source software development,has part,host organization,0.1
+51,open-source software development,participant,host organization,0.1
+52,Google,founded by,Sergey Brin,0.2631578947368421
+53,Google,founded by,Larry Page,0.2631578947368421
+54,Larry Page,influenced by,Sergey Brin,0.05263157894736842
+55,Sergey Brin,employer,Google,0.10526315789473684
+56,Larry Page,employer,Google,0.15789473684210525
+57,Google's,founded by,Sergey Brin,0.05263157894736842
+58,Google's,founded by,Larry Page,0.05263157894736842
+59,Summer of Code,founded by,Sergey Brin,0.05263157894736842
+60,Leslie Hawthorn,work period (start),2006,0.08333333333333333
+61,2006,point in time,2006,0.16666666666666666
+62,Leslie Hawthorn,occupation,program manager,0.08333333333333333
+63,Leslie Hawthorn,inception,2006,0.08333333333333333
+64,2009,point in time,2009,0.25
+65,2007,point in time,2007,0.16666666666666666
+66,2008 Summer Olympics,point in time,2008,0.08333333333333333
+67,2007,followed by,2009,0.08333333333333333
+68,Carol Smith,occupation,program manager,0.09090909090909091
+69,2010,point in time,2010,0.18181818181818182
+70,2015,point in time,2015,0.09090909090909091
+71,Carol Smith,work period (start),2010,0.09090909090909091
+72,program manager,officeholder,Carol Smith,0.09090909090909091
+73,Carol Smith,position held,program manager,0.09090909090909091
+74,program manager,facet of,Carol Smith,0.09090909090909091
+75,2008 Summer Olympics,point in time,2008,0.09090909090909091
+76,program manager,has part,Carol Smith,0.09090909090909091
+77,program manager,inception,2010,0.09090909090909091
+78,Stephanie Taylor,work period (start),2016,0.18181818181818182
+79,2016,point in time,2016,0.18181818181818182
+80,2008 Summer Olympics,point in time,2008,0.09090909090909091
+81,Stephanie Taylor,point in time,2016,0.09090909090909091
+82,Stephanie Taylor,inception,2016,0.09090909090909091
+83,2012 Summer Olympics,point in time,2012,0.09090909090909091
+84,2012 Olympic Games,point in time,2012,0.09090909090909091
+85,2010 FIFA World Cup,point in time,2010,0.09090909090909091
+86,2014 FIFA World Cup,point in time,2014,0.09090909090909091
+87,2014,point in time,2014,0.1
+88,2018,point in time,2018,0.1
+89,2015,point in time,2015,0.1
+90,2013,point in time,2013,0.1
+91,2016 Summer Olympics,point in time,2016,0.1
+92,Timeline,subclass of,overview,0.1
+93,2012 Summer Olympics,point in time,2012,0.1
+94,2017,point in time,2017,0.1
+95,Timeline,instance of,overview,0.1
+96,Timeline,facet of,year,0.1
+97,open-source,subclass of,organizations,0.07692307692307693
+98,open-source,subclass of,organization,0.07692307692307693
+99,open-source,practiced by,organizations,0.07692307692307693
+100,organizations,field of this occupation,open-source,0.07692307692307693
+101,open-source,instance of,organizations,0.07692307692307693
+102,open-source,facet of,organizations,0.07692307692307693
+103,open-source organizations,subclass of,participate,0.07692307692307693
+104,open-source,has part,organizations,0.07692307692307693
+105,organizations,part of,open-source,0.07692307692307693
+106,open-source organizations,subclass of,apply to participate,0.07692307692307693
+107,open-source organization,subclass of,apply to participate,0.07692307692307693
+108,open-source organization,has part,apply to participate,0.07692307692307693
+109,apply to participate,part of,open-source organization,0.07692307692307693
+110,development communities,has part,contributors,0.16666666666666666
+111,contributors,part of,development communities,0.16666666666666666
+112,development community,has part,contributors,0.16666666666666666
+113,community,has part,contributors,0.08333333333333333
+114,contributors,part of,development community,0.16666666666666666
+115,community,part of,development communities,0.08333333333333333
+116,community,part of,development,0.08333333333333333
+117,community,has part,developer,0.08333333333333333
+118,software-coding,subclass of,projects,0.058823529411764705
+119,software-coding,part of,projects,0.11764705882352941
+120,software-coding,practiced by,contributors,0.17647058823529413
+121,projects,has part,software-coding,0.058823529411764705
+122,software,studied by,coding,0.058823529411764705
+123,coding,studies,software,0.058823529411764705
+124,contributors,field of this occupation,software-coding,0.11764705882352941
+125,software-coding,has effect,projects,0.058823529411764705
+126,projects,has cause,software-coding,0.058823529411764705
+127,software-coding,studies,projects,0.058823529411764705
+128,projects,studied by,software-coding,0.058823529411764705
+129,software,practiced by,coding,0.058823529411764705
+130,coding,product or material produced,software,0.058823529411764705
+131,mentors,part of,organization,0.08333333333333333
+132,mentors,field of this occupation,mentoring organization,0.16666666666666666
+133,mentors,facet of,organization,0.08333333333333333
+134,mentoring organization,has part,mentors,0.16666666666666666
+135,mentors,part of,mentoring organization,0.16666666666666666
+136,mentoring organization,subclass of,mentors,0.08333333333333333
+137,mentor,field of this occupation,mentoring organization,0.08333333333333333
+138,mentoring organization,practiced by,mentors,0.08333333333333333
+139,mentoring organization,part of,Google,0.08333333333333333
+140,Google,instance of,organization,0.09090909090909091
+141,Google,subsidiary,Google Cloud,0.09090909090909091
+142,Google,subsidiary,Google+,0.09090909090909091
+143,Google,instance of,organizations,0.09090909090909091
+144,mentoring,facet of,organization,0.09090909090909091
+145,mentoring,part of,organization,0.09090909090909091
+146,Google,has part,applications,0.18181818181818182
+147,Google,subsidiary,Google Corps,0.09090909090909091
+148,applications,part of,Google,0.09090909090909091
+149,Mentoring,facet of,organization,0.09090909090909091
+150,Google,has part,contributors,0.15384615384615385
+151,contributors,part of,Google,0.07692307692307693
+152,Google,member of,contributors,0.07692307692307693
+153,Google,subsidiary,Google+,0.07692307692307693
+154,Google,subsidiary,YouTube,0.15384615384615385
+155,Google,subsidiary,Google Cloud,0.07692307692307693
+156,Google,subsidiary,contributors,0.07692307692307693
+157,contributors,parent organization,Google,0.07692307692307693
+158,Google,instance of,contributors,0.07692307692307693
+159,YouTube,parent organization,Google,0.07692307692307693
+160,Google,owner of,Google+,0.07692307692307693
+161,John F. Kennedy School of Government,part of,Harvard University,0.09090909090909091
+162,organization,has part,contributors,0.18181818181818182
+163,2010 Summer Olympics,point in time,2010,0.09090909090909091
+164,University of Oxford,country,United Kingdom,0.09090909090909091
+165,2010 Commonwealth Games,point in time,2010,0.09090909090909091
+166,contributors,part of,organization,0.09090909090909091
+167,organization,facet of,organization,0.09090909090909091
+168,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.09090909090909091
+169,organization,has part,organization,0.09090909090909091
+170,"University of California, Berkeley",headquarters location,"Berkeley, California",0.09090909090909091
+171,2005,point in time,2005,0.5
+172,History,point in time,2005,0.16666666666666666
+173,2004 Summer Olympics,point in time,2004,0.05555555555555555
+174,History,publication date,2005,0.1111111111111111
+175,2008 Summer Olympics,point in time,2008,0.05555555555555555
+176,In 2005,point in time,2005,0.1111111111111111
+177,Google,subsidiary,YouTube,0.15384615384615385
+178,Google,number of employees,419,0.07692307692307693
+179,2008 Summer Olympics,point in time,2008,0.07692307692307693
+180,2012 Summer Olympics,point in time,2012,0.07692307692307693
+181,YouTube,parent organization,Google,0.07692307692307693
+182,Google,population,419,0.07692307692307693
+183,Google,subsidiary,419 positions,0.07692307692307693
+184,419 positions,parent organization,Google,0.07692307692307693
+185,Google,instance of,positions,0.07692307692307693
+186,Google,product or material produced,Chrome,0.07692307692307693
+187,Google,owner of,419 positions,0.07692307692307693
+188,419 positions,owned by,Google,0.07692307692307693
+189,University of Utah,located in the administrative territorial entity,Salt Lake City,0.07692307692307693
+190,New York University,located in the administrative territorial entity,Manhattan,0.07692307692307693
+191,United Nations,has part,General Assembly,0.07692307692307693
+192,General Assembly,part of,United Nations,0.07692307692307693
+193,New York City,contains administrative territorial entity,Manhattan,0.07692307692307693
+194,Manhattan,located in the administrative territorial entity,New York City,0.07692307692307693
+195,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.07692307692307693
+196,University of Pennsylvania,subsidiary,Wharton School,0.07692307692307693
+197,New York City,twinned administrative body,Manhattan,0.07692307692307693
+198,Manhattan,twinned administrative body,New York City,0.07692307692307693
+199,New York City,located in the administrative territorial entity,New York,0.07692307692307693
+200,"University of California, Berkeley",headquarters location,"Berkeley, California",0.07692307692307693
+201,L'Orfeo,country,Italy,0.07692307692307693
+202,Google Summer of Code,instance of,mentoring organization,0.2727272727272727
+203,Google Summer of Code,instance of,Mentoring organization,0.09090909090909091
+204,T-shirt,participant in,Google Summer of Code,0.09090909090909091
+205,Summer of Code,organizer,Google,0.09090909090909091
+206,Google Summer of Code,award received,$4500,0.09090909090909091
+207,T-shirt,manufacturer,Google,0.09090909090909091
+208,T-shirt,part of,Google Summer of Code,0.09090909090909091
+209,Google Summer of Code,part of,mentoring organization,0.09090909090909091
+210,Google Summer of Code,product or material produced,T-shirt,0.09090909090909091
+211,Ubuntu,inception,2005,0.15384615384615385
+212,Ubuntu,instance of,organization,0.15384615384615385
+213,KDE,instance of,organization,0.07692307692307693
+214,2005,point in time,2005,0.07692307692307693
+215,Ubuntu,influenced by,KDE,0.07692307692307693
+216,Ubuntu,publication date,2005,0.15384615384615385
+217,KDE,influenced by,Ubuntu,0.07692307692307693
+218,KDE,inception,2005,0.07692307692307693
+219,KDE,publication date,2005,0.07692307692307693
+220,KDE,different from,Ubuntu,0.07692307692307693
+221,Summer of Code,organizer,Google,0.25
+222,first Summer of Code,organizer,Google,0.08333333333333333
+223,Summer of Code,founded by,Google,0.25
+224,Summer of Code,creator,Google,0.08333333333333333
+225,Summer of Code,developer,Google,0.08333333333333333
+226,Google,significant event,first Summer of Code,0.08333333333333333
+227,Google,field of work,open source,0.08333333333333333
+228,first Summer of Code,participant,Google,0.08333333333333333
+229,Apache,operating system,FreeBSD,0.18181818181818182
+230,Ubuntu,part of the series,FreeBSD,0.09090909090909091
+231,Blender,operating system,Ubuntu,0.09090909090909091
+232,Google,operating system,FreeBSD,0.09090909090909091
+233,Ubuntu,part of,FreeBSD,0.09090909090909091
+234,Mozdev,operating system,Ubuntu,0.09090909090909091
+235,KDE,operating system,FreeBSD,0.09090909090909091
+236,Blender,operating system,FreeBSD,0.09090909090909091
+237,Mozdev,operating system,FreeBSD,0.18181818181818182
+238,Chris DiBona,employer,Google,0.35714285714285715
+239,Chris DiBona,employer,Google's,0.07142857142857142
+240,Google,founded by,Chris DiBona,0.14285714285714285
+241,Google,subsidiary,Chris DiBona,0.14285714285714285
+242,Google,developer,Chris DiBona,0.14285714285714285
+243,Google,owner of,Chris DiBona,0.07142857142857142
+244,Google,product or material produced,Chris DiBona,0.07142857142857142
+245,Mozilla,developer,Gervase Markham,0.3333333333333333
+246,Mozilla,founded by,Gervase Markham,0.05555555555555555
+247,Google,subsidiary,Mozilla,0.2222222222222222
+248,Gervase Markham,employer,Mozilla,0.3333333333333333
+249,Mozilla,parent organization,Google,0.05555555555555555
+250,Jabber Software Foundation,replaced by,XMPP Standards Foundation,0.15384615384615385
+251,XMPP Standards Foundation,replaces,Jabber Software Foundation,0.15384615384615385
+252,XMPP,developer,Jabber Software Foundation,0.07692307692307693
+253,XMPP Standards Foundation,developer,Jabber Software Foundation,0.07692307692307693
+254,Pidgin,developer,XMPP Standards Foundation,0.23076923076923078
+255,Pidgin,influenced by,XMPP Standards Foundation,0.07692307692307693
+256,Gaim (now Pidgin),developer,XMPP Standards Foundation,0.23076923076923078
+257,2006,point in time,2006,0.6538461538461539
+258,previous year,point in time,2006,0.23076923076923078
+259,previous year,followed by,2006,0.038461538461538464
+260,2006 === 2006,point in time,,0.038461538461538464
+261,2006 === 2006,point in time,2006,0.038461538461538464
+262,2005's,point in time,2005,0.1
+263,2005's applications,point in time,2005,0.1
+264,2005,point in time,2005,0.1
+265,Google,inception,2005,0.1
+266,2005's application,point in time,2005,0.1
+267,2005's,organizer,Google,0.1
+268,2005's applications,organizer,Google,0.1
+269,Google,product or material produced,applications,0.1
+270,Google,inception,2005's,0.1
+271,2005's applications,developer,Google,0.1
+272,2008 Summer Olympics,point in time,2008,0.07142857142857142
+273,World Heritage Site,maintained by,UNESCO,0.07142857142857142
+274,2012 Summer Olympics,point in time,2012,0.07142857142857142
+275,Kraków,country,Poland,0.14285714285714285
+276,United Nations,has part,General Assembly,0.07142857142857142
+277,General Assembly,part of,United Nations,0.07142857142857142
+278,World War II,has effect,Holocaust,0.07142857142857142
+279,Poland,capital,Kraków,0.07142857142857142
+280,New York City,contains administrative territorial entity,Manhattan,0.07142857142857142
+281,Manhattan,located in the administrative territorial entity,New York City,0.07142857142857142
+282,International Women's Day,point in time,2005,0.07142857142857142
+283,United Nations General Assembly,has part,General Assembly,0.07142857142857142
+284,General Assembly,part of,United Nations General Assembly,0.07142857142857142
+285,Debian,based on,Debian,0.09090909090909091
+286,Debian,part of,Debian,0.09090909090909091
+287,Debian,influenced by,Debian,0.09090909090909091
+288,Debian,inception,2005,0.09090909090909091
+289,Adium,programming language,PHP,0.09090909090909091
+290,Adium,influenced by,Debian,0.09090909090909091
+291,ReactOS,influenced by,Debian,0.09090909090909091
+292,2005,point in time,2005,0.18181818181818182
+293,Debian,part of,Debian Foundation,0.09090909090909091
+294,2006,point in time,2006,0.09090909090909091
+295,Google,subsidiary,Google Cloud,0.08333333333333333
+296,Google,subsidiary,YouTube,0.16666666666666666
+297,Google,subsidiary,Google+,0.08333333333333333
+298,2012 Summer Olympics,point in time,2012,0.08333333333333333
+299,YouTube,parent organization,Google,0.08333333333333333
+300,2008 Summer Olympics,point in time,2008,0.08333333333333333
+301,Google,owner of,Chrome,0.08333333333333333
+302,Chrome,developer,Google,0.08333333333333333
+303,Google,product or material produced,Chrome,0.08333333333333333
+304,Google,owner of,Google+,0.08333333333333333
+305,Google,product or material produced,Android,0.08333333333333333
+306,2006-05-09,point in time,2006,0.08333333333333333
+307,2006,point in time,2006,0.08333333333333333
+308,2008 Summer Olympics,point in time,2008,0.16666666666666666
+309,2004 Summer Olympics,point in time,2004,0.08333333333333333
+310,2006 Summer Olympics,point in time,2006,0.08333333333333333
+311,2012 Summer Olympics,point in time,2012,0.25
+312,University of Utah,located in the administrative territorial entity,Salt Lake City,0.08333333333333333
+313,2006 NCAA Division I Men's Basketball Tournament,point in time,2006,0.08333333333333333
+314,2008 Summer Olympics,location,Beijing,0.08333333333333333
+315,Google,subsidiary,YouTube,0.18181818181818182
+316,2012 Summer Olympics,point in time,2012,0.09090909090909091
+317,Google,subsidiary,Google University,0.09090909090909091
+318,Google,subsidiary,Google Cloud,0.09090909090909091
+319,Google,subsidiary,Google+,0.09090909090909091
+320,Google,location of formation,PDT,0.09090909090909091
+321,Google,instance of,organization,0.09090909090909091
+322,Stanford University,headquarters location,"Stanford, California",0.09090909090909091
+323,YouTube,parent organization,Google,0.09090909090909091
+324,Google,product or material produced,Google Search,0.09090909090909091
+325,Google,product or material produced,project,0.08333333333333333
+326,Google,instance of,project,0.08333333333333333
+327,Google,subsidiary,YouTube,0.16666666666666666
+328,Google,subsidiary,Google+,0.08333333333333333
+329,Google,subsidiary,project,0.08333333333333333
+330,project,parent organization,Google,0.08333333333333333
+331,Google,subsidiary,Google University,0.08333333333333333
+332,project,developer,Google,0.08333333333333333
+333,YouTube,parent organization,Google,0.08333333333333333
+334,Google,subsidiary,Google Cloud,0.08333333333333333
+335,2008 Summer Olympics,point in time,2008,0.08333333333333333
+336,Google,owner of,duplicate acceptances,0.06666666666666667
+337,duplicate acceptances,owned by,Google,0.06666666666666667
+338,Google,product or material produced,Android,0.13333333333333333
+339,Google,product or material produced,Chrome,0.13333333333333333
+340,Google,owner of,Chrome,0.06666666666666667
+341,Chrome,developer,Google,0.13333333333333333
+342,Google,subsidiary,YouTube,0.13333333333333333
+343,2008 Summer Olympics,point in time,2008,0.06666666666666667
+344,Android,developer,Google,0.06666666666666667
+345,Google,operating system,Android,0.06666666666666667
+346,YouTube,parent organization,Google,0.06666666666666667
+347,Google,subsidiary,SoC,0.15384615384615385
+348,SoC,parent organization,Google,0.07692307692307693
+349,Google,member of,SoC,0.07692307692307693
+350,Google,subsidiary,SoC committee,0.15384615384615385
+351,SoC committee,parent organization,Google,0.07692307692307693
+352,Google's,subsidiary,SoC,0.15384615384615385
+353,SoC,parent organization,Google's,0.07692307692307693
+354,Google,instance of,SoC,0.07692307692307693
+355,Google's,member of,SoC,0.07692307692307693
+356,Google's,instance of,SoC,0.07692307692307693
+357,Chris DiBona,member of,official mailing list,0.15384615384615385
+358,Chris DiBona,employer,official mailing list,0.15384615384615385
+359,Chris DiBona,employer,the official mailing list,0.07692307692307693
+360,Chris DiBona,member of,the official mailing list,0.07692307692307693
+361,official mailing list,has part,Chris DiBona,0.07692307692307693
+362,Chris DiBona,affiliation,official mailing list,0.07692307692307693
+363,Chris DiBona,owner of,official mailing list,0.07692307692307693
+364,official mailing list,owned by,Chris DiBona,0.07692307692307693
+365,2008 Summer Olympics,point in time,2008,0.07692307692307693
+366,Chris DiBona,point in time,3:38 AM PDT,0.07692307692307693
+367,official mailing list,founded by,Chris DiBona,0.07692307692307693
+368,2008 Summer Olympics,point in time,2008,0.2
+369,2009 Contest,point in time,2009,0.1
+370,2009 World Cup,point in time,2009,0.1
+371,2008 Summer Olympics,location,Beijing,0.2
+372,University of Pennsylvania,located in the administrative territorial entity,Philadelphia,0.1
+373,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.1
+374,EMI,country,Japan,0.1
+375,E-mail,uses,e-mail,0.1
+376,SoC,developer,Google,0.08333333333333333
+377,Google,subsidiary,SoC,0.16666666666666666
+378,SoC,parent organization,Google,0.08333333333333333
+379,SoC website,owned by,Google,0.08333333333333333
+380,SoC website,developer,Google,0.08333333333333333
+381,Google,product or material produced,SoC,0.08333333333333333
+382,Google,owner of,SoC,0.08333333333333333
+383,SoC,owned by,Google,0.16666666666666666
+384,SoC,manufacturer,Google,0.08333333333333333
+385,SoC website,operator,Google,0.08333333333333333
+386,sensitive,subclass of,private,0.1
+387,sensitive and private,subclass of,information,0.1
+388,sensitive and private,subclass of,private,0.1
+389,"""sensitive and private"" information",subclass of,applications,0.1
+390,Sensitive and private,subclass of,information,0.1
+391,2008 Summer Olympics,point in time,2008,0.1
+392,information,facet of,sensitive,0.1
+393,"Sensitive and private"" information",subclass of,applications,0.1
+394,"sensitive and private"" information",subclass of,applications,0.1
+395,"""sensitive and private"" information",subclass of,public,0.1
+396,Summer of Code,organizer,Google,0.21428571428571427
+397,Google Summer of Code,organizer,Google,0.07142857142857142
+398,Google,participant in,Summer of Code,0.14285714285714285
+399,Google,subsidiary,Summer of Code,0.14285714285714285
+400,Summer of Code,parent organization,Google,0.07142857142857142
+401,Google,has part,Summer of Code,0.14285714285714285
+402,Summer of Code,part of,Google,0.07142857142857142
+403,Summer of Code,participant,Google,0.07142857142857142
+404,Google,significant event,Summer of Code,0.07142857142857142
+405,Summer of Code 2006,point in time,2006,0.5769230769230769
+406,Summer of Code 2006,end time,2006-09-08,0.038461538461538464
+407,The Summer of Code 2006,point in time,2006,0.07692307692307693
+408,Summer of Code 2006,point in time,2006-09-08,0.07692307692307693
+409,2006,point in time,2006,0.07692307692307693
+410,Code 2006,point in time,2006,0.07692307692307693
+411,Summer of Code,point in time,2006,0.07692307692307693
+412,Google,subsidiary,Google+,0.08333333333333333
+413,Google,subsidiary,YouTube,0.16666666666666666
+414,Google,subsidiary,Google Cloud,0.08333333333333333
+415,YouTube,parent organization,Google,0.08333333333333333
+416,Stanford University,located in the administrative territorial entity,California,0.08333333333333333
+417,Google,subsidiary,Stanford University,0.16666666666666666
+418,Google,owner of,Google+,0.08333333333333333
+419,Google,subsidiary,Google University,0.08333333333333333
+420,Stanford University,parent organization,Google,0.08333333333333333
+421,Google,product or material produced,Android,0.08333333333333333
+422,2007,point in time,2007,0.6363636363636364
+423,Google,inception,2007,0.13636363636363635
+424,2007,facet of,Google,0.13636363636363635
+425,Google,point in time,2007,0.09090909090909091
+426,John F. Kennedy School of Government,part of,Harvard University,0.16666666666666666
+427,2012 Summer Olympics,point in time,2012,0.08333333333333333
+428,University of Utah,located in the administrative territorial entity,Salt Lake City,0.08333333333333333
+429,New York University,located in the administrative territorial entity,Manhattan,0.08333333333333333
+430,Harvard University,subsidiary,John F. Kennedy School of Government,0.08333333333333333
+431,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.08333333333333333
+432,National Museum of American Art,located in the administrative territorial entity,"Washington, D.C.",0.08333333333333333
+433,New York City,twinned administrative body,Manhattan,0.08333333333333333
+434,Manhattan,twinned administrative body,New York City,0.08333333333333333
+435,University of Pennsylvania,located in the administrative territorial entity,Philadelphia,0.08333333333333333
+436,John F. Kennedy School of Government,country,USA,0.08333333333333333
+437,Google,has part,applications,0.15384615384615385
+438,applications,part of,Google,0.07692307692307693
+439,Google,product or material produced,applications,0.07692307692307693
+440,applications,organizer,Google,0.07692307692307693
+441,Google,product or material produced,Android,0.07692307692307693
+442,Google,subsidiary,applications,0.07692307692307693
+443,applications,parent organization,Google,0.07692307692307693
+444,Google,owner of,applications,0.07692307692307693
+445,applications,owned by,Google,0.07692307692307693
+446,Google,has part,application,0.07692307692307693
+447,Google,field of work,applications,0.07692307692307693
+448,2012 Summer Olympics,point in time,2012,0.07692307692307693
+449,2012 Summer Olympics,point in time,2012,0.09090909090909091
+450,2008 Summer Olympics,point in time,2008,0.09090909090909091
+451,Google,subsidiary,YouTube,0.18181818181818182
+452,Stanford University,located in the administrative territorial entity,California,0.09090909090909091
+453,Stanford University,headquarters location,"Stanford, California",0.09090909090909091
+454,John F. Kennedy School of Government,part of,Harvard University,0.09090909090909091
+455,YouTube,parent organization,Google,0.09090909090909091
+456,University of Utah,located in the administrative territorial entity,Salt Lake City,0.09090909090909091
+457,Google,subsidiary,Google Cloud,0.09090909090909091
+458,"University of California, Berkeley",headquarters location,"Berkeley, California",0.09090909090909091
+459,1988,point in time,1988,0.09090909090909091
+460,1984,point in time,1984,0.09090909090909091
+461,2002,point in time,2002,0.2727272727272727
+462,2000,point in time,2000,0.09090909090909091
+463,1972,point in time,1972,0.09090909090909091
+464,2004,point in time,2004,0.09090909090909091
+465,2008 Summer Olympics,point in time,2008,0.09090909090909091
+466,2008,point in time,2008,0.09090909090909091
+467,2009,point in time,2009,0.09090909090909091
+468,Not Selected,instance of,status,0.1
+469,Not Selected,facet of,web interface,0.1
+470,Not Selected,instance of,web interface,0.1
+471,Not Selected,subclass of,web interface,0.1
+472,Not Selected,subclass of,application,0.1
+473,Not Selected,part of,web interface,0.1
+474,application,part of,web interface,0.1
+475,web interface,subclass of,application,0.1
+476,Status of Not Selected,facet of,web interface,0.1
+477,web interface,has part,application,0.1
+478,Google,subsidiary,YouTube,0.16666666666666666
+479,Google,subsidiary,Google Cloud,0.08333333333333333
+480,YouTube,parent organization,Google,0.08333333333333333
+481,Google,subsidiary,Google+,0.08333333333333333
+482,Google,product or material produced,Android,0.16666666666666666
+483,Google,subsidiary,Google News,0.08333333333333333
+484,2008 Summer Olympics,point in time,2008,0.08333333333333333
+485,Google,owner of,Acceptance email,0.08333333333333333
+486,Acceptance email,owned by,Google,0.08333333333333333
+487,Android,developer,Google,0.08333333333333333
+488,Summer of Code,organizer,Google,0.17647058823529413
+489,2008,point in time,2008,0.47058823529411764
+490,2006,point in time,2006,0.23529411764705882
+491,Summer of Code,conferred by,Google,0.058823529411764705
+492,Summer of Code,creator,Google,0.058823529411764705
+493,John F. Kennedy School of Government,part of,Harvard University,0.18181818181818182
+494,World Heritage Site,maintained by,UNESCO,0.09090909090909091
+495,Yom Kippur War,point in time,1973,0.09090909090909091
+496,World War II,has effect,Holocaust,0.09090909090909091
+497,Harvard University,subsidiary,John F. Kennedy School of Government,0.09090909090909091
+498,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.09090909090909091
+499,"University of California, Berkeley",headquarters location,"Berkeley, California",0.09090909090909091
+500,New York University,located in the administrative territorial entity,New York City,0.09090909090909091
+501,University of Pennsylvania,subsidiary,Wharton School,0.09090909090909091
+502,Yonsei University,located in the administrative territorial entity,Yonsei,0.09090909090909091
+503,2008 Summer of Code,point in time,2008,0.3333333333333333
+504,Summer of Code,point in time,2008,0.06666666666666667
+505,2008,point in time,2008,0.06666666666666667
+506,2008 Summer of Code,number of participants,1125,0.06666666666666667
+507,2008 Summer,point in time,2008,0.06666666666666667
+508,Summer of Code,has part,2008 Summer of Code,0.06666666666666667
+509,Summer of Code,inception,2008,0.06666666666666667
+510,2008 Summer of Code,number of participants,8125,0.06666666666666667
+511,Code,part of,2008 Summer of Code,0.13333333333333333
+512,Code,point in time,2008,0.06666666666666667
+513,Open Source at Google,owned by,Google,0.09090909090909091
+514,Open Source at Google,owned by,Google's,0.09090909090909091
+515,Open Source at Google,instance of,blog,0.09090909090909091
+516,Open Source at Google,publisher,Google,0.09090909090909091
+517,Open Source at Google,maintained by,Google,0.09090909090909091
+518,Open Source at Google,developer,Google,0.09090909090909091
+519,Open Source at Google,operator,Google,0.09090909090909091
+520,Open Source at Google,author,Google,0.09090909090909091
+521,"""Open Source at Google"" blog",owned by,Google,0.09090909090909091
+522,Google,subsidiary,Open Source at Google,0.09090909090909091
+523,Open Source at Google,parent organization,Google,0.09090909090909091
+524,2008 GSoC,point in time,2008,0.42857142857142855
+525,University of Moratuwa,inception,2008,0.35714285714285715
+526,University of Moratuwa,award received,2008 GSoC,0.17857142857142858
+527,University of Moratuwa,award received,2008,0.03571428571428571
+528,Wrocław University of Technology,member of,GSoC,0.5
+529,Universidade Estadual de Campinas,has part,Wrocław University of Technology,0.05555555555555555
+530,Universidade Estadual de Campinas,member of,GSoC,0.16666666666666666
+531,University of Technology,located in the administrative territorial entity,Wrocław,0.05555555555555555
+532,Universidade Estadual de Campinas,different from,Wrocław University of Technology,0.05555555555555555
+533,Universidade Estadual de Campinas,affiliation,Wrocław University of Technology,0.05555555555555555
+534,2008 GSoC Accepted: Top 10 Universities,point in time,2008,0.1111111111111111
+535,University of Moratuwa,country,Sri Lanka,0.23529411764705882
+536,Moratuwa,country,Sri Lanka,0.058823529411764705
+537,2009,point in time,2009,0.35294117647058826
+538,University of Moratuwa,located in the administrative territorial entity,Sri Lanka,0.058823529411764705
+539,2008 Summer Olympics,point in time,2008,0.058823529411764705
+540,University of Moratuwa,inception,2009,0.23529411764705882
+541,2010,point in time,2010,0.47058823529411764
+542,Google,inception,2010,0.17647058823529413
+543,Google,point in time,2010,0.17647058823529413
+544,2010,facet of,Google,0.058823529411764705
+545,2010 === 2010,point in time,,0.058823529411764705
+546,2010 === 2010,point in time,2010,0.058823529411764705
+547,2010,point in time,2010,0.045454545454545456
+548,India,diplomatic relation,United States,0.09090909090909091
+549,China,diplomatic relation,United States,0.09090909090909091
+550,United States,diplomatic relation,United Kingdom,0.09090909090909091
+551,United Kingdom,diplomatic relation,United States,0.09090909090909091
+552,United States,diplomatic relation,India,0.09090909090909091
+553,China,diplomatic relation,India,0.045454545454545456
+554,United States,instance of,countries,0.045454545454545456
+555,India,instance of,countries,0.045454545454545456
+556,Germany,instance of,countries,0.045454545454545456
+557,Brazil,instance of,countries,0.045454545454545456
+558,Poland,instance of,countries,0.045454545454545456
+559,Canada,instance of,countries,0.045454545454545456
+560,China,instance of,countries,0.045454545454545456
+561,United Kingdom,instance of,countries,0.045454545454545456
+562,France,instance of,countries,0.045454545454545456
+563,Sri Lanka,instance of,countries,0.045454545454545456
+564,2011,point in time,2011,0.25
+565,2012 Summer Olympics,point in time,2012,0.08333333333333333
+566,2010,point in time,2010,0.16666666666666666
+567,2011,number of participants,175,0.08333333333333333
+568,2015,point in time,2015,0.08333333333333333
+569,2013,point in time,2013,0.08333333333333333
+570,2016 Summer Olympics,point in time,2016,0.08333333333333333
+571,2012,point in time,2012,0.08333333333333333
+572,2009 World's Fair,point in time,2009,0.08333333333333333
+573,new to the program,subclass of,universities,0.1
+574,Uppsala University,country,Sweden,0.1
+575,New to the program,subclass of,universities,0.1
+576,new to the program,facet of,universities,0.1
+577,New York University,located in the administrative territorial entity,Manhattan,0.1
+578,the program,instance of,universities,0.1
+579,University of Utah,located in the administrative territorial entity,Salt Lake City,0.1
+580,program,organizer,universities,0.1
+581,program,instance of,universities,0.1
+582,new to the program,is a list of,universities,0.1
+583,2011 Google Summer of Code,point in time,2011,0.23076923076923078
+584,Google Summer of Code,point in time,2011,0.07692307692307693
+585,2011,point in time,2011,0.15384615384615385
+586,2011,instance of,Google Summer of Code,0.07692307692307693
+587,Google Summer of Code,inception,2011,0.07692307692307693
+588,2011 Google Summer of Code,number of participants,11,0.15384615384615385
+589,2011 Google Summer of Code,number of participants,13,0.07692307692307693
+590,2011 Google Summer of Code,followed by,2013,0.07692307692307693
+591,2012 Summer Olympics,point in time,2012,0.07692307692307693
+592,University of Moratuwa,country,Sri Lanka,0.14285714285714285
+593,Moratuwa,country,Sri Lanka,0.35714285714285715
+594,Sri Lanka,contains administrative territorial entity,Moratuwa,0.07142857142857142
+595,University of Moratuwa,located in the administrative territorial entity,Sri Lanka,0.07142857142857142
+596,Sri Lanka,capital,Moratuwa,0.07142857142857142
+597,"University of Moratuwa, Sri Lanka",inception,2011,0.07142857142857142
+598,Moratuwa University,country,Sri Lanka,0.07142857142857142
+599,University,country,Sri Lanka,0.14285714285714285
+600,Polytechnic University of Bucharest,country,Romania,0.3333333333333333
+601,"Indian Institute of Technology, Kharagpur",country,India,0.09523809523809523
+602,Indian Institute of Technology,located in the administrative territorial entity,Kharagpur,0.19047619047619047
+603,Indian Institute of Technology,country,India,0.19047619047619047
+604,Kharagpur,country,India,0.19047619047619047
+605,2011 Google Summer of Code,point in time,2011,0.16666666666666666
+606,2011 Google Summer of Code program,point in time,2011,0.08333333333333333
+607,master's degree,followed by,PhD,0.08333333333333333
+608,PhD,subclass of,master's degree,0.08333333333333333
+609,Google Summer of Code,point in time,2011,0.08333333333333333
+610,master's degree,different from,PhD,0.16666666666666666
+611,PhD,different from,master's degree,0.16666666666666666
+612,master's degrees,followed by,PhDs,0.08333333333333333
+613,2011 Google Summer of Code,instance of,Google Summer of Code,0.08333333333333333
+614,Google Summer of Code 2012,point in time,2012,0.5
+615,Google Summer of Code 2012,organizer,Google,0.13636363636363635
+616,Google Summer of Code,point in time,2012,0.09090909090909091
+617,Google Summer of Code,organizer,Google,0.045454545454545456
+618,2012,point in time,2012,0.18181818181818182
+619,Google Summer of Code 2012,start time,"February 4, 2012",0.045454545454545456
+620,Google,subsidiary,Google Cloud,0.15384615384615385
+621,Google,subsidiary,Google+,0.07692307692307693
+622,Google,owner of,Google Glass,0.07692307692307693
+623,Google,product or material produced,Android,0.07692307692307693
+624,Google Cloud,parent organization,Google,0.07692307692307693
+625,Google,subsidiary,YouTube,0.07692307692307693
+626,Google,number of participants,"1,212",0.07692307692307693
+627,Google,subsidiary,Google Cloud Platform,0.07692307692307693
+628,Google,significant event,"1,212 proposals were accepted",0.07692307692307693
+629,"1,212 proposals were accepted",organizer,Google,0.07692307692307693
+630,Google,significant event,"1,212 proposals were accepted in 180 organizations",0.07692307692307693
+631,"1,212 proposals were accepted in 180 organizations",organizer,Google,0.07692307692307693
+632,India,diplomatic relation,USA,0.21428571428571427
+633,India,shares border with,USA,0.21428571428571427
+634,USA,diplomatic relation,India,0.14285714285714285
+635,USA,shares border with,India,0.14285714285714285
+636,India,diplomatic relation,Germany,0.14285714285714285
+637,India,shares border with,Germany,0.07142857142857142
+638,India,member of,GSoC,0.07142857142857142
+639,Dhirubhai Ambani Institute of Information and Communication Technology,country,India,0.35714285714285715
+640,University of Moratuwa,country,India,0.07142857142857142
+641,University of Moratuwa,located in the administrative territorial entity,Moratuwa,0.14285714285714285
+642,Dhirubhai Ambani Institute of Information and Communication Technology,located in the administrative territorial entity,India,0.07142857142857142
+643,Dhirubhai Ambani Institute of Information and Communication Technology,location,India,0.07142857142857142
+644,India,subsidiary,Dhirubhai Ambani Institute of Information and Communication Technology,0.07142857142857142
+645,Bhirubhai Ambani Institute of Information and Communication Technology,country,India,0.07142857142857142
+646,3rd rank,country,India,0.07142857142857142
+647,Dhirubhai Ambani Institute of Information and Communication Technology,headquarters location,India,0.07142857142857142
+648,Mauritius,continent,Africa,0.2857142857142857
+649,Mauritius,continent,African,0.14285714285714285
+650,Mauritius,continent,African country,0.07142857142857142
+651,Mauritius,participant in,Google Summer of Code,0.21428571428571427
+652,Google Summer of Code,participant,Mauritius,0.07142857142857142
+653,Google Summer of Code,country,Mauritius,0.14285714285714285
+654,Mauritius,continent,African continent,0.07142857142857142
+655,Google Summer of Code 2013,point in time,2013,0.5
+656,Google Summer of Code 2013,organizer,Google,0.13636363636363635
+657,Google Summer of Code,point in time,2013,0.09090909090909091
+658,Google Summer of Code,organizer,Google,0.045454545454545456
+659,2013,point in time,2013,0.18181818181818182
+660,Google Summer of Code 2013,start time,"February 11, 2013",0.045454545454545456
+661,Google,field of work,open source,0.1
+662,Google,product or material produced,open source,0.1
+663,Google,industry,open source,0.1
+664,Google,instance of,open source,0.1
+665,Google,movement,open source,0.1
+666,Google,field of work,open source projects and organizations,0.1
+667,Google,field of work,open source projects,0.1
+668,Google,instance of,open source projects and organizations,0.1
+669,open source,subclass of,organizations,0.1
+670,open source projects and organizations,developer,Google,0.1
+671,project proposals,subclass of,proposals,0.1
+672,project proposals,facet of,student,0.1
+673,2012 Summer Olympics,point in time,2012,0.1
+674,2008 Summer Olympics,point in time,2008,0.1
+675,project,subclass of,proposal,0.1
+676,project,subclass of,proposals,0.1
+677,project,facet of,student,0.1
+678,project proposals,subclass of,proposal,0.1
+679,Project,subclass of,student,0.1
+680,Project,participant,student,0.1
+681,Google Summer of Code 2014,point in time,2014,0.6666666666666666
+682,Google Summer of Code 2014,organizer,Google,0.125
+683,Google Summer of Code 2014,start time,"February 3, 2014",0.041666666666666664
+684,Google Summer of Code,organizer,Google,0.041666666666666664
+685,2014,point in time,2014,0.08333333333333333
+686,Google Summer of Code 2014,conferred by,Google,0.041666666666666664
+687,Google,field of work,open source,0.1
+688,Google,product or material produced,open source,0.1
+689,Google,industry,open source,0.1
+690,Google,instance of,open source,0.1
+691,Google,movement,open source,0.1
+692,Google,instance of,organizations,0.1
+693,Google,instance of,open source projects and organizations,0.1
+694,Google,field of work,open source projects,0.1
+695,Google,field of work,open source projects and organizations,0.1
+696,Google,uses,open source,0.1
+697,project proposals,subclass of,proposals,0.1
+698,project proposals,facet of,student,0.1
+699,2008 Summer Olympics,point in time,2008,0.1
+700,2012 Summer Olympics,point in time,2012,0.1
+701,project,subclass of,proposal,0.1
+702,project,subclass of,proposals,0.1
+703,project,facet of,student,0.1
+704,Project,subclass of,student,0.1
+705,Project,subclass of,project proposals,0.1
+706,Project,participant,student,0.1
+707,2014 edition,point in time,2014,0.07142857142857142
+708,2014,point in time,2014,0.07142857142857142
+709,Ethiopia,inception,2014,0.2857142857142857
+710,Kenya,inception,2014,0.21428571428571427
+711,Uganda,inception,2014,0.21428571428571427
+712,Malawi,inception,2014,0.07142857142857142
+713,The 2014 edition,point in time,2014,0.07142857142857142
+714,Kenya,diplomatic relation,Cameroon,0.2857142857142857
+715,Cameroon,diplomatic relation,Kenya,0.21428571428571427
+716,Kenya,shares border with,Cameroon,0.21428571428571427
+717,Cameroon,shares border with,Kenya,0.21428571428571427
+718,Kenyan,diplomatic relation,Cameroon,0.07142857142857142
+719,Google Summer of Code 2015,point in time,2015,0.5
+720,Google Summer of Code 2015,organizer,Google,0.13636363636363635
+721,Google Summer of Code,point in time,2015,0.09090909090909091
+722,Google Summer of Code,organizer,Google,0.045454545454545456
+723,Google Summer of Code 2015,start time,"February 9, 2015",0.045454545454545456
+724,2015,point in time,2015,0.18181818181818182
+725,Tor Project,field of work,open source,0.18181818181818182
+726,Linux Foundation,field of work,open source,0.18181818181818182
+727,Tor Project,instance of,open source,0.09090909090909091
+728,Tor Project,member of,Linux Foundation,0.09090909090909091
+729,Google,field of work,open source,0.09090909090909091
+730,Mozilla,field of work,open source,0.09090909090909091
+731,Tor Project,instance of,open source projects,0.09090909090909091
+732,Tor Project,influenced by,Google,0.09090909090909091
+733,Mozilla,member of,Linux Foundation,0.09090909090909091
+734,student application period,start time,"March 16, 2015",0.1
+735,application period,start time,"March 16, 2015",0.1
+736,The student application period,start time,"March 16, 2015",0.1
+737,Student application period,start time,"March 16, 2015",0.1
+738,2015,point in time,2015,0.1
+739,2015,start time,"March 16, 2015",0.1
+740,applications period,start time,"March 16, 2015",0.1
+741,student application period,point in time,"March 16, 2015",0.1
+742,The student application period,point in time,"March 16, 2015",0.1
+743,The Student application period,start time,"March 16, 2015",0.1
+744,The accepted student proposals,point in time,"April 27, 2015",0.09090909090909091
+745,accepted student proposals,point in time,"April 27, 2015",0.09090909090909091
+746,The accepted student proposals,publication date,"April 27, 2015",0.09090909090909091
+747,student proposals,point in time,"April 27, 2015",0.2727272727272727
+748,accepted student proposals,publication date,"April 27, 2015",0.09090909090909091
+749,Accepted student proposals,point in time,"April 27, 2015",0.09090909090909091
+750,"The accepted student proposals were announced on April 27, 2015",point in time,"April 27, 2015",0.09090909090909091
+751,The accepted student proposals were announced,point in time,"April 27, 2015",0.09090909090909091
+752,student proposals,publication date,"April 27, 2015",0.09090909090909091
+753,India,diplomatic relation,Sri Lanka,0.23076923076923078
+754,India,diplomatic relation,USA,0.23076923076923078
+755,USA,diplomatic relation,India,0.15384615384615385
+756,Sri Lanka,diplomatic relation,India,0.15384615384615385
+757,India,shares border with,USA,0.07692307692307693
+758,India,member of,GSoC,0.07692307692307693
+759,India,country,India,0.07692307692307693
+760,Google Summer of Code 2016,point in time,2016,0.5
+761,Google Summer of Code 2016,organizer,Google,0.13636363636363635
+762,Google Summer of Code,point in time,2016,0.09090909090909091
+763,Google Summer of Code,organizer,Google,0.045454545454545456
+764,2016,point in time,2016,0.18181818181818182
+765,Google Summer of Code 2016,start time,"February 9, 2016",0.045454545454545456
+766,2016,point in time,2016,0.08333333333333333
+767,2008 Summer Olympics,point in time,2008,0.08333333333333333
+768,2012 Summer Olympics,point in time,2012,0.08333333333333333
+769,2016 Summer Olympics,point in time,2016,0.08333333333333333
+770,2015,point in time,2015,0.08333333333333333
+771,2014,point in time,2014,0.08333333333333333
+772,2016,start time,"February 19, 2016",0.08333333333333333
+773,New York Yankees,league,Major League Baseball,0.08333333333333333
+774,United Nations,has part,General Assembly,0.08333333333333333
+775,General Assembly,part of,United Nations,0.08333333333333333
+776,New York City,contains administrative territorial entity,Manhattan,0.08333333333333333
+777,Manhattan,located in the administrative territorial entity,New York City,0.08333333333333333
+778,student application period,start time,"March 14, 2016",0.15384615384615385
+779,student application period,end time,"March 25, 2016",0.15384615384615385
+780,The student application period,start time,"March 14, 2016",0.15384615384615385
+781,2016,point in time,2016,0.07692307692307693
+782,Student application period,start time,"March 14, 2016",0.15384615384615385
+783,2016 Summer Olympics,point in time,2016,0.07692307692307693
+784,The student application period,end time,"March 25, 2016",0.07692307692307693
+785,"March 14, 2016",point in time,"March 14, 2016",0.07692307692307693
+786,Student application period,end time,"March 25, 2016",0.07692307692307693
+787,Kraków,country,Poland,0.14285714285714285
+788,World Heritage Site,maintained by,UNESCO,0.07142857142857142
+789,United Nations,has part,General Assembly,0.14285714285714285
+790,General Assembly,part of,United Nations,0.07142857142857142
+791,New York City,contains administrative territorial entity,Manhattan,0.14285714285714285
+792,Manhattan,located in the administrative territorial entity,New York City,0.07142857142857142
+793,New York City,twinned administrative body,Manhattan,0.07142857142857142
+794,Manhattan,twinned administrative body,New York City,0.07142857142857142
+795,Poland,capital,Kraków,0.07142857142857142
+796,New York City,located in the administrative territorial entity,New York,0.07142857142857142
+797,National Museum of American Art,located in the administrative territorial entity,"Washington, D.C.",0.07142857142857142
+798,2015,point in time,2015,0.18181818181818182
+799,2016 Summer Olympics,point in time,2016,0.09090909090909091
+800,student proposals,subclass of,registered students,0.09090909090909091
+801,2014 Summer Olympics,point in time,2014,0.09090909090909091
+802,student proposals,point in time,2015,0.18181818181818182
+803,in 2015,point in time,2015,0.09090909090909091
+804,the 2015,point in time,2015,0.09090909090909091
+805,2014 Commonwealth Games,point in time,2014,0.09090909090909091
+806,student proposals,facet of,registered students,0.09090909090909091
+807,The accepted student proposals,point in time,"April 22, 2016",0.09090909090909091
+808,accepted student proposals,point in time,"April 22, 2016",0.09090909090909091
+809,student proposals,point in time,"April 22, 2016",0.2727272727272727
+810,The accepted student proposals,publication date,"April 22, 2016",0.09090909090909091
+811,Accepted student proposals,point in time,"April 22, 2016",0.09090909090909091
+812,accepted student proposals,publication date,"April 22, 2016",0.09090909090909091
+813,"The accepted student proposals were announced on April 22, 2016",point in time,"April 22, 2016",0.09090909090909091
+814,The accepted student proposals were announced,point in time,"April 22, 2016",0.09090909090909091
+815,Student proposals,point in time,"April 22, 2016",0.09090909090909091
+816,2017,point in time,2017,0.2
+817,2018,point in time,2018,0.1
+818,2016,point in time,2016,0.1
+819,2016 Summer Olympics,point in time,2016,0.1
+820,2015,point in time,2015,0.1
+821,2019,point in time,2019,0.1
+822,2017,number of participants,201,0.1
+823,2017 ===2017,point in time,2017,0.1
+824,New York University,located in the administrative territorial entity,New York City,0.1
+825,first time,facet of,universities,0.09090909090909091
+826,first time,facet of,university,0.09090909090909091
+827,New York University,located in the administrative territorial entity,Manhattan,0.09090909090909091
+828,University of Utah,located in the administrative territorial entity,Salt Lake City,0.09090909090909091
+829,Harvard University,subsidiary,Kennedy School of Government,0.18181818181818182
+830,first time,subclass of,universities,0.09090909090909091
+831,Kennedy School of Government,part of,Harvard University,0.09090909090909091
+832,first time,facet of,first time,0.09090909090909091
+833,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.09090909090909091
+834,University of Pennsylvania,subsidiary,Wharton School,0.09090909090909091
+835,2008 Summer Olympics,point in time,2008,0.09090909090909091
+836,World Heritage Site,maintained by,UNESCO,0.09090909090909091
+837,the previous high for the program,number of participants,"20,651",0.09090909090909091
+838,the previous high for the program,number of participants,"20,651 students",0.09090909090909091
+839,previous high for the program,number of participants,"20,651",0.09090909090909091
+840,the previous high,number of participants,"20,651",0.09090909090909091
+841,New York City,twinned administrative body,Manhattan,0.09090909090909091
+842,Manhattan,twinned administrative body,New York City,0.09090909090909091
+843,previous high for the program,number of participants,"20,651 students",0.09090909090909091
+844,New York University,located in the administrative territorial entity,Manhattan,0.09090909090909091
+845,previous high,number of participants,8.8%,0.09090909090909091
+846,project proposals,facet of,students,0.09090909090909091
+847,2008 Summer Olympics,point in time,2008,0.18181818181818182
+848,2012 Summer Olympics,point in time,2012,0.09090909090909091
+849,World Heritage Site,maintained by,UNESCO,0.09090909090909091
+850,project proposals,subclass of,students,0.09090909090909091
+851,2010 Summer Olympics,point in time,2010,0.09090909090909091
+852,2014 Summer Olympics,point in time,2014,0.09090909090909091
+853,project proposals,part of,students,0.09090909090909091
+854,2008 Summer Olympics,location,Beijing,0.18181818181818182
+855,2018,point in time,2018,0.6
+856,in 2018,point in time,2018,0.1
+857,2018 === 2018,point in time,,0.05
+858,2018 === 2018,point in time,2018,0.05
+859,organizations were accepted in 2018,point in time,2018,0.1
+860,2018.,point in time,2018,0.1
+861,2019,point in time,2019,0.45454545454545453
+862,organizations were accepted in 2019,point in time,2019,0.09090909090909091
+863,in 2019,point in time,2019,0.09090909090909091
+864,2019.,point in time,2019,0.09090909090909091
+865,2019 ===2019,point in time,2019,0.09090909090909091
+866,submitted in 2019,point in time,2019,0.09090909090909091
+867,accepted in 2019,point in time,2019,0.09090909090909091
+868,2020,point in time,2020,0.5714285714285714
+869,2020.,point in time,2020,0.09523809523809523
+870,2020 ===2020,point in time,2020,0.09523809523809523
+871,2020 �<subj> 2020,point in time,,0.047619047619047616
+872,2020 �<subj> 2020,point in time,2020,0.047619047619047616
+873,in 2020,point in time,2020,0.09523809523809523
+874,2019,point in time,2019,0.047619047619047616
+875,2021,point in time,2021,0.6666666666666666
+876,2020 Summer Olympics,point in time,2020,0.05555555555555555
+877,2022 Summer Olympics,point in time,2022,0.05555555555555555
+878,2020,point in time,2020,0.05555555555555555
+879,2021.,point in time,2021,0.1111111111111111
+880,2020 Winter Olympics,point in time,2020,0.05555555555555555
+881,Google Summer of Code,organizer,Google,0.09090909090909091
+882,Google Summer of Code,creator,Google,0.09090909090909091
+883,Google Summer of Code,conferred by,Google,0.09090909090909091
+884,Google Summer of Code,developer,Google,0.09090909090909091
+885,Google Summer of Code,founded by,Google,0.09090909090909091
+886,Google Summer of Code program,organizer,Google,0.09090909090909091
+887,Google Summer of Code,parent organization,Google,0.18181818181818182
+888,Google Summer of Code,operator,Google,0.09090909090909091
+889,Google Summer of Code,named after,Google,0.09090909090909091
+890,Google,subsidiary,Google Summer of Code,0.09090909090909091
+891,new grads,subclass of,students,0.08333333333333333
+892,New grads,subclass of,students,0.08333333333333333
+893,2008 Summer Olympics,point in time,2008,0.08333333333333333
+894,2012 Summer Olympics,point in time,2012,0.08333333333333333
+895,students,different from,new grads,0.16666666666666666
+896,new grads,different from,students,0.08333333333333333
+897,new grads,subclass of,student,0.08333333333333333
+898,new grad,subclass of,students,0.08333333333333333
+899,student,different from,new grads,0.16666666666666666
+900,new grads,different from,student,0.08333333333333333
+901,Google,field of work,open source,0.1
+902,Google,product or material produced,open source,0.1
+903,Google,instance of,open source,0.1
+904,Google,industry,open source,0.1
+905,open source,subclass of,projects,0.1
+906,Google,instance of,large projects,0.1
+907,Google,subsidiary,Google Cloud,0.1
+908,medium,subclass of,large projects,0.1
+909,large projects,facet of,open source,0.1
+910,Google,instance of,open source organizations,0.1
+911,SoC 2006,point in time,2006,0.1
+912,"Google Summer of Code Full of Stats - Part 3, Countries",end time,"August 5, 2013",0.1
+913,Google Summer of Code Full of Stats,end time,"August 5, 2013",0.1
+914,"Google Summer of Code Full of Stats - Part 3, Countries",start time,"August 5, 2013",0.1
+915,"Google Summer of Code Full of Stats - Part 3, Countries",publication date,"August 5, 2013",0.1
+916,"Google Summer of Code Full of Stats - Part 3, Countries",point in time,"August 5, 2013",0.1
+917,Google Summer of Code Full of Stats,start time,"August 5, 2013",0.1
+918,Google Summer of Code Full of Stats,point in time,"August 5, 2013",0.1
+919,Google Summer of Code Full of Stats - Part 3,end time,"August 5, 2013",0.1
+920,SoC 2006,instance of,SoC,0.1

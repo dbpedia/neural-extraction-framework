@@ -1,0 +1,1242 @@
+,head,type,tail,Confidence
+0,Leipzig University,located in the administrative territorial entity,Leipzig,0.1111111111111111
+1,Leipzig University,country,Germany,0.1388888888888889
+2,Leipzig,located in the administrative territorial entity,Saxony,0.1111111111111111
+3,Leipzig,country,Germany,0.1388888888888889
+4,Saxony,contains administrative territorial entity,Leipzig,0.125
+5,Saxony,country,Germany,0.1388888888888889
+6,Germany,contains administrative territorial entity,Saxony,0.125
+7,German,country,Germany,0.05555555555555555
+8,Leipzig University,headquarters location,Leipzig,0.027777777777777776
+9,Germany,contains administrative territorial,Saxony,0.013888888888888888
+10,Leipzig University,instance of,universities,0.013888888888888888
+11,"Frederick I, Elector of Saxony",sibling,"William II, Margrave of Meissen",0.10526315789473684
+12,"William II, Margrave of Meissen",sibling,"Frederick I, Elector of Saxony",0.10526315789473684
+13,Frederick I,sibling,"William II, Margrave of Meissen",0.10526315789473684
+14,"William II, Margrave of Meissen",sibling,Frederick I,0.10526315789473684
+15,"Frederick I, Elector of Saxony",sibling,William II,0.05263157894736842
+16,William II,sibling,"Frederick I, Elector of Saxony",0.05263157894736842
+17,Frederick I,sibling,William II,0.10526315789473684
+18,William II,sibling,Frederick I,0.10526315789473684
+19,Frederick I,position held,Elector of Saxony,0.10526315789473684
+20,"Frederick I, Elector",sibling,"William II, Margrave of Meissen",0.05263157894736842
+21,"William II, Margrave of Meissen",sibling,"Frederick I, Elector",0.05263157894736842
+22,"William II, Margrave of Meissen",father,"Frederick I, Elector of Saxony",0.05263157894736842
+23,research,has part,teaching,0.08333333333333333
+24,research,part of,teaching,0.16666666666666666
+25,research,subclass of,teaching,0.08333333333333333
+26,teaching,has part,research,0.16666666666666666
+27,research,different from,teaching,0.08333333333333333
+28,university,has part,research,0.16666666666666666
+29,research,part of,university,0.08333333333333333
+30,university,field of work,research,0.08333333333333333
+31,teaching,has parts of the class,research,0.08333333333333333
+32,Friedrich Nietzsche,influenced by,Gottfried Wilhelm von Leibniz,0.3125
+33,Johann Wolfgang von Goethe,influenced by,Gottfried Wilhelm von Leibniz,0.1875
+34,Friedrich Nietzsche,influenced by,Johann Wolfgang von Goethe,0.125
+35,Robert Schumann,influenced by,Gottfried Wilhelm von Leibniz,0.25
+36,Richard Wagner,influenced by,Gottfried Wilhelm von Leibniz,0.0625
+37,Robert Schumann,influenced by,Johann Wolfgang von Goethe,0.0625
+38,Jan Hus crisis,point in time,1900,0.09090909090909091
+39,Jan Hus,educated at,University of Prague,0.09090909090909091
+40,Jan Hus crisis,has effect,Decree of Kutná Hora,0.18181818181818182
+41,Jan Hus crisis,start time,1900,0.09090909090909091
+42,Jan Hus,employer,University of Prague,0.09090909090909091
+43,Decree of Kutná Hora,has cause,Jan Hus crisis,0.09090909090909091
+44,Jan Hus crisis,end time,1900,0.09090909090909091
+45,Jan Hus crisis,participant,University of Prague,0.09090909090909091
+46,Jan Hus,work location,Leipzig,0.09090909090909091
+47,Jan Hus crisis,has part,Decree of Kutná Hora,0.09090909090909091
+48,Alma mater Lipsiensis,inception,1409,0.23076923076923078
+49,Lipsiensis,inception,1409,0.15384615384615385
+50,Bull of Acknowledgment,author,Pope Alexander V,0.23076923076923078
+51,Alma mater Lipsiensis,date of official opening,1409,0.07692307692307693
+52,Alma mater Lipsiensis,founded by,Pope Alexander V,0.07692307692307693
+53,Lipsiensis,date of official opening,1409,0.07692307692307693
+54,Pope Alexander V,work period (start),1409,0.07692307692307693
+55,1409,point in time,1409,0.07692307692307693
+56,Johannes Otto von Münsterberg,position held,rector,0.1
+57,Johannes Otto von Münsterberg,occupation,rector,0.1
+58,Otto von Münsterberg,position held,rector,0.1
+59,Otto von Münsterberg,occupation,rector,0.1
+60,Johannes Otto von Münsterberg,position held,Rector,0.1
+61,Johannes Otto von Münsterberg,employer,Münsterberg,0.1
+62,Münsterberg,founded by,Johannes Otto von Münsterberg,0.1
+63,Otto von Münsterberg,father,Johannes Otto von Münsterberg,0.1
+64,rector,founded by,Johannes Otto von Münsterberg,0.1
+65,Johannes Otto von Münsterberg,educated at,Münsterberg,0.1
+66,Paulinerkirche,instance of,university church,0.1
+67,university church,part of,Paulinerkirche,0.1
+68,university,headquarters location,Paulinerkirche,0.1
+69,university church,location,Paulinerkirche,0.1
+70,university church,named after,Paulinerkirche,0.1
+71,university,location,Paulinerkirche,0.1
+72,university,named after,Paulinerkirche,0.1
+73,university church,used by,Paulinerkirche,0.1
+74,university,owner of,Paulinerkirche,0.1
+75,Paulinerkirche,use,university church,0.1
+76,1544,point in time,1544,0.09090909090909091
+77,Reformation,point in time,1544,0.09090909090909091
+78,Reformation,end time,1544,0.09090909090909091
+79,university,inception,1544,0.09090909090909091
+80,Reformation,start time,1544,0.09090909090909091
+81,church,part of,monastery,0.18181818181818182
+82,monastery,inception,1544,0.09090909090909091
+83,the university,inception,1544,0.09090909090909091
+84,monastery,has part,church,0.18181818181818182
+85,university villages,located in the administrative territorial entity,Leipzig,0.1
+86,University villages,located in the administrative territorial entity,Leipzig,0.1
+87,university villages,subclass of,villages,0.1
+88,university village,located in the administrative territorial entity,Leipzig,0.1
+89,University village,located in the administrative territorial entity,Leipzig,0.1
+90,Leipzig,instance of,university villages,0.1
+91,University villages,subclass of,villages,0.1
+92,university villages,is a list of,villages,0.1
+93,Leipzig,instance of,villages,0.1
+94,Leipzig,located in the administrative territorial entity,Leipzig,0.1
+95,land reforms,point in time,19th century,0.1
+96,land reform,point in time,19th century,0.1
+97,land reforms,time period,19th century,0.1
+98,land reforms,start time,19th century,0.1
+99,land reforms were carried out in the 19th century,point in time,19th century,0.1
+100,land reforms were carried out,point in time,19th century,0.1
+101,land reform,time period,19th century,0.1
+102,land reforms,part of,19th century,0.1
+103,land reform,start time,19th century,0.1
+104,land reforms,publication date,19th century,0.1
+105,University of Leipzig,instance of,colleges,0.09090909090909091
+106,University of Leipzig,instance of,universities,0.09090909090909091
+107,University of Leipzig,instance of,colleges (collegia),0.09090909090909091
+108,University of Leipzig,continent,Europe,0.09090909090909091
+109,University of Leipzig,instance of,university,0.09090909090909091
+110,University of Leipzig,instance of,collegiate lecturing,0.09090909090909091
+111,universities,has part,colleges,0.09090909090909091
+112,colleges,part of,universities,0.09090909090909091
+113,University of Leipzig,instance of,collegiate,0.09090909090909091
+114,University of Leipzig,instance of,college,0.09090909090909091
+115,colleges,subclass of,universities,0.09090909090909091
+116,Pauliner-College,located in the administrative territorial entity,Leipzig,0.23809523809523808
+117,Pauliner Kolleg,located in the administrative territorial entity,Leipzig,0.047619047619047616
+118,Pauliner-College,headquarters location,Leipzig,0.047619047619047616
+119,Pauliner-College,has part,Pauliner Kolleg,0.047619047619047616
+120,Pauliner Kolleg,part of,Pauliner-College,0.09523809523809523
+121,Frauenkolleg,located in the administrative territorial entity,Leipzig,0.09523809523809523
+122,Small College,located in the administrative territorial entity,Leipzig,0.14285714285714285
+123,Large College,located in the administrative territorial entity,Leipzig,0.14285714285714285
+124,Red College,located in the administrative territorial entity,Leipzig,0.09523809523809523
+125,college of our Lady,located in the administrative territorial entity,Leipzig,0.047619047619047616
+126,bursen,subclass of,residential halls,0.08333333333333333
+127,bursen,subclass of,residential hall,0.08333333333333333
+128,residential hall,subclass of,bursen,0.08333333333333333
+129,residential halls,subclass of,bursen,0.08333333333333333
+130,bursen,subclass of,bursaries,0.08333333333333333
+131,bursen,subclass of,residential,0.08333333333333333
+132,residential halls,said to be the same as,bursen,0.08333333333333333
+133,bursen,said to be the same as,residential halls,0.08333333333333333
+134,residential hall,said to be the same as,bursen,0.08333333333333333
+135,bursen,said to be the same as,residential hall,0.08333333333333333
+136,private residential halls,subclass of,bursen,0.08333333333333333
+137,bursen,subclass of,bursary,0.08333333333333333
+138,college,subclass of,jurisdiction,0.09090909090909091
+139,college,part of,jurisdiction,0.09090909090909091
+140,colleges,subclass of,jurisdiction,0.09090909090909091
+141,colleges,part of,jurisdiction,0.09090909090909091
+142,college,applies to jurisdiction,jurisdiction,0.09090909090909091
+143,university,different from,college,0.09090909090909091
+144,university,subclass of,colleges,0.09090909090909091
+145,college,authority,jurisdiction,0.09090909090909091
+146,universities,has part,colleges,0.18181818181818182
+147,colleges,part of,universities,0.09090909090909091
+148,University of Toledo,located in the administrative territorial entity,"Toledo, Ohio",0.09090909090909091
+149,John F. Kennedy School of Government,part of,Harvard University,0.09090909090909091
+150,University of Wisconsin,located in the administrative territorial entity,Madison,0.09090909090909091
+151,University of Wisconsin-Madison,located in the administrative territorial entity,Madison,0.09090909090909091
+152,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.09090909090909091
+153,University of Pennsylvania,located in the administrative territorial entity,Philadelphia,0.09090909090909091
+154,University of Wisconsin-Madison,located in the administrative territorial entity,"Madison, Wisconsin",0.09090909090909091
+155,University of Pennsylvania,subsidiary,Wharton School,0.18181818181818182
+156,Wharton School,parent organization,University of Pennsylvania,0.09090909090909091
+157,"University of California, Berkeley",headquarters location,"Berkeley, California",0.09090909090909091
+158,university,subclass of,institution,0.09090909090909091
+159,first centuries,facet of,university,0.09090909090909091
+160,first centuries,instance of,university,0.09090909090909091
+161,university,different from,university,0.2727272727272727
+162,university grew slowly,subclass of,institution,0.09090909090909091
+163,university,subclass of,regional institution,0.09090909090909091
+164,university,located in the administrative territorial entity,region,0.09090909090909091
+165,University of Padua,country,Italy,0.09090909090909091
+166,university grew slowly,instance of,institution,0.09090909090909091
+167,research,part of,higher education,0.18181818181818182
+168,higher education,has part,research,0.18181818181818182
+169,research,subclass of,higher education,0.09090909090909091
+170,university,field of work,higher education,0.09090909090909091
+171,research,facet of,higher education,0.09090909090909091
+172,world-class institution,field of work,higher education,0.09090909090909091
+173,research,part of,university,0.09090909090909091
+174,world-class institution,facet of,higher education,0.09090909090909091
+175,research,has part,higher education,0.09090909090909091
+176,Wilhelm Ostwald,field of work,physical chemistry,0.06666666666666667
+177,Wilhelm Ostwald,educated at,Leipzig,0.2
+178,Wilhelm Ostwald,employer,Leipzig,0.2
+179,Bernhard Windscheid,educated at,Leipzig,0.13333333333333333
+180,Bernhard Windscheid,employer,Leipzig,0.2
+181,Wilhelm Ostwald,work location,Leipzig,0.13333333333333333
+182,Bernhard Windscheid,work location,Leipzig,0.06666666666666667
+183,Leipzig University,country,German,0.18181818181818182
+184,Leipzig University,instance of,universities,0.18181818181818182
+185,Leipzig University,instance of,German universities,0.09090909090909091
+186,Leipzig University,instance of,university,0.09090909090909091
+187,Leipzig University,instance of,guest student,0.09090909090909091
+188,Leipzig University,instance of,guest students,0.09090909090909091
+189,Leipzig,country,German,0.09090909090909091
+190,Leipzig University,country,German universities,0.09090909090909091
+191,guest student,subclass of,universities,0.09090909090909091
+192,1873,point in time,1873,0.08333333333333333
+193,Allgemeiner Deutscher Frauenverein,inception,1873,0.08333333333333333
+194,Leipzig,twinned administrative body,Prague,0.16666666666666666
+195,Prague,twinned administrative body,Leipzig,0.16666666666666666
+196,University of Leipzig,member of,Allgemeiner Deutscher Frauenverein,0.08333333333333333
+197,University of Leipzig,inception,1873,0.08333333333333333
+198,Allgemeiner Deutscher Frauenverein,instance of,general assembly,0.08333333333333333
+199,Allgemeiner Deutscher Frauenverein,legislative body,general assembly,0.08333333333333333
+200,University of Leipzig,twinned administrative body,Prague,0.08333333333333333
+201,Prague,twinned administrative body,University of Leipzig,0.08333333333333333
+202,Johanna von Evreinov,award received,JD,0.1
+203,Johanna von Evreinov,occupation,JD,0.1
+204,Johanna von Evreinov,country of citizenship,Germany,0.1
+205,Johanna von Evreinov,position held,JD,0.1
+206,Johanna von Evreinov,educated at,JD,0.1
+207,Johanna von Evreinov,member of,JD,0.1
+208,Johanna von Evreinov,place of birth,Germany,0.1
+209,Johanna von Evreinov,field of work,JD,0.1
+210,Johanna von Evreinov,victory,JD,0.1
+211,Johanna von Evreinov,notable work,JD,0.1
+212,Paul Ehrlich,educated at,Leipzig University,0.35714285714285715
+213,Felix Bloch,educated at,Leipzig University,0.19047619047619047
+214,Werner Heisenberg,educated at,Leipzig University,0.2619047619047619
+215,Sin-Itiro Tomonaga,educated at,Leipzig University,0.19047619047619047
+216,University of Utah,located in the administrative territorial entity,Salt Lake City,0.09090909090909091
+217,University of Pennsylvania,subsidiary,Wharton School,0.18181818181818182
+218,University of Wisconsin,located in the administrative territorial entity,Madison,0.09090909090909091
+219,University of Oxford,country,United Kingdom,0.09090909090909091
+220,Wharton School,parent organization,University of Pennsylvania,0.09090909090909091
+221,University of Pennsylvania,located in the administrative territorial entity,Philadelphia,0.09090909090909091
+222,"University of California, Berkeley",located in the administrative territorial entity,"Berkeley, California",0.09090909090909091
+223,Charles Darwin,educated at,University of Oxford,0.09090909090909091
+224,University Museum of Natural History,parent organization,Smithsonian Institution,0.09090909090909091
+225,"University of California, Berkeley",headquarters location,"Berkeley, California",0.09090909090909091
+226,Nazi rule,time period,Nazi period,0.08333333333333333
+227,Nazi period,has part,Nazi rule,0.16666666666666666
+228,Nazi rule,part of,Nazi period,0.08333333333333333
+229,Nazi rule,country,Nazi period,0.08333333333333333
+230,Nazi period,facet of,Nazi rule,0.08333333333333333
+231,Nazi period,political ideology,Nazi,0.08333333333333333
+232,Nazi period,country,Nazi rule,0.08333333333333333
+233,many degrees of Jews were cancelled,country,Nazi period,0.08333333333333333
+234,Nazi period,followed by,Nazi rule,0.16666666666666666
+235,Nazi rule,follows,Nazi period,0.08333333333333333
+236,Karl-Marx University,country,GDR,0.1
+237,Karl-Marx University degrees,country,GDR,0.1
+238,Karl-Marx University,country,the GDR,0.1
+239,GDR,named after,Karl-Marx University,0.1
+240,GDR,subsidiary,Karl-Marx University,0.1
+241,Karl-Marx University degree,country,GDR,0.1
+242,GDR,member of,Karl-Marx University,0.1
+243,GDR,owner of,Karl-Marx University,0.1
+244,Karl-Marx University,country,GDR.,0.1
+245,GDR,educated at,Karl-Marx University,0.1
+246,Max Clara,field of work,anatomy,0.1
+247,Max Clara,member of political party,Nazis,0.1
+248,Max Clara,position held,chair of anatomy,0.1
+249,Max Clara,member of political party,Nazi,0.1
+250,Max Clara (chair of anatomy),member of political party,Nazis,0.1
+251,Max Clara,political ideology,Nazis,0.1
+252,Max Clara,occupation,chair of anatomy,0.1
+253,Max Clara,position held,chair,0.1
+254,Max Clara,member of,Nazis,0.1
+255,Max Clara,employer,chair of anatomy,0.1
+256,destruction of its buildings,part of,World War II,0.18181818181818182
+257,destruction of its buildings,time period,World War II,0.09090909090909091
+258,destruction of its buildings,conflict,World War II,0.09090909090909091
+259,its buildings,conflict,World War II,0.09090909090909091
+260,World War II,has effect,destruction of its buildings,0.18181818181818182
+261,destruction of its buildings,facet of,World War II,0.09090909090909091
+262,the destruction of its buildings,part of,World War II,0.09090909090909091
+263,the destruction of its buildings,time period,World War II,0.09090909090909091
+264,destruction of its buildings,has cause,World War II,0.09090909090909091
+265,Erich Maschke,employer,Leipzig University,0.23076923076923078
+266,Erich Maschke,position held,rector,0.15384615384615385
+267,Erich Maschke,educated at,Leipzig University,0.15384615384615385
+268,Erich Maschke,position held,acting rector,0.07692307692307693
+269,Leipzig University,chairperson,Erich Maschke,0.23076923076923078
+270,Erich Maschke,occupation,rector,0.07692307692307693
+271,Erich Maschke,work location,Leipzig University,0.07692307692307693
+272,the crisis,has cause,air attacks,0.1
+273,crisis,has cause,air attacks,0.1
+274,crisis,instance of,air attacks,0.1
+275,the crisis,instance of,air attacks,0.1
+276,crisis,has part,air attacks,0.1
+277,the crisis,has part,air attacks,0.1
+278,crisis that has now reached its fullest stage,has cause,air attacks,0.1
+279,the crisis that has now reached its fullest stage,has cause,air attacks,0.1
+280,Kraków,country,Poland,0.1
+281,crisis that has now reached its fullest stage,instance of,air attacks,0.1
+282,libraries,part of,professoriate,0.14285714285714285
+283,professoriate,has part,libraries,0.14285714285714285
+284,library,part of,professoriate,0.14285714285714285
+285,libraries,has part,professoriate,0.14285714285714285
+286,professoriate,part of,libraries,0.07142857142857142
+287,libraries,used by,professoriate,0.14285714285714285
+288,libraries,different from,buildings,0.07142857142857142
+289,professoriate,uses,libraries,0.07142857142857142
+290,professoriate,has part,library,0.07142857142857142
+291,Library of Congress,located in the administrative territorial entity,"Washington, D.C.",0.09090909090909091
+292,library,part of,university,0.18181818181818182
+293,World Heritage Site,maintained by,UNESCO,0.09090909090909091
+294,University of Bordeaux,country,France,0.09090909090909091
+295,University of Louvain,country,Belgium,0.09090909090909091
+296,University of Padua,country,Italy,0.09090909090909091
+297,university,different from,university,0.09090909090909091
+298,Library of Congress,located in the administrative territorial entity,"Washington, DC",0.09090909090909091
+299,university,has part,library,0.09090909090909091
+300,the great repository of value,part of,university,0.09090909090909091
+301,World War II,has effect,Holocaust,0.07142857142857142
+302,World War I,followed by,World War II,0.14285714285714285
+303,World War II,follows,World War I,0.07142857142857142
+304,Kraków,country,Poland,0.14285714285714285
+305,World War I,followed by,Second World War,0.14285714285714285
+306,Second World War,follows,World War I,0.07142857142857142
+307,World War II,has effect,the Holocaust,0.07142857142857142
+308,World War I,has effect,the Holocaust,0.07142857142857142
+309,World War II,followed by,Second World War,0.07142857142857142
+310,Second World War,follows,World War II,0.07142857142857142
+311,Poland,capital,Kraków,0.07142857142857142
+312,The university under the German Democratic Republic,inception,5 February 1946,0.08333333333333333
+313,Soviet occupation zone,country,German Democratic Republic,0.08333333333333333
+314,university under the German Democratic Republic,inception,5 February 1946,0.08333333333333333
+315,German Democratic Republic,member of,Soviet occupation zone,0.16666666666666666
+316,Soviet occupation zone,location,German Democratic Republic,0.08333333333333333
+317,Soviet occupation zone,contains administrative territorial entity,German Democratic Republic,0.08333333333333333
+318,Soviet occupation zone,replaced by,German Democratic Republic,0.08333333333333333
+319,Soviet occupation zone,facet of,German Democratic Republic,0.08333333333333333
+320,German Democratic Republic,followed by,Soviet occupation zone,0.08333333333333333
+321,Soviet occupation zone,follows,German Democratic Republic,0.08333333333333333
+322,Soviet occupation zone,followed by,German Democratic Republic,0.08333333333333333
+323,Free German Youth,inception,1948,0.1
+324,1948,point in time,1948,0.1
+325,Free German Youth,work period (start),1948,0.1
+326,free German Youth,inception,1948,0.1
+327,Free German Youth,start time,1948,0.1
+328,Free German Youth,replaces,student council,0.1
+329,Free German Youth members,inception,1948,0.1
+330,Free German Youth,point in time,1948,0.1
+331,Free German Youth,instance of,student council,0.1
+332,student council,"dissolved, abolished or demolished date",1948,0.1
+333,Wolfgang Natonek,member of,Student Council,0.25
+334,Wolfgang Natonek,member of political party,Student Council,0.16666666666666666
+335,Student Council,chairperson,Wolfgang Natonek,0.25
+336,Wolfgang Natonek,member of,student council,0.08333333333333333
+337,Wolfgang Natonek,member of,the Student Council,0.08333333333333333
+338,Wolfgang Natonek,member of,student,0.08333333333333333
+339,Wolfgang Natonek,educated at,university,0.08333333333333333
+340,Belter,political ideology,free elections,0.1
+341,Belter group,political ideology,free elections,0.1
+342,Belter,facet of,free elections,0.1
+343,free elections,subclass of,flyers,0.1
+344,Belter,political ideology,flyers for free elections,0.1
+345,Belter,instance of,flyers,0.1
+346,Belter,field of work,flyers,0.1
+347,Belter,movement,free elections,0.1
+348,free elections,instance of,flyers,0.1
+349,Belter,subclass of,flyers,0.1
+350,Herbert Belter,date of death,1951,0.26666666666666666
+351,Herbert Belter,place of death,Moscow,0.26666666666666666
+352,Moscow,point in time,1951,0.13333333333333333
+353,1951,point in time,1951,0.13333333333333333
+354,Herbert Belter,work location,Moscow,0.06666666666666667
+355,Herbert Belter,place of burial,Moscow,0.06666666666666667
+356,Herbert Belter,place of death,Helsinki,0.06666666666666667
+357,"Karl Marx University, Leipzig",named after,Karl Marx,0.3333333333333333
+358,Karl Marx University,named after,Karl Marx,0.13333333333333333
+359,German Democratic Republic,inception,1949,0.06666666666666667
+360,"Karl Marx University, Leipzig",inception,1949,0.13333333333333333
+361,Karl Marx University,located in the administrative territorial entity,Leipzig,0.13333333333333333
+362,"Karl Marx University, Leipzig",country,German Democratic Republic,0.13333333333333333
+363,"Karl Marx University, Leipzig",inception,1953,0.06666666666666667
+364,Augusteum,"dissolved, abolished or demolished date",1968,0.16666666666666666
+365,Paulinerkirche,part of,Augusteum,0.1111111111111111
+366,Albertinum,"dissolved, abolished or demolished date",1968,0.05555555555555555
+367,Paulinerkirche,"dissolved, abolished or demolished date",1968,0.1111111111111111
+368,Augusteum,end time,1968,0.05555555555555555
+369,Albertinum,part of,Augusteum,0.16666666666666666
+370,Johanneum,"dissolved, abolished or demolished date",1968,0.05555555555555555
+371,Johanneum,part of,Augusteum,0.1111111111111111
+372,Augusteum,has part,Johanneum,0.05555555555555555
+373,Augusteum,has part,Albertinum,0.05555555555555555
+374,Augusteum,has part,Paulinerkirche,0.05555555555555555
+375,City-Hochhaus Leipzig,inception,1968,0.08333333333333333
+376,University Tower,located in the administrative territorial entity,Leipzig,0.08333333333333333
+377,City-Hochhaus Leipzig,instance of,open book,0.08333333333333333
+378,City-Hochhaus Leipzig,located in the administrative territorial entity,Leipzig,0.08333333333333333
+379,University Tower,replaced by,City-Hochhaus Leipzig,0.08333333333333333
+380,City-Hochhaus Leipzig,replaces,University Tower,0.08333333333333333
+381,University Tower,part of,City-Hochhaus Leipzig,0.16666666666666666
+382,City-Hochhaus Leipzig,has part,University Tower,0.08333333333333333
+383,University Tower,instance of,open book,0.08333333333333333
+384,open book,inception,1968,0.08333333333333333
+385,Leipzig,owner of,City-Hochhaus Leipzig,0.08333333333333333
+386,Leipzig University,inception,1991,0.1
+387,Leipzig University,located in the administrative territorial entity,Leipzig,0.1
+388,After the reunification of Germany,point in time,1991,0.1
+389,Leipzig University (Alma mater lipsiensis),inception,1991,0.1
+390,Leipzig University,headquarters location,Leipzig,0.1
+391,Leipzig University,end time,1991,0.1
+392,Leipzig University,"dissolved, abolished or demolished date",1991,0.1
+393,After the reunification of Germany,end time,1991,0.1
+394,1991,point in time,1991,0.1
+395,After the reunification of Germany,follows,reunification of Germany,0.1
+396,University Library,country,GDR,0.1
+397,University Library,inception,2002,0.1
+398,the war,participant,GDR,0.1
+399,barely secured,country,GDR,0.1
+400,2002,point in time,2002,0.1
+401,war,participant,GDR,0.1
+402,the war,location,GDR,0.1
+403,University Library,located in the administrative territorial entity,GDR,0.1
+404,University Library,country,the GDR,0.1
+405,GDR barely secured,country,GDR,0.1
+406,University Tower,located in the administrative territorial entity,city,0.08333333333333333
+407,University Tower,owned by,university,0.16666666666666666
+408,University Tower,owned by,private user,0.16666666666666666
+409,private user,owner of,University Tower,0.08333333333333333
+410,university,owner of,University Tower,0.08333333333333333
+411,University Tower,occupant,private user,0.08333333333333333
+412,University Tower,occupant,university,0.08333333333333333
+413,University Tower,instance of,private user,0.08333333333333333
+414,University Tower,operator,private user,0.08333333333333333
+415,University Tower,part of,university,0.08333333333333333
+416,Augustusplatz,instance of,historical centre,0.1
+417,Augustusplatz,part of,historical centre,0.1
+418,Augustusplatz,location,historical centre,0.1
+419,Augustusplatz,located in the administrative territorial entity,historical centre,0.1
+420,Augustusplatz,instance of,historic centre,0.1
+421,Augustusplatz,named after,historical centre,0.1
+422,Augustusplatz,instance of,controversial,0.1
+423,Augustusplatz,use,historical centre,0.1
+424,Augustusplatz,location,the historical centre,0.1
+425,Augustusplatz,location,its historical centre,0.1
+426,architectural competition,point in time,2002,0.08333333333333333
+427,Behet Bonzio,award received,architectural competition,0.16666666666666666
+428,Behet Bonzio,participant in,architectural competition,0.16666666666666666
+429,2002,point in time,2002,0.08333333333333333
+430,Behet Bonzio,inception,2002,0.08333333333333333
+431,the architectural competition,point in time,2002,0.08333333333333333
+432,architectural competition,winner,Behet Bonzio,0.16666666666666666
+433,Behet Bonzio,work period (start),2002,0.08333333333333333
+434,Behet Bonzio,publication date,2002,0.08333333333333333
+435,St. Paul's Church,has part,Augusteum,0.13333333333333333
+436,Augusteum,part of,St. Paul's Church,0.13333333333333333
+437,St. Paul's Church,part of,Augusteum,0.13333333333333333
+438,Augusteum,has part,St. Paul's Church,0.13333333333333333
+439,St. Paul's Church,different from,Augusteum,0.06666666666666667
+440,Augusteum,different from,St. Paul's Church,0.06666666666666667
+441,St. Paul's,has part,Augusteum,0.06666666666666667
+442,Augusteum,part of,St. Paul's,0.06666666666666667
+443,Augusteum,part of,St. Paul's Church and Augusteum,0.13333333333333333
+444,St. Paul's Church and Augusteum,has part,Augusteum,0.06666666666666667
+445,university,located in the administrative territorial entity,Leipzig,0.1
+446,university leadership,located in the administrative territorial entity,Leipzig,0.1
+447,students,located in the administrative territorial entity,Leipzig,0.1
+448,university,headquarters location,Leipzig,0.1
+449,university leadership,headquarters location,Leipzig,0.1
+450,Leipzig,instance of,university,0.1
+451,student,located in the administrative territorial entity,Leipzig,0.1
+452,University of Leipzig,located in the administrative territorial entity,Leipzig,0.1
+453,the university,located in the administrative territorial entity,Leipzig,0.1
+454,the university leadership,located in the administrative territorial entity,Leipzig,0.1
+455,Erick van Egeraat,country of citizenship,Dutch,0.15384615384615385
+456,Erick van Egeraat,occupation,architect,0.15384615384615385
+457,Egeraat,architect,Erick van Egeraat,0.07692307692307693
+458,architect,field of this occupation,design,0.15384615384615385
+459,design,practiced by,architect,0.15384615384615385
+460,Erick van Egeraat,occupation,Dutch architect,0.07692307692307693
+461,Erick van Egeraat,field of work,design,0.07692307692307693
+462,Erick van Egeraat,work location,Dutch,0.07692307692307693
+463,designer,subclass of,architect,0.07692307692307693
+464,Paulinum,named after,St. Paul's Church,0.07142857142857142
+465,Paulinum,part of,Augusteum,0.14285714285714285
+466,Paulinum,follows,Augusteum,0.14285714285714285
+467,Paulinum,said to be the same as,Augusteum,0.14285714285714285
+468,Augusteum,said to be the same as,Paulinum,0.07142857142857142
+469,Augusteum,followed by,Paulinum,0.07142857142857142
+470,Augusteum,part of,Paulinum,0.14285714285714285
+471,Paulinum,has part,Augusteum,0.14285714285714285
+472,Augusteum,has part,Paulinum,0.07142857142857142
+473,2005,point in time,2005,0.1
+474,Renovations,start time,2005,0.1
+475,Renovations,inception,2005,0.1
+476,Renovations,point in time,2005,0.1
+477,2006,point in time,2006,0.1
+478,2007,point in time,2007,0.1
+479,2001,point in time,2001,0.1
+480,2004,point in time,2004,0.1
+481,2003,point in time,2003,0.1
+482,2004 Summer Olympics,point in time,2004,0.1
+483,Leipzig School of Natural Sciences,country,Germany,0.25
+484,Initiative of Excellence,country,Germany,0.16666666666666666
+485,"""Initiative of Excellence""",country,Germany,0.16666666666666666
+486,Leipzig,country,Germany,0.08333333333333333
+487,"""Initiative of Excellence"" of Germany",point in time,2008,0.08333333333333333
+488,Leipzig School of Natural Sciences – Building with Molecules and Nano-objects,country,Germany,0.08333333333333333
+489,Institute for Advanced Study,located in the administrative territorial entity,"Princeton, New Jersey",0.08333333333333333
+490,BuildMoNa,located in the administrative territorial entity,Leipzig,0.08333333333333333
+491,Saxon excellence initiative,facet of,university,0.1
+492,Saxon excellence initiative,instance of,university,0.1
+493,"""Life"" project",part of,Saxon excellence initiative,0.1
+494,World Heritage Site,maintained by,UNESCO,0.1
+495,"""Life"" project",instance of,Saxon excellence initiative,0.1
+496,Life,facet of,diseases,0.1
+497,Saxon excellence initiative,subclass of,university,0.1
+498,Saxon excellence initiative,instance of,grants,0.1
+499,University of Louvain,country,Belgium,0.1
+500,Saxon excellence initiative,is a list of,university,0.1
+501,Bach Archive,inception,2008,0.1
+502,"""Bach Archive""",inception,2008,0.1
+503,Bach Archive,publication date,2008,0.1
+504,2008,point in time,2008,0.1
+505,Bach Archive,start time,2008,0.1
+506,"the ""Bach Archive""",inception,2008,0.1
+507,Berg Archive,inception,2008,0.1
+508,Bach Archive,work period (start),2008,0.1
+509,Bach Archive,date of official opening,2008,0.1
+510,"""Bach Archive""",publication date,2008,0.1
+511,Leipzig University,inception,2009,0.1
+512,Leipzig University,inception,600,0.1
+513,Leipzig University,end time,2009,0.1
+514,Leipzig University,point in time,2009,0.1
+515,Leipzig University,significant event,2009,0.1
+516,Leipzig University,start time,2009,0.1
+517,Leipzig University,publication date,2009,0.1
+518,Leipzig University,"dissolved, abolished or demolished date",2009,0.1
+519,Leipzig University,located in the administrative territorial entity,Leipzig,0.1
+520,Leipzig University,headquarters location,Leipzig,0.1
+521,urban campus,subclass of,Campus,0.1
+522,urban campus,instance of,Campus,0.1
+523,urban campus,subclass of,campus,0.1
+524,university's urban campus,instance of,Campus,0.1
+525,urban campus,facet of,Campus,0.1
+526,Urban campus,subclass of,Campus,0.1
+527,urban campus,part of,Campus,0.1
+528,campus,part of,Campus,0.1
+529,Campus,subclass of,urban campus,0.1
+530,urban campus,has parts of the class,Campus,0.1
+531,university,located in the administrative territorial entity,Leipzig,0.09090909090909091
+532,Leipzig,area,38,0.09090909090909091
+533,Leipzig,population,38,0.09090909090909091
+534,university,headquarters location,Leipzig,0.09090909090909091
+535,Leipzig,located in the administrative territorial entity,Leipzig,0.18181818181818182
+536,University of Leipzig,located in the administrative territorial entity,Leipzig,0.09090909090909091
+537,the university,located in the administrative territorial entity,Leipzig,0.09090909090909091
+538,Leipzig,contains administrative territorial entity,Leipzig,0.09090909090909091
+539,university is spread across 38 locations,located in the administrative territorial entity,Leipzig,0.09090909090909091
+540,Leipzig,instance of,university,0.09090909090909091
+541,university buildings,inception,1409,0.09090909090909091
+542,Mitte,instance of,district,0.09090909090909091
+543,university buildings in 1409,inception,1409,0.09090909090909091
+544,Mitte,instance of,city center,0.09090909090909091
+545,Mitte,inception,1409,0.09090909090909091
+546,city center,contains administrative territorial entity,Mitte,0.09090909090909091
+547,Mitte,located in the administrative territorial entity,city center,0.09090909090909091
+548,university buildings,located in the administrative territorial entity,Mitte,0.09090909090909091
+549,university,inception,1409,0.09090909090909091
+550,1409,point in time,1409,0.09090909090909091
+551,city center,located in the administrative territorial entity,Mitte,0.09090909090909091
+552,Erick van Egeraat,country of citizenship,Dutch,0.09090909090909091
+553,Erick van Egeraat,work location,Leipzig,0.09090909090909091
+554,university's main building,architect,Erick van Egeraat,0.18181818181818182
+555,main building,architect,Erick van Egeraat,0.09090909090909091
+556,new university,architect,Erick van Egeraat,0.09090909090909091
+557,new university's main building,architect,Erick van Egeraat,0.09090909090909091
+558,new university's,architect,Erick van Egeraat,0.09090909090909091
+559,the new university's main building,architect,Erick van Egeraat,0.09090909090909091
+560,new university,located in the administrative territorial entity,Leipzig,0.09090909090909091
+561,Erick van Egeraat,notable work,university's main building,0.09090909090909091
+562,2012 Summer Olympics,point in time,2012,0.2727272727272727
+563,Bibliothèque Nationale de France,location,Paris,0.09090909090909091
+564,2010 FIFA World Cup,point in time,2010,0.09090909090909091
+565,Bibliothèque Nationale,location,Paris,0.09090909090909091
+566,Bibliothèque nationale de France,location,Paris,0.09090909090909091
+567,St. Gallen,country,Switzerland,0.09090909090909091
+568,Pompidou Centre,location,Paris,0.09090909090909091
+569,Bibliothèque Nationale de France,located in the administrative territorial entity,Paris,0.09090909090909091
+570,Bibliothèque Nationale de France,country,France,0.09090909090909091
+571,600th anniversary,point in time,2009,0.1
+572,600th anniversary celebrations,point in time,2009,0.1
+573,2009/2010,point in time,2009,0.1
+574,university's,number of participants,600,0.1
+575,university's 600th anniversary celebrations,point in time,2009,0.1
+576,university's 600th anniversary,point in time,2009,0.1
+577,2009,point in time,2009,0.1
+578,university,number of participants,600,0.1
+579,university's,significant event,600th anniversary,0.1
+580,university's,significant event,600th anniversary celebrations,0.1
+581,University Library,instance of,university archive,0.15384615384615385
+582,university archive,has part,University Library,0.23076923076923078
+583,University Library,instance of,archive,0.07692307692307693
+584,University Library,part of,university archive,0.15384615384615385
+585,University Library,instance of,University archive,0.07692307692307693
+586,University Library,part of,university archive and administration,0.15384615384615385
+587,university archive and administration,has part,University Library,0.07692307692307693
+588,University Library,instance of,university archive and administration,0.07692307692307693
+589,Museum of Ancient Egypt,has part,Museum for Music Instruments,0.16666666666666666
+590,Museum for Music Instruments,part of,Museum of Ancient Egypt,0.16666666666666666
+591,Museum of Ancient Egypt,instance of,museum,0.08333333333333333
+592,Museum for Music Instruments,parent organization,Museum of Ancient Egypt,0.16666666666666666
+593,Museum of Ancient Egypt,instance of,Museum,0.08333333333333333
+594,Museum for Music Instruments,instance of,museum,0.08333333333333333
+595,Museum of Ancient Egypt,subsidiary,Museum for Music Instruments,0.08333333333333333
+596,University Hospital,affiliation,university,0.08333333333333333
+597,museum,country,Ancient Egypt,0.08333333333333333
+598,Leipzig Botanical Garden,instance of,botanical garden,0.3076923076923077
+599,Leipzig Botanical Garden,continent,Europe,0.15384615384615385
+600,second-oldest,is a list of,botanical garden,0.07692307692307693
+601,Leipzig Botanical Garden,instance of,Botanical garden,0.07692307692307693
+602,university's Leipzig Botanical Garden,instance of,botanical garden,0.07692307692307693
+603,botanical garden,continent,Europe,0.07692307692307693
+604,the university's Leipzig Botanical Garden,instance of,botanical garden,0.07692307692307693
+605,Leipzig Botanical Garden,location,Europe,0.07692307692307693
+606,Leipzig Botanical Garden,instance of,second-oldest botanical garden in Europe,0.07692307692307693
+607,1542,point in time,1542,0.1
+608,1542.,point in time,1542,0.1
+609,1542,start time,1542,0.1
+610,was established in 1542,inception,1542,0.1
+611,established in 1542,inception,1542,0.1
+612,was established,inception,1542,0.1
+613,1542,inception,1542,0.1
+614,1522,point in time,1542,0.1
+615,established,inception,1542,0.1
+616,established in 1542,point in time,1542,0.1
+617,pianos,discoverer or inventor,Bartolomeo Cristofori,0.23076923076923078
+618,piano,discoverer or inventor,Bartolomeo Cristofori,0.15384615384615385
+619,piano's,discoverer or inventor,Bartolomeo Cristofori,0.07692307692307693
+620,pianos,named after,Bartolomeo Cristofori,0.07692307692307693
+621,Bartolomeo Cristofori,notable work,pianos,0.07692307692307693
+622,Piano,discoverer or inventor,Bartolomeo Cristofori,0.07692307692307693
+623,Bartolomeo Cristofori,instrument,pianos,0.07692307692307693
+624,piano,named after,Bartolomeo Cristofori,0.07692307692307693
+625,Bartolomeo Cristofori,notable work,piano,0.07692307692307693
+626,one of the world's three surviving pianos,discoverer or inventor,Bartolomeo Cristofori,0.07692307692307693
+627,University Library of Leipzig,inception,1543,0.16666666666666666
+628,University Library of Leipzig,date of official opening,1543,0.08333333333333333
+629,University Library of Leipzig,start time,1543,0.08333333333333333
+630,University Library,located in the administrative territorial entity,Leipzig,0.16666666666666666
+631,University Library,inception,1543,0.16666666666666666
+632,University Library of Leipzig,located in the administrative territorial entity,Leipzig,0.16666666666666666
+633,The University Library of Leipzig,inception,1543,0.08333333333333333
+634,University Library of Leipzig,publication date,1543,0.08333333333333333
+635,Leipzig University,country,German,0.16666666666666666
+636,Leipzig University,instance of,university libraries,0.16666666666666666
+637,Leipzig University,instance of,university,0.08333333333333333
+638,Leipzig University,instance of,university library,0.08333333333333333
+639,Leipzig University,instance of,German university libraries,0.08333333333333333
+640,university libraries,part of,Leipzig University,0.16666666666666666
+641,Leipzig University,instance of,German university,0.08333333333333333
+642,Leipzig University,has part,university libraries,0.08333333333333333
+643,Leipzig University,instance of,library,0.08333333333333333
+644,World Heritage Site,maintained by,UNESCO,0.09090909090909091
+645,special collections,subclass of,historical,0.09090909090909091
+646,historical,subclass of,special collections,0.09090909090909091
+647,historical,has part,special collections,0.18181818181818182
+648,special collections,part of,historical,0.18181818181818182
+649,historic,subclass of,special collections,0.09090909090909091
+650,national,instance of,internationally recognized,0.09090909090909091
+651,historical,instance of,special collections,0.09090909090909091
+652,National Museum of American Art,located in the administrative territorial entity,"Washington, D.C.",0.09090909090909091
+653,Albertina,has part,Bibliotheca Albertina,0.16666666666666666
+654,Bibliotheca Albertina,instance of,library,0.08333333333333333
+655,Albertina,instance of,library,0.08333333333333333
+656,Bibliotheca Albertina,located in the administrative territorial entity,Albertina,0.08333333333333333
+657,Bibliotheca Albertina,location,Albertina,0.08333333333333333
+658,Bibliotheca Albertina,named after,Albertina,0.16666666666666666
+659,Albertina,part of,Bibliotheca Albertina,0.08333333333333333
+660,Albertina,named after,Bibliotheca Albertina,0.08333333333333333
+661,main building,part of,Bibliotheca Albertina,0.08333333333333333
+662,Bibliotheca Albertina,has part,main building,0.08333333333333333
+663,periodicals,subclass of,volumes,0.1
+664,periodical,subclass of,volumes,0.1
+665,periodical,subclass of,volume,0.1
+666,periodicals,subclass of,volume,0.1
+667,journal,subclass of,periodical,0.1
+668,magazine,subclass of,periodical,0.1
+669,periodicals,part of,volumes,0.1
+670,journals,subclass of,periodicals,0.1
+671,periodicals,has part,volumes,0.1
+672,journal,subclass of,periodicals,0.1
+673,incunabula,subclass of,manuscript,0.18181818181818182
+674,incunabula,subclass of,manuscripts,0.09090909090909091
+675,incunabula,subclass of,papyri,0.09090909090909091
+676,ostraka,subclass of,autograph,0.09090909090909091
+677,ostraka,subclass of,autographs,0.09090909090909091
+678,papyri,subclass of,manuscript,0.09090909090909091
+679,autograph,subclass of,manuscript,0.09090909090909091
+680,ostraka,subclass of,manuscript,0.09090909090909091
+681,incunabula,instance of,manuscript,0.09090909090909091
+682,papyri,subclass of,manuscripts,0.09090909090909091
+683,Apel Codex,collection,Leipzig University library,0.3157894736842105
+684,Papyrus Ebers,collection,Leipzig University library,0.2631578947368421
+685,Apel Codex,instance of,manuscript,0.2631578947368421
+686,Apel Codex,collection,Leipzig University,0.05263157894736842
+687,Papyrus Ebers,instance of,manuscript,0.05263157894736842
+688,Leipzig University library,owner of,Apel Codex,0.05263157894736842
+689,Codex Sinaiticus,collection,Leipzig University Library,0.26666666666666666
+690,Constantin von Tischendorf,employer,Leipzig University Library,0.06666666666666667
+691,Codex Sinaiticus,instance of,manuscript,0.13333333333333333
+692,Leipzig University Library,owner of,Codex Sinaiticus,0.13333333333333333
+693,Codex Sinaiticus,owned by,Leipzig University Library,0.13333333333333333
+694,Codex Sinaiticus,instance of,Bible manuscript,0.06666666666666667
+695,Codex Sinaiticus,location,Leipzig University Library,0.06666666666666667
+696,Leipzig University Library,has part,Codex Sinaiticus,0.06666666666666667
+697,Codex Sinaiticus,part of,Leipzig University Library,0.06666666666666667
+698,Papyrus Ebers,instance of,medical manuscript,0.2857142857142857
+699,Papyrus Ebers,instance of,manuscript,0.14285714285714285
+700,Papyrus Ebers,country of origin,ancient Egypt,0.21428571428571427
+701,Papyrus Ebers,time period,ancient Egypt,0.14285714285714285
+702,Papyrus Ebers,genre,medical manuscript,0.07142857142857142
+703,Papyrus Ebers,country,ancient Egypt,0.14285714285714285
+704,Old Testament,language of work or name,ancient Greek,0.17647058823529413
+705,New Testament,language of work or name,ancient Greek,0.17647058823529413
+706,Old Testament,followed by,New Testament,0.17647058823529413
+707,New Testament,follows,Old Testament,0.11764705882352941
+708,Old Testament,has part,Greek Old Testament,0.11764705882352941
+709,Greek Old Testament,part of,Old Testament,0.058823529411764705
+710,New Testament,has part,Greek Old Testament,0.058823529411764705
+711,Old Testament,language of work or name,Greek,0.058823529411764705
+712,New Testament,language of work or name,Greek,0.058823529411764705
+713,New Testament,part of,Bible,0.18181818181818182
+714,Bible,has part,New Testament,0.09090909090909091
+715,New Testament,instance of,preserved copy,0.09090909090909091
+716,New Testament,has part,oldest fully preserved copy,0.09090909090909091
+717,New Testament,has part,fully preserved copy,0.09090909090909091
+718,New Testament,instance of,fully preserved copy,0.09090909090909091
+719,New Testament,instance of,preserved,0.09090909090909091
+720,New Testament,instance of,fully preserved,0.09090909090909091
+721,New Testament,has part,preserved copy,0.09090909090909091
+722,New Testament,said to be the same as,fully preserved copy,0.09090909090909091
+723,University Library,located in the administrative territorial entity,Leipzig,0.38461538461538464
+724,Bibliotheca Albertina,located in the administrative territorial entity,Leipzig,0.15384615384615385
+725,Bibliotheca Albertina,located on street,Beethovenstraße,0.07692307692307693
+726,Beethovenstraße,located in the administrative territorial entity,Leipzig,0.07692307692307693
+727,University Library locations in Leipzig,located in the administrative territorial entity,Leipzig,0.07692307692307693
+728,University Library locations in Leipzig,located on street,Beethovenstraße,0.07692307692307693
+729,Bibliotheca Albertina,instance of,University Library,0.07692307692307693
+730,Campus Library,located in the administrative territorial entity,Leipzig,0.07692307692307693
+731,Deutsches Literaturinstitut,located on street,Wächterstr.,0.1
+732,Deutsches Literaturinstitut,location,Wächterstr.,0.1
+733,Library of Deutsches Literaturinstitut,located on street,Wächterstr.,0.1
+734,Deutsches Literaturinstitut,located on street,Wächterstr.3,0.1
+735,Wächterstr.,owned by,Deutsches Literaturinstitut,0.1
+736,Deutsches Literaturinstitut,headquarters location,Wächterstr.,0.1
+737,Deutsches Literaturinstitut,located in the administrative territorial entity,Wächterstr.,0.1
+738,Deutsches Literaturinstitut,location,Wächterstr.3,0.1
+739,Wächterstr.,part of,Deutsches Literaturinstitut,0.1
+740,Deutsches Literaturinstitut,located on street,Wächterstr. 3,0.1
+741,Library of Musicology,located in the administrative territorial entity,Neumarkt,0.08333333333333333
+742,Library of Musicology,part of,Neumarkt,0.16666666666666666
+743,Neumarkt,has part,Library of Musicology,0.08333333333333333
+744,Library of Musicology,location,Neumarkt,0.08333333333333333
+745,Library of Law at Burgstr.,located in the administrative territorial entity,Burgstr.,0.08333333333333333
+746,Library of Musicology at Neumarkt,located in the administrative territorial entity,Burgstr.,0.08333333333333333
+747,Dittrichring,twinned administrative body,Neumarkt,0.08333333333333333
+748,Neumarkt,twinned administrative body,Dittrichring,0.08333333333333333
+749,Library of Arts at Dittrichring,located in the administrative territorial entity,Dittrichring,0.08333333333333333
+750,Dittrichring,located in the administrative territorial entity,Neumarkt,0.08333333333333333
+751,Library of Musicology at Neumarkt,part of,Library of Law at Burgstr.,0.08333333333333333
+752,Library of Medicine at Käthe-Kollwitz-Str.,has part,Library of Medicine at Johannisallee,0.23076923076923078
+753,Library of Medicine at Johannisallee,location,Käthe-Kollwitz-Str.,0.07692307692307693
+754,Library of Medicine at Johannisallee,part of,Library of Medicine at Käthe-Kollwitz-Str.,0.07692307692307693
+755,Library of Medicine at Käthe-Kollwitz-Str.,part of,Library of Medicine at Johannisallee,0.15384615384615385
+756,Library of Medicine at Johannisallee,located in the administrative territorial entity,Käthe-Kollwitz-Str.,0.07692307692307693
+757,Käthe-Kollwitz-Str.,has part,Johannisallee,0.07692307692307693
+758,Library of Medicine at Johannisallee,area,34,0.07692307692307693
+759,Library of Medicine at Johannisallee,part of,Käthe-Kollwitz-Str.,0.07692307692307693
+760,Library of Medicine at Johannisallee,has part,Library of Medicine at Käthe-Kollwitz-Str.,0.07692307692307693
+761,Käthe-Kollwitz-Str.,part of,Johannisallee,0.07692307692307693
+762,Tierkliniken,location,Talstr.,0.08333333333333333
+763,Tierkliniken,located in the administrative territorial entity,Talstr.,0.08333333333333333
+764,Library of Veterinary Medicine,part of,Tierkliniken,0.16666666666666666
+765,Tierkliniken,has part,Talstr.,0.08333333333333333
+766,Talstr.,part of,Tierkliniken,0.08333333333333333
+767,Tierkliniken,has part,Library of Veterinary Medicine,0.08333333333333333
+768,Tierkliniken,located on terrain feature,Talstr.,0.08333333333333333
+769,Library of Veterinary Medicine at the Tierkliniken,location,Talstr.,0.08333333333333333
+770,Library of Biosciences at Talstr.,part of,Tierkliniken,0.08333333333333333
+771,Library of Veterinary Medicine at the Tierkliniken,located in the administrative territorial entity,Talstr.,0.08333333333333333
+772,Library of Veterinary Medicine,location,Tierkliniken,0.08333333333333333
+773,Physics,has part,Chemistry,0.09090909090909091
+774,Chemistry,has part,Physics,0.18181818181818182
+775,Physics,part of,Chemistry,0.09090909090909091
+776,Library of Earth Sciences at Talstr.,part of,Johannisallee,0.09090909090909091
+777,Library of Earth Sciences at Talstr.,location,Johannisallee,0.09090909090909091
+778,Library of Earth Sciences,location,Talstr.,0.09090909090909091
+779,Library of Earth Sciences,located in the administrative territorial entity,Talstr.,0.09090909090909091
+780,Library of Chemistry and Physics at Johannisallee,located in the administrative territorial entity,Talstr.,0.09090909090909091
+781,Library of Chemistry and Physics at Johannisallee,area,29,0.09090909090909091
+782,Library of Chemistry and Physics,location,Johannisallee,0.09090909090909091
+783,Prehistory,part of,Ancient History,0.14285714285714285
+784,Archaeology,part of,Ancient History,0.14285714285714285
+785,Ancient History,has part,Prehistory,0.07142857142857142
+786,Prehistory,followed by,Ancient History,0.14285714285714285
+787,Ancient History,has part,Archaeology,0.07142857142857142
+788,Archaeology,part of,Prehistory,0.07142857142857142
+789,Archaeology,studies,Ancient History,0.07142857142857142
+790,Ancient History,studied by,Archaeology,0.07142857142857142
+791,"Library of Archaeology, Prehistory and Ancient History at Ritterstr.",location,Johannisallee,0.07142857142857142
+792,"Library of Archaeology, Prehistory and Ancient History",location,Ritterstr.,0.07142857142857142
+793,Ancient History,follows,Prehistory,0.07142857142857142
+794,Library of Oriental Studies,located on street,Schillerstr.,0.1
+795,Library of Oriental Studies,location,Schillerstr.,0.1
+796,Museum of Modern Art,located in the administrative territorial entity,Chicago,0.1
+797,Schillerstr.,field of work,Oriental Studies,0.1
+798,Oriental Studies,instance of,Library,0.1
+799,Schillerstr.,area,14,0.1
+800,Schillerstr.,elevation above sea level,14,0.1
+801,Library of Oriental Studies,located on street,Schillerstr.14,0.1
+802,Library of Oriental Studies at Schillerstr.,located on street,Schillerstr.,0.1
+803,Oriental Studies,named after,Schillerstr.,0.1
+804,German National Library,located in the administrative territorial entity,Leipzig,0.18181818181818182
+805,German National Library,headquarters location,Leipzig,0.09090909090909091
+806,Library of Sports Science at Jahnallee 59,located in the administrative territorial entity,Leipzig,0.18181818181818182
+807,Library of Sports Science,located in the administrative territorial entity,Leipzig,0.09090909090909091
+808,Jahnallee,located in the administrative territorial entity,Leipzig,0.09090909090909091
+809,German National Library,location,Leipzig,0.09090909090909091
+810,Jahnallee 59,located in the administrative territorial entity,Leipzig,0.09090909090909091
+811,National Library,located in the administrative territorial entity,Leipzig,0.09090909090909091
+812,Leipzig,member of,German National Library,0.09090909090909091
+813,Faculty of Arts,instance of,Faculties,0.23529411764705882
+814,Theology,instance of,Faculties,0.29411764705882354
+815,"Faculty of Arts, Theology, Medicine, and Law",instance of,Faculties,0.058823529411764705
+816,Medicine,instance of,Faculties,0.17647058823529413
+817,Arts,subclass of,Faculties,0.058823529411764705
+818,Law,instance of,Faculties,0.11764705882352941
+819,Arts,instance of,Faculties,0.058823529411764705
+820,institutes and centers,part of,faculties,0.09090909090909091
+821,centers,subclass of,institutes,0.09090909090909091
+822,institutes and centers,subclass of,faculties,0.09090909090909091
+823,institutes and centers,has part,faculties,0.18181818181818182
+824,institutes,part of,faculties,0.09090909090909091
+825,faculties,part of,institutes and centers,0.18181818181818182
+826,institutes,part of,centers,0.09090909090909091
+827,institutes,subclass of,faculties,0.09090909090909091
+828,institutes,subclass of,centers,0.09090909090909091
+829,Leipzig Centre for the History and Culture of East Central Europe,part of,Leipzig University,0.32432432432432434
+830,Simon Dubnow Institute for Jewish History and Culture,part of,Leipzig University,0.1891891891891892
+831,Leipzig Centre for the History and Culture of East Central Europe,parent organization,Leipzig University,0.1891891891891892
+832,Institutions affiliated with the university,part of,Leipzig University,0.10810810810810811
+833,International Max Planck Research School- Mathematics in the Sciences,part of,Leipzig University,0.1891891891891892
+834,Saxony,instance of,university,0.1
+835,Saxony's,instance of,university,0.1
+836,university,country,Saxony,0.1
+837,university,located in the administrative territorial entity,Saxony,0.1
+838,second-largest university,is a list of,university,0.1
+839,second-largest university,located in the administrative territorial entity,Saxony,0.1
+840,second-largest university,is a list of,"29,000 students",0.1
+841,Saxony,instance of,second-largest university,0.1
+842,Saxony,instance of,state,0.1
+843,second-largest university,applies to jurisdiction,Saxony,0.1
+844,Master's degree,subclass of,Bachelor's degree,0.15384615384615385
+845,Master's degree,said to be the same as,Bachelor's degree,0.23076923076923078
+846,Master's degree,follows,Bachelor's degree,0.07692307692307693
+847,Master's degree,different from,Bachelor's degree,0.07692307692307693
+848,Bachelor's degree,said to be the same as,Master's degree,0.15384615384615385
+849,Master's degrees,subclass of,Bachelor's degrees,0.07692307692307693
+850,Diplom,subclass of,Master's degree,0.15384615384615385
+851,Diplom,said to be the same as,Master's degree,0.07692307692307693
+852,English,instance of,foreign languages,0.09090909090909091
+853,English,subclass of,foreign languages,0.09090909090909091
+854,English,instance of,foreign language,0.09090909090909091
+855,English,part of,foreign languages,0.09090909090909091
+856,English,subclass of,foreign language,0.09090909090909091
+857,English,part of,other foreign languages,0.09090909090909091
+858,English,instance of,other foreign languages,0.09090909090909091
+859,English,studied by,foreign languages,0.18181818181818182
+860,English,subclass of,other foreign languages,0.09090909090909091
+861,foreign languages,studies,English,0.09090909090909091
+862,Arizona,instance of,universities,0.21428571428571427
+863,Oklahoma,instance of,universities,0.17857142857142858
+864,Houston,instance of,universities,0.14285714285714285
+865,Alberta,instance of,universities,0.21428571428571427
+866,Ohio,instance of,universities,0.14285714285714285
+867,Edinburgh,instance of,universities,0.07142857142857142
+868,Edmonton,located in the administrative territorial entity,Alberta,0.03571428571428571
+869,Eastern Europe,part of,Far East,0.13333333333333333
+870,Eastern Europe,shares border with,Far East,0.13333333333333333
+871,Far East,shares border with,Eastern Europe,0.06666666666666667
+872,Far East,has part,Eastern Europe,0.06666666666666667
+873,Eastern Europe,has part,Far East,0.13333333333333333
+874,Far East,part of,Eastern Europe,0.06666666666666667
+875,Eastern Europe,continent,Far East,0.06666666666666667
+876,Eastern,part of,Europe,0.06666666666666667
+877,Europe,has part,Eastern,0.06666666666666667
+878,Europe,has part,Far East,0.06666666666666667
+879,Far East,part of,Europe,0.06666666666666667
+880,Eastern Europe,located on terrain feature,Far East,0.06666666666666667
+881,Renmin University,located in the administrative territorial entity,Beijing,0.2857142857142857
+882,Lomonosov University,located in the administrative territorial entity,Moscow,0.21428571428571427
+883,Lomonosov University,headquarters location,Moscow,0.14285714285714285
+884,Beijing,twinned administrative body,Moscow,0.07142857142857142
+885,Renmin University,headquarters location,Beijing,0.14285714285714285
+886,Lomonosov University,located in the administrative territorial entity,Moscow's,0.14285714285714285
+887,International Physics Studies Program,language used,English,0.09090909090909091
+888,International Physics Studies Program,language of work or name,English,0.09090909090909091
+889,International Physics Studies,language of work or name,English,0.09090909090909091
+890,Physics,studied by,International Physics,0.18181818181818182
+891,International Physics Studies,language used,English,0.09090909090909091
+892,Physics Studies,language of work or name,English,0.09090909090909091
+893,International Physics,studies,Physics,0.09090909090909091
+894,Physics,part of,International Physics,0.09090909090909091
+895,Physics Studies Program,language of work or name,English,0.09090909090909091
+896,English,part of,International Physics Studies Program,0.09090909090909091
+897,DAAD,located in the administrative territorial entity,Leipzig,0.1
+898,American Studies Leipzig,member of,DAAD,0.1
+899,American Studies Leipzig,located in the administrative territorial entity,Leipzig,0.1
+900,American Studies Leipzig,field of work,American Studies,0.1
+901,DAAD Professorship for American and International Studies,located in the administrative territorial entity,Leipzig,0.1
+902,DAAD Professorship for American and International Studies,part of,American Studies Leipzig,0.1
+903,Fulbright-Leipzig Chair for American Studies,part of,American Studies Leipzig,0.1
+904,Leipzig,member of,DAAD,0.1
+905,Fulbright-Leipzig Chair for American Studies,located in the administrative territorial entity,Leipzig,0.1
+906,American Studies Leipzig,parent organization,DAAD,0.1
+907,scholarly journal,uses,peer-reviewed,0.2222222222222222
+908,Aspeers – Emerging voices in American Studies,instance of,scholarly journal,0.2777777777777778
+909,Aspeers – Emerging voices in American Studies,main subject,American studies,0.2777777777777778
+910,scholarly journal,uses,peer-review,0.2222222222222222
+911,Erasmus Mundus Global Studies,instance of,Master,0.058823529411764705
+912,Erasmus Mundus Global Studies,part of,Leipzig University,0.058823529411764705
+913,Erasmus Mundus Global Studies,affiliation,Leipzig University,0.058823529411764705
+914,Erasmus Mundus Global Studies,parent organization,Leipzig University,0.058823529411764705
+915,Erasmus Mundus Global Studies,conferred by,Leipzig University,0.058823529411764705
+916,Erasmus Mundus Global Studies,has part,Leipzig University,0.17647058823529413
+917,Erasmus Mundus Global Studies,has part,University of Vienna,0.11764705882352941
+918,Erasmus Mundus Global Studies,has part,University of Wroclaw,0.11764705882352941
+919,Erasmus Mundus Global Studies,has part,Roskilde University,0.11764705882352941
+920,University of Wroclaw,instance of,European universities,0.058823529411764705
+921,Erasmus Mundus Global Studies,has part,London School of Economics,0.058823529411764705
+922,University of Wroclaw,member of,European universities,0.058823529411764705
+923,Max Planck Institute for Evolutionary Anthropology,located in the administrative territorial entity,Leipzig,0.2857142857142857
+924,Max Planck Institute for Evolutionary Anthropology,field of work,anthropology,0.21428571428571427
+925,Leipzig Max Planck Institute for Evolutionary Anthropology,field of work,anthropology,0.07142857142857142
+926,Max Planck Institute for Evolutionary Anthropology,headquarters location,Leipzig,0.14285714285714285
+927,Leipzig,subsidiary,Max Planck Institute for Evolutionary Anthropology,0.07142857142857142
+928,Max Planck Institute for Evolutionary Anthropology,field of work,anthropologist,0.14285714285714285
+929,Max Planck Institute for Evolutionary Anthropology,location,Leipzig,0.07142857142857142
+930,Leibniz-Institute for Jewish History and Culture,inception,1995,0.26666666666666666
+931,Leibniz-Institute for Jewish History and Culture,named after,Simon Dubnow,0.2
+932,Leibniz-Institute for Jewish History and Culture named after Simon Dubnow,inception,1995,0.13333333333333333
+933,Leibniz-Institute for Jewish History and Culture named after Simon Dubnow,named after,Simon Dubnow,0.06666666666666667
+934,Simon Dubnow,employer,Leibniz-Institute for Jewish History and Culture,0.2
+935,Leibniz-Institute for Jewish History and Culture,founded by,Simon Dubnow,0.06666666666666667
+936,Simon Dubnow,affiliation,Leibniz-Institute for Jewish History and Culture,0.06666666666666667
+937,Confucius Institutes,inception,2008,0.18181818181818182
+938,one of Germany's few Confucius Institutes,inception,2008,0.09090909090909091
+939,Confucius Institute,inception,2008,0.09090909090909091
+940,Confucius Institutes,start time,2008,0.09090909090909091
+941,Confucius Institutes,country,Germany,0.18181818181818182
+942,Confucius Institutes.,inception,2008,0.09090909090909091
+943,Confucius Institutes,date of official opening,2008,0.09090909090909091
+944,Confucius Institutes,point in time,2008,0.09090909090909091
+945,Confucius Institutes,publication date,2008,0.09090909090909091
+946,Confucius Institute,part of,Renmin University,0.23076923076923078
+947,Confucius Institute,inception,June 2006,0.15384615384615385
+948,Confucius Institute,affiliation,Renmin University,0.07692307692307693
+949,Confucius Institute,parent organization,Renmin University,0.15384615384615385
+950,Renmin University,subsidiary,Confucius Institute,0.15384615384615385
+951,Renmin University,affiliation,Confucius Institute,0.07692307692307693
+952,Renmin University,has part,Confucius Institute,0.15384615384615385
+953,Georg von der Gabelentz,employer,Leipzig University,0.26666666666666666
+954,Georg von der Gabelentz,educated at,Leipzig University,0.2
+955,Institute of East Asian Studies,part of,Leipzig University,0.2
+956,Institute of East Asian Studies,parent organization,Leipzig University,0.2
+957,Georg von der Gabelentz,employer,Institute of East Asian Studies,0.06666666666666667
+958,Institute of East Asian Studies,chairperson,Georg von der Gabelentz,0.06666666666666667
+959,Germany,continent,Europe,0.21428571428571427
+960,Webometrics Ranking of World Universities,instance of,ranking,0.21428571428571427
+961,Germany,part of,Europe,0.21428571428571427
+962,Germany,member of,Europe,0.07142857142857142
+963,Europe,has part,Germany,0.07142857142857142
+964,Webometrics Ranking of World Universities,instance of,ranking evaluating universities' scientific online publications,0.14285714285714285
+965,World Universities,publisher,Webometrics,0.07142857142857142
+966,ARWU ranking,number of participants,14,0.1
+967,ARWU ranking,is a list of,German universities,0.1
+968,2018 ARWU ranking,point in time,2018,0.1
+969,Leipzig,member of,ARWU ranking,0.1
+970,ARWU ranking,point in time,2018,0.1
+971,Leipzig,member of,ARWU,0.1
+972,ARWU ranking,is a list of,universities,0.1
+973,ARWU ranking,number of universities,14,0.1
+974,Leipzig,ranking,14,0.1
+975,ARWU ranking,publication date,2018,0.1
+976,Leipzig,country,German,0.1111111111111111
+977,Leipzig,league,German top 10,0.1111111111111111
+978,university sport disciplines,location,Leipzig,0.1111111111111111
+979,Leipzig,instance of,university sport disciplines,0.1111111111111111
+980,German top 10,is a list of,university sport,0.1111111111111111
+981,university sport,location,Leipzig,0.1111111111111111
+982,German top 10 in various university sport disciplines,has part,Leipzig,0.1111111111111111
+983,university sport disciplines,located in the administrative territorial entity,Leipzig,0.1111111111111111
+984,German top 10,is a list of,university sport disciplines,0.1111111111111111
+985,university,located in the administrative territorial entity,Leipzig,0.1
+986,International students,subclass of,international students,0.1
+987,Leipzig university,located in the administrative territorial entity,Leipzig,0.1
+988,international students,educated at,Leipzig university,0.1
+989,International students,subclass of,international student,0.1
+990,University of Leipzig,located in the administrative territorial entity,Leipzig,0.1
+991,Leipzig university,field of work,International students,0.1
+992,Leipzig university,field of work,international students,0.1
+993,Leipzig university,has part,International students,0.1
+994,Leipzig university,has part,international students,0.1
+995,2017,point in time,2017,0.1
+996,winter term 2017,point in time,2017,0.1
+997,2016 Summer Olympics,point in time,2016,0.1
+998,Winter term 2017,point in time,2017,0.1
+999,foreign students,subclass of,students,0.1
+1000,Winter Term 2017,point in time,2017,0.1
+1001,foreign student,subclass of,students,0.1
+1002,winter term,point in time,2017,0.1
+1003,2016 Winter Olympics,point in time,2016,0.1
+1004,Winter term,point in time,2017,0.1
+1005,Student life,facet of,Leipzig,0.1
+1006,student life,facet of,Leipzig,0.1
+1007,Student life,located in the administrative territorial entity,Leipzig,0.1
+1008,Student life,location,Leipzig,0.1
+1009,student run bars,located in the administrative territorial entity,Leipzig,0.1
+1010,student life,located in the administrative territorial entity,Leipzig,0.1
+1011,student life,location,Leipzig,0.1
+1012,sports clubs,located in the administrative territorial entity,Leipzig,0.1
+1013,University of Leipzig,located in the administrative territorial entity,Leipzig,0.1
+1014,sports club,subclass of,recreational facilities,0.1
+1015,university,located in the administrative territorial entity,Leipzig,0.1
+1016,Leipzig,instance of,city,0.1
+1017,the university,located in the administrative territorial entity,Leipzig,0.1
+1018,University of Leipzig,located in the administrative territorial entity,Leipzig,0.1
+1019,university,headquarters location,Leipzig,0.1
+1020,other higher education institutions,located in the administrative territorial entity,Leipzig,0.1
+1021,student body in Leipzig,located in the administrative territorial entity,Leipzig,0.1
+1022,student body,located in the administrative territorial entity,Leipzig,0.1
+1023,higher education institutions in the city,located in the administrative territorial entity,Leipzig,0.1
+1024,other higher education institutions in the city,located in the administrative territorial entity,Leipzig,0.1
+1025,Moritzbastei,located in the administrative territorial entity,Leipzig,0.3888888888888889
+1026,historic city fortifications,located in the administrative territorial entity,Leipzig,0.05555555555555555
+1027,Moritzbastei,part of,historic city fortifications of Leipzig,0.05555555555555555
+1028,historic city fortifications of Leipzig,has part,Moritzbastei,0.05555555555555555
+1029,city fortifications,located in the administrative territorial entity,Leipzig,0.05555555555555555
+1030,Moritzbastei,instance of,student club,0.1111111111111111
+1031,Leipzig,country,Germany,0.1111111111111111
+1032,Moritzbastei,country,Germany,0.05555555555555555
+1033,fortifications,located in the administrative territorial entity,Leipzig,0.05555555555555555
+1034,historic city fortifications of Leipzig,country,Germany,0.05555555555555555
+1035,Leipzig Academic Orchestra,has part,University Choir of Leipzig,0.15384615384615385
+1036,Leipzig Academic Orchestra,located in the administrative territorial entity,Leipzig,0.07692307692307693
+1037,Leipzig Academic Orchestra,location of formation,Leipzig,0.15384615384615385
+1038,University Choir of Leipzig,located in the administrative territorial entity,Leipzig,0.23076923076923078
+1039,University Choir of Leipzig,part of,Leipzig Academic Orchestra,0.07692307692307693
+1040,Leipzig Academic Orchestra,part of,University Choir of Leipzig,0.07692307692307693
+1041,University Choir of Leipzig,location of formation,Leipzig,0.15384615384615385
+1042,Leipzig Academic Orchestra,headquarters location,Leipzig,0.07692307692307693
+1043,dance festival,subclass of,performing arts,0.16666666666666666
+1044,performing arts,has part,dance,0.16666666666666666
+1045,dance,subclass of,performing arts,0.16666666666666666
+1046,performing arts,has part,dance festival,0.16666666666666666
+1047,dance festival,facet of,performing arts,0.08333333333333333
+1048,dance festival,field of work,performing arts,0.08333333333333333
+1049,dance festival,part of,performing arts,0.08333333333333333
+1050,dance festival,instance of,performing arts,0.08333333333333333
+1051,sports,instance of,disciplines,0.21428571428571427
+1052,sports,subclass of,disciplines,0.14285714285714285
+1053,sports,part of,disciplines,0.14285714285714285
+1054,disciplines,has part,sports,0.21428571428571427
+1055,sport,instance of,disciplines,0.07142857142857142
+1056,sport,subclass of,disciplines,0.07142857142857142
+1057,training opportunities,subclass of,courses,0.07142857142857142
+1058,disciplines,different from,sports,0.07142857142857142
+1059,Leipzig book fair,organizer,university library,0.08333333333333333
+1060,university library,instance of,university institutions,0.08333333333333333
+1061,university library,located in the administrative territorial entity,Leipzig,0.08333333333333333
+1062,university library,part of,university,0.16666666666666666
+1063,university library,part of,university institutions,0.16666666666666666
+1064,university institutions,has part,university library,0.08333333333333333
+1065,university library,instance of,university institution,0.08333333333333333
+1066,Leipzig book fair,participant,university library,0.08333333333333333
+1067,university library,part of,university institution,0.08333333333333333
+1068,university,has part,university library,0.08333333333333333
+1069,Notable people,educated at,Leipzig University,0.1
+1070,Notable people,conferred by,Leipzig University,0.1
+1071,Notable people,facet of,Leipzig University,0.1
+1072,Leipzig University,located in the administrative territorial entity,Leipzig,0.1
+1073,noble laureates,educated at,Leipzig University,0.1
+1074,notable individuals,educated at,Leipzig University,0.1
+1075,Notable people,part of,Leipzig University,0.1
+1076,Notable people,location,Leipzig University,0.1
+1077,Notable people,employer,Leipzig University,0.1
+1078,Leipzig University,has part,Notable people,0.1
+1079,Theodor Mommsen,award received,Nobel Prize in Literature,0.014285714285714285
+1080,Johann Christoph Altnickol,father,Johann Sebastian Bach,0.12857142857142856
+1081,Johann Sebastian Bach,child,Johann Christoph Altnickol,0.12857142857142856
+1082,Johann Friedrich Agricola,student of,Johann Sebastian Bach,0.11428571428571428
+1083,Carl Philipp Emanuel Bach,father,Johann Sebastian Bach,0.11428571428571428
+1084,Johann Christoph Friedrich Bach,father,Johann Sebastian Bach,0.11428571428571428
+1085,Johann Sebastian Bach,child,Carl Philipp Emanuel Bach,0.08571428571428572
+1086,Johann Sebastian Bach,child,Johann Christoph Friedrich Bach,0.07142857142857142
+1087,Carl Philipp Emanuel Bach,sibling,Johann Christoph Friedrich Bach,0.08571428571428572
+1088,Johann Christoph Friedrich Bach,sibling,Carl Philipp Emanuel Bach,0.08571428571428572
+1089,Johann Christoph Friedrich Bach,sibling,Wilhelm Friedemann Bach,0.014285714285714285
+1090,Johann Sebastian Bach,child,Wilhelm Friedemann Bach,0.02857142857142857
+1091,Johann Christoph Friedrich Bach,sibling,Wilhelm,0.014285714285714285
+1092,Max Muller,field of work,Indology,0.2857142857142857
+1093,Indology,part of,Orientalist,0.21428571428571427
+1094,Max Muller,field of work,Orientalist,0.21428571428571427
+1095,Indology,subclass of,Orientalist,0.14285714285714285
+1096,Johann Wolfgang von Goethe,influenced by,Friedrich Nietzsche,0.07142857142857142
+1097,Orientalist,part of,philologist,0.07142857142857142
+1098,Leonard Bloomfield,field of work,structural linguistics,0.3333333333333333
+1099,structural linguistics,subclass of,linguist,0.2
+1100,structural linguistics,part of,linguist,0.13333333333333333
+1101,Leonard Bloomfield,country of citizenship,United States,0.2
+1102,Leonard Bloomfield,country of citizenship,American,0.06666666666666667
+1103,Leonard Bloomfield,field of work,linguist,0.06666666666666667
+1104,Distributionalism,country of origin,American,0.1
+1105,Distributionalism,country,American,0.1
+1106,Distributionalism,facet of,American,0.1
+1107,American Distributionalism,subclass of,Distributionalism,0.1
+1108,Distributionalism,indigenous to,American,0.1
+1109,American Distributionalism,facet of,Distributionalism,0.1
+1110,American Distributionalism,influenced by,Distributionalism,0.1
+1111,Distributionalism,part of,American,0.1
+1112,American Distributionalism,part of,Distributionalism,0.1
+1113,Distributionalism,subclass of,American,0.1
+1114,Nathan Söderblom,award received,Nobel Peace Prize,0.3157894736842105
+1115,Nobel Peace Prize,winner,Nathan Söderblom,0.15789473684210525
+1116,Gotthold Ephraim Lessing,member of,Lutheran Church–Missouri Synod,0.21052631578947367
+1117,Lin Yutang,award received,Nobel Peace Prize,0.05263157894736842
+1118,Hans-Georg Gadamer,position held,rector,0.05263157894736842
+1119,Johann Christoph Gottsched,position held,rector,0.10526315789473684
+1120,Lin Yutang,member of,Lutheran Church–Missouri Synod,0.05263157894736842
+1121,Nathan Söderblom,member of,Lutheran Church–Missouri Synod,0.05263157894736842
+1122,Ferdinand de Saussure,movement,structuralism,0.13793103448275862
+1123,structuralism,founded by,Ferdinand de Saussure,0.13793103448275862
+1124,Gert Jäger,member of,Leipzig School,0.13793103448275862
+1125,Otto Kade,member of,Leipzig School,0.15517241379310345
+1126,Albrecht Neubert,member of,Leipzig School,0.15517241379310345
+1127,structuralism,creator,Ferdinand de Saussure,0.034482758620689655
+1128,Gert Jäger,movement,Leipzig School,0.017241379310344827
+1129,Otto Kade,movement,Leipzig School,0.017241379310344827
+1130,Albrecht Neubert,movement,Leipzig School,0.017241379310344827
+1131,Ferdinand de Saussure,field of work,structuralism,0.034482758620689655
+1132,Ferdinand de Saussure,field of work,linguist,0.017241379310344827
+1133,Gottfried Wilhelm von Leibniz,field of work,mathematics,0.05172413793103448
+1134,Felix Klein,field of work,mathematics,0.05172413793103448
+1135,Sophus Lie,field of work,mathematics,0.034482758620689655
+1136,Mollweide projection,named after,Karl Mollweide,0.3125
+1137,Wei-Liang Chow,place of birth,Shanghai,0.0625
+1138,Hausdorff space,named after,Felix Hausdorff,0.1875
+1139,Hermann Hankel,notable work,Hankel transform,0.0625
+1140,Hankel transform,named after,Hermann Hankel,0.125
+1141,Felix Hausdorff,field of work,topology,0.1875
+1142,Wu-Liang Chow,place of birth,Shanghai,0.0625
+1143,Edward Teller,participant in,Manhattan Project,0.11764705882352941
+1144,Hund's rules,named after,Friedrich Hund,0.11764705882352941
+1145,Friedrich Hund,notable work,quantum tunnelling,0.0392156862745098
+1146,Friedrich Hund,notable work,Hund's rules,0.058823529411764705
+1147,Werner Heisenberg,award received,Nobel Prize in Physics,0.2549019607843137
+1148,Felix Bloch,award received,Nobel Prize in Physics,0.23529411764705882
+1149,Ludwig Boltzmann,award received,Nobel Prize in Physics,0.058823529411764705
+1150,Tycho Brahe,award received,Nobel Prize in Physics,0.0196078431372549
+1151,Tycho Brahe,award received,Nobel Prize,0.0196078431372549
+1152,Friedrich Hund,award received,Nobel Prize in Physics,0.058823529411764705
+1153,Wilhelm Ostwald,participant in,Manhattan Project,0.0196078431372549
+1154,The Sage,instance of,encyclopedia,0.1
+1155,Sage,instance of,encyclopedia,0.1
+1156,The Sage,genre,encyclopedia,0.1
+1157,mass media,part of,society,0.1
+1158,The Sage,instance of,international encyclopedia,0.1
+1159,Sage,genre,encyclopedia,0.1
+1160,The Sage,main subject,mass media,0.1
+1161,The Sage,field of work,encyclopedia,0.1
+1162,The Sage,main subject,encyclopedia,0.1
+1163,The Sage,field of work,mass media,0.1
+1164,Thousand Oaks,located in the administrative territorial entity,California,0.21428571428571427
+1165,California,capital,Thousand Oaks,0.14285714285714285
+1166,Thousand Oaks,located in the administrative territorial entity,"Thousand Oaks, California",0.21428571428571427
+1167,"Thousand Oaks, California",contains administrative territorial entity,Thousand Oaks,0.07142857142857142
+1168,"Thousand Oaks, California",located in the administrative territorial entity,Thousand Oaks,0.07142857142857142
+1169,Thousand Oaks,shares border with,"Thousand Oaks, California",0.07142857142857142
+1170,"Thousand Oaks, California",shares border with,Thousand Oaks,0.07142857142857142
+1171,"Thousand Oaks, California",has part,Thousand Oaks,0.07142857142857142
+1172,Thousand Oaks,located in the administrative territorial entity,Thousand Oaks,0.07142857142857142
+1173,1-4833-7551-9,publication date,978,0.1
+1174,978-1-4833-7551-9,publication date,978,0.1
+1175,978-1-4833-7551-9,point in time,978,0.1
+1176,2008 Summer Olympics,point in time,2008,0.1
+1177,978,country,UK,0.1
+1178,2008,point in time,2008,0.1
+1179,1-4833-7551-9,publication date,978-1-4833-7551-9,0.1
+1180,978,is a list of,1,0.1
+1181,978,part of,ISBN,0.1
+1182,978,different from,ISBN,0.1
+1183,1130315057,instance of,OCLC,0.2727272727272727
+1184,OCLC 1130315057,point in time,1130,0.18181818181818182
+1185,OCLC 1130315057,service entry,1130,0.18181818181818182
+1186,OCLC 1130315057,instance of,OCLC,0.18181818181818182
+1187,OCLC 1130315057,inception,1130,0.09090909090909091
+1188,OCLC,has part,1130315057,0.09090909090909091
+1189,Leipzig University,located in the administrative territorial entity,Leipzig,0.08333333333333333
+1190,History of the Leipzig University,facet of,Leipzig University,0.08333333333333333
+1191,Leipzig University,headquarters location,Leipzig,0.08333333333333333
+1192,Historical of the Leipzig University,facet of,Leipzig University,0.08333333333333333
+1193,Historian of the Leipzig University,facet of,Leipzig University,0.08333333333333333
+1194,Leipzig University,has part,History of the Leipzig University,0.16666666666666666
+1195,History of the Leipzig University,part of,Leipzig University,0.08333333333333333
+1196,Leipzig University,location,Leipzig,0.08333333333333333
+1197,Official website of Leipzig University,part of,Leipzig University,0.08333333333333333
+1198,Official website of Leipzig University,owned by,Leipzig University,0.08333333333333333
+1199,Leipzig University,owner of,Official website of Leipzig University,0.08333333333333333
+1200,1913,point in time,1913,0.09090909090909091
+1201,1914,point in time,1914,0.09090909090909091
+1202,1912,point in time,1912,0.09090909090909091
+1203,1911,point in time,1911,0.09090909090909091
+1204,1914,point in time,1913,0.09090909090909091
+1205,1917,point in time,1917,0.09090909090909091
+1206,1915,point in time,1915,0.09090909090909091
+1207,1919,point in time,1919,0.09090909090909091
+1208,1912,point in time,1913,0.09090909090909091
+1209,World War I,followed by,World War II,0.09090909090909091
+1210,World War II,follows,World War I,0.09090909090909091
+1211,University of Leipzig,located in the administrative territorial entity,Leipzig,0.1
+1212,University of Leipzig,headquarters location,Leipzig,0.1
+1213,Leipzig,instance of,University,0.1
+1214,University of Leipzig,named after,Leipzig,0.1
+1215,University of Leipzig,location,Leipzig,0.1
+1216,Leipzig,parent organization,University of Leipzig,0.1
+1217,University,located in the administrative territorial entity,Leipzig,0.1
+1218,Leipzig,named after,University of Leipzig,0.1
+1219,Leipzig,owned by,University of Leipzig,0.1
+1220,Leipzig,part of,University of Leipzig,0.1
+1221,Catholic Encyclopedia,instance of,Encyclopedia,0.1
+1222,Encyclopedia,main subject,Catholic,0.1
+1223,Catholic Encyclopedia,instance of,encyclopedia,0.1
+1224,Encyclopedia,part of,Catholic,0.1
+1225,Encyclopedia,religion,Catholic,0.1
+1226,Encyclopedia,facet of,Catholic,0.1
+1227,Catholic Encyclopedia,genre,Encyclopedia,0.1
+1228,Encyclopedia,language of work or name,Catholic,0.1
+1229,Roman Encyclopedia,instance of,Encyclopedia,0.1
+1230,Encyclopedia,part of the series,Catholic,0.1
+1231,Robert Appleton Company,headquarters location,New York,0.1
+1232,Robert Appleton Company,work location,New York,0.1
+1233,Robert Appleton Company,place of birth,New York,0.1
+1234,Robert Appleton Company,location of formation,New York,0.1
+1235,Robert Appleton,work location,New York,0.1
+1236,Robert Appleton,place of birth,New York,0.1
+1237,Robert Appleton Company,located in the administrative territorial entity,New York,0.1
+1238,Robert Appleton Company,place of publication,New York,0.1
+1239,Appleton Company,headquarters location,New York,0.1
+1240,Robert Appleton Company,place of death,New York,0.1
