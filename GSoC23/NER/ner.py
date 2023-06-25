@@ -15,11 +15,14 @@ def spacy_ner(language, text):
         d['entity_group']=ent.label_
 
         # check for stop-words
+        text = ent.text
         for st in stop:
             if st in ent.text:
-                ent.text = ent.text.replace(st,"")
+                # print(type(ent.text))
+                # ent.text = ent.text.replace(st,"")
+                text = text.replace(st, "")
                 
-        d['word']=ent.text
+        d['word']=text
         d['start']=ent.start_char
         d['end']=ent.end_char
         entities.append(d)
