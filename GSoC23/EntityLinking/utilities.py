@@ -1,5 +1,19 @@
 
 def get_majority_vote(candidate_list):
+    """Perform majority vote over a list of candidate entities
+    based on frequency.
+
+    Initially, we are using frequency to do the voting. 
+    But later on, we can also do a weighted voting, 
+    by weighing each candidate based on the method which returned it,
+    thereby giving more importance to more accurate methods.
+
+    Args:
+        candidate_list : List of candidate entities/resources.
+
+    Returns:
+        Returns a resource/entity URI
+    """
     candidate_entity = max(set(candidate_list), key=candidate_list.count)
     return candidate_entity
 
