@@ -7,7 +7,17 @@ stop = [
     "to", "at"
 ]
 
-def spacy_ner(language, text):
+def spacy_ner(language: spacy.lang.en.English, text: str):
+    """Performs NER using the spacy model(language) specified. 
+
+    Args:
+        language (spacy.lang.en.English): The spacy English model to use.
+        text (str): The text on which to perform the NER.
+
+    Returns:
+        List[Dict]: A list of entities each represented by a dictionary
+        containing the entity-mention/word and its start and end positions.
+    """
     result = language(text)
     entities = []
     for ent in result.ents:
@@ -29,6 +39,18 @@ def spacy_ner(language, text):
     return entities
 
 def hf_transformer_ner(model, tokenizer, text):
+    """Given a text, model and its tokenizer(from huggingface), perform
+    NER using huggingface ner pipeline using that model and tokenizer.
+
+    Args:
+        model : The HF model
+        tokenizer : Respective tokenizer for the model
+        text : The text on which to perform NER.
+
+    Returns:
+        List[Dict]: A list of entities each represented by a dictionary
+        containing the entity-mention/word and its start and end positions.
+    """
     text = text.lower()
     nlp = pipeline("ner", model=model, tokenizer=tokenizer)
     return nlp(text)
