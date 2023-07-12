@@ -71,3 +71,40 @@ def EL_redis_db(query: str,
     return lookup(term=query, 
     redis_client_forms = redis_client_forms,
     redis_client_redir = redis_client_redir)
+
+def EL_GENRE(annotated_sentences, model, tokenizer):
+    """A method to perform entity linking for entity-mentions annotated
+    in sentences using the GENRE model.
+
+    ```
+    tokenizer = AutoTokenizer.from_pretrained("facebook/genre-linking-blink")
+    model = AutoModelForSeq2SeqLM.from_pretrained("facebook/genre-linking-blink").eval()
+
+    sentences = [
+        "[START_ENT] England [END_ENT] won the cricket world cup in 2019",
+        "I just finished reading [START_ENT] 'The Jungle Book' [END_ENT]",
+        "India is a country in Asia. [START_ENT] It [END_ENT] has a rich cultural heritage"
+    ]
+
+    EL_GENRE(annotated_sentences=sentences, model=model, tokenizer=tokenizer)
+    
+    ```
+
+    Args:
+        annotated_sentences (list): A list of sentences annotated with entity-mentions
+        model : GENRE model from huggingface hub
+        tokenizer : Appropriate tokenizer for GENRE model
+    """
+    outputs = model.generate(
+    **tokenizer(annotated_sentences, return_tensors="pt", padding=True),
+    num_beams=5,
+    num_return_sequences=5,
+    # OPTIONAL: use constrained beam search
+    # prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()),
+    )
+
+    entites = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+
+    # These entites are in the form of wikipedia page titles. Need to 
+    # add the https://dbpedia/resource to each of them as postprocessing step
+    return entites
