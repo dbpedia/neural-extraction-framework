@@ -1,4 +1,11 @@
+import re
 import pandas as pd
+
+def annotate_sentence(sentence, mention):
+    match = re.search(mention.lower(), sentence.lower())
+    start, end = match.span()
+    sentence = sentence[:start] + " [START_ENT] " + sentence[start:end] + " [END_ENT] " + sentence[end:]
+    return sentence
 
 def get_majority_vote(candidate_list):
     """Perform majority vote over a list of candidate entities
