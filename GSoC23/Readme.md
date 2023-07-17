@@ -3,10 +3,12 @@
 |   Project Details     | |
 |-------------|-------------|
 | GSoC Project | [Neural Extraction Framework GSoC'23 @DBpedia](https://summerofcode.withgoogle.com/programs/2023/projects/cKuagkf8)        |
+| Contributor | [Aakash Thatte](https://www.linkedin.com/in/aakash-thatte/) |
 | Mentors | [Tommaso Soru](https://github.com/mommi84), [Diego Moussallem](https://github.com/DiegoMoussallem), [Ziwei Xu](https://github.com/zoeNantes)|
 | Blogs | [GSoC-2023 Aakash Thatte](https://sky-2002.github.io/) |
 
 ### Code structure
+All directories contain a `notebooks` directory which has notebooks with exploration/experimentation code for the models and methods used. 
 ```
 📦GSoC23
  ┣ 📂Data
