@@ -13,6 +13,9 @@ tbox_pickle_file = "./tbox.pkl"
 labels_pickle_file = "./labels.pkl"
 
 def get_pickle_object(file):
+    """This function can be used to load the labels.pkl
+    and tbox.pkl files.
+    """
     with open(file,"rb") as f:
         return pickle.load(f)
     
@@ -24,6 +27,18 @@ genre_tokenizer = AutoTokenizer.from_pretrained("facebook/genre-linking-blink")
 genre_model = AutoModelForSeq2SeqLM.from_pretrained("facebook/genre-linking-blink").eval()
 
 def get_triple_from_triple(sub, relation, obj, sentence):
+    """Give subject, relation, object in natural language form,
+    return the corressponding Dbpedia URIs for them.
+
+    Args:
+        sub (str): Subject
+        relation (str): Relation
+        obj (str): Object
+        sentence (str): The sentence in which they appear.
+
+    Returns:
+        tuple: A tuple of entity and predicate URIs
+    """
     
     subject_entity = EL_GENRE(
         annotate_sentence(sentence, sub), genre_model, genre_tokenizer)[0]
