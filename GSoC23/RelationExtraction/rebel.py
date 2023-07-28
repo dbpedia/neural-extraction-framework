@@ -7,7 +7,7 @@ gen_kwargs = {
     "max_length": 256,
     "length_penalty": 0,
     "num_beams": 10,
-    "num_return_sequences": 10,
+    "num_return_sequences": 1,
 }
 
 # Function to parse the generated text and extract the triplets
