@@ -1,3 +1,4 @@
+from collections import defaultdict
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 NS_RESOURCE = 'http://dbpedia.org/resource/'
@@ -10,8 +11,8 @@ NS_ONTOLOGY_LEN = len(NS_ONTOLOGY)
 def retrieve_tbox(lang='en', offset=0):
     sparql = SPARQLWrapper('http://dbpedia.org/sparql')
     query = f"""
-    SELECT ?uri ?label {{
-      ?uri a ?type ; rdfs:label ?label .
+    SELECT ?uri ?label ?domain ?range {{
+      ?uri a ?type ; rdfs:label ?label; rdfs:domain ?domain ; rdfs:range ?range.
       values(?type) {{ (owl:Class) (rdf:Property) }}
       filter(lang(?label) = '{lang}' && regex(?uri, "http://dbpedia.org/ontology/"))
     }} LIMIT 10000 OFFSET {offset}
@@ -21,19 +22,26 @@ def retrieve_tbox(lang='en', offset=0):
     results = sparql.query().convert()
     
     tbox = {}
+    uri_domain_range_dict = defaultdict(lambda: {})
     for result in results['results']['bindings']:
         uri = result['uri']['value']
         label = result['label']['value']
         if label not in tbox:
             tbox[label] = set()
         tbox[label].add(uri)
-    return tbox
 
-def get_labels_and_tbox():
+        domain_ = result['domain']['value']
+        range_ = result['range']['value']
+        uri_domain_range_dict[uri]['domain'] = domain_
+        uri_domain_range_dict[uri]['range'] = range_
+    return tbox, uri_domain_range_dict
+
+def get_labels_tbox_and_domain_range():
     offset = 0
     tbox = {}
+    uri_domain_and_range = {}
     while True:
-        tbox_chunk = retrieve_tbox(lang='en', offset=offset)
+        tbox_chunk, uri_domain_and_range_dict_chunk = retrieve_tbox(lang='en', offset=offset)
         if len(tbox_chunk) == 0:
             break
         offset += 10000
@@ -41,8 +49,10 @@ def get_labels_and_tbox():
             if k not in tbox:
                 tbox[k] = set()
             tbox[k] = tbox[k].union(v)
+        for k,v in uri_domain_and_range_dict_chunk.items():
+            uri_domain_and_range[k]=v
     labels = [l.replace('\n', ' ') for l in tbox]
-    return labels, tbox
+    return labels, tbox, uri_domain_and_range
 
 def to_uri(label, tbox):
     return list(filter(lambda x: 'A' <= x[NS_ONTOLOGY_LEN : NS_ONTOLOGY_LEN+1] <= 'z', tbox[label]))
