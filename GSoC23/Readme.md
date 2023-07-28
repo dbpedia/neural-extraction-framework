@@ -33,3 +33,28 @@ I have provided the requirements file, but you can go ahead with only the packag
 
 For spacy `en_core_web...` models,
 use `spacy.download('en_core_trf')`
+
+### Project workflow
+```mermaid
+graph TD
+    wiki_page[Wikipedia Page] --Extract plain text--> pure_text[Pure text]
+
+    pure_text-->rebel(REBEL)
+    rebel--as text-->entities[Entities]
+    rebel--as text-->relations[Relations]
+    
+    relations--get embedding-->vector_similarity(Vector similarity with label embeddings);
+    vector_similarity-->predicate_uris[Predicate URIs]
+
+    pure_text-->annotation_for_genre(Annotate entities in text)
+
+    entities-->annotation_for_genre
+
+    annotation_for_genre--annotated text-->genre[GENRE]
+
+    genre-->entity_uris[Entity URIs]
+    
+    entity_uris-->triples[Triples]
+    predicate_uris-->triples[Triples]
+    triples--Validate-->final_triples[Final triples]
+```
