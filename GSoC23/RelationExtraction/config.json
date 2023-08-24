@@ -1,0 +1,12 @@
+{
+    "file_paths": {
+        "label_embeddings_file": "/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/RelationExtraction/dbpedia-ontology.vectors",
+        "tbox_pickle_file": "/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/RelationExtraction/tbox.pkl",
+        "labels_pickle_file": "/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/RelationExtraction/labels.pkl"
+    },
+    "model_names": {
+        "encoder_model": "paraphrase-MiniLM-L6-v2",
+        "genre_tokenizer": "facebook/genre-linking-blink",
+        "genre_model": "facebook/genre-linking-blink"
+    }
+}
