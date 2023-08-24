@@ -1,3 +1,4 @@
+import json
 import pickle
 import logging
 from GSoC23.EntityLinking.methods import EL_GENRE
@@ -7,11 +8,14 @@ from GSoC23.RelationExtraction.text_encoding_models import get_sentence_transfor
 from GSoC23.RelationExtraction.relation_similarity import ontosim_search
 from GSoC23.EntityLinking.el_utils import annotate_sentence
 
-label_embeddings_file = "/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/RelationExtraction/dbpedia-ontology.vectors"
+with open("config.json",'r') as config_file:
+    config = json.load(config_file)
+
+label_embeddings_file = config['file_paths']['label_embeddings_file']
 gensim_model = load_key_vector_model_from_file(label_embeddings_file)
 
-tbox_pickle_file = "/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/RelationExtraction/tbox.pkl"
-labels_pickle_file = "/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/RelationExtraction/labels.pkl"
+tbox_pickle_file = config['file_paths']['tbox_pickle_file']
+labels_pickle_file = config['file_paths']['labels_pickle_file']
 
 def get_pickle_object(file):
     """This function can be used to load the labels.pkl
@@ -23,11 +27,11 @@ def get_pickle_object(file):
 labels=get_pickle_object(labels_pickle_file)
 tbox=get_pickle_object(tbox_pickle_file)
 
-encoder_model = get_sentence_transformer_model(model_name="paraphrase-MiniLM-L6-v2")
+encoder_model = get_sentence_transformer_model(model_name=config['model_names']['encoder_model'])
 logging.info("Encoder model loaded")
 
-genre_tokenizer = AutoTokenizer.from_pretrained("facebook/genre-linking-blink")
-genre_model = AutoModelForSeq2SeqLM.from_pretrained("facebook/genre-linking-blink").eval()
+genre_tokenizer = AutoTokenizer.from_pretrained(config['model_names']['genre_tokenizer'])
+genre_model = AutoModelForSeq2SeqLM.from_pretrained(config['model_names']['genre_model']).eval()
 logging.info("GENRE model loaded")
 
 def get_triple_from_triple(sub, relation, obj, sentence):
