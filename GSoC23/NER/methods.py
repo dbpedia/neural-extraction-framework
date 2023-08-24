@@ -1,14 +1,11 @@
 import spacy
 from transformers import pipeline
 
-stop = [
-    "the", "is", "in",
-    "for", "where", "when",
-    "to", "at"
-]
+stop = ["the", "is", "in", "for", "where", "when", "to", "at"]
+
 
 def spacy_ner(language: spacy.lang.en.English, text: str):
-    """Performs NER using the spacy model(language) specified. 
+    """Performs NER using the spacy model(language) specified.
 
     Args:
         language (spacy.lang.en.English): The spacy English model to use.
@@ -22,7 +19,7 @@ def spacy_ner(language: spacy.lang.en.English, text: str):
     entities = []
     for ent in result.ents:
         d = {}
-        d['entity_group']=ent.label_
+        d["entity_group"] = ent.label_
 
         # check for stop-words
         text = ent.text
@@ -31,12 +28,13 @@ def spacy_ner(language: spacy.lang.en.English, text: str):
                 # print(type(ent.text))
                 # ent.text = ent.text.replace(st,"")
                 text = text.replace(st, "")
-                
-        d['word']=text
-        d['start']=ent.start_char
-        d['end']=ent.end_char
+
+        d["word"] = text
+        d["start"] = ent.start_char
+        d["end"] = ent.end_char
         entities.append(d)
     return entities
+
 
 def hf_transformer_ner(model, tokenizer, text):
     """Given a text, model and its tokenizer(from huggingface), perform
