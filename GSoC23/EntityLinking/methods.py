@@ -2,8 +2,9 @@ import requests
 import pandas as pd
 import redis
 
-def EL_DBpedia_lookup(query: str, max_results: int): 
-    """Perform entity linking using DBpedia lookup service on 
+
+def EL_DBpedia_lookup(query: str, max_results: int):
+    """Perform entity linking using DBpedia lookup service on
     the given query.
 
     Args:
@@ -14,18 +15,19 @@ def EL_DBpedia_lookup(query: str, max_results: int):
         List: A list of the candidate entities/resources.
     """
     response = requests.post(
-    f"https://lookup.dbpedia.org/api/search?query={query}&format=json&maxResults={max_results}"
+        f"https://lookup.dbpedia.org/api/search?query={query}&format=json&maxResults={max_results}"
     )
-    docs = response.json()['docs']
-    resources = [d['resource'][0] for d in docs]
+    docs = response.json()["docs"]
+    resources = [d["resource"][0] for d in docs]
     return resources
+
 
 def EL_DBpedia_spotlight(query: str, nlp):
     """Perform entity linking using DBpedia spotlight using spacy component.
 
     Args:
         query (str): The entity mention that you want to link to a resource in dbpedia.
-        nlp : Spacy model for english language added with a component 
+        nlp : Spacy model for english language added with a component
         called `dbpedia_spotlight`.
 
         The nlp pipeline should output something similar to below.
@@ -36,7 +38,7 @@ def EL_DBpedia_spotlight(query: str, nlp):
         ```
 
     Returns:
-       tuple(List, List): Returns a tuple of lists, the first list contains the entities identified 
+       tuple(List, List): Returns a tuple of lists, the first list contains the entities identified
        by spotlight, and the second list contains the entities it has linked them to.
     """
     doc = nlp(query)
@@ -46,14 +48,17 @@ def EL_DBpedia_spotlight(query: str, nlp):
     for ent in doc.ents:
         texts.append(ent.text)
         labels.append(ent.label_)
-        if ent.text+"_"+ent.label_ not in uris:
-            uris[ent.text+"_"+ent.label_]=[]
-        uris[ent.text+"_"+ent.label_].append(ent.kb_id_)
+        if ent.text + "_" + ent.label_ not in uris:
+            uris[ent.text + "_" + ent.label_] = []
+        uris[ent.text + "_" + ent.label_].append(ent.kb_id_)
     return texts, uris
 
-def EL_redis_db(query: str, 
-        redis_client_forms: redis.client.Redis, 
-        redis_client_redir: redis.client.Redis):
+
+def EL_redis_db(
+    query: str,
+    redis_client_forms: redis.client.Redis,
+    redis_client_redir: redis.client.Redis,
+):
     """Performs entity linking using a redis database.
 
     Args:
@@ -66,9 +71,13 @@ def EL_redis_db(query: str,
         select only the candidate URIs.
     """
     from GSoC23.EntityLinking.el_utils import lookup
-    return lookup(term=query, 
-    redis_client_forms = redis_client_forms,
-    redis_client_redir = redis_client_redir)
+
+    return lookup(
+        term=query,
+        redis_client_forms=redis_client_forms,
+        redis_client_redir=redis_client_redir,
+    )
+
 
 def EL_GENRE(annotated_sentences, model, tokenizer):
     """A method to perform entity linking for entity-mentions annotated
@@ -85,7 +94,7 @@ def EL_GENRE(annotated_sentences, model, tokenizer):
     ]
 
     EL_GENRE(annotated_sentences=sentences, model=model, tokenizer=tokenizer)
-    
+
     ```
 
     Args:
@@ -94,15 +103,15 @@ def EL_GENRE(annotated_sentences, model, tokenizer):
         tokenizer : Appropriate tokenizer for GENRE model
     """
     outputs = model.generate(
-    **tokenizer(annotated_sentences, return_tensors="pt", padding=True),
-    num_beams=5,
-    num_return_sequences=5,
-    # OPTIONAL: use constrained beam search
-    # prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()),
+        **tokenizer(annotated_sentences, return_tensors="pt", padding=True),
+        num_beams=5,
+        num_return_sequences=5,
+        # OPTIONAL: use constrained beam search
+        # prefix_allowed_tokens_fn=lambda batch_id, sent: trie.get(sent.tolist()),
     )
 
     entites = tokenizer.batch_decode(outputs, skip_special_tokens=True)
 
-    # These entites are in the form of wikipedia page titles. Need to 
+    # These entites are in the form of wikipedia page titles. Need to
     # add the https://dbpedia/resource to each of them as postprocessing step
     return entites
