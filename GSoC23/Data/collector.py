@@ -2,7 +2,8 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 import wikipedia
 
 # Create a SPARQLWrapper object with the DBpedia SPARQL endpoint URL
-# sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+print('Sparql wrapper created')
 
 def get_abstract(sparql_wrapper, uri):
     query = f"""
@@ -33,3 +34,44 @@ def get_text_of_wiki_page(article_name: str):
     article_name_content = article_name_result.content
     article_name_content.replace("\n", "").replace("\t", "")
     return article_name_content
+
+def get_wikiPageWikiLink_entities(entity, sparql_wrapper = sparql):
+    query = f'''
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+
+    SELECT ?connected_entities
+    WHERE{{
+    {entity} dbo:wikiPageWikiLink ?connected_entities .
+    }}
+    '''
+    sparql_wrapper.setQuery(query)
+    sparql_wrapper.setReturnFormat(JSON)
+    results = sparql_wrapper.query().convert()
+    entities = [r['connected_entities']['value'] for r in results['results']['bindings']]
+    return entities
+
+
+def get_only_wikiPageWikiLink(entity, sparql_wrapper = sparql):
+
+    query = f'''
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+
+    SELECT ?o
+    WHERE {{
+      {{
+        SELECT ?o
+        WHERE {{
+          {entity} dbo:wikiPageWikiLink ?o .
+        }}
+      }}
+      MINUS
+      {{
+        {entity} ?p ?o .
+        FILTER (?p != dbo:wikiPageWikiLink)
+      }}
+    }}
+    '''
+    sparql_wrapper.setQuery(query)
+    sparql_wrapper.setReturnFormat(JSON)
+    results = sparql_wrapper.query().convert()
+    return results['results']['bindings']
