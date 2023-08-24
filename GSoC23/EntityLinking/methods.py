@@ -1,6 +1,4 @@
 import requests
-import spacy_dbpedia_spotlight
-import spacy
 import pandas as pd
 import redis
 
