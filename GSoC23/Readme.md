@@ -11,10 +11,12 @@
 All directories contain a `notebooks` directory which has notebooks with exploration/experimentation code for the models and methods used. 
 ```
 📦GSoC23
+ ┣ 📂CoreferenceResolution
  ┣ 📂Data
  ┣ 📂EntityLinking
  ┣ 📂NER
  ┣ 📂RelationExtraction
+ ┣ 📂Validation
 ```
 
 ### Installations 
@@ -39,7 +41,8 @@ use `spacy.download('en_core_trf')`
 graph TD
     wiki_page[Wikipedia Page] --Extract plain text--> pure_text[Pure text]
 
-    pure_text-->rebel(REBEL)
+    pure_text-->coref_resolved_text[Coref Resolved Text]
+    coref_resolved_text-->rebel(REBEL)
     rebel--as text-->entities[Entities]
     rebel--as text-->relations[Relations]
     
