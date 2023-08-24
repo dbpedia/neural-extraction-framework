@@ -3,7 +3,8 @@ import wikipedia
 
 # Create a SPARQLWrapper object with the DBpedia SPARQL endpoint URL
 sparql = SPARQLWrapper("http://dbpedia.org/sparql")
-print('Sparql wrapper created')
+print("Sparql wrapper created")
+
 
 def get_abstract(sparql_wrapper, uri):
     query = f"""
@@ -16,7 +17,8 @@ def get_abstract(sparql_wrapper, uri):
     sparql_wrapper.setQuery(query)
     sparql_wrapper.setReturnFormat(JSON)
     results = sparql_wrapper.query().convert()
-    return results['results']['bindings'][0]['abstract']['value']
+    return results["results"]["bindings"][0]["abstract"]["value"]
+
 
 def get_text_of_wiki_page(article_name: str):
     """Given an article name(need not be exact title of page),
@@ -30,39 +32,44 @@ def get_text_of_wiki_page(article_name: str):
     Returns:
         str: The text of that article.
     """
-    article_name_result = wikipedia.page(wikipedia.search(article_name)[0], auto_suggest=False)
+    article_name_result = wikipedia.page(
+        wikipedia.search(article_name)[0], auto_suggest=False
+    )
     article_name_content = article_name_result.content
     article_name_content.replace("\n", "").replace("\t", "")
     return article_name_content
 
-def get_wikiPageWikiLink_entities(entity, sparql_wrapper = sparql):
+
+def get_wikiPageWikiLink_entities(entity, sparql_wrapper=sparql):
     """A function to fetch all entities connected to the given entity
     by the dbo:wikiPageWikiLink predicate.
 
     Args:
-        entity (_type_): The source entity, the wiki page we are parsing. 
+        entity (_type_): The source entity, the wiki page we are parsing.
         Example --> <http://dbpedia.org/resource/Berlin_Wall>.
         sparql_wrapper : The SPARQL endpoint. Defaults to sparql.
 
     Returns: List of entities.
     """
 
-    query = f'''
+    query = f"""
     PREFIX dbo: <http://dbpedia.org/ontology/>
 
     SELECT ?connected_entities
     WHERE{{
     {entity} dbo:wikiPageWikiLink ?connected_entities .
     }}
-    '''
+    """
     sparql_wrapper.setQuery(query)
     sparql_wrapper.setReturnFormat(JSON)
     results = sparql_wrapper.query().convert()
-    entities = [r['connected_entities']['value'] for r in results['results']['bindings']]
+    entities = [
+        r["connected_entities"]["value"] for r in results["results"]["bindings"]
+    ]
     return entities
 
 
-def get_only_wikiPageWikiLink(entity, sparql_wrapper = sparql):
+def get_only_wikiPageWikiLink(entity, sparql_wrapper=sparql):
     """For a given entity(the current wiki page), returns all entities
     that are connected with only the dbo:wikiPageWikiLink predicate and no
     other predicate.
@@ -74,7 +81,7 @@ def get_only_wikiPageWikiLink(entity, sparql_wrapper = sparql):
     Returns: List of entities.
     """
 
-    query = f'''
+    query = f"""
     PREFIX dbo: <http://dbpedia.org/ontology/>
 
     SELECT ?o
@@ -91,8 +98,8 @@ def get_only_wikiPageWikiLink(entity, sparql_wrapper = sparql):
         FILTER (?p != dbo:wikiPageWikiLink)
       }}
     }}
-    '''
+    """
     sparql_wrapper.setQuery(query)
     sparql_wrapper.setReturnFormat(JSON)
     results = sparql_wrapper.query().convert()
-    return results['results']['bindings']
+    return results["results"]["bindings"]
