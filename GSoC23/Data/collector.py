@@ -36,6 +36,17 @@ def get_text_of_wiki_page(article_name: str):
     return article_name_content
 
 def get_wikiPageWikiLink_entities(entity, sparql_wrapper = sparql):
+    """A function to fetch all entities connected to the given entity
+    by the dbo:wikiPageWikiLink predicate.
+
+    Args:
+        entity (_type_): The source entity, the wiki page we are parsing. 
+        Example --> <http://dbpedia.org/resource/Berlin_Wall>.
+        sparql_wrapper : The SPARQL endpoint. Defaults to sparql.
+
+    Returns: List of entities.
+    """
+
     query = f'''
     PREFIX dbo: <http://dbpedia.org/ontology/>
 
@@ -52,6 +63,16 @@ def get_wikiPageWikiLink_entities(entity, sparql_wrapper = sparql):
 
 
 def get_only_wikiPageWikiLink(entity, sparql_wrapper = sparql):
+    """For a given entity(the current wiki page), returns all entities
+    that are connected with only the dbo:wikiPageWikiLink predicate and no
+    other predicate.
+    Args:
+        entity : The source entity, the current wiki page.
+        Example --> <http://dbpedia.org/resource/Berlin_Wall>.
+        sparql_wrapper : The SPARQL endpoint. Defaults to sparql.
+
+    Returns: List of entities.
+    """
 
     query = f'''
     PREFIX dbo: <http://dbpedia.org/ontology/>
