@@ -10,43 +10,61 @@ gen_kwargs = {
     "num_return_sequences": 1,
 }
 
+
 # Function to parse the generated text and extract the triplets
 def extract_triplets(text):
     triplets = []
-    relation, subject, relation, object_ = '', '', '', ''
+    relation, subject, relation, object_ = "", "", "", ""
     text = text.strip()
-    current = 'x'
-    for token in text.replace("<s>", "").replace("<pad>", "").replace("</s>", "").split():
+    current = "x"
+    for token in (
+        text.replace("<s>", "").replace("<pad>", "").replace("</s>", "").split()
+    ):
         if token == "<triplet>":
-            current = 't'
-            if relation != '':
-                triplets.append({'head': subject.strip(), 'type': relation.strip(),'tail': object_.strip()})
-                relation = ''
-            subject = ''
+            current = "t"
+            if relation != "":
+                triplets.append(
+                    {
+                        "head": subject.strip(),
+                        "type": relation.strip(),
+                        "tail": object_.strip(),
+                    }
+                )
+                relation = ""
+            subject = ""
         elif token == "<subj>":
-            current = 's'
-            if relation != '':
-                triplets.append({'head': subject.strip(), 'type': relation.strip(),'tail': object_.strip()})
-            object_ = ''
+            current = "s"
+            if relation != "":
+                triplets.append(
+                    {
+                        "head": subject.strip(),
+                        "type": relation.strip(),
+                        "tail": object_.strip(),
+                    }
+                )
+            object_ = ""
         elif token == "<obj>":
-            current = 'o'
-            relation = ''
+            current = "o"
+            relation = ""
         else:
-            if current == 't':
-                subject += ' ' + token
-            elif current == 's':
-                object_ += ' ' + token
-            elif current == 'o':
-                relation += ' ' + token
-    if subject != '' and relation != '' and object_ != '':
-        triplets.append({'head': subject.strip(), 'type': relation.strip(),'tail': object_.strip()})
+            if current == "t":
+                subject += " " + token
+            elif current == "s":
+                object_ += " " + token
+            elif current == "o":
+                relation += " " + token
+    if subject != "" and relation != "" and object_ != "":
+        triplets.append(
+            {"head": subject.strip(), "type": relation.strip(), "tail": object_.strip()}
+        )
     return triplets
+
 
 def extract_relations_rebel(model, tokenizer, text):
     """Return the annotated text(with annotations for triplet, subject, object etc).
 
     Args:
-        model: The REBEL model loaded from HF. 
+        model: The REBEL model loaded from HF.
         tokenizer: The tokenizer for REBEL model loaded from HF.
         text: The text to annotate.
 
@@ -59,7 +77,7 @@ def extract_relations_rebel(model, tokenizer, text):
     model = AutoModelForSeq2SeqLM.from_pretrained("Babelscape/rebel-large")
     ```
     """
-    
+
     tokenized_sentences = sent_tokenize(text)
     list_triples = []
 
@@ -67,7 +85,9 @@ def extract_relations_rebel(model, tokenizer, text):
     model.to(device)
 
     for text in tokenized_sentences:
-        model_inputs = tokenizer(text, max_length=256, padding=True, truncation=True, return_tensors = 'pt')
+        model_inputs = tokenizer(
+            text, max_length=256, padding=True, truncation=True, return_tensors="pt"
+        )
         # Generate
         generated_tokens = model.generate(
             model_inputs["input_ids"].to(model.device),
@@ -75,7 +95,9 @@ def extract_relations_rebel(model, tokenizer, text):
             **gen_kwargs,
         )
 
-        decoded_preds = tokenizer.batch_decode(generated_tokens, skip_special_tokens=False)
+        decoded_preds = tokenizer.batch_decode(
+            generated_tokens, skip_special_tokens=False
+        )
 
         l1 = []
         for idx, sentence in enumerate(decoded_preds):
@@ -92,7 +114,7 @@ def extract_relations_rebel(model, tokenizer, text):
 
         for x in d1:
             t = x.replace("}", "")
-            final_dict = t + ", 'Confidence': " + str(d1[x]/ctr) + "}"
+            final_dict = t + ", 'Confidence': " + str(d1[x] / ctr) + "}"
             final_dictionary = ast.literal_eval(final_dict)
             list_triples.append(final_dictionary)
 
