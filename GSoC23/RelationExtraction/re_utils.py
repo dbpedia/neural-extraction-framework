@@ -81,3 +81,4 @@ def get_triple_from_triple(sub, relation, obj, sentence):
             break
     # can also return this - (subject_entity, (predicate, score), object_entity)
     return (subject_entity, predicate, object_entity)
+
