@@ -41,7 +41,7 @@ use `spacy.download('en_core_trf')`
 graph TD
     wiki_page[Wikipedia Page] --Extract plain text--> pure_text[Pure text]
 
-    pure_text-->coref_resolved_text[Coref Resolved Text]
+    pure_text--coreference resolution-->coref_resolved_text[Coreference Resolved Text]
     coref_resolved_text-->rebel(REBEL)
     rebel--as text-->entities[Entities]
     rebel--as text-->relations[Relations]
@@ -49,7 +49,7 @@ graph TD
     relations--get embedding-->vector_similarity(Vector similarity with label embeddings);
     vector_similarity-->predicate_uris[Predicate URIs]
 
-    pure_text-->annotation_for_genre(Annotate entities in text)
+    coref_resolved_text-->annotation_for_genre(Annotate entities in text)
 
     entities-->annotation_for_genre
 
