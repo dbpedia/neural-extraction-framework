@@ -115,3 +115,33 @@ def EL_GENRE(annotated_sentences, model, tokenizer):
     # These entites are in the form of wikipedia page titles. Need to
     # add the https://dbpedia/resource to each of them as postprocessing step
     return entites
+
+def EL_GENRE_pipeline(pipe, annotated_sentences):
+    """A method to perform entity linking for entity-mentions annotated
+    in sentences using the GENRE model with transformers pipeline. 
+    Works faster than the approach without pipeline.
+
+    Args:
+        pipe (transformers.pipelines.text2text_generation.Text2TextGenerationPipeline): The transformers pipeline object.
+        annotated_sentences (list): List of annotated sentences.
+
+    Returns:
+        list: The list of entities.
+
+    Example:
+        ans = [annotate_sentence(s,m) for s,m in [
+        ("Messi plays for Argentina", "Messi"),
+        ("Messi plays for Argentina", "Argentina"),
+        ("India is in Asia", "India")
+        ]]
+
+        genre_pipe = genre_pipe = pipeline(
+            model="facebook/genre-linking-blink", 
+            tokenizer="facebook/genre-linking-blink")
+        pipe_results = genre_pipe(ans)
+
+        entities = [e['generated_text'] for e in res]
+    """
+    pipe_results = pipe(annotated_sentences)
+    entities = [e['generated_text'] for e in pipe_results]
+    return entities
