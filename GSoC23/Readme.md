@@ -43,14 +43,14 @@ graph TD
 
     pure_text--coreference resolution-->coref_resolved_text[Coreference Resolved Text]
     coref_resolved_text-->sentences[Sentences]
-    sentences-->rebel(REBEL)
+    sentences--sentence_i-->rebel(REBEL)
     rebel--as text-->entities[Entities]
     rebel--as text-->relations[Relations]
     
     relations--get embedding-->vector_similarity(Vector similarity with label embeddings);
     vector_similarity-->predicate_uris[Predicate URIs]
 
-    sentences-->annotation_for_genre(Annotate entities in text)
+    sentences--sentence_i-->annotation_for_genre(Annotate entities in text)
 
     entities-->annotation_for_genre
 
