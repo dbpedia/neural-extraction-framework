@@ -7,6 +7,10 @@
 | Mentors | [Tommaso Soru](https://github.com/mommi84), [Diego Moussallem](https://github.com/DiegoMoussallem), [Ziwei Xu](https://github.com/zoeNantes)|
 | Blogs | [GSoC-2023 Aakash Thatte](https://sky-2002.github.io/) |
 
+### What is Neural Extraction Framework?
+[DBpedia](https://www.dbpedia.org/) is a knowledge base constructed by parsing the infoboxes present on wikipedia pages. This knowledge base consists of [relational triples](https://en.wikipedia.org/wiki/Semantic_triple) extracted using the infoboxes(which are structured information). There can be more information present in the wikipedia article text which needs to be extracted so as to mine hidden relationships between entities(wikipedia articles). 
+
+The aim of this project is to extract all those triples from the wikipedia article text using SOTA NLP methods for entity and relation extraction, entity linking, relationship matching etc. We have been able to successfully create an end-2-end pipeline to extract triples given a wikipedia page.
 ### Code structure
 All directories contain a `notebooks` directory which has notebooks with exploration/experimentation code for the models and methods used. 
 ```
@@ -20,21 +24,15 @@ All directories contain a `notebooks` directory which has notebooks with explora
 ```
 
 ### Installations 
-I have provided the requirements file, but you can go ahead with only the packages below as well.
+Run the command below to install all requirements of the project at once(preferably in a virtual environment).
 ```
-!pip install wikipedia
-!pip install transformers
-!pip install nltk
-!pip install fuzzywuzzy
-!pip install rdflib
-!pip install SPARQLWrapper
-!pip install redis
-!pip install thefuzz
-!pip install levenshtein
+!pip install -r requirements.txt
 ```
 
-For spacy `en_core_web...` models,
-use `spacy.download('en_core_trf')`
+For downloading all models(from spacy, huggingface transformers etc), use the command below.
+```
+python models.py
+```
 
 ### Project workflow
 ```mermaid
@@ -62,3 +60,12 @@ graph TD
     predicate_uris-->triples[Triples]
     triples--Validate-->final_triples[Final triples]
 ```
+
+### Future scope
+This project has been successful in creating an end-2-end pipeline for triple extraction. But there is a need to make this work faster. Due to the DL/ML models that are being used in this project, the time consumption is quite high(somewhere around 1.8 seconds for a single triple). A good enhancement to this project would be to use some distributed processing framework(for example, SparkNLP) to make this code run on a cluster of machines so as to get faster results.
+
+Some good enhancements to the project could be:
+- A thorough data analysis of the wikipedia page texts, the relations extracted, the types of entities extracted, the domain and range of relations, literals etc needs to be done in order to understand the data at hand better, so as to apply the methods that are more relavant. For example, if there is some pattern in some type of relations, we can have a separate method to extract those.
+- Make downloading and caching of models more organized and efficient.
+- Define a structure/schema to store extracted triples and push to DBpedia.
+- Dockerize the framework, so that anyone can use the dockerfile and run it on a set of wikipedia pages to test or use.
