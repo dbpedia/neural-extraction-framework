@@ -11,6 +11,10 @@
 [DBpedia](https://www.dbpedia.org/) is a knowledge base constructed by parsing the infoboxes present on wikipedia pages. This knowledge base consists of [relational triples](https://en.wikipedia.org/wiki/Semantic_triple) extracted using the infoboxes(which are structured information). There can be more information present in the wikipedia article text which needs to be extracted so as to mine hidden relationships between entities(wikipedia articles). 
 
 The aim of this project is to extract all those triples from the wikipedia article text using SOTA NLP methods for entity and relation extraction, entity linking, relationship matching etc. We have been able to successfully create an end-2-end pipeline to extract triples given a wikipedia page.
+
+**This project couldn't be possible without these amazing models, expressing our gratitude!**:
+- [REBEL](https://github.com/Babelscape/rebel) - For joint entity-relation extraction
+- [GENRE](https://github.com/facebookresearch/GENRE) - For autoregressive entity-linking
 ### Code structure
 All directories contain a `notebooks` directory which has notebooks with exploration/experimentation code for the models and methods used. 
 ```
