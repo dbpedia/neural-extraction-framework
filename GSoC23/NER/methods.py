@@ -1,5 +1,6 @@
 import spacy
 from transformers import pipeline
+from flair.data import Sentence
 
 stop = ["the", "is", "in", "for", "where", "when", "to", "at"]
 
@@ -52,3 +53,28 @@ def hf_transformer_ner(model, tokenizer, text):
     text = text.lower()
     nlp = pipeline("ner", model=model, tokenizer=tokenizer)
     return nlp(text)
+
+def flair_fast_ner(tagger, sentence):
+    """
+    Args:
+        tagger: Flair ner tagger.
+        sentence: A sentence from the text that you want to perform NER on.
+
+    Returns:
+        List of entities.
+
+    ```
+    Example,
+
+    from flair.models import SequenceTagger
+    tagger = SequenceTagger.load("flair/ner-english-fast")
+    sentence = Sentence("George Washington went to Washington")
+
+    tagger.predict(sentence)
+    entities = [entity for entity in sentence.get_spans('ner')]
+    ```
+    """
+    sentence = Sentence(sentence)
+    tagger.predict(sentence)
+    
+    return [entity for entity in sentence.get_spans('ner')]
