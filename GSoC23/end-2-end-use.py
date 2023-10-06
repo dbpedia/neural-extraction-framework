@@ -26,6 +26,8 @@ parser.add_argument("--wikipage", default=None,
 parser.add_argument("--save_filename", default=None, 
                     help="The file name of the csv of triples, if this is specified, the file will be saved, else not")
 parser.add_argument("--v", default=0, help="If set to 1, print the triples dataframe")
+parser.add_argument("--text_filepath", default="", 
+                    help="The text file on which the user wants to run triple extraction")
 args = parser.parse_args()
 
 tokenizer = AutoTokenizer.from_pretrained("Babelscape/rebel-large")
@@ -40,7 +42,11 @@ elif args.text:
 elif args.wikipage:
     article_text = get_text_of_wiki_page(args.wikipage)
     sentences = sent_tokenize(article_text)
-
+elif args.text_filepath:
+    with open(args.text_filepath, "r") as f:
+        print("Reading text from file...")
+        text = f.read()
+        sentences = sent_tokenize(text)
 
 triples = []
 

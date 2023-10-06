@@ -39,11 +39,15 @@ python models.py
 ```
 
 ### Run from command line
-We also provide an option to run the code from the command line with possibilities to only run it on a single sentence, or a text or a wikipedia page.
+We also provide an option to run the code from the command line with possibilities to only run it on a single sentence, or a text file or a wikipedia page.
 ```
 python end-2-end-use.py --text "Washinton is a city in the USA. Barack Obama was the president of the United states of America." --v 0 --save_filename "usage.csv"
 ```
-![Video](/home/aakash/D/College/GSoC/neural-extraction-framework/GSoC23/NEF_short.mp4)
+Or to run on a text file,
+```
+python end-2-end-use.py --text_filepath "e2e.txt" --v 0 --save_filename "usage_from_file.csv"
+```
+
 ### Project workflow
 ```mermaid
 graph TD
