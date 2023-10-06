@@ -48,6 +48,11 @@ Or to run on a text file,
 python end-2-end-use.py --text_filepath "e2e.txt" --v 0 --save_filename "usage_from_file.csv"
 ```
 
+### Example of using the command line utility:
+
+https://github.com/dbpedia/neural-extraction-framework/assets/84656834/306dc5ae-ff43-404c-bac3-5f77a6ffd3a9
+
+
 ### Project workflow
 ```mermaid
 graph TD
