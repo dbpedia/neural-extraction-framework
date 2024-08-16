@@ -90,10 +90,6 @@ Used for POS tagging, tokenization, and NER tagging of sentences extracted from 
 
 Library for multilingual Coreference Resolution in Low-resource South Asian Languages.
 
-### Rule-Based Approach
-
-Handles mention detection and processing of sentences to identify coreferences.
-
 ### [mREBEL](https://github.com/Babelscape/rebel)/[IndIE](https://github.com/ritwikmishra/IndIE)/LLM-Augmented
 
 This module identifies the subject, relation, and object from the processed sentences.
