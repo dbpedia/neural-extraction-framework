@@ -1,0 +1,10 @@
+pillow
+pandas
+numpy
+scipy
+SPARQLWrapper
+wikipedia
+stanza
+
+#dev
+pyright
