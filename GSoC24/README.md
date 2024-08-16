@@ -2,6 +2,14 @@
 
 This project aims to develop a relation extraction pipeline for Hindi Wikipedia articles, utilizing a combination of state-of-the-art language models and rule-based methods. The goal is to extract meaningful subject-relation-object triples and link them to DBpedia entities and DBpedia ontology.
 
+## TL;DR
+
+The Demo pictures are attached below.
+![Demo UI](./assets/demo1.png)
+![Coreference Resolution](./assets/demo2.png)
+![Relation Extraction](./assets/demo3.png)
+![Entity Linking](./assets/demo4.png)
+
 ## Project Workflow
 
 ```mermaid
