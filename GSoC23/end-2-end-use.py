@@ -5,7 +5,7 @@
 # We are working to make this more efficient and fast.
 # ----------------------------------------------------------------------------------
 import sys
-sys.path.append("/home/aakash/D/College/GSoC/neural-extraction-framework/")
+sys.path.append("/content/neural-extraction-framework/")
 import tqdm
 import pandas as pd
 from nltk import sent_tokenize
