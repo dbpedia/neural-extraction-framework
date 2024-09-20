@@ -1,0 +1,15 @@
+fastcoref==2.1.6
+flair==0.12.2
+gensim
+nltk==3.8.1
+pandas
+redis==4.6.0
+Requests==2.31.0
+sentence_transformers==2.2.2
+SPARQLWrapper==2.0.0
+transformers==4.31.0
+spacy==3.6.1
+llama-cpp-python==0.2.90
+outlines==0.0.46
+wikipedia==1.4.0
+SPARQLWrapper==2.0.0

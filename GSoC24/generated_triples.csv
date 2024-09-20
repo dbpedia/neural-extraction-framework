@@ -1,0 +1,3 @@
+,subject,predicate,object,subject_URI,predicate_URI,object_URI
+0,Washington,Located in,USA,"https://dbpedia.org/resource/Washington,_D.C.",http://dbpedia.org/ontology/locatedInArea,https://dbpedia.org/resource/List_of_USA_Gymnastics_national_champions
+1,Barack Obama,Presided in,USA,https://dbpedia.org/resource/Barack_Obama,http://dbpedia.org/ontology/chairperson,https://dbpedia.org/resource/List_of_USA_Gymnastics_national_champions
