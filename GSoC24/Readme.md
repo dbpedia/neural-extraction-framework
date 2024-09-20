@@ -21,9 +21,9 @@ All directories contain a `notebooks` directory which has notebooks with explora
 📦GSoC24
  ┣ 📂Data
  ┣ 📂EntityLinking
- ┣ 📂NER
+ ┣ 📂ExportRDF
  ┣ 📂RelationExtraction
- ┣ 📂Validation
+ ┣ 📂PredicateSuggestion
 ```
 
 ### Installations 
