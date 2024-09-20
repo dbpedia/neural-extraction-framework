@@ -41,7 +41,7 @@ wget https://hf.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes
 ### Run from command line
 You can run the code from the command line with the ability to run it on a single sentence, or a text file or a wikipedia page.
 ```
-python end-2-end-use.py --text "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who served as the 45th president of the United States from 2017 to 2021.Trump received a Bachelor of Science degree in economics from the University of Pennsylvania in 1968." --v 0 --save_filename "generated_triples.csv"
+python end-2-end-use.py --text "Washinton is a city in the USA. Barack Obama was the president of the United states of America." --v 0 --save_filename "generated_triples.csv"
 ```
 Or to run on a text file,
 ```
