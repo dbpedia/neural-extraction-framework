@@ -32,12 +32,16 @@ Run the command below to install all requirements of the project at once(prefera
 !pip install -r requirements.txt
 ```
 
-For downloading models from huggingface, use the command below.
+For downloading models from huggingface, use the commands below.
 ```
 python models.py
 wget https://hf.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes-2-Pro-Llama-3-8B-Q4_K_M.gguf
 ```
-
+For faster inference on Nvidia GPU, install the llama-cpp-python library that supports cuda
+```
+!pip install llama-cpp-python \
+  --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122
+```
 ### Run from command line
 You can run the code from the command line with the ability to run it on a single sentence, or a text file or a wikipedia page.
 ```
@@ -79,4 +83,4 @@ graph TD
 ```
 
 ### Future scope
-This project has been successful in developing a new technique of entity-relation extraction in the field of knowledge graph, and improve the previous end-2-end pipeline for triple extraction. But there is a need to make this work faster. Due to the quantized models that we used in this project, the time consumption is quite high. A good enhancement to this project would be to use of libraries that can smoothly run a quantized model on a GPU, or make use of an unquantized LLM and perform its inference on a GPU.
+This project has been successful in developing a new technique of entity-relation extraction in the field of knowledge graph, thereby improving the previous end-2-end pipeline for triple extraction. But there is are still room for improvement towards the task of entity linking.
