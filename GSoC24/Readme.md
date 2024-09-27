@@ -1,4 +1,4 @@
-# Neural Extraction Framework @DBpedia - GSoC 2023
+# Neural Extraction Framework @DBpedia - GSoC 2024
 
 |   Project Details     |                                                                                                                                                                                               |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,8 +37,9 @@ For downloading models from huggingface, use the commands below.
 python models.py
 wget https://hf.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes-2-Pro-Llama-3-8B-Q4_K_M.gguf
 ```
-For faster inference on Nvidia GPU, install the llama-cpp-python library that supports cuda
+For faster inference on Nvidia GPU, unisnstall the llama-cpp-library which was previously installed from the requirements.txt and install the llama-cpp-python library that supports cuda
 ```
+!pip uninstall llama-cpp-python
 !pip install llama-cpp-python==0.2.90 \
   --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122
 ```
@@ -49,7 +50,7 @@ python end-2-end-use.py --text "Washinton is a city in the USA. Barack Obama was
 ```
 Or to run on a text file,
 ```
-python end-2-end-use.py --text_filepath "e2e.txt" --v 0 --save_filename "triples_from_file.csv"
+python end-2-end-use.py --text_filepath "joe_biden_abstract.txt" --v 0 --save_filename "triples_from_file.csv"
 ```
 
 [//]: # (### Example of using the command line utility:)
