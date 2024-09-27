@@ -39,7 +39,7 @@ wget https://hf.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes
 ```
 For faster inference on Nvidia GPU, install the llama-cpp-python library that supports cuda
 ```
-!pip install llama-cpp-python \
+!pip install llama-cpp-python==0.2.90 \
   --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122
 ```
 ### Run from command line
