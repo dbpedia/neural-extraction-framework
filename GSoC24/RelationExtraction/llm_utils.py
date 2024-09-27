@@ -38,10 +38,14 @@ regex_str = build_regex_from_schema(schema_str)
 def generate_hermes_prompt(user_prompt):
     return (
         "<|im_start|>system\n"
-        "You are a world class AI model who answers questions in JSON "
-        f"Here's the json schema you must adhere to:\n<schema>\n{json_schema}\n</schema><|im_end|>\n"
+        "You are a world class AI model who generates complex knowledge graphs in JSON format. "
+        "Create a diverse set of interconnected relationships between multiple entities. "
+        "Ensure that relationships are not just centered around one entity, but form a network of connections. "
+        f"Here's the json schema you must adhere to:\n<schema>\n{json_schema}\n</schema>\n"
+        "Remember to create multiple nodes and establish various relationships between them.<|im_end|>\n"
         "<|im_start|>user\n"
         + user_prompt
+        + "\nExpand on this scenario by adding more entities and relationships to create a complex, interconnected knowledge graph."
         + "<|im_end|>"
         + "\n<|im_start|>assistant\n"
         "<schema>"
