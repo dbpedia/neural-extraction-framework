@@ -50,7 +50,7 @@ def generate_hermes_prompt(user_prompt):
 def prompt_to_json(user_prompt, llama_model):
     prompt = generate_hermes_prompt(user_prompt)
     generator = generate.regex(llama_model, regex_str)
-    response = generator(prompt, max_tokens=2048, temperature=0, seed=42)
+    response = generator(prompt, max_tokens=4096, temperature=0, seed=42)
     return response
 
 

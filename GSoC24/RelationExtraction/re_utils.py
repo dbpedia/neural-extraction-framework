@@ -3,13 +3,13 @@ import pickle
 import logging
 from GSoC24.EntityLinking.methods import EL_GENRE
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-from GSoC23.RelationExtraction.relation_similarity import (
+from GSoC24.RelationExtraction.relation_similarity import (
     load_key_vector_model_from_file,
 )
-from GSoC23.RelationExtraction.text_encoding_models import (
+from GSoC24.RelationExtraction.text_encoding_models import (
     get_sentence_transformer_model,
 )
-from GSoC23.RelationExtraction.relation_similarity import ontosim_search
+from GSoC24.RelationExtraction.relation_similarity import ontosim_search
 from GSoC23.EntityLinking.el_utils import annotate_sentence
 
 with open("/content/neural-extraction-framework/GSoC24/RelationExtraction/config.json", "r") as config_file:

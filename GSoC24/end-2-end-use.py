@@ -40,7 +40,7 @@ llm = Llama(
     ),
     n_gpu_layers=-1,
     flash_attn=True,
-    n_ctx=2048,
+    n_ctx=8192,
     verbose=False
 )
 
@@ -55,7 +55,7 @@ elif args.text:
     sentences = args.text
 elif args.wikipage:
     article_text = get_text_of_wiki_page(args.wikipage)
-    sentences = sent_tokenize(article_text)
+    sentences = article_text
 elif args.text_filepath:
     with open(args.text_filepath, "r") as f:
         print("Reading text from file...")
