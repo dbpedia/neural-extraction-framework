@@ -2,6 +2,8 @@
 
 This project aims to develop a relation extraction pipeline for Hindi Wikipedia articles, utilizing a combination of state-of-the-art language models and rule-based methods. The goal is to extract meaningful subject-relation-object triples and link them to DBpedia entities and DBpedia ontology.
 
+Weekly Blog: https://deba-iitbh.github.io/deba-gsoc24/
+
 ## TL;DR
 
 The Demo pictures are attached below.
