@@ -72,12 +72,14 @@ def getSentSemEval(path_semEval2010):
 
 
     ### put all into df
-    df_pairs = pd.DataFrame(columns=['SentID', 'Cause','Effect','Label', 'Sent'])
-    df_pairs['SentID'] = sent_id_list
-    df_pairs['Cause'] = [i[0] for i in pair_list]
-    df_pairs['Effect'] = [i[1] for i in pair_list]
-    df_pairs['Label'] = label_list
-    df_pairs['Sent'] = sent_list
+    #Simplified Dataframe Creation
+    df_pairs = pd.DataFrame({
+    'SentID': sent_id_list,
+    'Cause': [i[0] for i in pair_list],
+    'Effect': [i[1] for i in pair_list],
+    'Label': label_list,
+    'Sent': sent_list
+    })
 
     # firstly extract postive rows
     df_pairs_p = df_pairs[df_pairs['Label'] == 1]
@@ -95,12 +97,13 @@ def main():
     print("---------------Procedure 01: prepare seed causal pairs from SemEval Dataset--------------")
     
     ### define the path of dataset
+    #Improve the path Handling
     path_here = os.getcwd()
-    path_semEval2010 = path_here +'/data/SemEval2010_task8_all_data/'
-    # training pairs
-    path_semEval2010_train = path_semEval2010 +'SemEval2010_task8_training/TRAIN_FILE.TXT'
-    # test pairs
-    path_semEval2010_test = path_semEval2010 +'SemEval2010_task8_testing_keys/TEST_FILE_FULL.TXT'
+    path_semEval2010 = os.path.join(path_here, 'data/SemEval2010_task8_all_data')
+    path_semEval2010_train = os.path.join(path_semEval2010, 'SemEval2010_task8_training/TRAIN_FILE.TXT')
+    path_semEval2010_test = os.path.join(path_semEval2010, 'SemEval2010_task8_testing_keys/TEST_FILE_FULL.TXT')
+
+ 
 
 
     # get the casual sentences/pairs from train files and test files of semEval2010
