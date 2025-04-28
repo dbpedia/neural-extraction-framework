@@ -45,7 +45,7 @@ def generate_hermes_prompt(user_prompt):
         "Remember to create multiple nodes and establish various relationships between them.<|im_end|>\n"
         "<|im_start|>user\n"
         + user_prompt
-        + "\nExpand on this scenario by adding more entities and relationships to create a complex, interconnected knowledge graph."
+        + "\nDo not hallucinate or generate outside the text given."
         + "<|im_end|>"
         + "\n<|im_start|>assistant\n"
         "<schema>"
