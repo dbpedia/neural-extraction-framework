@@ -1,8 +1,8 @@
 {
     "file_paths": {
-        "label_embeddings_file": "/content/neural-extraction-framework/GSoC24/RelationExtraction/dbpedia-ontology.vectors",
-        "tbox_pickle_file": "/content/neural-extraction-framework/GSoC24/RelationExtraction/tbox.pkl",
-        "labels_pickle_file": "/content/neural-extraction-framework/GSoC24/RelationExtraction/labels.pkl"
+        "label_embeddings_file": "dbpedia-ontology.vectors",
+        "tbox_pickle_file": "tbox.pkl",
+        "labels_pickle_file": "labels.pkl"
     },
     "model_names": {
         "encoder_model": "paraphrase-MiniLM-L6-v2",
