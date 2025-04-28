@@ -5,7 +5,16 @@
 # We are working to make this more efficient and fast.
 # ----------------------------------------------------------------------------------
 import sys
-sys.path.append("/content/neural-extraction-framework/")
+from pathlib import Path
+
+try:
+    script_path = Path(__file__).resolve()
+    PROJECT_ROOT = script_path.parent.parent 
+except NameError:
+    PROJECT_ROOT = Path().resolve() / "neural-extraction-framework"
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
+
 import tqdm
 import pandas as pd
 import llama_cpp
@@ -33,8 +42,9 @@ parser.add_argument("--text_filepath", default="",
                     help="The text file on which the user wants to run triple extraction")
 args = parser.parse_args()
 
+MODEL_PATH = PROJECT_ROOT / "GSoC24" / "Hermes-2-Pro-Llama-3-8B-Q4_K_M.gguf"
 llm = Llama(
-    "/content/neural-extraction-framework/GSoC24/Hermes-2-Pro-Llama-3-8B-Q4_K_M.gguf",
+    str(MODEL_PATH),
     tokenizer=llama_cpp.llama_tokenizer.LlamaHFTokenizer.from_pretrained(
         "NousResearch/Hermes-2-Pro-Llama-3-8B"
     ),
