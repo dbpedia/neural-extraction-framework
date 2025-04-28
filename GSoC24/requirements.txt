@@ -13,3 +13,4 @@ llama-cpp-python==0.2.90
 outlines==0.0.46
 wikipedia==1.4.0
 SPARQLWrapper==2.0.0
+huggingface_hub==0.25.0
