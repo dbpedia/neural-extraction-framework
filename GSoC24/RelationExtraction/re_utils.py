@@ -11,9 +11,21 @@ from GSoC24.RelationExtraction.text_encoding_models import (
 )
 from GSoC24.RelationExtraction.relation_similarity import ontosim_search
 from GSoC23.EntityLinking.el_utils import annotate_sentence
+from pathlib import Path
 
-with open("/content/neural-extraction-framework/GSoC24/RelationExtraction/config.json", "r") as config_file:
+
+try:
+    PROJECT_ROOT = Path(__file__).resolve().parents[2]
+except NameError:
+    PROJECT_ROOT = Path().resolve() / "neural-extraction-framework"
+
+CONFIG_PATH = PROJECT_ROOT / "GSoC24" / "RelationExtraction" / "config.json"
+with open(CONFIG_PATH, "r") as config_file:
     config = json.load(config_file)
+
+file_paths = config.get("file_paths", {})
+for key, filename in file_paths.items():
+    file_paths[key] = str(PROJECT_ROOT / "GSoC24" / "RelationExtraction" / filename)
 
 label_embeddings_file = config["file_paths"]["label_embeddings_file"]
 gensim_model = load_key_vector_model_from_file(label_embeddings_file)
