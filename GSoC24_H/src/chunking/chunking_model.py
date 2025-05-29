@@ -8,7 +8,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 import string
 from collections import Counter
-from transformers import AdamW
+from torch.optim import AdamW
 from transformers.modeling_outputs import SequenceClassifierOutput
 from sklearn.metrics import (
     classification_report,
