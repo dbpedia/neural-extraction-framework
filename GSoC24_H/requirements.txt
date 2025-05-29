@@ -8,3 +8,22 @@ stanza
 
 #dev
 pyright
+streamlit
+torch
+tqdm
+transformers
+pytz
+psutil
+matplotlib
+scikit-learn
+python-crfsuite
+jsonlines
+toml
+fastcoref
+requests
+nltk
+graphviz
+fairseq
+marisa-trie
+sklearn-crfsuite 
+gdown # for downloading the models from google drive
