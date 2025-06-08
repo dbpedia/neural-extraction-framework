@@ -14,3 +14,10 @@ tar -xzvf fairseq_multilingual_entity_disambiguation.tar.gz -C ./EL_model
 wget -P ./EL_model "http://dl.fbaipublicfiles.com/GENRE/titles_lang_all105_marisa_trie_with_redirect.pkl"
 
 # rm fairseq_multilingual_entity_disambiguation.tar.gz # remove the tar.gz file after extraction
+
+# Move files to their correct locations in the project structure:
+# Move GSoC24_H/models/coref_model/model/xlmr_multi_plus_hi2.pt to GSoC24_H/models/coref_model/xlmr_multi_plus_hi2.pt
+# Move GSoC24_H/models/RE_model/files_indie/my_tagset_BI.bin to GSoC24_H/input/my_tagset_BI.bin
+# Move GSoC24_H/models/RE_model/files_indie/26_epoch_4.pth.tar to new folder tree GSoC24_H/models/state_dicts/model/26_epoch_4.pth.tar
+# Move GSoC24_H/models/RE_model/files_indie/sklearn_crf_model_v2_pos_mapped_2.pkl to chunking/state_dicts/model/sklearn_crf_model_v2_pos_mapped_2.pkl
+# Move GSoC24_H/models/EL_model/titles_lang_all105_marisa_trie_with_redirect.pkl to GSoC24_H/input/titles_lang_all105_marisa_trie_with_redirect.pkl
