@@ -45,7 +45,7 @@ model_embeddings = {
 }
 
 hyper_params["embedding_size"] = model_embeddings[hyper_params["bert_model_name"]]
-my_tagset = torch.load("input/my_tagset_" + hyper_params["notation"] + ".bin")
+my_tagset = torch.load("models/RE_model/files_indie/my_tagset_" + hyper_params["notation"] + ".bin")
 hyper_params["my_tagset"] = my_tagset
 
 os.environ["PYTHONHASHSEED"] = str(hyper_params["rseed"])
@@ -80,7 +80,7 @@ if hyper_params["chunker"] == "XLM":
     print("Creating the XLM chunker model...")
     model = chunker_class(device, hyper_params).to(device)
     checkpoint = torch.load(
-        "models/state_dicts/model/" + str(hyper_params["run_ID"]) + "_epoch_4.pth.tar",
+        "models/RE_model/files_indie/" + str(hyper_params["run_ID"]) + "_epoch_4.pth.tar",
         map_location=device,
     )
     checkpoint["state_dict"].pop("model.embeddings.position_ids")

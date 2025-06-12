@@ -46,7 +46,7 @@ if __name__ == "__main__":
     coref_model = CorefModel("models/coref_model/config.toml", "xlmr")
     coref_model.config.device = device
     coref_model.load_weights(
-        path="models/coref_model/xlmr_multi_plus_hi2.pt",
+        path="models/coref_model/model/xlmr_multi_plus_hi2.pt",
         map_location=device,
         ignore={
             "bert_optimizer",
@@ -56,10 +56,18 @@ if __name__ == "__main__":
         },
     )
     coref_model.training = False
-    with open("input/titles_lang_all105_marisa_trie_with_redirect.pkl", "rb") as f:
+
+    # might need to manually make the following change in the fairseq model loading 
+    # depending on the pytorch version being used
+    # File: `fairseq/fairseq/checkpoint_utils.py`
+    # Line: 271
+    # Reason: The model checkpoint is not "weights-only".
+    # Change to:
+    # state = torch.load(f, map_location=torch.device("cpu"), weights_only=False)
+    with open("models/EL_model/titles_lang_all105_marisa_trie_with_redirect.pkl", "rb") as f:
         trie = pickle.load(f)
     el_model = mGENRE.from_pretrained(
-        "models/fairseq_multilingual_entity_disambiguation"
+        "models/EL_model/fairseq_multilingual_entity_disambiguation"
     ).eval()
     nlp = stanza.Pipeline(lang="hi", processors="tokenize,pos")
     # tokenizer = AutoTokenizer.from_pretrained("ai4bharat/IndicNER")

@@ -5,14 +5,21 @@ from genre.utils import get_entity_spans_fairseq as get_entity_spans
 
 # with open("input/lang_title2wikidataID-normalized_with_redirect.pkl", "rb") as f:
 #     lang_title2wikidataID = pickle.load(f)
-#
 
-with open("input/titles_lang_all105_marisa_trie_with_redirect.pkl", "rb") as f:
+
+    # might need to manually make the following change in the fairseq model loading
+    # depending on the pytorch version being used
+    # File: `fairseq/fairseq/checkpoint_utils.py`
+    # Line: 271
+    # Reason: The model checkpoint is not "weights-only".
+    # Change to:
+    # state = torch.load(f, map_location=torch.device("cpu"), weights_only=False)
+with open("models/EL_model/titles_lang_all105_marisa_trie_with_redirect.pkl", "rb") as f:
     trie = pickle.load(f)
 
 # generate Wikipedia titles and language IDs
 model = mGENRE.from_pretrained(
-    "models/fairseq_multilingual_entity_disambiguation"
+    "models/EL_model/fairseq_multilingual_entity_disambiguation"
 ).eval()
 
 sentences = [

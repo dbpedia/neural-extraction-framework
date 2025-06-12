@@ -60,7 +60,7 @@ def predict_with_crf(sent):
     )
 
     file = open(
-        "chunking/state_dicts/model/sklearn_crf_model_v2_pos_mapped_2.pkl", "rb"
+        "../../models/RE_model/files_indie/sklearn_crf_model_v2_pos_mapped_2.pkl", "rb"
     )
     crf = pickle.load(file)
     file.close()
