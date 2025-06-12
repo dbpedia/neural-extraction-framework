@@ -56,6 +56,14 @@ if __name__ == "__main__":
         },
     )
     coref_model.training = False
+
+    # might need to manually make the following change in the fairseq model loading 
+    # depending on the pytorch version being used
+    # File: `fairseq/fairseq/checkpoint_utils.py`
+    # Line: 271
+    # Reason: The model checkpoint is not "weights-only".
+    # Change to:
+    # state = torch.load(f, map_location=torch.device("cpu"), weights_only=False)
     with open("models/EL_model/titles_lang_all105_marisa_trie_with_redirect.pkl", "rb") as f:
         trie = pickle.load(f)
     el_model = mGENRE.from_pretrained(
