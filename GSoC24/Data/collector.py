@@ -1,5 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 import wikipedia
+import re
 
 # Create a SPARQLWrapper object with the DBpedia SPARQL endpoint URL
 sparql = SPARQLWrapper("http://dbpedia.org/sparql")
@@ -103,3 +104,95 @@ def get_only_wikiPageWikiLink(entity, sparql_wrapper=sparql):
     sparql_wrapper.setReturnFormat(JSON)
     results = sparql_wrapper.query().convert()
     return results["results"]["bindings"]
+
+
+def get_sentences_with_entities(article_text: str, subject: str, object_entity: str):
+    """Extract all sentences from the article text where both the subject and object entities are mentioned.
+    
+    Args:
+        article_text (str): The full text of the Wikipedia article
+        subject (str): The subject entity name to search for
+        object_entity (str): The object entity name to search for
+        
+    Returns:
+        list: List of sentences containing both entities
+    """
+    import nltk
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt')
+    
+    from nltk.tokenize import sent_tokenize
+    
+    # Tokenize the article into sentences
+    sentences = sent_tokenize(article_text)
+    
+    # Find sentences containing both entities (case-insensitive)
+    relevant_sentences = []
+    subject_lower = subject.lower()
+    object_lower = object_entity.lower()
+    
+    for sentence in sentences:
+        if subject_lower in sentence.lower() and object_lower in sentence.lower():
+            relevant_sentences.append(sentence.strip())
+    
+    return relevant_sentences
+
+
+def get_predicates_between(subject_uri: str, object_uri: str, sparql_wrapper=sparql):
+    """Fetch all predicates that directly connect a subject and object in DBpedia.
+    
+    Args:
+        subject_uri (str): The subject entity URI
+        object_uri (str): The object entity URI
+        sparql_wrapper: The SPARQL endpoint. Defaults to sparql.
+        
+    Returns:
+        list: List of predicate URIs that connect the subject and object
+    """
+    query = f"""
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    
+    SELECT DISTINCT ?predicate
+    WHERE {{
+        <{subject_uri}> ?predicate <{object_uri}> .
+        FILTER(?predicate != dbo:wikiPageWikiLink)
+    }}
+    """
+    
+    sparql_wrapper.setQuery(query)
+    sparql_wrapper.setReturnFormat(JSON)
+    results = sparql_wrapper.query().convert()
+    
+    predicates = [r["predicate"]["value"] for r in results["results"]["bindings"]]
+    return predicates
+
+
+def get_entity_types(entity_uri: str, sparql_wrapper=sparql):
+    """Fetch all DBpedia ontology classes/types for a given entity.
+    
+    Args:
+        entity_uri (str): The entity URI
+        sparql_wrapper: The SPARQL endpoint. Defaults to sparql.
+        
+    Returns:
+        list: List of type/class URIs for the entity
+    """
+    query = f"""
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    
+    SELECT DISTINCT ?type
+    WHERE {{
+        <{entity_uri}> rdf:type ?type .
+        FILTER(STRSTARTS(STR(?type), "http://dbpedia.org/ontology/"))
+    }}
+    """
+    
+    sparql_wrapper.setQuery(query)
+    sparql_wrapper.setReturnFormat(JSON)
+    results = sparql_wrapper.query().convert()
+    
+    types = [r["type"]["value"] for r in results["results"]["bindings"]]
+    return types
