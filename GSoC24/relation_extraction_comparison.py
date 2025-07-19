@@ -24,7 +24,7 @@ def extract_triples_with_gemini(text, api_key):
     """Extract triples using Gemini API"""
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel('models/gemini-1.5-pro-latest')
-    
+    sowawhat is th 
     prompt = f"""Extract all (subject, predicate, object) triples from the following text. 
 Use specific, meaningful predicates and clean entity names.
 
