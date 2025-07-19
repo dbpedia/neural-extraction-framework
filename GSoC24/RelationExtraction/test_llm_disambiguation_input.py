@@ -1,9 +1,21 @@
 import os
 import json
 import google.generativeai as genai
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+try:
+    script_path = Path(__file__).resolve()
+    PROJECT_ROOT = script_path.parent.parent.parent  # Go up 3 levels to reach project root
+except NameError:
+    PROJECT_ROOT = Path().resolve()
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
+
 from GSoC24.Data.collector import get_text_of_wiki_page
 from GSoC24.RelationExtraction.relation_similarity import ontosim_search
-from GSoC24.RelationExtraction.encoding_utils import get_sentence_transformer_model
+from GSoC24.RelationExtraction.text_encoding_models import get_sentence_transformer_model
 import pickle
 import argparse
 
@@ -49,7 +61,7 @@ encoder_model = get_sentence_transformer_model(model_name=config["model_names"][
 # For demonstration, we use a mock gensim model (not loaded here)
 class DummyGensimModel:
     def most_similar(self, positive, topn=5):
-        # Return dummy results
+        # Return dummy results with proper URI format
         return [
             ("birthPlace", 0.95),
             ("location", 0.90),
@@ -61,7 +73,26 @@ gensim_model = DummyGensimModel()
 
 relation_text = "was born in"
 candidate_predicate_df = ontosim_search(relation_text, gensim_model, encoder_model, tbox)
-candidate_predicate_uris = candidate_predicate_df["URIs"].tolist()
+# Clean up the candidate predicate URIs to ensure they're in proper format
+candidate_predicate_uris = []
+for uri_list in candidate_predicate_df["URIs"].tolist():
+    if isinstance(uri_list, list):
+        # If it's a list, take the first valid URI
+        for uri in uri_list:
+            if uri and uri.startswith("http://"):
+                candidate_predicate_uris.append(uri)
+                break
+    elif isinstance(uri_list, str) and uri_list.startswith("http://"):
+        candidate_predicate_uris.append(uri_list)
+
+# If no valid URIs found, use some default ones
+if not candidate_predicate_uris:
+    candidate_predicate_uris = [
+        "http://dbpedia.org/ontology/birthPlace",
+        "http://dbpedia.org/ontology/location",
+        "http://dbpedia.org/ontology/country"
+    ]
+
 print("Candidate predicate URIs (from embedding search):", candidate_predicate_uris)
 
 # 4. LLM Disambiguation using Gemini
@@ -85,11 +116,17 @@ And these candidate object URIs:
 {json.dumps(candidate_object_uris, indent=2)}
 
 Select the best subject, predicate, and object URIs that together form the most accurate RDF triple for the sentence.
+
+CRITICAL: You MUST return the EXACT URIs from the candidate lists above. Do NOT modify, shorten, or change them in any way.
+- Copy the subject_uri exactly from the candidate_subject_uris list
+- Copy the predicate_uri exactly from the candidate_predicate_uris list  
+- Copy the object_uri exactly from the candidate_object_uris list
+
 Respond in JSON as:
 {{
-  "subject_uri": "...",
-  "predicate_uri": "...",
-  "object_uri": "..."
+  "subject_uri": "http://dbpedia.org/resource/...",
+  "predicate_uri": "http://dbpedia.org/ontology/...",
+  "object_uri": "http://dbpedia.org/resource/..."
 }}
 '''
     response = model.generate_content(prompt)

@@ -1,5 +1,18 @@
 # Test file for the new collector.py functions
 
+import sys
+from pathlib import Path
+import argparse
+
+# Add project root to Python path
+try:
+    script_path = Path(__file__).resolve()
+    PROJECT_ROOT = script_path.parent.parent.parent  # Go up 3 levels to reach project root
+except NameError:
+    PROJECT_ROOT = Path().resolve()
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
+
 from GSoC24.Data.collector import (
     get_sentences_with_entities,
     get_predicates_between,
@@ -7,16 +20,12 @@ from GSoC24.Data.collector import (
     get_text_of_wiki_page
 )
 
-def test_sentences_with_entities():
+def test_sentences_with_entities(article_name, subject, object_entity):
     """Test the get_sentences_with_entities function"""
     print("=== Testing get_sentences_with_entities ===")
     
-    # Get Wikipedia article text for Albert Einstein
-    article_text = get_text_of_wiki_page("Albert Einstein")
-    
-    # Test with subject and object that should appear together
-    subject = "Albert Einstein"
-    object_entity = "Ulm"
+    # Get Wikipedia article text
+    article_text = get_text_of_wiki_page(article_name)
     
     relevant_sentences = get_sentences_with_entities(article_text, subject, object_entity)
     
@@ -26,13 +35,9 @@ def test_sentences_with_entities():
     
     print()
 
-def test_predicates_between():
+def test_predicates_between(subject_uri, object_uri):
     """Test the get_predicates_between function"""
     print("=== Testing get_predicates_between ===")
-    
-    # Test with Albert Einstein and Ulm
-    subject_uri = "http://dbpedia.org/resource/Albert_Einstein"
-    object_uri = "http://dbpedia.org/resource/Ulm"
     
     predicates = get_predicates_between(subject_uri, object_uri)
     
@@ -45,27 +50,9 @@ def test_predicates_between():
     
     print()
 
-def test_entity_types():
+def test_entity_types(entity_uri, entity_name=""):
     """Test the get_entity_types function"""
-    print("=== Testing get_entity_types ===")
-    
-    # Test with Albert Einstein
-    entity_uri = "http://dbpedia.org/resource/Albert_Einstein"
-    
-    types = get_entity_types(entity_uri)
-    
-    print(f"Types for {entity_uri}:")
-    for entity_type in types:
-        print(f"- {entity_type}")
-    
-    print()
-
-def test_entity_types_place():
-    """Test the get_entity_types function with a place"""
-    print("=== Testing get_entity_types (Place) ===")
-    
-    # Test with Ulm (a place)
-    entity_uri = "http://dbpedia.org/resource/Ulm"
+    print(f"=== Testing get_entity_types ({entity_name}) ===")
     
     types = get_entity_types(entity_uri)
     
@@ -76,26 +63,46 @@ def test_entity_types_place():
     print()
 
 if __name__ == "__main__":
-    print("Testing new collector.py functions...\n")
+    parser = argparse.ArgumentParser(description="Test new collector.py functions")
+    parser.add_argument("--article", type=str, default="Albert Einstein", 
+                       help="Wikipedia article name to test with")
+    parser.add_argument("--subject", type=str, default="Albert Einstein", 
+                       help="Subject entity name to search for")
+    parser.add_argument("--object", type=str, default="Ulm", 
+                       help="Object entity name to search for")
+    parser.add_argument("--subject_uri", type=str, 
+                       default="http://dbpedia.org/resource/Albert_Einstein",
+                       help="Subject entity URI for predicate/type tests")
+    parser.add_argument("--object_uri", type=str, 
+                       default="http://dbpedia.org/resource/Ulm",
+                       help="Object entity URI for predicate/type tests")
+    
+    args = parser.parse_args()
+    
+    print(f"Testing new collector.py functions with:")
+    print(f"Article: {args.article}")
+    print(f"Subject: {args.subject} ({args.subject_uri})")
+    print(f"Object: {args.object} ({args.object_uri})")
+    print()
     
     try:
-        test_sentences_with_entities()
+        test_sentences_with_entities(args.article, args.subject, args.object)
     except Exception as e:
         print(f"Error in test_sentences_with_entities: {e}\n")
     
     try:
-        test_predicates_between()
+        test_predicates_between(args.subject_uri, args.object_uri)
     except Exception as e:
         print(f"Error in test_predicates_between: {e}\n")
     
     try:
-        test_entity_types()
+        test_entity_types(args.subject_uri, "Subject")
     except Exception as e:
-        print(f"Error in test_entity_types: {e}\n")
+        print(f"Error in test_entity_types (Subject): {e}\n")
     
     try:
-        test_entity_types_place()
+        test_entity_types(args.object_uri, "Object")
     except Exception as e:
-        print(f"Error in test_entity_types_place: {e}\n")
+        print(f"Error in test_entity_types (Object): {e}\n")
     
     print("Testing completed!") 
