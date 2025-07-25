@@ -7,9 +7,10 @@ Run this to quickly test if the integration works.
 import sys
 import os
 import argparse
+import pandas as pd
 
 # Add entity-linking-master to path
-sys.path.append('../entity-linking-master')
+sys.path.append('../../entity-linking-master')
 
 def quick_test(api_key: str = None):
     """Quick test of entity-linking-master functionality"""

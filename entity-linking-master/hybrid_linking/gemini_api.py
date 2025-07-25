@@ -13,7 +13,16 @@ env_path = root_dir/'config.env'
 load_dotenv(dotenv_path=env_path)
 
 
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'YOUR_GEMINI_API_KEY')
+# Try to get API key from environment variables
+GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY', os.getenv('GEMINI_API_KEY', 'YOUR_GEMINI_API_KEY'))
+print(f"[DEBUG] GEMINI_API_KEY loaded: {GEMINI_API_KEY[:10]}..." if GEMINI_API_KEY != 'YOUR_GEMINI_API_KEY' else "[DEBUG] GEMINI_API_KEY not found, using default")
+
+# Function to update API key at runtime
+def set_api_key(api_key: str):
+    """Set the API key at runtime"""
+    global GEMINI_API_KEY
+    GEMINI_API_KEY = api_key
+    print(f"[DEBUG] API key updated to: {api_key[:10]}...")
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
 
 
