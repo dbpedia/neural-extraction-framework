@@ -115,6 +115,7 @@ class EntityLinkingIntegrationTest:
                 canonical_chunk_size=5,
                 context_chunk_size=5,
                 dbpedia_chunk_size=5,
+                save_path="entity_linking_results.csv",
                 log=True
             )
             end_time = time.time()
@@ -206,13 +207,6 @@ class EntityLinkingIntegrationTest:
         
         return self.test_results
     
-    def save_test_results(self, output_path: str = "entity_linking_test_results.csv"):
-        try:
-            results_df = pd.DataFrame([self.test_results])
-            results_df.to_csv(output_path, index=False)
-            print(f"✅ Test results saved to {output_path}")
-        except Exception as e:
-            print(f"❌ Failed to save test results: {e}")
 
 
 def create_integration_wrapper():
@@ -306,7 +300,6 @@ def main():
     results = tester.run_all_tests()
     
  
-    tester.save_test_results()
     
     
     integrated_el = create_integration_wrapper()
