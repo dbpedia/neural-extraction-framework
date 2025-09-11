@@ -269,14 +269,21 @@ Respond in JSON as:
             triple = json.loads(response_text)
             
             # Validate and fix URI formats if needed
+            # Validate and fix URI formats if needed
             if 'subject_uri' in triple and not triple['subject_uri'].startswith('http://dbpedia.org/resource/'):
-                triple['subject_uri'] = f"http://dbpedia.org/resource/{triple['subject_uri'].replace(' ', '_')}"
+                # Clean the URI and add proper prefix
+                clean_uri = triple['subject_uri'].replace(' ', '_').replace('http://dbpedia.org/resource/', '')
+                triple['subject_uri'] = f"http://dbpedia.org/resource/{clean_uri}"
             
             if 'object_uri' in triple and not triple['object_uri'].startswith('http://dbpedia.org/resource/'):
-                triple['object_uri'] = f"http://dbpedia.org/resource/{triple['object_uri'].replace(' ', '_')}"
+                # Clean the URI and add proper prefix
+                clean_uri = triple['object_uri'].replace(' ', '_').replace('http://dbpedia.org/resource/', '')
+                triple['object_uri'] = f"http://dbpedia.org/resource/{clean_uri}"
             
             if 'predicate_uri' in triple and not triple['predicate_uri'].startswith('http://dbpedia.org/ontology/'):
-                triple['predicate_uri'] = f"http://dbpedia.org/ontology/{triple['predicate_uri'].replace(' ', '_')}"
+                # Clean the URI and add proper prefix
+                clean_uri = triple['predicate_uri'].replace(' ', '_').replace('http://dbpedia.org/ontology/', '')
+                triple['predicate_uri'] = f"http://dbpedia.org/ontology/{clean_uri}"
             
             print("✓ LLM disambiguation completed")
             return triple
