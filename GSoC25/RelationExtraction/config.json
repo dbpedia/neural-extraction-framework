@@ -1,0 +1,12 @@
+{
+    "file_paths": {
+        "label_embeddings_file": "dbpedia-ontology.vectors",
+        "tbox_pickle_file": "tbox.pkl",
+        "labels_pickle_file": "labels.pkl"
+    },
+    "model_names": {
+        "encoder_model": "paraphrase-MiniLM-L6-v2",
+        "genre_tokenizer": "facebook/genre-linking-blink",
+        "genre_model": "facebook/genre-linking-blink"
+    }
+}
