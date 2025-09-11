@@ -153,7 +153,15 @@ Guidelines:
         if self.redis_el.available:
             redis_results = self.redis_el.lookup(entity_text, top_k=top_k, thr=0.01)
             if len(redis_results) > 0:
-                candidate_uris = [uri for uri in redis_results.index]
+                candidate_uris = []
+                for uri in redis_results.index:
+                    # Ensure proper DBpedia URI format
+                    if uri.startswith('http://dbpedia.org/resource/'):
+                        candidate_uris.append(uri)
+                    else:
+                        # Convert to proper DBpedia URI format
+                        formatted_uri = f"http://dbpedia.org/resource/{uri.replace(' ', '_')}"
+                        candidate_uris.append(formatted_uri)
                 print(f"✓ Redis found {len(candidate_uris)} candidates for '{entity_text}'")
                 return candidate_uris
         
@@ -231,10 +239,13 @@ And these candidate object URIs:
 
 Select the best subject, predicate, and object URIs that together form the most accurate RDF triple for the sentence.
 
-CRITICAL: You MUST return the EXACT URIs from the candidate lists above. Do NOT modify, shorten, or change them in any way.
-- Copy the subject_uri exactly from the candidate_subject_uris list
-- Copy the predicate_uri exactly from the candidate_predicate_uris list  
-- Copy the object_uri exactly from the candidate_object_uris list
+CRITICAL REQUIREMENTS:
+1. You MUST return the EXACT URIs from the candidate lists above
+2. Do NOT modify, shorten, or change them in any way
+3. All URIs must be complete with full prefixes:
+   - Subject/Object URIs: http://dbpedia.org/resource/...
+   - Predicate URIs: http://dbpedia.org/ontology/...
+4. Copy the URIs exactly as they appear in the candidate lists
 
 Respond in JSON as:
 {{
@@ -256,6 +267,17 @@ Respond in JSON as:
             response_text = response_text.strip()
             
             triple = json.loads(response_text)
+            
+            # Validate and fix URI formats if needed
+            if 'subject_uri' in triple and not triple['subject_uri'].startswith('http://dbpedia.org/resource/'):
+                triple['subject_uri'] = f"http://dbpedia.org/resource/{triple['subject_uri'].replace(' ', '_')}"
+            
+            if 'object_uri' in triple and not triple['object_uri'].startswith('http://dbpedia.org/resource/'):
+                triple['object_uri'] = f"http://dbpedia.org/resource/{triple['object_uri'].replace(' ', '_')}"
+            
+            if 'predicate_uri' in triple and not triple['predicate_uri'].startswith('http://dbpedia.org/ontology/'):
+                triple['predicate_uri'] = f"http://dbpedia.org/ontology/{triple['predicate_uri'].replace(' ', '_')}"
+            
             print("✓ LLM disambiguation completed")
             return triple
         except Exception as e:
