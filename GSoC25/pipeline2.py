@@ -360,46 +360,51 @@ Guidelines:
             print(f"✗ Error extracting triples with Gemini: {e}")
             return []
     
-    def resolve_entity_with_redis_and_entity_linking(self, entity_text: str, context: str) -> str:
-        """Resolve entity using Redis + entity-linking-master canonical name normalization"""
-        try:
-            # Step 1: Get candidates from Redis
-            candidates = self.redis_el.lookup(entity_text, top_k=1)
+# ... existing code ...
+
+def resolve_entity_with_redis_and_entity_linking(self, entity_text: str, context: str) -> str:
+    """Resolve entity using Redis + entity-linking-master canonical name normalization"""
+    try:
+        # Step 1: Get candidates from Redis
+        candidates = self.redis_el.lookup(entity_text, top_k=1)
+        
+        if not candidates.empty:
+            redis_entity = candidates.index[0]
+            print(f"✓ Redis found entity: {entity_text} → {redis_entity}")
             
-            if not candidates.empty:
-                redis_entity = candidates.index[0]
-                print(f"✓ Redis found entity: {entity_text} → {redis_entity}")
-                
-                # Step 2: Use entity-linking-master for canonical name normalization
-                if ENTITY_LINKING_MASTER_AVAILABLE:
-                    try:
-                        canonical_result = batch_canonical_name_normalization(
-                            [redis_entity], 
-                            chunk_size=1, 
-                            output_format="dataframe"
-                        )
-                        if not canonical_result.empty and 'canonical_name' in canonical_result.columns:
-                            canonical_name = canonical_result.iloc[0]['canonical_name']
-                            if canonical_name and canonical_name != redis_entity:
-                                print(f"✓ Canonical name normalized: {redis_entity} → {canonical_name}")
-                                redis_entity = canonical_name
-                    except Exception as e:
-                        print(f"⚠ Canonical name normalization failed: {e}, using Redis result")
-                
-                # Step 3: Construct full URI
+            # Step 2: Use entity-linking-master for canonical name normalization
+            if ENTITY_LINKING_MASTER_AVAILABLE:
+                try:
+                    canonical_result = batch_canonical_name_normalization(
+                        [redis_entity], 
+                        chunk_size=1, 
+                        output_format="dataframe"
+                    )
+                    if not canonical_result.empty and 'canonical_name' in canonical_result.columns:
+                        canonical_name = canonical_result.iloc[0]['canonical_name']
+                        if canonical_name and canonical_name != redis_entity:
+                            print(f"✓ Canonical name normalized: {redis_entity} → {canonical_name}")
+                            redis_entity = canonical_name
+                except Exception as e:
+                    print(f"⚠ Canonical name normalization failed: {e}, using Redis result")
+            
+            # Step 3: Construct full URI (only if not already a full URI)
+            if redis_entity.startswith('http://dbpedia.org/resource/'):
+                return redis_entity  # Already a full URI
+            else:
                 entity_uri = f"http://dbpedia.org/resource/{redis_entity}"
                 return entity_uri
-            else:
-                # Fallback: construct URI
-                entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
-                print(f"⚠ Redis failed for '{entity_text}', using constructed URI: {entity_uri}")
-                return entity_uri
-                
-        except Exception as e:
-            print(f"✗ Redis error for '{entity_text}': {e}")
+        else:
             # Fallback: construct URI
             entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
+            print(f"⚠ Redis failed for '{entity_text}', using constructed URI: {entity_uri}")
             return entity_uri
+            
+    except Exception as e:
+        print(f"✗ Redis error for '{entity_text}': {e}")
+        # Fallback: construct URI
+        entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
+        return entity_uri
     
     def get_candidate_predicates(self, relation_text: str) -> List[str]:
         """Get candidate predicates using Gemini API"""
