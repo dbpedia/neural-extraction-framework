@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """
-Enhanced Neural Extraction Framework Pipeline
+Streamlined Neural Extraction Framework Pipeline
 
 This pipeline combines:
 1. Gemini-based triple extraction
-2. Entity-linking-master for sophisticated entity resolution
+2. Redis for entity lookup
 3. Predicate scoring fusion for deterministic predicate selection
-4. Redis fallback for entity linking
-5. Final triple resolution with URIs
+4. Final triple resolution with URIs
 
 Usage:
-    python pipeline.py --article "Albert Einstein was born in Ulm."
-    python pipeline.py --text "Your text here" --api_key YOUR_GEMINI_API_KEY
+    python pipeline2.py --article "Albert Einstein was born in Ulm."
 """
 
 import sys
@@ -37,19 +35,6 @@ if str(PROJECT_ROOT) not in sys.path:
 
 # Import NEF components
 from GSoC24.Data.collector import get_text_of_wiki_page
-
-# Import entity-linking-master
-try:
-    sys.path.append(str(PROJECT_ROOT.parent / "entity-linking-master"))
-    from batch_preprocessing.full_batch_pipeline import full_batch_entity_linking
-    from batch_preprocessing.batch_canonical_name import batch_canonical_name_normalization
-    from batch_preprocessing.batch_context_analysis import batch_context_analysis
-    from batch_preprocessing.batch_dbpedia_uri import batch_dbpedia_uri_lookup
-    ENTITY_LINKING_MASTER_AVAILABLE = True
-    print("✓ Entity-linking-master imported successfully")
-except ImportError as e:
-    ENTITY_LINKING_MASTER_AVAILABLE = False
-    print(f"⚠ Entity-linking-master not available: {e}")
 
 
 class PredicateScoringFusion:
@@ -254,7 +239,7 @@ class PredicateScoringFusion:
 
 
 class RedisEntityLinking:
-    """Redis-based entity linking with fallback to LLM"""
+    """Redis-based entity linking"""
     
     def __init__(self, host='91.99.92.217', port=6379, password='NEF!gsoc2025'):
         try:
@@ -313,8 +298,8 @@ class RedisEntityLinking:
         return df_final[df_final['score'] >= thr].sort_values(by='score', ascending=False)[:top_k]
 
 
-class EnhancedNEFPipeline:
-    """Enhanced Neural Extraction Framework Pipeline with entity-linking-master and predicate scoring"""
+class StreamlinedNEFPipeline:
+    """Streamlined Neural Extraction Framework Pipeline - No SPARQL, just Redis + Gemini"""
     
     def __init__(self, gemini_api_key: str):
         self.gemini_api_key = gemini_api_key
@@ -323,9 +308,9 @@ class EnhancedNEFPipeline:
         
         # Configure Gemini
         genai.configure(api_key=gemini_api_key)
-        self.gemini_model = genai.GenerativeModel('models/gemini-1.5-flash')  # Use faster model
+        self.gemini_model = genai.GenerativeModel('models/gemini-1.5-flash')
         
-        print("✓ Enhanced NEF Pipeline initialized successfully!")
+        print("✓ Streamlined NEF Pipeline initialized successfully!")
     
     def extract_triples_with_gemini(self, text: str) -> List[Dict]:
         """Extract raw triples using Gemini API"""
@@ -363,63 +348,27 @@ Guidelines:
             print(f"✗ Error extracting triples with Gemini: {e}")
             return []
     
-    def resolve_entity_with_redis_and_entity_linking_master(self, entity_text: str, context: str) -> List[str]:
-        # Step 1: Get candidates from Redis (fast)
-        redis_candidates = self.redis_el.lookup(entity_text, top_k=10)
-        
-        if not redis_candidates.empty:
-            # Step 2: Use entity-linking-master to refine from Redis candidates
-            candidate_uris = [uri for uri in redis_candidates.index]
-            
-            # Step 3: Use entity-linking-master with Redis candidates as input
-            refined_results = full_batch_entity_linking(
-                [{"mention": entity_text, "context": context}], # Pass a single context for refinement
-                canonical_chunk_size=1,
-                context_chunk_size=1,
-                dbpedia_chunk_size=1,
-                log=False
-            )
-            return refined_results
-        
-        # Fallback: Use entity-linking-master from scratch
-        return self._resolve_entity_with_entity_linking_master_only(entity_text, context)
-    
-    def _resolve_entity_with_entity_linking_master_only(self, entity_text: str, context: str) -> List[str]:
-        """Fallback entity resolution using entity-linking-master only"""
+    def resolve_entity_with_redis(self, entity_text: str) -> str:
+        """Resolve entity using Redis lookup"""
         try:
-            # Prepare entity context for entity-linking-master
-            entity_contexts = [{"mention": entity_text, "context": context}]
+            # Get candidates from Redis
+            candidates = self.redis_el.lookup(entity_text, top_k=1)
             
-            # Run entity-linking-master pipeline
-            results = full_batch_entity_linking(
-                entity_contexts,
-                canonical_chunk_size=1,
-                context_chunk_size=1,
-                dbpedia_chunk_size=1,
-                log=False
-            )
-            
-            if len(results) > 0 and 'dbpedia_uri' in results.columns:
-                uris = results['dbpedia_uri'].dropna().tolist()
-                if uris:
-                    print(f"✓ Entity-linking-master found {len(uris)} candidates for '{entity_text}'")
-                    return uris
-            
-            print(f"⚠ Entity-linking-master failed for '{entity_text}', using simple URI construction")
-            return self._resolve_entity_with_simple_construction(entity_text)
-            
+            if not candidates.empty:
+                best_uri = candidates.index[0]
+                print(f"✓ Redis found entity: {entity_text} → {best_uri}")
+                return best_uri
+            else:
+                # Fallback: construct URI
+                entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
+                print(f"⚠ Redis failed for '{entity_text}', using constructed URI: {entity_uri}")
+                return entity_uri
+                
         except Exception as e:
-            print(f"⚠ Entity-linking-master error for '{entity_text}': {e}, using simple URI construction")
-            return self._resolve_entity_with_simple_construction(entity_text)
-    
-    def _resolve_entity_with_simple_construction(self, entity_text: str) -> List[str]:
-        """Simple entity resolution using URI construction"""
-        try:
+            print(f"✗ Redis error for '{entity_text}': {e}")
+            # Fallback: construct URI
             entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
-            return [entity_uri]
-        except Exception as e:
-            print(f"✗ Simple entity resolution failed for '{entity_text}': {e}")
-            return []
+            return entity_uri
     
     def get_candidate_predicates(self, relation_text: str) -> List[str]:
         """Get candidate predicates using Gemini API"""
@@ -462,32 +411,50 @@ Focus on the most semantically appropriate DBpedia ontology predicates."""
             ]
     
     def run_pipeline(self, article_text: str) -> List[Tuple[str, str, str]]:
-        # Step 1: Extract raw triples
+        """Run the streamlined pipeline"""
+        print(f"\n📝 Step 1: Extracting raw triples...")
         raw_triples = self.extract_triples_with_gemini(article_text)
+        if not raw_triples:
+            print("✗ No triples extracted, exiting pipeline")
+            return []
         
         resolved_triples = []
-        for triple in raw_triples:
-            # Step 2: Resolve entities (Redis → Entity-Linking-Master)
-            subject_uri = self.resolve_entity_with_redis_and_entity_linking_master(triple['subject'], article_text)[0]
-            object_uri = self.resolve_entity_with_redis_and_entity_linking_master(triple['object'], article_text)[0]
+        
+        for i, triple in enumerate(raw_triples, 1):
+            print(f"\n�� Step 2.{i}: Processing triple: {triple['subject']} - {triple['predicate']} - {triple['object']}")
             
-            # Step 3: Get predicate candidates
+            # Step 2a: Resolve entities with Redis
+            print("   📍 Resolving entities...")
+            subject_uri = self.resolve_entity_with_redis(triple['subject'])
+            object_uri = self.resolve_entity_with_redis(triple['object'])
+            
+            # Step 2b: Get candidate predicates
+            print("   🔗 Getting candidate predicates...")
             predicate_candidates = self.get_candidate_predicates(triple['predicate'])
             
-            # Step 4: Select best predicate
-            best_predicate, _ = self.predicate_scorer.select_best_predicate(
-                article_text, subject_uri, object_uri, predicate_candidates
+            # Step 2c: Use predicate scoring fusion for disambiguation
+            print("   🧠 Running predicate scoring fusion...")
+            best_predicate, scores = self.predicate_scorer.select_best_predicate(
+                article_text,
+                subject_uri,
+                object_uri,
+                predicate_candidates
             )
             
-            # Step 5: Create final triple
-            resolved_triples.append((subject_uri, best_predicate, object_uri))
+            if best_predicate:
+                resolved_triple = (subject_uri, best_predicate, object_uri)
+                resolved_triples.append(resolved_triple)
+                print(f"   ✅ Resolved: {resolved_triple}")
+            else:
+                print(f"   ⚠ Failed to resolve predicate for triple {i}")
         
+        print(f"\n�� Pipeline completed! Resolved {len(resolved_triples)} triples")
         return resolved_triples
 
 
 def main():
-    """CLI wrapper for the Enhanced NEF pipeline"""
-    parser = argparse.ArgumentParser(description='Enhanced Neural Extraction Framework Pipeline')
+    """CLI wrapper for the Streamlined NEF pipeline"""
+    parser = argparse.ArgumentParser(description='Streamlined Neural Extraction Framework Pipeline')
     parser.add_argument("--article", type=str, help="Article text to process")
     parser.add_argument("--text", type=str, help="Text to process")
     parser.add_argument("--api_key", type=str, help="Gemini API key (or set GEMINI_API_KEY env var)")
@@ -521,7 +488,7 @@ def main():
     
     # Initialize and run pipeline
     try:
-        pipeline = EnhancedNEFPipeline(api_key)
+        pipeline = StreamlinedNEFPipeline(api_key)
         resolved_triples = pipeline.run_pipeline(text)
         
         # Print results
