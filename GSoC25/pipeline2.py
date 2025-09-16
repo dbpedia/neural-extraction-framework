@@ -9,8 +9,6 @@ This pipeline combines:
 4. Predicate scoring fusion for deterministic predicate selection
 5. Final triple resolution with URIs
 
-Usage:
-    python pipeline2.py --article "Albert Einstein was born in Ulm."
 """
 
 import sys
