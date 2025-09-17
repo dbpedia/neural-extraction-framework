@@ -4,10 +4,9 @@ Enhanced Neural Extraction Framework Pipeline
 
 This pipeline combines:
 1. Gemini-based triple extraction
-2. Redis for fast entity lookup
-3. Entity-linking-master for canonical name normalization and context analysis
-4. Predicate scoring fusion for deterministic predicate selection
-5. Final triple resolution with URIs
+2. Redis for fast entity lookup and resolution
+3. Predicate scoring fusion for deterministic predicate selection
+4. Final triple resolution with URIs
 
 """
 
@@ -35,16 +34,7 @@ if str(PROJECT_ROOT) not in sys.path:
 # Import NEF components
 from GSoC24.Data.collector import get_text_of_wiki_page
 
-# Import entity-linking-master components (without SPARQL)
-try:
-    sys.path.append(str(PROJECT_ROOT.parent / "entity-linking-master"))
-    from batch_preprocessing.batch_canonical_name import batch_canonical_name_normalization
-    from batch_preprocessing.batch_context_analysis import batch_context_analysis
-    ENTITY_LINKING_MASTER_AVAILABLE = True
-    print("✓ Entity-linking-master components imported successfully")
-except ImportError as e:
-    ENTITY_LINKING_MASTER_AVAILABLE = False
-    print(f"⚠ Entity-linking-master not available: {e}")
+# Entity-linking-master removed - using Redis-only approach
 
 
 class PredicateScoringFusion:
@@ -309,7 +299,7 @@ class RedisEntityLinking:
 
 
 class EnhancedNEFPipeline:
-    """Enhanced Neural Extraction Framework Pipeline with entity-linking-master components"""
+    """Enhanced Neural Extraction Framework Pipeline with Redis-based entity linking"""
     
     def __init__(self, gemini_api_key: str):
         self.gemini_api_key = gemini_api_key
@@ -320,7 +310,7 @@ class EnhancedNEFPipeline:
         genai.configure(api_key=gemini_api_key)
         self.gemini_model = genai.GenerativeModel('models/gemini-1.5-flash')
         
-        print("✓ Enhanced NEF Pipeline initialized successfully!")
+        print("✓ Enhanced NEF Pipeline (Redis-only) initialized successfully!")
     
     def extract_triples_with_gemini(self, text: str) -> List[Dict]:
         """Extract raw triples using Gemini API"""
@@ -358,40 +348,25 @@ Guidelines:
             print(f"✗ Error extracting triples with Gemini: {e}")
             return []
     
-    def resolve_entity_with_redis_and_entity_linking(self, entity_text: str, context: str) -> str:
-        """Resolve entity using Redis + entity-linking-master canonical name normalization"""
+    def resolve_entity_with_redis(self, entity_text: str, context: str) -> str:
+        """Resolve entity using Redis only (no entity-linking-master needed)"""
         try:
-            # Step 1: Get candidates from Redis
+            # Get candidates from Redis
             candidates = self.redis_el.lookup(entity_text, top_k=1)
             
             if not candidates.empty:
                 redis_entity = candidates.index[0]
                 print(f"✓ Redis found entity: {entity_text} → {redis_entity}")
                 
-                # Step 2: Use entity-linking-master for canonical name normalization
-                if ENTITY_LINKING_MASTER_AVAILABLE:
-                    try:
-                        canonical_result = batch_canonical_name_normalization(
-                            [redis_entity], 
-                            chunk_size=1, 
-                            output_format="dataframe"
-                        )
-                        if not canonical_result.empty and 'canonical_name' in canonical_result.columns:
-                            canonical_name = canonical_result.iloc[0]['canonical_name']
-                            if canonical_name and canonical_name != redis_entity:
-                                print(f"✓ Canonical name normalized: {redis_entity} → {canonical_name}")
-                                redis_entity = canonical_name
-                    except Exception as e:
-                        print(f"⚠ Canonical name normalization failed: {e}, using Redis result")
-                
-                # Step 3: Construct full URI (only if not already a full URI)
+                # Redis already gives us the correct DBpedia resource name
                 if redis_entity.startswith('http://dbpedia.org/resource/'):
                     return redis_entity  # Already a full URI
                 else:
+                    # Convert to proper DBpedia URI format
                     entity_uri = f"http://dbpedia.org/resource/{redis_entity}"
                     return entity_uri
             else:
-                # Fallback: construct URI
+                # Fallback: construct URI from original text
                 entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
                 print(f"⚠ Redis failed for '{entity_text}', using constructed URI: {entity_uri}")
                 return entity_uri
@@ -455,10 +430,10 @@ Focus on the most semantically appropriate DBpedia ontology predicates."""
         for i, triple in enumerate(raw_triples, 1):
             print(f"\n�� Step 2.{i}: Processing triple: {triple['subject']} - {triple['predicate']} - {triple['object']}")
             
-            # Step 2a: Resolve entities with Redis + entity-linking-master
+            # Step 2a: Resolve entities with Redis
             print("   📍 Resolving entities...")
-            subject_uri = self.resolve_entity_with_redis_and_entity_linking(triple['subject'], article_text)
-            object_uri = self.resolve_entity_with_redis_and_entity_linking(triple['object'], article_text)
+            subject_uri = self.resolve_entity_with_redis(triple['subject'], article_text)
+            object_uri = self.resolve_entity_with_redis(triple['object'], article_text)
             
             # Step 2b: Get candidate predicates
             print("   🔗 Getting candidate predicates...")
