@@ -298,107 +298,41 @@ class RedisEntityLinking:
         return df_final[df_final['score'] >= thr].sort_values(by='score', ascending=False)[:top_k]
 
 
-class PredicateEmbeddingRetriever:
-    """Retrieve candidate predicates using Gemini embeddings"""
+class EnhancedNEFPipeline:
+    """Enhanced Neural Extraction Framework Pipeline with Redis-based entity linking"""
     
-    def __init__(self, api_key: str, embeddings_path: str = "embeddings.npy", 
-                 predicates_path: str = "predicates.csv"):
-        self.api_key = api_key
+    def __init__(self, gemini_api_key: str):
+        self.gemini_api_key = gemini_api_key
+        self.redis_el = RedisEntityLinking()
+        self.predicate_scorer = PredicateScoringFusion()
         
-        # Load precomputed embeddings
-        self.embeddings = np.load(embeddings_path)
-        self.predicates = pd.read_csv(predicates_path)["predicate"].tolist()
+        # Configure Gemini
+        genai.configure(api_key=gemini_api_key)
+        self.gemini_model = genai.GenerativeModel('models/gemini-1.5-flash')
         
-        # Normalize embeddings once for faster cosine similarity
-        self.embeddings_norm = self.embeddings / np.linalg.norm(
-            self.embeddings, axis=-1, keepdims=True
-        )
-        
-        print(f"✓ Loaded {len(self.predicates)} predicate embeddings")
+        print("✓ Enhanced NEF Pipeline (Redis-only) initialized successfully!")
     
-    def embed_query(self, query_text: str) -> np.ndarray:
-        """Embed a query text using Gemini API"""
-        resp = requests.post(
-            "https://generativelanguage.googleapis.com/v1beta/models/embedding-001:embedContent",
-            headers={"Content-Type": "application/json"},
-            params={"key": self.api_key},
-            data=json.dumps({
-                "model": "models/embedding-001",
-                "content": {"parts": [{"text": query_text}]}
-            })
-        )
-        query_vec = np.array(resp.json()["embedding"]["values"], dtype=np.float32)
-        # Normalize
-        query_vec = query_vec / np.linalg.norm(query_vec)
-        return query_vec
-    
-    def get_top_k_predicates(self, relation_text: str, top_k: int = 5) -> List[Tuple[str, float]]:
-        """Get top-k most similar predicates for a relation text"""
-        # Embed the query
-        query_vec = self.embed_query(relation_text)
-        
-        # Cosine similarity (already normalized)
-        similarities = np.dot(self.embeddings_norm, query_vec)
-        
-        # Get top-k
-        top_indices = similarities.argsort()[-top_k:][::-1]
-        
-        results = []
-        for idx in top_indices:
-            results.append((self.predicates[idx], float(similarities[idx])))
-        
-        return results
+    def extract_triples_with_gemini(self, text: str) -> List[Dict]:
+        """Extract raw triples using Gemini API"""
+        prompt = f"""Extract all (subject, predicate, object) triples from the following text. 
+Use specific, meaningful predicates and clean entity names.
 
+Text: {text}
 
-class LLMDisambiguator:
-    """LLM-based final disambiguation of candidates"""
-    
-    def __init__(self, gemini_model):
-        self.model = gemini_model
-    
-    def disambiguate_triple(self, 
-                           context: str,
-                           subject_candidates: List[Tuple[str, float]],
-                           predicate_candidates: List[Tuple[str, float]],
-                           object_candidates: List[Tuple[str, float]]) -> Tuple[str, str, str]:
-        """Use LLM to select the best triple from candidates"""
-        
-        # Format candidates nicely
-        subj_text = "\n".join([f"  - {uri} (score: {score:.3f})" 
-                               for uri, score in subject_candidates])
-        pred_text = "\n".join([f"  - {uri} (similarity: {score:.3f})" 
-                               for uri, score in predicate_candidates])
-        obj_text = "\n".join([f"  - {uri} (score: {score:.3f})" 
-                              for uri, score in object_candidates])
-        
-        prompt = f"""Given the following context and candidate URIs, select the most coherent and accurate RDF triple.
+Return as JSON:
+[{{"subject": "...", "predicate": "...", "object": "..."}}, ...]
 
-Context: "{context}"
-
-Subject candidates:
-{subj_text}
-
-Predicate candidates:
-{pred_text}
-
-Object candidates:
-{obj_text}
-
-Instructions:
-1. Consider the context meaning
-2. Consider the candidate scores (higher = more confident)
-3. Ensure semantic coherence between subject-predicate-object
-4. Return ONLY the selected triple in JSON format
-
-Return format:
-{{"subject": "full_uri", "predicate": "full_uri", "object": "full_uri", "reasoning": "brief explanation"}}
-"""
+Guidelines:
+- Use specific predicates (e.g., "Discovered", "Was born in", "Worked at")
+- Capitalize the first letter of predicates
+- Extract clean entity names without articles
+- Focus on meaningful relationships"""
         
         try:
-            response = self.model.generate_content(prompt)
+            response = self.gemini_model.generate_content(prompt)
             response_text = response.text.strip()
             
-            # Parse JSON response
+            # Remove markdown code blocks if present
             if response_text.startswith('```json'):
                 response_text = response_text[7:]
             if response_text.startswith('```'):
@@ -406,96 +340,186 @@ Return format:
             if response_text.endswith('```'):
                 response_text = response_text[:-3]
             
-            result = json.loads(response_text.strip())
-            
-            return (result["subject"], result["predicate"], result["object"])
-            
+            response_text = response_text.strip()
+            triples = json.loads(response_text)
+            print(f"✓ Extracted {len(triples)} raw triples with Gemini")
+            return triples
         except Exception as e:
-            print(f"✗ LLM disambiguation error: {e}")
-            # Fallback: take top candidates
-            return (subject_candidates[0][0], 
-                   predicate_candidates[0][0], 
-                   object_candidates[0][0])
-
-
-class EnhancedNEFPipeline:
-    """Enhanced pipeline with embeddings + LLM disambiguation"""
+            print(f"✗ Error extracting triples with Gemini: {e}")
+            return []
     
-    def __init__(self, gemini_api_key: str, embeddings_path: str = "embeddings.npy"):
-        self.gemini_api_key = gemini_api_key
-        
-        # Initialize components
-        self.redis_el = RedisEntityLinking()
-        self.predicate_retriever = PredicateEmbeddingRetriever(
-            gemini_api_key, embeddings_path
-        )
-        
-        # Configure Gemini
-        genai.configure(api_key=gemini_api_key)
-        self.gemini_model = genai.GenerativeModel('models/gemini-1.5-flash')
-        
-        self.llm_disambiguator = LLMDisambiguator(self.gemini_model)
-        
-        print("✓ Enhanced NEF Pipeline with embeddings initialized!")
-    
-    def resolve_entity_candidates(self, entity_text: str, top_k: int = 5) -> List[Tuple[str, float]]:
-        """Get top-k entity candidates from Redis"""
-        candidates = self.redis_el.lookup(entity_text, top_k=top_k)
-        
-        if candidates.empty:
-            # Fallback
-            fallback_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
-            return [(fallback_uri, 0.5)]
-        
-        results = []
-        for entity in candidates.index:
-            score = candidates.loc[entity, 'score']
-            # Format URI
-            if entity.startswith('http://'):
-                uri = entity
+    def resolve_entity_with_redis(self, entity_text: str, context: str) -> str:
+        """Resolve entity using Redis only (no entity-linking-master needed)"""
+        try:
+            # Get candidates from Redis
+            candidates = self.redis_el.lookup(entity_text, top_k=1)
+            
+            if not candidates.empty:
+                redis_entity = candidates.index[0]
+                print(f"✓ Redis found entity: {entity_text} → {redis_entity}")
+                
+                # Redis already gives us the correct DBpedia resource name
+                if redis_entity.startswith('http://dbpedia.org/resource/'):
+                    return redis_entity  # Already a full URI
+                else:
+                    # Convert to proper DBpedia URI format
+                    entity_uri = f"http://dbpedia.org/resource/{redis_entity}"
+                    return entity_uri
             else:
-                uri = f"http://dbpedia.org/resource/{entity}"
-            results.append((uri, score))
-        
-        return results
+                # Fallback: construct URI from original text
+                entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
+                print(f"⚠ Redis failed for '{entity_text}', using constructed URI: {entity_uri}")
+                return entity_uri
+                
+        except Exception as e:
+            print(f"✗ Redis error for '{entity_text}': {e}")
+            # Fallback: construct URI
+            entity_uri = f"http://dbpedia.org/resource/{entity_text.replace(' ', '_')}"
+            return entity_uri
     
-    def run_pipeline(self, sentence: str) -> List[Tuple[str, str, str]]:
-        """Run pipeline on a single sentence"""
-        print(f"\n📝 Processing: '{sentence}'")
+    def get_candidate_predicates(self, relation_text: str) -> List[str]:
+        """Get candidate predicates using Gemini API"""
+        prompt = f"""Given the relation text "{relation_text}", suggest 3-5 most appropriate DBpedia ontology predicates.
+
+Return as JSON array of predicate URIs:
+["http://dbpedia.org/ontology/...", "http://dbpedia.org/ontology/...", ...]
+
+Examples:
+- "was born in" → ["http://dbpedia.org/ontology/birthPlace"]
+- "works at" → ["http://dbpedia.org/ontology/employer", "http://dbpedia.org/ontology/workplace"]
+- "lives in" → ["http://dbpedia.org/ontology/residence", "http://dbpedia.org/ontology/location"]
+
+Focus on the most semantically appropriate DBpedia ontology predicates."""
         
-        # Step 1: Extract raw triple with LLM
-        raw_triples = self.extract_triples_with_gemini(sentence)
+        try:
+            response = self.gemini_model.generate_content(prompt)
+            response_text = response.text.strip()
+            
+            # Remove markdown code blocks if present
+            if response_text.startswith('```json'):
+                response_text = response_text[7:]
+            if response_text.startswith('```'):
+                response_text = response_text[3:]
+            if response_text.endswith('```'):
+                response_text = response_text[:-3]
+            response_text = response_text.strip()
+            
+            candidate_predicates = json.loads(response_text)
+            
+            print(f"✓ Gemini found {len(candidate_predicates)} candidate predicates for '{relation_text}'")
+            return candidate_predicates
+        except Exception as e:
+            print(f"✗ Error getting candidate predicates with Gemini: {e}")
+            # Fallback predicates
+            return [
+                "http://dbpedia.org/ontology/birthPlace",
+                "http://dbpedia.org/ontology/location",
+                "http://dbpedia.org/ontology/country"
+            ]
+    
+    def run_pipeline(self, article_text: str) -> List[Tuple[str, str, str]]:
+        """Run the enhanced pipeline"""
+        print(f"\n📝 Step 1: Extracting raw triples...")
+        raw_triples = self.extract_triples_with_gemini(article_text)
         if not raw_triples:
+            print("✗ No triples extracted, exiting pipeline")
             return []
         
         resolved_triples = []
         
-        for triple in raw_triples:
-            print(f"\n🔍 Triple: {triple['subject']} - {triple['predicate']} - {triple['object']}")
+        for i, triple in enumerate(raw_triples, 1):
+            print(f"\n�� Step 2.{i}: Processing triple: {triple['subject']} - {triple['predicate']} - {triple['object']}")
             
-            # Step 2: Get candidates
-            print("   📍 Getting entity candidates from Redis...")
-            subject_candidates = self.resolve_entity_candidates(triple['subject'], top_k=5)
-            object_candidates = self.resolve_entity_candidates(triple['object'], top_k=5)
+            # Step 2a: Resolve entities with Redis
+            print("   📍 Resolving entities...")
+            subject_uri = self.resolve_entity_with_redis(triple['subject'], article_text)
+            object_uri = self.resolve_entity_with_redis(triple['object'], article_text)
             
-            print("   🔗 Getting predicate candidates from embeddings...")
-            predicate_candidates = self.predicate_retriever.get_top_k_predicates(
-                triple['predicate'], top_k=5
+            # Step 2b: Get candidate predicates
+            print("   🔗 Getting candidate predicates...")
+            predicate_candidates = self.get_candidate_predicates(triple['predicate'])
+            
+            # Step 2c: Use predicate scoring fusion for disambiguation
+            print("   🧠 Running predicate scoring fusion...")
+            best_predicate, scores = self.predicate_scorer.select_best_predicate(
+                article_text,
+                subject_uri,
+                object_uri,
+                predicate_candidates
             )
             
-            # Step 3: LLM disambiguation
-            print("   🧠 LLM disambiguation...")
-            final_triple = self.llm_disambiguator.disambiguate_triple(
-                sentence,
-                subject_candidates,
-                predicate_candidates,
-                object_candidates
-            )
-            
-            resolved_triples.append(final_triple)
-            print(f"   ✅ Final: {final_triple}")
+            if best_predicate:
+                resolved_triple = (subject_uri, best_predicate, object_uri)
+                resolved_triples.append(resolved_triple)
+                print(f"   ✅ Resolved: {resolved_triple}")
+            else:
+                print(f"   ⚠ Failed to resolve predicate for triple {i}")
         
+        print(f"\n�� Pipeline completed! Resolved {len(resolved_triples)} triples")
         return resolved_triples
+
+
+def main():
+    """CLI wrapper for the Enhanced NEF pipeline"""
+    parser = argparse.ArgumentParser(description='Enhanced Neural Extraction Framework Pipeline')
+    parser.add_argument("--article", type=str, help="Article text to process")
+    parser.add_argument("--text", type=str, help="Text to process")
+    parser.add_argument("--api_key", type=str, help="Gemini API key (or set GEMINI_API_KEY env var)")
+    parser.add_argument("--wikipage", type=str, help="Wikipedia page title to process")
+    parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
+    
+    args = parser.parse_args()
+    
+    # Get API key
+    api_key = args.api_key or os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        print("✗ Error: Gemini API key required. Use --api_key or set GEMINI_API_KEY environment variable")
+        return 1
+    
+    # Get text to process
+    text = None
+    if args.article:
+        text = args.article
+    elif args.text:
+        text = args.text
+    elif args.wikipage:
+        try:
+            text = get_text_of_wiki_page(args.wikipage)
+            print(f"✓ Retrieved Wikipedia article: {args.wikipage}")
+        except Exception as e:
+            print(f"✗ Error retrieving Wikipedia article: {e}")
+            return 1
+    else:
+        print("✗ Error: Must provide --article, --text, or --wikipage")
+        return 1
+    
+    # Initialize and run pipeline
+    try:
+        pipeline = EnhancedNEFPipeline(api_key)
+        resolved_triples = pipeline.run_pipeline(text)
+        
+        # Print results
+        print("\n" + "=" * 80)
+        print("🎯 FINAL RESULTS")
+        print("=" * 80)
+        
+        if resolved_triples:
+            for i, (subject_uri, predicate_uri, object_uri) in enumerate(resolved_triples, 1):
+                print(f"\n{i}. {subject_uri}")
+                print(f"   {predicate_uri}")
+                print(f"   {object_uri}")
+        else:
+            print("No triples were successfully resolved.")
+        
+        return 0
+        
+    except Exception as e:
+        print(f"✗ Pipeline error: {e}")
+        if args.verbose:
+            import traceback
+            traceback.print_exc()
+        return 1
+
 
 if __name__ == "__main__":
     exit(main())
