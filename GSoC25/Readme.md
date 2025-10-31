@@ -27,7 +27,7 @@ All directories/files have detailed instruction about how to use them in the git
 ```
 
 ### Installations 
-Run the command below to install all requirements of the project at once(preferably in a virtual environment).
+Run the command below to install all requirements of the project at once(preferably in a virtual environment). And set you Gemini API Key under GEMINI_API_KEY in .env.
 ```
 !pip install -r requirements.txt
 ```
@@ -36,11 +36,11 @@ Run the command below to install all requirements of the project at once(prefera
 
 You need to precompute the DBpedia embeddings before running the NEF.
 ```
-!python Emeddings.py
+!python NEF/Emeddings.py
 ```
-You can also just run a test file 
+You can also just
 ```
-python end-2-end-use.py --text_filepath "joe_biden_abstract.txt" --v 0 --save_filename "triples_from_file.csv"
+!python NEF/NEF.py "Albert Einstein was born in Ulm." --json
 ```
 
 [//]: # (### Example of using the command line utility:)

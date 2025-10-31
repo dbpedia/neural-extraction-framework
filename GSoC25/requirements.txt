@@ -18,3 +18,5 @@ feedparser
 readability-lxml
 lxml
 beautifulsoup4
+rdflib==6.3.2
+redis==4.6.0
