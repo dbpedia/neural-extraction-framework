@@ -25,9 +25,10 @@ GSoC25/NEF
  ┣ Webscrape.py
  ┣ NEF.py
 ```
+[Example](https://colab.research.google.com/drive/1eeRWKEnMHqCbOMwvC3NAifZVkStjUTSB?usp=sharing)
 
 ### Installations 
-Run the command below to install all requirements of the project at once (preferably in a virtual environment). And set your Gemini API Key under GEMINI_API_KEY in .env. 
+Run the command below to install all requirements of the project at once (preferably in a virtual environment). And set env variables.
 ```
 !pip install -r requirements.txt
 
