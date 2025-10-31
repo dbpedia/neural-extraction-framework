@@ -1,18 +1,36 @@
-import os, json, re, time, sys
-import numpy as np
+#!/usr/bin/env python3
+# nef_cli.py
+# Usage examples are at the bottom of this file (or run with -h)
+
+import os, sys, json, re, time, argparse, textwrap
 from typing import List, Tuple, Sequence, Dict, Any, Optional
+
+import numpy as np
 from urllib.parse import quote
-
 from getpass import getpass
-from google import genai
-from google.genai import types
 
-# --- API key bootstrap ---
-if not os.getenv("GEMINI_API_KEY"):
-    os.environ["GEMINI_API_KEY"] = getpass("Enter your Google (Gemini) API key: ").strip()
-client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+# =============== Gemini client bootstrap ===============
+try:
+    from google import genai
+    from google.genai import types
+except Exception as _e:
+    sys.stderr.write("ERROR: google-genai is required. Try: pip install google-genai\n")
+    raise
+
+def _bootstrap_gemini_client(api_key: Optional[str]) -> "genai.Client":
+    key = api_key or os.getenv("GEMINI_API_KEY")
+    if not key and sys.stdin.isatty():
+        key = getpass("Enter your Google (Gemini) API key: ").strip()
+    if not key:
+        raise RuntimeError("No Gemini API key found. Pass --api-key or set GEMINI_API_KEY.")
+    return genai.Client(api_key=key)
 
 # =============== Utils ===============
+
+_YEAR = re.compile(r"^\d{4}$")
+
+def _year_uri(y: str) -> str:
+    return f"http://dbpedia.org/resource/{y}"
 
 def _normalize(vec: Sequence[float]) -> np.ndarray:
     v = np.asarray(vec, dtype=np.float32)
@@ -20,8 +38,8 @@ def _normalize(vec: Sequence[float]) -> np.ndarray:
     return v / n
 
 def _json_from_model(text: str) -> Any:
-    """Extract the first JSON object/array from a model string."""
     t = (text or "").strip()
+    # strip markdown fences if any
     t = re.sub(r"^```(?:json)?|```$", "", t, flags=re.IGNORECASE | re.MULTILINE).strip()
     m = re.search(r"\{.*\}|\[.*\]", t, flags=re.DOTALL)
     if not m:
@@ -32,33 +50,35 @@ def _safe_print(*args, **kwargs):
     try:
         print(*args, **kwargs)
     except Exception:
-        # Avoid crashing on weird unicode in some environments
         sys.stdout.write((" ".join(map(str, args)) + "\n").encode("utf-8", "ignore").decode("utf-8"))
 
 # =============== Redis Entity Linking ===============
 
 class RedisEntityLinking:
-    """Redis-based entity linking; degrades gracefully if Redis is unavailable."""
+    """Redis-based entity linking; hard-requires Redis (no surface fallbacks here)."""
     def __init__(
         self,
-        host: str = os.getenv("NEF_REDIS_HOST", "91.99.92.217"),
-        port: int = int(os.getenv("NEF_REDIS_PORT", "6379")),
-        password: str = os.getenv("NEF_REDIS_PASSWORD", "NEF!gsoc2025"),
+        host: str,
+        port: int,
+        password: Optional[str],
         connect_timeout: float = 2.0,
+        verbose: bool = True,
     ):
         self.available = False
         self.redis_forms = None
         self.redis_redir = None
+        self.verbose = verbose
         try:
-            import redis  # local import so code runs even if redis isn't installed
-            common = dict(host=host, port=port, password=password, socket_connect_timeout=connect_timeout,
-                          decode_responses=True)
+            import redis  # local import so script still loads without it
+            common = dict(host=host, port=port, password=password,
+                          socket_connect_timeout=connect_timeout, socket_timeout=2.0, decode_responses=True)
             self.redis_forms = redis.Redis(db=0, **common)
             self.redis_redir  = redis.Redis(db=1, **common)
             self.available = bool(self.redis_forms.ping() and self.redis_redir.ping())
-            _safe_print("✓ Connected to Redis" if self.available else "✗ Redis ping failed")
+            if self.verbose:
+                _safe_print("✓ Connected to Redis" if self.available else "✗ Redis ping failed")
         except Exception as e:
-            _safe_print(f"✗ Redis connection error (continuing with fallbacks): {e}")
+            _safe_print(f"✗ Redis connection error (pipeline will drop ungrounded triples): {e}")
 
     def _redirect(self, uri: str, max_hops: int = 10) -> str:
         if not self.available:
@@ -77,20 +97,37 @@ class RedisEntityLinking:
 
     def lookup(self, surface_form: str, top_k: int = 5, thr: float = 0.01) -> List[Tuple[str, float]]:
         """
-        Returns list of (entity_uri, score). Score is normalized by max support.
+        Strict Redis grounding (no synonyms). Tries simple, non-semantic variants:
+        exact, lower, Title Case, underscores, Title+underscores.
+        Aggregates counts across variants and follows redirects in db1.
         """
         if not self.available or not surface_form.strip():
             return []
-        raw = self.redis_forms.hgetall(surface_form)
-        if not raw:
-            return []
-        # aggregate by redirected canonical URI
+
+        variants = [
+            surface_form,
+            surface_form.lower(),
+            surface_form.title(),
+            surface_form.replace(" ", "_"),
+            surface_form.title().replace(" ", "_"),
+        ]
+
         counts: Dict[str, int] = {}
-        for k, v in raw.items():
-            uri = self._redirect(k)
-            counts[uri] = counts.get(uri, 0) + int(v)
+        seen_keys = set()
+        for key in variants:
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+            raw = self.redis_forms.hgetall(key)  # {uri: count}
+            if not raw:
+                continue
+            for uri, v in raw.items():
+                canon = self._redirect(uri)  # db1 redirect if any
+                counts[canon] = counts.get(canon, 0) + int(v)
+
         if not counts:
             return []
+
         max_support = max(counts.values()) or 1
         items = [(uri, c / max_support) for uri, c in counts.items() if (c / max_support) >= thr]
         items.sort(key=lambda x: x[1], reverse=True)
@@ -100,25 +137,19 @@ class RedisEntityLinking:
 
 class PredicateEmbeddingRetriever:
     """
-    Loads embeddings.npy (N, D) and predicates.csv (URIs line-by-line or CSV with 'predicate' column),
-    then retrieves top-K predicates for a relation text using cosine similarity.
-    Optional synonym expansion via Gemini.
+    Loads embeddings.npy (N, D) and predicates.csv (URIs or CSV with 'predicate' column),
+    retrieves top-K predicates via cosine similarity. NO synonym expansion.
     """
     def __init__(
         self,
+        client: "genai.Client",
         embeddings_path: Optional[str] = None,
         predicates_path: Optional[str] = None,
-        use_llm_synonyms: bool = True,
-        max_synonyms: int = 6,
-        llm_model_for_synonyms: str = "gemini-2.5-flash",
         embed_model: str = "embedding-001",
         verbose: bool = True,
     ):
         self.client = client
         self.embed_model = embed_model
-        self.use_llm_synonyms = use_llm_synonyms
-        self.max_synonyms = max_synonyms
-        self.llm_model_for_synonyms = llm_model_for_synonyms
         self.verbose = verbose
 
         emb_path, pred_path = self._find_files(embeddings_path, predicates_path)
@@ -129,7 +160,6 @@ class PredicateEmbeddingRetriever:
 
         self.D = int(self.E.shape[1])
         self.E_norm = self.E / (np.linalg.norm(self.E, axis=1, keepdims=True) + 1e-12)
-        self._syn_cache: Dict[Tuple[str, int], List[str]] = {}
 
         if self.verbose:
             _safe_print(f"✓ Loaded embeddings: {emb_path} shape={self.E.shape}")
@@ -149,84 +179,31 @@ class PredicateEmbeddingRetriever:
         return e, p
 
     def _load_predicates(self, path: str) -> List[str]:
-        """Accepts either CSV with header including 'predicate' or raw newline list."""
         preds: List[str] = []
         with open(path, "r", encoding="utf-8") as f:
             head = f.readline()
-            if "predicate" in head:
-                # CSV with header
+            if "predicate" in head.lower():
                 for line in f:
                     parts = line.rstrip("\n").split(",")
                     if parts:
                         preds.append(parts[0] if head.lower().startswith("predicate") else parts[-1])
             else:
-                # treat first line as data too
                 preds.append(head.strip())
                 for line in f:
                     preds.append(line.strip())
-        # clean empties
         preds = [p for p in preds if p]
         return preds
 
-    def _synonyms_for(self, relation_text: str) -> List[str]:
-        if not self.use_llm_synonyms:
-            return [relation_text]
-        key = (relation_text.strip().lower(), self.max_synonyms)
-        if key in self._syn_cache:
-            return self._syn_cache[key]
-
-        prompt = (
-            f"Generate {self.max_synonyms} short synonyms or verb-phrase paraphrases for a knowledge-graph relation.\n"
-            f'Return ONLY a JSON array of strings.\n\nRelation: "{relation_text}"'
-        )
-        out: List[str] = []
-        try:
-            resp = self.client.models.generate_content(
-                model=self.llm_model_for_synonyms,
-                contents=prompt,
-                config={"response_mime_type": "application/json"},
-            )
-            arr = _json_from_model(resp.text or "[]")
-            if isinstance(arr, list):
-                seen = set()
-                for s in arr:
-                    s = str(s).strip()
-                    if not s:
-                        continue
-                    k = s.lower()
-                    if k in seen:
-                        continue
-                    seen.add(k)
-                    out.append(s)
-                    if len(out) >= self.max_synonyms:
-                        break
-        except Exception as e:
-            if self.verbose:
-                _safe_print(f"[synonyms] LLM failed for '{relation_text}': {e}")
-
-        if not out:
-            base = relation_text.strip()
-            out = [base]
-        self._syn_cache[key] = out
-        if self.verbose:
-            _safe_print(f"↪ Synonyms for '{relation_text}': {out}")
-        return out
-
-    def _embed_texts(self, texts: Sequence[str]) -> np.ndarray:
+    def _embed_text(self, text: str) -> np.ndarray:
         cfg = types.EmbedContentConfig(output_dimensionality=int(self.D))
-        vecs: List[np.ndarray] = []
-        for t in texts:
-            resp = self.client.models.embed_content(model=self.embed_model, contents=t, config=cfg)
-            v = getattr(resp, "embeddings", None)
-            v = (v[0].values if v else resp.embedding.values)
-            vecs.append(_normalize(v))
-        return np.stack(vecs, axis=0)
+        resp = self.client.models.embed_content(model=self.embed_model, contents=text, config=cfg)
+        v = getattr(resp, "embeddings", None)
+        v = (v[0].values if v else resp.embedding.values)
+        return _normalize(v)
 
     def get_top_k_predicates(self, relation_text: str, top_k: int = 10) -> List[Tuple[str, float]]:
-        texts = self._synonyms_for(relation_text)
-        Q = self._embed_texts(texts)     # (S, D)
-        q = _normalize(Q.mean(axis=0))   # (D,)
-        sims = self.E_norm @ q           # (N,)
+        q = self._embed_text(relation_text)      # (D,)
+        sims = self.E_norm @ q                   # (N,)
         order = sims.argsort()[-top_k:][::-1]
         return [(self.predicates[i], float(sims[i])) for i in order]
 
@@ -235,48 +212,26 @@ class PredicateEmbeddingRetriever:
 class LLMDisambiguator:
     def __init__(
         self,
+        client: "genai.Client",
         model_name: str = "gemini-2.5-flash",
         predicate_threshold: float = 0.5,
         new_predicate_namespace: str = "http://nef.local/rel/",
         verbose: bool = True,
     ):
+        self.client = client
         self.model_name = model_name
         self.thr = float(predicate_threshold)
         self.ns = new_predicate_namespace.rstrip("/") + "/"
         self.verbose = verbose
 
     def _camelize(self, s: str) -> str:
-        import re
         s = re.sub(r"[^A-Za-z0-9\s]", " ", s).strip()
-        if not s: return "relatedTo"
+        if not s:
+            return "relatedTo"
         parts = re.split(r"\s+", s)
         out = parts[0].lower() + "".join(p.capitalize() for p in parts[1:])
-        if out[0].isdigit(): out = "rel" + out
-        return out[:80]
-
-    def _mint_uri(self, local: str) -> str:
-        return self.ns + self._camelize(local)
-
-class LLMDisambiguator:
-    def __init__(
-        self,
-        model_name: str = "gemini-2.5-flash",
-        predicate_threshold: float = 0.5,
-        new_predicate_namespace: str = "http://nef.local/rel/",
-        verbose: bool = True,
-    ):
-        self.model_name = model_name
-        self.thr = float(predicate_threshold)
-        self.ns = new_predicate_namespace.rstrip("/") + "/"
-        self.verbose = verbose
-
-    def _camelize(self, s: str) -> str:
-        import re
-        s = re.sub(r"[^A-Za-z0-9\s]", " ", s).strip()
-        if not s: return "relatedTo"
-        parts = re.split(r"\s+", s)
-        out = parts[0].lower() + "".join(p.capitalize() for p in parts[1:])
-        if out[0].isdigit(): out = "rel" + out
+        if out and out[0].isdigit():
+            out = "rel" + out
         return out[:80]
 
     def _mint_uri(self, local: str) -> str:
@@ -285,14 +240,12 @@ class LLMDisambiguator:
     def disambiguate_triple(
         self,
         context: str,
-        subject_candidates,      # List[(uri, score)]
-        predicate_candidates,    # List[(uri, sim)] sorted desc
-        object_candidates,       # List[(uri, score)]
+        subject_candidates: List[Tuple[str, float]],
+        predicate_candidates: List[Tuple[str, float]],
+        object_candidates: List[Tuple[str, float]],
     ):
         total_k = len(predicate_candidates)
         sim_map = {u: (s, i) for i, (u, s) in enumerate(predicate_candidates)}
-
-        # Split by threshold
         above = [(u, s) for (u, s) in predicate_candidates if s >= self.thr]
 
         if above:
@@ -309,7 +262,7 @@ Context:
 Return ONLY JSON: {{"subject":"URI","predicate":"URI","object":"URI"}}
 """
             try:
-                resp = client.models.generate_content(
+                resp = self.client.models.generate_content(
                     model=self.model_name,
                     contents=prompt,
                     config={"response_mime_type": "application/json"},
@@ -317,9 +270,7 @@ Return ONLY JSON: {{"subject":"URI","predicate":"URI","object":"URI"}}
                 data = _json_from_model(resp.text or "{}")
                 pred_uri = data.get("predicate", "")
                 if pred_uri not in allowed:
-                    # Force top allowed if the model drifts
                     pred_uri = allowed[0]
-
                 chosen_sim, rank0 = sim_map.get(pred_uri, (None, None))
                 meta = {
                     "label": "candidate",
@@ -336,7 +287,7 @@ Return ONLY JSON: {{"subject":"URI","predicate":"URI","object":"URI"}}
                 )
             except Exception as e:
                 if self.verbose:
-                    print(f"✗ disambiguation error; using top allowed: {e}")
+                    _safe_print(f"✗ disambiguation error; using top allowed: {e}")
                 best_uri, best_sim = max(above, key=lambda x: x[1])
                 _, rank0 = sim_map.get(best_uri, (best_sim, 0))
                 meta = {
@@ -353,7 +304,7 @@ Return ONLY JSON: {{"subject":"URI","predicate":"URI","object":"URI"}}
                     meta,
                 )
 
-        # None ≥ threshold → generate
+        # None ≥ threshold → generate a new predicate
         prompt = f"""No predicate meets the threshold ({self.thr:.2f}).
 Propose a NEW concise camelCase predicate name for this relation in context.
 Return ONLY JSON: {{"predicateLocalName":"camelCase"}}.
@@ -362,7 +313,7 @@ Context:
 {context}
 """
         try:
-            resp = client.models.generate_content(
+            resp = self.client.models.generate_content(
                 model=self.model_name,
                 contents=prompt,
                 config={"response_mime_type": "application/json"},
@@ -385,7 +336,7 @@ Context:
             )
         except Exception as e:
             if self.verbose:
-                print(f"✗ generation error; minting default: {e}")
+                _safe_print(f"✗ generation error; minting default: {e}")
             pred_uri = self._mint_uri("relatedTo")
             meta = {
                 "label": "generated",
@@ -401,145 +352,226 @@ Context:
                 meta,
             )
 
-
 # =============== Orchestrator ===============
 
 class EnhancedNEFPipeline:
     """
     End-to-end pipeline:
       1) Extract triples with Gemini
-      2) Redis entity linking (subject/object)
-      3) Predicate retrieval via precomputed embeddings
+      2) Redis entity linking (subject/object)  [REQUIRED]
+      3) Predicate retrieval via precomputed embeddings (no synonyms)
       4) LLM disambiguation
     """
     def __init__(
         self,
+        client: "genai.Client",
         embeddings_path: Optional[str] = None,
         predicates_path: Optional[str] = None,
         llm_model: str = "gemini-2.5-flash",
-        use_llm_synonyms: bool = True,
+        predicate_threshold: float = 0.5,
+        new_predicate_namespace: str = "http://nef.local/rel/",
+        redis_host: str = "91.99.92.217",
+        redis_port: int = 6379,
+        redis_password: Optional[str] = "NEF!gsoc2025",
         verbose: bool = True,
     ):
         self.verbose = verbose
-        self.redis_el = RedisEntityLinking()
+        self.client = client  # for extractor too
+        self.require_redis_grounding = True  # strict
+        self.redis_el = RedisEntityLinking(
+            host=redis_host, port=int(redis_port), password=redis_password, verbose=verbose
+        )
         self.pred = PredicateEmbeddingRetriever(
+            client=self.client,
             embeddings_path=embeddings_path,
             predicates_path=predicates_path,
-            use_llm_synonyms=use_llm_synonyms,
-            max_synonyms=6,
-            llm_model_for_synonyms=llm_model,
             embed_model="embedding-001",
             verbose=verbose,
         )
-        self.llm = LLMDisambiguator(llm_model)
+        self.llm = LLMDisambiguator(
+            client=self.client,
+            model_name=llm_model,
+            predicate_threshold=predicate_threshold,
+            new_predicate_namespace=new_predicate_namespace,
+            verbose=verbose,
+        )
         if self.verbose:
             _safe_print("✓ Enhanced NEF Pipeline initialized")
 
-    def _extract_triples(self, text: str) -> list[dict]:
+    # helpers: lowercase + spacing only
+    def _lc_space(self, s: str) -> str:
+        return re.sub(r"\s+", " ", (s or "").strip().lower())
+
+    def _valid_predicate(self, p: str) -> bool:
+        w = re.sub(r"\s+", " ", (p or "").strip()).split()
+        return 1 <= len(w) <= 3
+
+    def _resolve_entities(self, mention: str, k: int = 5) -> List[Tuple[str, float]]:
         """
-        Simple extractor: asks for up to 5 triples with confidence,
-        then filters: confidence≥0.5, looks-like-named, Redis-groundable.
+        Strict grounding via Redis, except:
+          - If mention is a 4-digit year, mint a DBpedia year URI immediately.
+        """
+        m = (mention or "").strip()
+        if _YEAR.fullmatch(m):
+            return [(_year_uri(m), 1.0)]  # treat year as an entity, no Redis hit
+
+        cands = self.redis_el.lookup(m, top_k=k)
+        fixed: List[Tuple[str, float]] = []
+        for uri, score in cands:
+            if not (uri.startswith("http://") or uri.startswith("https://")):
+                uri = f"http://dbpedia.org/resource/{uri}"
+            fixed.append((uri, score))
+        return fixed
+
+    def _extract_triples(self, text: str, debug: bool = False) -> list[dict]:
+        """
+        Strict extractor:
+        - forces lowercase S/P/O
+        - enforces 1–3 word predicates
+        - confidence ≥ 0.5
+        - REQUIRES Redis grounding for subject and object
         """
         prompt = f"""
-    Return up to 5 RDF triples from the text as ONLY JSON:
-    [{{"subject":"...", "predicate":"...", "object":"...", "confidence":0.0}}, ...]
+SYSTEM: Return ONLY a valid JSON array (no prose, no markdown fences).
 
-    Rules:
-    - subject & object: exact surface forms from the text, concrete named entities (no pronouns/generic phrases).
-    - predicate: short verb/verb-phrase from the text.
-    - confidence in [0,1]. Only include triples you are ≥0.5 confident in.
+Task: Read the text and extract up to 5 RDF triples with confidence.
+You MUST:
+- Make subject, predicate, and object ALL lowercase.
+- Use the most complete, consistent entity names.
+- Resolve clear pronouns (he, she, it, they, this/that, here/there) to the correct entity; if unclear, do not guess.
+- Keep predicates extremely concise: 1–3 words max (e.g., "founded", "born in", "wrote").
+- Include only items with confidence ≥ 0.5.
 
-    Text: {text}
-    """.strip()
+Output schema:
+[
+  {{"subject":"...", "predicate":"...", "object":"...", "confidence":0.0}},
+  ...
+]
+
+Text:
+{text}
+""".strip()
 
         try:
-            resp = client.models.generate_content(
+            resp = self.client.models.generate_content(
                 model="gemini-2.5-flash",
                 contents=prompt,
                 config={"response_mime_type": "application/json"},
             )
-            items = _json_from_model(resp.text or "[]")
-            if not isinstance(items, list):
+
+            if debug:
+                _safe_print("\n[DEBUG] Raw model response text:")
+                _safe_print((resp.text or "").strip() or "<EMPTY>")
+
+            try:
+                items = _json_from_model(resp.text or "[]")
+            except Exception as e:
+                if debug:
+                    _safe_print(f"[DEBUG] JSON parse error: {e}")
                 return []
 
-            def _looks_named(x: str) -> bool:
-                toks = x.split()
-                return any(t and (t[0].isupper() or t.isupper()) for t in toks)
+            if debug:
+                _safe_print("[DEBUG] Parsed JSON items:",
+                            json.dumps(items, indent=2) if isinstance(items, list) else items)
+
+            if not isinstance(items, list):
+                if debug:
+                    _safe_print("[DEBUG] Parsed payload is not a list → aborting.")
+                return []
 
             out, seen = [], set()
-            for it in items:
-                s = (it.get("subject") or "").strip()
-                p = (it.get("predicate") or "").strip()
-                o = (it.get("object") or "").strip()
-                conf = float(it.get("confidence") or 0.0)
+            for idx, it in enumerate(items, 1):
+                s_raw = (it.get("subject") or "").strip()
+                p_raw = (it.get("predicate") or "").strip()
+                o_raw = (it.get("object") or "").strip()
+                conf  = it.get("confidence", None)
 
-                if not (s and p and o):                   # all fields present
-                    continue
-                if conf < 0.5:                            # confidence gate
-                    continue
-                if not (_looks_named(s) and _looks_named(o)):  # avoid generic endpoints
+                try:
+                    conf_f = float(conf) if conf is not None else 1.0
+                except Exception:
+                    conf_f = 0.0
+
+                reasons = []
+                if not s_raw or not p_raw or not o_raw:
+                    reasons.append("missing field(s)")
+
+                s = self._lc_space(s_raw)
+                p = self._lc_space(p_raw)
+                o = self._lc_space(o_raw)
+
+                if not self._valid_predicate(p):
+                    reasons.append(f"predicate length invalid: '{p}'")
+
+                if conf_f < 0.5:
+                    reasons.append(f"confidence < 0.5 (got {conf_f:.3f})")
+
+                sub_cands = self._resolve_entities(s_raw, k=5)
+                obj_cands = self._resolve_entities(o_raw, k=5)
+                if not sub_cands or not obj_cands:
+                    reasons.append("no Redis grounding for subject/object (strict mode)")
+
+                if (s, p, o) in seen:
+                    reasons.append("duplicate triple")
+
+                if reasons:
+                    if debug:
+                        _safe_print(f"[DEBUG] Item #{idx} REJECTED:",
+                                    {"subject": s_raw, "predicate": p_raw, "object": o_raw, "confidence": conf},
+                                    "→ reasons:", "; ".join(reasons))
                     continue
 
-                # Redis grounding (no generation)
-                if not self._resolve_entities(s, k=1) or not self._resolve_entities(o, k=1):
-                    continue
+                seen.add((s, p, o))
+                kept = {"subject": s, "predicate": p, "object": o,
+                        "_sub_cands": sub_cands, "_obj_cands": obj_cands}
+                out.append(kept)
 
-                key = (s, p, o)
-                if key in seen:
-                    continue
-                seen.add(key)
-                out.append({"subject": s, "predicate": p, "object": o})
+                if debug:
+                    _safe_print(f"[DEBUG] Item #{idx} KEPT:",
+                                {"subject": s, "predicate": p, "object": o,
+                                 "sub_cands": sub_cands[:2], "obj_cands": obj_cands[:2], "confidence": conf_f})
+
                 if len(out) >= 5:
                     break
+
+            if debug and not out:
+                _safe_print("[DEBUG] Result: 0 triples kept after filtering.")
 
             return out
 
         except Exception as e:
-            if getattr(self, "verbose", True):
+            if getattr(self, "verbose", True) or debug:
                 _safe_print(f"✗ Triple extraction error: {e}")
             return []
 
-
-
-    def _resolve_entities(self, mention: str, k: int = 5) -> List[Tuple[str, float]]:
-        cands = self.redis_el.lookup(mention, top_k=k)
-        # ensure URIs
-        fixed: List[Tuple[str, float]] = []
-        for uri, score in cands:
-            if not (uri.startswith("http://") or uri.startswith("https://")):
-                uri = f"http://dbpedia.org/resource/{quote(uri)}"
-            fixed.append((uri, score))
-        return fixed
-
-    def run_pipeline(self, sentence: str) -> list[tuple[str, str, str]]:
+    def run_pipeline(self, sentence: str, debug: bool = False) -> list[tuple[str, str, str, Dict[str, Any]]]:
         """
-        End-to-end for one sentence.
-        Prints minimal tag [CANDIDATE] or [GENERATED] plus sim, rank/topk, thr.
+        End-to-end for one sentence, strict Redis grounding.
+        Returns list of (subjectURI, predicateURI, objectURI, meta)
         """
         if self.verbose:
             _safe_print(f"\n📝 {sentence!r}")
 
-        raw_triples = self._extract_triples(sentence)
+        raw_triples = self._extract_triples(sentence, debug=debug)
         if not raw_triples:
             if self.verbose:
                 _safe_print("   ⚠ No triples extracted.")
             return []
 
-        results: list[tuple[str, str, str]] = []
+        results: list[tuple[str, str, str, Dict[str, Any]]] = []
 
         for t in raw_triples:
-            s = (t.get("subject") or "").strip()
-            p = (t.get("predicate") or "").strip()
-            o = (t.get("object") or "").strip()
-            if not (s and p and o):
+            s_text = t.get("subject", "")
+            p_text = t.get("predicate", "")
+            o_text = t.get("object", "")
+            if not (s_text and p_text and o_text):
                 continue
 
             if self.verbose:
-                _safe_print(f"\n🔍 Triple: {s} — {p} — {o}")
-                _safe_print("   📍 Getting entity candidates from Redis...")
+                _safe_print(f"\n🔍 Triple: {s_text} — {p_text} — {o_text}")
+                _safe_print("   📍 Using entity candidates collected during extraction...")
 
-            subject_candidates = self._resolve_entities(s, k=5)
-            object_candidates  = self._resolve_entities(o, k=5)
+            subject_candidates = t.get("_sub_cands") or self._resolve_entities(s_text, k=5)
+            object_candidates  = t.get("_obj_cands") or self._resolve_entities(o_text, k=5)
 
             if self.verbose:
                 _safe_print("   [Redis:subject]", subject_candidates[:5] if subject_candidates else "NO CANDIDATES")
@@ -547,94 +579,183 @@ class EnhancedNEFPipeline:
 
             if not subject_candidates or not object_candidates:
                 if self.verbose:
-                    _safe_print("   ⚠ Abandoning triple (no Redis candidates for subject/object).")
+                    _safe_print("   ⚠ Abandoning triple (no Redis candidates).")
                 continue
 
-            predicate_candidates = self.pred.get_top_k_predicates(p, top_k=10)
+            predicate_candidates = self.pred.get_top_k_predicates(p_text, top_k=10)
             if self.verbose:
                 _safe_print("   [Predicates:top5]", predicate_candidates[:5])
 
             s_final, p_final, o_final, meta = self.llm.disambiguate_triple(
                 sentence, subject_candidates, predicate_candidates, object_candidates
             )
-            results.append((s_final, p_final, o_final))
+            results.append((s_final, p_final, o_final, meta or {}))
 
-            # Minimal tag but rich metrics
             label = (meta or {}).get("label", "candidate")
             tag_str = "[GENERATED]" if label == "generated" else "[CANDIDATE]"
-
             sim = (meta or {}).get("chosen_similarity")
             rank = (meta or {}).get("rank_in_topk")
             topk = (meta or {}).get("topk")
             thr = (meta or {}).get("threshold")
-
             sim_str = f" (sim={sim:.3f})" if isinstance(sim, (int, float)) else ""
             rank_str = f" rank={rank}/{topk}" if (isinstance(rank, int) and isinstance(topk, int)) else ""
             thr_str = f" | thr={thr:.2f}" if isinstance(thr, (int, float)) else ""
-
             if self.verbose:
-                _safe_print("   ✅ Final", f"{tag_str}{sim_str}{rank_str}{thr_str}:", s_final, p_final, o_final, sep="\n            ")
+                _safe_print("   ✅ Final", f"{tag_str}{sim_str}{rank_str}{thr_str}:",
+                            s_final, p_final, o_final, sep="\n            ")
 
         return results
 
+# =============== CLI ===============
 
-if __name__ == "__main__":
-    import argparse, json, sys, os
-
+def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Run EnhancedNEFPipeline from the command line."
+        prog="nef_cli.py",
+        formatter_class=argparse.RawTextHelpFormatter,
+        description="Enhanced NEF (strict) — CLI for triple extraction → Redis grounding → predicate disambiguation."
     )
-    p.add_argument("text", nargs="?", help="Sentence to extract triples from. If omitted, read from stdin.")
-    p.add_argument("--embeddings", "-e", default=None, help="Path to embeddings.npy")
-    p.add_argument("--predicates", "-p", default=None, help="Path to predicates.csv (has a 'predicate' column or 1-col CSV)")
-    p.add_argument("--model", "-m", default="gemini-2.5-flash", help="LLM model name")
-    p.add_argument("--thr", type=float, default=0.5, help="Predicate threshold (0–1)")
-    p.add_argument("--quiet", "-q", action="store_true", help="Suppress verbose logging")
-    p.add_argument("--json", action="store_true", help="Print JSON triples (default prints pretty text)")
-    args = p.parse_args()
+    inp = p.add_mutually_exclusive_group(required=True)
+    inp.add_argument("-s", "--sentence", nargs="+", help="One or more sentences to process.")
+    inp.add_argument("-f", "--file", type=str, help="Path to a UTF-8 text file (one sentence per line).")
+    inp.add_argument("--stdin", action="store_true", help="Read sentences from STDIN (one per line).")
 
-    # Text source: CLI arg or stdin
-    if args.text is not None:
-        sentence = args.text.strip()
-    else:
-        sentence = sys.stdin.read().strip()
+    # Output
+    p.add_argument("-o", "--output", choices=["json", "jsonl", "tsv", "nt"], default="json",
+                   help=textwrap.dedent("""\
+                   Output format:
+                     json  = single JSON object with 'results' array
+                     jsonl = one JSON object per line
+                     tsv   = subject\\tpredicate\\tobject
+                     nt    = N-Triples (URIs only)
+                   """))
+    p.add_argument("--no-verbose", dest="verbose", action="store_false", help="Silence progress logs.")
+    p.add_argument("--debug", action="store_true", help="Show extractor debug dumps.")
+    p.set_defaults(verbose=True)
 
-    if not sentence:
-        sys.stderr.write("No input text provided (arg or stdin).\n")
-        sys.exit(2)
+    # Gemini / models
+    p.add_argument("--api-key", type=str, default=None, help="Gemini API key (or set GEMINI_API_KEY).")
+    p.add_argument("--llm-model", type=str, default="gemini-2.5-flash", help="LLM for disambiguation/generation.")
+    p.add_argument("--embed-model", type=str, default="embedding-001", help="Embedding model name.")
+    p.add_argument("--predicate-threshold", type=float, default=0.5, help="Similarity threshold to accept a predicate.")
+    p.add_argument("--new-predicate-namespace", type=str, default="http://nef.local/rel/",
+                   help="Namespace for generated predicates.")
 
-    # Ensure API key is present (either env var or prompt via your existing bootstrap)
-    if not os.getenv("GEMINI_API_KEY"):
-        # your code at the top already prompts via getpass() if missing, so nothing else to do here
-        pass
+    # Predicate embeddings
+    p.add_argument("--embeddings", type=str, default=None, help="Path to embeddings.npy")
+    p.add_argument("--predicates", type=str, default=None, help="Path to predicates.csv")
+
+    # Redis
+    p.add_argument("--redis-host", type=str, default=os.getenv("NEF_REDIS_HOST", "91.99.92.217"))
+    p.add_argument("--redis-port", type=int, default=int(os.getenv("NEF_REDIS_PORT", "6379")))
+    p.add_argument("--redis-password", type=str, default=os.getenv("NEF_REDIS_PASSWORD", "NEF!gsoc2025"))
+
+    return p.parse_args(argv)
+
+def _collect_sentences(args: argparse.Namespace) -> List[str]:
+    if args.sentence:
+        return [" ".join(args.sentence)] if len(args.sentence) > 1 else [args.sentence[0]]
+    if args.file:
+        with open(args.file, "r", encoding="utf-8") as f:
+            return [line.strip() for line in f if line.strip()]
+    if args.stdin:
+        return [line.strip() for line in sys.stdin if line.strip()]
+    return []
+
+def _emit(results: Dict[str, Any], fmt: str, verbose: bool):
+    """results = {'items': [ {'input': str, 'triples':[{'s':..., 'p':..., 'o':..., 'meta':{...}}, ...]}, ... ]}"""
+    items = results.get("items", [])
+
+    if fmt == "json":
+        print(json.dumps(results, ensure_ascii=False, indent=2))
+        return
+
+    if fmt == "jsonl":
+        for rec in items:
+            print(json.dumps(rec, ensure_ascii=False))
+        return
+
+    if fmt == "tsv":
+        for rec in items:
+            for t in rec.get("triples", []):
+                print(f"{t['s']}\t{t['p']}\t{t['o']}")
+        return
+
+    if fmt == "nt":
+        # Only URIs are printed; assume s/p/o are URIs
+        for rec in items:
+            for t in rec.get("triples", []):
+                s, p, o = t["s"], t["p"], t["o"]
+                # N-Triples line
+                print(f"<{s}> <{p}> <{o}> .")
+        return
+
+def main(argv: Optional[List[str]] = None) -> int:
+    args = parse_args(argv)
 
     try:
+        client = _bootstrap_gemini_client(args.api_key)
+    except Exception as e:
+        sys.stderr.write(f"ERROR: {e}\n")
+        return 2
+
+    # Build pipeline
+    try:
         pipe = EnhancedNEFPipeline(
+            client=client,
             embeddings_path=args.embeddings,
             predicates_path=args.predicates,
-            llm_model=args.model,
-            verbose=(not args.quiet),
+            llm_model=args.llm_model,
+            predicate_threshold=args.predicate_threshold,
+            new_predicate_namespace=args.new_predicate_namespace,
+            redis_host=args.redis_host,
+            redis_port=args.redis_port,
+            redis_password=args.redis_password,
+            verbose=args.verbose,
         )
-        # also set the disambiguator threshold from flag
-        pipe.llm.thr = float(args.thr)
-
-        triples = pipe.run_pipeline(sentence)
-
-        if args.json:
-            # JSON array of [subject, predicate, object]
-            print(json.dumps(triples, ensure_ascii=False, indent=2))
-        else:
-            if not triples:
-                print("(no triples)")
-            else:
-                for (s, p_uri, o) in triples:
-                    print(f"S: {s}\nP: {p_uri}\nO: {o}\n---")
-        sys.exit(0 if triples else 1)
-    except FileNotFoundError as e:
-        sys.stderr.write(f"{e}\n")
-        sys.stderr.write("Tip: make sure embeddings.npy and predicates.csv are in the working directory or pass --embeddings/--predicates.\n")
-        sys.exit(3)
+        # ensure retriever uses requested embed model
+        pipe.pred.embed_model = args.embed_model
     except Exception as e:
-        # fall back error
-        sys.stderr.write(f"Error: {e}\n")
-        sys.exit(4)
+        sys.stderr.write(f"ERROR initializing pipeline: {e}\n")
+        return 3
+
+    sentences = _collect_sentences(args)
+    if not sentences:
+        sys.stderr.write("No input sentences.\n")
+        return 1
+
+    out: Dict[str, Any] = {"items": []}
+    had_any = False
+
+    for s in sentences:
+        triples = pipe.run_pipeline(s, debug=args.debug)
+        norm = [{"s": t[0], "p": t[1], "o": t[2], "meta": t[3]} for t in triples]
+        out["items"].append({"input": s, "triples": norm})
+        if norm:
+            had_any = True
+
+    _emit(out, args.output, args.verbose)
+    return 0 if had_any else 4
+
+if __name__ == "__main__":
+    # Quick usage help when executed without args in TTY
+    if len(sys.argv) == 1 and sys.stdin.isatty():
+        _safe_print(textwrap.dedent("""\
+            Enhanced NEF CLI
+
+            Examples:
+              # Single sentence → JSON
+              python nef_cli.py -s "Steve Jobs founded Apple" --embeddings embeddings.npy --predicates predicates.csv
+
+              # Read from file, emit N-Triples
+              python nef_cli.py -f sentences.txt --output nt --embeddings embeddings.npy --predicates predicates.csv
+
+              # Read from STDIN (one per line), quiet logs, JSONL
+              cat sentences.txt | python nef_cli.py --stdin --no-verbose --output jsonl --embeddings embeddings.npy --predicates predicates.csv
+
+              # Custom Redis and model/threshold
+              python nef_cli.py -s "Marie Curie discovered radium" \\
+                --redis-host 127.0.0.1 --redis-port 6379 --redis-password secret \\
+                --llm-model gemini-2.5-flash --predicate-threshold 0.6 \\
+                --embeddings embeddings.npy --predicates predicates.csv
+        """))
+    sys.exit(main())

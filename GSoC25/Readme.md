@@ -15,21 +15,27 @@ The goal of NEF is to move beyond static, infobox-based extraction toward a dyna
 
 
 ### Code structure
-All directories/files have detailed instruction about how to use them in the git wiki posts.
+All directories/files have detailed instruction about how to use them in the git wiki posts, but the main folder is NEF.
 ```
-📦GSoC25/NEF
- ┣ 📂ground_truth
- ┣ 📂test
- ┣ 📂Bench.py
- ┣ 📂Embeddings.py
- ┣ 📂Webscrape.py
- ┣ 📂NEF.py
+GSoC25/NEF
+ ┣ ground_truth
+ ┣ test
+ ┣ Bench.py
+ ┣ Embeddings.py
+ ┣ Webscrape.py
+ ┣ NEF.py
 ```
 
 ### Installations 
-Run the command below to install all requirements of the project at once(preferably in a virtual environment). And set you Gemini API Key under GEMINI_API_KEY in .env.
+Run the command below to install all requirements of the project at once (preferably in a virtual environment). And set your Gemini API Key under GEMINI_API_KEY in .env. 
 ```
 !pip install -r requirements.txt
+
+GEMINI_API_KEY = 
+NEF_REDIS_HOST = 
+NEF_REDIS_PORT = 
+NEF_REDIS_PASSWORD = 
+
 ```
 
 ### Run from command line
@@ -40,7 +46,9 @@ You need to precompute the DBpedia embeddings before running the NEF.
 ```
 Then you can run the pipeline like this:
 ```
-!python NEF/NEF.py "Albert Einstein was born in Ulm." --json
+!python NEF/NEF.py -s "Sundar Pichai, an Indian-American business executive, became the CEO of Google in 2015, leading the company’s growth in artificial intelligence and cloud computing." \
+  --embeddings embeddings.npy --predicates predicates.csv
+
 ```
 
 
