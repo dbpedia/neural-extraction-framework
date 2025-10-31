@@ -578,3 +578,63 @@ class EnhancedNEFPipeline:
         return results
 
 
+if __name__ == "__main__":
+    import argparse, json, sys, os
+
+    p = argparse.ArgumentParser(
+        description="Run EnhancedNEFPipeline from the command line."
+    )
+    p.add_argument("text", nargs="?", help="Sentence to extract triples from. If omitted, read from stdin.")
+    p.add_argument("--embeddings", "-e", default=None, help="Path to embeddings.npy")
+    p.add_argument("--predicates", "-p", default=None, help="Path to predicates.csv (has a 'predicate' column or 1-col CSV)")
+    p.add_argument("--model", "-m", default="gemini-2.5-flash", help="LLM model name")
+    p.add_argument("--thr", type=float, default=0.5, help="Predicate threshold (0–1)")
+    p.add_argument("--quiet", "-q", action="store_true", help="Suppress verbose logging")
+    p.add_argument("--json", action="store_true", help="Print JSON triples (default prints pretty text)")
+    args = p.parse_args()
+
+    # Text source: CLI arg or stdin
+    if args.text is not None:
+        sentence = args.text.strip()
+    else:
+        sentence = sys.stdin.read().strip()
+
+    if not sentence:
+        sys.stderr.write("No input text provided (arg or stdin).\n")
+        sys.exit(2)
+
+    # Ensure API key is present (either env var or prompt via your existing bootstrap)
+    if not os.getenv("GEMINI_API_KEY"):
+        # your code at the top already prompts via getpass() if missing, so nothing else to do here
+        pass
+
+    try:
+        pipe = EnhancedNEFPipeline(
+            embeddings_path=args.embeddings,
+            predicates_path=args.predicates,
+            llm_model=args.model,
+            verbose=(not args.quiet),
+        )
+        # also set the disambiguator threshold from flag
+        pipe.llm.thr = float(args.thr)
+
+        triples = pipe.run_pipeline(sentence)
+
+        if args.json:
+            # JSON array of [subject, predicate, object]
+            print(json.dumps(triples, ensure_ascii=False, indent=2))
+        else:
+            if not triples:
+                print("(no triples)")
+            else:
+                for (s, p_uri, o) in triples:
+                    print(f"S: {s}\nP: {p_uri}\nO: {o}\n---")
+        sys.exit(0 if triples else 1)
+    except FileNotFoundError as e:
+        sys.stderr.write(f"{e}\n")
+        sys.stderr.write("Tip: make sure embeddings.npy and predicates.csv are in the working directory or pass --embeddings/--predicates.\n")
+        sys.exit(3)
+    except Exception as e:
+        # fall back error
+        sys.stderr.write(f"Error: {e}\n")
+        sys.exit(4)

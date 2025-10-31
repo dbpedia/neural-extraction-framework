@@ -1,29 +1,29 @@
-# Neural Extraction Framework @DBpedia - GSoC 2024
+# Neural Extraction Framework @DBpedia - GSoC 2025
 
 |   Project Details     |                                                                                                                                                                                               |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GSoC Project | [Neural Extraction Framework GSoC'24 @DBpedia](https://summerofcode.withgoogle.com/programs/2024/projects/J4tJODFV)                                                                           |
-| Contributor | [Abdulsobur Oyewale](https://www.linkedin.com/in/abdul-sobur-oyewale/)                                                                                                                        |
-| Mentors | [Tommaso Soru](https://github.com/mommi84), [Yogesh Kulkarni](https://github.com/yogeshhk), [Ziwei Xu](https://github.com/zoeNantes), [Mehrzad Shahinmoghadam](https://github.com/mehrzadshm) |
-| Blogs | [GSoC-2024 Abdulsobur Oyewale](https://smilingprogrammer.github.io/GSoC-2024-blog/)                                                                                                                                   |
+| GSoC Project | [Neural Extraction Framework GSoC'25 @DBpedia](https://summerofcode.withgoogle.com/myprojects/details/uQUHx6jo)                                                                           |
+| Contributor | [Gandharva Naveen](https://www.linkedin.com/in/gandharva-naveen)                                                                                                                        |
+| Mentors | [Tommaso Soru](), [Abdulsobur Oyewale](), [Diego Moussallem](), [Ronit Banerjee]() |
+| Blogs | [GSoC-2025 Gandharva Naveen](https://github.com/Gnav3852/neural-extraction-framework/wiki/)                                                                                                                                   |
 
 ### What is Neural Extraction Framework?
-[DBpedia](https://www.dbpedia.org/) is a knowledge base constructed by parsing the infoboxes present on wikipedia pages. This knowledge base consists of [relational triples](https://en.wikipedia.org/wiki/Semantic_triple) extracted using the infoboxes(which are structured information). There can be more information present in the wikipedia article text which needs to be extracted so as to mine hidden relationships between entities(wikipedia articles). 
 
-The aim of this project is to extract all those triples from the wikipedia article text using SOTA NLP methods for entity and relation extraction, entity linking, relationship matching etc. We have been able to successfully create an end-2-end pipeline to extract triples given a wikipedia page.
+The Neural Extraction Framework (NEF) is a system designed to extract structured relational knowledge—called RDF triples—directly from unstructured text. While traditional approaches like [DBpedia](https://www.dbpedia.org/) rely on Wikipedia infoboxes to build knowledge graphs, NEF focuses on uncovering the hidden relationships embedded in natural language. It uses large language models (LLMs), embedding-based retrieval, and ontology alignment to identify entities, match predicates to a known ontology (like DBpedia), and produce machine-readable [relational triples](https://en.wikipedia.org/wiki/Semantic_triple) such as (Albert Einstein — award — Nobel Prize in Physics).
 
-**This project couldn't be possible without these amazing models, expressing our gratitude!**:
-- [Hermes-Llama](https://huggingface.co/models?search=hermes) - Using the LLM for entity-relation extraction
-- [GENRE](https://github.com/facebookresearch/GENRE) - For autoregressive entity-linking
+The goal of NEF is to move beyond static, infobox-based extraction toward a dynamic, intelligent pipeline that continuously learns and adapts. By integrating embedding search, Redis grounding, and LLM reasoning, NEF can both expand existing knowledge graphs and validate extracted information through similarity scoring and ontology mapping. In essence, NEF bridges text and knowledge representation—transforming open text into structured, queryable data that allows machines to “understand the world, one triple at a time.”
+
+
 ### Code structure
-All directories contain a `notebooks` directory which has notebooks with exploration/experimentation code for the models and methods used. 
+All directories/files have detailed instruction about how to use them in the git wiki posts.
 ```
-📦GSoC24
- ┣ 📂Data
- ┣ 📂EntityLinking
- ┣ 📂ExportRDF
- ┣ 📂RelationExtraction
- ┣ 📂PredicateSuggestion
+📦GSoC25/NEF
+ ┣ 📂ground_truth
+ ┣ 📂test
+ ┣ 📂Bench.py
+ ┣ 📂Embeddings.py
+ ┣ 📂Webscrape.py
+ ┣ 📂NEF.py
 ```
 
 ### Installations 
@@ -32,23 +32,13 @@ Run the command below to install all requirements of the project at once(prefera
 !pip install -r requirements.txt
 ```
 
-For downloading models from huggingface, use the commands below.
-```
-python models.py
-wget https://hf.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes-2-Pro-Llama-3-8B-Q4_K_M.gguf
-```
-For faster inference on Nvidia GPU, unisnstall the llama-cpp-library which was previously installed from the requirements.txt and install the llama-cpp-python library that supports cuda
-```
-!pip uninstall llama-cpp-python
-!pip install llama-cpp-python==0.2.90 \
-  --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122
-```
 ### Run from command line
-You can run the code from the command line with the ability to run it on a single sentence, or a text file or a wikipedia page.
+
+You need to precompute the DBpedia embeddings before running the NEF.
 ```
-python end-2-end-use.py --text "Washinton is a city in the USA. Barack Obama was the president of the United states of America." --v 0 --save_filename "generated_triples.csv"
+!python Emeddings.py
 ```
-Or to run on a text file,
+You can also just run a test file 
 ```
 python end-2-end-use.py --text_filepath "joe_biden_abstract.txt" --v 0 --save_filename "triples_from_file.csv"
 ```
