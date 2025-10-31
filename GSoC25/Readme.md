@@ -38,40 +38,15 @@ You need to precompute the DBpedia embeddings before running the NEF.
 ```
 !python NEF/Emeddings.py
 ```
-You can also just
+Then you can run the pipeline like this:
 ```
 !python NEF/NEF.py "Albert Einstein was born in Ulm." --json
 ```
 
-[//]: # (### Example of using the command line utility:)
-
-[//]: # ()
-[//]: # (https://github.com/dbpedia/neural-extraction-framework/assets/84656834/306dc5ae-ff43-404c-bac3-5f77a6ffd3a9)
 
 
-### Project workflow
-```mermaid
-graph TD
-    wiki_page[Wikipedia Page] --Extract plain text--> pure_text[Pure text]
+<img width="770" height="980" alt="NEF Workflow (1)" src="https://github.com/user-attachments/assets/d959fb05-5258-426c-a912-1a8534200e9e" />
 
-    pure_text-->llm(LLM)
-    llm--as text-->relations[Relations]
-    
-    relations--get embedding-->vector_similarity(Vector similarity with label embeddings);
-    vector_similarity-->predicate_uris[Predicate URIs]
-
-    llm--as text-->entities[Entities]
-
-    entities-->genre[GENRE]
-
-    genre-->entity_uris[Entity URIs]
-    
-    entity_uris-->triples[Triples]
-    predicate_uris-->triples[Triples]
-    triples--Validate-->final_triples[Final triples]
-
-    ;
-```
 
 ### Future scope
 This project has been successful in developing a new technique of entity-relation extraction in the field of knowledge graph, thereby improving the previous end-2-end pipeline for triple extraction. But there is are still room for improvement towards the task of entity linking.
