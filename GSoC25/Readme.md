@@ -44,9 +44,13 @@ Then you can run the pipeline like this:
 ```
 
 
+### Project Workflow
 
 <img width="770" height="980" alt="NEF Workflow (1)" src="https://github.com/user-attachments/assets/d959fb05-5258-426c-a912-1a8534200e9e" />
 
 
 ### Future scope
-This project has been successful in developing a new technique of entity-relation extraction in the field of knowledge graph, thereby improving the previous end-2-end pipeline for triple extraction. But there is are still room for improvement towards the task of entity linking.
+
+This project introduced a neural framework for entity–relation extraction that combines LLM-based triple generation, Redis-backed entity linking, and embedding-based predicate retrieval. The Enhanced NEF pipeline improves grounding accuracy and contextual understanding over earlier end-to-end methods by enforcing strict validation, predicate thresholding, and disambiguation through Gemini models.
+
+Future work will focus on expanding semantic coverage and adaptability. Planned directions include integrating FAISS-based entity retrieval for broader coverage, refining predicate clustering and ontology alignment to improve generalization, and enabling incremental updates to keep Redis and embedding stores synchronized with evolving knowledge sources.
