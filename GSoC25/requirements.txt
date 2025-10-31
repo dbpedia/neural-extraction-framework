@@ -7,9 +7,6 @@ redis==4.6.0
 requests==2.31.0
 sentence_transformers==2.2.2
 SPARQLWrapper==2.0.0
-transformers==4.31.0
-spacy==3.6.1
-llama-cpp-python==0.2.90
 outlines==0.0.46
 wikipedia==1.4.0
 huggingface_hub==0.25.0

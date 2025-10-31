@@ -645,9 +645,9 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--predicates", type=str, default=None, help="Path to predicates.csv")
 
     # Redis
-    p.add_argument("--redis-host", type=str, default=os.getenv("NEF_REDIS_HOST", "91.99.92.217"))
-    p.add_argument("--redis-port", type=int, default=int(os.getenv("NEF_REDIS_PORT", "6379")))
-    p.add_argument("--redis-password", type=str, default=os.getenv("NEF_REDIS_PASSWORD", "NEF!gsoc2025"))
+    p.add_argument("--redis-host", type=str, default=os.getenv("NEF_REDIS_HOST", ""))
+    p.add_argument("--redis-port", type=int, default=int(os.getenv("NEF_REDIS_PORT", "")))
+    p.add_argument("--redis-password", type=str, default=os.getenv("NEF_REDIS_PASSWORD", ""))
 
     return p.parse_args(argv)
 
