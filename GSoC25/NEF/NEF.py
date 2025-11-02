@@ -370,11 +370,23 @@ class EnhancedNEFPipeline:
         llm_model: str = "gemini-2.5-flash",
         predicate_threshold: float = 0.5,
         new_predicate_namespace: str = "http://nef.local/rel/",
-        redis_host: str = "91.99.92.217",
-        redis_port: int = 6379,
-        redis_password: Optional[str] = "NEF!gsoc2025",
+        redis_host: Optional[str] = None,
+        redis_port: Optional[int] = None,
+        redis_password: Optional[str] = None,
         verbose: bool = True,
     ):
+        self.redis_host = redis_host or os.getenv("NEF_REDIS_HOST")
+        self.redis_port = (
+            redis_port
+            if redis_port is not None
+            else int(os.getenv("NEF_REDIS_PORT"))
+        )
+        # No hardcoded password; stays None unless provided
+        self.redis_password = (
+            redis_password
+            if redis_password is not None
+            else os.getenv("NEF_REDIS_PASSWORD")
+        )
         self.verbose = verbose
         self.client = client  # for extractor too
         self.require_redis_grounding = True  # strict
