@@ -13,7 +13,7 @@ except NameError:
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-from GSoC24.Data.collector import (
+from GSoC25.Data.collector import (
     get_sentences_with_entities,
     get_predicates_between,
     get_entity_types,
