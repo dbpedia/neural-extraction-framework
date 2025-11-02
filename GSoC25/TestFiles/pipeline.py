@@ -39,22 +39,24 @@ from GSoC24.Data.collector import get_text_of_wiki_page
 class RedisEntityLinking:
     """Redis-based entity linking with fallback to LLM"""
     
-    def __init__(self, host='91.99.92.217', port=6379, password='NEF!gsoc2025'):
-        try:
+    def __init__(self, host=None, port=None, password=None):
+         self.host = host or os.environ.get('NEF_REDIS_HOST')
+         self.port = port or os.environ.get('NEF_REDIS_PORT')
+         self.password = password or os.environ.get('NEF_REDIS_PASSWORD')
+         try:
             import redis
-            self.redis_forms = redis.Redis(host=host, port=port, password=password, db=0, decode_responses=True)
-            self.redis_redir = redis.Redis(host=host, port=port, password=password, db=1, decode_responses=True)
-            
+            self.redis_forms = redis.Redis(host=self.host, port=self.port, password=self.password, db=0, decode_responses=True)
+            self.redis_redir = redis.Redis(host=self.host, port=self.port, password=self.password, db=1, decode_responses=True)
+            try:
             # Test connection
-            if self.redis_forms.ping() and self.redis_redir.ping():
-                print("✓ Connected to Redis server successfully!")
-                self.available = True
-            else:
-                print("✗ Could not connect to Redis")
-                self.available = False
-        except Exception as e:
-            print(f"✗ Redis connection error: {e}")
-            self.available = False
+                if self.redis_forms.ping() and self.redis_redir.ping():
+                    print("✓ Connected to Redis server successfully!")
+                    self.available = True
+                else:
+                    print("✗ Could not connect to Redis")
+                    raise ConnectionError("Redis connection failed")
+            except Exception as e:
+                raise ConnectionError(f"Redis connection error: {e}")
     
     def calculate_redirect(self, source):
         """Calculate redirects recursively"""

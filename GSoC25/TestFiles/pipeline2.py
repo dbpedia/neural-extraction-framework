@@ -249,17 +249,16 @@ class RedisEntityLinking:
             import redis
             self.redis_forms = redis.Redis(host=self.host, port=self.port, password=self.password, db=0, decode_responses=True)
             self.redis_redir = redis.Redis(host=self.host, port=self.port, password=self.password, db=1, decode_responses=True)
-            
-            # Test connection
-            if self.redis_forms.ping() and self.redis_redir.ping():
-                print("✓ Connected to Redis server successfully!")
-                self.available = True
-            else:
-                print("✗ Could not connect to Redis")
+            try:
+                if self.redis_forms.ping() and self.redis_redir.ping():
+                    print("✓ Connected to Redis server successfully!")
+                    self.available = True
+                else:
+                    print("✗ Could not connect to Redis")
+                    self.available = False
+            except Exception as e:
+                print(f"✗ Redis connection error: {e}")
                 self.available = False
-        except Exception as e:
-            print(f"✗ Redis connection error: {e}")
-            self.available = False
     
     def calculate_redirect(self, source):
         """Calculate redirects recursively"""
