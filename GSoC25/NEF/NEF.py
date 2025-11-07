@@ -212,30 +212,82 @@ class PredicateEmbeddingRetriever:
 class LLMDisambiguator:
     def __init__(
         self,
-        client: "genai.Client",
+        client,
         model_name: str = "gemini-2.5-flash",
         predicate_threshold: float = 0.5,
-        new_predicate_namespace: str = "http://nef.local/rel/",
+        new_predicate_namespace: str | None = None,
         verbose: bool = True,
+        **kwargs,  # absorb any unexpected args from the pipeline
     ):
         self.client = client
         self.model_name = model_name
         self.thr = float(predicate_threshold)
-        self.ns = new_predicate_namespace.rstrip("/") + "/"
+        self.new_predicate_namespace = new_predicate_namespace
         self.verbose = verbose
+        # Optionally stash the rest if you ever want to inspect them:
+        self._extra_kwargs = kwargs
 
-    def _camelize(self, s: str) -> str:
-        s = re.sub(r"[^A-Za-z0-9\s]", " ", s).strip()
-        if not s:
-            return "relatedTo"
-        parts = re.split(r"\s+", s)
-        out = parts[0].lower() + "".join(p.capitalize() for p in parts[1:])
-        if out and out[0].isdigit():
-            out = "rel" + out
-        return out[:80]
+    # ------------------------ helpers ------------------------
 
-    def _mint_uri(self, local: str) -> str:
-        return self.ns + self._camelize(local)
+    @staticmethod
+    def _as_pairs(lst: Any) -> List[Tuple[str, float]]:
+        """Normalize a list of candidates to [(uri:str, score:float), ...]."""
+        out: List[Tuple[str, float]] = []
+        if not lst:
+            return out
+        for item in lst:
+            uri, score = "", 1.0
+            if isinstance(item, (list, tuple)):
+                if len(item) >= 1:
+                    uri = str(item[0])
+                if len(item) >= 2:
+                    try:
+                        score = float(item[1])
+                    except Exception:
+                        score = 1.0
+            elif isinstance(item, dict):
+                uri = str(item.get("uri") or item.get("id") or item.get("value") or "")
+                try:
+                    score = float(item.get("score", 1.0))
+                except Exception:
+                    score = 1.0
+            else:
+                uri = str(item)
+                score = 1.0
+            if uri:
+                out.append((uri, score))
+        return out
+
+    @staticmethod
+    def _fmt_indexed(lst: List[Tuple[str, float]]) -> str:
+        """Pretty print [(uri, score)] as indexed lines; tolerate empty."""
+        if not lst:
+            return "(empty)"
+        try:
+            return "\n".join([f'{i}. "{u}" (sim={s:.3f})' for i, (u, s) in enumerate(lst)]) or "(empty)"
+        except Exception:
+            # ultra-safe fallback
+            return "\n".join([f'{i}. "{str(item)}"' for i, item in enumerate(lst)]) or "(empty)"
+
+    @staticmethod
+    def _safe_idx(lst: List[Any], value: Any) -> Optional[int]:
+        """Clamp int(value) to valid range; return 0 on parse error; None for empty lst."""
+        if not lst:
+            return None
+        try:
+            i = int(value)
+        except Exception:
+            i = 0
+        return max(0, min(i, len(lst) - 1))
+
+    @staticmethod
+    def _get_json(text: Optional[str]) -> Dict[str, Any]:
+        try:
+            return json.loads((text or "").strip() or "{}")
+        except Exception:
+            return {}
+
+    # --------------------- main entrypoint ---------------------
 
     def disambiguate_triple(
         self,
@@ -244,113 +296,110 @@ class LLMDisambiguator:
         predicate_candidates: List[Tuple[str, float]],
         object_candidates: List[Tuple[str, float]],
     ):
+        """
+        Returns: (subject_uri, predicate_uri, object_uri, meta)
+        - subject_uri, object_uri are ALWAYS from the provided candidate lists.
+        - predicate_uri is chosen from candidate predicates >= threshold.
+        """
+
+        # Normalize inputs so mixed shapes don't crash anything
+        subject_candidates   = self._as_pairs(subject_candidates)
+        predicate_candidates = self._as_pairs(predicate_candidates)
+        object_candidates    = self._as_pairs(object_candidates)
+
         total_k = len(predicate_candidates)
-        sim_map = {u: (s, i) for i, (u, s) in enumerate(predicate_candidates)}
-        above = [(u, s) for (u, s) in predicate_candidates if s >= self.thr]
+        sim_map: Dict[str, Tuple[Optional[float], int]] = {
+            u: (s, i) for i, (u, s) in enumerate(predicate_candidates)
+        }
 
-        if above:
-            allowed = [u for u, _ in above]
-            pred_list_text = "\n".join([f"- {u}" for u in allowed])
-            prompt = f"""Pick the best RDF triple using ONLY these predicate URIs.
+        # Filter predicates by threshold
+        above = [(u, s) for (u, s) in predicate_candidates if (s is not None and s >= self.thr)]
 
-Allowed predicates:
+        # If no predicate passes threshold, fall back to top-1 S/O and return None predicate
+        if not above:
+            s_uri = subject_candidates[0][0] if subject_candidates else ""
+            o_uri = object_candidates[0][0] if object_candidates else ""
+            meta = {
+                "label": "no_predicate_above_threshold",
+                "topk": total_k,
+                "threshold": self.thr,
+            }
+            return (s_uri, None, o_uri, meta)
+
+        # Prepare prompt pieces
+        allowed = [u for (u, _s) in above]
+        pred_list_text = "\n".join([f'- "{u}"' for u in allowed])
+        subj_list_text = self._fmt_indexed(subject_candidates)
+        obj_list_text  = self._fmt_indexed(object_candidates)
+
+        prompt = f"""Pick the best RDF triple using ONLY these options.
+
+Allowed predicate URIs:
 {pred_list_text}
 
-Context:
+Subject candidates (choose by INDEX):
+{subj_list_text}
+
+Object candidates (choose by INDEX):
+{obj_list_text}
+
+Context (helps decide, but does NOT add new options):
 {context}
 
-Return ONLY JSON: {{"subject":"URI","predicate":"URI","object":"URI"}}
+Return ONLY strict JSON on one line (no prose):
+{{"subject_index": 0, "predicate": "URI", "object_index": 0}}
+Rules:
+- "predicate" MUST be exactly one URI from Allowed predicate URIs.
+- "subject_index" MUST be an integer index from Subject candidates.
+- "object_index" MUST be an integer index from Object candidates.
+- Do not invent or modify URIs. Do not swap roles.
 """
-            try:
-                resp = self.client.models.generate_content(
-                    model=self.model_name,
-                    contents=prompt,
-                    config={"response_mime_type": "application/json"},
-                )
-                data = _json_from_model(resp.text or "{}")
-                pred_uri = data.get("predicate", "")
-                if pred_uri not in allowed:
-                    pred_uri = allowed[0]
-                chosen_sim, rank0 = sim_map.get(pred_uri, (None, None))
-                meta = {
-                    "label": "candidate",
-                    "chosen_similarity": float(chosen_sim) if chosen_sim is not None else None,
-                    "rank_in_topk": (rank0 + 1) if rank0 is not None else None,
-                    "topk": total_k,
-                    "threshold": self.thr,
-                }
-                return (
-                    data.get("subject", subject_candidates[0][0] if subject_candidates else ""),
-                    pred_uri,
-                    data.get("object", object_candidates[0][0] if object_candidates else ""),
-                    meta,
-                )
-            except Exception as e:
-                if self.verbose:
-                    _safe_print(f"✗ disambiguation error; using top allowed: {e}")
-                best_uri, best_sim = max(above, key=lambda x: x[1])
-                _, rank0 = sim_map.get(best_uri, (best_sim, 0))
-                meta = {
-                    "label": "candidate",
-                    "chosen_similarity": float(best_sim),
-                    "rank_in_topk": (rank0 + 1),
-                    "topk": total_k,
-                    "threshold": self.thr,
-                }
-                return (
-                    subject_candidates[0][0] if subject_candidates else "",
-                    best_uri,
-                    object_candidates[0][0] if object_candidates else "",
-                    meta,
-                )
 
-        # None ≥ threshold → generate a new predicate
-        prompt = f"""No predicate meets the threshold ({self.thr:.2f}).
-Propose a NEW concise camelCase predicate name for this relation in context.
-Return ONLY JSON: {{"predicateLocalName":"camelCase"}}.
+        # Call the model (Gemini client style)
+        resp = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config={"response_mime_type": "application/json"},
+        )
 
-Context:
-{context}
-"""
-        try:
-            resp = self.client.models.generate_content(
-                model=self.model_name,
-                contents=prompt,
-                config={"response_mime_type": "application/json"},
-            )
-            data = _json_from_model(resp.text or "{}")
-            local = (data.get("predicateLocalName") or "relatedTo").strip()
-            pred_uri = self._mint_uri(local)
-            meta = {
-                "label": "generated",
-                "chosen_similarity": None,
-                "rank_in_topk": None,
-                "topk": total_k,
-                "threshold": self.thr,
-            }
-            return (
-                subject_candidates[0][0] if subject_candidates else "",
-                pred_uri,
-                object_candidates[0][0] if object_candidates else "",
-                meta,
-            )
-        except Exception as e:
-            if self.verbose:
-                _safe_print(f"✗ generation error; minting default: {e}")
-            pred_uri = self._mint_uri("relatedTo")
-            meta = {
-                "label": "generated",
-                "chosen_similarity": None,
-                "rank_in_topk": None,
-                "topk": total_k,
-                "threshold": self.thr,
-            }
-            return (
-                subject_candidates[0][0] if subject_candidates else "",
-                pred_uri,
-                object_candidates[0][0] if object_candidates else "",
-                meta,
-            )
+        data = self._get_json(getattr(resp, "text", None))
+
+        # Validate predicate
+        pred_uri = data.get("predicate", "")
+        if pred_uri not in allowed:
+            pred_uri = allowed[0]
+
+        # Clamp indices and map to URIs
+        si = self._safe_idx(subject_candidates, data.get("subject_index", 0))
+        oi = self._safe_idx(object_candidates,  data.get("object_index", 0))
+
+        s_uri = subject_candidates[si][0] if (subject_candidates and si is not None) else ""
+        o_uri = object_candidates[oi][0] if (object_candidates and oi is not None) else ""
+
+        # Paranoia: role-swap & collision guards
+        subj_pool = {u for (u, _s) in subject_candidates}
+        obj_pool  = {u for (u, _s) in object_candidates}
+
+        # If s_uri is actually from object pool and o_uri from subject pool, swap them back
+        if s_uri in obj_pool and o_uri in subj_pool and s_uri not in subj_pool:
+            s_uri, o_uri = o_uri, s_uri
+
+        # Avoid identical subject/object when pools differ (rare but can happen with weird lists)
+        if subj_pool and obj_pool and s_uri == o_uri and len(obj_pool) > 1:
+            # push object to top-1 object if collision looks suspicious
+            o_uri = object_candidates[0][0]
+
+        # Build meta (compatible with your previous code)
+        chosen_sim, rank0 = sim_map.get(pred_uri, (None, None))
+        meta = {
+            "label": "candidate",
+            "chosen_similarity": float(chosen_sim) if chosen_sim is not None else None,
+            "rank_in_topk": (rank0 + 1) if rank0 is not None else None,
+            "topk": total_k,
+            "threshold": self.thr,
+        }
+
+        return (s_uri, pred_uri, o_uri, meta)
 
 # =============== Orchestrator ===============
 
