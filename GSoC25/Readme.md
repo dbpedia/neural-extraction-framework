@@ -47,7 +47,7 @@ You need to precompute the DBpedia embeddings before running the NEF.
 ```
 Then you can run the pipeline like this:
 ```
-!python NEF/NEF.py -s "Sundar Pichai, an Indian-American business executive, became the CEO of Google in 2015, leading the company’s growth in artificial intelligence and cloud computing." \
+!python NEF/NEF.py -s "Albert Einstein developed the theory of relativity and won the Nobel Prize." \
   --embeddings embeddings.npy --predicates predicates.csv
 
 ```
