@@ -9,9 +9,9 @@
 
 ### What is Neural Extraction Framework?
 
-The Neural Extraction Framework (NEF) is a system designed to extract structured relational knowledge—called RDF triples—directly from unstructured text. While traditional approaches like [DBpedia](https://www.dbpedia.org/) rely on Wikipedia infoboxes to build knowledge graphs, NEF focuses on uncovering the hidden relationships embedded in natural language. It uses large language models (LLMs), embedding-based retrieval, and ontology alignment to identify entities, match predicates to a known ontology (like DBpedia), and produce machine-readable [relational triples](https://en.wikipedia.org/wiki/Semantic_triple) such as (Albert Einstein — award — Nobel Prize in Physics).
+The Neural Extraction Framework (NEF) is a system designed to extract structured relational knowledge—called RDF triples—directly from unstructured text. NEF focuses on uncovering the hidden relationships embedded in natural language. It uses large language models (LLMs), embedding-based retrieval, and ontology alignment to identify entities, match predicates to a known ontology (like DBpedia), and produce machine-readable [relational triples](https://en.wikipedia.org/wiki/Semantic_triple) such as (Albert Einstein — award — Nobel Prize in Physics).
 
-The goal of NEF is to move beyond static, infobox-based extraction toward a dynamic, intelligent pipeline that continuously learns and adapts. By integrating embedding search, Redis grounding, and LLM reasoning, NEF can both expand existing knowledge graphs and validate extracted information through similarity scoring and ontology mapping. In essence, NEF bridges text and knowledge representation—transforming open text into structured, queryable data that allows machines to “understand the world, one triple at a time.”
+The goal of NEF is to move beyond static, infobox-based extraction toward a dynamic, intelligent pipeline that continuously learns and adapts. By integrating embedding search, Redis grounding, and LLM reasoning, NEF can both expand existing knowledge graphs and validate extracted information through similarity scoring and ontology mapping. In essence, NEF bridges text and knowledge representation: transforming open text into structured, queryable data that allows machines to “understand the world, one triple at a time.”
 
 
 ### Code structure
