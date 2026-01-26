@@ -36,9 +36,9 @@ class OllamaInterface:
             host=base_url,  # <--- Fix: Pass the base_url here!
             temperature=model_config.temperature,
             top_p=model_config.top_p,
-            num_predict=getattr(model_config, 'max_tokens', 2000),
+            num_predict=getattr(model_config, 'num_predict', 2000),
             timeout=getattr(model_config, 'timeout', 60),
-            max_retries=3
+            max_retries=getattr(model_config, 'max_retries', 3)
         )
         
         # Initialize the shared service
