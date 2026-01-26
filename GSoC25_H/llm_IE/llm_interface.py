@@ -46,6 +46,9 @@ class OllamaInterface:
 
     def extract_relations(self, sentence: str, prompt: str) -> ExtractionResult:
         """Extracts relations from a sentence using the shared LLM service."""
+        # Fix: Explicitly mark 'sentence' as unused to satisfy linter
+        _ = sentence 
+        
         start_time = time.time()
         
         # Prepare standard message format for the shared service

@@ -40,7 +40,7 @@ class LLMService:
             elif isinstance(available_models_response, list):
                 models_list = available_models_response
             else:
-                self.logger.warning(f"Could not parse model list response. Attempting direct model check...")
+                self.logger.warning("Could not parse model list response. Attempting direct model check...")
                 try:
                     self.client.chat(
                         model=self.config.name,
