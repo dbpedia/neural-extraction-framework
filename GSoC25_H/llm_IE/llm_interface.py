@@ -33,6 +33,7 @@ class OllamaInterface:
         # We map 'max_tokens' (from llm_IE) to 'num_predict' (shared core)
         shared_config = SharedConfig(
             name=model_config.name,
+            host=base_url,  # <--- Fix: Pass the base_url here!
             temperature=model_config.temperature,
             top_p=model_config.top_p,
             num_predict=getattr(model_config, 'max_tokens', 2000),
