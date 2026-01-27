@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import redis
+import os
 import pandas as pd
 import time
-from typing import List, Dict
 
 
 class RedisEntityLinking:
@@ -16,7 +16,7 @@ class RedisEntityLinking:
          self.redis_redir = redis.Redis(host=self.host, port=self.port, password=self.password, db=1, decode_responses=True)
         
         # Test connection
-        try:
+         try:
             if self.redis_forms.ping() and self.redis_redir.ping():
                 print("Connected to Redis server successfully!")
                 print(f"Surface forms DB size: {self.redis_forms.dbsize()}")
@@ -24,10 +24,10 @@ class RedisEntityLinking:
             else:
                 print("Could not connect to Redis")
                 raise ConnectionError("Redis connection failed")
-        except Exception as e:
+         except Exception as e:
             print(f"Redis connection error: {e}")
             raise
-    
+        
     def calculate_redirect(self, source):
         result = self.redis_redir.get(source)
         if result is None:
