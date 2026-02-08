@@ -204,7 +204,7 @@ The production-ready extraction pipeline integrating all components.
 
 ```bash
 # 1. Clone repository
-git clone <repository-url>
+git clone https://github.com/dbpedia/neural-extraction-framework.git
 cd GSoC25_H
 
 # 2. Create virtual environment
@@ -279,7 +279,7 @@ Open browser at `http://localhost:8501` and enter a Hindi Wikipedia article name
 ```bash
 cd IndIE
 
-# Configure extraction mode in main.py (lines 45-50)
+# Configure extraction mode in main.py (Edit the 'hyper_params' dictionary)
 # Set: use_llm, llm_fallback, llm_enhancement, llm_filter_mode
 
 # Run extraction
@@ -337,15 +337,15 @@ The `models/download_models.sh` script downloads:
 ### Datasets
 
 - **Hindi-BenchIE:** 112-sentence gold standard for Hindi Open IE
-  - Location: `hindi-benchie/hindi_benchie_gold.txt`
+  - Location: `./IndIE/hindi-benchie/hindi_benchie_gold.txt`
   - Format: Custom text with clusters and compensatory extractions
 
 - **DBpedia Hindi (May 2025):** Knowledge graph dumps
-  - Location: `link_prediction/data/*.ttl.bz2`
+  - Location: `./link_prediction/data/*.ttl.bz2`
   - Size: 13 files, ~8GB compressed
 
 - **DBpedia Ontology:** Property definitions
-  - Location: `ontology_input/ontology--DEV_type=parsed.ttl`
+  - Location: `./ontology_input/ontology--DEV_type=parsed.ttl`
 
 ### External Resources
 
@@ -445,7 +445,7 @@ w_type = 0.1   # Type compatibility
 
 ### Related Projects
 
-- **IndIE Paper:** [IJCNLP-AACL 2023 Findings](http://103.25.231.59:80)
+- **IndIE Paper:** [IJCNLP-AACL 2023 Findings](https://aclanthology.org/2023.findings-ijcnlp.28/)
 - **WL-Coref:** [GitHub](https://github.com/vdobrovolskii/wl-coref)
 - **mGENRE:** [Facebook Research](https://github.com/facebookresearch/GENRE)
 - **Hindi-BenchIE:** [GitHub](https://github.com/ritwikmishra/hindi-benchie)
