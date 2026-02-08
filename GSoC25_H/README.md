@@ -2,8 +2,6 @@
 
 **A comprehensive pipeline for extracting structured knowledge triplets from Hindi text, combining rule-based methods, neural models, and large language models.**
 
-![Status](https://img.shields.io/badge/Status-Under_Development-orange)
-![GSoC](https://img.shields.io/badge/GSoC-2026_Candidate_Work-blue)
 
 > **Note:** This documentation was updated to reflect the current state of the codebase (Feb 2026).
 
@@ -11,13 +9,13 @@
 
 ## Overview
 
-This repository contains the GSoC 2024/2025 work for the DBpedia Hindi Chapter. It implements a multi-stage information extraction pipeline that processes Hindi Wikipedia articles and produces DBpedia-compatible triplets through coreference resolution, relation extraction, entity linking, and predicate linking.
+This repository contains the DBpedia Hindi Extraction Framework, originally developed during GSoC 2024/2025 and currently being updated for the GSoC 2026 cycle.
 
 ---
 
 ## Directory Structure
 
-```
+```text
 GSoC25_H/
 ├── IndIE/                          # Rule-based extraction with LLM enhancement
 │   ├── chunking/                   # Sentence chunking models (XLM-R, CRF)
@@ -439,7 +437,7 @@ w_type = 0.1   # Type compatibility
 2. **Type Linking Not Implemented:** Currently handles only relational properties, not type assertions
 3. **SPARQL Timeouts:** Occasional timeouts on complex predicate linking queries
 4. **LLM Hallucination:** High false positive rates (50-70%) in pure LLM modes
-5. **GPU Memory:** Larger Gemma models may require higher VRam (use quantized models)
+5. **GPU Memory:** Larger Gemma models may require higher VRAM (use quantized models)
 
 ---
 
