@@ -145,7 +145,7 @@ class PredicateEmbeddingRetriever:
         client: "genai.Client",
         embeddings_path: Optional[str] = None,
         predicates_path: Optional[str] = None,
-        embed_model: str = "embedding-001",
+        embed_model: str = "gemini-embedding-001",
         verbose: bool = True,
     ):
         self.client = client
@@ -446,7 +446,7 @@ class EnhancedNEFPipeline:
             client=self.client,
             embeddings_path=embeddings_path,
             predicates_path=predicates_path,
-            embed_model="embedding-001",
+            embed_model="gemini-embedding-001",
             verbose=verbose,
         )
         self.llm = LLMDisambiguator(
@@ -696,7 +696,7 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     # Gemini / models
     p.add_argument("--api-key", type=str, default=None, help="Gemini API key (or set GEMINI_API_KEY).")
     p.add_argument("--llm-model", type=str, default="gemini-2.5-flash", help="LLM for disambiguation/generation.")
-    p.add_argument("--embed-model", type=str, default="embedding-001", help="Embedding model name.")
+    p.add_argument("--embed-model", type=str, default="gemini-embedding-001", help="Embedding model name.")
     p.add_argument("--predicate-threshold", type=float, default=0.5, help="Similarity threshold to accept a predicate.")
     p.add_argument("--new-predicate-namespace", type=str, default="http://nef.local/rel/",
                    help="Namespace for generated predicates.")

@@ -10,7 +10,7 @@ if not API_KEY:
     API_KEY = getpass("Enter your Gemini API key: ").strip()
 
 # == Gemini Embeddings REST (batch) ==
-BATCH_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/embedding-001:batchEmbedContents"
+BATCH_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents"
 HEADERS = {"Content-Type": "application/json"}
 
 # ==== Helpers ====
@@ -93,7 +93,7 @@ def make_requests_payload(text_batch):
     requests_payload = []
     for text in text_batch:
         requests_payload.append({
-            "model": "models/embedding-001",
+            "model": "models/gemini-embedding-001",
             "content": {"parts": [{"text": text}]},
             "outputDimensionality": OUTPUT_DIM,
             # Optional: "taskType": "RETRIEVAL_DOCUMENT",
