@@ -706,10 +706,14 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--predicates", type=str, default=None, help="Path to predicates.csv")
 
     # Redis
-    p.add_argument("--redis-host", type=str, default=os.getenv("NEF_REDIS_HOST", ""))
-    p.add_argument("--redis-port", type=int, default=int(os.getenv("NEF_REDIS_PORT", "")))
-    p.add_argument("--redis-password", type=str, default=os.getenv("NEF_REDIS_PASSWORD", ""))
+   
+    redis_host_env = os.getenv("NEF_REDIS_HOST")
+    redis_port_env = os.getenv("NEF_REDIS_PORT")
+    redis_password_env = os.getenv("NEF_REDIS_PASSWORD")
 
+    p.add_argument("--redis-host", type=str, default=redis_host_env or "127.0.0.1")
+    p.add_argument("--redis-port", type=int, default=int(redis_port_env) if redis_port_env else 6379)
+    p.add_argument("--redis-password", type=str, default=redis_password_env or "")
     return p.parse_args(argv)
 
 def _collect_sentences(args: argparse.Namespace) -> List[str]:
