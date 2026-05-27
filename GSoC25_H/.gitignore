@@ -1,0 +1,14 @@
+*.pkl
+*.pt
+*.model
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.env
+models/EL_model/fairseq_multilingual_entity_disambiguation/
+models/RE_model/files_indie/
+models/state_dicts/model.pt
+models/ontology/
+*.tar.gz
+llm_IE/finetuning/synthetic_data/
+llm_IE/full_dataset_results/

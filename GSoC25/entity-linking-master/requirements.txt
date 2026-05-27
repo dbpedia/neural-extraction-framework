@@ -1,0 +1,4 @@
+SPARQLWrapper
+requests
+python-dotenv
+pandas

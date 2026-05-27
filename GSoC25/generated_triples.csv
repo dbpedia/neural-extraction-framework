@@ -1,0 +1,49 @@
+,subject,predicate,object,subject_URI,predicate_URI,object_URI
+0,Joseph R. Biden,Born in,United States,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/birthName,https://dbpedia.org/resource/United_States
+1,Joseph R. Biden,Member of,Democratic Party,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/member,https://dbpedia.org/resource/Democratic_Party_(United_States)
+2,Joseph R. Biden,Moved to,Delaware,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/destination,https://dbpedia.org/resource/Delaware
+3,Joseph R. Biden,Studied at,University of Delaware,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/university,https://dbpedia.org/resource/University_of_Delaware
+4,Joseph R. Biden,Earned degree from,Syracuse University,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/diploma,https://dbpedia.org/resource/Syracuse_University
+5,Joseph R. Biden,Served on,New Castle County Council,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/medalist,https://dbpedia.org/resource/New_Castle_County_Council
+6,Joseph R. Biden,Served in,United States Senate,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/medalist,https://dbpedia.org/resource/United_States_Senate
+7,Joseph R. Biden,Participated in confirmation hearings for,Robert Bork,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/committee,https://dbpedia.org/resource/Robert_Bork
+8,Joseph R. Biden,Participated in confirmation hearings for,Clarence Thomas,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/committee,https://dbpedia.org/resource/Clarence_Thomas
+9,Joseph R. Biden,Ran with as vice presidential candidate,Kamala Harris,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/vicePresident,https://dbpedia.org/resource/Kamala_Harris
+10,Joseph R. Biden,Defeated in presidential election by,Donald Trump,https://dbpedia.org/resource/Joseph_R._Biden,,https://dbpedia.org/resource/Donald_Trump
+11,Joseph R. Biden,Responded to,COVID-19 pandemic,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/linkedTo,https://dbpedia.org/resource/COVID-19_pandemic
+12,Joseph R. Biden,Signed into law,American Rescue Plan Act,https://dbpedia.org/resource/Joseph_R._Biden,,https://dbpedia.org/resource/American_Rescue_Plan
+13,Joseph R. Biden,Proposed,American Jobs Plan,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/project,https://dbpedia.org/resource/American_Jobs_Plan
+14,Joseph R. Biden,Incorporated into,Infrastructure Investment and Jobs Act,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/prov:Entity,https://dbpedia.org/resource/Infrastructure_Investment_and_Jobs_Act_of_2009
+15,Joseph R. Biden,Proposed,American Families Plan,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/project,https://dbpedia.org/resource/American_Families_Plan
+16,Joseph R. Biden,Proposed and later incorporated into,Build Back Better Act,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/established,https://dbpedia.org/resource/Build_Back_Better_Act
+17,Joseph R. Biden,Signed into law as,Inflation Reduction Act of 2022,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/legalForm,https://dbpedia.org/resource/Inflation_Reduction_Act_of_2022
+18,Joseph R. Biden,Appointed to Supreme Court by,Ketanji Brown Jackson,https://dbpedia.org/resource/Joseph_R._Biden,,https://dbpedia.org/resource/Ketanji_Brown_Jackson
+19,Joseph R. Biden,Rejoined,Paris Agreement,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/mergedWith,https://dbpedia.org/resource/Treaty_on_the_Final_Settlement_with_Respect_to_Iraq
+20,Joseph R. Biden,Completed withdrawal of troops from,Afghanistan,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/discontinued,https://dbpedia.org/resource/Afghanistan
+21,Joseph R. Biden,Responded to invasion of,Taliban,https://dbpedia.org/resource/Joseph_R._Biden,,https://dbpedia.org/resource/Tehrik-i-Taliban_Pakistan
+22,Joseph R. Biden,Imposed sanctions on,Russia,https://dbpedia.org/resource/Joseph_R._Biden,http://dbpedia.org/ontology/regime,https://dbpedia.org/resource/List_of_non-marine_molluscs_of_Russia
+23,Joseph R. Biden,Authorized foreign aid and weapons shipments to,Ukraine,https://dbpedia.org/resource/Joseph_R._Biden,,https://dbpedia.org/resource/Ukrainian_Soviet_Socialist_Republic
+24,Barack Obama,Member of,Democratic Party,https://dbpedia.org/resource/Barack_Obama,http://dbpedia.org/ontology/member,https://dbpedia.org/resource/Democratic_Party_(United_States)
+25,Barack Obama,Served as,United States Senate,https://dbpedia.org/resource/Barack_Obama,http://dbpedia.org/ontology/medalist,https://dbpedia.org/resource/United_States_Senate
+26,Barack Obama,Served with as president,Joseph R. Biden,https://dbpedia.org/resource/Barack_Obama,http://dbpedia.org/ontology/president,https://dbpedia.org/resource/Joseph_R._Biden
+27,Delaware,Represented in Senate by,Joseph R. Biden,https://dbpedia.org/resource/Delaware,http://dbpedia.org/ontology/senator,https://dbpedia.org/resource/Joseph_R._Biden
+28,University of Delaware,Alumnus of,Joseph R. Biden,https://dbpedia.org/resource/University_of_Delaware,http://dbpedia.org/ontology/alumni,https://dbpedia.org/resource/Joseph_R._Biden
+29,Syracuse University,Alumnus of,Joseph R. Biden,https://dbpedia.org/resource/Syracuse_University,http://dbpedia.org/ontology/alumni,https://dbpedia.org/resource/Joseph_R._Biden
+30,New Castle County Council,Served on council with,Joseph R. Biden,https://dbpedia.org/resource/New_Castle_County_Council,http://dbpedia.org/ontology/councilArea,https://dbpedia.org/resource/Joseph_R._Biden
+31,United States Senate,Held confirmation hearings for,Robert Bork,https://dbpedia.org/resource/United_States_Senate,http://dbpedia.org/ontology/convictionDate,https://dbpedia.org/resource/Robert_Bork
+32,United States Senate,Held confirmation hearings for,Clarence Thomas,https://dbpedia.org/resource/United_States_Senate,http://dbpedia.org/ontology/convictionDate,https://dbpedia.org/resource/Clarence_Thomas
+33,United States Senate,Served with as vice president,Joseph R. Biden,https://dbpedia.org/resource/United_States_Senate,http://dbpedia.org/ontology/vicePresident,https://dbpedia.org/resource/Joseph_R._Biden
+34,Kamala Harris,Ran with as presidential candidate,Joseph R. Biden,https://dbpedia.org/resource/Kamala_Harris,,https://dbpedia.org/resource/Joseph_R._Biden
+35,Kamala Harris,Defeated in presidential election by,Donald Trump,https://dbpedia.org/resource/Kamala_Harris,,https://dbpedia.org/resource/Donald_Trump
+36,American Rescue Plan Act,Signed into law by,Joseph R. Biden,https://dbpedia.org/resource/American_Rescue_Plan,,https://dbpedia.org/resource/Joseph_R._Biden
+37,American Jobs Plan,Proposed by,Joseph R. Biden,https://dbpedia.org/resource/American_Jobs_Plan,http://dbpedia.org/ontology/project,https://dbpedia.org/resource/Joseph_R._Biden
+38,Infrastructure Investment and Jobs Act,Incorporated into by,Joseph R. Biden,https://dbpedia.org/resource/Infrastructure_Investment_and_Jobs_Act_of_2009,http://dbpedia.org/ontology/foundedBy,https://dbpedia.org/resource/Joseph_R._Biden
+39,American Families Plan,Proposed by,Joseph R. Biden,https://dbpedia.org/resource/American_Families_Plan,http://dbpedia.org/ontology/project,https://dbpedia.org/resource/Joseph_R._Biden
+40,Build Back Better Act,Proposed and later incorporated into by,Joseph R. Biden,https://dbpedia.org/resource/Build_Back_Better_Act,http://dbpedia.org/ontology/foundedBy,https://dbpedia.org/resource/Joseph_R._Biden
+41,Inflation Reduction Act of 2022,Signed into law as by,Joseph R. Biden,https://dbpedia.org/resource/Inflation_Reduction_Act_of_2022,http://dbpedia.org/ontology/legalForm,https://dbpedia.org/resource/Joseph_R._Biden
+42,Ketanji Brown Jackson,Nominated by,Joseph R. Biden,https://dbpedia.org/resource/Ketanji_Brown_Jackson,http://dbpedia.org/ontology/nominee,https://dbpedia.org/resource/Joseph_R._Biden
+43,Paris Agreement,Rejoined by,Joseph R. Biden,https://dbpedia.org/resource/Treaty_on_the_Final_Settlement_with_Respect_to_Iraq,http://dbpedia.org/ontology/followedBy,https://dbpedia.org/resource/Joseph_R._Biden
+44,Afghanistan,Withdrawn troops from,Joseph R. Biden,https://dbpedia.org/resource/Afghanistan,http://dbpedia.org/ontology/militaryUnit,https://dbpedia.org/resource/Joseph_R._Biden
+45,Taliban,Seized control of,Russia,https://dbpedia.org/resource/Tehrik-i-Taliban_Pakistan,http://dbpedia.org/ontology/apprehended,https://dbpedia.org/resource/List_of_non-marine_molluscs_of_Russia
+46,Russia,Invaded,Ukraine,https://dbpedia.org/resource/List_of_non-marine_molluscs_of_Russia,http://dbpedia.org/ontology/war,https://dbpedia.org/resource/Ukrainian_Soviet_Socialist_Republic
+47,Ukraine,Received aid and weapons from,Joseph R. Biden,https://dbpedia.org/resource/Ukrainian_Soviet_Socialist_Republic,http://dbpedia.org/ontology/usedInWar,https://dbpedia.org/resource/Joseph_R._Biden

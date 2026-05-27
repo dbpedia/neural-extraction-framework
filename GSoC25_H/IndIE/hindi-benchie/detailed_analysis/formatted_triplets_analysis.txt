@@ -1,0 +1,3170 @@
+Detailed Analysis Report
+==================================================
+
+Sentence ID: 1
+Sentence Text: कार्यरूप जगत को देखकर ही शक्तिरूपी माया की सििद्ध होती है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- कार्यरूप जगत को	देखकर	शक्तिरूपी माया की सििद्ध होती है
+- शक्तिरूपी माया की सििद्ध होती है	property	कार्यरूप जगत को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [शक्तिरूपी]{a} माया की --> सििद्ध होती है --> [कार्यरूप]{b} जगत को देखकर [ही]
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): शक्तिरूपी --> property --> माया [की]
+      Status: not satisfied
+    - Gold (b): कार्यरूप --> property --> जगत [को]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 2
+Sentence Text: अखिल भारतीय पुलिस डयूटी मीट ( 1958 से ) में अंगुलि चिह्न विज्ञान प्रतियोगिता आयोजित करना .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- अखिल भारतीय पुलिस डयूटी मीट	आयोजित करना	अंगुलि चिह्न विज्ञान प्रतियोगिता
+- अखिल भारतीय पुलिस डयूटी मीट	property	1958 से
+- अंगुलि चिह्न विज्ञान प्रतियोगिता	property	1958 से
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: अखिल भारतीय पुलिस डयूटी मीट [( 1958 से )]{a} में --> आयोजित करना --> [अंगुलि चिह्न विज्ञान]{b} प्रतियोगिता
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): ( 1958 से ) --> property --> अखिल भारतीय पुलिस डयूटी मीट
+      Status: not satisfied
+    - Gold (b): अंगुलि चिह्न विज्ञान --> property --> प्रतियोगिता
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 3
+Sentence Text: केन्द्रीय सरकार के विभागों एवं भारत सरकार के उपक्रमों द्वारा भेजे गए विवादित अंगुलि चिह्नों का परीक्षण करना .
+Metrics: TP=0, FP=6, FN=3
+
+--- Model Extractions ---
+- विवादित अंगुलि चिह्नों का परीक्षण	भेजे गए	केन्द्रीय सरकार के विभागों एवं भारत सरकार के उपक्रमों द्वारा
+- परीक्षण	property	केन्द्रीय सरकार के विभागों एवं भारत सरकार के उपक्रमों द्वारा
+- विभाग	property	केन्द्रीय सरकार के
+- उपक्रम	property	भारत सरकार के
+- विभाग	property	केन्द्रीय सरकार
+- उपक्रम	property	भारत सरकार
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [विवादित]{a} अंगुलि चिह्नों का --> परीक्षण करना --> [केन्द्रीय सरकार के विभागों एवं] भारत सरकार के उपक्रमों द्वारा
+      Status: not satisfied
+    - Gold: [केन्द्रीय]{b} सरकार के विभागों --> द्वारा भेजे गए --> [विवादित]{a} अंगुलि चिह्नों का
+      Status: not satisfied
+    - Gold: [भारत]{c} सरकार के उपक्रमों --> द्वारा भेजे गए --> [विवादित]{a} अंगुलि चिह्नों का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): विवादित --> property --> अंगुलि चिह्नों [का]
+      Status: not satisfied
+    - Gold (b): केन्द्रीय --> property --> सरकार के विभागों
+      Status: not satisfied
+    - Gold (c): भारत --> property --> सरकार के उपक्रमों
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 4
+Sentence Text: 007 के गुप्त नाम से प्रसिद्ध यह एजेंट फ़्लेमिंग की बारह पुस्तकों व दो लघुकथाओं में मौजूद है .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- 007	प्रसिद्ध	गुप्त नाम से
+- 007	मौजूद है	फ़्लेमिंग की बारह पुस्तकों व दो लघुकथाओं में
+- एजेंट	property	फ़्लेमिंग की बारह पुस्तकों व दो लघुकथाओं में
+- फ़्लेमिंग	property	एजेंट
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [फ़्लेमिंग की]{a} बारह पुस्तकों व दो लघुकथाओं में --> मौजूद है --> यह एजेंट
+      Status: not satisfied
+    - Gold: [007 के गुप्त नाम से]{b} प्रसिद्ध --> property --> यह एजेंट
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): फ़्लेमिंग की --> property --> बारह पुस्तकों [व दो लघुकथाओं में] |OR| फ़्लेमिंग की --> property --> दो लघुकथाओं [में] |OR| फ़्लेमिंग की --> बारह पुस्तकों [व दो लघुकथाओं] में मौजूद है --> यह एजेंट
+      Status: not satisfied
+    - Gold (b): प्रसिद्ध --> property --> 007 के गुप्त नाम से
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [फ़्लेमिंग की]{a} बारह पुस्तकों [में] --> मौजूद है --> यह एजेंट
+      Status: not satisfied
+    - Gold: [फ़्लेमिंग की]{b} दो लघुकथाओं में --> मौजूद है --> यह एजेंट
+      Status: not satisfied
+    - Gold: [007 के गुप्त नाम से]{c} प्रसिद्ध --> property --> यह एजेंट
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): फ़्लेमिंग की --> property --> बारह पुस्तकों |OR| फ़्लेमिंग की --> बारह पुस्तकों [व दो लघुकथाओं] में मौजूद है --> यह एजेंट
+      Status: not satisfied
+    - Gold (b): फ़्लेमिंग की --> property --> दो लघुकथाओं [में] |OR| फ़्लेमिंग की --> बारह पुस्तकों [व दो लघुकथाओं] में मौजूद है --> यह एजेंट
+      Status: not satisfied
+    - Gold (c): प्रसिद्ध --> property --> [007 के]{d} गुप्त नाम से
+      Status: not satisfied
+    - Gold (d): 007 [के] --> property --> गुप्त नाम [से]
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: [007 के गुप्त नाम से प्रसिद्ध]{a} यह एजेंट --> मौजूद है --> [फ़्लेमिंग की]{b} बारह पुस्तकों व दो लघुकथाओं में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): यह एजेंट --> property --> 007 के [गुप्त] नाम से प्रसिद्ध
+      Status: not satisfied
+    - Gold (b): फ़्लेमिंग की --> property --> बारह पुस्तकों व दो लघुकथाओं में |OR| फ़्लेमिंग की --> बारह पुस्तकों [व दो लघुकथाओं] में मौजूद है --> यह एजेंट
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 5
+Sentence Text: 01 अगस्त 1907 को उन्होंने अपनी एक पत्रिका ' साधु ' शुरू की .
+Metrics: TP=1, FP=2, FN=1
+
+--- Model Extractions ---
+- उन्होंने	शुरू की	अपनी एक पत्रिका साधु 
+- पत्रिका	property	 साधु
+- property	property	एक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [01 अगस्त 1907 को]{a} उन्होंने --> शुरू की --> [अपनी] [एक पत्रिका]{b} साधु
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): 01 अगस्त 1907 को --> property --> शुरू की |OR| 01 अगस्त 1907 को --> शुरू की --> [अपनी] [एक पत्रिका]{b} साधु
+      Status: not satisfied
+    - Gold (b): [अपनी] एक पत्रिका --> property --> साधु
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [01 अगस्त 1907 को]{a} उन्होंने --> शुरू की --> [अपनी] एक पत्रिका [साधु]{b}
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): 01 अगस्त 1907 को --> property --> शुरू की |OR| 01 अगस्त 1907 को --> शुरू की --> [अपनी] [एक पत्रिका]{b} साधु
+      Status: not satisfied
+    - Gold (b): [अपनी] एक पत्रिका --> property --> साधु
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 6
+Sentence Text: 01 अप्रैल 2009 से कंपनी में नवीनतम वेतनमानों को लागू किया गया है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- कंपनी	लागू किया गया	नवीनतम वेतनमानों
+- वेतनमान	property	नवीनतम
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [01 अप्रैल 2009 से]{a} कंपनी में --> लागू किया गया है --> नवीनतम वेतनमानों को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 01 अप्रैल 2009 से --> लागू किया गया है --> नवीनतम वेतनमानों को |OR| 01 अप्रैल 2009 से --> property --> लागू किया गया है |OR| 01 अप्रैल 2009 से --> लागू किया गया है --> कंपनी में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [01 अप्रैल 2009 से]{a} कंपनी में --> लागू किया गया है --> [नवीनतम]{b} वेतनमानों को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 01 अप्रैल 2009 से --> property --> लागू किया गया है |OR| 01 अप्रैल 2009 से --> लागू किया गया है --> [नवीनतम]{b} वेतनमानों को
+      Status: not satisfied
+    - Gold (b): नवीनतम --> property --> वेतनमानों [को]
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: [01 अप्रैल]{a} 2009 से --> लागू किया गया है --> [नवीनतम]{b} वेतनमानों को
+      Status: not satisfied
+    - Gold: कंपनी में --> लागू किया गया है --> [नवीनतम]{b} वेतनमानों को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 01 अप्रैल --> property --> 2009 से
+      Status: not satisfied
+    - Gold (b): नवीनतम --> property --> वेतनमानों [को]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 7
+Sentence Text: 01 जून : गोधरा ट्रेन कांड की सुनवाई अहमदाबाद के साबरमती केंद्रीय जेल के अंदर शुरू हुई .
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - [गोधरा ट्रेन कांड की]{b} सुनवाई --> शुरू हुई --> [अहमदाबाद के]{c} साबरमती केंद्रीय जेल के अंदर
+    - 01 जून --> शुरू हुई --> [गोधरा]{a} [ट्रेन कांड की]{b} सुनवाई |OR| 01 जून --> property --> शुरू हुई
+  Compensatory Extractions:
+    - (a) गोधरा --> property --> ट्रेन कांड
+    - (b) सुनवाई --> property --> [गोधरा]{a} ट्रेन कांड की
+    - (c) अहमदाबाद के --> property --> साबरमती केंद्रीय जेल [के अंदर]
+
+Cluster: cluster 2
+  Essential Extractions:
+    - [गोधरा]{a} ट्रेन कांड की --> सुनवाई शुरू हुई --> [अहमदाबाद के]{b} साबरमती केंद्रीय जेल के अंदर
+    - 01 जून --> सुनवाई शुरू हुई --> [गोधरा]{a} ट्रेन कांड की |OR| 01 जून --> property --> सुनवाई शुरू हुई
+  Compensatory Extractions:
+    - (a) गोधरा --> property --> ट्रेन कांड
+    - (b) अहमदाबाद के --> property --> साबरमती केंद्रीय जेल
+
+==================================================
+
+Sentence ID: 8
+Sentence Text: 06 अक्टूबर 1989 को वे सर्वोच्च न्यायालय की न्यायाधीश नियुक्त हुई .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- वे	appointment	सर्वोच्च न्यायालय की न्यायाधीश
+- न्याधीश	property	सर्वोच्च न्यायालय की
+- न्याधीश	appointment	1989 को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [06 अक्टूबर 1989 को]{a} वे [सर्वोच्च न्यायालय की]{b} --> नियुक्त हुई --> न्यायाधीश
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 06 अक्टूबर 1989 को --> नियुक्त हुई --> न्यायाधीश |OR| 06 अक्टूबर 1989 को --> नियुक्त हुई --> वे |OR| 06 अक्टूबर 1989 को --> property --> नियुक्त हुई
+      Status: not satisfied
+    - Gold (b): सर्वोच्च न्यायालय की --> property --> न्यायाधीश
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [06 अक्टूबर 1989 को]{a} वे --> नियुक्त हुई --> [सर्वोच्च न्यायालय की]{b} न्यायाधीश
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 06 अक्टूबर 1989 को --> नियुक्त हुई --> [सर्वोच्च न्यायालय की]{b} न्यायाधीश |OR| 06 अक्टूबर 1989 को --> नियुक्त हुई --> वे |OR| 06 अक्टूबर 1989 को --> property --> नियुक्त हुई
+      Status: not satisfied
+    - Gold (b): सर्वोच्च न्यायालय की --> property --> न्यायाधीश
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 9
+Sentence Text: 06 प्रतिशत ऐसे लोग थे जिनका कोई विशेष धर्म नहीं था .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- लोग	धर्म	कोई विशेष नहीं
+- धर्म	property	विशेष
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: 06 प्रतिशत --> [ऐसे] लोग थे --> जिनका कोई विशेष धर्म नहीं था
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: 06 प्रतिशत लोग --> नहीं था --> कोई विशेष धर्म
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: 06 प्रतिशत --> थे --> [ऐसे] लोग [जिनका कोई विशेष धर्म नहीं था]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 06 प्रतिशत --> थे --> जिनका कोई विशेष धर्म नहीं था
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 10
+Sentence Text: 1 अक्टूबर 1854 को इम्पीरियल पोस्टल सर्विस द्वारा पहला डाक टिकट जारी किया गया .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- पहला डाक टिकट	जारी किया गया	इम्पीरियल पोस्टल सर्विस द्वारा
+- इम्पीरियल पोस्टल सर्विस	property	1 अक्टूबर 1854 को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अक्टूबर 1854 को]{a} इम्पीरियल पोस्टल सर्विस द्वारा --> जारी किया गया --> [पहला]{b} डाक टिकट
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): 1 अक्टूबर 1854 को --> जारी किया गया --> [पहला]{b} डाक टिकट |OR| 1 अक्टूबर 1854 को --> जारी किया गया --> [पहला डाक टिकट] इम्पीरियल पोस्टल सर्विस द्वारा |OR| 1 अक्टूबर 1854 को --> property --> जारी किया गया
+      Status: not satisfied
+    - Gold (b): पहला --> property --> डाक टिकट |OR| पहला --> जारी किया गया --> डाक टिकट
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 11
+Sentence Text: 1 अक्टूबर 1953 को आंध्र ने कर्नूल को अपनी राजधानी के साथ राज्य का दर्जा पाया .
+Metrics: TP=0, FP=7, FN=2
+
+--- Model Extractions ---
+- आंध्र	के साथ	कर्नूल को अपनी राजधानी
+- आंध्र	राज्य का दर्जा	राज्य का
+- आंध्र	की	1 अक्टूबर 1953 को
+- राज्य	का	राज्य
+- राज्य	के साथ	कर्नूल को अपनी राजधानी
+- राज्य	के साथ	राज्य का दर्जा
+- राज्य	के साथ	1 अक्टूबर 1953 को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अक्टूबर 1953 को]{a} आंध्र ने --> पाया --> कर्नूल [को] [अपनी राजधानी]{c}
+      Status: not satisfied
+    - Gold: [1 अक्टूबर 1953 को]{a} आंध्र ने --> दर्जा पाया --> राज्य का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अक्टूबर 1953 को --> पाया --> दर्जा |OR| 1 अक्टूबर 1953 को --> property --> पाया
+      Status: not satisfied
+    - Gold (c): कर्नूल [को] --> राजधानी का दर्जा पाया --> आंध्र <--{not allowed in passive}
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [1 अक्टूबर 1953 को]{a} आंध्र ने --> दर्जा पाया --> राज्य का
+      Status: not satisfied
+    - Gold: [1 अक्टूबर 1953 को]{a} कर्नूल ने --> दर्जा पाया --> राजधानी का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अक्टूबर 1953 को --> पाया --> दर्जा |OR| 1 अक्टूबर 1953 को --> property --> पाया
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 12
+Sentence Text: 1 अक्टूबर 2008 को न्यूजीलैंड और ऑस्ट्रेलिया में दूसरा सीज़न ज़ारी किया गया .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- दूसरा सीज़न	जारी किया गया	1 अक्टूबर 2008 को न्यूजीलैंड और ऑस्ट्रेलिया में
+- सीज़न	property	दूसरा
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अक्टूबर 2008 को]{a} [न्यूजीलैंड और]{b} ऑस्ट्रेलिया में --> ज़ारी किया गया --> [दूसरा]{c} सीज़न
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अक्टूबर 2008 को --> ज़ारी किया गया --> [दूसरा]{c} सीज़न |OR| 1 अक्टूबर 2008 को --> property --> ज़ारी किया गया |OR| 1 अक्टूबर 2008 को --> ज़ारी किया गया --> [न्यूजीलैंड और]{b} ऑस्ट्रेलिया में
+      Status: not satisfied
+    - Gold (b): [1 अक्टूबर 2008 को]{a} न्यूजीलैंड [में] --> ज़ारी किया गया --> [दूसरा]{c} सीज़न
+      Status: not satisfied
+    - Gold (c): दूसरा --> property --> सीज़न
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 13
+Sentence Text: 1 अक्टूबर को , रॉबर्ट आइगर ने सीईओ के रूप में माइकल आइजनर का स्थान लिया .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- रॉबर्ट आइगर ने	स्थान लिया	माइकल आइजनर
+- माइकल आइजनर	सीईओ	अक्टूबर को
+- अक्टूबर को	property	1
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अक्टूबर को ,]{a} रॉबर्ट आइगर ने --> स्थान लिया --> सीईओ के रूप में
+      Status: not satisfied
+    - Gold: [1 अक्टूबर को ,]{a} रॉबर्ट आइगर ने --> स्थान लिया --> माइकल आइजनर का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अक्टूबर को --> स्थान लिया --> माइकल आइजनर का |OR| 1 अक्टूबर को --> स्थान लिया --> रॉबर्ट आइगर ने |OR| 1 अक्टूबर को --> property --> स्थान लिया
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 14
+Sentence Text: 1 अक्टूबर , 1960 को यह देश इंग्लैंड के शासन से आजाद हुआ .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- देश	आजाद हुआ	1 अक्टूबर 1960 को
+- शासन	property	इंग्लैंड के
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अक्टूबर , 1960 को]{a} यह देश --> आजाद हुआ --> [इंग्लैंड के]{b} शासन से
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अक्टूबर , 1960 को --> आजाद हुआ --> यह देश |OR| 1 अक्टूबर , 1960 को --> आजाद हुआ --> [इंग्लैंड के]{b} शासन से |OR| 1 अक्टूबर , 1960 को --> property --> आजाद हुआ
+      Status: not satisfied
+    - Gold (b): शासन [से] --> property --> इंग्लैंड के <--{not allowed in passive}
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 15
+Sentence Text: 1 अगस्त 1915 में चन्द्रसिंह को अन्य गढ़वाली सैनिकों के साथ अंग्रेजों द्वारा फ्रांस भेज दिया गया .
+Metrics: TP=0, FP=3, FN=3
+
+--- Model Extractions ---
+- चन्द्रसिंह	भेज दिया गया	फ्रांस
+- चन्द्रसिंह	property	अन्य गढ़वाली सैनिकों के साथ
+- सैनिक	property	गढ़वाली
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अगस्त 1915 में]{a} चन्द्रसिंह को --> भेज दिया गया --> फ्रांस
+      Status: not satisfied
+    - Gold: अंग्रेजों द्वारा --> भेज दिया गया --> चन्द्रसिंह को |OR| अंग्रेजों द्वारा --> भेज दिया गया --> फ्रांस
+      Status: not satisfied
+    - Gold: [अन्य] [गढ़वाली]{b} सैनिकों के साथ --> भेज दिया गया --> चन्द्रसिंह को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अगस्त 1915 में --> भेज दिया गया --> फ्रांस |OR| 1 अगस्त 1915 में --> भेज दिया गया --> चन्द्रसिंह को |OR| 1 अगस्त 1915 में --> property --> भेज दिया गया
+      Status: not satisfied
+    - Gold (b): गढ़वाली --> property --> सैनिकों [के साथ]
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [1 अगस्त 1915 में]{a} चन्द्रसिंह को --> भेज दिया गया --> अंग्रेजों द्वारा
+      Status: not satisfied
+    - Gold: अंग्रेजों द्वारा --> भेज दिया गया --> फ्रांस
+      Status: not satisfied
+    - Gold: [अन्य] [गढ़वाली]{b} सैनिकों के साथ --> भेज दिया गया --> चन्द्रसिंह को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अगस्त 1915 में --> भेज दिया गया --> फ्रांस |OR| 1 अगस्त 1915 में --> भेज दिया गया --> चन्द्रसिंह को |OR| 1 अगस्त 1915 में --> property --> भेज दिया गया
+      Status: not satisfied
+    - Gold (b): गढ़वाली --> property --> सैनिकों [के साथ]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 16
+Sentence Text: 1 अप्रैल 1946 को इसे स्वायत्तशासी प्रान्त घोषित किया गया और गोविन्द बल्लभ पन्त इसके पहले मुख्य मन्त्री बने .
+Metrics: TP=1, FP=2, FN=2
+
+--- Model Extractions ---
+- 1 अप्रैल 1946 को	घोषित किया गया	स्वायत्तशासी प्रान्त
+- गोविंद बल्लभ पन्त	property	इसके पहले मुख्य मन्त्री
+- 1 अप्रैल 1946 को	property	स्वायत्तशासी प्रान्त
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1 अप्रैल 1946 को]{a} इसे --> घोषित किया गया --> [स्वायत्तशासी]{b} प्रान्त
+      Status: not satisfied
+    - Gold: गोविन्द बल्लभ पन्त --> बने --> [इसके पहले]{c} मुख्य मन्त्री |OR| गोविंद बल्लभ पंत --> बने --> [इसके पहले]{c} मुख्य मंत्री
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1 अप्रैल 1946 को --> घोषित किया गया --> [स्वायत्तशासी]{b} प्रान्त |OR| 1 अप्रैल 1946 को --> घोषित किया गया --> इसे |OR| 1 अप्रैल 1946 को --> property --> घोषित किया गया
+      Status: satisfied
+    - Gold (b): स्वायत्तशासी --> property --> प्रान्त
+      Status: not satisfied
+    - Gold (c): इसके पहले --> property --> मुख्य मन्त्री
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 17
+Sentence Text: हिन्दी प्रचार सभा एक आन्दोलन थी जो भारत के स्वतन्त्रता आन्दोलन के साथ ही आरम्भ हुई .
+Metrics: TP=2, FP=1, FN=0
+
+--- Model Extractions ---
+- हिन्दी प्रचार सभा	थी	एक आन्दोलन
+- हिन्दी प्रचार सभा	आरम्भ हुई	भारत के स्वतन्त्रता आन्दोलन के साथ
+- आन्दोलन	property	भारत के स्वतन्त्रता आन्दोलन के साथ
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: हिन्दी प्रचार सभा --> थी --> एक आन्दोलन
+      Status: satisfied
+    - Gold: हिन्दी प्रचार सभा --> आरम्भ हुई --> [भारत के]{a} स्वतन्त्रता आन्दोलन के साथ |OR| जो --> आरम्भ हुई --> [भारत के]{a} स्वतन्त्रता आन्दोलन के साथ
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): भारत के --> property --> स्वतन्त्रता आन्दोलन [के साथ ही]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 18
+Sentence Text: बाल्यकाल से ही कर्मा के चेहरे पर एक अनूठी आभा दिखाई पड़ती थी .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- आभा	दिखाई देती है	कर्म के चेहरे पर
+- आभा	property	अनूठी
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [बाल्यकाल से ही]{a} [कर्मा के]{b} चेहरे पर --> दिखाई पड़ती थी --> [एक अनूठी]{c} आभा |OR| बाल्यकाल से ही --> दिखाई पड़ती थी --> [कर्मा के]{b} चेहरे पर [एक अनूठी]{c} आभा
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): बाल्यकाल से ही --> property --> [कर्मा के]{b} चेहरे पर |OR| बाल्यकाल से ही --> दिखाई पड़ती थी --> [कर्मा के]{b} चेहरे पर |OR| बाल्यकाल से ही --> दिखाई पड़ती थी --> [एक अनूठी]{c} आभा
+      Status: not satisfied
+    - Gold (b): कर्मा के --> property --> चेहरे पर |OR| कर्मा के --> दिखाई पड़ती थी --> चेहरे पर
+      Status: not satisfied
+    - Gold (c): एक अनूठी --> property --> आभा
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 19
+Sentence Text: तब से अब तक , सोनू भारतीय संगीत जगत में एक प्रमुख हस्ती बन चुके हैं .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- सोनू	बन चुके हैं	भारतीय संगीत जगत में एक प्रमुख हस्ती
+- सोनू	property	तब से अब तक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: सोनू [भारतीय संगीत जगत में]{a} --> बन चुके हैं --> एक प्रमुख हस्ती |OR| [सोनू]{a} [भारतीय]{b} संगीत जगत में --> बन चुके हैं --> एक प्रमुख हस्ती
+      Status: not satisfied
+    - Gold: सोनू --> बन चुके हैं --> तब से [अब तक]{c}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): [भारतीय]{b} संगीत जगत में --> property --> सोनू
+      Status: not satisfied
+    - Gold (b): भारतीय --> property --> संगीत जगत में
+      Status: not satisfied
+    - Gold (c): सोनू --> बन चुके हैं --> अब तक
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: सोनू --> [में] एक प्रमुख हस्ती बन चुके हैं --> भारतीय संगीत जगत [में]
+      Status: not satisfied
+    - Gold: तब से [अब तक]{a} --> सोनू एक प्रमुख हस्ती बन चुके हैं --> भारतीय संगीत जगत में |OR| तब से [अब तक]{a} --> एक प्रमुख हस्ती बन चुके हैं --> सोनू
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सोनू --> बन चुके हैं --> अब तक
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: सोनू --> बन चुके हैं --> [भारतीय संगीत जगत में]{a} एक प्रमुख हस्ती |OR| सोनू --> बन चुके हैं --> [भारतीय]{b} संगीत जगत में एक प्रमुख हस्ती
+      Status: satisfied
+    - Gold: सोनू --> बन चुके हैं --> तब से [अब तक]{c}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): [भारतीय]{b} संगीत जगत में --> property --> सोनू
+      Status: not satisfied
+    - Gold (b): भारतीय --> property --> संगीत जगत में
+      Status: not satisfied
+    - Gold (c): सोनू --> बन चुके हैं --> अब तक
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 20
+Sentence Text: कोप्पेन मौसम वर्गीकरण मौसम आकलन के लिए प्रयोग किया जाने वाला सबसे अधिक प्रयोगनीय मौसम वर्गीकरण है .
+Metrics: TP=1, FP=2, FN=1
+
+--- Model Extractions ---
+- कोप्पेन मौसम वर्गीकरण	प्रयोग किया जाने वाला	मौसम वर्गीकरण
+- कोप्पेन मौसम वर्गीकरण	property	मौसम आकलन के लिए
+- मौसम वर्गीकरण	property	मौसम आकलन के लिए
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: कोप्पेन मौसम वर्गीकरण --> है --> [सबसे अधिक प्रयोगनीय]{a} मौसम वर्गीकरण
+      Status: not satisfied
+    - Gold: कोप्पेन मौसम वर्गीकरण --> property --> मौसम आकलन के लिए [प्रयोग किया जाने वाला]
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): [सबसे अधिक]{b} प्रयोगनीय --> property --> कोप्पेन मौसम वर्गीकरण
+      Status: not satisfied
+    - Gold (b): सबसे अधिक --> property --> प्रयोगनीय
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 21
+Sentence Text: बर्लिन पर क़ब्ज़ा करने के बाद सोवियत दस्तों ने चेकोस्लोवाकिया की राजधानी प्राग को आज़ाद कराया .
+Metrics: TP=2, FP=2, FN=1
+
+--- Model Extractions ---
+- सोवियत दस्तों ने	क़ब्ज़ा करने के बाद	बर्लिन पर
+- सोवियत दस्तों ने	आज़ाद कराया	प्राग को
+- प्राग को	property	चेकोस्लोवाकिया की राजधानी
+- प्राग	property	प्राग
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: सोवियत दस्तों ने --> आज़ाद कराया --> [चेकोस्लोवाकिया की राजधानी]{a} प्राग को
+      Status: satisfied but with a
+    - Gold: सोवियत दस्तों ने --> property --> बर्लिन पर क़ब्ज़ा [करने के बाद] |OR| बर्लिन पर क़ब्ज़ा [करने के बाद] --> आज़ाद कराया --> सोवियत दस्तों ने |OR| बर्लिन पर क़ब्ज़ा [करने के बाद] --> आज़ाद कराया --> [चेकोस्लोवाकिया की राजधानी]{a} प्राग को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): [चेकोस्लोवाकिया की]{b} राजधानी --> property --> प्राग [को]
+      Status: satisfied
+    - Gold (b): राजधानी --> property --> चेकोस्लोवाकिया की
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 22
+Sentence Text: योग एवं शिक्षा के क्षेत्र में राष्ट्रपति से पद्म श्री सम्मान प्राप्त करने वाले वे प्रथम भारतीय हैं .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- राष्ट्रपति	प्राप्त करने वाले	योग एवं शिक्षा के क्षेत्र में
+- राष्ट्रपति	प्राप्त करने वाले	पद्म श्री सम्मान
+- राष्ट्रपति	property	योग एवं शिक्षा के क्षेत्र में
+- राष्ट्रपति	property	पद्म श्री सम्मान
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: वे --> [प्रथम भारतीय]{a} हैं --> [राष्ट्रपति से]{b} पद्म श्री सम्मान प्राप्त करने वाले
+      Status: not satisfied
+    - Gold: वे --> property --> [योग एवं] शिक्षा के क्षेत्र में |OR| पद्म श्री --> property --> [योग एवं] शिक्षा के क्षेत्र में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): प्रथम भारतीय --> property --> वे
+      Status: not satisfied
+    - Gold (b): राष्ट्रपति से --> प्राप्त करने वाले --> पद्म श्री सम्मान
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: वे --> हैं --> प्रथम भारतीय
+      Status: not satisfied
+    - Gold: [राष्ट्रपति से]{a} पद्म श्री सम्मान प्राप्त करने वाले --> हैं --> वे
+      Status: not satisfied
+    - Gold: वे --> property --> [योग एवं] शिक्षा के क्षेत्र में |OR| पद्म श्री --> property --> [योग एवं] शिक्षा के क्षेत्र में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): प्रथम भारतीय --> property --> वे
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: [योग एवं]{a} शिक्षा के क्षेत्र में --> [वे] प्रथम भारतीय हैं --> [राष्ट्रपति से]{b} पद्म श्री सम्मान प्राप्त करने वाले [वे]
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): योग एवं --> property --> शिक्षा
+      Status: not satisfied
+    - Gold (b): राष्ट्रपति से --> प्राप्त करने वाले --> पद्म श्री सम्मान
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 23
+Sentence Text: सभी बच्चों को स्कूल की पढ़ाई पूरी करने तक वित्तीय सहायता भी दी जाती है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- वित्तीय सहायता	दी जाती है	सभी बच्चों को
+- पूरी करने तक	property	स्कूल की पढ़ाई
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [सभी] बच्चों को --> [भी] दी जाती है --> [वित्तीय]{b} सहायता [भी]
+      Status: satisfied
+    - Gold: [स्कूल की]{a} पढ़ाई पूरी करने तक --> [भी] दी जाती है --> [वित्तीय]{b} सहायता [भी]
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): स्कूल की --> property --> पढ़ाई [पूरी करने तक]
+      Status: not satisfied
+    - Gold (b): वित्तीय --> property --> सहायता [भी]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 24
+Sentence Text: आज भी यह स्थान क्षेत्र के लोगों के लिए दर्शनीय केन्द्र है .
+Metrics: TP=1, FP=2, FN=0
+
+--- Model Extractions ---
+- यह स्थान	है	क्षेत्र के लोगों के लिए दर्शनीय केन्द्र
+- क्षेत्र के लोगों के	property	लोगों के
+- लोग	property	के
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह स्थान --> दर्शनीय केन्द्र है --> [क्षेत्र के]{a} लोगों के लिए
+      Status: not satisfied
+    - Gold: यह स्थान --> दर्शनीय केन्द्र है --> आज भी
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): क्षेत्र के --> property --> लोगों के लिए
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: यह स्थान --> है --> [दर्शनीय]{a} केन्द्र
+      Status: not satisfied
+    - Gold: [दर्शनीय]{a} केन्द्र --> है --> [क्षेत्र के]{b} लोगों के लिए
+      Status: not satisfied
+    - Gold: [दर्शनीय]{a} केन्द्र --> है --> आज भी
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): दर्शनीय --> property --> केन्द्र
+      Status: not satisfied
+    - Gold (b): क्षेत्र के --> property --> लोगों के लिए
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: यह --> है --> [स्थान क्षेत्र के लोगों के लिए]{a} दर्शनीय
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): दर्शनीय --> है --> [स्थान क्षेत्र के]{b} लोगों के लिए
+      Status: not satisfied
+    - Gold (b): लोगों के लिए --> property --> क्षेत्र के
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: यह स्थान --> है --> [क्षेत्र के लोगों के लिए]{a} दर्शनीय केन्द्र |OR| यह स्थान --> है --> [क्षेत्र के लोगों के लिए]{a} दर्शनीय केंद्र
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): दर्शनीय केन्द्र --> है --> [क्षेत्र के]{b} लोगों के लिए |OR| दर्शनीय केंद्र --> है --> [क्षेत्र के]{b} लोगों के लिए
+      Status: not satisfied
+    - Gold (b): क्षेत्र के --> property --> लोगों के लिए
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 25
+Sentence Text: इस सम्बन्ध में पाणिनीय व्याकरण ही वेदाङ्ग का प्रतिनिधित्व करता है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- पाणिनीय व्याकरण	प्रतिनिधित्व करता है	वेदाङ्ग का
+- पाणिनीय व्याकरण	property	वेदाङ्ग
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: पाणिनीय व्याकरण [ही] --> [प्रतिनिधित्व]{a} करता है --> वेदाङ्ग का
+      Status: satisfied
+    - Gold: इस सम्बन्ध में --> [प्रतिनिधित्व]{a} करता है --> पाणिनीय व्याकरण [ही]
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): प्रतिनिधित्व --> property --> करता है
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: इस सम्बन्ध में --> वेदाङ्ग का प्रतिनिधित्व करता है --> पाणिनीय व्याकरण
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 26
+Sentence Text: मैं शब्द की आत्मा समझकर ही इस श्रेष्ठ तत्त्व की उपासना करता हूं .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- मैं	उपासना करता हूं	इस श्रेष्ठ तत्त्व की
+- मैं	समझकर	शब्द की आत्मा
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: मैं --> उपासना करता हूं --> [इस श्रेष्ठ]{b} तत्त्व की
+      Status: satisfied
+    - Gold: [शब्द की]{a} आत्मा समझकर [ही] --> उपासना करता हूं --> मैं
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): शब्द की --> property --> आत्मा [समझकर ही]
+      Status: not satisfied
+    - Gold (b): इस श्रेष्ठ --> property --> तत्त्व की
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 27
+Sentence Text: हिमाचल प्रदेश में बहने वाली पांच नदियों में से चार का उल्लेख ऋग्वेद में मिलता है .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- हिमाचल प्रदेश में बहने वाली पांच नदियों	उल्लेख	ऋग्वेद में
+- पांच नदियों	स्थान	हिमाचल प्रदेश में
+- पांच नदियों	property	पांच
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [हिमाचल प्रदेश में बहने वाली पांच नदियों में से]{a} चार का --> उल्लेख मिलता है --> ऋग्वेद में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): हिमाचल प्रदेश में --> बहने वाली --> पांच नदियों में [से]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 28
+Sentence Text: उन्होंने बच्चे को देने से स्पष्ट इंकार कर दिया .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- उन्होंने	इंकार कर दिया	बच्चे को
+- बच्चे को	property	देने से
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उन्होंने --> [स्पष्ट] इंकार कर दिया --> [बच्चे को]{a} देने से
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): देने से --> [स्पष्ट] इंकार कर दिया --> बच्चे को
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: उन्होंने --> [स्पष्ट] इंकार कर दिया --> बच्चे को [देने से]{a}
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): देने से --> [स्पष्ट] इंकार कर दिया --> बच्चे को
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: उन्होंने --> [देने से]{a} स्पष्ट इंकार कर दिया --> बच्चे को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): बच्चे को --> देने से --> स्पष्ट इंकार कर दिया
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 29
+Sentence Text: शिक्षा का तुलनात्मक अध्ययन सभी सामाजिक विज्ञानों से जुड़ा है .
+Metrics: TP=1, FP=1, FN=0
+
+--- Model Extractions ---
+- शिक्षा का तुलनात्मक अध्ययन	जुड़ा है	सभी सामाजिक विज्ञानों से
+- अध्ययन	property	तुलनात्मक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [शिक्षा का]{a} तुलनात्मक अध्ययन --> जुड़ा है --> सभी सामाजिक विज्ञानों से
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): तुलनात्मक अध्ययन --> property --> शिक्षा का
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 30
+Sentence Text: गुजरात क्वीन एक्स्प्रेस 9110 भारतीय रेल द्वारा संचालित एक मेल एक्स्प्रेस ट्रेन है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- गुजरात क्वीन एक्स्प्रेस	संचालित	भारतीय रेल द्वारा
+- गुजरात क्वीन एक्स्प्रेस	प्रकार	मेल एक्स्प्रेस ट्रेन
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: गुजरात क्वीन एक्स्प्रेस [9110]{b} --> है --> [एक] मेल एक्स्प्रेस ट्रेन
+      Status: not satisfied
+    - Gold: गुजरात क्वीन एक्स्प्रेस [9110]{b} --> है --> [भारतीय]{a} रेल द्वारा संचालित |OR| गुजरात क्वीन एक्स्प्रेस [9110]{b} --> संचालित है --> [भारतीय]{a} रेल द्वारा
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): भारतीय --> property --> रेल [द्वारा संचालित]
+      Status: not satisfied
+    - Gold (b): 9110 --> property --> गुजरात क्वीन एक्स्प्रेस
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: गुजरात क्वीन एक्स्प्रेस [9110]{a} --> है --> भारतीय रेल द्वारा संचालित [एक] मेल एक्स्प्रेस ट्रेन
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 9110 --> property --> गुजरात क्वीन एक्स्प्रेस
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: गुजरात क्वीन एक्स्प्रेस [9110]{a} --> है --> [एक] मेल एक्स्प्रेस ट्रेन भारतीय रेल द्वारा संचालित
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 9110 --> property --> गुजरात क्वीन एक्स्प्रेस
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 31
+Sentence Text: वर्तमान में यह शहर पश्चिम बंगाल का प्रमुख हिल स्टेशन है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- यह शहर	प्रमुख हिल स्टेशन है	पश्चिम बंगाल का
+- हिल स्टेशन	location	पश्चिम बंगाल का
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह शहर [पश्चिम बंगाल का]{a} --> है --> प्रमुख हिल स्टेशन
+      Status: not satisfied
+    - Gold: वर्तमान में --> property --> यह शहर |OR| वर्तमान --> में --> यह शहर
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): पश्चिम बंगाल का --> property --> यह शहर
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [यह शहर]{a} पश्चिम बंगाल का --> है --> प्रमुख हिल स्टेशन
+      Status: not satisfied
+    - Gold: वर्तमान में --> property --> यह शहर |OR| वर्तमान --> में --> यह शहर
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): पश्चिम बंगाल का --> property --> यह शहर
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: यह शहर --> प्रमुख हिल स्टेशन है --> पश्चिम बंगाल का
+      Status: satisfied
+    - Gold: वर्तमान में --> property --> यह शहर |OR| वर्तमान --> में --> यह शहर
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: [वर्तमान में]{b} यह शहर --> है --> [पश्चिम बंगाल का]{a} प्रमुख हिल स्टेशन
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): पश्चिम बंगाल का --> property --> यह शहर
+      Status: not satisfied
+    - Gold (b): वर्तमान में --> property --> यह शहर |OR| वर्तमान --> में --> यह शहर
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 32
+Sentence Text: सिलकोट , गंगोलीहाट तहसील में भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के पिथोरागढ जिले का एक गाँव है .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- गंगोलीहाट तहसील	में	कुमाऊँ मण्डल
+- पिथोरागढ जिले	का	गंगोलीहाट तहसील
+- पिथोरागढ जिले	का	 उत्तराखण्ड राज्य
+- गंगोलीहाट तहसील	में	सिलकोट
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: सिलकोट --> है --> एक गाँव
+      Status: not satisfied
+    - Gold: सिलकोट --> property --> गंगोलीहाट तहसील में [भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के पिथोरागढ जिले का]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): गंगोलीहाट तहसील में --> property --> [भारत के]{d} उत्तराखण्ड राज्य के अन्तर्गत [कुमाऊँ मण्डल के पिथोरागढ जिले का]{b}
+      Status: not satisfied
+    - Gold (b): सिलकोट --> property --> कुमाऊँ मण्डल के [पिथोरागढ जिले का]{c} |OR| [भारत के]{d} उत्तराखण्ड राज्य के अन्तर्गत --> property --> कुमाऊँ मण्डल के [पिथोरागढ जिले का]{c}
+      Status: not satisfied
+    - Gold (c): कुमाऊँ मण्डल [के] --> property --> पिथोरागढ जिले [का]
+      Status: not satisfied
+    - Gold (d): उत्तराखण्ड राज्य [के अन्तर्गत] --> property --> भारत [के]
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: सिलकोट --> एक गाँव है --> गंगोलीहाट तहसील में [भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के पिथोरागढ जिले का]{a}
+      Status: not satisfied
+    - Gold: उत्तराखण्ड राज्य [के अन्तर्गत] --> property --> भारत [के]
+      Status: not satisfied
+    - Gold: सिलकोट --> property --> पिथोरागढ जिले का |OR| एक गाँव --> property --> पिथोरागढ जिले का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सिलकोट --> property --> उत्तराखण्ड राज्य के अन्तर्गत [कुमाऊँ मण्डल के पिथोरागढ जिले का]{b} |OR| एक गाँव --> property --> उत्तराखण्ड राज्य के अन्तर्गत [कुमाऊँ मण्डल के पिथोरागढ जिले का]{b}
+      Status: not satisfied
+    - Gold (b): पिथोरागढ जिले का --> property --> कुमाऊँ मण्डल के
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: सिलकोट , गंगोलीहाट तहसील में [भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के]{a} पिथोरागढ --> एक गाँव है --> जिले का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सिलकोट [गंगोलीहाट तहसील में] --> [एक गाँव] है --> भारत के उत्तराखण्ड राज्य के अन्तर्गत [कुमाऊँ मण्डल के]
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: सिलकोट --> है --> [तहसील में भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के पिथोरागढ जिले का]{a} एक गाँव
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सिलकोट --> [एक गाँव] है --> भारत के उत्तराखण्ड राज्य के अन्तर्गत [कुमाऊँ मण्डल के पिथोरागढ जिले का]{b}
+      Status: not satisfied
+    - Gold (b): सिलकोट --> [एक गाँव] है --> कुमाऊँ मण्डल के पिथोरागढ जिले का
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 33
+Sentence Text: एयर लाइन के तकनीकी केंद्र को तिरुवनंतपुरम में स्थानापन्न करना है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- एयर लाइन के तकनीकी केंद्र को	स्थापना	तिरकुवनंतपुरम में
+- एयर लाइन	property	के तकनीकी केंद्र को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [एयर लाइन के]{a} तकनीकी केंद्र को --> स्थानापन्न करना है --> तिरुवनंतपुरम में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): तकनीकी केंद्र [को] --> property --> एयर लाइन [के]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 34
+Sentence Text: चीफ कोर्ट के मुख्य न्यायाधीश सर लुइस शर्ट और विशेष न्यायाधीश मोहम्मद रजा के सामने दोनों मामले पेश हुए .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- मामले	पेश हुए	चीफ कोर्ट के मुख्य न्यायाधीश सर लुइस शर्ट और विशेष न्यायाधीश मोहम्मद रजा के सामने
+- मामले	property	मुख्य न्यायाधीश सर लुइस शर्ट
+- मामले	property	विशेष न्यायाधीश मोहम्मद रजा के सामने
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [चीफ कोर्ट के मुख्य न्यायाधीश सर लुइस शर्ट और]{a} [विशेष न्यायाधीश]{b} मोहम्मद रजा के सामने --> पेश हुए --> दोनों मामले
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): [चीफ कोर्ट के मुख्य न्यायाधीश]{c} सर लुइस शर्ट --> पेश हुए --> दोनों मामले
+      Status: not satisfied
+    - Gold (b): विशेष न्यायाधीश --> property --> मोहम्मद रजा [के सामने]
+      Status: not satisfied
+    - Gold (c): [चीफ कोर्ट के]{d} मुख्य न्यायाधीश --> property --> सर लुइस शर्ट
+      Status: not satisfied
+    - Gold (d): चीफ कोर्ट के --> property --> मुख्य न्यायाधीश
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [चीफ कोर्ट के मुख्य न्यायाधीश]{a} सर लुइस शर्ट और [विशेष न्यायाधीश]{b} मोहम्मद रजा के सामने --> पेश हुए --> दोनों मामले
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): चीफ कोर्ट के मुख्य न्यायाधीश --> property --> सर लुइस शर्ट
+      Status: not satisfied
+    - Gold (b): विशेष न्यायाधीश --> property --> मोहम्मद रजा
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 35
+Sentence Text: किसी बीमारी की वजह से बाशो की मृत्यु 28 नवम्बर 1694 को हो गई .
+Metrics: TP=0, FP=2, FN=2
+
+--- Model Extractions ---
+- बाशो	मृत्यु	28 नवम्बर 1694 को
+- बाशो	कारण	किसी बीमारी की वजह से
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: बाशो की --> मृत्यु हो गई --> 28 नवम्बर 1694 को
+      Status: not satisfied
+    - Gold: बाशो की --> मृत्यु हो गई --> [किसी] बीमारी [की वजह] से
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 36
+Sentence Text: जब कोई मतैक्य नहीं हुआ तो विक्रम ने एक हल सोचा .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- विक्रम ने	सोचा	एक हल
+- विक्रम ने	हल	एक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: विक्रम ने --> सोचा --> एक हल
+      Status: satisfied
+    - Gold: विक्रम ने --> सोचा --> जब कोई मतैक्य नहीं हुआ |OR| जब कोई मतैक्य नहीं हुआ --> सोचा --> एक हल
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 37
+Sentence Text: सन 1696 में एक बार फिर शाही सेना से पंचायती सेना का मुकाबला हुआ .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- शाही सेना	मुकाबला	पंचायती सेना
+- मुकाबला	property	1696 में
+- मुकाबला	property	एक बार फिर
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: शाही सेना से --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+    - Gold: सन 1696 में --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+    - Gold: एक बार फिर --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: शाही सेना से --> मुकाबला हुआ [फिर] --> पंचायती सेना का
+      Status: not satisfied
+    - Gold: सन 1696 में --> मुकाबला हुआ [फिर] --> पंचायती सेना का
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: सन 1696 में --> मुकाबला हुआ --> पंचायती सेना का [शाही सेना से]{a}
+      Status: not satisfied
+    - Gold: एक बार फिर --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): शाही सेना से --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: सन 1696 में --> मुकाबला हुआ --> [शाही सेना से]{a} पंचायती सेना का
+      Status: not satisfied
+    - Gold: एक बार फिर --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): शाही सेना से --> मुकाबला हुआ --> पंचायती सेना का
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 38
+Sentence Text: मर्लगोंड , कुभीर मण्डल में भारत के आन्ध्रप्रदेश राज्य के अन्तर्गत के अदिलाबादु जिले का एक गाँव है .
+Metrics: TP=0, FP=8, FN=2
+
+--- Model Extractions ---
+- मर्लगोंड	एक	गाँव
+- मर्लगोंड	स्थान	कुभीर मण्डल
+- मर्लगोंड	स्थान	भारत के आन्ध्रप्रदेश राज्य के अन्तर्गत
+- मर्लगोंड	स्थान	अदिलाबादु जिले
+- अदिलाबादु जिले	स्थान	अदिलाबादु
+- अदिलाबादु	स्थान	अदिलाबादु जिले
+- अदिलाबादु	स्थान	आंध्र प्रदेश राज्य
+- आंध्र प्रदेश राज्य	स्थान	भारत
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: मर्लगोंड --> है --> एक गाँव
+      Status: not satisfied
+    - Gold: मर्लगोंड --> है --> कुभीर मण्डल में |OR| एक गाँव --> है --> कुभीर मण्डल में
+      Status: not satisfied
+    - Gold: मर्लगोंड --> है --> अदिलाबादु जिले का [एक गाँव] |OR| एक गाँव --> है --> अदिलाबादु जिले का [एक गाँव]
+      Status: not satisfied
+    - Gold: भारत [के] --> property --> आन्ध्रप्रदेश राज्य [के अन्तर्गत]
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: मर्लगोंड --> एक गाँव है --> कुभीर मण्डल में
+      Status: not satisfied
+    - Gold: एक गाँव है --> property --> अदिलाबादु जिले का
+      Status: not satisfied
+    - Gold: अदिलाबादु जिले का --> property --> आन्ध्रप्रदेश राज्य के अन्तर्गत के
+      Status: not satisfied
+    - Gold: भारत [के] --> property --> आन्ध्रप्रदेश राज्य [के अन्तर्गत]
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: मर्लगोंड --> एक गाँव है --> अदिलाबादु जिले का
+      Status: not satisfied
+    - Gold: अदिलाबादु जिले का --> property --> कुभीर मण्डल में
+      Status: not satisfied
+    - Gold: भारत के आन्ध्रप्रदेश राज्य के अन्तर्गत --> property --> अदिलाबादु जिले [का]
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: मर्लगोंड --> एक गाँव है --> [अदिलाबादु]{a} जिले का
+      Status: not satisfied
+    - Gold: मर्लगोंड --> एक गाँव है --> [कुभीर]{b} मण्डल में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अदिलाबादु --> property --> भारत के आन्ध्रप्रदेश राज्य के अन्तर्गत
+      Status: not satisfied
+    - Gold (b): कुभीर --> property --> भारत के आन्ध्रप्रदेश राज्य के अन्तर्गत
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 39
+Sentence Text: बाद में व्याकरण के दर्शन पक्ष पर अनेक ग्रन्थ लिखे गये .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- व्याकरण के दर्शन पक्ष पर	लिखे गये	अनेक ग्रन्थ
+- ग्रन्थ	property	अनेक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [व्याकरण के]{a} दर्शन पक्ष पर --> लिखे गये --> अनेक ग्रन्थ
+      Status: satisfied
+    - Gold: बाद में --> लिखे गये --> अनेक ग्रन्थ
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): व्याकरण के --> property --> दर्शन पक्ष पर |OR| व्याकरण के --> लिखे गये --> दर्शन पक्ष पर
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 40
+Sentence Text: 1975 में इलाहाबाद में नवनिर्मित मेहता अनुसंधान संस्थान में निदेशक बने .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- मेजबान	बना	इलाहाबाद में नवनिर्मित मेहता अनुसंधान संस्थान में
+- मेजबान	property	निदेशक
+- निदेशक	location	इलाहाबाद में
+- निदेशक	time	1975 में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [1975 में]{a} [इलाहाबाद में]{b} नवनिर्मित मेहता --> निदेशक बने --> अनुसंधान संस्थान में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): 1975 में --> निदेशक बने --> [इलाहाबाद में] नवनिर्मित मेहता |OR| 1975 में --> निदेशक बने --> अनुसंधान संस्थान में
+      Status: not satisfied
+    - Gold (b): इलाहाबाद में --> property --> अनुसंधान संस्थान [में] |OR| इलाहाबाद में --> निदेशक बने --> नवनिर्मित मेहता
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 41
+Sentence Text: उनके नाम पर इस जगह का नाम रुस्तम खान रखा गया .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- उनके नाम पर	रखा गया	इस जगह का नाम
+- इस जगह का नाम	property	रुस्तम खान
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [उनके]{a} नाम पर --> रखा गया --> इस जगह का नाम
+      Status: satisfied
+    - Gold: इस जगह का नाम --> रखा गया --> रुस्तम खान
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): उनके --> property --> नाम पर
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: उनके नाम पर --> रखा गया --> जगह का नाम [रुस्तम खान]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): रुस्तम खान --> रखा गया --> जगह का नाम
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 42
+Sentence Text: कुछ लोग इस आपाधापी से दूर अपने घर पर ही रहना पसंद करते हैं .
+Metrics: TP=1, FP=3, FN=0
+
+--- Model Extractions ---
+- कुछ लोग	पसंद करते हैं	इस आपाधापी से दूर अपने घर पर ही रहना
+- घर पर	property	अपने
+- घर	property	अपने
+- घर	location	इस आपाधापी से दूर
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: कुछ लोग --> पसंद करते हैं --> [अपने घर पर ही]{a} रहना
+      Status: not satisfied
+    - Gold: [अपने घर पर ही] रहना --> property --> इस आपाधापी से दूर
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): [अपने] घर पर ही --> property --> रहना
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: कुछ लोग --> पसंद करते हैं --> [इस आपाधापी से दूर]{b} [अपने घर पर ही]{a} रहना
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): [अपने] घर पर ही --> property --> रहना
+      Status: not satisfied
+    - Gold (b): [अपने घर पर ही] रहना --> property --> इस आपाधापी से दूर
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 43
+Sentence Text: मार्च 2001 में एक बार फिर अमरीका के अट्ठाइसवें रक्षा सचिव के रूप में उनकी वापसी हुई .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- उनकी वापसी	हूँ	अमरीका के अट्ठाइसवें
+- उनकी वापसी	property	मार्च 2001 में एक बार फिर
+- उनकी वापसी	property	अमरीका के अट्ठाइसवें रक्षा सचिव के रूप में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [अमरीका के]{a} [अट्ठाइसवें]{b} रक्षा सचिव के रूप में --> वापसी हुई --> उनकी
+      Status: not satisfied
+    - Gold: मार्च 2001 में --> वापसी हुई --> उनकी
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अमरीका के --> property --> [अट्ठाइसवें]{b} रक्षा सचिव के रूप में
+      Status: not satisfied
+    - Gold (b): अट्ठाइसवें --> property --> रक्षा सचिव के रूप में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [अमरीका के]{a} [अट्ठाइसवें]{b} रक्षा सचिव के रूप में --> वापसी हुई [फिर] --> उनकी
+      Status: not satisfied
+    - Gold: मार्च 2001 में --> वापसी हुई [फिर] --> उनकी
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अमरीका के --> property --> [अट्ठाइसवें]{b} रक्षा सचिव के रूप में
+      Status: not satisfied
+    - Gold (b): अट्ठाइसवें --> property --> रक्षा सचिव के रूप में
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: [अमरीका के]{a} [अट्ठाइसवें]{b} रक्षा सचिव के रूप में --> [फिर] वापसी हुई --> उनकी
+      Status: not satisfied
+    - Gold: मार्च 2001 में --> [फिर] वापसी हुई --> उनकी
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अमरीका के --> property --> [अट्ठाइसवें]{b} रक्षा सचिव के रूप में
+      Status: not satisfied
+    - Gold (b): अट्ठाइसवें --> property --> रक्षा सचिव के रूप में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 44
+Sentence Text: इसकी रचना की आधारशिला 3 मार्च 1884 को सर वाईकर के द्वारा रखी गयी थी .
+Metrics: TP=0, FP=2, FN=2
+
+--- Model Extractions ---
+- सर वाईकर	रखी गयी थी	इसकी रचना की आधारशिला
+- आधारशिला	property	3 मार्च 1884 को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [इसकी रचना की]{a} आधारशिला --> रखी गयी थी --> सर वाईकर के द्वारा
+      Status: not satisfied
+    - Gold: 3 मार्च 1884 को --> रखी गयी थी --> [इसकी रचना की]{a} आधारशिला
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): आधारशिला --> property --> इसकी रचना की
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: 3 मार्च 1884 को --> आधारशिला रखी गयी थी --> सर वाईकर के द्वारा
+      Status: not satisfied
+    - Gold: [इसकी]{a} रचना की --> आधारशिला रखी गयी थी --> सर वाईकर के द्वारा
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): इसकी --> property --> रचना की
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 45
+Sentence Text: इस तकनीक के लिए वह विभिन्न टेलीविजन कंपनियों से संपर्क में है .
+Metrics: TP=1, FP=2, FN=1
+
+--- Model Extractions ---
+- वह	संपर्क में है	विभिन्न टेलीविजन कंपनियों से
+- उसका	property	इस तकनीक के लिए
+- इस तकनीक	property	विभिन्न टेलीविजन कंपनियों से
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: वह --> संपर्क में है --> विभिन्न टेलीविजन कंपनियों से
+      Status: satisfied
+    - Gold: इस तकनीक के लिए --> संपर्क में है --> विभिन्न टेलीविजन कंपनियों से |OR| इस तकनीक के लिए --> संपर्क में है --> वह
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 46
+Sentence Text: त्रिदेवनाथ बैनर्जी को चिकित्सा विज्ञान के क्षेत्र में सन 1961 में पद्म भूषण से सम्मानित किया गया था .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- त्रिदेवनाथ बैनर्जी	सम्मानित किया गया था	सन 1961 में पद्म भूषण से
+- पद्म भूषण	property	सन 1961 में
+- पद्म भूषण	property	चिकित्सा विज्ञान के क्षेत्र में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: त्रिदेवनाथ बैनर्जी को --> सम्मानित किया गया था --> [सन 1961 में]{a} पद्म भूषण से
+      Status: not satisfied
+    - Gold: त्रिदेवनाथ बैनर्जी को --> property --> चिकित्सा विज्ञान के क्षेत्र में |OR| त्रिदेवनाथ बैनर्जी को --> सम्मानित किया गया था --> चिकित्सा विज्ञान के क्षेत्र में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सन 1961 में --> सम्मानित किया गया था --> पद्म भूषण से
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: त्रिदेवनाथ बैनर्जी को [चिकित्सा विज्ञान के क्षेत्र में]{a} --> सम्मानित किया गया था --> पद्म भूषण से
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): चिकित्सा विज्ञान के क्षेत्र में --> सम्मानित किया गया था --> त्रिदेवनाथ बैनर्जी को |OR| चिकित्सा विज्ञान के क्षेत्र में --> सम्मानित किया गया था --> पद्म भूषण से
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 47
+Sentence Text: मराठी के अतिरिक्त उन्होने हिन्दी फिल्मों के लिए भी संगीत रचना की .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- उन्होने	रचना की	मराठी के अतिरिक्त हिन्दी फिल्मों के लिए
+- मराठी के अतिरिक्त	property	हिन्दी फिल्मों के लिए
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उन्होने --> संगीत रचना की --> [मराठी के अतिरिक्त]{a} हिन्दी फिल्मों के लिए [भी]
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): मराठी के अतिरिक्त --> संगीत रचना की --> हिन्दी फिल्मों के लिए [भी]
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: उन्होने --> संगीत रचना की --> मराठी के अतिरिक्त [हिन्दी फिल्मों के लिए भी]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): हिन्दी फिल्मों के लिए [भी] --> संगीत रचना की --> उन्होने |OR| हिन्दी फिल्मों के लिए [भी] --> संगीत रचना की --> मराठी के अतिरिक्त
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: मराठी के अतिरिक्त --> हिन्दी फिल्मों के लिए [भी] संगीत रचना की --> उन्होने
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 48
+Sentence Text: काइटिन का औद्योगिक रूप से अनेक प्रक्रियाओं में उपयोग किया जाता है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- काइटिन	उपयोग किया जाता है	औद्योगिक रूप से अनेक प्रक्रियाओं में
+- काइटिन	property	औद्योगिक रूप से अनेक प्रक्रियाओं में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: काइटिन का --> उपयोग किया जाता है --> [औद्योगिक रूप से]{a} अनेक प्रक्रियाओं में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): काइटिन का --> उपयोग किया जाता है --> औद्योगिक रूप से |OR| काइटिन का --> property --> औद्योगिक रूप से
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: काइटिन का --> उपयोग किया जाता है --> औद्योगिक रूप से [अनेक प्रक्रियाओं में]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): काइटिन का --> उपयोग किया जाता है --> अनेक प्रक्रियाओं में |OR| काइटिन का --> property --> अनेक प्रक्रियाओं में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 49
+Sentence Text: हिंदूओं और मुस्लिमों के सभी पर्व मिलजुल कर मनाए जाते हैं .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- हिंदू	मनाए जाते हैं	मुस्लिम के सभी पर्व
+- पर्व	मनाए जाते हैं	हिंदू और मुस्लिमों के
+- पर्व	मनाए जाते हैं	सभी
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [हिंदूओं और मुस्लिमों के]{a} सभी पर्व --> मनाए जाते हैं --> मिलजुल कर
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): हिंदूओं [और मुस्लिमों के]{b} --> property --> सभी पर्व
+      Status: not satisfied
+    - Gold (b): [और] मुस्लिमों के --> property --> सभी पर्व
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: हिंदूओं और मुस्लिमों के --> [मिलजुल कर]{a} मनाए जाते हैं --> सभी पर्व
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): मिलजुल कर --> मनाए जाते हैं --> [हिंदूओं और मुस्लिमों के] सभी पर्व
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 50
+Sentence Text: द डार्क नाईट राइसेस को अमेरिका , संयुक्त राजशाही व कनाडा में 20 जुलाई 2012 को रिलीज़ किया गया .
+Metrics: TP=0, FP=4, FN=2
+
+--- Model Extractions ---
+- द डार्क नाईट राइसेस	रिलीज़ किया गया	अमेरिका संयुक्त राजशाही व कनाडा में
+- रिलीज़ किया गया	रिलीज़	20 जुलाई 2012 को
+- रिलीज़	रिलीज़	20 जुलाई 2012 को
+- रिलीज़	रिलीज़	अमेरिका संयुक्त राजशाही व कनाडा में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> अमेरिका [, संयुक्त राजशाही व कनाडा में]{a}
+      Status: not satisfied
+    - Gold: द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> 20 जुलाई 2012 को |OR| अमेरिका [, संयुक्त राजशाही व कनाडा में]{b} --> रिलीज़ किया गया --> 20 जुलाई 2012 को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> संयुक्त राजशाही [व कनाडा में]{c}
+      Status: not satisfied
+    - Gold (b): 20 जुलाई 2012 को --> रिलीज़ किया गया --> संयुक्त राजशाही [व कनाडा में]{d}
+      Status: not satisfied
+    - Gold (c): द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> [व] कनाडा में
+      Status: not satisfied
+    - Gold (d): 20 जुलाई 2012 को --> रिलीज़ किया गया --> [व] कनाडा में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 51
+Sentence Text: यह हर साल जर्मनी के फ्रैंकफर्ट शहर मे लगाया जाता है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- यह	लगाया जाता है	जर्मनी के फ्रैंकफर्ट शहर मे
+- यह	property	हर साल
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह --> लगाया जाता है --> हर साल |OR| [जर्मनी के]{a} फ्रैंकफर्ट शहर मे --> लगाया जाता है --> हर साल |OR| [जर्मनी के]{a} फ्रैंकफर्ट शहर में --> लगाया जाता है --> हर साल
+      Status: not satisfied
+    - Gold: यह --> लगाया जाता है --> [जर्मनी के]{a} फ्रैंकफर्ट शहर मे |OR| यह --> लगाया जाता है --> [जर्मनी के]{a} फ्रैंकफर्ट शहर में
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): फ्रैंकफर्ट शहर मे --> property --> जर्मनी के <--{not allowed in passive}
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 52
+Sentence Text: द्रौपदी ने आगे बढ़ कर अर्जुन के गले में वरमाला डाल दिया .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- द्रौपदी ने	डाल दिया	अर्जुन के गले में वरमाला
+- वरमाला	property	द्रौपदी ने
+- वरमाला	property	आगे बढ़ कर
+- द्रौपदी ने	property	आगे बढ़ कर
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: द्रौपदी ने [आगे बढ़ कर] --> वरमाला डाल दिया --> [आगे बढ़ कर] [अर्जुन के]{a} गले में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अर्जुन के --> [वरमाला] डाल दिया --> गले में |OR| अर्जुन के --> property --> गले में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: द्रौपदी ने [आगे बढ़ कर] --> वरमाला डाल दिया --> [आगे बढ़ कर] [अर्जुन के]{a} गले में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अर्जुन के --> [वरमाला] डाल दिया --> गले में |OR| अर्जुन के --> property --> गले में
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: द्रौपदी ने [आगे बढ़ कर] --> डाल दिया --> वरमाला
+      Status: not satisfied
+    - Gold: वरमाला --> डाल दिया --> [आगे बढ़ कर] [अर्जुन के]{a} गले में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अर्जुन के --> [वरमाला] डाल दिया --> गले में |OR| अर्जुन के --> property --> गले में
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: द्रौपदी ने [आगे बढ़ कर] --> डाल दिया --> वरमाला
+      Status: not satisfied
+    - Gold: [आगे बढ़ कर] [अर्जुन के]{a} गले में --> डाल दिया --> वरमाला
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अर्जुन के --> [वरमाला] डाल दिया --> गले में |OR| अर्जुन के --> property --> गले में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 53
+Sentence Text: यह त्यौहार पूरे उत्तर भारत में राम नवमी के दौरान मनाया जाता है .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- त्यौहार	मनाया जाता है	पूरे उत्तर भारत में
+- त्यौहार	property	राम नवमी के दौरान
+- त्यौहार	location	पूरे उत्तर भारत में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह [त्यौहार]{b} [पूरे उत्तर भारत में]{a} --> मनाया जाता है --> राम नवमी के दौरान
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): पूरे उत्तर भारत में --> मनाया जाता है --> यह त्यौहार
+      Status: not satisfied
+    - Gold (b): यह --> property --> त्यौहार
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: यह [त्यौहार]{b} --> मनाया जाता है --> [पूरे उत्तर भारत में]{a} राम नवमी के दौरान
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): पूरे उत्तर भारत में --> मनाया जाता है --> यह त्यौहार
+      Status: not satisfied
+    - Gold (b): यह --> property --> त्यौहार
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 54
+Sentence Text: तटीय कर्नाटक के भोजन में समुद्री भोजन , नारियल और नारियल तेल का व्यापक उपयोग उल्लेखनीय है .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- तटीय कर्नाटक के भोजन में	उपयोग	समुद्री भोजन
+- तटीय कर्नाटक के भोजन में	उपयोग	नारियल
+- तटीय कर्नाटक के भोजन में	उपयोग	नारियल तेल
+- नारियल तेल	property	नारियल
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [तटीय]{b} [कर्नाटक के]{c} भोजन में --> उल्लेखनीय है --> [समुद्री भोजन , नारियल और]{a} नारियल तेल का [व्यापक] उपयोग
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): समुद्री भोजन [, नारियल]{d} [और] का [व्यापक] उपयोग --> उल्लेखनीय है --> [तटीय]{b} [कर्नाटक के]{c} भोजन में
+      Status: not satisfied
+    - Gold (b): तटीय --> property --> कर्नाटक [के]
+      Status: not satisfied
+    - Gold (c): भोजन में --> property --> [तटीय]{b} कर्नाटक के
+      Status: not satisfied
+    - Gold (d): नारियल का [व्यापक] उपयोग --> उल्लेखनीय है --> [तटीय]{b} [कर्नाटक के]{c} भोजन में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 55
+Sentence Text: कार्ल ने वहां अध्ययन के साथ ही वहां के उपेक्षित जीवविज्ञान उद्यान को भी सुधारा .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- कार्ल ने	सुधारा	उपेक्षित जीवविज्ञान उद्यान को
+- कार्ल ने	अध्ययन के साथ	उपेक्षित जीवविज्ञान उद्यान को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: कार्ल ने --> सुधारा --> [वहां के]{a} उपेक्षित जीवविज्ञान उद्यान को [भी]
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): वहां के --> property --> उपेक्षित जीवविज्ञान उद्यान को [भी]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 56
+Sentence Text: सिफियस चतुर्थ की श्रेणी के तारों को सिफीड कहते हैं .
+Metrics: TP=1, FP=2, FN=0
+
+--- Model Extractions ---
+- सिफियस चतुर्थ की श्रेणी के तारों को	कहते हैं	सिफीड
+- सिफीड	property	सिफियस चतुर्थ की श्रेणी के तारों को
+- सिफियस चतुर्थ की श्रेणी के तारों को	property	सिफीड
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [सिफियस चतुर्थ की]{a} [श्रेणी के] तारों को --> [कहते] हैं --> सिफीड
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): सिफियस चतुर्थ की --> property --> श्रेणी
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 57
+Sentence Text: यह ' प्राथमिक विधि अध्यारोप ' के नाम से प्रसिद्ध है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- अध्यारोप	प्रसिद्ध है	विधि प्राथमिक
+- विधि	property	प्राथमिक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह --> प्रसिद्ध है --> [प्राथमिक विधि अध्यारोप के]{a} नाम से
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): प्राथमिक विधि अध्यारोप [के] --> property --> नाम [से]
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: यह --> नाम से प्रसिद्ध है --> [प्राथमिक विधि अध्यारोप के]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): प्राथमिक विधि अध्यारोप [के] --> property --> नाम [से]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 58
+Sentence Text: चीन तथा जापान से इस देश का अधिक संपर्क रहा है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- चीन तथा जापान	से संपर्क रहा है	इस देश का
+- इस देश	property	अधिक
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इस देश का --> [अधिक] संपर्क रहा है --> चीन [तथा जापान से]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): इस देश का --> [अधिक] संपर्क रहा है --> [तथा] जापान से
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 59
+Sentence Text: कश्यप ने तत्काल ज्योतिष गणना करके पता लगाया कि राजा की आयु में कुछ घड़ी शेष हैं .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- कश्यप ने	पता लगाया	राजा की आयु में कुछ घड़ी शेष हैं
+- ज्योतिष गणना	property	कश्यप ने
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: कश्यप ने --> पता लगाया --> [तत्काल] ज्योतिष गणना करके
+      Status: not satisfied
+    - Gold: कश्यप ने --> पता लगाया --> [राजा की]{b} आयु में [कुछ घड़ी शेष हैं]{a} |OR| [तत्काल] ज्योतिष गणना करके --> पता लगाया --> [राजा की]{b} आयु में [कुछ घड़ी शेष हैं]{a}
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): कुछ घड़ी --> शेष हैं --> [राजा की]{b} आयु में
+      Status: not satisfied
+    - Gold (b): राजा की --> property --> आयु में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 60
+Sentence Text: अभ्रक आदि की खानों में मोमबत्तियाँ भी प्रयुक्त होती है .
+Metrics: TP=2, FP=1, FN=0
+
+--- Model Extractions ---
+- मोमबत्तियाँ	प्रयुक्त होती है	खानों में
+- खानों में	property	अभ्रक आदि की
+- अभ्रक आदि की	property	खानों में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [अभ्रक आदि की]{a} खानों में --> प्रयुक्त होती है --> मोमबत्तियाँ [भी] |OR| [अभ्रक की]{a} खानों में --> प्रयुक्त होती है --> मोमबत्तियाँ [भी]
+      Status: satisfied but with a |OR| satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): अभ्रक [आदि] की --> property --> खानों में
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 61
+Sentence Text: इस शैली में उन्होंने कहानियाँ और उपन्यास लिखे हैं .
+Metrics: TP=1, FP=2, FN=1
+
+--- Model Extractions ---
+- उन्होंने	लिखे हैं	कहानियाँ और उपन्यास
+- उपन्यास	property	इस शैली में
+- कहानियाँ	property	इस शैली में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उन्होंने --> लिखे हैं --> कहानियाँ [और उपन्यास]{a}
+      Status: satisfied
+    - Gold: उन्होंने --> लिखे हैं --> इस शैली में |OR| कहानियाँ [और उपन्यास]{a} --> लिखे हैं --> इस शैली में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): उन्होंने --> लिखे हैं --> [और] उपन्यास
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: इस शैली में --> लिखे हैं --> कहानियाँ [और उपन्यास]{a}
+      Status: not satisfied
+    - Gold: उन्होंने --> लिखे हैं --> इस शैली में |OR| कहानियाँ [और उपन्यास]{a} --> लिखे हैं --> इस शैली में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): इस शैली में --> लिखे हैं --> [और] उपन्यास
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: इस शैली में --> कहानियाँ [और उपन्यास]{a} लिखे हैं --> उन्होंने
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): इस शैली में --> लिखे हैं --> [और] उपन्यास
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 62
+Sentence Text: वो पहले दलित और पहले मलयाली मुख्य न्यायाधीश हैं .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- मुख्य न्यायाधीश	पहला	दलित
+- मुख्य न्यायाधीश	पहला	मलयाली
+- मुख्य न्यायाधीश	property	दलित
+- मुख्य न्यायाधीश	property	मलयाली
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: वो --> हैं --> मुख्य न्यायाधीश
+      Status: not satisfied
+    - Gold: पहले दलित --> property --> मुख्य न्यायाधीश
+      Status: not satisfied
+    - Gold: [और] पहले मलयाली --> property --> मुख्य न्यायाधीश
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: वो --> हैं --> [पहले दलित]{a} [और] पहले मलयाली मुख्य न्यायाधीश
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): पहले दलित --> property --> [और] पहले मलयाली मुख्य न्यायाधीश
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 63
+Sentence Text: 6 जुलाई 2009 को उन्होंने सरकार का वार्षिक बजट पेश किया .
+Metrics: TP=2, FP=0, FN=1
+
+--- Model Extractions ---
+- उन्होंने	पेश किया	सरकार का वार्षिक बजट
+- बजट	property	सरकार का
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [6 जुलाई 2009 को]{a} उन्होंने --> पेश किया --> [सरकार का]{b} [वार्षिक]{c} बजट
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): 6 जुलाई 2009 को --> पेश किया --> [सरकार का]{b} वार्षिक बजट |OR| 6 जुलाई 2009 को --> पेश किया --> उन्होंने
+      Status: not satisfied
+    - Gold (b): सरकार का --> property --> [वार्षिक]{c} बजट
+      Status: satisfied but with c
+    - Gold (c): वार्षिक --> property --> बजट
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: 6 जुलाई 2009 को --> [सरकार का वार्षिक बजट]{a} पेश किया --> उन्होंने
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): उन्होंने --> पेश किया --> [सरकार का]{b} [वार्षिक]{c} बजट
+      Status: satisfied
+    - Gold (b): सरकार का --> property --> [वार्षिक]{c} बजट
+      Status: satisfied but with c
+    - Gold (c): वार्षिक --> property --> बजट
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 64
+Sentence Text: स्थानीय आबादी लगभग पूरी तरह से चाय के व्यापार पर निर्भर रहती है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- स्थानीय आबादी	निर्भर रहती है	चाय के व्यापार पर
+- चाय के व्यापार	property	स्थानीय आबादी
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: स्थानीय आबादी --> निर्भर रहती है --> [लगभग] [पूरी तरह से]{a} [चाय के]{b} व्यापार पर
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): [लगभग] पूरी तरह से --> निर्भर रहती है --> [चाय के]{b} व्यापार पर |OR| [लगभग] पूरी तरह से --> निर्भर रहती है --> स्थानीय आबादी
+      Status: not satisfied
+    - Gold (b): चाय के --> निर्भर रहती है --> व्यापार पर
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 65
+Sentence Text: इसे साथ ही आधारभूत प्रोफ़ाइल में भी लागू किया जाता है .
+Metrics: TP=1, FP=1, FN=0
+
+--- Model Extractions ---
+- इसे	लागू किया जाता है	आधारभूत प्रोफ़ाइल में
+- प्रोफ़ाइल	property	आधारभूत
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इसे [साथ ही] --> लागू किया जाता है --> आधारभूत प्रोफ़ाइल में [भी]
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 66
+Sentence Text: उन्हें उत्कल मणि के नाम से जाना जाता है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- उन्हें	जाना जाता है	उत्कल मणि
+- उत्कल मणि	property	उन्हें
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उन्हें --> जाना जाता है --> [उत्कल मणि के]{a} नाम से
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): उत्कल मणि के --> property --> नाम से
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: उन्हें --> के नाम से जाना जाता है --> उत्कल मणि
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: उन्हें --> नाम से जाना जाता है --> उत्कल मणि के
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 67
+Sentence Text: अधिक जानकारी के लिए , कृपया फ्रेंच फ्लेमिश को देखें .
+Metrics: TP=1, FP=1, FN=0
+
+--- Model Extractions ---
+- फ्रेंच फ्लेमिश को	देखें	अधिक जानकारी के लिए
+- अधिक जानकारी के लिए	property	फ्रेंच फ्लेमिश को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: फ्रेंच फ्लेमिश को --> देखें --> अधिक जानकारी के लिए
+      Status: satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: कृपया --> देखें --> फ्रेंच फ्लेमिश को
+      Status: not satisfied
+    - Gold: फ्रेंच फ्लेमिश को --> देखें --> अधिक जानकारी के लिए
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 68
+Sentence Text: इस नदी का ज्यादातर अंश पाकिस्तान में प्रवाहित होता है .
+Metrics: TP=1, FP=1, FN=0
+
+--- Model Extractions ---
+- इस नदी का ज्यादातर अंश	प्रवाहित होता है	पाकिस्तान में
+- इस नदी का ज्यादातर अंश	property	नदी
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [इस नदी का]{a} ज्यादातर अंश --> प्रवाहित होता है --> पाकिस्तान में
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): इस नदी का --> property --> ज्यादातर अंश
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 69
+Sentence Text: मत्रूह मुहाफ़ज़ाह का अंदरूनी भाग लीबियाई रेगिस्तान का हिस्सा है , जिसमें सीवा नख़लिस्तान ( ओएसिस ) भी स्थित है .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- मत्रूह मुहाफ़ज़ाह	अंदरूनी भाग	लीबियाई रेगिस्तान का हिस्सा
+- मत्रूह मुहाफ़ज़ाह	जिसमें	सीवा नख़लिस्तान ओएसिस 
+- सीवा नख़लिस्तान	property	ओसिस
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [मत्रूह मुहाफ़ज़ाह का]{a} अंदरूनी भाग --> हिस्सा है --> लीबियाई रेगिस्तान का
+      Status: not satisfied
+    - Gold: जिसमें --> स्थित है --> सीवा नख़लिस्तान [( ओएसिस )]{b}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): अंदरूनी भाग --> property --> मत्रूह मुहाफ़ज़ाह का
+      Status: not satisfied
+    - Gold (b): [सीवा] नख़लिस्तान --> property --> ( ओएसिस )
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 70
+Sentence Text: राज्य की राजधानी बंगलुरु शहर है , जो भारत में हो रही त्वरित आर्थिक एवं प्रौद्योगिकी का अग्रणी योगदानकर्त्ता है .
+Metrics: TP=1, FP=2, FN=1
+
+--- Model Extractions ---
+- राज्य की राजधानी	है	बंगलुरु शहर
+- बंगलुरु	property	भारत में हो रही त्वरित आर्थिक एवं प्रौद्योगिकी का अग्रणी योगदानकर्ता
+- बंगलुरु	property	भारत
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [राज्य की]{a} राजधानी --> है --> बंगलुरु शहर
+      Status: satisfied
+    - Gold: [जो भारत में हो रही]{b} [त्वरित] आर्थिक एवं प्रौद्योगिकी का --> है --> [अग्रणी] योगदानकर्त्ता |OR| बंगलुरु शहर --> है --> [त्वरित] आर्थिक एवं प्रौद्योगिकी का अग्रणी योगदानकर्त्ता |OR| बंगलुरु शहर --> [अग्रणी] योगदानकर्त्ता है --> [त्वरित] आर्थिक एवं प्रौद्योगिकी का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): राज्य की --> property --> राजधानी
+      Status: not satisfied
+    - Gold (b): [त्वरित] आर्थिक एवं प्रौद्योगिकी --> हो रही --> भारत में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 71
+Sentence Text: ये अपनी रहस्यमयी और भयावह कहानियों के लिए प्रसिद्ध हैं .
+Metrics: TP=2, FP=1, FN=1
+
+--- Model Extractions ---
+- कहानियों के लिए	प्रसिद्ध हैं	ये
+- कहानियों	property	रहस्यमयी और भयावह
+- कहानियों	property	प्रसिद्ध
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: ये --> प्रसिद्ध हैं --> [अपनी] [रहस्यमयी और भयावह]{a} कहानियों के लिए
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): रहस्यमयी [और भयावह]{b} --> property --> कहानियों के लिए
+      Status: not satisfied
+    - Gold (b): [और] भयावह --> property --> कहानियों के लिए
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: ये --> के लिए प्रसिद्ध हैं --> [अपनी] [रहस्यमयी और भयावह]{a} कहानियों
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): रहस्यमयी [और भयावह]{b} --> property --> कहानियों
+      Status: satisfied
+    - Gold (b): [और] भयावह --> property --> कहानियों
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 72
+Sentence Text: उनका एक कहानी संग्रह और दो निबंध संग्रह प्रकाशित हुए हैं .
+Metrics: TP=1, FP=2, FN=0
+
+--- Model Extractions ---
+- उनका	प्रकाशित हुए हैं	एक कहानी संग्रह और दो निबंध संग्रह
+- एक कहानी संग्रह	property	उनका
+- दो निबंध संग्रह	property	उनका
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उनका --> प्रकाशित हुए हैं --> एक कहानी संग्रह [और दो निबंध संग्रह]{a}
+      Status: satisfied
+  Compensatory Extractions:
+    - Gold (a): उनका --> प्रकाशित हुए हैं --> [और] दो निबंध संग्रह
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 73
+Sentence Text: पद्मनाभ दत्त ने ( 15 वीं शताब्दी ) सुपद्य व्याकरण लिखा है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- पद्मनाभ दत्त ने	लिखा है	सुपद्य व्याकरण
+- सुपद्य व्याकरण	property	15 वीं शताब्दी
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: पद्मनाभ दत्त ने --> लिखा है --> सुपद्य व्याकरण
+      Status: satisfied
+    - Gold: ( 15 वीं शताब्दी ) --> property --> सुपद्य व्याकरण
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: पद्मनाभ दत्त ने [( 15 वीं शताब्दी )]{a} --> लिखा है --> सुपद्य व्याकरण
+      Status: satisfied but with a
+  Compensatory Extractions:
+    - Gold (a): ( 15 वीं शताब्दी ) --> property --> पद्मनाभ दत्त ने
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: पद्मनाभ दत्त --> ने --> [( 15 वीं शताब्दी )]{a} सुपद्य व्याकरण लिखा
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): ( 15 वीं शताब्दी ) --> property --> सुपद्य व्याकरण
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 74
+Sentence Text: इसके पश्चिम में अलबामा और दक्षिण में फ्लोरिडा राज्य स्थित हैं .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- अलबामा	स्थित हैं	दक्षिण में फ्लोरिडा राज्य
+- अलबामा	पश्चिम में	इसके
+- फ्लोरिडा	पश्चिम में	इसके
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इसके पश्चिम में --> स्थित हैं --> अलबामा
+      Status: not satisfied
+    - Gold: [इसके] दक्षिण में --> स्थित हैं --> फ्लोरिडा [राज्य]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): राज्य --> property --> फ्लोरिडा
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 75
+Sentence Text: यह क्रिकेट मैदान ऑस्ट्रेलिया के होबार्ट शहर में स्थित है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- क्रिकेट मैदान	स्थित है	ऑस्ट्रेलिया के होबार्ट शहर में
+- होबार्ट	property	ऑस्ट्रेलिया के
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह क्रिकेट मैदान --> स्थित है --> [ऑस्ट्रेलिया के]{a} होबार्ट शहर में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): ऑस्ट्रेलिया के --> property --> होबार्ट शहर में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: यह क्रिकेट मैदान --> में स्थित है --> [ऑस्ट्रेलिया के]{a} होबार्ट शहर
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): ऑस्ट्रेलिया के --> property --> होबार्ट शहर [में]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 76
+Sentence Text: निम्नलिखित सूचना नियम का एक सरलीकृत सारांश है , पूरी प्रतिलिपि नहीं है .
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - निम्नलिखित सूचना --> [एक] [सरलीकृत]{a} सारांश है --> नियम का
+    - निम्नलिखित सूचना --> नहीं है --> पूरी प्रतिलिपि
+  Compensatory Extractions:
+    - (a) सरलीकृत --> है --> सरलीकृत |OR| सरलीकृत --> property --> सरलीकृत
+
+Cluster: cluster 2
+  Essential Extractions:
+    - निम्नलिखित सूचना --> [एक] [सरलीकृत]{a} सारांश है --> नियम का
+    - निम्नलिखित सूचना [नियम का] --> [एक] [सरलीकृत]{a} सारांश है --> पूरी प्रतिलिपि नहीं है
+  Compensatory Extractions:
+    - (a) सरलीकृत --> है --> सरलीकृत |OR| सरलीकृत --> property --> सरलीकृत
+
+==================================================
+
+Sentence ID: 77
+Sentence Text: आत्यन्तिक प्रलय योगीजनों के ज्ञान के द्वारा ब्रह्म में लीन हो जाने को कहते हैं .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- योगीजनों के ज्ञान	लीन हो जाने को कहते हैं	ब्रह्म में
+- योगीजनों के ज्ञान	property	आत्यन्तिक प्रलय
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: आत्यन्तिक प्रलय --> [कहते] हैं --> [योगीजनों के ज्ञान के द्वारा]{a} ब्रह्म में लीन हो जाने को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): योगीजनों के ज्ञान के द्वारा --> लीन हो जाने को --> ब्रह्म में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 78
+Sentence Text: जंगलों की विशेषता की दृष्टि से कुछ लोगों ने इसे इंडोचायनीज़ और इंडोमलायन उपक्षेत्रों में विभाजित किया है .
+Metrics: TP=0, FP=2, FN=3
+
+--- Model Extractions ---
+- जंगलों की विशेषता	विभाजित किया है	इंडोचायनीज़ और इंडोमलायन उपक्षेत्रों में
+- इंडोचायनीज़ और इंडोमलायन उपक्षेत्रों में	property	जंगलों की विशेषता की दृष्टि से
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इसे --> विभाजित किया है --> इंडोचायनीज़ [और इंडोमलायन उपक्षेत्रों में]{a} |OR| इसे --> विभाजित किया है --> [इंडोचायनीज़]{b} [और] इंडोमलायन उपक्षेत्रों में
+      Status: not satisfied
+    - Gold: इसे --> विभाजित किया है --> जंगलों की विशेषता की दृष्टि से
+      Status: not satisfied
+    - Gold: इसे --> विभाजित किया है --> कुछ लोगों ने
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): इसे --> विभाजित किया है --> [और] इंडोमलायन उपक्षेत्रों में
+      Status: not satisfied
+    - Gold (b): इसे --> विभाजित किया है --> इंडोचायनीज़ [उपक्षेत्रों में]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 79
+Sentence Text: पर , प्रयोगशील प्रवृत्तियाँ उनको प्रश्रय देने लगी होंगी !
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - [पर ,] उनको --> प्रश्रय देने लगी होंगी --> प्रयोगशील प्रवृत्तियाँ
+
+Cluster: cluster 2
+  Essential Extractions:
+    - [पर] उनको --> प्रश्रय देने लगी होंगी --> प्रयोगशील प्रवृत्तियाँ
+
+==================================================
+
+Sentence ID: 80
+Sentence Text: 5364 ईसा पूर्व ईसा मसीह के जन्म से पूर्व के वर्षों को दर्शाता है .
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - 5364 ईसा पूर्व --> दर्शाता है --> [ईसा मसीह के जन्म से पूर्व के]{a} वर्षों को
+  Compensatory Extractions:
+    - (a) वर्षों को --> दर्शाता है --> [ईसा मसीह के]{b} जन्म से पूर्व के
+    - (b) जन्म से --> property --> ईसा मसीह के |OR| जन्म से पूर्व के --> property --> ईसा मसीह के
+
+Cluster: cluster 2
+  Essential Extractions:
+    - 5364 --> दर्शाता है --> [ईसा मसीह के जन्म से पूर्व के]{a} वर्षों को
+    - ईसा पूर्व --> दर्शाता है --> [ईसा मसीह के जन्म से पूर्व के]{a} वर्षों को
+  Compensatory Extractions:
+    - (a) वर्षों को --> दर्शाता है --> [ईसा मसीह के]{b} जन्म से पूर्व के
+    - (b) जन्म से --> property --> ईसा मसीह के |OR| जन्म से पूर्व के --> property --> ईसा मसीह के
+
+==================================================
+
+Sentence ID: 81
+Sentence Text: विश्वामित्र द्वारा वैदिक मन्त्रों के स्वरघोष के मध्य सीता राम को जयमाल पहनाती हैं .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- सीता राम	पहनती हैं	जयमाल
+- सीता राम	property	विश्वामित्र द्वारा वैदिक मन्त्रों के स्वरघोष के मध्य
+- विश्वामित्र	property	वैदिक मन्त्रों के स्वरघोष के मध्य
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: सीता --> पहनाती हैं --> राम को जयमाल
+      Status: not satisfied
+    - Gold: [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> पहनाती हैं --> राम को जयमाल |OR| [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> पहनाती हैं --> सीता
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): विश्वामित्र द्वारा --> property --> वैदिक मन्त्रों [के स्वरघोष]
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: सीता --> पहनाती हैं --> जयमाल
+      Status: not satisfied
+    - Gold: सीता --> पहनाती हैं --> राम को
+      Status: not satisfied
+    - Gold: [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> पहनाती हैं --> जयमाल |OR| [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> पहनाती हैं --> सीता
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): विश्वामित्र द्वारा --> property --> वैदिक मन्त्रों [के स्वरघोष]
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: सीता --> जयमाल पहनाती हैं --> राम को
+      Status: not satisfied
+    - Gold: [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> जयमाल पहनाती हैं --> राम को |OR| [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> जयमाल पहनाती हैं --> सीता
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): विश्वामित्र द्वारा --> property --> वैदिक मन्त्रों [के स्वरघोष]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 82
+Sentence Text: विभिन्न स्रोत इस तथ्य पर बटे हुए हैं कि आखिर किस वर्ष में स्थान का नाम एजिंकोर्ट स्क्वायर पड़ा .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- स्थान का नाम	पड़ा	एजिंकोर्ट स्क्वायर
+- स्थान का नाम	property	एजिंकोर्ट स्क्वायर
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: विभिन्न स्रोत --> बटे हुए हैं --> [इस] तथ्य पर
+      Status: not satisfied
+    - Gold: [इस] तथ्य [पर] --> property --> [कि] [आखिर] किस वर्ष में [स्थान का नाम एजिंकोर्ट स्क्वायर पड़ा]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): किस वर्ष में --> स्थान का नाम --> एजिंकोर्ट स्क्वायर पड़ा |OR| किस वर्ष में --> स्थान का नाम पड़ा --> एजिंकोर्ट स्क्वायर
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: विभिन्न स्रोत --> बटे हुए हैं --> [कि] [आखिर] किस वर्ष में [स्थान का नाम एजिंकोर्ट स्क्वायर पड़ा]{a}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): किस वर्ष में --> स्थान का नाम --> एजिंकोर्ट स्क्वायर पड़ा |OR| किस वर्ष में --> स्थान का नाम पड़ा --> एजिंकोर्ट स्क्वायर
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 83
+Sentence Text: प्रत्येक भाग के अंतर्गत विभिन्न विभाग होते हैं जिनके अलगअलग अध्यक्ष होते हैं .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- विभिन्न विभाग	होते हैं	अलगअलग अध्यक्ष
+- अध्यक्ष	property	अलगअलग
+- अलगअलग	property	अलगअलग
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: प्रत्येक भाग के अंतर्गत --> [होते] हैं --> [विभिन्न] विभाग
+      Status: not satisfied
+    - Gold: विभिन्न विभाग --> जिनके होते हैं --> [अलगअलग] अध्यक्ष |OR| जिनके --> [होते] हैं --> [अलगअलग] अध्यक्ष
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: प्रत्येक भाग के --> अंतर्गत होते हैं --> [विभिन्न] विभाग
+      Status: not satisfied
+    - Gold: विभिन्न विभाग --> जिनके होते हैं --> [अलगअलग] अध्यक्ष |OR| जिनके --> [होते] हैं --> [अलगअलग] अध्यक्ष
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 84
+Sentence Text: एकलों के बीच एक लंबे अंतराल के बाद , एल्बम से तीसरा कट 2006 के मध्य में जारी किया गया .
+Metrics: TP=1, FP=1, FN=2
+
+--- Model Extractions ---
+- एल्बम से तीसरा कट	जारी किया गया	2006 के मध्य में
+- एल्बम से तीसरा कट	property	एकलों के बीच एक लंबे अंतराल के बाद
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [एल्बम से]{a} तीसरा कट --> जारी किया गया --> 2006 के मध्य में
+      Status: satisfied
+    - Gold: [एल्बम से]{a} तीसरा कट --> जारी किया गया --> एकलों के बीच
+      Status: not satisfied
+    - Gold: [एल्बम से]{a} तीसरा कट --> जारी किया गया --> एक लंबे अंतराल के बाद |OR| एकलों के बीच --> जारी किया गया --> एक लंबे अंतराल के बाद
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): तीसरा कट --> property --> एल्बम [से]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 85
+Sentence Text: चूंकि उस दौर में उनके सामने कोई और मानक नहीं थे , अतः सब कामचलाऊ व्यवस्था उन्हें स्वयं करनी पड़ी .
+Metrics: TP=0, FP=4, FN=2
+
+--- Model Extractions ---
+- सब	बनाए	व्यवस्था
+- व्यवस्था	property	चलाने की
+- व्यवस्था	property	स्वयं
+- सब	property	बनाने के लिए
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उन्हें --> [स्वयं] करनी पड़ी --> [अतः] [सब] कामचलाऊ व्यवस्था
+      Status: not satisfied
+    - Gold: उनके सामने --> नहीं थे --> [कोई] [और] मानक
+      Status: not satisfied
+    - Gold: [चूंकि] उस दौर में --> नहीं थे --> [कोई] [और] मानक
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: उन्हें --> [स्वयं] करनी पड़ी --> [अतः] [सब] कामचलाऊ व्यवस्था
+      Status: not satisfied
+    - Gold: उनके सामने --> [कोई] [और] मानक नहीं थे --> [चूंकि] उस दौर में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 86
+Sentence Text: 1900 के आसपास बहुत से विकासों ने निमोनिया से पीड़ित लोगों के लिये परिणामों को बेहतर कर दिया था .
+Metrics: TP=2, FP=1, FN=1
+
+--- Model Extractions ---
+- विकासों ने	बेहतर कर दिया था	परिणामों को
+- विकासों ने	property	1900 के आसपास
+- परिणामों को	property	निमोनिया से पीड़ित लोगों के लिये
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [निमोनिया से]{a} [पीड़ित] लोगों के लिये --> बेहतर कर दिया था --> परिणामों को
+      Status: not satisfied
+    - Gold: [1900 के आसपास]{b} [बहुत से] विकासों ने --> बेहतर कर दिया था --> परिणामों को
+      Status: satisfied but with b
+  Compensatory Extractions:
+    - Gold (a): निमोनिया से --> पीड़ित --> लोगों के लिये
+      Status: not satisfied
+    - Gold (b): विकासों ने --> property --> 1900 के आसपास [बहुत से]
+      Status: satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [निमोनिया से]{a} [पीड़ित] लोगों के लिये --> परिणामों को बेहतर कर दिया था --> [1900 के आसपास]{b} [बहुत से] विकासों ने
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): निमोनिया से --> पीड़ित --> लोगों के लिये
+      Status: not satisfied
+    - Gold (b): विकासों ने --> property --> 1900 के आसपास [बहुत से]
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 87
+Sentence Text: सांप्रदायिक सिद्धांतों के प्रचार और प्रसार में अपने पिता के समान आपका भी बहुत योगदान है .
+Metrics: TP=0, FP=2, FN=2
+
+--- Model Extractions ---
+- आप	योगदान	सांप्रदायिक सिद्धांतों के प्रचार और प्रसार में
+- आप	योगदान	अपने पिता के समान
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: आपका [भी] --> [बहुत] योगदान है --> [सांप्रदायिक सिद्धांतों के]{a} प्रचार और प्रसार में
+      Status: not satisfied
+    - Gold: [अपने] पिता के समान --> [बहुत] योगदान है --> आपका [भी] |OR| [अपने] पिता के समान --> [बहुत] योगदान है --> [सांप्रदायिक सिद्धांतों के]{a} प्रचार और प्रसार में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सांप्रदायिक सिद्धांतों के --> property --> प्रचार और प्रसार में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: आपका [भी] --> [बहुत] योगदान है --> [सांप्रदायिक सिद्धांतों के प्रचार और]{a} प्रसार में
+      Status: not satisfied
+    - Gold: [अपने] पिता के समान --> [बहुत] योगदान है --> आपका [भी] |OR| [अपने] पिता के समान --> [बहुत] योगदान है --> [सांप्रदायिक सिद्धांतों के प्रचार और]{a} प्रसार में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सांप्रदायिक सिद्धांतों के --> property --> [प्रचार और] प्रसार में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 88
+Sentence Text: उदाहरणार्थ , केवल 1 -- 3 माह के संपर्क में भी मेसोथेलियोमा उत्पन्न होने के मामले लेखबद्ध किये गये हैं .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- मेसोथेलियोमा	उत्पन्न होने के मामले	1 3 माह के संपर्क में भी
+- मेसोथेलियोमा	property	1 3 माह के संपर्क में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: केवल 1 -- 3 माह के संपर्क में [भी] --> लेखबद्ध किये गये हैं --> [मेसोथेलियोमा उत्पन्न होने के]{a} मामले
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): मामले --> property --> मेसोथेलियोमा उत्पन्न होने के |OR| मामले --> उत्पन्न होने के --> मेसोथेलियोमा
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 89
+Sentence Text: जहां इश -- डू में दो प्राणियों का सामना होता है , इश -- एस में प्राणी वास्तव में मिलते नहीं है .
+Metrics: TP=0, FP=2, FN=2
+
+--- Model Extractions ---
+- प्राणी	सामना होता है	दो प्राणियों का
+- प्राणी	वास्तव में मिलते नहीं है	प्राणी
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इश -- डू में --> सामना होता है --> दो प्राणियों का
+      Status: not satisfied
+    - Gold: इश -- एस में --> [वास्तव में] मिलते नहीं है --> प्राणी |OR| इश -- एस में --> प्राणी मिलते नहीं है --> पवास्तव में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 90
+Sentence Text: ये तीनों अक्ष उस तल में एकबिन्दुगामी भी होने चाहिये .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- तीनों अक्ष	होने चाहिए	एक बिन्दुगामी भी
+- एक बिन्दुगामी	property	तल में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: ये तीनों अक्ष --> एकबिन्दुगामी [भी] होने चाहिये --> उस तल में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: ये तीनों अक्ष --> होने चाहिये --> एकबिन्दुगामी [भी]
+      Status: not satisfied
+    - Gold: उस तल में --> होने चाहिये --> एकबिन्दुगामी [भी]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 91
+Sentence Text: विकासशील देशों में , अपने ही पड़ोस में किसानों के दूध विपणन के पुराने तरीके तेजी से बदल रहे हैं .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- किसानों के दूध विपणन	बदल रहे हैं	अपने ही पड़ोस में
+- किसानों के दूध विपणन	property	विकासशील देशों में
+- किसानों के दूध विपणन	property	तेजी से
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [किसानों के]{a} [दूध विपणन के]{b} [पुराने] तरीके --> [तेजी से] बदल रहे हैं --> विकासशील देशों में
+      Status: not satisfied
+    - Gold: [किसानों के]{a} [दूध विपणन के]{b} [पुराने] तरीके --> [तेजी से] बदल रहे हैं --> अपने ही पड़ोस में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): किसानों के --> property --> दूध विपणन के [पुराने] तरीके
+      Status: not satisfied
+    - Gold (b): [पुराने] तरीके --> property --> किसानों के |OR| [पुराने] तरीके --> property --> दूध विपणन के
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 92
+Sentence Text: उन्होंने अपने बोलीवुड करियर की शुरुआत एक दीवाना था से की जिसे 17 फ़रवरी 2012 को रिलीज़ किया गया .
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - उन्होंने --> [अपने] बोलीवुड करियर की शुरुआत की --> एक दीवाना था से
+    - जिसे --> रिलीज़ किया गया --> 17 फ़रवरी 2012 को |OR| एक दीवाना था [से] --> रिलीज़ किया गया --> 17 फ़रवरी 2012 को
+
+Cluster: cluster 2
+  Essential Extractions:
+    - उन्होंने --> [अपने] बोलीवुड करियर की शुरुआत की --> 17 फ़रवरी 2012 को
+    - उन्होंने --> [अपने] बोलीवुड करियर की शुरुआत की --> एक दीवाना था से
+    - जिसे --> रिलीज़ किया गया --> 17 फ़रवरी 2012 को |OR| एक दीवाना था [से] --> रिलीज़ किया गया --> 17 फ़रवरी 2012 को
+
+==================================================
+
+Sentence ID: 93
+Sentence Text: इस रोग के प्रतिषेधात्मक उपचार में भी मक्खियों से खाद्य एवं पेय पदार्थो को बचाना अत्यंत आवश्यक है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- मक्खियों से खाद्य एवं पेय पदार्थो को	बचाना	इस रोग के प्रतिषेधात्मक उपचार में
+- इस रोग के प्रतिषेधात्मक उपचार में	property	मक्खियों से खाद्य एवं पेय पदार्थो को
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [इस रोग के]{a} [प्रतिषेधात्मक] उपचार में [भी] --> [अत्यंत] आवश्यक है --> [मक्खियों से]{b} [खाद्य एवं] पेय पदार्थो को बचाना
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): उपचार में --> property --> इस रोग के
+      Status: not satisfied
+    - Gold (b): मक्खियों से --> बचाना --> [खाद्य एवं] पेय पदार्थो को |OR| मक्खियों से --> बचाना --> खाद्य [एवं पेय] पदार्थो को
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: [इस रोग]{a} के [प्रतिषेधात्मक] उपचार में [भी] --> [अत्यंत] आवश्यक है --> [मक्खियों से]{b} खाद्य [एवं पेय] पदार्थो को बचाना
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): उपचार में --> property --> इस रोग के
+      Status: not satisfied
+    - Gold (b): मक्खियों से --> बचाना --> [खाद्य एवं] पेय पदार्थो को |OR| मक्खियों से --> बचाना --> खाद्य [एवं पेय] पदार्थो को
+      Status: not satisfied
+
+Cluster: cluster 3
+  Essential Extractions:
+    - Gold: इस रोग के [प्रतिषेधात्मक] उपचार में [भी] --> मक्खियों से बचाना [अत्यंत] आवश्यक है --> खाद्य [एवं पेय] पदार्थो को
+      Status: not satisfied
+
+Cluster: cluster 4
+  Essential Extractions:
+    - Gold: इस रोग के [प्रतिषेधात्मक] उपचार में [भी] --> मक्खियों से बचाना [अत्यंत] आवश्यक है --> [खाद्य एवं] पेय पदार्थो को
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 94
+Sentence Text: यह , प्रतिस्पर्धी टीम की राष्ट्रीयता को संदर्भित करता है , न कि गाड़ी निर्माता या चालक की राष्ट्रीयता को .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- राष्ट्रीयता को संदर्भित करता है	संदर्भित करता है	टीम की
+- गाड़ी निर्माता	property	राष्ट्रीयता को
+- गाड़ी निर्माता	property	टीम की
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह --> संदर्भित करता है --> [प्रतिस्पर्धी] [टीम की]{a} राष्ट्रीयता को
+      Status: not satisfied
+    - Gold: यह --> संदर्भित करता है --> न कि [गाड़ी निर्माता या] चालक की राष्ट्रीयता को |OR| यह --> संदर्भित करता है --> न कि गाड़ी निर्माता [या चालक] की राष्ट्रीयता को
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): राष्ट्रीयता को --> property --> [प्रतिस्पर्धी] टीम की
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 95
+Sentence Text: सड़क मार्ग रत्नागिरी के लिए मुंबई से सीधी बस सेवा है .
+Metrics: TP=1, FP=2, FN=1
+
+--- Model Extractions ---
+- मुंबई से	सीधी बस सेवा है	रत्नागिरी के लिए
+- बस सेवा	मार्ग	सड़क मार्ग
+- मार्ग	property	रत्नागिरी के लिए
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: सड़क मार्ग --> [सीधी] बस सेवा है --> मुंबई से
+      Status: not satisfied
+    - Gold: सड़क मार्ग --> [सीधी] बस सेवा है --> रत्नागिरी के लिए |OR| रत्नागिरी के लिए --> [सीधी] बस सेवा है --> मुंबई से
+      Status: satisfied
+
+==================================================
+
+Sentence ID: 96
+Sentence Text: छपाई में लकड़ी के ब्लाकों का प्रयोग होता था , जिसका निर्माण शिल्पी -- सुथार करते थे .
+Metrics: TP=0, FP=2, FN=2
+
+--- Model Extractions ---
+- शिल्पी	निर्माण करते थे	लकड़ी के ब्लाकों का
+- लकड़ी के ब्लाकों का	property	छपाई में प्रयोग होता था
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: छपाई में --> प्रयोग होता था --> [लकड़ी के]{a} ब्लाकों का
+      Status: not satisfied
+    - Gold: जिसका --> निर्माण करते थे --> शिल्पी -- सुथार |OR| [लकड़ी के]{a} ब्लाकों का --> निर्माण करते थे --> शिल्पी -- सुथार
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): ब्लाकों का --> प्रयोग होता था --> लकड़ी के
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 97
+Sentence Text: यह शब्द विधि बनाने वाली सरकारी इकाई के लिये प्रयोग में आता है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- सरकारी इकाई के लिये प्रयोग में आता है	प्रयोग में आता है	विधि बनाने वाली
+- विधि	property	विधि बनाने वाली
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह [शब्द]{b} --> प्रयोग में आता है --> [विधि बनाने वाली]{a} सरकारी इकाई के लिये
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सरकारी इकाई [के लिये] --> property --> विधि बनाने वाली
+      Status: not satisfied
+    - Gold (b): यह --> property --> शब्द
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 98
+Sentence Text: यह उत्तर प्रदेश के बलिया जिले में स्थित है और बलिया शहर से थोड़ी दूर पश्चिम में स्थित है .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- उत्तर प्रदेश के बलिया जिले में स्थित है	स्थित है	बलिया जिले में
+- बलिया जिले में स्थित है	स्थित है	बलिया शहर से थोड़ी दूर पश्चिम में
+- बलिया शहर से थोड़ी दूर पश्चिम में	स्थित है	बलिया शहर से थोड़ी दूर पश्चिम में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: यह --> स्थित है --> [उत्तर प्रदेश के]{a} बलिया जिले में
+      Status: not satisfied
+    - Gold: यह --> स्थित है --> बलिया शहर से थोड़ी दूर [पश्चिम में]{b} |OR| यह --> स्थित है --> बलिया शहर से [थोड़ी दूर] पश्चिम में
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): बलिया जिले में --> property --> उत्तर प्रदेश के
+      Status: not satisfied
+    - Gold (b): पश्चिम में --> स्थित है --> बलिया शहर से
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 99
+Sentence Text: उसेक बाद उन्होने पिता की हत्या नहीं करवाई जैसाकि अन्य सम्राट किया करते थे .
+Metrics: TP=0, FP=3, FN=3
+
+--- Model Extractions ---
+- उन्होने	नहीं किया करते थे	हत्या
+- हत्या	property	पिता की
+- हत्या	property	उसे
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: उन्होने --> हत्या नहीं करवाई --> पिता की
+      Status: not satisfied
+    - Gold: उन्होने --> हत्या नहीं करवाई --> उसेक बाद
+      Status: not satisfied
+    - Gold: अन्य सम्राट --> [किया] करते थे --> [पिता की]{a} हत्या
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): हत्या --> करते थे --> पिता की
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 100
+Sentence Text: सर्वप्रथम प्रत्येक खिलाड़ी के लिये हवाओं की स्थिति का निर्धारण पासा फेंककर किया जाता है .
+Metrics: TP=0, FP=3, FN=3
+
+--- Model Extractions ---
+- प्रत्येक खिलाड़ी के लिये	निर्धारण	हवाओं की स्थिति का
+- हवाओं की स्थिति का	property	पासा फेंककर
+- पासा फेंककर	method	हवाओं की स्थिति का
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: हवाओं की स्थिति का --> निर्धारण किया जाता है --> पासा फेंककर
+      Status: not satisfied
+    - Gold: प्रत्येक खिलाड़ी के लिये --> निर्धारण किया जाता है --> हवाओं की स्थिति का
+      Status: not satisfied
+    - Gold: सर्वप्रथम --> निर्धारण किया जाता है --> प्रत्येक खिलाड़ी के लिये |OR| सर्वप्रथम --> निर्धारण किया जाता है --> हवाओं की स्थिति का
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 101
+Sentence Text: हाइपरयूरीसेमिया , वात रोग का मूल कारण होता है .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- हाइपरयूरीसेमिया	कारण	वात रोग का मूल कारण
+- हाइपरयूरीसेमिया	property	वात रोग का मूल कारण
+- हाइपरयूरीसेमिया	property	रोग
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: हाइपरयूरीसेमिया --> मूल कारण होता है --> वात रोग का |OR| हाइपरयूरीसेमिया --> होता है --> वात रोग का मूल कारण
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 102
+Sentence Text: यही कारण है कि विश्व भर में केरल अपनी आयुर्वेदिक चिकित्सा शैली के कारण प्रसिद्ध है .
+Metrics: TP=1, FP=1, FN=1
+
+--- Model Extractions ---
+- केरल	प्रसिद्ध है	अपनी आयुर्वेदिक चिकित्सा शैली के कारण
+- केरल	property	विश्व भर में
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: केरल --> प्रसिद्ध है --> [अपनी] आयुर्वेदिक चिकित्सा शैली के कारण
+      Status: satisfied
+    - Gold: केरल --> प्रसिद्ध है --> विश्व भर में
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 103
+Sentence Text: इसका उदगम स्थान सिरमोर राज्य के अंतगर्त हिमालय पर्वत के नीचे का ढलुवा भाग है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- इसका उदगम स्थान	है	सिरमोर राज्य के अंतगर्त हिमालय पर्वत के नीचे का ढलुवा भाग
+- उदगम	property	सिरमोर राज्य के अंतगर्त हिमालय पर्वत के नीचे का ढलुवा भाग
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इसका --> उदगम स्थान है --> [सिरमोर राज्य के अंतगर्त]{a} हिमालय पर्वत [के नीचे का ढलुवा भाग]{b}
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): सिरमोर राज्य के अंतगर्त --> उदगम स्थान है --> इसका
+      Status: not satisfied
+    - Gold (b): इसका --> उदगम स्थान है --> [सिरमोर राज्य के अंतगर्त]{a} हिमालय पर्वत के नीचे [का ढलुवा भाग]{c}
+      Status: not satisfied
+    - Gold (c): इसका --> उदगम स्थान है --> [सिरमोर राज्य के अंतगर्त]{a} हिमालय पर्वत के नीचे का ढलुवा भाग
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 104
+Sentence Text: दक्षिण भारत में उन दिनों परम्परागत चित्रकला का ही प्राधान्य था .
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - [उन दिनों] दक्षिण भारत में --> प्राधान्य था --> परम्परागत चित्रकला का [ही]
+    - उन दिनों --> प्राधान्य था --> परम्परागत चित्रकला का [ही] |OR| उन दिनों --> प्राधान्य था --> दक्षिण भारत में
+
+==================================================
+
+Sentence ID: 105
+Sentence Text: ये कहानियाँ किसी देश या समय की हो सकती हैं .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- कहानियाँ	हो सकती हैं	किसी देश या समय की
+- कहानियाँ	property	किसी देश या समय की
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: ये [कहानियाँ]{a} --> हो सकती हैं --> किसी [देश या] समय की |OR| ये [कहानियाँ]{a} --> हो सकती हैं --> किसी देश [या समय] की
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): ये --> property --> कहानियाँ
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 106
+Sentence Text: और भी कुछ निम्नलिखित कारण हैं जोकि प्रकृति आधारित निर्माण को प्रोत्साहित करते हैं .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- प्रकृति आधारित निर्माण को प्रोत्साहित करते हैं	प्रोत्साहित करते हैं	कुछ और कारण हैं
+- कारण	property	प्रकृति आधारित निर्माण को
+- प्रकृति आधारित निर्माण	property	प्रकृति
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: [और भी] [कुछ] निम्नलिखित कारण --> प्रोत्साहित करते हैं --> प्रकृति आधारित निर्माण को
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 107
+Sentence Text: 2010 को ' ' दर्शन -- परिषद् ' ' के नाम से सम्पन्न हुआ .
+Metrics: TP=0, FP=3, FN=1
+
+--- Model Extractions ---
+- 2010 को	सम्पन्न हुआ	 दर्शन परिषद् 
+-  दर्शन परिषद् 	property	 
+-  	property	 
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: 2010 को --> सम्पन्न हुआ --> दर्शन -- परिषद् [के नाम से]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 108
+Sentence Text: यहीं पर सन 1533 में 47 वर्ष की अल्पायु में रथयात्रा के दिन उनका देहांत हो गया .
+This sentence was not present in the model's output.
+
+--- Gold Standard ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - यहीं पर --> देहांत हो गया --> उनका
+    - सन 1533 में --> देहांत हो गया --> उनका
+    - 47 वर्ष की [अल्पायु में]{a} --> देहांत हो गया --> उनका
+    - रथयात्रा के दिन --> देहांत हो गया --> उनका
+  Compensatory Extractions:
+    - (a) अल्पायु [में] --> property --> 47 वर्ष [की]
+
+==================================================
+
+Sentence ID: 109
+Sentence Text: इसे पाण्सिल्क भी कहा जाता है क्योंकि यह तालाब में अक्सर देखा जाता है .
+Metrics: TP=0, FP=3, FN=2
+
+--- Model Extractions ---
+- पंतन	कहा जाता है	पंतन
+- पंतन	property	पंतन
+- पंतन	location	पंतन
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: इसे --> कहा जाता है --> पाण्सिल्क [भी]
+      Status: not satisfied
+    - Gold: यह --> [अक्सर] देखा जाता है --> तालाब में [अक्सर]
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 110
+Sentence Text: 2008 में वे तीसरे ब्रिटिश प्रबंधक बने जिन्होंने एकाधिक अवसर पर यूरोपियन कप जीता .
+Metrics: TP=1, FP=3, FN=1
+
+--- Model Extractions ---
+- वे	बने	तीसरे ब्रिटिश प्रबंधक
+- वे	property	एकाधिक अवसर पर यूरोपियन कप जीता
+- वे	property	एकाधिक अवसर पर
+- वे	property	एकाधिक अवसर
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: वे --> बने --> [तीसरे] ब्रिटिश प्रबंधक
+      Status: satisfied
+    - Gold: जिन्होंने --> जीता --> यूरोपियन कप [एकाधिक अवसर पर] |OR| जिन्होंने --> [एकाधिक अवसर पर] जीता --> यूरोपियन कप
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 111
+Sentence Text: मॉस से मिट्टी में जल रोक रखा जाता है .
+Metrics: TP=0, FP=2, FN=1
+
+--- Model Extractions ---
+- मॉस	जल रोक रखा जाता है	मिट्टी में
+- मिट्टी	property	मिट्टी में जल रोक रखा जाता है
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: मॉस से --> जल रोक रखा जाता है --> मिट्टी में
+      Status: not satisfied
+
+Cluster: cluster 2
+  Essential Extractions:
+    - Gold: मॉस से --> रोक रखा जाता है --> जल
+      Status: not satisfied
+    - Gold: मिट्टी में --> रोक रखा जाता है --> जल
+      Status: not satisfied
+
+==================================================
+
+Sentence ID: 112
+Sentence Text: महाभारत का वर्तमान रूप प्राचीन इतिहास कथाओं उपदेशों आदि का भण्डार है .
+Metrics: TP=0, FP=4, FN=1
+
+--- Model Extractions ---
+- महाभारत	है	वर्तमान रूप
+- महाभारत	property	प्राचीन इतिहास कथाओं
+- महाभारत	property	उपदेशों
+- महाभारत	property	भण्डार
+
+--- Gold Standard Analysis ---
+
+Cluster: cluster 1
+  Essential Extractions:
+    - Gold: महाभारत [का वर्तमान रूप]{a} --> भण्डार है --> प्राचीन [इतिहास] [कथाओं] उपदेशों आदि का |OR| महाभारत [का वर्तमान रूप] --> भण्डार है --> प्राचीन इतिहास [कथाओं] [उपदेशों] आदि का
+      Status: not satisfied
+  Compensatory Extractions:
+    - Gold (a): वर्तमान रूप --> property --> महाभारत का
+      Status: not satisfied
+
+==================================================
+

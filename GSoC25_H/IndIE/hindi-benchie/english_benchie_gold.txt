@@ -1,0 +1,14 @@
+sent_id:1	He served as the first Prime Minister of Australia and became a founding justice of the High Court of Australia .
+------ Cluster 1 ------
+He --> served as --> [the] [first] Prime Minister [of Australia]{a}
+He --> became --> [a] [founding] justice [of [the] High Court of Australia]{b}
+{a} He --> served as [the] [first] Prime Minister of --> Australia
+{b} He --> became [a] [founding] justice of --> [the] High Court of Australia |OR| He --> became [a] [founding] justice of [the] High Court of --> Australia
+------ Cluster 2 ------
+He --> served --> as [the] [first] Prime Minister [of Australia]{a}
+He --> became --> [a] [founding] justice [of [the] High Court of Australia]{b}
+{a} He --> served as [the] [first] Prime Minister --> of Australia
+{b} He --> became [a] [founding] justice --> of [the] High Court of Australia |OR| He --> became [a] [founding] justice of [the] High Court --> of Australia
+------ Cluster 3 ------
+He --> served as [the] [first] Prime Minister of --> Australia |OR| He --> served as [the] [first] Prime Minister --> of Australia
+He --> became [a] [founding] justice of --> [the] High Court of Australia |OR| He --> became [a] [founding] justice of [the] High Court of --> Australia

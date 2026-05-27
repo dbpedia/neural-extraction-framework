@@ -1,0 +1,4 @@
+52	Ram	eats	apple
+52	Ram	eats	orange
+52	apple eats	and	orange
+52	Manohar	is	Ram

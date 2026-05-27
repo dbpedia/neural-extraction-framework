@@ -1,0 +1,5 @@
+__pycache__/
+venv/
+chunking/data/
+chunking/state_dicts/model/
+.DS_Store
