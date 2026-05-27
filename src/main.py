@@ -1,8 +1,9 @@
 from linker import get_best_entity, extract_entity_spans, HybridLinker
 from sentence_transformers import SentenceTransformer, util
+from model_interface import ModelInterface
 
 # --- 1. RELATION EXTRACTOR LOGIC (Rebel/BERT Simulation) ---
-class RelationExtractor:
+class RelationExtractor(ModelInterface):
     def __init__(self):
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
         self.predicates = {
