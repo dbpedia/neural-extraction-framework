@@ -1,0 +1,28 @@
+services:
+  # 1. The Database (The "Brain" Mommi84 wanted)
+  redis-db:
+    image: redis:alpine
+    container_name: dbpedia-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # 2. Your Application
+  neuro-symbolic-extractor:
+    build: .
+    container_name: dbpedia-neuro-symbolic
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis-db
+      - REDIS_PORT=6379
+      - DBPEDIA_ENDPOINT=https://dbpedia.org/sparql
+    command: tail -f /dev/null # Keeps it alive for us to exec into
+    restart: "no"
+    depends_on:
+      redis-db:
+        condition: service_healthy

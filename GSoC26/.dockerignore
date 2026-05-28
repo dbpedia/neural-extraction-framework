@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.git
+.gitignore
+.env
+venv
+assets
+benchmarks
