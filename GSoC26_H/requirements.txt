@@ -1,0 +1,39 @@
+# ─── Core ML / HuggingFace ────────────────────────────────────────────────────
+torch>=2.1.0
+transformers>=4.40.0
+peft>=0.10.0
+datasets>=2.18.0
+evaluate>=0.4.0
+accelerate>=0.28.0
+bitsandbytes>=0.43.0          # QLoRA 4-bit quantization
+trl>=0.8.0                    # SFTTrainer for fine-tuning
+
+# ─── Embeddings & Similarity ──────────────────────────────────────────────────
+sentence-transformers>=2.7.0  # paraphrase-multilingual-MiniLM-L12-v2
+
+# ─── Ontology / Knowledge Graph ───────────────────────────────────────────────
+rdflib>=6.3.0                 # RDF serialization (Turtle, N-Triples)
+SPARQLWrapper>=2.0.0          # DBpedia SPARQL endpoint queries
+
+# ─── Schema Validation ────────────────────────────────────────────────────────
+pydantic>=2.0.0               # Triple output schema enforcement
+
+# ─── HITL Interface ───────────────────────────────────────────────────────────
+streamlit>=1.35.0
+
+# ─── Data & Utilities ─────────────────────────────────────────────────────────
+jsonlines>=4.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+tqdm>=4.66.0
+rich>=13.0.0                  # Pretty terminal output
+scikit-learn>=1.3.0
+huggingface_hub>=0.22.0
+
+# ─── Evaluation & Visualization ───────────────────────────────────────────────
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tabulate>=0.9.0               # CLI table output for ablation results
+
+# ─── NLP Utilities ────────────────────────────────────────────────────────────
+indic-nlp-library>=0.92       # Hindi text processing utilities
