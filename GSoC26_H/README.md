@@ -34,34 +34,10 @@ This project addresses that gap through **two integrated contributions**:
 
 ---
 
-## 🎯 Project Status
-
-- [x] **Pre-application warm-up** — Zero-shot baseline, error taxonomy, ontology alignment prototype, HITL Streamlit prototype
-- [x] **Phase 1 (Weeks 1–2)** — Baselines & Ablation *(in progress)*
-  - [x] GSoC25_H pipeline reproduced on full Hindi-BenchIE
-  - [x] IndIE baseline metrics recorded
-  - [x] Zero-shot Gemma-3-1B baseline run on full dataset
-  - [ ] Per-error-type breakdown across all systems
-  - [ ] Ontology alignment layer evaluated on full set
-- [ ] **Phase 2 (Weeks 3–6)** — Fine-tuning Gemma-3 with LoRA + Ontology Alignment
-- [ ] **Phase 3 (Weeks 7–9)** — HITL Feedback UI + Active Learning
-- [ ] **Phase 4 (Weeks 10–12)** — Iteration, Documentation, and Dataset Release
 
 ---
 
-## 📊 Baseline Results (Hindi-BenchIE)
 
-*Updated after Phase 1 evaluation. Numbers below are placeholders — see `results/baseline_table.csv` for current values.*
-
-| System | Precision | Recall | F1 |
-|---|---|---|---|
-| IndIE (rule-based) | TBD | TBD | TBD |
-| Zero-shot Gemma-3-1B | TBD | TBD | TBD |
-| GSoC25_H (best system, Gemma-3-12B + IndIE + ReAct) | TBD | TBD | TBD |
-| **Fine-tuned Gemma-3 (this work)** | — | — | — |
-| **Fine-tuned + Ontology Alignment (this work)** | — | — | — |
-
----
 
 ## 🏗️ Architecture
 
