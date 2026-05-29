@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.env
+.venv/
+venv/
+
+# Outputs (large files — don't commit)
+outputs/models/
+outputs/logs/
+outputs/results/*.json
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Data (too large for git — use DVC or Drive links)
+data/raw/
+data/processed/
+data/training/
+data/feedback/
+
+# Keep ontology properties (small, curated)
+!data/ontology/dbpedia_properties.json
+!data/ontology/property_descriptions_hi.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# HuggingFace cache
+.cache/
+*.hf_cache/
+
+# Streamlit
+.streamlit/
+
+# Colab credentials
+*.json
+!data/ontology/*.json
+!configs/*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

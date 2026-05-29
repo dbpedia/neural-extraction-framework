@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "description": "Curated DBpedia ontology properties for Hindi triple extraction. Each entry includes the property URI, Hindi description, English description, and example usage.",
+  "properties": [
+    {
+      "uri": "dbo:birthPlace",
+      "prefix": "dbo",
+      "local_name": "birthPlace",
+      "hindi_description": "जन्म स्थान",
+      "hindi_surface_forms": ["का जन्म", "में जन्मे", "में पैदा हुए", "जन्मे", "का जन्म स्थान"],
+      "english_description": "The place where a person was born",
+      "example_sentence": "अमिताभ बच्चन का जन्म इलाहाबाद में हुआ था।",
+      "example_triple": {"subject": "अमिताभ बच्चन", "predicate": "dbo:birthPlace", "object": "इलाहाबाद"}
+    },
+    {
+      "uri": "dbo:deathPlace",
+      "prefix": "dbo",
+      "local_name": "deathPlace",
+      "hindi_description": "मृत्यु स्थान",
+      "hindi_surface_forms": ["का निधन", "में मृत्यु", "में निधन हुआ", "का देहांत"],
+      "english_description": "The place where a person died",
+      "example_sentence": "महात्मा गांधी की मृत्यु नई दिल्ली में हुई।",
+      "example_triple": {"subject": "महात्मा गांधी", "predicate": "dbo:deathPlace", "object": "नई दिल्ली"}
+    },
+    {
+      "uri": "dbo:capital",
+      "prefix": "dbo",
+      "local_name": "capital",
+      "hindi_description": "राजधानी",
+      "hindi_surface_forms": ["की राजधानी", "राजधानी है", "की राजधानी है", "राजधानी"],
+      "english_description": "The capital city of a country, state, or region",
+      "example_sentence": "नई दिल्ली भारत की राजधानी है।",
+      "example_triple": {"subject": "भारत", "predicate": "dbo:capital", "object": "नई दिल्ली"}
+    },
+    {
+      "uri": "dbo:builder",
+      "prefix": "dbo",
+      "local_name": "builder",
+      "hindi_description": "निर्माता",
+      "hindi_surface_forms": ["का निर्माण", "ने बनाया", "ने निर्माण किया", "का निर्माता", "ने बनवाया"],
+      "english_description": "The person or organization that built or constructed something",
+      "example_sentence": "ताज महल का निर्माण शाहजहाँ ने करवाया था।",
+      "example_triple": {"subject": "ताज महल", "predicate": "dbo:builder", "object": "शाहजहाँ"}
+    },
+    {
+      "uri": "dbo:spouse",
+      "prefix": "dbo",
+      "local_name": "spouse",
+      "hindi_description": "पति/पत्नी",
+      "hindi_surface_forms": ["की पत्नी", "के पति", "से विवाह", "की धर्मपत्नी", "के जीवनसाथी"],
+      "english_description": "The spouse of a person",
+      "example_sentence": "महात्मा गांधी की पत्नी कस्तूरबा गांधी थीं।",
+      "example_triple": {"subject": "महात्मा गांधी", "predicate": "dbo:spouse", "object": "कस्तूरबा गांधी"}
+    },
+    {
+      "uri": "dbo:nationality",
+      "prefix": "dbo",
+      "local_name": "nationality",
+      "hindi_description": "राष्ट्रीयता",
+      "hindi_surface_forms": ["भारतीय", "की राष्ट्रीयता", "देश के नागरिक", "के नागरिक"],
+      "english_description": "The nationality of a person",
+      "example_sentence": "रवीन्द्रनाथ टैगोर एक भारतीय कवि थे।",
+      "example_triple": {"subject": "रवीन्द्रनाथ टैगोर", "predicate": "dbo:nationality", "object": "भारत"}
+    },
+    {
+      "uri": "dbo:occupation",
+      "prefix": "dbo",
+      "local_name": "occupation",
+      "hindi_description": "पेशा / व्यवसाय",
+      "hindi_surface_forms": ["एक कवि थे", "एक लेखक हैं", "एक नेता थे", "एक वैज्ञानिक हैं", "पेशे से"],
+      "english_description": "The occupation or profession of a person",
+      "example_sentence": "रवीन्द्रनाथ टैगोर एक कवि और लेखक थे।",
+      "example_triple": {"subject": "रवीन्द्रनाथ टैगोर", "predicate": "dbo:occupation", "object": "कवि"}
+    },
+    {
+      "uri": "dbo:birthDate",
+      "prefix": "dbo",
+      "local_name": "birthDate",
+      "hindi_description": "जन्म तिथि",
+      "hindi_surface_forms": ["जन्म", "का जन्म", "को जन्मे", "जन्म तिथि"],
+      "english_description": "The date of birth of a person",
+      "example_sentence": "जवाहरलाल नेहरू का जन्म 14 नवम्बर 1889 को हुआ था।",
+      "example_triple": {"subject": "जवाहरलाल नेहरू", "predicate": "dbo:birthDate", "object": "14 नवम्बर 1889"}
+    },
+    {
+      "uri": "dbo:country",
+      "prefix": "dbo",
+      "local_name": "country",
+      "hindi_description": "देश",
+      "hindi_surface_forms": ["भारत में", "देश में", "का देश", "में स्थित"],
+      "english_description": "The country where something is located or from which something originates",
+      "example_sentence": "ताज महल भारत में स्थित है।",
+      "example_triple": {"subject": "ताज महल", "predicate": "dbo:country", "object": "भारत"}
+    },
+    {
+      "uri": "dbo:author",
+      "prefix": "dbo",
+      "local_name": "author",
+      "hindi_description": "लेखक",
+      "hindi_surface_forms": ["के लेखक", "द्वारा लिखित", "ने लिखा", "की रचना", "के रचयिता"],
+      "english_description": "The author or writer of a work",
+      "example_sentence": "गीतांजलि के लेखक रवीन्द्रनाथ टैगोर थे।",
+      "example_triple": {"subject": "गीतांजलि", "predicate": "dbo:author", "object": "रवीन्द्रनाथ टैगोर"}
+    },
+    {
+      "uri": "dbo:director",
+      "prefix": "dbo",
+      "local_name": "director",
+      "hindi_description": "निर्देशक",
+      "hindi_surface_forms": ["के निर्देशक", "ने निर्देशित", "का निर्देशन", "निर्देशित किया"],
+      "english_description": "The director of a film, organization, or project",
+      "example_sentence": "शोले फिल्म का निर्देशन रमेश सिप्पी ने किया था।",
+      "example_triple": {"subject": "शोले", "predicate": "dbo:director", "object": "रमेश सिप्पी"}
+    },
+    {
+      "uri": "dbo:location",
+      "prefix": "dbo",
+      "local_name": "location",
+      "hindi_description": "स्थान",
+      "hindi_surface_forms": ["में स्थित", "में है", "का स्थान", "यहाँ स्थित"],
+      "english_description": "The location of a place or thing",
+      "example_sentence": "लाल किला दिल्ली में स्थित है।",
+      "example_triple": {"subject": "लाल किला", "predicate": "dbo:location", "object": "दिल्ली"}
+    },
+    {
+      "uri": "dbo:president",
+      "prefix": "dbo",
+      "local_name": "president",
+      "hindi_description": "राष्ट्रपति",
+      "hindi_surface_forms": ["के राष्ट्रपति", "राष्ट्रपति थे", "राष्ट्रपति हैं"],
+      "english_description": "The president of a country or organization",
+      "example_sentence": "डॉ. राजेन्द्र प्रसाद भारत के प्रथम राष्ट्रपति थे।",
+      "example_triple": {"subject": "भारत", "predicate": "dbo:president", "object": "राजेन्द्र प्रसाद"}
+    },
+    {
+      "uri": "dbo:primeMinister",
+      "prefix": "dbo",
+      "local_name": "primeMinister",
+      "hindi_description": "प्रधानमंत्री",
+      "hindi_surface_forms": ["के प्रधानमंत्री", "प्रधानमंत्री थे", "प्रधानमंत्री हैं"],
+      "english_description": "The prime minister of a country",
+      "example_sentence": "जवाहरलाल नेहरू भारत के प्रथम प्रधानमंत्री थे।",
+      "example_triple": {"subject": "भारत", "predicate": "dbo:primeMinister", "object": "जवाहरलाल नेहरू"}
+    },
+    {
+      "uri": "dbo:award",
+      "prefix": "dbo",
+      "local_name": "award",
+      "hindi_description": "पुरस्कार",
+      "hindi_surface_forms": ["पुरस्कार मिला", "सम्मानित किया", "पुरस्कार से", "अवॉर्ड मिला"],
+      "english_description": "An award received by a person or organization",
+      "example_sentence": "रवीन्द्रनाथ टैगोर को नोबेल पुरस्कार मिला था।",
+      "example_triple": {"subject": "रवीन्द्रनाथ टैगोर", "predicate": "dbo:award", "object": "नोबेल पुरस्कार"}
+    }
+  ]
+}
