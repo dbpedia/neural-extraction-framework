@@ -1,185 +1,291 @@
-# GSoC 2026 — DBpedia Hindi Chapter
-## Fine-Tuning Indic Models for Hindi Relational Triple Extraction + Human-in-the-Loop Feedback
+# DBpedia Hindi Chapter — Neural Relational Triple Extraction
 
-[![GSoC 2026](https://img.shields.io/badge/GSoC-2026-fbbc05?style=flat-square&logo=google)](https://summerofcode.withgoogle.com/)
-[![DBpedia](https://img.shields.io/badge/DBpedia-Hindi%20Chapter-0066CC?style=flat-square)](https://www.dbpedia.org/)
+> Building a Hindi knowledge graph from Wikipedia, one sentence at a time.
+
+[![Status](https://img.shields.io/badge/Status-Active%20Development-success?style=flat-square)]()
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![DBpedia](https://img.shields.io/badge/DBpedia-Hindi%20Chapter-0066CC?style=flat-square)](https://www.dbpedia.org/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)]()
 
 ---
 
-## 📋 Project Overview
+## 🌏 The Problem
 
-The DBpedia Hindi Chapter aims to expand the multilingual depth of DBpedia by extracting structured relational triples (subject → predicate → object) from Hindi Wikipedia and integrating them into the DBpedia knowledge graph.
+Hindi is spoken by over **600 million people**. Hindi Wikipedia has **160,000+ articles** packed with factual knowledge. Yet, when researchers, search engines, or AI systems need *structured* Hindi facts, they hit a wall.
 
-While DBpedia's existing extraction framework provides strong support for infobox-based triples, the extraction of relations from free-text Hindi sentences using neural and NLP-driven methods remains underdeveloped. A large portion of relational knowledge present in Hindi Wikipedia articles is not yet represented in structured form within DBpedia.
+DBpedia is the world's largest open knowledge graph extracted from Wikipedia — but its **Hindi chapter is sparse**. Why? Because the relational knowledge sitting inside Hindi Wikipedia articles is locked in **free text**, not structured infoboxes:
 
-This project addresses that gap through **two integrated contributions**:
+> *"ताज महल का निर्माण शाहजहाँ ने करवाया था।"*
+> (The Taj Mahal was built by Shah Jahan.)
 
-1. **Fine-tuning a Small Language Model (Gemma-3) with LoRA/QLoRA** for reliable relational triple extraction from Hindi text — improving over both prompt-only LLM baselines and rule-based extractors (IndIE).
-2. **A lightweight Human-in-the-Loop (HITL) feedback interface** that turns reviewer corrections into an iteratively growing training dataset for active learning.
+A human reads this and knows: **Taj Mahal — `builder` → Shah Jahan**.
 
----
+A machine, looking for an infobox or a clean table? Finds nothing.
 
-## 👥 Team
-
-| Role | Person |
-|---|---|
-| **Contributor** | Nitin Singh |
-| **Mentor** | Sanju Tiwari |
-| **Mentor** | Aditya Venkatesh |
-| **Mentor** | Debarghya Dutta |
-| **Mentor** | Ronak Panchal |
-
-**Project Forum:** [DBpedia Hindi Chapter 2026 — Discussion](https://forum.dbpedia.org/t/dbpedia-hindi-chapter-2026-fine-tuning-indic-models-for-hindi-relational-triple-extraction-human-in-the-loop-feedback-gsoc-2026/4788)
+**Result:** A massive gap between what Hindi Wikipedia *contains* and what Hindi DBpedia *structures*.
 
 ---
 
+## 🎯 What This Project Does
 
----
-
-
-
-## 🏗️ Architecture
+This project closes that gap by building an **end-to-end pipeline** that reads free-text Hindi sentences and outputs DBpedia-compatible structured triples — ready to be ingested into the knowledge graph.
 
 ```
-Hindi Wikipedia Sentence
-         ↓
-IndIE (Rule-based Subject/Object Extraction)
-         ↓
-Fine-Tuned Gemma-3 (Predicate Extraction — MILIE-inspired iterative slot conditioning)
-         ↓
-Ontology Alignment Layer (Surface Predicate → DBpedia Property via multilingual embeddings)
-         ↓
-Confidence-Threshold Filter
-         ↓
-Human-in-the-Loop Review  (Accept / Edit / Reject) — for low-confidence triples only
-         ↓
-Final Validated Triple
-         ↓
-RDF Conversion (DBpedia Ontology Format)
-         ↓
-Integration into DBpedia Hindi Knowledge Graph
+Hindi Sentence  →  Extract  →  Align to Ontology  →  Validate  →  RDF Triple
 ```
+
+For the example above, the pipeline produces:
+
+```turtle
+:Taj_Mahal  dbo:builder  :Shah_Jahan .
+```
+
+That's a structured fact a machine can query, reason over, and link to other knowledge.
 
 ---
 
-## 🔍 Error Taxonomy
+## 🧩 Why Hindi Is Hard
 
-Empirically identified from pre-application zero-shot experiments — used to make every evaluation interpretable at the failure-mode level rather than as a single aggregate number.
+Generic information extraction tools fail on Hindi for specific linguistic reasons:
 
-| Error Type | Description | Example |
+| Hindi Feature | What It Means | Why It Breaks Generic IE |
 |---|---|---|
-| `predicate_normalization_failure` | Surface verb ≠ DBpedia property | `"का निर्माण"` extracted, should be `dbo:builder` |
-| `language_mixing` | English predicate generated for Hindi input | `"was born in"` extracted, should be `dbo:birthPlace` |
-| `implicit_relation_error` | Hindi copula extracted as predicate | `"है"` extracted, should be `dbo:capital` |
-| `argument_span_error` | Wrong subject/object boundaries | — |
-| `missing_triple` | No triple extracted | — |
+| **Free word order** | Subject, object, verb can appear in any order | Pattern-based extractors miss arguments |
+| **Postposition system** | Tiny words like *का, ने, में* carry the relation | English-trained models ignore them |
+| **Pro-drop** | Subjects often implicit | Extractors return empty subjects |
+| **Verb-final syntax** | The action comes at the end | Left-to-right parsers miss the predicate |
+| **Copula relations** | *"है"* (is) hides the real relationship | Models extract *"है"* as the predicate — meaningless |
+
+These aren't edge cases. They show up in nearly every Hindi Wikipedia sentence.
 
 ---
 
-## 📁 Repository Structure
+## 🏗️ The Pipeline
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                  HINDI WIKIPEDIA SENTENCE                        │
+│       "ताज महल का निर्माण शाहजहाँ ने करवाया था।"                  │
+└─────────────────────────────┬────────────────────────────────────┘
+                              ▼
+┌──────────────────────────────────────────────────────────────────┐
+│  1️⃣  RULE-BASED EXTRACTION (IndIE)                                │
+│      Identifies candidate arguments using Hindi syntax rules     │
+│      Output: subject = "ताज महल", object = "शाहजहाँ"             │
+└─────────────────────────────┬────────────────────────────────────┘
+                              ▼
+┌──────────────────────────────────────────────────────────────────┐
+│  2️⃣  FINE-TUNED SMALL LANGUAGE MODEL (Gemma-3 + LoRA)             │
+│      Predicts the relation, conditioned on the arguments         │
+│      Output: predicate = "का निर्माण"                            │
+└─────────────────────────────┬────────────────────────────────────┘
+                              ▼
+┌──────────────────────────────────────────────────────────────────┐
+│  3️⃣  ONTOLOGY ALIGNMENT LAYER                                     │
+│      Maps the Hindi surface predicate to a DBpedia property      │
+│      using multilingual sentence embeddings                      │
+│      Output: dbo:builder  (confidence: 0.87)                     │
+└─────────────────────────────┬────────────────────────────────────┘
+                              ▼
+                  ┌───────────┴───────────┐
+                  │  Confidence > 0.45?   │
+                  └───────────┬───────────┘
+                              │
+              ┌───────────────┴───────────────┐
+              ▼                               ▼
+    ┌─────────────────┐           ┌──────────────────────┐
+    │   ✅ Accepted    │           │   🧑 HUMAN REVIEW     │
+    │  Direct to KG    │           │  Reviewer corrects   │
+    └────────┬────────┘           │  → retraining data   │
+             │                    └──────────┬───────────┘
+             │                               │
+             └───────────────┬───────────────┘
+                             ▼
+┌──────────────────────────────────────────────────────────────────┐
+│  4️⃣  RDF SERIALIZATION                                            │
+│      :Taj_Mahal  dbo:builder  :Shah_Jahan .                      │
+└─────────────────────────────┬────────────────────────────────────┘
+                              ▼
+                  📊 DBpedia Hindi Knowledge Graph
+```
+
+---
+
+## 💡 The Key Ideas
+
+### 1. Predicates are the hard part
+
+Multilingual language models, even in zero-shot mode, are surprisingly good at identifying *who* and *what* in a Hindi sentence. They struggle with the **relation between them**.
+
+This insight — that subjects and objects come for free, but predicates need work — shapes the entire architecture. Fine-tuning focuses where it matters; the easy slots are left alone.
+
+### 2. Don't ask the model to do schema alignment
+
+Asking a language model to output `dbo:birthPlace` from raw Hindi text is asking it to do two things at once: understand the relation **and** know the DBpedia ontology. Models hallucinate properties that don't exist.
+
+A separate **ontology alignment layer** handles the second task. The model produces a Hindi surface form ("का जन्म"); a multilingual embedding model maps it to the right DBpedia property via cosine similarity. Each component does one job well.
+
+### 3. Humans review what matters
+
+A naive review pipeline asks a human to check every extraction — expensive and boring. A smarter one asks humans only when the model is **uncertain**. Confidence scores from the alignment layer become the trigger: high confidence → straight into the KG, low confidence → human review queue.
+
+Every correction becomes new training data. The system gets better with use.
+
+---
+
+## 🔬 Error Taxonomy
+
+When extraction fails, *how* it fails matters more than aggregate accuracy. Five failure modes are tracked across every evaluation:
+
+| Error Type | What Happens | Example |
+|---|---|---|
+| **Predicate Normalization Failure** | Surface Hindi extracted instead of DBpedia property | `का निर्माण` → should be `dbo:builder` |
+| **Language Mixing** | Model outputs English on Hindi input | `was born in` → should be `dbo:birthPlace` |
+| **Implicit Relation Error** | Copula extracted as predicate | `है` → should be `dbo:capital` |
+| **Argument Span Error** | Wrong subject/object boundaries | Captures *"ताज महल का"* instead of *"ताज महल"* |
+| **Missing Triple** | No extraction at all | Sentence skipped entirely |
+
+This taxonomy turns *"the model is 60% accurate"* into actionable diagnostics: *"language mixing dropped from 40% to 5%, but argument span errors are still our biggest loss."*
+
+---
+
+## 📦 What's Inside
 
 ```
 GSoC26_H/
-├── README.md                        ← This file
-├── requirements.txt                 ← Python dependencies (pinned)
-├── .gitignore
+├── 📄 README.md
+├── 📄 requirements.txt
 │
-├── notebooks/                       ← Phase-by-phase Colab notebooks
-│   └── 01_week1_baselines.ipynb     ← IndIE / Gemma-3 zero-shot / GSoC25_H baselines
+├── 📓 notebooks/             ← Phase-by-phase Colab notebooks
 │
-├── src/                             ← All Python source code
-│   ├── baseline/
-│   │   └── gemma_zero_shot.py       ← Zero-shot Gemma-3 runner (iterative + simultaneous prompts)
-│   ├── ontology/
-│   │   └── alignment.py             ← Surface predicate → DBpedia property alignment layer
-│   ├── evaluation/
-│   │   └── error_taxonomy.py        ← 5-type error classification + ablation table builder
-│   ├── finetune/                    ← LoRA training (Phase 2)
-│   └── pipeline/                    ← End-to-end pipeline + RDF converter (Phase 4)
+├── 🐍 src/
+│   ├── baseline/             ← Rule-based and zero-shot baselines
+│   ├── ontology/             ← Hindi → DBpedia property alignment
+│   ├── finetune/             ← LoRA training pipeline
+│   ├── evaluation/           ← Error taxonomy + metrics
+│   └── pipeline/             ← End-to-end extractor + RDF export
 │
-├── hitl/                            ← Streamlit HITL annotation interface (Phase 3)
+├── 🖥️ hitl/                  ← Human-in-the-loop Streamlit interface
 │
-├── data/
-│   ├── ontology/
-│   │   └── dbpedia_properties.json  ← Curated DBpedia properties with Hindi surface forms
-│   ├── training/                    ← Instruction-tuning pairs (Phase 2)
-│   └── feedback/                    ← HITL JSONL correction outputs (Phase 3)
+├── 📊 data/
+│   ├── ontology/             ← DBpedia properties with Hindi surface forms
+│   ├── training/             ← Instruction-tuning pairs
+│   └── feedback/             ← Reviewer corrections (JSONL)
 │
-├── configs/
-│   └── lora_config.yaml             ← LoRA/QLoRA training config (Colab T4 ready)
-│
-└── results/                         ← Evaluation outputs, ablation tables, error breakdowns
+├── ⚙️ configs/                ← LoRA configs, hyperparameters
+└── 📈 results/                ← Evaluation outputs, ablation tables
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
-### Option 1: Google Colab (recommended)
+### Run in Google Colab (no setup)
+
+The Phase 1 baseline notebook reproduces all three baselines on the full Hindi-BenchIE benchmark using a free T4 GPU.
 
 ```python
-# In a new Colab notebook with T4 GPU runtime:
 !git clone https://github.com/dbpedia/neural-extraction-framework.git
 %cd neural-extraction-framework/GSoC26_H
 !pip install -r requirements.txt
 # Open notebooks/01_week1_baselines.ipynb and run all cells
 ```
 
-### Option 2: Local installation
+### Run locally
 
 ```bash
 git clone https://github.com/dbpedia/neural-extraction-framework.git
 cd neural-extraction-framework/GSoC26_H
-python -m venv venv && source venv/bin/activate
+
+python -m venv venv
+source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
+
 jupyter notebook notebooks/01_week1_baselines.ipynb
+```
+
+**Hardware:** Phase 1 runs on free Colab T4. Phase 2 (LoRA fine-tuning) needs ~10GB VRAM — Colab T4 is sufficient with 4-bit quantization.
+
+---
+
+## 📊 Evaluation
+
+All systems are evaluated on **Hindi-BenchIE** using the official `BenchIEDetailedComparator` from the GSoC 2025 Hindi pipeline. This ensures numbers are directly comparable across years.
+
+The evaluation uses **fact-cluster matching** instead of string overlap:
+- Each gold annotation lists *all* valid surface forms of the same fact
+- A prediction is correct if it matches *any* form in the cluster
+- Avoids penalizing valid paraphrases — a known weakness of older OIE benchmarks
+
+Results are reported as:
+- **Aggregate**: Precision, Recall, F1 across the full benchmark
+- **Per-system slot accuracy**: Subject / Predicate / Object separately
+- **Per-error-type breakdown**: Counts and percentages for each of the 5 failure modes
+
+---
+
+## 🛣️ Roadmap
+
+```
+Phase 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Baselines & Ablation
+  ✅ Reproduce IndIE, Gemma-3 zero-shot, GSoC25_H pipelines
+  ✅ Aggregate P/R/F1 on Hindi-BenchIE
+  🔄 Per-error-type breakdown across all systems
+
+Phase 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fine-Tuning + Ontology Alignment
+  ⏳ Build training dataset from BenchIE gold annotations
+  ⏳ LoRA fine-tune Gemma-3 with iterative slot prompting
+  ⏳ Extend ontology alignment to full DBpedia property coverage
+
+Phase 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Human-in-the-Loop Feedback
+  ⏳ Production Streamlit annotation interface
+  ⏳ Confidence-based review queue
+  ⏳ Annotation round on 50–100 sentences
+
+Phase 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Iteration & Release
+  ⏳ Retrain with reviewer-corrected data
+  ⏳ Final pipeline, dataset, evaluation report
+  ⏳ Integration documentation for DBpedia maintainers
 ```
 
 ---
 
-## 📐 Design Decisions
+## 📚 Built On
 
-**Why iterative slot prompting?**
-Based on MILIE (Kotnis et al., ACL 2022): in zero-shot experiments, subjects and objects are extracted correctly while predicates fail completely. Fine-tuning prompts generate the predicate *after* subject + object are established in context, mirroring MILIE's iterative conditioning hypothesis.
+This work stands on three pieces of recent research:
 
-**Why an ontology alignment layer?**
-Zero-shot Gemma-3 produces surface Hindi verb phrases that are not aligned to DBpedia ontology properties. Pre-application experiments showed that adding a multilingual embedding-based alignment layer recovers 80% of predicate accuracy on a 5-sentence test set. The remaining low-confidence cases are flagged for HITL review rather than silently passed into the knowledge graph.
+- **[BenchIE](https://aclanthology.org/2022.acl-long.307/)** — Fact-cluster evaluation that doesn't get fooled by surface paraphrase
+- **[MILIE](https://aclanthology.org/2022.acl-long.555/)** — Iterative slot extraction; predicates conditioned on arguments
+- **[OpenIE Survey 2024](https://aclanthology.org/2024.findings-emnlp.222/)** — State of the field, where neural methods help and where they don't
+- **IndIE** — Rule-based Hindi OIE; provides the strong argument-extraction foundation
 
-**Why confidence-based HITL routing (not random sampling)?**
-Active learning principle: route uncertain extractions to human review rather than random samples. Each annotation round concentrates reviewer attention on cases where model uncertainty is highest, making annotation maximally informative for the next training iteration.
-
-**Why LoRA/QLoRA instead of full fine-tuning?**
-Colab T4 (16GB VRAM) cannot full-fine-tune Gemma-3-2B/4B. QLoRA (4-bit quantization + low-rank adapters) keeps memory usage under 10GB while updating only a small fraction of parameters — making the method reproducible by future contributors without specialized hardware.
+And on the prior DBpedia GSoC Hindi work in [`GSoC24_H/`](../GSoC24_H/) and [`GSoC25_H/`](../GSoC25_H/).
 
 ---
 
-## 📚 Key References
+## 🌟 Why It Matters
 
-| Paper | Contribution to this project |
-|---|---|
-| **BenchIE** (Gashteovski et al., ACL 2022) | Evaluation protocol — fact synset matching, essential/compensatory triples |
-| **MILIE** (Kotnis et al., ACL 2022) | Iterative slot extraction — predicates conditioned on subject/object |
-| **OpenIE Survey** (Pai et al., EMNLP Findings 2024) | Motivates task-specific fine-tuning over prompt engineering |
-| **IndIE** (Kothari et al.) | Underpins the current GSoC25_H rule-based component |
-| **Hindi-BenchIE** | Primary evaluation dataset for this project |
+Every triple extracted is one more queryable fact about Hindi-speaking history, geography, science, and culture — added to a knowledge graph used by researchers, search engines, voice assistants, and AI systems worldwide.
+
+A pipeline that works for Hindi can be adapted for **other low-resource languages**: Bengali, Tamil, Telugu, Marathi. Eight hundred million more speakers, eight more low-resource Wikipedias waiting to become structured knowledge.
+
+Closing the Hindi gap is the first step.
 
 ---
 
-## 🔗 Related GSoC Projects
+## 🤝 Contributing
 
-This project builds directly on:
-- **[GSoC25_H](../GSoC25_H/)** — Hindi Information Extraction pipeline (IndIE + LLM-IE + ReAct + predicate linking)
-- **[GSoC24_H](../GSoC24_H/)** — Earlier Hindi DBpedia extraction work
+This project is part of Google Summer of Code 2026 with the DBpedia Association.
 
-And complements the parallel 2026 effort: *Stabilizing, Completing, and Upstreaming the Hindi DBpedia IE Pipeline*.
+- 💬 **Forum:** [forum.dbpedia.org](https://forum.dbpedia.org/)
+- 💼 **Slack:** [dbpedia.slack.com](https://dbpedia.slack.com/)
+- 🌐 **Project home:** [dbpedia.org](https://www.dbpedia.org/)
 
----
-
-
-- **DBpedia Forum:** [Project thread](https://forum.dbpedia.org/t/dbpedia-hindi-chapter-2026-fine-tuning-indic-models-for-hindi-relational-triple-extraction-human-in-the-loop-feedback-gsoc-2026/4788)
-- **DBpedia Slack:** [dbpedia.slack.com](https://dbpedia.slack.com/)
+Contributions, issues, and discussion welcome.
 
 ---
 
-*Built as part of Google Summer of Code 2026 with the DBpedia Association.*
+<p align="center">
+  <i>Part of the DBpedia Neural Extraction Framework</i><br>
+  <a href="https://www.dbpedia.org/">🏛️ DBpedia Association</a>
+</p>
