@@ -24,8 +24,8 @@ This project addresses that gap through **two integrated contributions**:
 
 | Role | Person |
 |---|---|
-| **Contributor** | Nitin Singh ([@singhhnitin](https://github.com/singhhnitin)) — KIIT University, B.Tech CSE |
-| **Mentor** | Sanju Tiwari ([@tiwarisanju18](https://github.com/tiwarisanju18)) |
+| **Contributor** | Nitin Singh |
+| **Mentor** | Sanju Tiwari |
 | **Mentor** | Aditya Venkatesh |
 | **Mentor** | Debarghya Dutta |
 | **Mentor** | Ronak Panchal |
@@ -200,10 +200,7 @@ And complements the parallel 2026 effort: *Stabilizing, Completing, and Upstream
 
 ---
 
-## 📞 Contact
 
-- **GitHub:** [@singhhnitin](https://github.com/singhhnitin)
-- **Email:** nitinsingh3323@gmail.com
 - **DBpedia Forum:** [Project thread](https://forum.dbpedia.org/t/dbpedia-hindi-chapter-2026-fine-tuning-indic-models-for-hindi-relational-triple-extraction-human-in-the-loop-feedback-gsoc-2026/4788)
 - **DBpedia Slack:** [dbpedia.slack.com](https://dbpedia.slack.com/)
 
