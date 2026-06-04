@@ -1,0 +1,4 @@
+System,Precision,Recall,F1,TPs,FPs,FNs,Silent_Sentences,Predicate_Normalization_pct,Implicit_Relation_pct,Language_Mixing_pct,Predicate_Placeholder_pct,Argument_Span_pct,Predicate_Normalization_n,Implicit_Relation_n,Language_Mixing_n,Predicate_Placeholder_n,Argument_Span_n
+IndIE (rule-based),0.4377,0.4854,0.4603,116,149,123,24,68.5,2.7,0.0,28.9,0.0,102,4,0,43,0
+Zero-shot Gemma-3-1B,0.0,0.0,0.0,0,23,304,89,43.5,39.1,17.4,0.0,0.0,10,9,4,0,0
+GSoC25_H (Gemma-3-12B + IndIE + ReAct),0.2141,0.584,0.3133,146,536,104,6,81.9,8.8,1.1,8.2,0.0,439,47,6,44,0
