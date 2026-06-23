@@ -1,0 +1,460 @@
+import streamlit as st
+import json
+import os
+from datetime import datetime
+
+st.set_page_config(
+    page_title="DBpedia Hindi · Triple Review",
+    page_icon="🔗",
+    layout="wide",
+)
+
+# ── Pipeline connection — checks these in order, falls back to demo ───
+from pathlib import Path
+
+_SCRIPT_DIR = Path(__file__).resolve().parent          # GSoC26_H/hitl/
+_REPO_ROOT = _SCRIPT_DIR.parent                          # GSoC26_H/
+
+CANDIDATE_PATHS = [
+    _REPO_ROOT / "results" / "alignment_results_full_20k.jsonl",
+    _REPO_ROOT / "data" / "alignment_results_full_20k.jsonl",
+    "alignment_results_full_20k.jsonl",
+    "/content/drive/MyDrive/dbpedia-hindi-gsoc/alignment_results_full_20k.jsonl",
+    "/content/drive/MyDrive/alignment_results_full_20k.jsonl",
+]
+CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
+THRESHOLD = 0.55
+
+DEMO_DATA = [
+    {"sentence": "ताजमहल का निर्माण शाहजहाँ ने करवाया था।", "subject": "ताजमहल",
+     "relation": "का निर्माण किया", "object": "शाहजहाँ ने करवाया", "dbo_uri": "dbo:builder",
+     "score": 0.84, "method": "embedding"},
+    {"sentence": "अमिताभ बच्चन का जन्म इलाहाबाद में हुआ था।", "subject": "अमिताभ बच्चन",
+     "relation": "जन्म हुआ", "object": "इलाहाबाद", "dbo_uri": "dbo:birthPlace",
+     "score": 0.91, "method": "copula_rule"},
+    {"sentence": "उन्होंने राष्ट्रीय पुरस्कार जीता।", "subject": "उन्होंने",
+     "relation": "जीता", "object": "राष्ट्रीय पुरस्कार", "dbo_uri": "dbo:winner",
+     "score": 0.79, "method": "embedding"},
+    {"sentence": "कंपनी ने नई नीति जारी की।", "subject": "कंपनी",
+     "relation": "जारी की", "object": "नई नीति", "dbo_uri": None,
+     "score": 0.41, "method": "hitl"},
+    {"sentence": "वह संग्रहालय शहर के केंद्र में स्थित है।", "subject": "वह संग्रहालय",
+     "relation": "स्थित है", "object": "शहर के केंद्र में", "dbo_uri": "dbo:location",
+     "score": 0.68, "method": "embedding"},
+]
+
+CURATED_PROPERTIES = {
+    "dbo:birthPlace": "Birth place", "dbo:birthDate": "Birth date",
+    "dbo:deathPlace": "Death place", "dbo:deathDate": "Death date",
+    "dbo:nationality": "Nationality", "dbo:occupation": "Occupation",
+    "dbo:spouse": "Spouse", "dbo:child": "Child", "dbo:parent": "Parent",
+    "dbo:award": "Award", "dbo:almaMater": "Alma mater", "dbo:employer": "Employer",
+    "dbo:knownFor": "Known for", "dbo:religion": "Religion", "dbo:party": "Party",
+    "dbo:field": "Field", "dbo:education": "Education", "dbo:ethnicity": "Ethnicity",
+    "dbo:capital": "Capital", "dbo:country": "Country", "dbo:location": "Location",
+    "dbo:region": "Region", "dbo:language": "Language", "dbo:leaderName": "Leader name",
+    "dbo:populationTotal": "Population total", "dbo:areaTotal": "Area total",
+    "dbo:elevation": "Elevation", "dbo:foundedBy": "Founded by", "dbo:foundingDate": "Founding date",
+    "dbo:headquarter": "Headquarter", "dbo:leader": "Leader", "dbo:president": "President",
+    "dbo:numberOfEmployees": "Number of employees", "dbo:author": "Author",
+    "dbo:director": "Director", "dbo:producer": "Producer", "dbo:starring": "Starring",
+    "dbo:publisher": "Publisher", "dbo:builder": "Builder", "dbo:architect": "Architect",
+    "dbo:genre": "Genre", "dbo:releaseDate": "Release date", "dbo:musicComposer": "Music composer",
+    "dbo:lyricist": "Lyricist", "dbo:date": "Date", "dbo:place": "Place", "dbo:winner": "Winner",
+    "dbo:participant": "Participant", "dbo:doctoralAdvisor": "Doctoral advisor",
+    "dbo:influenced": "Influenced", "dbo:influencedBy": "Influenced by", "dbo:team": "Team",
+    "dbo:sport": "Sport", "dbo:position": "Position", "dbo:coach": "Coach",
+    "dbo:successor": "Successor", "dbo:predecessor": "Predecessor", "dbo:deputy": "Deputy",
+    "dbo:isPartOf": "Is part of", "dbo:related": "Related", "dbo:city": "City",
+    "dbo:college": "College", "dbo:district": "District", "dbo:family": "Family",
+    "dbo:movement": "Movement", "dbo:officialLanguage": "Official language",
+    "dbo:origin": "Origin", "dbo:state": "State", "dbo:university": "University",
+    "dbo:battle": "Battle", "dbo:commander": "Commander", "dbo:kingdom": "Kingdom",
+    "dbo:ground": "Ground",
+}
+PROPERTY_OPTIONS = sorted(CURATED_PROPERTIES.keys())
+
+ERROR_TYPES = [
+    "Predicate normalization — surface form not standardized",
+    "Predicate placeholder — no real relation identified",
+    "Implicit relation — bare copula or postposition",
+    "Language mixing — English and Hindi mixed in predicate",
+    "Argument span error — subject or object boundary is wrong",
+    "Missing triple — relation was not extracted at all",
+]
+
+# ── Styling ─────────────────────────────────────────────────────────────
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header[data-testid="stHeader"] {background: transparent;}
+
+html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+
+.block-container {
+    max-width: 880px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* ── Header ── */
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+.app-header .dbpedia-logo {
+    height: 42px;
+    width: auto;
+}
+.app-header .header-title {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #14181A;
+    line-height: 1.1;
+}
+.app-header .header-subtitle {
+    font-size: 14px;
+    color: #5B6663;
+    margin-top: 2px;
+}
+.app-divider {
+    height: 1px;
+    background: #E2E5E1;
+    margin: 18px 0 28px 0;
+}
+
+/* ── Data chips ── */
+.chip-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip {
+    border: 1px solid #E2E5E1;
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: #FFFFFF;
+    flex: 1;
+    min-width: 140px;
+}
+.chip-label {
+    font-size: 10.5px;
+    letter-spacing: 0.07em;
+    color: #8A938F;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.chip-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    color: #14181A;
+    word-break: break-word;
+}
+
+/* ── Sentence card ── */
+.sentence-box {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #14181A;
+    background: #FFFFFF;
+    border: 1px solid #E2E5E1;
+    border-left: 3px solid #0E7C7B;
+    border-radius: 6px;
+    padding: 16px 18px;
+}
+
+/* ── Confidence badge + meter ── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.badge-high { background: #DCF5E8; color: #15803D; }
+.badge-weak { background: #FEF3C7; color: #92400E; }
+.badge-none { background: #FEE2E2; color: #B91C1C; }
+
+.meter {
+    height: 6px;
+    background: #E9ECE9;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.meter-fill { height: 100%; border-radius: 4px; }
+
+.suggestion-uri {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0E7C7B;
+    margin-top: 10px;
+}
+.suggestion-caption {
+    font-size: 12.5px;
+    color: #8A938F;
+    margin-top: 8px;
+}
+
+/* ── Buttons ── */
+.stButton button {
+    border-radius: 6px;
+    font-weight: 600;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* ── Footer credit ── */
+.app-footer {
+    text-align: center;
+    font-size: 12.5px;
+    color: #8A938F;
+    margin-top: 48px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+DBPEDIA_LOGO_URL = "https://commons.wikimedia.org/wiki/Special:FilePath/DBpedia_logo.svg"
+
+
+
+# ── Header ──────────────────────────────────────────────────────────────
+header_html = (
+    '<div class="app-header">'
+    f'<img src="{DBPEDIA_LOGO_URL}" alt="DBpedia" class="dbpedia-logo">'
+    '<div><div class="header-title">DBpedia Hindi Chapter</div>'
+    '<div class="header-subtitle">Knowledge graph triple review · subject · relation · object</div>'
+    '</div></div>'
+)
+st.markdown(header_html, unsafe_allow_html=True)
+
+with st.expander("About this tool"):
+    st.markdown(
+        "**What this is.** Every fact extracted from a Hindi sentence is a small graph — "
+        "a subject, a relation, and an object, the same three points as the mark above. "
+        "Before a fact joins DBpedia's knowledge graph, the relation needs to match one of "
+        "DBpedia's standard properties (things like `dbo:birthPlace` or `dbo:builder`). "
+        "An embedding model proposes a match and a confidence score; this tool is where a "
+        "person confirms, corrects, or rejects that proposal.\n\n"
+        "**DBpedia** extracts structured information from Wikipedia and publishes it as "
+        "linked open data, so facts can be queried, combined, and reused across languages. "
+        "This review queue supports the DBpedia Hindi Chapter's work extracting and "
+        "validating triples from Hindi text."
+    )
+
+with st.expander("Connect your pipeline"):
+    st.markdown(
+        "This app looks for a file named **`alignment_results_full_20k.jsonl`** "
+        "(one JSON object per line, with `sentence`, `subject`, `relation`, `object`, "
+        "`dbo_uri`, and `score` fields) in the following locations, in order:\n\n"
+        "- `GSoC26_H/results/alignment_results_full_20k.jsonl` *(recommended — repo-relative)*\n"
+        "- `GSoC26_H/data/alignment_results_full_20k.jsonl`\n"
+        "- the app's own working directory\n"
+        "- common Google Drive paths (for running directly from Colab)\n\n"
+        "If none are found, the queue below falls back to a small demo set so the "
+        "interface stays usable. To wire in real data, drop the file into "
+        "`GSoC26_H/results/` in this repo — no code changes needed."
+    )
+
+st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
+
+# ── Load data ─────────────────────────────────────────────────────────
+@st.cache_data
+def load_data():
+    for path in CANDIDATE_PATHS:
+        if os.path.exists(path):
+            rows = []
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        rows.append(json.loads(line))
+            return rows, path
+    return DEMO_DATA, None
+
+all_rows, found_path = load_data()
+using_demo = found_path is None
+
+if using_demo:
+    st.info("**Demo mode** — showing 5 sample triples. See \"Connect your pipeline\" above to load real data.")
+else:
+    st.caption(f"Connected · {len(all_rows):,} rows loaded from `{found_path}`")
+
+# ── Session state ───────────────────────────────────────────────────────
+if "queue" not in st.session_state:
+    queue = sorted(all_rows, key=lambda r: r.get("score", 0), reverse=True)
+    st.session_state.queue = queue
+    st.session_state.idx = 0
+    st.session_state.decisions = []
+
+queue = st.session_state.queue
+total = len(queue)
+
+# ── Sidebar ───────────────────────────────────────────────────────────
+with st.sidebar:
+    st.markdown("##### Review progress")
+    decisions_made = len(st.session_state.decisions)
+    st.metric("Decisions logged", decisions_made)
+    st.caption(f"Queue size: {total} item{'s' if total != 1 else ''}")
+    st.progress(min(decisions_made / total, 1.0) if total else 0)
+
+    st.markdown("---")
+    st.markdown("##### Filter queue")
+    filter_mode = st.radio(
+        "Show",
+        ["All", "Auto-aligned (score ≥ 0.55)", "Needs review (score < 0.55)"],
+        index=0,
+        label_visibility="collapsed",
+    )
+    if filter_mode == "Auto-aligned (score ≥ 0.55)":
+        view_queue = [r for r in queue if r.get("score", 0) >= THRESHOLD]
+    elif filter_mode == "Needs review (score < 0.55)":
+        view_queue = [r for r in queue if r.get("score", 0) < THRESHOLD]
+    else:
+        view_queue = queue
+
+    st.markdown("---")
+    if st.session_state.decisions:
+        export_str = "\n".join(json.dumps(d, ensure_ascii=False) for d in st.session_state.decisions)
+        st.download_button(
+            "Download corrections (.jsonl)",
+            data=export_str,
+            file_name="hitl_corrections.jsonl",
+            mime="application/jsonl",
+            use_container_width=True,
+        )
+    else:
+        st.caption("Corrections will appear here for download once you start reviewing.")
+
+# ── Main review card ──────────────────────────────────────────────────
+if not view_queue:
+    st.success("Nothing left in this filter view.")
+    st.stop()
+
+idx = st.session_state.idx % len(view_queue)
+row = view_queue[idx]
+
+score = row.get("score", 0)
+dbo_uri = row.get("dbo_uri")
+method = row.get("method", "")
+
+if score >= THRESHOLD:
+    badge_class, badge_text, meter_color = "badge-high", "High confidence", "#15803D"
+elif score >= 0.40:
+    badge_class, badge_text, meter_color = "badge-weak", "Weak confidence", "#B45309"
+else:
+    badge_class, badge_text, meter_color = "badge-none", "No confident match", "#B91C1C"
+
+st.caption(f"Item {idx + 1} of {len(view_queue)}")
+
+col1, col2 = st.columns([1.6, 1])
+
+with col1:
+    st.markdown("**Sentence**")
+    st.markdown(f'<div class="sentence-box">{row.get("sentence", "")}</div>', unsafe_allow_html=True)
+
+    st.markdown("<br>**Extracted triple**", unsafe_allow_html=True)
+    chip_html = (
+        '<div class="chip-row">'
+        f'<div class="chip"><div class="chip-label">Subject</div><div class="chip-value">{row.get("subject","")}</div></div>'
+        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{row.get("relation","")}</div></div>'
+        f'<div class="chip"><div class="chip-label">Object</div><div class="chip-value">{row.get("object","")}</div></div>'
+        '</div>'
+    )
+    st.markdown(chip_html, unsafe_allow_html=True)
+
+
+with col2:
+    st.markdown("**Suggested mapping**")
+    st.markdown(f'<span class="badge {badge_class}">{badge_text}</span>', unsafe_allow_html=True)
+    if dbo_uri:
+        st.markdown(f'<div class="suggestion-uri">{dbo_uri}</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="suggestion-uri" style="color:#8A938F;">No property suggested</div>', unsafe_allow_html=True)
+
+    pct = max(0, min(100, score * 100))
+    meter_html = (
+        f'<div class="meter"><div class="meter-fill" style="width:{pct}%; background:{meter_color};"></div></div>'
+        f'<div class="suggestion-caption">Confidence {score:.2f} · matched via {method or "—"}</div>'
+    )
+    st.markdown(meter_html, unsafe_allow_html=True)
+
+
+st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
+
+# ── Action buttons ────────────────────────────────────────────────────
+b1, b2, b3 = st.columns(3)
+
+def save_decision(action, **extra):
+    decision = {
+        "sentence": row.get("sentence", ""),
+        "subject": row.get("subject", ""),
+        "relation": row.get("relation", ""),
+        "object": row.get("object", ""),
+        "suggested_dbo_uri": dbo_uri,
+        "suggested_score": score,
+        "action": action,
+        "timestamp": datetime.utcnow().isoformat(),
+        **extra,
+    }
+    st.session_state.decisions.append(decision)
+    st.session_state.idx += 1
+    st.session_state.show_modify = False
+    st.session_state.show_reject = False
+    st.rerun()
+
+with b1:
+    if st.button("✓  Accept", use_container_width=True, type="primary", disabled=not dbo_uri):
+        save_decision("accept", final_dbo_uri=dbo_uri)
+with b2:
+    if st.button("✎  Modify", use_container_width=True):
+        st.session_state.show_modify = True
+        st.session_state.show_reject = False
+with b3:
+    if st.button("✕  Reject", use_container_width=True):
+        st.session_state.show_reject = True
+        st.session_state.show_modify = False
+
+if st.session_state.get("show_modify"):
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("**Pick the correct property**")
+    new_prop = st.selectbox(
+        "Correct dbo: property",
+        options=["— type a custom property below —"] + PROPERTY_OPTIONS,
+        key=f"modify_select_{idx}",
+        label_visibility="collapsed",
+    )
+    custom_prop = ""
+    if new_prop == "— type a custom property below —":
+        custom_prop = st.text_input("Custom property", placeholder="dbo:somePropertyName", key=f"custom_{idx}")
+    if st.button("Save correction", key=f"save_mod_{idx}"):
+        final_uri = custom_prop.strip() if custom_prop.strip() else new_prop
+        save_decision("modify", final_dbo_uri=final_uri)
+
+if st.session_state.get("show_reject"):
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("**Why is this wrong?**")
+    error_type = st.radio("Error type", ERROR_TYPES, key=f"error_{idx}", label_visibility="collapsed")
+    note = st.text_input("Note (optional)", key=f"note_{idx}")
+    if st.button("Save rejection", key=f"save_rej_{idx}"):
+        save_decision("reject", error_type=error_type, note=note, final_dbo_uri=None)
+
+st.markdown("<br>", unsafe_allow_html=True)
+if st.button("Skip without deciding →"):
+    st.session_state.idx += 1
+    st.session_state.show_modify = False
+    st.session_state.show_reject = False
+    st.rerun()
+
+st.markdown(
+    '<div class="app-footer">Built for the DBpedia Hindi Chapter · Google Summer of Code 2026</div>',
+    unsafe_allow_html=True,
+)
