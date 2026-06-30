@@ -1,10 +1,11 @@
 # ─── LoRA / QLoRA Configuration ──────────────────────────────────────────────
 # Phase 2: Fine-tuning Gemma-3 for Hindi triple extraction
-# Designed for Google Colab Pro (T4 GPU, 16GB VRAM)
+# GPU target: A2 (16GB VRAM, HTWK server via SSH) or T4 (Google Colab)
+# Framework: Unsloth + HuggingFace PEFT/LoRA (see: https://unsloth.ai/docs)
 
 model:
-  model_id: "google/gemma-3-2b-it"        # Use 1b-it for faster iteration, 4b-it for best quality
-  use_4bit: true                           # QLoRA: 4-bit quantization (required for T4)
+  model_id: "google/gemma-3-4b-it"        # 4b-it confirmed fits A2/T4 with QLoRA
+  use_4bit: true                           # QLoRA: 4-bit quantization (required for A2/T4)
   bnb_4bit_quant_type: "nf4"
   bnb_4bit_use_double_quant: true
   bnb_4bit_compute_dtype: "bfloat16"
@@ -27,7 +28,7 @@ lora:
 training:
   output_dir: "outputs/models/gemma3_hindi_triples"
   num_train_epochs: 3
-  per_device_train_batch_size: 2           # Keep low for T4 memory
+  per_device_train_batch_size: 2           # Keep low for A2/T4 memory
   gradient_accumulation_steps: 8          # Effective batch size = 2 * 8 = 16
   learning_rate: 2.0e-4
   warmup_ratio: 0.05
@@ -35,7 +36,7 @@ training:
   optim: "paged_adamw_8bit"              # Memory-efficient optimizer
   max_seq_length: 512
   fp16: false
-  bf16: true                             # Use bfloat16 on T4
+  bf16: true                             # Use bfloat16 on A2/T4
   logging_steps: 10
   save_steps: 50
   eval_steps: 50
@@ -44,9 +45,12 @@ training:
   report_to: "none"                      # Set to "wandb" if you use W&B
 
 data:
+  # Staged training:
+  # Phase 1 (noisy): original score<8 (~11,367) + generated noisy (~15,000+)
+  # Phase 2 (clean): original score>=9 (8,633)
   train_file: "data/training/train_instruction_pairs.jsonl"
   val_file: "data/training/val_instruction_pairs.jsonl"
-  prompt_template: "iterative"           # "simultaneous" | "iterative" (use iterative for MILIE-inspired design)
+  prompt_template: "iterative"           # "simultaneous" | "iterative" (MILIE-inspired)
   max_train_samples: null                # null = use all
   max_val_samples: 50
 
@@ -55,17 +59,23 @@ seed: 42
 # ─── Evaluation Config ────────────────────────────────────────────────────────
 evaluation:
   benchie_data: "data/raw/hindi_benchie_test.jsonl"
+  ground_truth: "data/raw/ground_truth_198_triples.jsonl"  # 139 triples, 52.5% mapped
   use_essential_triples: true
   use_compensatory_triples: true
-  alignment_threshold: 0.45            # Below this → HITL review
+  alignment_threshold: 0.55            # Validated threshold (was 0.45 — updated Week 3)
   ontology_properties: "data/ontology/dbpedia_properties.json"
   output_dir: "outputs/results"
 
-# ─── Notes for Colab ─────────────────────────────────────────────────────────
-# Memory tips for T4 (16GB):
-#   - gemma-3-1b-it + 4bit: ~4GB VRAM  (safe)
-#   - gemma-3-2b-it + 4bit: ~6GB VRAM  (safe)
-#   - gemma-3-4b-it + 4bit: ~10GB VRAM (safe with gradient_accumulation)
-#   - gemma-3-4b-it + 8bit: ~14GB VRAM (tight, watch for OOM)
+# ─── Notes for A2 GPU (HTWK server via SSH) ──────────────────────────────────
+# A2 has 16GB VRAM — same as T4 but dedicated (no session timeouts).
+# Required HuggingFace stack: transformers, peft, bitsandbytes, accelerate,
+# sentence-transformers. Install: pip install unsloth transformers peft
+# bitsandbytes accelerate sentence-transformers trl
 #
-# If OOM: reduce per_device_train_batch_size to 1, increase gradient_accumulation_steps
+# VRAM estimates (QLoRA 4-bit):
+#   gemma-3-1b-it + 4bit: ~4GB   (fast iteration)
+#   gemma-3-2b-it + 4bit: ~6GB   (good balance)
+#   gemma-3-4b-it + 4bit: ~10GB  (best quality, fits A2/T4)
+#
+# If OOM: reduce per_device_train_batch_size to 1,
+#          increase gradient_accumulation_steps to 16
