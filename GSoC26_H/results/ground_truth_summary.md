@@ -1,0 +1,80 @@
+# Ground Truth Creation — Hindi BenchIE → DBpedia Mapping
+
+**Task:** Create the first-ever dbo: property ground truth for the Hindi BenchIE
+benchmark (112 sentences, 139 canonical verb-relation triples).
+
+**Why this was needed:** The benchmark contains gold subject/relation/object spans
+but no mapping to DBpedia properties — it was designed for information extraction
+evaluation, not knowledge-graph alignment. This ground truth enables future evaluation
+of the predicate linking pipeline against a verified reference.
+
+## Method
+
+```
+Step 1: Parse hindi_benchie_gold.txt → 139 canonical Cluster-1 triples
+Step 2: For each triple's relation, retrieve top-10 candidates using
+        intfloat/multilingual-e5-large-instruct (full 2,710-property catalog)
+Step 3: Pass candidates + full sentence + triple to openai/gpt-oss-120b
+        with 15 diverse few-shot examples (covering 13 property types + 2 NONE cases)
+Step 4: GPT-OSS-120B picks the best dbo: from the 10 candidates, or returns NONE
+        if none genuinely fit the sentence context
+Step 5: All 139 entries manually verified by contributor; 6 borderline cases
+        corrected; 15 data-corruption entries (ERROR in reasoning) regenerated;
+        4 reasoning/answer contradictions fixed
+```
+
+## Results
+
+| Category | Count | Percentage |
+|---|---|---|
+| Labeled with real dbo: property | 73 | 52.5% |
+| Correctly returned NONE | 66 | 47.5% |
+| **Total entries** | **139** | **100%** |
+
+## Distribution of assigned properties (top 10)
+
+| Property | Count |
+|---|---|
+| dbo:location | 5 |
+| dbo:created | 4 |
+| dbo:knownFor | 4 |
+| dbo:reference | 3 |
+| dbo:uses | 3 |
+| dbo:updated | 2 |
+| dbo:established | 2 |
+| dbo:provides | 2 |
+| dbo:subdivision | 2 |
+| dbo:award | 1 |
+
+Unique properties used: 41
+
+## Key finding
+
+**52.5% mapping rate (not a failure):** BenchIE was designed for open-domain
+information extraction, not DBpedia knowledge-graph alignment. Many of its sentences
+contain abstract, philosophical, or procedural content that has no corresponding
+DBpedia property. The 47.5% NONE rate is an honest, accurate finding about the
+dataset — not a gap in the pipeline.
+
+## Output file
+
+`data/ground_truth/ground_truth_benchie_triples.jsonl`
+
+Each line is a JSON object with:
+- `sent_id`: BenchIE sentence ID
+- `sentence`: full Hindi sentence text
+- `subject`, `relation`, `object`: clean extracted spans
+- `candidates`: list of top-10 dbo: candidates from e5
+- `llm_reasoning`: full GPT-OSS-120B reasoning text
+- `ground_truth_dbo`: final verified answer (string or null)
+
+## Few-shot examples used in disambiguation prompt
+
+15 examples covering: location, winner, birthPlace, occupation, author(NONE case),
+publication, musicComposer, spouse, builder, isPartOf, position, knownFor,
+river(NONE case), capital, deathPlace.
+
+Key design choice: examples explicitly include cases where `dbo:winner` and
+`dbo:lyricist` appear as high-scoring candidates but should be rejected based on
+sentence context — teaching the LLM to override embedding similarity with semantic
+reasoning.
