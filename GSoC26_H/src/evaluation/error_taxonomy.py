@@ -3,12 +3,20 @@ error_taxonomy.py
 -----------------
 Error taxonomy for Hindi relational triple extraction failures.
 
-Defines the 5 error types identified in pre-application experiments:
-  1. Predicate Normalization Failure
-  2. Language Mixing
-  3. Implicit Relation Error
-  4. Argument Span Error
-  5. Missing Triple
+Defines the 6 error types identified across Phase 1 baselines and
+Phase 2 fine-tuning evaluation (GSoC 2026):
+
+  1. CORRECT                   — full triple matches gold
+  2. PREDICATE_NORMALIZATION   — predicate not alignable to any DBpedia property
+  3. PREDICATE_PLACEHOLDER     — copula (है/था/थे) used as predicate; implicit relation
+  4. LANGUAGE_MIXING           — English predicate in Hindi sentence
+  5. ARGUMENT_SPAN             — predicate correct but subject/object boundaries wrong
+  6. MISSING_TRIPLE            — no triple extracted at all
+
+Note: PREDICATE_PLACEHOLDER was measured in phase1_ablation_table.csv but was
+missing from the original enum — added in Week 3 to fix the inconsistency.
+PREDICATE_PLACEHOLDER is a special case of PREDICATE_NORMALIZATION where the
+surface form is a copula, distinguishing it from genuine normalization failures.
 
 Used in: Phase 1 (baseline eval), Phase 2 (fine-tune eval), Phase 3 (HITL labelling).
 """
@@ -25,17 +33,18 @@ import json
 class ErrorType(Enum):
     CORRECT                      = "correct"
     PREDICATE_NORMALIZATION      = "predicate_normalization_failure"
+    PREDICATE_PLACEHOLDER        = "predicate_placeholder"        # copula as predicate
     LANGUAGE_MIXING              = "language_mixing"
-    IMPLICIT_RELATION            = "implicit_relation_error"
     ARGUMENT_SPAN                = "argument_span_error"
     MISSING_TRIPLE               = "missing_triple"
 
 
-# Hindi copula forms that signal Implicit Relation Error
+# Hindi copula forms that signal Predicate Placeholder Error
 HINDI_COPULAS = {
     "है", "हैं", "था", "थे", "थी", "थीं",
     "hai", "hain", "tha", "the", "thi", "thin",
-    "ho", "hoga", "hogi", "raha", "rahi"
+    "ho", "hoga", "hogi", "raha", "rahi",
+    "रहा", "रही", "रहे", "होना", "हो",
 }
 
 # Common English function words — signal Language Mixing
@@ -105,9 +114,9 @@ class ExtractionResult:
             )
             return self
 
-        # Implicit Relation: copula extracted as predicate
+        # Predicate Placeholder: copula extracted as predicate
         if raw in HINDI_COPULAS or any(c in raw for c in HINDI_COPULAS):
-            self.error_type = ErrorType.IMPLICIT_RELATION
+            self.error_type = ErrorType.PREDICATE_PLACEHOLDER
             self.error_notes = (
                 f"Copula '{self.pred_predicate}' used as predicate. "
                 f"Implicit relation not surfaced. Expected: {self.gold_predicate}"
@@ -144,7 +153,6 @@ class ExtractionResult:
         if not alpha_chars:
             return False
         ratio = len(ascii_alpha) / len(alpha_chars)
-        # Also check for common English words directly
         words = text.split()
         english_word_hit = any(w.lower() in ENGLISH_FUNCTION_WORDS for w in words)
         return ratio > 0.65 or english_word_hit
@@ -199,21 +207,14 @@ class ErrorTaxonomy:
         }
 
     def precision_recall_f1(self) -> dict:
-        """
-        Precision / Recall / F1 at the triple level.
-        A triple is correct only if all three slots match gold.
-        """
+        """Precision / Recall / F1 at the triple level."""
         total     = len(self.results)
         correct   = sum(1 for r in self.results if r.error_type == ErrorType.CORRECT)
         missing   = sum(1 for r in self.results if r.error_type == ErrorType.MISSING_TRIPLE)
 
-        # Precision = correct / total_extracted
         extracted = total - missing
         precision = correct / extracted if extracted > 0 else 0.0
-
-        # Recall = correct / total_gold  (one gold triple per sentence here)
-        recall = correct / total if total > 0 else 0.0
-
+        recall    = correct / total if total > 0 else 0.0
         f1 = (2 * precision * recall / (precision + recall)
                if (precision + recall) > 0 else 0.0)
 
@@ -259,8 +260,6 @@ class ErrorTaxonomy:
         )
         return round(correct / len(results_with_output), 3)
 
-    # ── Summary Report ────────────────────────────────────────────────────────
-
     def summary(self) -> dict:
         return {
             "system":              self.system_name,
@@ -283,7 +282,6 @@ class ErrorTaxonomy:
         print(f"  System: {self.system_name.upper()}")
         print(f"{'='*60}")
 
-        # Metrics table
         m = s["metrics"]
         print(tabulate(
             [["Precision", m["precision"]],
@@ -293,7 +291,6 @@ class ErrorTaxonomy:
             headers=["Metric", "Value"], tablefmt="rounded_outline"
         ))
 
-        # Slot accuracy
         sa = s["slot_accuracy"]
         print("\nSlot Accuracy:")
         print(tabulate(
@@ -304,7 +301,6 @@ class ErrorTaxonomy:
             headers=["Slot", "Accuracy"], tablefmt="rounded_outline"
         ))
 
-        # Error breakdown
         print("\nError Breakdown:")
         eb = s["error_breakdown"]
         rows = [[et, d["count"], f"{d['pct']}%"] for et, d in eb.items() if d["count"] > 0]
@@ -316,12 +312,10 @@ class ErrorTaxonomy:
         base = path.rstrip("/")
         os.makedirs(base, exist_ok=True)
 
-        # Save individual results
         with open(f"{base}/{self.system_name}_results.jsonl", "w", encoding="utf-8") as f:
             for r in self.results:
                 f.write(json.dumps(r.to_dict(), ensure_ascii=False) + "\n")
 
-        # Save summary
         with open(f"{base}/{self.system_name}_summary.json", "w", encoding="utf-8") as f:
             json.dump(self.summary(), f, ensure_ascii=False, indent=2)
 
@@ -331,15 +325,12 @@ class ErrorTaxonomy:
 # ─── Ablation Table Builder ───────────────────────────────────────────────────
 
 def build_ablation_table(taxonomies: List[ErrorTaxonomy]) -> str:
-    """
-    Build the Phase 1 milestone deliverable:
-    a formatted ablation table comparing all systems.
-    """
+    """Build the Phase 1 milestone deliverable: ablation table comparing all systems."""
     from tabulate import tabulate
 
     headers = ["System", "Precision", "Recall", "F1",
                "Subj Acc", "Pred Acc (raw)", "Pred Acc (aligned)", "Obj Acc",
-               "Norm Fail", "Lang Mix", "Implicit Rel", "Arg Span", "Missing"]
+               "Norm Fail", "Placeholder", "Lang Mix", "Arg Span", "Missing"]
 
     rows = []
     for tax in taxonomies:
@@ -353,8 +344,8 @@ def build_ablation_table(taxonomies: List[ErrorTaxonomy]) -> str:
             m["precision"], m["recall"], m["f1"],
             sa["subject"], sa["predicate_raw"], sa["predicate_aligned"], sa["object"],
             eb[ErrorType.PREDICATE_NORMALIZATION.value]["count"],
+            eb[ErrorType.PREDICATE_PLACEHOLDER.value]["count"],
             eb[ErrorType.LANGUAGE_MIXING.value]["count"],
-            eb[ErrorType.IMPLICIT_RELATION.value]["count"],
             eb[ErrorType.ARGUMENT_SPAN.value]["count"],
             eb[ErrorType.MISSING_TRIPLE.value]["count"],
         ])
