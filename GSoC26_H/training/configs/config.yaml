@@ -1,0 +1,10 @@
+defaults:
+  - model: gemma3_4b
+  - data: exp1
+  - training: base
+  - logging: wandb
+  - _self_
+
+experiment_name: exp1_all_data_aug
+seed: 42
+output_dir: /home/nsingh/checkpoints/${experiment_name}_lr${training.learning_rate}
