@@ -1,0 +1,7 @@
+project: dbpedia-hindi-gsoc
+entity: nitinsingh3323sinnit-kiit-deemed-to-be-university
+run_name: ${experiment_name}_lr${training.learning_rate}
+tags:
+  - exp1
+  - gemma3-4b
+  - qlora
