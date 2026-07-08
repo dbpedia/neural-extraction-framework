@@ -116,7 +116,7 @@ def entry_pronoun_status(entry):
     """
     content = json.loads(entry["messages"][2]["content"])
     core = [t for t in content.get("extracted_triplets", [])
-            if t.get("relation", "").strip() != "property"]
+            if isinstance(t, dict) and t.get("relation", "").strip() != "property"]
 
     for t in core:
         for span in (t.get("subject"), t.get("object")):
@@ -141,11 +141,18 @@ def triplets_to_slug(triplets):
     (a genuine upstream corruption). An empty/None object is normalized
     to the literal string "NONE" rather than dropped, since many correct
     Hindi triplets use intransitive verbs with no grammatical object.
+
+    Non-dict entries (e.g. a malformed model response that returned a
+    bare string instead of a {subject, relation, object} object) are
+    skipped rather than raised, since a single corrupted triplet should
+    never crash processing of the other thousands of entries.
     """
     if not triplets:
         return "NONE"
     lines = []
     for t in triplets:
+        if not isinstance(t, dict):
+            continue
         s = clean_span(t.get("subject"))
         r = clean_span(t.get("relation"))
         o = clean_span(t.get("object"))
