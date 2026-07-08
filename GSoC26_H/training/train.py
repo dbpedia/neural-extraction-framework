@@ -138,7 +138,9 @@ class GenerationEvalCallback(TrainerCallback):
         eos_id = self.tokenizer.eos_token_id
         pad_id = self.tokenizer.pad_token_id or eos_id
 
-        for example in self.samples:
+        for idx, example in enumerate(self.samples):
+            print(f"[eval] generating sample {idx + 1}/{len(self.samples)}...", flush=True)
+
             prompt, reference = get_prompt_and_reference(example, self.tokenizer)
             inputs = self.tokenizer(prompt, return_tensors="pt").to(model.device)
 
@@ -154,17 +156,30 @@ class GenerationEvalCallback(TrainerCallback):
             prompt_len = input_ids.shape[1]
             generated = input_ids
 
-            # Manual greedy decoding. We deliberately do NOT call
-            # model.generate() here: Gemma3's KV-cache handling has a
-            # confirmed, currently-open bug (huggingface/transformers#36815)
+            # Manual greedy decoding with KV-cache reuse. We deliberately do
+            # NOT call model.generate() here: Gemma3's KV-cache handling has
+            # a confirmed, currently-open bug (huggingface/transformers#36815)
             # that injects a stray extra dimension into the internal
             # generate() loop and crashes mid-decode. Since our eval only
-            # ever needs greedy decoding (do_sample=False), we implement
-            # it directly so every tensor shape is explicit and under our
+            # ever needs greedy decoding (do_sample=False), we implement it
+            # directly so every tensor shape is explicit and under our
             # control, with no dependency on that internal code path.
+            #
+            # past_key_values is reused across steps so each step only
+            # processes the single newly generated token instead of
+            # re-running the whole growing sequence from scratch — without
+            # this, generation cost grows per-token and 50 samples at
+            # max_new_tokens=256 becomes impractically slow.
             with torch.no_grad():
+                past_key_values = None
+                current_input = generated
                 for _ in range(self.max_new_tokens):
-                    outputs = model(input_ids=generated, attention_mask=attention_mask)
+                    outputs = model(
+                        input_ids=current_input,
+                        attention_mask=attention_mask,
+                        past_key_values=past_key_values,
+                        use_cache=True,
+                    )
                     next_token_logits = outputs.logits[:, -1, :]
                     next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)
 
@@ -172,6 +187,8 @@ class GenerationEvalCallback(TrainerCallback):
                     attention_mask = torch.cat(
                         [attention_mask, torch.ones_like(next_token)], dim=-1
                     )
+                    past_key_values = outputs.past_key_values
+                    current_input = next_token
 
                     if next_token.item() == eos_id:
                         break
