@@ -135,41 +135,56 @@ class GenerationEvalCallback(TrainerCallback):
         correct = 0
         valid_format = 0
 
+        eos_id = self.tokenizer.eos_token_id
+        pad_id = self.tokenizer.pad_token_id or eos_id
+
         for example in self.samples:
             prompt, reference = get_prompt_and_reference(example, self.tokenizer)
             inputs = self.tokenizer(prompt, return_tensors="pt").to(model.device)
 
-            # Gemma3 carries a token_type_ids field that the generic
-            # transformers generate() loop mishandles, injecting an
-            # extra dimension at every decode step (confirmed bug:
-            # huggingface/transformers#36815, huggingface/trl#4189).
-            # It isn't needed for text-only generation, so drop it.
-            inputs.pop("token_type_ids", None)
+            input_ids = inputs["input_ids"]
+            attention_mask = inputs["attention_mask"]
 
-            # Some Gemma 3 tokenizer configs return an extra leading/trailing
-            # dimension (e.g. shape [1, 1, seq_len] instead of [1, seq_len]),
-            # since the tokenizer is multimodal-capable even for text-only
-            # input. model.generate() requires exactly 2D (batch, sequence),
-            # so squeeze away any extra singleton dimensions defensively.
-            for key in ("input_ids", "attention_mask"):
-                if key in inputs and inputs[key].dim() > 2:
-                    inputs[key] = inputs[key].view(inputs[key].shape[0], -1)
+            # Squeeze away any unexpected extra dimensions defensively.
+            if input_ids.dim() > 2:
+                input_ids = input_ids.view(input_ids.shape[0], -1)
+            if attention_mask.dim() > 2:
+                attention_mask = attention_mask.view(attention_mask.shape[0], -1)
 
+            prompt_len = input_ids.shape[1]
+            generated = input_ids
+
+            # Manual greedy decoding. We deliberately do NOT call
+            # model.generate() here: Gemma3's KV-cache handling has a
+            # confirmed, currently-open bug (huggingface/transformers#36815)
+            # that injects a stray extra dimension into the internal
+            # generate() loop and crashes mid-decode. Since our eval only
+            # ever needs greedy decoding (do_sample=False), we implement
+            # it directly so every tensor shape is explicit and under our
+            # control, with no dependency on that internal code path.
             with torch.no_grad():
-                output_ids = model.generate(
-                    **inputs,
-                    max_new_tokens=self.max_new_tokens,
-                    do_sample=False,
-                    pad_token_id=self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
-                )
+                for _ in range(self.max_new_tokens):
+                    outputs = model(input_ids=generated, attention_mask=attention_mask)
+                    next_token_logits = outputs.logits[:, -1, :]
+                    next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)
 
-            generated = self.tokenizer.decode(
-                output_ids[0][inputs["input_ids"].shape[1]:],
+                    generated = torch.cat([generated, next_token], dim=-1)
+                    attention_mask = torch.cat(
+                        [attention_mask, torch.ones_like(next_token)], dim=-1
+                    )
+
+                    if next_token.item() == eos_id:
+                        break
+
+            output_ids = generated
+
+            generated_text = self.tokenizer.decode(
+                output_ids[0][prompt_len:],
                 skip_special_tokens=True,
             )
-            predicted = extract_final_answer(generated)
+            predicted = extract_final_answer(generated_text)
 
-            if is_valid_slug_format(generated):
+            if is_valid_slug_format(generated_text):
                 valid_format += 1
             if predicted.strip() == reference.strip():
                 correct += 1
