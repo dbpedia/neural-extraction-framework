@@ -2,20 +2,26 @@
 
 # DBpedia Hindi Chapter
 
-### Training pipeline for Hindi triple extraction
+### Fine-tuning a small language model for Hindi triple extraction
 
-![GSoC](https://img.shields.io/badge/GSoC-2026-8A2BE2?style=for-the-badge)
-![DBpedia](https://img.shields.io/badge/DBpedia-Hindi%20Chapter-FF6600?style=for-the-badge)
-![Model](https://img.shields.io/badge/Model-Gemma%203%204B-4285F4?style=for-the-badge)
-![Method](https://img.shields.io/badge/Method-QLoRA-00A67E?style=for-the-badge)
+[![GSoC](https://img.shields.io/badge/GSoC-2026-8A2BE2?style=flat-square)](https://summerofcode.withgoogle.com/)
+[![DBpedia](https://img.shields.io/badge/DBpedia-Hindi%20Chapter-FF6600?style=flat-square)](https://dbpedia.org)
+[![Model](https://img.shields.io/badge/Model-Gemma%203%204B-4285F4?style=flat-square)](https://huggingface.co/google/gemma-3-4b-it)
+[![Method](https://img.shields.io/badge/Method-QLoRA-00A67E?style=flat-square)](https://arxiv.org/abs/2305.14314)
+[![Config](https://img.shields.io/badge/Config-Hydra-89b8cd?style=flat-square)](https://hydra.cc/)
+[![Tracking](https://img.shields.io/badge/Tracking-W%26B-FFBE00?style=flat-square)](https://wandb.ai/)
 
 </div>
 
 ---
 
-## Overview
+We fine-tune a small language model to read a Hindi sentence and output subject-relation-object triples, aligned to the DBpedia ontology — the same structured knowledge that powers DBpedia's English-language graph, now for Hindi.
 
-This folder contains the training pipeline for a Hindi information extraction model: a small language model fine-tuned to read a Hindi sentence and output subject-relation-object triples, aligned to the DBpedia ontology — the same structured knowledge that powers DBpedia's English-language graph, now for Hindi.
+In this folder, we provide:
+
+- **A quality-scored training pipeline** — every annotated example is scored 1-10 by an LLM judge against a four-part rubric (source quality, span exactness, semantic correctness, property-relation quality) before it enters the dataset.
+- **A DBpedia ontology alignment benchmark** — 112 Hindi sentences (139 triples), hand-verified, used to validate relation-to-property mapping via `e5-large-instruct` embeddings and LLM disambiguation.
+- **A QLoRA fine-tuning setup for Gemma 3 4B** — fully configured through Hydra, tracked in Weights & Biases, evaluated on generation quality (pass@1, valid-format rate) rather than loss alone.
 
 ---
 
@@ -33,6 +39,16 @@ flowchart TD
 
 ---
 
+## Code Organization
+
+1. `prepare_data.py` — combines all sources, applies the train/validation split, converts to slug format
+2. `train.py` — QLoRA fine-tuning entry point; reads Hydra configs, trains, evaluates every 0.25 epoch
+3. `evaluate.py` — pass@1 / valid-format-rate evaluation on a saved checkpoint, standalone from training
+4. `configs/` — Hydra config groups for model / data / training / logging
+5. `scripts/` — launch commands for the smoke test and the two learning-rate runs
+
+---
+
 ## Data sources
 
 | Source | Description |
@@ -41,13 +57,9 @@ flowchart TD
 | Noisy dataset | Additional synthetically generated sentences, mixed quality |
 | Wikipedia | Real-world Hindi sentences scraped from Wikipedia articles |
 
----
-
 ## Annotation
 
-Every sentence is annotated with subject-relation-object triples, including a dedicated `property` relation type for adjectives, possessives, and attributes — following exact-span extraction rules. No paraphrasing, no dropped postpositions.
-
----
+Every sentence is annotated with subject-relation-object triples, including a dedicated `property` relation type for adjectives, possessives, and attributes — following exact-span extraction rules.
 
 ## Quality scoring
 
@@ -60,13 +72,9 @@ Each annotated example is scored 1-10 by an LLM judge against four weighted crit
 | Semantic correctness of core triplets | 30% |
 | Property relation quality | 20% |
 
----
-
 ## Ontology alignment
 
 A benchmark of **112 Hindi sentences** (**139 triples**) validates relation-to-property alignment. Each extracted relation is embedded with `e5-large-instruct`, matched against the DBpedia ontology by cosine similarity, and disambiguated by an LLM against the sentence context.
-
----
 
 ## Training data format
 
@@ -99,6 +107,20 @@ Two trace types are generated per example:
 | Config management | Hydra |
 | Experiment tracking | Weights & Biases |
 
+### Running an experiment
+
+```bash
+# Build the training/validation files
+python3 prepare_data.py
+
+# Smoke test — confirm the pipeline works end to end on a small sample
+bash scripts/smoke_test.sh
+
+# Full runs — one per learning rate
+bash scripts/train_exp1_lr2e4.sh
+bash scripts/train_exp1_lr1e5.sh
+```
+
 ---
 
 ## Folder structure
@@ -106,15 +128,19 @@ Two trace types are generated per example:
 ```
 training/
 ├── README.md
-├── configs/            # Hydra configuration groups
+├── prepare_data.py
+├── train.py
+├── evaluate.py
+├── configs/
 │   ├── config.yaml
 │   ├── model/
 │   ├── data/
 │   ├── training/
 │   └── logging/
-├── prepare_data.py     # builds the train/validation split
-├── train.py             # QLoRA fine-tuning entry point
-└── evaluate.py           # pass@1 / valid-format-rate evaluation
+└── scripts/
+    ├── smoke_test.sh
+    ├── train_exp1_lr2e4.sh
+    └── train_exp1_lr1e5.sh
 ```
 
 ---
@@ -135,10 +161,10 @@ training/
 - [x] Annotation pipeline
 - [x] Quality scoring pipeline
 - [x] Ontology alignment benchmark
-- [ ] Wikipedia scoring — in progress
-- [ ] Training data finalized
-- [ ] Hydra configuration
-- [ ] Training script
+- [x] Wikipedia scoring
+- [ ] Final training/validation set assembled
+- [x] Hydra configuration
+- [x] Training script
 - [ ] Fine-tuning run
 - [ ] Evaluation
 
@@ -147,4 +173,8 @@ training/
 <div align="center">
 
 ### Google Summer of Code 2026 — DBpedia
+
+**Contributor:** Nitin Singh (RVX)
+**Mentors:** Aditya, Debarghya
+
 </div>
