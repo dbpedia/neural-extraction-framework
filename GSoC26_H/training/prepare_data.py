@@ -30,6 +30,15 @@ Formatting fix applied throughout:
   verbs, e.g. "सदस्यों | बहिष्कार किया | NONE") are normalized to the
   literal string "NONE" so every slug line stays well-formed.
 
+Schema fix applied at write time:
+  Entries coming from different upstream sources have slightly different
+  optional fields (e.g. "score" only exists on Wikipedia-derived entries,
+  "phase" only on the original 20K/15K entries). HuggingFace's `datasets`
+  library infers one fixed schema from a JSONL file and errors out the
+  moment a later row has a different key set than the rows it inferred
+  from. normalize_schema() gives every entry in a file the same set of
+  keys (filling missing ones with null) so this never happens.
+
 Run:
     python3 prepare_data.py
 
@@ -227,6 +236,28 @@ def verify_slug(entry):
     return False
 
 
+def normalize_schema(entries):
+    """
+    Ensure every entry in the list has exactly the same set of top-level
+    keys, regardless of which source it came from. HuggingFace's datasets
+    library infers a fixed schema from a JSONL file's rows and raises a
+    CastError the moment a later row has a different key set than the
+    rows the schema was inferred from -- e.g. Wikipedia-derived entries
+    carry a "score" field the original 20K/15K entries don't have, and
+    the 20K/15K entries carry a "phase" field Wikipedia entries don't have.
+    Missing keys are filled with None rather than the entry being dropped.
+    """
+    all_keys = set()
+    for e in entries:
+        all_keys.update(e.keys())
+
+    normalized = []
+    for e in entries:
+        new_e = {k: e.get(k, None) for k in all_keys}
+        normalized.append(new_e)
+    return normalized
+
+
 # ── Loading ──────────────────────────────────────────────────
 
 def load_wikipedia_scored():
@@ -360,6 +391,10 @@ def main():
     print(f"  {len(wiki_val_traces)} traces")
 
     train_traces = base_entries + wiki_train_traces
+
+    print("\nNormalizing schema so all entries share the same field set...")
+    train_traces = normalize_schema(train_traces)
+    wiki_val_traces = normalize_schema(wiki_val_traces)
 
     with open(TRAIN_OUTPUT, "w", encoding="utf-8") as f:
         for e in train_traces:
