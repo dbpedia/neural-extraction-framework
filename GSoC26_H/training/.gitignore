@@ -1,0 +1,7 @@
+# Training/validation data — large, regenerated via prepare_data.py
+*.jsonl
+
+# Training run outputs
+checkpoints/
+wandb/
+*.log
