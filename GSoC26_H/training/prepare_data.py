@@ -10,12 +10,20 @@ Combines three sources into two output files:
 
   Validation set (~/exp1_val_wikipedia_ge9.jsonl):
     - Wikipedia sentences scored >= 9, with coreference resolution applied:
-        * no ambiguous pronoun          -> kept as-is
-        * pronoun successfully resolved -> rewritten sentence + freshly
-                                            re-extracted triples used instead
-        * pronoun could not be resolved -> EXCLUDED (an unresolvable
-          (needs prior sentence context)   pronoun is not a reliable
-                                            evaluation signal)
+        * no pronoun in a core triplet         -> kept as-is
+        * pronoun successfully resolved         -> rewritten sentence +
+                                                    freshly re-extracted
+                                                    triples used instead
+        * pronoun self-contained (demonstrative -> kept as-is; "यह शहर"
+          + noun, e.g. "यह शहर", "वह मन्दिर")      / "वह मन्दिर" is a valid
+                                                    exact-span subject
+                                                    regardless of the
+                                                    entity's real name
+        * pronoun genuinely ambiguous            -> EXCLUDED (a bare
+          (उन्होंने, उसका, इसे... with nothing      "उनका" with no named
+           to anchor it)                           referent isn't a
+                                                    reliable evaluation
+                                                    signal)
 
 Formatting fix applied throughout:
   Triplets with an empty or missing object (common for intransitive Hindi
@@ -31,9 +39,10 @@ Requires (home directory):
     ~/wiki_val_coref_resolved.jsonl   (optional — see note below)
 
 If wiki_val_coref_resolved.jsonl is missing or incomplete, every flagged
-sentence is treated as unresolved (excluded) rather than the script
-failing — re-run this script after coreference resolution finishes to
-pick up the larger, cleaner validation set.
+sentence with a genuinely ambiguous pronoun is treated as unresolved
+(excluded) rather than the script failing — re-run this script after
+coreference resolution finishes to pick up the larger, cleaner validation
+set.
 """
 
 import json
@@ -61,6 +70,59 @@ Think step by step, then provide the triplets.
 Use the format: subject | relation | object
 One triplet per line.
 If no triplets exist, write: NONE"""
+
+
+# ── Pronoun classification (for entries coref_resolve.py couldn't fix) ──
+
+AMBIGUOUS_PRONOUNS = [
+    "उन्होंने", "उसने", "इन्होंने", "इसे", "उसे",
+    "उसका", "उसकी", "उसके", "इसका", "इसकी", "इसके",
+    "उनका", "उनकी", "उनके",
+]
+DEMONSTRATIVE_PRONOUNS = ["यह", "वह", "ये", "वे"]
+
+
+def pronoun_verdict(text):
+    """
+    Classify a single subject/object span.
+
+    "ambiguous"      a bare agentive/objective/possessive pronoun
+                      (उन्होंने, उसका, इसे, ...), or a demonstrative with
+                      nothing attached (bare "यह"/"वह") -- no way to know
+                      who/what it refers to from this sentence alone.
+    "self_contained" a demonstrative pronoun directly modifying a noun
+                      (यह शहर, वह मन्दिर, ...) -- the exact span IS the
+                      correct triplet regardless of the real-world name
+                      behind "this city" / "that temple".
+    "none"            no pronoun issue.
+    """
+    text = (text or "").strip()
+    for p in AMBIGUOUS_PRONOUNS:
+        if text == p or text.startswith(p + " "):
+            return "ambiguous"
+    for p in DEMONSTRATIVE_PRONOUNS:
+        if text == p:
+            return "ambiguous"
+        if text.startswith(p + " "):
+            return "self_contained"
+    return "none"
+
+
+def entry_pronoun_status(entry):
+    """
+    Scan every core (non-property) triplet in an entry. If any triplet
+    contains a genuinely ambiguous pronoun span, the whole entry is
+    ambiguous; otherwise it's self-contained.
+    """
+    content = json.loads(entry["messages"][2]["content"])
+    core = [t for t in content.get("extracted_triplets", [])
+            if t.get("relation", "").strip() != "property"]
+
+    for t in core:
+        for span in (t.get("subject"), t.get("object")):
+            if pronoun_verdict(span) == "ambiguous":
+                return "ambiguous"
+    return "self_contained"
 
 
 # ── Slug conversion ──────────────────────────────────────────
@@ -193,8 +255,8 @@ def load_coref_resolutions():
     resolutions = {}
     if not os.path.exists(COREF_FILE):
         print(f"  NOTE: {COREF_FILE} not found — coreference resolution has "
-              f"not been run yet. All flagged sentences will be excluded "
-              f"from validation until it is.")
+              f"not been run yet. All ambiguous-pronoun sentences will be "
+              f"excluded from validation until it is.")
         return resolutions
 
     with open(COREF_FILE, encoding="utf-8") as f:
@@ -245,7 +307,7 @@ def main():
     print(f"\nWikipedia score < {VALIDATION_SCORE_THRESHOLD}: {len(wiki_train_raw)} -> training (coref not applied here)")
     print(f"Wikipedia score >= {VALIDATION_SCORE_THRESHOLD}: {len(wiki_val_raw)} -> validation candidates")
 
-    kept_unflagged = kept_resolved = dropped_unresolved = dropped_error = 0
+    kept_unflagged = kept_resolved = kept_self_contained = dropped_ambiguous = dropped_error = 0
     final_val_raw = []
 
     for e in wiki_val_raw:
@@ -262,16 +324,25 @@ def main():
             final_val_raw.append(resolved_entry)
             kept_resolved += 1
         elif status == "unresolved":
-            dropped_unresolved += 1
+            # Not every "unresolved" case is truly ambiguous. A demonstrative
+            # pronoun directly modifying a noun ("यह शहर", "वह मन्दिर") is a
+            # self-contained exact span -- it doesn't need a real-world name
+            # to be a valid, checkable triplet, so we keep it as-is.
+            if entry_pronoun_status(e) == "self_contained":
+                final_val_raw.append(e)
+                kept_self_contained += 1
+            else:
+                dropped_ambiguous += 1
         else:
             dropped_error += 1
 
     print(f"\nCoreference resolution applied to validation set:")
-    print(f"  kept, no pronoun issue:      {kept_unflagged}")
-    print(f"  kept, pronoun resolved:      {kept_resolved}")
-    print(f"  dropped, unresolvable:       {dropped_unresolved}")
-    print(f"  dropped, API error:          {dropped_error}")
-    print(f"  final validation candidates: {len(final_val_raw)}")
+    print(f"  kept, no pronoun issue:        {kept_unflagged}")
+    print(f"  kept, pronoun resolved:        {kept_resolved}")
+    print(f"  kept, self-contained (यह+noun): {kept_self_contained}")
+    print(f"  dropped, genuinely ambiguous:  {dropped_ambiguous}")
+    print(f"  dropped, API error:            {dropped_error}")
+    print(f"  final validation candidates:   {len(final_val_raw)}")
 
     print("\nConverting Wikipedia training entries to slug format...")
     wiki_train_traces = convert_entries(wiki_train_raw, "wikipedia_lt9")
