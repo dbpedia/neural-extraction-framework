@@ -173,8 +173,4 @@ training/
 <div align="center">
 
 ### Google Summer of Code 2026 — DBpedia
-
-**Contributor:** Nitin Singh (RVX)
-**Mentors:** Aditya, Debarghya
-
 </div>
