@@ -96,15 +96,15 @@ def get_prompt_and_reference(example, tokenizer):
     """
     Given a raw dataset example, build the generation prompt (system+user,
     with an assistant generation cue) and the ground-truth final answer.
+
+    The user turns (system instruction merged in, per merge_system_into_user)
+    are all that goes into the prompt — the assistant turn is deliberately
+    excluded, since that's exactly what we're asking the model to generate.
     """
     messages = example["messages"]
     user_turns = merge_system_into_user(messages)
     reference = extract_final_answer(messages[-1]["content"])
     prompt = tokenizer.apply_chat_template(
-        user_turns[:-0] if user_turns[-1]["role"] != "assistant" else user_turns[:-1],
-        tokenize=False,
-        add_generation_prompt=True,
-    ) if False else tokenizer.apply_chat_template(
         [m for m in user_turns if m["role"] == "user"],
         tokenize=False,
         add_generation_prompt=True,
