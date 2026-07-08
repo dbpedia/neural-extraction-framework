@@ -139,6 +139,15 @@ class GenerationEvalCallback(TrainerCallback):
             prompt, reference = get_prompt_and_reference(example, self.tokenizer)
             inputs = self.tokenizer(prompt, return_tensors="pt").to(model.device)
 
+            # Some Gemma 3 tokenizer configs return an extra leading/trailing
+            # dimension (e.g. shape [1, 1, seq_len] instead of [1, seq_len]),
+            # since the tokenizer is multimodal-capable even for text-only
+            # input. model.generate() requires exactly 2D (batch, sequence),
+            # so squeeze away any extra singleton dimensions defensively.
+            for key in ("input_ids", "attention_mask"):
+                if key in inputs and inputs[key].dim() > 2:
+                    inputs[key] = inputs[key].view(inputs[key].shape[0], -1)
+
             with torch.no_grad():
                 output_ids = model.generate(
                     **inputs,
