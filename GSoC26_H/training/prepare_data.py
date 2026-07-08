@@ -31,13 +31,18 @@ Formatting fix applied throughout:
   literal string "NONE" so every slug line stays well-formed.
 
 Schema fix applied at write time:
-  Entries coming from different upstream sources have slightly different
-  optional fields (e.g. "score" only exists on Wikipedia-derived entries,
-  "phase" only on the original 20K/15K entries). HuggingFace's `datasets`
-  library infers one fixed schema from a JSONL file and errors out the
-  moment a later row has a different key set than the rows it inferred
-  from. normalize_schema() gives every entry in a file the same set of
-  keys (filling missing ones with null) so this never happens.
+  Entries coming from different upstream sources have different optional
+  fields (e.g. "score" only exists on Wikipedia-derived entries, "phase"
+  only on the original 20K/15K entries). HuggingFace's `datasets` library
+  infers one fixed Arrow schema from a JSONL file's rows and cannot later
+  cast between a real value and a JSON null inferred from a different
+  block of rows -- and separately, a "score" column mixing ints (9, 10)
+  and floats (9.5) can trigger the same kind of cast failure on its own.
+  normalize_schema() fills every entry with the same set of keys using a
+  type-consistent placeholder (matching whatever type that key already
+  uses elsewhere in the data) rather than None, and forces "score" to
+  always be a float, so the column type is uniform and non-null
+  throughout the whole file.
 
 Run:
     python3 prepare_data.py
@@ -238,22 +243,58 @@ def verify_slug(entry):
 
 def normalize_schema(entries):
     """
-    Ensure every entry in the list has exactly the same set of top-level
-    keys, regardless of which source it came from. HuggingFace's datasets
-    library infers a fixed schema from a JSONL file's rows and raises a
-    CastError the moment a later row has a different key set than the
-    rows the schema was inferred from -- e.g. Wikipedia-derived entries
-    carry a "score" field the original 20K/15K entries don't have, and
-    the 20K/15K entries carry a "phase" field Wikipedia entries don't have.
-    Missing keys are filled with None rather than the entry being dropped.
+    Ensure every entry has the same set of keys with TYPE-CONSISTENT
+    values. HuggingFace's `datasets` JSON loader infers one fixed Arrow
+    schema per column from the file and cannot later cast between a real
+    value (e.g. int64/float64) and a JSON null inferred from a different
+    block of rows -- which is exactly what happens here, since the ~70K
+    base entries (no "score" field) are written first and would
+    otherwise infer "score" as an all-null column, then fail the moment
+    a real Wikipedia score appears later in the file.
+
+    Missing keys are filled with a placeholder of the SAME type the key
+    uses elsewhere in the data (e.g. -1.0 for a missing number, "" for a
+    missing string) rather than None/null. The "score" field is also
+    explicitly forced to float, since judge scores are a mix of ints
+    (9, 10) and floats (9.5), and a mixed int/float column can trigger
+    the same kind of cast failure even with no nulls involved.
     """
     all_keys = set()
     for e in entries:
         all_keys.update(e.keys())
 
+    example_value = {}
+    for e in entries:
+        for k in all_keys:
+            if k not in example_value and e.get(k) is not None:
+                example_value[k] = e[k]
+
+    def placeholder_for(key):
+        example = example_value.get(key)
+        if isinstance(example, bool):
+            return False
+        if isinstance(example, int):
+            return -1
+        if isinstance(example, float):
+            return -1.0
+        if isinstance(example, str):
+            return ""
+        if isinstance(example, list):
+            return []
+        if isinstance(example, dict):
+            return {}
+        return ""
+
     normalized = []
     for e in entries:
-        new_e = {k: e.get(k, None) for k in all_keys}
+        new_e = {}
+        for k in all_keys:
+            if k in e and e[k] is not None:
+                new_e[k] = e[k]
+            else:
+                new_e[k] = placeholder_for(k)
+        if "score" in new_e:
+            new_e["score"] = float(new_e["score"])
         normalized.append(new_e)
     return normalized
 
@@ -392,7 +433,7 @@ def main():
 
     train_traces = base_entries + wiki_train_traces
 
-    print("\nNormalizing schema so all entries share the same field set...")
+    print("\nNormalizing schema so all entries share the same, type-consistent field set...")
     train_traces = normalize_schema(train_traces)
     wiki_val_traces = normalize_schema(wiki_val_traces)
 
