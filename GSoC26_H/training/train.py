@@ -12,6 +12,7 @@ import re
 import json
 import math
 import random
+import inspect
 
 import numpy as np
 import torch
@@ -96,10 +97,6 @@ def get_prompt_and_reference(example, tokenizer):
     """
     Given a raw dataset example, build the generation prompt (system+user,
     with an assistant generation cue) and the ground-truth final answer.
-
-    The user turns (system instruction merged in, per merge_system_into_user)
-    are all that goes into the prompt — the assistant turn is deliberately
-    excluded, since that's exactly what we're asking the model to generate.
     """
     messages = example["messages"]
     user_turns = merge_system_into_user(messages)
@@ -121,9 +118,6 @@ class GenerationEvalCallback(TrainerCallback):
     Runs actual text generation on a sample of the validation set at every
     evaluation point, and logs pass@1 (exact match against ground truth)
     and valid_format_rate (fraction of outputs in correct slug format).
-
-    This is separate from the Trainer's built-in eval_loss, which only
-    measures teacher-forced loss and does not reflect real generation quality.
     """
 
     def __init__(self, tokenizer, eval_dataset, n_samples=50, max_new_tokens=256):
@@ -178,6 +172,75 @@ class GenerationEvalCallback(TrainerCallback):
             }, step=state.global_step)
 
         model.train()
+
+
+# ─────────────────────────────────────────────────────────────
+# Version-adaptive helpers
+#
+# trl's API has shifted between versions we've tested against
+# (0.11.4 during initial development, then upgraded to 1.7.1 to get
+# Gemma 3 support from a newer transformers release). Rather than
+# hardcode argument names that may drift again, we introspect the
+# installed trl at runtime and build kwargs dicts accordingly.
+# ─────────────────────────────────────────────────────────────
+
+def build_sft_config_kwargs(cfg, eval_steps, save_steps):
+    kwargs = dict(
+        output_dir=cfg.output_dir,
+        num_train_epochs=cfg.training.num_train_epochs,
+        per_device_train_batch_size=cfg.training.per_device_train_batch_size,
+        per_device_eval_batch_size=cfg.training.per_device_eval_batch_size,
+        gradient_accumulation_steps=cfg.training.gradient_accumulation_steps,
+        learning_rate=cfg.training.learning_rate,
+        warmup_ratio=cfg.training.warmup_ratio,
+        lr_scheduler_type=cfg.training.lr_scheduler_type,
+        weight_decay=cfg.training.weight_decay,
+        max_grad_norm=cfg.training.max_grad_norm,
+        optim=cfg.training.optim,
+        eval_strategy=cfg.training.eval_strategy,
+        eval_steps=eval_steps,
+        save_strategy=cfg.training.save_strategy,
+        save_steps=save_steps,
+        logging_steps=cfg.training.logging_steps,
+        bf16=cfg.training.bf16,
+        gradient_checkpointing=cfg.training.gradient_checkpointing,
+        report_to=["wandb"],
+        run_name=cfg.logging.run_name,
+        dataset_text_field="text",
+        packing=False,
+        seed=cfg.seed,
+    )
+
+    sig_params = inspect.signature(SFTConfig.__init__).parameters
+    if "max_length" in sig_params:
+        kwargs["max_length"] = cfg.model.max_seq_length
+    elif "max_seq_length" in sig_params:
+        kwargs["max_seq_length"] = cfg.model.max_seq_length
+    else:
+        print("[warn] Neither max_length nor max_seq_length found on SFTConfig "
+              "in this trl version — sequence length will use the default.")
+
+    # Drop any kwarg SFTConfig doesn't actually accept, rather than crash.
+    kwargs = {k: v for k, v in kwargs.items() if k in sig_params}
+    return kwargs
+
+
+def build_trainer_kwargs(model, sft_config, train_dataset, eval_dataset, tokenizer):
+    kwargs = dict(
+        model=model,
+        args=sft_config,
+        train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
+    )
+    sig_params = inspect.signature(SFTTrainer.__init__).parameters
+    if "processing_class" in sig_params:
+        kwargs["processing_class"] = tokenizer
+    elif "tokenizer" in sig_params:
+        kwargs["tokenizer"] = tokenizer
+    else:
+        print("[warn] Neither processing_class nor tokenizer found on SFTTrainer "
+              "— relying on the trainer's default tokenizer handling.")
+    return kwargs
 
 
 # ─────────────────────────────────────────────────────────────
@@ -259,42 +322,13 @@ def main(cfg: DictConfig):
 
     print(f"steps_per_epoch={steps_per_epoch}  eval_steps={eval_steps}  save_steps={save_steps}")
 
-    # ── Training arguments ───────────────────────────────────
-    sft_config = SFTConfig(
-        output_dir=cfg.output_dir,
-        num_train_epochs=cfg.training.num_train_epochs,
-        per_device_train_batch_size=cfg.training.per_device_train_batch_size,
-        per_device_eval_batch_size=cfg.training.per_device_eval_batch_size,
-        gradient_accumulation_steps=cfg.training.gradient_accumulation_steps,
-        learning_rate=cfg.training.learning_rate,
-        warmup_ratio=cfg.training.warmup_ratio,
-        lr_scheduler_type=cfg.training.lr_scheduler_type,
-        weight_decay=cfg.training.weight_decay,
-        max_grad_norm=cfg.training.max_grad_norm,
-        optim=cfg.training.optim,
-        eval_strategy=cfg.training.eval_strategy,
-        eval_steps=eval_steps,
-        save_strategy=cfg.training.save_strategy,
-        save_steps=save_steps,
-        logging_steps=cfg.training.logging_steps,
-        bf16=cfg.training.bf16,
-        gradient_checkpointing=cfg.training.gradient_checkpointing,
-        report_to=["wandb"],
-        run_name=cfg.logging.run_name,
-        max_seq_length=cfg.model.max_seq_length,
-        dataset_text_field="text",
-        packing=False,
-        seed=cfg.seed,
-    )
+    # ── Training arguments (version-adaptive) ────────────────
+    sft_config = SFTConfig(**build_sft_config_kwargs(cfg, eval_steps, save_steps))
 
-    # ── Trainer ──────────────────────────────────────────────
-    trainer = SFTTrainer(
-        model=model,
-        args=sft_config,
-        train_dataset=train_dataset,
-        eval_dataset=eval_dataset_for_loss,
-        processing_class=tokenizer,
-    )
+    # ── Trainer (version-adaptive) ────────────────────────────
+    trainer = SFTTrainer(**build_trainer_kwargs(
+        model, sft_config, train_dataset, eval_dataset_for_loss, tokenizer
+    ))
 
     trainer.add_callback(
         GenerationEvalCallback(tokenizer, eval_dataset, n_samples=50)
