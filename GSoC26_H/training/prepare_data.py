@@ -1,39 +1,56 @@
 """
 prepare_data.py — Build the final Experiment 1 training and validation sets.
 
-Combines:
-  - Aditya's 20K (all scores) + Noisy 15K — already in slug format
-    (phase1_training_data.jsonl)
-  - Wikipedia score < 9  -> added to training set (converted here)
-  - Wikipedia score >= 9 -> validation set (converted here)
+Combines three sources into two output files:
 
-Fix applied during conversion:
-  Empty/None triplet objects (common for intransitive Hindi verbs like
-  "बहिष्कार किया", "हो गया") are normalized to the literal string "NONE"
-  instead of being dropped or left blank, so every slug line stays
-  well-formed (exactly two "|" separators).
+  Training set (~/exp1_train_combined.jsonl):
+    - Aditya's 20K (all scores) + Noisy 15K, already in slug format
+      (phase1_training_data.jsonl)
+    - Wikipedia sentences scored < 9 (converted to slug format here)
 
-Outputs:
-  ~/exp1_train_combined.jsonl
-  ~/exp1_val_wikipedia_ge9.jsonl
+  Validation set (~/exp1_val_wikipedia_ge9.jsonl):
+    - Wikipedia sentences scored >= 9, with coreference resolution applied:
+        * no ambiguous pronoun          -> kept as-is
+        * pronoun successfully resolved -> rewritten sentence + freshly
+                                            re-extracted triples used instead
+        * pronoun could not be resolved -> EXCLUDED (an unresolvable
+          (needs prior sentence context)   pronoun is not a reliable
+                                            evaluation signal)
+
+Formatting fix applied throughout:
+  Triplets with an empty or missing object (common for intransitive Hindi
+  verbs, e.g. "सदस्यों | बहिष्कार किया | NONE") are normalized to the
+  literal string "NONE" so every slug line stays well-formed.
+
+Run:
+    python3 prepare_data.py
+
+Requires (home directory):
+    ~/phase1_training_data.jsonl
+    ~/wiki_chunk_0_scored.jsonl, wiki_chunk_1_scored.jsonl, wiki_chunk_2_scored.jsonl
+    ~/wiki_val_coref_resolved.jsonl   (optional — see note below)
+
+If wiki_val_coref_resolved.jsonl is missing or incomplete, every flagged
+sentence is treated as unresolved (excluded) rather than the script
+failing — re-run this script after coreference resolution finishes to
+pick up the larger, cleaner validation set.
 """
 
 import json
 import os
 import time
 
-# ── Paths ────────────────────────────────────────────────────
-PHASE1_FILE = os.path.expanduser("~/phase1_training_data.jsonl")
-WIKI_CHUNK_FILES = [
-    os.path.expanduser(f"~/wiki_chunk_{i}_scored.jsonl") for i in [0, 1, 2]
-]
+HOME = os.path.expanduser("~")
 
-TRAIN_OUTPUT = os.path.expanduser("~/exp1_train_combined.jsonl")
-VAL_OUTPUT   = os.path.expanduser("~/exp1_val_wikipedia_ge9.jsonl")
+PHASE1_FILE = os.path.join(HOME, "phase1_training_data.jsonl")
+WIKI_CHUNKS = [os.path.join(HOME, f"wiki_chunk_{i}_scored.jsonl") for i in [0, 1, 2]]
+COREF_FILE  = os.path.join(HOME, "wiki_val_coref_resolved.jsonl")
+
+TRAIN_OUTPUT = os.path.join(HOME, "exp1_train_combined.jsonl")
+VAL_OUTPUT   = os.path.join(HOME, "exp1_val_wikipedia_ge9.jsonl")
 
 VALIDATION_SCORE_THRESHOLD = 9
 
-# ── Slug format instructions (must match phase1_training_data.jsonl) ──
 OPTIMAL_INSTRUCTION = """Extract all subject-relation-object triplets from this Hindi sentence.
 Use the format: subject | relation | object
 One triplet per line.
@@ -46,8 +63,9 @@ One triplet per line.
 If no triplets exist, write: NONE"""
 
 
+# ── Slug conversion ──────────────────────────────────────────
+
 def clean_span(value):
-    """None or whitespace-only -> empty string."""
     if value is None:
         return ""
     return value.strip()
@@ -55,14 +73,12 @@ def clean_span(value):
 
 def triplets_to_slug(triplets):
     """
-    Convert a list of triplet dicts to pipe-separated slug lines.
+    Convert triplet dicts to pipe-separated slug lines.
 
-    - Subject and relation must be non-empty, or the triplet is skipped
-      entirely (a genuine corruption, e.g. a failed upstream JSON parse).
-    - An empty/None object is normalized to the literal string "NONE"
-      rather than dropped, since many correct Hindi triplets use
-      intransitive verbs with no grammatical object
-      (e.g. "सदस्यों | बहिष्कार किया | NONE").
+    Subject and relation must be non-empty or the triplet is dropped
+    (a genuine upstream corruption). An empty/None object is normalized
+    to the literal string "NONE" rather than dropped, since many correct
+    Hindi triplets use intransitive verbs with no grammatical object.
     """
     if not triplets:
         return "NONE"
@@ -79,8 +95,7 @@ def triplets_to_slug(triplets):
     return "\n".join(lines) if lines else "NONE"
 
 
-def convert_to_traces(sentence, triplets, thought, source, score=None):
-    """Build the Optimal and CoT training examples for one sentence."""
+def build_traces(sentence, triplets, thought, source, score=None):
     slug_ans = triplets_to_slug(triplets)
 
     optimal = {
@@ -92,29 +107,67 @@ def convert_to_traces(sentence, triplets, thought, source, score=None):
         "source": source,
         "trace_type": "optimal",
     }
-    if score is not None:
-        optimal["score"] = score
-
-    cot_content = f"[REASONING]\n{thought}\n\n[ANSWER]\n{slug_ans}"
     cot = {
         "messages": [
             {"role": "system", "content": COT_INSTRUCTION},
             {"role": "user", "content": sentence},
-            {"role": "assistant", "content": cot_content},
+            {"role": "assistant", "content": f"[REASONING]\n{thought}\n\n[ANSWER]\n{slug_ans}"},
         ],
         "source": source,
         "trace_type": "cot",
     }
     if score is not None:
+        optimal["score"] = score
         cot["score"] = score
-
     return optimal, cot
 
 
+def convert_entries(entries, source_label):
+    traces = []
+    skipped = 0
+    for e in entries:
+        sentence = e["messages"][1]["content"].strip()
+        try:
+            content = json.loads(e["messages"][2]["content"])
+        except (json.JSONDecodeError, KeyError, IndexError, TypeError):
+            skipped += 1
+            continue
+        thought = content.get("thought_process", "")
+        triplets = content.get("extracted_triplets", [])
+        score = e.get("judgement", {}).get("score")
+        optimal, cot = build_traces(sentence, triplets, thought, source_label, score)
+        traces.append(optimal)
+        traces.append(cot)
+    if skipped:
+        print(f"    ({skipped} entries skipped — malformed assistant content)")
+    return traces
+
+
+def verify_slug(entry):
+    """Self-check: confirm a trace is well-formed before we trust it."""
+    content = entry["messages"][2]["content"]
+    if entry["trace_type"] == "optimal":
+        if content == "NONE":
+            return True
+        for line in content.strip().split("\n"):
+            if line.strip() and line.count("|") != 2:
+                return False
+        return True
+    elif entry["trace_type"] == "cot":
+        return "[REASONING]" in content and "[ANSWER]" in content
+    return False
+
+
+# ── Loading ──────────────────────────────────────────────────
+
 def load_wikipedia_scored():
-    """Load and deduplicate all three scored Wikipedia chunk files."""
+    """Load and deduplicate all scored Wikipedia chunk files.
+
+    Chunks were scored across multiple runs/processes, so the same
+    sentence can appear more than once; the highest-scored copy wins.
+    """
     seen = {}
-    for path in WIKI_CHUNK_FILES:
+    for path in WIKI_CHUNKS:
         if not os.path.exists(path):
             print(f"  WARNING: {path} not found, skipping")
             continue
@@ -125,42 +178,50 @@ def load_wikipedia_scored():
                 entry = json.loads(line)
                 sentence = entry["messages"][1]["content"].strip()
                 score = entry.get("judgement", {}).get("score", -1)
-                existing_score = seen.get(sentence, {}).get("judgement", {}).get("score", -1)
-                if sentence not in seen or score > existing_score:
+                existing = seen.get(sentence, {}).get("judgement", {}).get("score", -1)
+                if sentence not in seen or score > existing:
                     seen[sentence] = entry
     return list(seen.values())
 
 
-def convert_batch(entries, source_label):
-    traces = []
-    skipped = 0
-    for e in entries:
-        sentence = e["messages"][1]["content"].strip()
-        try:
-            content = json.loads(e["messages"][2]["content"])
-        except (json.JSONDecodeError, KeyError, IndexError):
-            skipped += 1
-            continue
-        thought = content.get("thought_process", "")
-        triplets = content.get("extracted_triplets", [])
-        score = e.get("judgement", {}).get("score")
-        optimal, cot = convert_to_traces(sentence, triplets, thought, source_label, score)
-        traces.append(optimal)
-        traces.append(cot)
-    if skipped:
-        print(f"  ({skipped} entries skipped due to malformed content)")
-    return traces
+def load_coref_resolutions():
+    """
+    Returns dict: original_sentence -> ("resolved", resolved_entry)
+                                      | ("unresolved", None)
+                                      | ("error", None)
+    """
+    resolutions = {}
+    if not os.path.exists(COREF_FILE):
+        print(f"  NOTE: {COREF_FILE} not found — coreference resolution has "
+              f"not been run yet. All flagged sentences will be excluded "
+              f"from validation until it is.")
+        return resolutions
 
+    with open(COREF_FILE, encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            status = row["status"]
+            entry = row["entry"]
+            if status == "resolved":
+                original = entry["original_sentence"]
+                resolutions[original] = ("resolved", entry)
+            else:
+                original = entry["messages"][1]["content"].strip()
+                resolutions[original] = (status, None)
+    return resolutions
+
+
+# ── Main ─────────────────────────────────────────────────────
 
 def main():
     start = time.time()
 
     if not os.path.exists(PHASE1_FILE):
         raise FileNotFoundError(
-            f"{PHASE1_FILE} not found.\n"
-            f"Copy phase1_training_data.jsonl from Google Drive to the "
-            f"HTWK server (e.g. drag-and-drop via VS Code Explorer) before "
-            f"running this script."
+            f"{PHASE1_FILE} not found. Transfer phase1_training_data.jsonl "
+            f"to the HTWK server before running this script."
         )
 
     print("Loading base training set (20K + noisy 15K, already slug format)...")
@@ -172,23 +233,56 @@ def main():
     wiki_entries = load_wikipedia_scored()
     print(f"  {len(wiki_entries)} unique scored sentences")
 
-    wiki_train = [e for e in wiki_entries
-                  if 0 <= e.get("judgement", {}).get("score", -1) < VALIDATION_SCORE_THRESHOLD]
-    wiki_val = [e for e in wiki_entries
-                if e.get("judgement", {}).get("score", -1) >= VALIDATION_SCORE_THRESHOLD]
+    print("\nLoading coreference resolution results...")
+    coref_map = load_coref_resolutions()
+    print(f"  {len(coref_map)} sentences have a coref decision on file")
 
-    print(f"  Wikipedia score < {VALIDATION_SCORE_THRESHOLD}: {len(wiki_train)} -> training")
-    print(f"  Wikipedia score >= {VALIDATION_SCORE_THRESHOLD}: {len(wiki_val)} -> validation")
+    wiki_train_raw = [e for e in wiki_entries
+                       if 0 <= e.get("judgement", {}).get("score", -1) < VALIDATION_SCORE_THRESHOLD]
+    wiki_val_raw = [e for e in wiki_entries
+                     if e.get("judgement", {}).get("score", -1) >= VALIDATION_SCORE_THRESHOLD]
+
+    print(f"\nWikipedia score < {VALIDATION_SCORE_THRESHOLD}: {len(wiki_train_raw)} -> training (coref not applied here)")
+    print(f"Wikipedia score >= {VALIDATION_SCORE_THRESHOLD}: {len(wiki_val_raw)} -> validation candidates")
+
+    kept_unflagged = kept_resolved = dropped_unresolved = dropped_error = 0
+    final_val_raw = []
+
+    for e in wiki_val_raw:
+        sentence = e["messages"][1]["content"].strip()
+        decision = coref_map.get(sentence)
+
+        if decision is None:
+            final_val_raw.append(e)
+            kept_unflagged += 1
+            continue
+
+        status, resolved_entry = decision
+        if status == "resolved":
+            final_val_raw.append(resolved_entry)
+            kept_resolved += 1
+        elif status == "unresolved":
+            dropped_unresolved += 1
+        else:
+            dropped_error += 1
+
+    print(f"\nCoreference resolution applied to validation set:")
+    print(f"  kept, no pronoun issue:      {kept_unflagged}")
+    print(f"  kept, pronoun resolved:      {kept_resolved}")
+    print(f"  dropped, unresolvable:       {dropped_unresolved}")
+    print(f"  dropped, API error:          {dropped_error}")
+    print(f"  final validation candidates: {len(final_val_raw)}")
 
     print("\nConverting Wikipedia training entries to slug format...")
-    wiki_train_traces = convert_batch(wiki_train, "wikipedia_lt9")
+    wiki_train_traces = convert_entries(wiki_train_raw, "wikipedia_lt9")
     print(f"  {len(wiki_train_traces)} traces")
 
-    print("\nConverting Wikipedia validation entries to slug format...")
-    wiki_val_traces = convert_batch(wiki_val, "wikipedia_ge9")
+    print("\nConverting final validation entries to slug format...")
+    wiki_val_traces = convert_entries(final_val_raw, "wikipedia_ge9")
     print(f"  {len(wiki_val_traces)} traces")
 
     train_traces = base_entries + wiki_train_traces
+
     with open(TRAIN_OUTPUT, "w", encoding="utf-8") as f:
         for e in train_traces:
             f.write(json.dumps(e, ensure_ascii=False) + "\n")
@@ -199,14 +293,6 @@ def main():
 
     elapsed = time.time() - start
 
-    print(f"\n{'='*55}")
-    print("Done.")
-    print(f"  Training set:   {len(train_traces)} traces -> {TRAIN_OUTPUT}")
-    print(f"    - base (20K+15K): {len(base_entries)}")
-    print(f"    - wikipedia <9:   {len(wiki_train_traces)}")
-    print(f"  Validation set: {len(wiki_val_traces)} traces -> {VAL_OUTPUT}")
-    print(f"  Time: {elapsed:.1f}s")
-
     none_object_count = sum(
         1
         for e in wiki_train_traces + wiki_val_traces
@@ -214,7 +300,23 @@ def main():
         for line in e["messages"][2]["content"].split("\n")
         if line.strip().endswith("| NONE")
     )
-    print(f"  Triplet lines with normalized NONE object: {none_object_count}")
+
+    invalid_train = sum(1 for e in train_traces if not verify_slug(e))
+    invalid_val = sum(1 for e in wiki_val_traces if not verify_slug(e))
+
+    print(f"\n{'=' * 60}")
+    print("Done.")
+    print(f"  Training set:   {len(train_traces)} traces -> {TRAIN_OUTPUT}")
+    print(f"    - base (20K+15K):  {len(base_entries)}")
+    print(f"    - wikipedia <9:    {len(wiki_train_traces)}")
+    print(f"  Validation set: {len(wiki_val_traces)} traces -> {VAL_OUTPUT}")
+    print(f"  Triplet lines normalized to NONE object: {none_object_count}")
+    print(f"  Time: {elapsed:.1f}s")
+    print()
+    print(f"  Slug format check — training:   {invalid_train} invalid / {len(train_traces)}")
+    print(f"  Slug format check — validation: {invalid_val} invalid / {len(wiki_val_traces)}")
+    if invalid_train or invalid_val:
+        print("  WARNING: invalid entries found above — inspect before training.")
 
 
 if __name__ == "__main__":
