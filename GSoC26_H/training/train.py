@@ -139,6 +139,13 @@ class GenerationEvalCallback(TrainerCallback):
             prompt, reference = get_prompt_and_reference(example, self.tokenizer)
             inputs = self.tokenizer(prompt, return_tensors="pt").to(model.device)
 
+            # Gemma3 carries a token_type_ids field that the generic
+            # transformers generate() loop mishandles, injecting an
+            # extra dimension at every decode step (confirmed bug:
+            # huggingface/transformers#36815, huggingface/trl#4189).
+            # It isn't needed for text-only generation, so drop it.
+            inputs.pop("token_type_ids", None)
+
             # Some Gemma 3 tokenizer configs return an extra leading/trailing
             # dimension (e.g. shape [1, 1, seq_len] instead of [1, seq_len]),
             # since the tokenizer is multimodal-capable even for text-only
@@ -290,6 +297,7 @@ def main(cfg: DictConfig):
         cfg.model.name,
         quantization_config=bnb_config,
         device_map="auto",
+        attn_implementation="eager",
     )
     model = prepare_model_for_kbit_training(
         model, use_gradient_checkpointing=cfg.training.gradient_checkpointing
