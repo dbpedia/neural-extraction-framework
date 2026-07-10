@@ -5,12 +5,19 @@ Usage:
     python3 train.py                                  # uses default config
     python3 train.py training.learning_rate=1e-5       # override learning rate
     python3 train.py data.max_samples=200               # smoke test on a subset
+
+Resuming after an interruption:
+    Just re-run the exact same command. If a checkpoint already exists in
+    output_dir, training automatically resumes from the latest one instead
+    of starting over, and the zeroth-step baseline eval is skipped (since
+    it already ran before the interruption).
 """
 
 import os
 import re
 import json
 import math
+import glob
 import random
 import inspect
 
@@ -106,6 +113,35 @@ def get_prompt_and_reference(example, tokenizer):
         add_generation_prompt=True,
     )
     return prompt, reference
+
+
+# ─────────────────────────────────────────────────────────────
+# Checkpoint resume helper
+# ─────────────────────────────────────────────────────────────
+
+def find_latest_checkpoint(output_dir):
+    """
+    Looks for existing HuggingFace Trainer checkpoints (folders named
+    'checkpoint-<step>') inside output_dir. Returns the path to the
+    latest one (highest step number) if any exist, else None.
+
+    This lets a re-run of the exact same command automatically resume
+    training instead of starting over from scratch if the process was
+    previously interrupted (crash, server issue, disconnection, etc.).
+    """
+    if not os.path.isdir(output_dir):
+        return None
+
+    checkpoints = glob.glob(os.path.join(output_dir, "checkpoint-*"))
+    if not checkpoints:
+        return None
+
+    def step_num(path):
+        match = re.search(r"checkpoint-(\d+)$", path)
+        return int(match.group(1)) if match else -1
+
+    latest = max(checkpoints, key=step_num)
+    return latest
 
 
 # ─────────────────────────────────────────────────────────────
@@ -302,13 +338,31 @@ def main(cfg: DictConfig):
     random.seed(cfg.seed)
     np.random.seed(cfg.seed)
 
+    # ── Check for an existing checkpoint (resume support) ────
+    # If output_dir already has checkpoint-* folders, this is a re-run
+    # after an interruption. We resume training from the latest one, and
+    # skip the zeroth-step baseline eval since it already ran previously.
+    resume_checkpoint = find_latest_checkpoint(cfg.output_dir)
+    is_resuming = resume_checkpoint is not None
+    if is_resuming:
+        print(f"Found existing checkpoint: {resume_checkpoint}")
+        print("Resuming training from this checkpoint (skipping zeroth-step baseline eval).")
+    else:
+        print("No existing checkpoint found — starting fresh.")
+
     # ── W&B ──────────────────────────────────────────────────
+    # Use a stable run id derived from the run name so a resumed run
+    # continues logging into the SAME W&B run instead of creating a
+    # new, disconnected one.
+    wandb_run_id = re.sub(r"[^a-zA-Z0-9_\-]", "_", cfg.logging.run_name)
     wandb.init(
         project=cfg.logging.project,
         entity=cfg.logging.entity,
         name=cfg.logging.run_name,
         tags=list(cfg.logging.tags),
         config=OmegaConf.to_container(cfg, resolve=True),
+        id=wandb_run_id,
+        resume="allow",
     )
 
     # ── Tokenizer ────────────────────────────────────────────
@@ -376,11 +430,18 @@ def main(cfg: DictConfig):
     # against later checkpoints. Requested by Aditya during the July 9
     # sync so pass@1 / valid_format_rate progress can be shown from a
     # true zero point, not just from step 1 onward.
-    print("Running zeroth-step baseline evaluation (before training)...")
-    run_generation_eval(
-        model, tokenizer, eval_dataset,
-        n_samples=50, max_new_tokens=256, step_label=0,
-    )
+    #
+    # Skipped entirely when resuming from a checkpoint — it already ran
+    # during the original (interrupted) launch, and re-running it here
+    # would just waste time and log a confusing duplicate step=0 point.
+    if not is_resuming:
+        print("Running zeroth-step baseline evaluation (before training)...")
+        run_generation_eval(
+            model, tokenizer, eval_dataset,
+            n_samples=50, max_new_tokens=256, step_label=0,
+        )
+    else:
+        print("Skipping zeroth-step baseline eval (already logged before this resume).")
 
     # ── Training arguments (version-adaptive) ────────────────
     sft_config = SFTConfig(**build_sft_config_kwargs(cfg, eval_steps, save_steps))
@@ -400,7 +461,11 @@ def main(cfg: DictConfig):
     # (e.g. via evaluate.py) without blocking training time.
 
     # ── Train ────────────────────────────────────────────────
-    trainer.train()
+    # resume_from_checkpoint=None is a no-op (normal fresh start); passing
+    # the actual checkpoint path makes the Trainer restore model weights,
+    # optimizer state, and step count, then continue from exactly where
+    # it left off instead of restarting from step 0.
+    trainer.train(resume_from_checkpoint=resume_checkpoint)
 
     # ── Save final adapter ───────────────────────────────────
     final_path = os.path.join(cfg.output_dir, "final")
