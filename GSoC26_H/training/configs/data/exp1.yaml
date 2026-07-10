@@ -1,5 +1,4 @@
-train_file: /home/nsingh/exp1_train_combined.jsonl
+train_file: /home/nsingh/exp1_train_optimal_only.jsonl
 val_file: /home/nsingh/exp1_val_wikipedia_ge9.jsonl
-
 train_test_split: null
 max_samples: null
