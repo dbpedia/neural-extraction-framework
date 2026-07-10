@@ -24,7 +24,6 @@ from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM,
     BitsAndBytesConfig,
-    TrainerCallback,
     set_seed,
 )
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
@@ -110,116 +109,116 @@ def get_prompt_and_reference(example, tokenizer):
 
 
 # ─────────────────────────────────────────────────────────────
-# Custom evaluation callback — pass@1 and valid_format_rate
+# Generation-based evaluation — pass@1 and valid_format_rate
+#
+# NOTE: this is no longer registered as a per-eval-step Trainer
+# callback. Per mentor guidance (running it every 0.25 epoch added
+# significant overhead for little signal, since early in training the
+# model is "just generating, not really learning"), it is now only
+# called manually: once before training starts (the zeroth-step
+# baseline, so we know how the untrained model performs) and can be
+# run again offline afterward, separately, against saved checkpoints
+# (e.g. via evaluate.py), rather than blocking training itself.
 # ─────────────────────────────────────────────────────────────
 
-class GenerationEvalCallback(TrainerCallback):
+def run_generation_eval(model, tokenizer, eval_dataset, n_samples=50,
+                         max_new_tokens=256, step_label=0):
     """
-    Runs actual text generation on a sample of the validation set at every
-    evaluation point, and logs pass@1 (exact match against ground truth)
-    and valid_format_rate (fraction of outputs in correct slug format).
+    Runs manual greedy-decoding generation on a sample of the validation
+    set and returns (pass_at_1, valid_format_rate). Logs to W&B under the
+    given step_label.
+
+    We deliberately do NOT call model.generate() here: Gemma3's KV-cache
+    handling has a confirmed, currently-open bug (huggingface/transformers
+    #36815) that injects a stray extra dimension into the internal
+    generate() loop and crashes mid-decode. Since we only ever need greedy
+    decoding (do_sample=False), we implement it directly so every tensor
+    shape is explicit and under our control, with no dependency on that
+    internal code path.
+
+    past_key_values is reused across steps so each step only processes the
+    single newly generated token instead of re-running the whole growing
+    sequence from scratch.
     """
+    model.eval()
+    correct = 0
+    valid_format = 0
 
-    def __init__(self, tokenizer, eval_dataset, n_samples=50, max_new_tokens=256):
-        self.tokenizer = tokenizer
-        self.max_new_tokens = max_new_tokens
-        n_samples = min(n_samples, len(eval_dataset))
-        indices = random.sample(range(len(eval_dataset)), n_samples)
-        self.samples = [eval_dataset[i] for i in indices]
+    n_samples = min(n_samples, len(eval_dataset))
+    indices = random.sample(range(len(eval_dataset)), n_samples)
+    samples = [eval_dataset[i] for i in indices]
 
-    def on_evaluate(self, args, state, control, model=None, **kwargs):
-        if model is None:
-            return
+    eos_id = tokenizer.eos_token_id
 
-        model.eval()
-        correct = 0
-        valid_format = 0
+    for idx, example in enumerate(samples):
+        print(f"[eval step={step_label}] generating sample {idx + 1}/{len(samples)}...", flush=True)
 
-        eos_id = self.tokenizer.eos_token_id
-        pad_id = self.tokenizer.pad_token_id or eos_id
+        prompt, reference = get_prompt_and_reference(example, tokenizer)
+        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
-        for idx, example in enumerate(self.samples):
-            print(f"[eval] generating sample {idx + 1}/{len(self.samples)}...", flush=True)
+        input_ids = inputs["input_ids"]
+        attention_mask = inputs["attention_mask"]
 
-            prompt, reference = get_prompt_and_reference(example, self.tokenizer)
-            inputs = self.tokenizer(prompt, return_tensors="pt").to(model.device)
+        # Squeeze away any unexpected extra dimensions defensively.
+        if input_ids.dim() > 2:
+            input_ids = input_ids.view(input_ids.shape[0], -1)
+        if attention_mask.dim() > 2:
+            attention_mask = attention_mask.view(attention_mask.shape[0], -1)
 
-            input_ids = inputs["input_ids"]
-            attention_mask = inputs["attention_mask"]
+        prompt_len = input_ids.shape[1]
+        generated = input_ids
 
-            # Squeeze away any unexpected extra dimensions defensively.
-            if input_ids.dim() > 2:
-                input_ids = input_ids.view(input_ids.shape[0], -1)
-            if attention_mask.dim() > 2:
-                attention_mask = attention_mask.view(attention_mask.shape[0], -1)
+        with torch.no_grad():
+            past_key_values = None
+            current_input = generated
+            for _ in range(max_new_tokens):
+                outputs = model(
+                    input_ids=current_input,
+                    attention_mask=attention_mask,
+                    past_key_values=past_key_values,
+                    use_cache=True,
+                )
+                next_token_logits = outputs.logits[:, -1, :]
+                next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)
 
-            prompt_len = input_ids.shape[1]
-            generated = input_ids
+                generated = torch.cat([generated, next_token], dim=-1)
+                attention_mask = torch.cat(
+                    [attention_mask, torch.ones_like(next_token)], dim=-1
+                )
+                past_key_values = outputs.past_key_values
+                current_input = next_token
 
-            # Manual greedy decoding with KV-cache reuse. We deliberately do
-            # NOT call model.generate() here: Gemma3's KV-cache handling has
-            # a confirmed, currently-open bug (huggingface/transformers#36815)
-            # that injects a stray extra dimension into the internal
-            # generate() loop and crashes mid-decode. Since our eval only
-            # ever needs greedy decoding (do_sample=False), we implement it
-            # directly so every tensor shape is explicit and under our
-            # control, with no dependency on that internal code path.
-            #
-            # past_key_values is reused across steps so each step only
-            # processes the single newly generated token instead of
-            # re-running the whole growing sequence from scratch — without
-            # this, generation cost grows per-token and 50 samples at
-            # max_new_tokens=256 becomes impractically slow.
-            with torch.no_grad():
-                past_key_values = None
-                current_input = generated
-                for _ in range(self.max_new_tokens):
-                    outputs = model(
-                        input_ids=current_input,
-                        attention_mask=attention_mask,
-                        past_key_values=past_key_values,
-                        use_cache=True,
-                    )
-                    next_token_logits = outputs.logits[:, -1, :]
-                    next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)
+                if next_token.item() == eos_id:
+                    break
 
-                    generated = torch.cat([generated, next_token], dim=-1)
-                    attention_mask = torch.cat(
-                        [attention_mask, torch.ones_like(next_token)], dim=-1
-                    )
-                    past_key_values = outputs.past_key_values
-                    current_input = next_token
+        output_ids = generated
 
-                    if next_token.item() == eos_id:
-                        break
+        generated_text = tokenizer.decode(
+            output_ids[0][prompt_len:],
+            skip_special_tokens=True,
+        )
+        predicted = extract_final_answer(generated_text)
 
-            output_ids = generated
+        if is_valid_slug_format(generated_text):
+            valid_format += 1
+        if predicted.strip() == reference.strip():
+            correct += 1
 
-            generated_text = self.tokenizer.decode(
-                output_ids[0][prompt_len:],
-                skip_special_tokens=True,
-            )
-            predicted = extract_final_answer(generated_text)
+    n = len(samples)
+    pass_at_1 = correct / n if n else 0.0
+    valid_format_rate = valid_format / n if n else 0.0
 
-            if is_valid_slug_format(generated_text):
-                valid_format += 1
-            if predicted.strip() == reference.strip():
-                correct += 1
+    print(f"[eval] step={step_label} pass@1={pass_at_1:.3f} "
+          f"valid_format_rate={valid_format_rate:.3f}")
 
-        n = len(self.samples)
-        pass_at_1 = correct / n if n else 0.0
-        valid_format_rate = valid_format / n if n else 0.0
+    if wandb.run is not None:
+        wandb.log({
+            "eval/pass_at_1": pass_at_1,
+            "eval/valid_format_rate": valid_format_rate,
+        }, step=step_label)
 
-        print(f"[eval] step={state.global_step} pass@1={pass_at_1:.3f} "
-              f"valid_format_rate={valid_format_rate:.3f}")
-
-        if wandb.run is not None:
-            wandb.log({
-                "eval/pass_at_1": pass_at_1,
-                "eval/valid_format_rate": valid_format_rate,
-            }, step=state.global_step)
-
-        model.train()
+    model.train()
+    return pass_at_1, valid_format_rate
 
 
 # ─────────────────────────────────────────────────────────────
@@ -371,6 +370,18 @@ def main(cfg: DictConfig):
 
     print(f"steps_per_epoch={steps_per_epoch}  eval_steps={eval_steps}  save_steps={save_steps}")
 
+    # ── Zeroth-step baseline eval ─────────────────────────────
+    # Run generation-based eval BEFORE any training happens, so we have
+    # a "how does the untrained/base model do" reference point to compare
+    # against later checkpoints. Requested by Aditya during the July 9
+    # sync so pass@1 / valid_format_rate progress can be shown from a
+    # true zero point, not just from step 1 onward.
+    print("Running zeroth-step baseline evaluation (before training)...")
+    run_generation_eval(
+        model, tokenizer, eval_dataset,
+        n_samples=50, max_new_tokens=256, step_label=0,
+    )
+
     # ── Training arguments (version-adaptive) ────────────────
     sft_config = SFTConfig(**build_sft_config_kwargs(cfg, eval_steps, save_steps))
 
@@ -379,9 +390,14 @@ def main(cfg: DictConfig):
         model, sft_config, train_dataset, eval_dataset_for_loss, tokenizer
     ))
 
-    trainer.add_callback(
-        GenerationEvalCallback(tokenizer, eval_dataset, n_samples=50)
-    )
+    # NOTE: the generation-based eval callback (pass@1 / valid_format_rate
+    # every 0.25 epoch) has been intentionally removed here per mentor
+    # guidance — it added significant overhead for little signal early in
+    # training. The built-in SFTTrainer loss-based eval (fast, using
+    # eval_dataset_for_loss) still runs on the normal eval_steps cadence.
+    # Generation-based eval is now only run once here as a baseline, and
+    # can be run again offline afterward against saved checkpoints
+    # (e.g. via evaluate.py) without blocking training time.
 
     # ── Train ────────────────────────────────────────────────
     trainer.train()
