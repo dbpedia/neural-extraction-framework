@@ -1,12 +1,10 @@
 name: google/gemma-3-4b-it
-max_seq_length: 1024
-
+max_seq_length: 512
 quantization:
   load_in_4bit: true
   bnb_4bit_quant_type: nf4
   bnb_4bit_compute_dtype: bfloat16
   bnb_4bit_use_double_quant: true
-
 lora:
   r: 16
   lora_alpha: 32
