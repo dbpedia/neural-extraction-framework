@@ -100,7 +100,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     padding-bottom: 4rem;
 }
 
-/* ── Header ── */
 .app-header {
     display: flex;
     align-items: center;
@@ -129,7 +128,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     margin: 18px 0 28px 0;
 }
 
-/* ── Data chips ── */
 .chip-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .chip {
     border: 1px solid #E2E5E1;
@@ -154,7 +152,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     word-break: break-word;
 }
 
-/* ── Sentence card ── */
 .sentence-box {
     font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
@@ -167,7 +164,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     padding: 16px 18px;
 }
 
-/* ── Confidence badge + meter ── */
 .badge {
     display: inline-flex;
     align-items: center;
@@ -204,7 +200,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     margin-top: 8px;
 }
 
-/* ── Buttons ── */
 .stButton button {
     border-radius: 6px;
     font-weight: 600;
@@ -212,7 +207,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     padding-bottom: 8px;
 }
 
-/* ── Footer credit ── */
 .app-footer {
     text-align: center;
     font-size: 12.5px;
@@ -223,8 +217,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 """, unsafe_allow_html=True)
 
 DBPEDIA_LOGO_URL = "https://commons.wikimedia.org/wiki/Special:FilePath/DBpedia_logo.svg"
-
-
 
 # ── Header ──────────────────────────────────────────────────────────────
 header_html = (
@@ -362,15 +354,16 @@ with col1:
     st.markdown(f'<div class="sentence-box">{row.get("sentence", "")}</div>', unsafe_allow_html=True)
 
     st.markdown("<br>**Extracted triple**", unsafe_allow_html=True)
+    relation_text = row.get("relation", "")
+    relation_display = f'{dbo_uri}  <span style="color:#8A938F;">({relation_text})</span>' if dbo_uri else relation_text
     chip_html = (
         '<div class="chip-row">'
         f'<div class="chip"><div class="chip-label">Subject</div><div class="chip-value">{row.get("subject","")}</div></div>'
-        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{row.get("relation","")}</div></div>'
+        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{relation_display}</div></div>'
         f'<div class="chip"><div class="chip-label">Object</div><div class="chip-value">{row.get("object","")}</div></div>'
         '</div>'
     )
     st.markdown(chip_html, unsafe_allow_html=True)
-
 
 with col2:
     st.markdown("**Suggested mapping**")
@@ -386,7 +379,6 @@ with col2:
         f'<div class="suggestion-caption">Confidence {score:.2f} · matched via {method or "—"}</div>'
     )
     st.markdown(meter_html, unsafe_allow_html=True)
-
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
 
