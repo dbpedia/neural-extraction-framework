@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import os
 from datetime import datetime
+from pathlib import Path
 
 st.set_page_config(
     page_title="DBpedia Hindi · Triple Review",
@@ -9,11 +10,8 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── Pipeline connection — checks these in order, falls back to demo ───
-from pathlib import Path
-
-_SCRIPT_DIR = Path(__file__).resolve().parent          # GSoC26_H/hitl/
-_REPO_ROOT = _SCRIPT_DIR.parent                          # GSoC26_H/
+_SCRIPT_DIR = Path(__file__).resolve().parent
+_REPO_ROOT = _SCRIPT_DIR.parent
 
 CANDIDATE_PATHS = [
     _REPO_ROOT / "results" / "alignment_results_full_20k.jsonl",
@@ -23,7 +21,6 @@ CANDIDATE_PATHS = [
     "/content/drive/MyDrive/alignment_results_full_20k.jsonl",
 ]
 CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
-THRESHOLD = 0.55
 
 DEMO_DATA = [
     {"sentence": "ताजमहल का निर्माण शाहजहाँ ने करवाया था।", "subject": "ताजमहल",
@@ -83,142 +80,38 @@ ERROR_TYPES = [
     "Missing triple — relation was not extracted at all",
 ]
 
-# ── Styling ─────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header[data-testid="stHeader"] {background: transparent;}
-
 html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-
-.block-container {
-    max-width: 880px;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-}
-
-.app-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 6px;
-}
-.app-header .dbpedia-logo {
-    height: 42px;
-    width: auto;
-}
-.app-header .header-title {
-    font-family: 'Lora', serif;
-    font-weight: 600;
-    font-size: 28px;
-    color: #14181A;
-    line-height: 1.1;
-}
-.app-header .header-subtitle {
-    font-size: 14px;
-    color: #5B6663;
-    margin-top: 2px;
-}
-.app-divider {
-    height: 1px;
-    background: #E2E5E1;
-    margin: 18px 0 28px 0;
-}
-
+.block-container { max-width: 880px; padding-top: 2rem; padding-bottom: 4rem; }
+.app-header { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
+.app-header .dbpedia-logo { height: 42px; width: auto; }
+.app-header .header-title { font-family: 'Lora', serif; font-weight: 600; font-size: 28px; color: #14181A; line-height: 1.1; }
+.app-header .header-subtitle { font-size: 14px; color: #5B6663; margin-top: 2px; }
+.app-divider { height: 1px; background: #E2E5E1; margin: 18px 0 28px 0; }
 .chip-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.chip {
-    border: 1px solid #E2E5E1;
-    border-radius: 8px;
-    padding: 10px 14px;
-    background: #FFFFFF;
-    flex: 1;
-    min-width: 140px;
-}
-.chip-label {
-    font-size: 10.5px;
-    letter-spacing: 0.07em;
-    color: #8A938F;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-.chip-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    color: #14181A;
-    word-break: break-word;
-}
-
-.sentence-box {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #14181A;
-    background: #FFFFFF;
-    border: 1px solid #E2E5E1;
-    border-left: 3px solid #0E7C7B;
-    border-radius: 6px;
-    padding: 16px 18px;
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 12.5px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
+.chip { border: 1px solid #E2E5E1; border-radius: 8px; padding: 10px 14px; background: #FFFFFF; flex: 1; min-width: 140px; }
+.chip-label { font-size: 10.5px; letter-spacing: 0.07em; color: #8A938F; text-transform: uppercase; margin-bottom: 5px; font-weight: 600; }
+.chip-value { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #14181A; word-break: break-word; }
+.sentence-box { font-family: 'JetBrains Mono', monospace; font-size: 16px; line-height: 1.7; color: #14181A; background: #FFFFFF; border: 1px solid #E2E5E1; border-left: 3px solid #0E7C7B; border-radius: 6px; padding: 16px 18px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; }
 .badge-high { background: #DCF5E8; color: #15803D; }
-.badge-weak { background: #FEF3C7; color: #92400E; }
 .badge-none { background: #FEE2E2; color: #B91C1C; }
-
-.meter {
-    height: 6px;
-    background: #E9ECE9;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 10px;
-}
+.meter { height: 6px; background: #E9ECE9; border-radius: 4px; overflow: hidden; margin-top: 10px; }
 .meter-fill { height: 100%; border-radius: 4px; }
-
-.suggestion-uri {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
-    font-weight: 500;
-    color: #0E7C7B;
-    margin-top: 10px;
-}
-.suggestion-caption {
-    font-size: 12.5px;
-    color: #8A938F;
-    margin-top: 8px;
-}
-
-.stButton button {
-    border-radius: 6px;
-    font-weight: 600;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.app-footer {
-    text-align: center;
-    font-size: 12.5px;
-    color: #8A938F;
-    margin-top: 48px;
-}
+.suggestion-uri { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: #0E7C7B; margin-top: 10px; }
+.suggestion-caption { font-size: 12.5px; color: #8A938F; margin-top: 8px; }
+.stButton button { border-radius: 6px; font-weight: 600; padding-top: 8px; padding-bottom: 8px; }
+.app-footer { text-align: center; font-size: 12.5px; color: #8A938F; margin-top: 48px; }
 </style>
 """, unsafe_allow_html=True)
 
 DBPEDIA_LOGO_URL = "https://commons.wikimedia.org/wiki/Special:FilePath/DBpedia_logo.svg"
 
-# ── Header ──────────────────────────────────────────────────────────────
 header_html = (
     '<div class="app-header">'
     f'<img src="{DBPEDIA_LOGO_URL}" alt="DBpedia" class="dbpedia-logo">'
@@ -231,15 +124,14 @@ st.markdown(header_html, unsafe_allow_html=True)
 with st.expander("About this tool"):
     st.markdown(
         "**What this is.** Every fact extracted from a Hindi sentence is a small graph — "
-        "a subject, a relation, and an object, the same three points as the mark above. "
-        "Before a fact joins DBpedia's knowledge graph, the relation needs to match one of "
-        "DBpedia's standard properties (things like `dbo:birthPlace` or `dbo:builder`). "
-        "An embedding model proposes a match and a confidence score; this tool is where a "
-        "person confirms, corrects, or rejects that proposal.\n\n"
+        "a subject, a relation, and an object. Before a fact joins DBpedia's knowledge graph, "
+        "the relation needs to match one of DBpedia's standard properties (things like "
+        "`dbo:birthPlace` or `dbo:builder`). A fine-tuned model plus an LLM disambiguation "
+        "step propose a match; this tool is where a person confirms, corrects, or rejects "
+        "that proposal.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
-        "linked open data, so facts can be queried, combined, and reused across languages. "
-        "This review queue supports the DBpedia Hindi Chapter's work extracting and "
-        "validating triples from Hindi text."
+        "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
+        "extracting and validating triples from Hindi text."
     )
 
 with st.expander("Connect your pipeline"):
@@ -247,18 +139,15 @@ with st.expander("Connect your pipeline"):
         "This app looks for a file named **`alignment_results_full_20k.jsonl`** "
         "(one JSON object per line, with `sentence`, `subject`, `relation`, `object`, "
         "`dbo_uri`, and `score` fields) in the following locations, in order:\n\n"
-        "- `GSoC26_H/results/alignment_results_full_20k.jsonl` *(recommended — repo-relative)*\n"
+        "- `GSoC26_H/results/alignment_results_full_20k.jsonl` *(recommended)*\n"
         "- `GSoC26_H/data/alignment_results_full_20k.jsonl`\n"
         "- the app's own working directory\n"
-        "- common Google Drive paths (for running directly from Colab)\n\n"
-        "If none are found, the queue below falls back to a small demo set so the "
-        "interface stays usable. To wire in real data, drop the file into "
-        "`GSoC26_H/results/` in this repo — no code changes needed."
+        "- common Google Drive paths (for running from Colab)\n\n"
+        "If none are found, the queue falls back to a small demo set."
     )
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
 
-# ── Load data ─────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
     for path in CANDIDATE_PATHS:
@@ -280,7 +169,6 @@ if using_demo:
 else:
     st.caption(f"Connected · {len(all_rows):,} rows loaded from `{found_path}`")
 
-# ── Session state ───────────────────────────────────────────────────────
 if "queue" not in st.session_state:
     queue = sorted(all_rows, key=lambda r: r.get("score", 0), reverse=True)
     st.session_state.queue = queue
@@ -290,7 +178,6 @@ if "queue" not in st.session_state:
 queue = st.session_state.queue
 total = len(queue)
 
-# ── Sidebar ───────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("##### Review progress")
     decisions_made = len(st.session_state.decisions)
@@ -302,14 +189,14 @@ with st.sidebar:
     st.markdown("##### Filter queue")
     filter_mode = st.radio(
         "Show",
-        ["All", "Auto-aligned (score ≥ 0.55)", "Needs review (score < 0.55)"],
+        ["All", "Has suggested property", "No suggested property"],
         index=0,
         label_visibility="collapsed",
     )
-    if filter_mode == "Auto-aligned (score ≥ 0.55)":
-        view_queue = [r for r in queue if r.get("score", 0) >= THRESHOLD]
-    elif filter_mode == "Needs review (score < 0.55)":
-        view_queue = [r for r in queue if r.get("score", 0) < THRESHOLD]
+    if filter_mode == "Has suggested property":
+        view_queue = [r for r in queue if r.get("dbo_uri")]
+    elif filter_mode == "No suggested property":
+        view_queue = [r for r in queue if not r.get("dbo_uri")]
     else:
         view_queue = queue
 
@@ -326,7 +213,6 @@ with st.sidebar:
     else:
         st.caption("Corrections will appear here for download once you start reviewing.")
 
-# ── Main review card ──────────────────────────────────────────────────
 if not view_queue:
     st.success("Nothing left in this filter view.")
     st.stop()
@@ -338,12 +224,10 @@ score = row.get("score", 0)
 dbo_uri = row.get("dbo_uri")
 method = row.get("method", "")
 
-if score >= THRESHOLD:
-    badge_class, badge_text, meter_color = "badge-high", "High confidence", "#15803D"
-elif score >= 0.40:
-    badge_class, badge_text, meter_color = "badge-weak", "Weak confidence", "#B45309"
+if dbo_uri:
+    badge_class, badge_text, meter_color = "badge-high", "Property suggested", "#15803D"
 else:
-    badge_class, badge_text, meter_color = "badge-none", "No confident match", "#B91C1C"
+    badge_class, badge_text, meter_color = "badge-none", "No property suggested", "#B91C1C"
 
 st.caption(f"Item {idx + 1} of {len(view_queue)}")
 
@@ -382,7 +266,6 @@ with col2:
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
 
-# ── Action buttons ────────────────────────────────────────────────────
 b1, b2, b3 = st.columns(3)
 
 def save_decision(action, **extra):
