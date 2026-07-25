@@ -24,10 +24,10 @@ CANDIDATE_PATHS = [
 ]
 CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
 
+
 GITHUB_REPO = "singhhnitin/neural-extraction-framework"
 GITHUB_FILE_PATH = "GSoC26_H/results/hitl_corrections.jsonl"
 GITHUB_BRANCH = "gsoc26h-development"
-
 DEMO_DATA = [
     {"sentence": "ताजमहल का निर्माण शाहजहाँ ने करवाया था।", "subject": "ताजमहल",
      "relation": "का निर्माण किया", "object": "शाहजहाँ ने करवाया", "dbo_uri": "dbo:builder",
@@ -137,7 +137,6 @@ with st.expander("About this tool"):
         "that proposal. Corrections sync automatically back to the pipeline's training data.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
         "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
-        "extracting and validating triples from Hindi text."
     )
 
 with st.expander("Connect your pipeline"):
@@ -190,7 +189,6 @@ def sync_to_github(new_decisions):
     """Push new decisions to GitHub via the Contents API. Requires
     github_token in Streamlit secrets. Returns (success, message)."""
     token = st.secrets.get("github_token")
-    if not token:
         return False, "No github_token found in app secrets. Add it under Settings → Secrets."
 
     api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}"
@@ -234,8 +232,6 @@ with st.sidebar:
     st.markdown("##### Review progress")
     decisions_made = len(st.session_state.decisions)
     st.metric("Decisions logged", decisions_made)
-    st.caption(f"Queue size: {total} item{'s' if total != 1 else ''}")
-    st.progress(min(decisions_made / total, 1.0) if total else 0)
 
     st.markdown("---")
     st.markdown("##### Filter queue")
