@@ -1,6 +1,8 @@
 import streamlit as st
 import json
 import os
+import base64
+import requests
 from datetime import datetime
 from pathlib import Path
 
@@ -21,6 +23,10 @@ CANDIDATE_PATHS = [
     "/content/drive/MyDrive/alignment_results_full_20k.jsonl",
 ]
 CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
+
+GITHUB_REPO = "singhhnitin/neural-extraction-framework"
+GITHUB_FILE_PATH = "GSoC26_H/results/hitl_corrections.jsonl"
+GITHUB_BRANCH = "gsoc26h-development"
 
 DEMO_DATA = [
     {"sentence": "ताजमहल का निर्माण शाहजहाँ ने करवाया था।", "subject": "ताजमहल",
@@ -128,7 +134,7 @@ with st.expander("About this tool"):
         "the relation needs to match one of DBpedia's standard properties (things like "
         "`dbo:birthPlace` or `dbo:builder`). A fine-tuned model plus an LLM disambiguation "
         "step propose a match; this tool is where a person confirms, corrects, or rejects "
-        "that proposal.\n\n"
+        "that proposal. Corrections sync automatically back to the pipeline's training data.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
         "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
         "extracting and validating triples from Hindi text."
@@ -174,9 +180,55 @@ if "queue" not in st.session_state:
     st.session_state.queue = queue
     st.session_state.idx = 0
     st.session_state.decisions = []
+    st.session_state.synced_count = 0
 
 queue = st.session_state.queue
 total = len(queue)
+
+
+def sync_to_github(new_decisions):
+    """Push new decisions to GitHub via the Contents API. Requires
+    github_token in Streamlit secrets. Returns (success, message)."""
+    token = st.secrets.get("github_token")
+    if not token:
+        return False, "No github_token found in app secrets. Add it under Settings → Secrets."
+
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}"
+    headers = {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+
+    resp = requests.get(api_url, headers=headers, params={"ref": GITHUB_BRANCH})
+    if resp.status_code == 200:
+        file_data = resp.json()
+        sha = file_data["sha"]
+        existing_content = base64.b64decode(file_data["content"]).decode("utf-8")
+    elif resp.status_code == 404:
+        sha = None
+        existing_content = ""
+    else:
+        return False, f"Failed to read existing file: HTTP {resp.status_code}"
+
+    new_lines = "\n".join(json.dumps(d, ensure_ascii=False) for d in new_decisions)
+    if existing_content.strip():
+        updated_content = existing_content.rstrip("\n") + "\n" + new_lines + "\n"
+    else:
+        updated_content = new_lines + "\n"
+
+    encoded_content = base64.b64encode(updated_content.encode("utf-8")).decode("utf-8")
+
+    payload = {
+        "message": f"HITL: sync {len(new_decisions)} new correction(s)",
+        "content": encoded_content,
+        "branch": GITHUB_BRANCH,
+    }
+    if sha:
+        payload["sha"] = sha
+
+    put_resp = requests.put(api_url, headers=headers, json=payload)
+    if put_resp.status_code in (200, 201):
+        return True, f"Synced {len(new_decisions)} correction(s) to GitHub."
+    else:
+        return False, f"Sync failed: HTTP {put_resp.status_code} — {put_resp.text[:200]}"
+
 
 with st.sidebar:
     st.markdown("##### Review progress")
@@ -201,6 +253,21 @@ with st.sidebar:
         view_queue = queue
 
     st.markdown("---")
+    st.markdown("##### Sync to pipeline")
+    unsynced = decisions_made - st.session_state.synced_count
+    if unsynced > 0:
+        st.caption(f"{unsynced} decision(s) not yet synced")
+        if st.button("↑ Sync to GitHub now", use_container_width=True, type="primary"):
+            pending = st.session_state.decisions[st.session_state.synced_count:]
+            success, message = sync_to_github(pending)
+            if success:
+                st.session_state.synced_count = decisions_made
+                st.success(message)
+            else:
+                st.error(message)
+    else:
+        st.caption("Everything synced." if decisions_made else "Review items to begin.")
+
     if st.session_state.decisions:
         export_str = "\n".join(json.dumps(d, ensure_ascii=False) for d in st.session_state.decisions)
         st.download_button(
