@@ -3,6 +3,7 @@ import json
 import os
 import base64
 import hashlib
+import re
 import requests
 from datetime import datetime
 from pathlib import Path
@@ -28,6 +29,8 @@ CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
 GITHUB_REPO = "singhhnitin/neural-extraction-framework"
 GITHUB_FILE_PATH = "GSoC26_H/results/hitl_corrections.jsonl"
 GITHUB_BRANCH = "gsoc26h-development"
+
+DBO_PROPERTY_PATTERN = re.compile(r'^dbo:[A-Za-z][A-Za-z0-9]*$')
 
 DEMO_DATA = [
     {"sentence": "ताजमहल का निर्माण शाहजहाँ ने करवाया था।", "subject": "ताजमहल",
@@ -154,6 +157,29 @@ with st.expander("Connect your pipeline"):
     )
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
+
+APP_PASSWORD = st.secrets.get("app_password")
+
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    if not APP_PASSWORD:
+        st.error(
+            "This tool is locked and no password has been configured yet. "
+            "Add `app_password` under Settings → Secrets to enable access."
+        )
+        st.stop()
+
+    st.markdown("**This review tool is password-protected. Enter the password to continue.**")
+    entered = st.text_input("Password", type="password", key="password_gate_input")
+    if st.button("Enter"):
+        if entered == APP_PASSWORD:
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("Incorrect password.")
+    st.stop()
 
 
 def make_triple_id(row):
@@ -461,9 +487,18 @@ if st.session_state.get("show_modify"):
     custom_prop = ""
     if new_prop == "— type a custom property below —":
         custom_prop = st.text_input("Custom property", placeholder="dbo:somePropertyName", key=f"custom_{idx}")
+        if custom_prop and not DBO_PROPERTY_PATTERN.match(custom_prop.strip()):
+            st.caption("⚠ Must look like `dbo:PropertyName` — starts with `dbo:`, letters and numbers only, no spaces.")
+
     if st.button("Save correction", key=f"save_mod_{idx}"):
-        final_uri = custom_prop.strip() if custom_prop.strip() else new_prop
-        save_decision("modify", final_dbo_uri=final_uri)
+        if new_prop == "— type a custom property below —":
+            candidate = custom_prop.strip()
+            if not DBO_PROPERTY_PATTERN.match(candidate):
+                st.error("Please enter a valid `dbo:PropertyName` before saving.")
+            else:
+                save_decision("modify", final_dbo_uri=candidate)
+        else:
+            save_decision("modify", final_dbo_uri=new_prop)
 
 if st.session_state.get("show_reject"):
     st.markdown("<br>", unsafe_allow_html=True)
