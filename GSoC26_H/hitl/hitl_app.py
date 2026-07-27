@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import os
 import base64
+import hashlib
 import requests
 from datetime import datetime
 from pathlib import Path
@@ -153,6 +154,22 @@ with st.expander("Connect your pipeline"):
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
 
+
+def make_triple_id(row):
+    """Stable identity for a triple, independent of file order or reruns."""
+    key = f"{row.get('sentence','')}|{row.get('subject','')}|{row.get('relation','')}|{row.get('object','')}"
+    return hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
+
+
+def add_ids(rows):
+    out = []
+    for r in rows:
+        r2 = dict(r)
+        r2["triple_id"] = make_triple_id(r2)
+        out.append(r2)
+    return out
+
+
 @st.cache_data
 def load_data():
     for path in CANDIDATE_PATHS:
@@ -166,28 +183,48 @@ def load_data():
             return rows, path
     return DEMO_DATA, None
 
-all_rows, found_path = load_data()
-using_demo = found_path is None
 
-if using_demo:
-    st.info("**Demo mode** — showing 5 sample triples. See \"Connect your pipeline\" above to load real data.")
-else:
-    st.caption(f"Connected · {len(all_rows):,} rows loaded from `{found_path}`")
+def load_existing_corrections():
+    """Pull previously synced corrections from GitHub so reloads know what's
+    already been judged. Returns (list_of_decisions, set_of_triple_ids)."""
+    token = st.secrets.get("github_token")
+    if not token:
+        return [], set()
 
-if "queue" not in st.session_state:
-    queue = sorted(all_rows, key=lambda r: r.get("score", 0), reverse=True)
-    st.session_state.queue = queue
-    st.session_state.idx = 0
-    st.session_state.decisions = []
-    st.session_state.synced_count = 0
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}"
+    headers = {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+    try:
+        resp = requests.get(api_url, headers=headers, params={"ref": GITHUB_BRANCH}, timeout=10)
+    except requests.RequestException:
+        return [], set()
 
-queue = st.session_state.queue
-total = len(queue)
+    if resp.status_code != 200:
+        return [], set()
+
+    try:
+        content = base64.b64decode(resp.json()["content"]).decode("utf-8")
+    except Exception:
+        return [], set()
+
+    decisions, ids = [], set()
+    for line in content.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            d = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        decisions.append(d)
+        tid = d.get("triple_id") or make_triple_id(d)
+        ids.add(tid)
+    return decisions, ids
 
 
 def sync_to_github(new_decisions):
-    """Push new decisions to GitHub via the Contents API. Requires
-    github_token in Streamlit secrets. Returns (success, message)."""
+    """Push new decisions to GitHub via the Contents API, skipping anything
+    whose triple_id is already present. Requires github_token in Streamlit
+    secrets. Returns (success, message)."""
     token = st.secrets.get("github_token")
         return False, "No github_token found in app secrets. Add it under Settings → Secrets."
 
@@ -205,7 +242,24 @@ def sync_to_github(new_decisions):
     else:
         return False, f"Failed to read existing file: HTTP {resp.status_code}"
 
-    new_lines = "\n".join(json.dumps(d, ensure_ascii=False) for d in new_decisions)
+    existing_ids = set()
+    for line in existing_content.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            d = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        existing_ids.add(d.get("triple_id") or make_triple_id(d))
+
+    to_push = [d for d in new_decisions if d.get("triple_id") not in existing_ids]
+    skipped = len(new_decisions) - len(to_push)
+
+    if not to_push:
+        return True, f"Nothing new to sync — {skipped} item(s) already on GitHub."
+
+    new_lines = "\n".join(json.dumps(d, ensure_ascii=False) for d in to_push)
     if existing_content.strip():
         updated_content = existing_content.rstrip("\n") + "\n" + new_lines + "\n"
     else:
@@ -214,7 +268,7 @@ def sync_to_github(new_decisions):
     encoded_content = base64.b64encode(updated_content.encode("utf-8")).decode("utf-8")
 
     payload = {
-        "message": f"HITL: sync {len(new_decisions)} new correction(s)",
+        "message": f"HITL: sync {len(to_push)} new correction(s)",
         "content": encoded_content,
         "branch": GITHUB_BRANCH,
     }
@@ -223,15 +277,46 @@ def sync_to_github(new_decisions):
 
     put_resp = requests.put(api_url, headers=headers, json=payload)
     if put_resp.status_code in (200, 201):
-        return True, f"Synced {len(new_decisions)} correction(s) to GitHub."
+        msg = f"Synced {len(to_push)} correction(s) to GitHub."
+        if skipped:
+            msg += f" ({skipped} already present, skipped.)"
+        return True, msg
     else:
         return False, f"Sync failed: HTTP {put_resp.status_code} — {put_resp.text[:200]}"
 
 
+all_rows, found_path = load_data()
+using_demo = found_path is None
+all_rows = add_ids(all_rows)
+
+if using_demo:
+    st.info("**Demo mode** — showing 5 sample triples. See \"Connect your pipeline\" above to load real data.")
+else:
+    st.caption(f"Connected · {len(all_rows):,} rows loaded from `{found_path}`")
+
+if "queue" not in st.session_state:
+    existing_decisions, corrected_ids = load_existing_corrections()
+    full_queue = sorted(all_rows, key=lambda r: r.get("score", 0), reverse=True)
+    remaining_queue = [r for r in full_queue if r["triple_id"] not in corrected_ids]
+
+    st.session_state.queue = remaining_queue
+    st.session_state.idx = 0
+    st.session_state.decisions = existing_decisions
+    st.session_state.synced_count = len(existing_decisions)
+    st.session_state.total_pool_size = len(full_queue)
+
+queue = st.session_state.queue
+total = len(queue)
+
 with st.sidebar:
     st.markdown("##### Review progress")
     decisions_made = len(st.session_state.decisions)
-    st.metric("Decisions logged", decisions_made)
+    already_synced = st.session_state.synced_count
+    pool_size = st.session_state.get("total_pool_size", total)
+    st.metric("Total judged so far", decisions_made)
+    st.caption(f"{already_synced} synced to GitHub · {decisions_made - already_synced} pending sync")
+    st.caption(f"Queue remaining: {total} of {pool_size} total item{'s' if pool_size != 1 else ''}")
+    st.progress(min(decisions_made / pool_size, 1.0) if pool_size else 0)
 
     st.markdown("---")
     st.markdown("##### Filter queue")
@@ -333,6 +418,7 @@ b1, b2, b3 = st.columns(3)
 
 def save_decision(action, **extra):
     decision = {
+        "triple_id": row.get("triple_id"),
         "sentence": row.get("sentence", ""),
         "subject": row.get("subject", ""),
         "relation": row.get("relation", ""),
