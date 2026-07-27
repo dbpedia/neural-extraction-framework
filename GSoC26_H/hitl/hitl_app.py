@@ -29,7 +29,7 @@ CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
 
 GITHUB_REPO = "singhhnitin/neural-extraction-framework"
 GITHUB_FILE_PATH = "GSoC26_H/results/hitl_corrections.jsonl"
-GITHUB_BRANCH = "gsoc26h-development"
+GITHUB_BRANCH = "hitl-data"
 
 DBO_PROPERTY_PATTERN = re.compile(r'^dbo:[A-Za-z][A-Za-z0-9]*$')
 
