@@ -6,7 +6,7 @@ import json, os, re, time, requests
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-API_KEY = "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"
+API_KEY = os.environ["NVIDIA_API_KEY"]
 OUTPUT_FILE = os.path.expanduser("~/gold_set_chunk1.jsonl")
 START_IDX = 4017
 END_IDX = None
