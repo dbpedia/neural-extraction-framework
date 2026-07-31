@@ -72,39 +72,65 @@ Hindi sentence
 
 ---
 
-## Dataset
+## Development Journey — The Full Process
 
-All sizes below are line counts confirmed directly against the live data files and the actual training configuration.
+This section walks through the complete process, start to finish, in the order it actually happened.
+
+### 1. Embedding Model Selection
+
+Ontology alignment began with a curated set of 73 DBpedia properties paired with a multilingual embedding model (MiniLM), establishing a solid initial baseline. A newer embedding model (KaLM-Embedding) was evaluated as a potential upgrade across four different configurations; MiniLM held up as the stronger, more dependable choice within that curated scope.
+
+For the broader predicate-linking task against the full DBpedia ontology, three models were compared directly: **F2LLM-1.7B**, **F2LLM-500M**, and **e5-large-instruct**. F2LLM-1.7B came out ahead at every precision level tested and was selected as the model to fine-tune going forward.
+
+### 2. Synthetic Dataset Generation
+
+An initial synthetic training dataset was generated using an LLM, producing Hindi sentences paired with subject-relation-object triple annotations. A second, deliberately "noisy" dataset was generated separately — seeded from lower-scoring originals — to give the model realistic variation and extraction mistakes to learn from, supporting a staged (curriculum-style) training approach.
+
+### 3. Wikipedia Scraping
+
+Real Hindi Wikipedia articles were scraped and filtered down to sentences matching the BenchIE benchmark's natural sentence-length distribution (median ~15 words, range 10–23), grounding the training data in genuine, naturally-occurring Hindi text rather than model-generated sentences alone.
+
+### 4. Scoring
+
+Every candidate sentence — synthetic and real Wikipedia alike — was scored 1–10 by an LLM judge against a weighted quality rubric (source sentence quality, span exactness, semantic correctness, property-relation quality). An early version of the scoring prompt undervalued genuine Wikipedia sentences relative to synthetic ones; refining it with Hindi-specific few-shot examples and explicit property-density weighting raised the rate of high-quality (score ≥9) sentences from 8.5% to 68.8%.
+
+### 5. Train / Validation Split
+
+Sentences scoring 9 or above were held out as the validation set; everything else became the training set. Pronouns appearing in core triplets were resolved to their referenced entities via an LLM-based coreference pass before finalizing the splits, with a refined recovery rule added for "self-contained" cases (e.g. a demonstrative pronoun paired with a noun) to retain otherwise-recoverable examples.
+
+**Final splits:**
 
 | Dataset | Size | Purpose |
 |---|---|---|
 | Training set | **39,621** examples | Fine-tuning Gemma 3 4B (extraction), Optimal-trace format |
 | Validation set | **3,634** examples | High-scoring (≥9) Wikipedia sentences, held out during training |
 | Held-out test set | **585** examples | Never used in training; source of the precision@k numbers below |
-| Predicate-linking gold set | **8,029** entries | Built via F2LLM-8B retrieval + GPT-OSS-120B disambiguation (5,855 real DBO mappings, 2,174 initially unmatched) |
 
-Training data is drawn from three sources: an original LLM-generated synthetic dataset, a separately generated "noisy" dataset (deliberately varied examples for robustness), and real Hindi Wikipedia sentences (scraped and filtered to match the BenchIE benchmark's natural sentence-length distribution).
+### 6. Extraction Fine-Tuning — Two Learning Rates
 
----
-
-## Results
-
-All numbers below are from the current fine-tuned checkpoints, run on the full evaluation set (1,817 Wikipedia + 112 BenchIE + 50 Train sentences).
-
-### Extraction (Gemma 3 4B, QLoRA)
-
-Two learning rates were fine-tuned and compared on an LLM-as-judge + triple-level F1 evaluation:
+Gemma 3 4B was fine-tuned via QLoRA (4-bit quantized LoRA) at two learning rates, compared directly against each other:
 
 | Learning rate | Wikipedia F1 | Train F1 |
 |---|---|---|
 | **2e-4 (selected)** | **0.692** | **0.795** |
 | 1e-5 | 0.613 | 0.471 |
 
-valid_format_rate: 98–100%.
+valid_format_rate: 98–100%. Evaluation combined LLM-as-judge scoring with triple-level precision/recall/F1, on the held-out validation set described above.
 
-### Predicate Normalization (F2LLM-1.7B, QLoRA, Round 2 — 9 epochs)
+### 7. Predicate-Linking Gold Set Construction (F2LLM-8B + GPT-OSS-120B)
 
-Evaluated on the true 585-item held-out set, checking whether the correct DBpedia property appears in the top-k candidates:
+To fine-tune the lightweight normalization model (F2LLM-1.7B), a gold-standard set of predicate-to-DBpedia-property mappings was built using a two-stage pipeline across 8,029 unique predicates:
+
+1. **Retrieval — F2LLM-8B.** For each predicate, F2LLM-8B retrieved the top candidate DBpedia properties by embedding similarity against the full ontology.
+2. **Disambiguation — GPT-OSS-120B.** The retrieved candidates, together with full sentence context, were passed to GPT-OSS-120B to select the correct property, or confirm that no real DBpedia property applies.
+
+This produced 5,855 confirmed real DBO mappings and 2,174 initially unmatched predicates. A later recovery pass — searching ranks 51–100 instead of stopping earlier — recovered 1,249 of those (57.5%), raising total gold-set coverage to 88.4%.
+
+### 8. Normalization Fine-Tuning — F2LLM-1.7B on the Gold Set
+
+F2LLM-1.7B was fine-tuned via QLoRA on the gold set above, across two rounds (3 epochs, then 6 more for 9 total). Every checkpoint was re-evaluated using a single, consistent encoding method (SentenceTransformer) to ensure genuinely comparable results across the training arc. A parallel plain-LoRA run confirmed QLoRA as the stronger approach at every precision threshold.
+
+Evaluated on the true 585-item held-out set — checking whether the correct DBpedia property appears in the top-k candidates:
 
 | k | Precision@k |
 |---|---|
@@ -117,9 +143,11 @@ Evaluated on the true 585-item held-out set, checking whether the correct DBpedi
 
 QLoRA outperformed plain LoRA by 0.5–1.5 percentage points at every k (e.g. p@1: 37.6% vs 36.2%).
 
-**NONE-predicate recovery:** of 2,174 predicates that initially returned no DBpedia match, retrying against ranks 51–100 recovered 1,249 (57.5%) — raising total ontology coverage from 72.9% to 88.4%.
+### 9. Human-in-the-Loop Interface
 
-### Full-Scale End-to-End Pipeline
+Built as a Streamlit app supporting Accept / Modify / Reject decisions with confidence-coded badges and a structured error taxonomy, then connected directly to real pipeline output. The interface includes stable per-triple IDs (so reviewed items persist correctly across reloads), password protection, editable subject/object fields, and automatic syncing of every decision straight to GitHub.
+
+### 10. Full-Scale Evaluation
 
 Complete pipeline — extraction → normalization → final property — run across the entire evaluation set:
 
@@ -129,7 +157,15 @@ Complete pipeline — extraction → normalization → final property — run ac
 | Train | 0.550 | 0.530 | **0.537** | 50 |
 | BenchIE | 0.192 | 0.165 | **0.173** | 112 |
 
-Total predicates normalized: 4,967. BenchIE evaluates the pipeline against an independent, out-of-domain benchmark, providing a valuable real-world signal alongside the in-domain Wikipedia and Train results.
+Total predicates normalized: 4,967. BenchIE evaluates the pipeline against an independent, out-of-domain benchmark (ground truth constructed via the same top-k + LLM disambiguation approach as the gold set above), providing a valuable real-world signal alongside the in-domain Wikipedia and Train results.
+
+### 11. Data Quality Auditing
+
+A dedicated audit pipeline verifies data integrity end to end: detecting and filtering corrupted sentences (leftover artifacts from the coreference-resolution step), and independently auditing every triple labeled "property" (non-relational) using GPT-OSS-120B to confirm that classification is correct.
+
+### 12. Project Explainer
+
+An interactive, stage-by-stage walkthrough of the full project — architecture, results, and the human review process — was built and deployed as a public-facing page for sharing with mentors and the DBpedia community.
 
 ---
 
@@ -250,6 +286,45 @@ cd training
 bash scripts/smoke_test.sh
 ```
 
+### Step-by-step: running the full process yourself
+
+**1. Prepare training data** (combines synthetic, noisy, and scored Wikipedia sources into train/validation splits):
+```bash
+cd training
+python3 prepare_data.py
+```
+
+**2. Fine-tune the extraction model** (Gemma 3 4B, both learning rates):
+```bash
+bash scripts/train_exp1_lr2e4.sh
+bash scripts/train_exp1_lr1e5.sh
+```
+
+**3. Build the predicate-linking gold set** (F2LLM-8B retrieval + GPT-OSS-120B disambiguation):
+```bash
+python3 build_gold_set_chunk0.py
+python3 build_gold_set_chunk1.py
+```
+
+**4. Fine-tune the normalization model** (F2LLM-1.7B on the gold set):
+```bash
+python3 finetune_f2lm.py
+```
+
+**5. Run full-scale extraction and normalization:**
+```bash
+cd ../inference
+python3 evaluate_full_scale.py
+python3 normalize_full_scale.py
+```
+
+**6. Build and launch the human review interface:**
+```bash
+cd ../hitl
+python3 generate_hitl_data.py
+streamlit run hitl_app.py
+```
+
 ### Loading the extraction model (Gemma 3 4B)
 
 The extraction model is a QLoRA adapter on top of the base Gemma 3 4B model, loaded in 4-bit:
@@ -289,22 +364,6 @@ from sentence_transformers import SentenceTransformer
 
 FINETUNED_MODEL = "path/to/f2lm_finetuned_v2_merged"
 model = SentenceTransformer(FINETUNED_MODEL, trust_remote_code=True)
-```
-
-### Running the full pipeline
-
-```bash
-# 1. Extraction
-python3 inference/evaluate_full_scale.py
-
-# 2. Normalization
-python3 inference/normalize_full_scale.py
-
-# 3. Build the HITL review file
-python3 hitl/generate_hitl_data.py
-
-# 4. Launch the review app
-streamlit run hitl/hitl_app.py
 ```
 
 **Hardware used:** NVIDIA A2, 16GB VRAM, 4-bit quantization throughout.
