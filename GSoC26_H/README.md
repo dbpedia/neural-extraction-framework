@@ -73,6 +73,21 @@ Hindi sentence
 
 ---
 
+## Dataset
+
+All sizes below are line counts confirmed directly against the live data files.
+
+| Dataset | Size | Purpose |
+|---|---|---|
+| Training set | **79,242** examples | Fine-tuning Gemma 3 4B (extraction) |
+| Validation set | **3,634** examples | High-scoring (≥9) Wikipedia sentences, held out during training |
+| Held-out test set | **585** examples | Never used in training; source of the precision@k numbers below |
+| Predicate-linking gold set | **8,029** entries | Built via F2LLM-8B retrieval + GPT-OSS-120B disambiguation (5,855 real DBO mappings, 2,174 initially NONE) |
+
+Training data is drawn from three sources: an original LLM-generated synthetic dataset, a separately generated "noisy" dataset (deliberately imperfect examples for robustness), and real Hindi Wikipedia sentences (scraped and filtered to match the BenchIE benchmark's natural sentence-length distribution).
+
+---
+
 ## Real Results
 
 All numbers below are from the current fine-tuned checkpoints, run on the actual evaluation set (1,817 Wikipedia + 112 BenchIE + 50 Train sentences), not estimates or a small sample.
@@ -148,8 +163,11 @@ This project is under active development. Rather than presenting only finished r
 GSoC26_H/
 ├── README.md
 ├── requirements.txt
+├── configs/
+│   └── lora_config.yaml
 │
-├── training/              QLoRA fine-tuning for both models
+├── training/                QLoRA fine-tuning for both models
+│   ├── README.md                      Detailed training methodology, data pipeline, quality scoring
 │   ├── train.py                       Gemma 3 4B extraction fine-tuning entry point
 │   ├── prepare_data.py                Builds train/validation splits
 │   ├── evaluate.py                    Standalone checkpoint evaluation
@@ -158,37 +176,77 @@ GSoC26_H/
 │   ├── merge_lora_only.py             Merges LoRA adapter into base weights
 │   ├── build_gold_set_chunk0.py       Predicate-linking gold set construction (chunk 1/2)
 │   ├── build_gold_set_chunk1.py       Predicate-linking gold set construction (chunk 2/2)
+│   ├── embed_catalog_f2lm.py          Pre-computes DBpedia property catalog embeddings
+│   ├── evaluate_150_lr1e5.py          150-sample eval for the lr=1e-5 checkpoint
+│   ├── evaluate_150_mixed.py          150-sample mixed-source eval
+│   ├── evaluate_checkpoints.py        Compares checkpoints across training
+│   ├── peek_predictions.py            Quick manual inspection of model outputs
 │   ├── configs/                       Hydra configs (model / data / training / logging)
-│   └── scripts/                       Launch scripts (smoke test, both lr runs)
+│   └── scripts/
+│       ├── smoke_test.sh              50 examples, 1 epoch — verifies the pipeline
+│       │                              runs end to end before committing to a full run
+│       ├── train_exp1_lr2e4.sh        Full training run, lr=2e-4 (selected)
+│       └── train_exp1_lr1e5.sh        Full training run, lr=1e-5 (comparison)
 │
-├── inference/              Running the trained models at scale
+├── inference/                Running the trained models at scale
 │   ├── evaluate_full_scale.py         Full-scale zero-shot extraction (1,979 sentences)
 │   ├── evaluate_few_shot.py           Full-scale few-shot extraction (in progress)
 │   ├── normalize_full_scale.py        Full-scale predicate normalization
+│   ├── normalize_triples.py           Standalone normalization utility
 │   └── retry_none_predicates.py       NONE-predicate recovery (ranks 51-100)
 │
-├── evaluation/              Held-out and checkpoint comparison evaluation
+├── evaluation/                Held-out and checkpoint comparison evaluation
 │   ├── evaluate_held_out.py           Precision@k on the true held-out set
-│   └── evaluate_all_checkpoints.py    Consistent re-evaluation across all checkpoints
+│   ├── evaluate_all_checkpoints.py    Consistent re-evaluation across all checkpoints
+│   └── evaluate_finetuned_fair.py     Fair QLoRA-vs-LoRA comparison (fixed encoding bug)
 │
-├── data_quality/            Data integrity checks
+├── data_quality/              Data integrity checks
 │   ├── check_all_property_triples.py  Full audit of "property"-type triples (in progress)
 │   ├── filter_hitl_corrupted.py       Removes corrupted sentences from HITL data
-│   └── scan_corrupted_sentences.py    Detects coreference-reasoning leakage in sentences
+│   ├── filter_optimal_only.py         Filters training traces to optimal-only
+│   ├── scan_corrupted_sentences.py    Detects coreference-reasoning leakage in sentences
+│   └── scan_corrupted_v2.py           Refined corrupted-sentence detection
 │
-├── hitl/                    Human review interface
+├── hitl/                      Human review interface
+│   ├── README.md
 │   ├── hitl_app.py                    Streamlit review app
 │   ├── generate_hitl_data.py          Builds the review queue from pipeline output
-│   └── merge_hitl_feedback.py         Folds corrections back into training data (not yet run)
+│   ├── merge_hitl_feedback.py         Folds corrections back into training data (not yet run)
+│   └── requirement.txt                HITL-specific dependencies
 │
-├── data/                    Ontology reference and ground truth
-│   ├── ontology/                      DBpedia property catalog
-│   └── ground_truth/                  BenchIE gold triples
+├── data/                      Ontology reference and ground truth
+│   ├── ontology/
+│   │   └── dbpedia_properties.json    DBpedia property catalog
+│   ├── ground_truth/
+│   │   └── ground_truth_benchie_triples.jsonl   BenchIE gold triples
+│   └── wikipedia_synthetic_data_clean.jsonl     Cleaned Wikipedia annotation data
 │
-├── results/                 Evaluation outputs and summaries
+├── results/                   Evaluation outputs and summaries
+│   ├── alignment_results_full_20k.jsonl    Full-scale normalized triples (HITL source data)
+│   ├── hitl_corrections.jsonl              Human review decisions
+│   ├── embedding_model_comparison.md       F2LLM vs e5-large-instruct comparison
+│   ├── ground_truth_summary.md             BenchIE ground-truth construction summary
+│   ├── noisy_dataset_summary.md            Noisy training data generation summary
+│   ├── phase1_ablation_table.md / .csv     Phase 1 baseline comparison
+│   └── wikipedia_generation_summary.md     Wikipedia scraping/annotation summary
 │
-└── notebooks/                Phase-by-phase exploratory notebooks
+├── src/                        Phase 1 baseline code (historical — superseded by the
+│                                pipeline above, kept for reference and comparison)
+│   ├── baseline/
+│   │   └── gemma_zero_shot.py         Zero-shot Gemma 3 baseline, pre-fine-tuning
+│   ├── ontology/
+│   │   └── alignment.py               Early ontology-alignment prototype
+│   ├── evaluation/
+│   │   └── error_taxonomy.py          Original 5-type error taxonomy
+│   └── finetune/
+│       └── generate_noisy_data.py     Noisy training data generator
+│
+└── notebooks/                  Phase-by-phase exploratory notebooks
+    ├── 01_week1_baselines.ipynb
+    └── 02_week2_error_analysis.ipynb
 ```
+
+**Note on `src/`:** this folder holds the original Phase 1 baseline work, predating the fine-tuned pipeline above. Its own code comments record the zero-shot baseline's weak starting point (0/5 correct predicates on an early 5-sentence check) — exactly the gap that motivated fine-tuning Gemma 3 4B in the first place. Kept for historical reference, not part of the current pipeline.
 
 ---
 
@@ -200,6 +258,15 @@ GSoC26_H/
 git clone https://github.com/dbpedia/neural-extraction-framework.git
 cd neural-extraction-framework/GSoC26_H
 pip install -r requirements.txt
+```
+
+### Smoke test (recommended before any full run)
+
+Verifies the training pipeline works end to end — model loading, LoRA application, data loading, and training steps — on a small sample before committing to a full run:
+
+```bash
+cd training
+bash scripts/smoke_test.sh
 ```
 
 ### Loading the extraction model (Gemma 3 4B)
@@ -234,7 +301,7 @@ Generation must stop on either the base `eos_token_id` **or** Gemma's `<end_of_t
 
 ### Loading the normalization model (F2LLM-1.7B)
 
-The normalization model is loaded as a merged checkpoint via SentenceTransformer. **Note:** the exact checkpoint path below is a placeholder — confirm the real path on your own setup with `grep -n "FINETUNED_MODEL\s*=" inference/normalize_full_scale.py` before relying on it.
+The normalization model is loaded as a merged checkpoint via SentenceTransformer. **Note:** confirm the exact checkpoint path on your own setup with `grep -n "FINETUNED_MODEL\s*=" inference/normalize_full_scale.py` before relying on the placeholder below.
 
 ```python
 from sentence_transformers import SentenceTransformer
