@@ -3,7 +3,6 @@ import json
 import os
 import base64
 import hashlib
-import re
 import requests
 from datetime import datetime
 from pathlib import Path
@@ -30,8 +29,6 @@ CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
 GITHUB_REPO = "singhhnitin/neural-extraction-framework"
 GITHUB_FILE_PATH = "GSoC26_H/results/hitl_corrections.jsonl"
 GITHUB_BRANCH = "gsoc26h-development"
-
-DBO_PROPERTY_PATTERN = re.compile(r'^dbo:[A-Za-z][A-Za-z0-9]*$')
 
 DEMO_DATA = [
     {"sentence": "ताजमहल का निर्माण शाहजहाँ ने करवाया था।", "subject": "ताजमहल",
@@ -116,6 +113,7 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .meter-fill { height: 100%; border-radius: 4px; }
 .suggestion-uri { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: #0E7C7B; margin-top: 10px; }
 .suggestion-caption { font-size: 12.5px; color: #8A938F; margin-top: 8px; }
+.edit-hint { font-size: 12px; color: #8A938F; margin: 4px 0 8px 0; }
 .stButton button { border-radius: 6px; font-weight: 600; padding-top: 8px; padding-bottom: 8px; }
 .app-footer { text-align: center; font-size: 12.5px; color: #8A938F; margin-top: 48px; }
 </style>
@@ -139,7 +137,9 @@ with st.expander("About this tool"):
         "the relation needs to match one of DBpedia's standard properties (things like "
         "`dbo:birthPlace` or `dbo:builder`). A fine-tuned model plus an LLM disambiguation "
         "step propose a match; this tool is where a person confirms, corrects, or rejects "
-        "that proposal. Corrections sync automatically back to the pipeline's training data.\n\n"
+        "that proposal — including fixing the subject or object text directly if the "
+        "extraction got the span wrong. Corrections sync automatically back to the "
+        "pipeline's training data.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
         "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
     )
@@ -413,16 +413,20 @@ with col1:
     st.markdown(f'<div class="sentence-box">{row.get("sentence", "")}</div>', unsafe_allow_html=True)
 
     st.markdown("<br>**Extracted triple**", unsafe_allow_html=True)
+    st.markdown('<div class="edit-hint">Subject and object are editable — fix them directly if the extraction got the span wrong.</div>', unsafe_allow_html=True)
+
+    edit_col1, edit_col2 = st.columns(2)
+    with edit_col1:
+        edited_subject = st.text_input("Subject", value=row.get("subject", ""), key=f"subject_edit_{idx}")
+    with edit_col2:
+        edited_object = st.text_input("Object", value=row.get("object", ""), key=f"object_edit_{idx}")
+
     relation_text = row.get("relation", "")
     relation_display = f'{dbo_uri}  <span style="color:#8A938F;">({relation_text})</span>' if dbo_uri else relation_text
-    chip_html = (
-        '<div class="chip-row">'
-        f'<div class="chip"><div class="chip-label">Subject</div><div class="chip-value">{row.get("subject","")}</div></div>'
-        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{relation_display}</div></div>'
-        f'<div class="chip"><div class="chip-label">Object</div><div class="chip-value">{row.get("object","")}</div></div>'
-        '</div>'
+    st.markdown(
+        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{relation_display}</div></div>',
+        unsafe_allow_html=True,
     )
-    st.markdown(chip_html, unsafe_allow_html=True)
 
 with col2:
     st.markdown("**Suggested mapping**")
@@ -450,6 +454,8 @@ def save_decision(action, **extra):
         "subject": row.get("subject", ""),
         "relation": row.get("relation", ""),
         "object": row.get("object", ""),
+        "final_subject": edited_subject.strip(),
+        "final_object": edited_object.strip(),
         "suggested_dbo_uri": dbo_uri,
         "suggested_score": score,
         "action": action,
@@ -479,25 +485,12 @@ if st.session_state.get("show_modify"):
     st.markdown("**Pick the correct property**")
     new_prop = st.selectbox(
         "Correct dbo: property",
-        options=["— type a custom property below —"] + PROPERTY_OPTIONS,
+        options=PROPERTY_OPTIONS,
         key=f"modify_select_{idx}",
         label_visibility="collapsed",
     )
-    custom_prop = ""
-    if new_prop == "— type a custom property below —":
-        custom_prop = st.text_input("Custom property", placeholder="dbo:somePropertyName", key=f"custom_{idx}")
-        if custom_prop and not DBO_PROPERTY_PATTERN.match(custom_prop.strip()):
-            st.caption("⚠ Must look like `dbo:PropertyName` — starts with `dbo:`, letters and numbers only, no spaces.")
-
     if st.button("Save correction", key=f"save_mod_{idx}"):
-        if new_prop == "— type a custom property below —":
-            candidate = custom_prop.strip()
-            if not DBO_PROPERTY_PATTERN.match(candidate):
-                st.error("Please enter a valid `dbo:PropertyName` before saving.")
-            else:
-                save_decision("modify", final_dbo_uri=candidate)
-        else:
-            save_decision("modify", final_dbo_uri=new_prop)
+        save_decision("modify", final_dbo_uri=new_prop)
 
 if st.session_state.get("show_reject"):
     st.markdown("<br>", unsafe_allow_html=True)
