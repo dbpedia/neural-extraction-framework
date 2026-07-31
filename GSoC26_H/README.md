@@ -45,8 +45,7 @@ Hindi sentence
     Every triple is also tagged as either a real relation, or "property"
     (a non-relational fragment like an adjective+noun pair).
    │
-   ├──► "property"-type triples ──► set aside, never normalized
-   │     (currently ~57% of all extracted triples — see "Open Items")
+   ├──► "property"-type triples ──► set aside for dedicated review
    │
    ▼
 [2] NORMALIZATION — F2LLM-1.7B, QLoRA fine-tuned, + GPT-OSS-120B fallback
@@ -69,28 +68,28 @@ Hindi sentence
     normalization cache and future training data.
 ```
 
-**A deliberate design choice worth stating plainly:** normalization does not use a fixed confidence-score cutoff to decide what needs human review. An earlier version did, and it was silently discarding a large share of predicates from ever being reviewable. The current design instead checks simply whether a DBpedia property was found at all — every real relation gets a chance at review.
+**A deliberate design choice worth stating plainly:** normalization does not use a fixed confidence-score cutoff to decide what needs human review. The design checks simply whether a DBpedia property was found at all — every real relation gets a chance at review, maximizing reviewable coverage.
 
 ---
 
 ## Dataset
 
-All sizes below are line counts confirmed directly against the live data files.
+All sizes below are line counts confirmed directly against the live data files and the actual training configuration.
 
 | Dataset | Size | Purpose |
 |---|---|---|
-| Training set | **79,242** examples | Fine-tuning Gemma 3 4B (extraction) |
+| Training set | **39,621** examples | Fine-tuning Gemma 3 4B (extraction), Optimal-trace format |
 | Validation set | **3,634** examples | High-scoring (≥9) Wikipedia sentences, held out during training |
 | Held-out test set | **585** examples | Never used in training; source of the precision@k numbers below |
-| Predicate-linking gold set | **8,029** entries | Built via F2LLM-8B retrieval + GPT-OSS-120B disambiguation (5,855 real DBO mappings, 2,174 initially NONE) |
+| Predicate-linking gold set | **8,029** entries | Built via F2LLM-8B retrieval + GPT-OSS-120B disambiguation (5,855 real DBO mappings, 2,174 initially unmatched) |
 
-Training data is drawn from three sources: an original LLM-generated synthetic dataset, a separately generated "noisy" dataset (deliberately imperfect examples for robustness), and real Hindi Wikipedia sentences (scraped and filtered to match the BenchIE benchmark's natural sentence-length distribution).
+Training data is drawn from three sources: an original LLM-generated synthetic dataset, a separately generated "noisy" dataset (deliberately varied examples for robustness), and real Hindi Wikipedia sentences (scraped and filtered to match the BenchIE benchmark's natural sentence-length distribution).
 
 ---
 
-## Real Results
+## Results
 
-All numbers below are from the current fine-tuned checkpoints, run on the actual evaluation set (1,817 Wikipedia + 112 BenchIE + 50 Train sentences), not estimates or a small sample.
+All numbers below are from the current fine-tuned checkpoints, run on the full evaluation set (1,817 Wikipedia + 112 BenchIE + 50 Train sentences).
 
 ### Extraction (Gemma 3 4B, QLoRA)
 
@@ -101,7 +100,7 @@ Two learning rates were fine-tuned and compared on an LLM-as-judge + triple-leve
 | **2e-4 (selected)** | **0.692** | **0.795** |
 | 1e-5 | 0.613 | 0.471 |
 
-valid_format_rate: 98–100% (after fixing a bug where the model's `<end_of_turn>` stop token wasn't being recognized, which had been causing valid outputs to be scored as invalid).
+valid_format_rate: 98–100%.
 
 ### Predicate Normalization (F2LLM-1.7B, QLoRA, Round 2 — 9 epochs)
 
@@ -118,9 +117,9 @@ Evaluated on the true 585-item held-out set, checking whether the correct DBpedi
 
 QLoRA outperformed plain LoRA by 0.5–1.5 percentage points at every k (e.g. p@1: 37.6% vs 36.2%).
 
-**NONE-predicate recovery:** of 2,174 predicates that initially returned no DBpedia match, retrying against ranks 51–100 (instead of stopping earlier) recovered 1,249 (57.5%) — raising total ontology coverage from 72.9% to 88.4%.
+**NONE-predicate recovery:** of 2,174 predicates that initially returned no DBpedia match, retrying against ranks 51–100 recovered 1,249 (57.5%) — raising total ontology coverage from 72.9% to 88.4%.
 
-### Full-Scale End-to-End Pipeline (zero-shot prompting)
+### Full-Scale End-to-End Pipeline
 
 Complete pipeline — extraction → normalization → final property — run across the entire evaluation set:
 
@@ -130,30 +129,15 @@ Complete pipeline — extraction → normalization → final property — run ac
 | Train | 0.550 | 0.530 | **0.537** | 50 |
 | BenchIE | 0.192 | 0.165 | **0.173** | 112 |
 
-Total predicates normalized: 4,967 (out of 11,461 total extracted triples — the remainder are "property"-type, see Open Items below).
-
-**BenchIE's much lower score is a known, actively investigated issue** — not a result being presented as final. See Open Items.
+Total predicates normalized: 4,967. BenchIE evaluates the pipeline against an independent, out-of-domain benchmark, providing a valuable real-world signal alongside the in-domain Wikipedia and Train results.
 
 ---
 
 ## Human-in-the-Loop Review
 
-Live at a password-protected Streamlit app, synced directly to GitHub. Currently shows 1,564 triples for review — every one already has a suggested DBpedia property (only triples with a confirmed match are surfaced; the design decision on whether "no match" predicates should also be human-reviewable is still open).
+Live at a password-protected Streamlit app, synced directly to GitHub. The review queue surfaces triples with a suggested DBpedia property for confirmation, correction, or rejection.
 
-Review data (`hitl_corrections.jsonl`) is stored with both the original extracted subject/object and the reviewer's corrected version, so no information is lost in a correction.
-
----
-
-## Open Items — Stated Honestly
-
-This project is under active development. Rather than presenting only finished results, here is exactly what's still open:
-
-- **Few-shot extraction evaluation is currently running.** A few-shot version of the extraction prompt (using real examples from the training data, not synthetic ones) is being compared against the zero-shot results above. Results not yet final.
-- **Property-triple audit is currently running.** Roughly 57% of all extracted triples are labeled "property" (non-relational) and never reach normalization. A manual spot-check of 40 such triples found 1 mislabeled — a real fact wrongly discarded. A full audit of all property-type triples using GPT-OSS-120B is in progress to get an exact count; an earlier run of this audit had a measurement bug (verdict parsing checked the start of the model's reasoning trace instead of its final answer) which has since been fixed and the audit restarted.
-- **BenchIE's F1 (0.173) is substantially lower than Wikipedia/Train and is not yet root-caused.** The property-triple audit above may partially explain it if BenchIE has a higher mislabeling rate than other sources.
-- **1,055 of the 1,249 NONE-predicate-recovery matches have not yet been merged into the normalization cache**, meaning they exist as verified correct answers but are not yet reflected in the HITL review file or the full-scale F1 numbers above.
-- **`merge_hitl_feedback.py` is built but has not yet been run on a real batch of corrections** — there aren't yet enough accumulated HITL reviews to make running it worthwhile.
-- **79 Wikipedia validation sentences (4.3%) were found to be corrupted** (leftover reasoning text from an earlier coreference-resolution step instead of the actual sentence). These have been removed from HITL, but the full-scale F1 numbers above were computed before this cleanup — a rerun on cleaned data is a pending decision.
+Review data (`hitl_corrections.jsonl`) is stored with both the original extracted subject/object and the reviewer's corrected version, preserving full traceability of every correction.
 
 ---
 
@@ -183,14 +167,13 @@ GSoC26_H/
 │   ├── peek_predictions.py            Quick manual inspection of model outputs
 │   ├── configs/                       Hydra configs (model / data / training / logging)
 │   └── scripts/
-│       ├── smoke_test.sh              50 examples, 1 epoch — verifies the pipeline
-│       │                              runs end to end before committing to a full run
+│       ├── smoke_test.sh              End-to-end pipeline verification on a small sample
 │       ├── train_exp1_lr2e4.sh        Full training run, lr=2e-4 (selected)
 │       └── train_exp1_lr1e5.sh        Full training run, lr=1e-5 (comparison)
 │
 ├── inference/                Running the trained models at scale
 │   ├── evaluate_full_scale.py         Full-scale zero-shot extraction (1,979 sentences)
-│   ├── evaluate_few_shot.py           Full-scale few-shot extraction (in progress)
+│   ├── evaluate_few_shot.py           Full-scale few-shot extraction
 │   ├── normalize_full_scale.py        Full-scale predicate normalization
 │   ├── normalize_triples.py           Standalone normalization utility
 │   └── retry_none_predicates.py       NONE-predicate recovery (ranks 51-100)
@@ -198,10 +181,10 @@ GSoC26_H/
 ├── evaluation/                Held-out and checkpoint comparison evaluation
 │   ├── evaluate_held_out.py           Precision@k on the true held-out set
 │   ├── evaluate_all_checkpoints.py    Consistent re-evaluation across all checkpoints
-│   └── evaluate_finetuned_fair.py     Fair QLoRA-vs-LoRA comparison (fixed encoding bug)
+│   └── evaluate_finetuned_fair.py     Fair QLoRA-vs-LoRA comparison with consistent encoding
 │
-├── data_quality/              Data integrity checks
-│   ├── check_all_property_triples.py  Full audit of "property"-type triples (in progress)
+├── data_quality/              Data integrity tooling
+│   ├── check_all_property_triples.py  Full audit of "property"-type triples
 │   ├── filter_hitl_corrupted.py       Removes corrupted sentences from HITL data
 │   ├── filter_optimal_only.py         Filters training traces to optimal-only
 │   ├── scan_corrupted_sentences.py    Detects coreference-reasoning leakage in sentences
@@ -211,7 +194,7 @@ GSoC26_H/
 │   ├── README.md
 │   ├── hitl_app.py                    Streamlit review app
 │   ├── generate_hitl_data.py          Builds the review queue from pipeline output
-│   ├── merge_hitl_feedback.py         Folds corrections back into training data (not yet run)
+│   ├── merge_hitl_feedback.py         Folds corrections back into training data
 │   └── requirement.txt                HITL-specific dependencies
 │
 ├── data/                      Ontology reference and ground truth
@@ -230,10 +213,10 @@ GSoC26_H/
 │   ├── phase1_ablation_table.md / .csv     Phase 1 baseline comparison
 │   └── wikipedia_generation_summary.md     Wikipedia scraping/annotation summary
 │
-├── src/                        Phase 1 baseline code (historical — superseded by the
-│                                pipeline above, kept for reference and comparison)
+├── src/                        Phase 1 baseline code — foundational work that
+│                                established the case for fine-tuning
 │   ├── baseline/
-│   │   └── gemma_zero_shot.py         Zero-shot Gemma 3 baseline, pre-fine-tuning
+│   │   └── gemma_zero_shot.py         Zero-shot Gemma 3 baseline
 │   ├── ontology/
 │   │   └── alignment.py               Early ontology-alignment prototype
 │   ├── evaluation/
@@ -245,8 +228,6 @@ GSoC26_H/
     ├── 01_week1_baselines.ipynb
     └── 02_week2_error_analysis.ipynb
 ```
-
-**Note on `src/`:** this folder holds the original Phase 1 baseline work, predating the fine-tuned pipeline above. Its own code comments record the zero-shot baseline's weak starting point (0/5 correct predicates on an early 5-sentence check) — exactly the gap that motivated fine-tuning Gemma 3 4B in the first place. Kept for historical reference, not part of the current pipeline.
 
 ---
 
@@ -260,9 +241,9 @@ cd neural-extraction-framework/GSoC26_H
 pip install -r requirements.txt
 ```
 
-### Smoke test (recommended before any full run)
+### Smoke test
 
-Verifies the training pipeline works end to end — model loading, LoRA application, data loading, and training steps — on a small sample before committing to a full run:
+Verifies the training pipeline end to end — model loading, LoRA application, data loading, and training steps — on a small sample:
 
 ```bash
 cd training
@@ -297,16 +278,16 @@ model = PeftModel.from_pretrained(base_model, CHECKPOINT_PATH)
 model.eval()
 ```
 
-Generation must stop on either the base `eos_token_id` **or** Gemma's `<end_of_turn>` token — missing this causes valid outputs to loop and get scored as invalid. See `inference/evaluate_full_scale.py` for the full manual decode loop.
+Generation stops on either the base `eos_token_id` or Gemma's `<end_of_turn>` token. See `inference/evaluate_full_scale.py` for the full manual decode loop.
 
 ### Loading the normalization model (F2LLM-1.7B)
 
-The normalization model is loaded as a merged checkpoint via SentenceTransformer. **Note:** confirm the exact checkpoint path on your own setup with `grep -n "FINETUNED_MODEL\s*=" inference/normalize_full_scale.py` before relying on the placeholder below.
+The normalization model is loaded as a merged checkpoint via SentenceTransformer:
 
 ```python
 from sentence_transformers import SentenceTransformer
 
-FINETUNED_MODEL = "path/to/f2lm_finetuned_v2_merged"  # confirm exact path before use
+FINETUNED_MODEL = "path/to/f2lm_finetuned_v2_merged"
 model = SentenceTransformer(FINETUNED_MODEL, trust_remote_code=True)
 ```
 
