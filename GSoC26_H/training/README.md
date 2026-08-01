@@ -128,9 +128,19 @@ bash scripts/train_exp1_lr1e5.sh
 ```
 training/
 ├── README.md
-├── prepare_data.py
-├── train.py
-├── evaluate.py
+├── prepare_data.py                    Builds train/validation splits
+├── train.py                           Gemma 3 4B QLoRA fine-tuning entry point
+├── evaluate.py                        Standalone checkpoint evaluation
+├── evaluate_150_mixed.py              150-sample mixed-source eval
+├── evaluate_150_lr1e5.py              150-sample eval, lr=1e-5 checkpoint
+├── evaluate_checkpoints.py            Compares checkpoints across training
+├── peek_predictions.py                Quick manual inspection of model outputs
+├── build_gold_set_chunk0.py           Predicate-linking gold set construction (chunk 1/2)
+├── build_gold_set_chunk1.py           Predicate-linking gold set construction (chunk 2/2)
+├── embed_catalog_f2lm.py              Pre-computes DBpedia property catalog embeddings
+├── finetune_f2lm.py                   F2LLM-1.7B QLoRA fine-tuning
+├── finetune_f2lm_lora_only.py         F2LLM-1.7B plain LoRA (comparison run)
+├── merge_lora_only.py                 Merges LoRA adapter into base weights
 ├── configs/
 │   ├── config.yaml
 │   ├── model/
@@ -141,6 +151,7 @@ training/
     ├── smoke_test.sh
     ├── train_exp1_lr2e4.sh
     └── train_exp1_lr1e5.sh
+```
 ```
 
 ---
