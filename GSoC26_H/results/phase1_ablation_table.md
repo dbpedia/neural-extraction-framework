@@ -27,3 +27,13 @@
 
 3. **All three systems share the same downstream gap:** surface Hindi predicates that are not aligned to DBpedia ontology — 82% of GSoC25_H's failures.
 
+   ---
+
+## Note on Current Model — Not Directly Comparable
+
+The current fine-tuned pipeline (Gemma 3 4B + F2LLM-1.7B) achieves **F1 = 0.173** on BenchIE, measured using the triple-level set-matching methodology in `normalize_full_scale.py` — a different scoring approach than the fact-cluster / error-taxonomy methodology used for the three systems above.
+
+An attempt was made to score the current model using the same `error_taxonomy.py` classifier for a like-for-like comparison. This surfaced a genuine bug in that script's copula-detection logic: it checks whether any Hindi copula word appears anywhere as a *substring* of the predicted predicate, rather than requiring a whole-word match. Since most grammatically correct Hindi verb phrases legitimately contain a copula substring (e.g. "है" inside "सििद्ध होती है"), this caused a majority of genuinely correct predictions to be misclassified as placeholder errors — confirmed by manual inspection, which found multiple byte-identical gold/predicted matches wrongly flagged this way.
+
+Given this, no new row has been added to the tables above — doing so would risk publishing a result that reflects the classifier's own limitation rather than the model's actual performance. **F1 = 0.173 (via `normalize_full_scale.py`) remains the trustworthy current-model number for BenchIE.**
+
