@@ -60,3 +60,17 @@ Output format is identical to the original 20K dataset — directly mergeable.
 Scraped sentences and generated examples are stored on Google Drive.
 Output: `wikipedia_scraped_sentences.jsonl` (scraped) →
         `wikipedia_synthetic_data.jsonl` (after GPT-OSS-120B annotation, pending).
+
+        ---
+
+## Update — Outcome (Current Status)
+
+This scraping and annotation effort completed successfully and became a core part of the final training data.
+
+**Scoring refinement:** the original scoring prompt was found to undervalue genuine Wikipedia sentences relative to synthetic ones (a property-density bias). Adding Hindi-specific few-shot examples with explicit property-density weighting raised the rate of high-quality (score ≥9) sentences from 8.5% to 68.8%.
+
+**Final validation set:** 3,634 examples — high-scoring (≥9) Wikipedia sentences, confirmed as the exact file used during fine-tuning (`exp1_val_wikipedia_ge9.jsonl`), held out from training throughout.
+
+**Downstream results on this data:** Wikipedia F1 = 0.692 (LLM-as-judge extraction evaluation), and F1 = 0.493 (full-scale end-to-end pipeline, after excluding 79 sentences found to be corrupted by leftover coreference-resolution artifacts).
+
+**Output file:** the cleaned, final dataset is committed to the repository at `data/wikipedia_synthetic_data_clean.jsonl`.
