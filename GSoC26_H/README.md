@@ -153,7 +153,7 @@ Complete pipeline — extraction → normalization → final property — run ac
 
 | Source | Precision | Recall | F1 | N |
 |---|---|---|---|---|
-| Wikipedia | 0.493 | 0.490 | **0.490** | 1,817 |
+| Wikipedia | 0.498 | 0.493 | **0.493** | 1,817 |
 | Train | 0.550 | 0.530 | **0.537** | 50 |
 | BenchIE | 0.192 | 0.165 | **0.173** | 112 |
 
