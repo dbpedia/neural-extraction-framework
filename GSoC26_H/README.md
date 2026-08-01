@@ -96,7 +96,7 @@ Every candidate sentence — synthetic and real Wikipedia alike — was scored 1
 
 ### 5. Train / Validation Split
 
-Sentences scoring 9 or above were held out as the validation set; everything else became the training set. Pronouns appearing in core triplets were resolved to their referenced entities via an LLM-based coreference pass before finalizing the splits, with a refined recovery rule added for "self-contained" cases (e.g. a demonstrative pronoun paired with a noun) to retain otherwise-recoverable examples.
+Sentences scoring 9 or above were held out as the validation set; everything else became the training set. Pronouns appearing in core triplets were resolved to their referenced entities via an LLM-based coreference pass (`coref_resolve.py`) before finalizing the splits, with a refined recovery rule added for "self-contained" cases (e.g. a demonstrative pronoun paired with a noun) to retain otherwise-recoverable examples.
 
 **Final splits:**
 
@@ -159,6 +159,8 @@ Complete pipeline — extraction → normalization → final property — run ac
 
 Total predicates normalized: 4,967. BenchIE evaluates the pipeline against an independent, out-of-domain benchmark (ground truth constructed via the same top-k + LLM disambiguation approach as the gold set above), providing a valuable real-world signal alongside the in-domain Wikipedia and Train results.
 
+The Wikipedia figure above reflects a rerun (`rerun_wikipedia_f1_clean.py`) excluding 79 sentences found to be corrupted by leftover coreference-resolution artifacts, using the fully-updated normalization cache.
+
 ### 11. Data Quality Auditing
 
 A dedicated audit pipeline verifies data integrity end to end: detecting and filtering corrupted sentences (leftover artifacts from the coreference-resolution step), and independently auditing every triple labeled "property" (non-relational) using GPT-OSS-120B to confirm that classification is correct.
@@ -217,14 +219,19 @@ GSoC26_H/
 ├── evaluation/                Held-out and checkpoint comparison evaluation
 │   ├── evaluate_held_out.py           Precision@k on the true held-out set
 │   ├── evaluate_all_checkpoints.py    Consistent re-evaluation across all checkpoints
-│   └── evaluate_finetuned_fair.py     Fair QLoRA-vs-LoRA comparison with consistent encoding
+│   ├── evaluate_finetuned_fair.py     Fair QLoRA-vs-LoRA comparison with consistent encoding
+│   └── rerun_wikipedia_f1_clean.py    Recomputes Wikipedia F1 excluding corrupted sentences
 │
 ├── data_quality/              Data integrity tooling
 │   ├── check_all_property_triples.py  Full audit of "property"-type triples
 │   ├── filter_hitl_corrupted.py       Removes corrupted sentences from HITL data
 │   ├── filter_optimal_only.py         Filters training traces to optimal-only
 │   ├── scan_corrupted_sentences.py    Detects coreference-reasoning leakage in sentences
-│   └── scan_corrupted_v2.py           Refined corrupted-sentence detection
+│   ├── scan_corrupted_v2.py           Refined corrupted-sentence detection
+│   └── scoring_and_coref/
+│       ├── coref_resolve.py           LLM-based coreference resolution pass
+│       ├── score_chunk.py             LLM-as-judge quality scoring (chunked)
+│       └── score_wikipedia.py         Wikipedia sentence quality scoring
 │
 ├── hitl/                      Human review interface
 │   ├── README.md
