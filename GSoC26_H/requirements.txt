@@ -9,7 +9,8 @@ bitsandbytes>=0.43.0          # QLoRA 4-bit quantization
 trl>=0.8.0                    # SFTTrainer for fine-tuning
 
 # ─── Embeddings & Similarity ──────────────────────────────────────────────────
-sentence-transformers>=2.7.0  # paraphrase-multilingual-MiniLM-L12-v2
+sentence-transformers>=2.7.0  # loads both MiniLM (curated fast-path) and the
+                               # fine-tuned F2LLM-1.7B normalization model
 
 # ─── Ontology / Knowledge Graph ───────────────────────────────────────────────
 rdflib>=6.3.0                 # RDF serialization (Turtle, N-Triples)
@@ -20,6 +21,7 @@ pydantic>=2.0.0               # Triple output schema enforcement
 
 # ─── HITL Interface ───────────────────────────────────────────────────────────
 streamlit>=1.35.0
+requests>=2.31.0              # GitHub sync (HITL) + NVIDIA API calls (audits, gold set)
 
 # ─── Data & Utilities ─────────────────────────────────────────────────────────
 jsonlines>=4.0.0
