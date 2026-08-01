@@ -57,7 +57,7 @@ for Hindi predicate → DBpedia property alignment.
 
 **Production pipeline going forward:**
 ```
-Stage 1: intfloat/multilingual-e5-large-instruct
+Stage 1:  f2llm 1.7B fine tuned on gold set created by f2llm 8b 
          → top-15 candidates per predicate (no threshold)
 Stage 2: openai/gpt-oss-120b (NVIDIA hosted)
          → disambiguates using full sentence context + 15 diverse few-shot examples
