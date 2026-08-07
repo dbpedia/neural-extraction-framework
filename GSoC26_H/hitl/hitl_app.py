@@ -95,17 +95,16 @@ st.markdown("""
 footer {visibility: hidden;}
 header[data-testid="stHeader"] {background: transparent;}
 html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-.block-container { max-width: 880px; padding-top: 2rem; padding-bottom: 4rem; }
+.block-container { max-width: 900px; padding-top: 2rem; padding-bottom: 4rem; }
 .app-header { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
 .app-header .dbpedia-logo { height: 42px; width: auto; }
 .app-header .header-title { font-family: 'Lora', serif; font-weight: 600; font-size: 28px; color: #14181A; line-height: 1.1; }
 .app-header .header-subtitle { font-size: 14px; color: #5B6663; margin-top: 2px; }
 .app-divider { height: 1px; background: #E2E5E1; margin: 18px 0 28px 0; }
-.chip-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.chip { border: 1px solid #E2E5E1; border-radius: 8px; padding: 10px 14px; background: #FFFFFF; flex: 1; min-width: 140px; }
+.chip { border: 1px solid #E2E5E1; border-radius: 8px; padding: 10px 14px; background: #FFFFFF; }
 .chip-label { font-size: 10.5px; letter-spacing: 0.07em; color: #8A938F; text-transform: uppercase; margin-bottom: 5px; font-weight: 600; }
 .chip-value { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #14181A; word-break: break-word; }
-.sentence-box { font-family: 'JetBrains Mono', monospace; font-size: 16px; line-height: 1.7; color: #14181A; background: #FFFFFF; border: 1px solid #E2E5E1; border-left: 3px solid #0E7C7B; border-radius: 6px; padding: 16px 18px; }
+.sentence-box { font-family: 'JetBrains Mono', monospace; font-size: 17px; line-height: 2.1; color: #14181A; background: #FFFFFF; border: 1px solid #E2E5E1; border-left: 3px solid #0E7C7B; border-radius: 6px; padding: 16px 18px; }
 .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; }
 .badge-high { background: #DCF5E8; color: #15803D; }
 .badge-none { background: #FEE2E2; color: #B91C1C; }
@@ -113,8 +112,9 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .meter-fill { height: 100%; border-radius: 4px; }
 .suggestion-uri { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: #0E7C7B; margin-top: 10px; }
 .suggestion-caption { font-size: 12.5px; color: #8A938F; margin-top: 8px; }
-.edit-hint { font-size: 12px; color: #8A938F; margin: 4px 0 8px 0; }
-.stButton button { border-radius: 6px; font-weight: 600; padding-top: 8px; padding-bottom: 8px; }
+.select-hint { font-size: 12.5px; color: #8A938F; margin: 4px 0 10px 0; }
+.selected-preview { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #14181A; background: #F5F7F6; border-radius: 6px; padding: 8px 12px; margin-top: 6px; }
+.stButton button { border-radius: 6px; font-weight: 600; }
 .app-footer { text-align: center; font-size: 12.5px; color: #8A938F; margin-top: 48px; }
 </style>
 """, unsafe_allow_html=True)
@@ -137,9 +137,9 @@ with st.expander("About this tool"):
         "the relation needs to match one of DBpedia's standard properties (things like "
         "`dbo:birthPlace` or `dbo:builder`). A fine-tuned model plus an LLM disambiguation "
         "step propose a match; this tool is where a person confirms, corrects, or rejects "
-        "that proposal — including fixing the subject or object text directly if the "
-        "extraction got the span wrong. Corrections sync automatically back to the "
-        "pipeline's training data.\n\n"
+        "that proposal — including correcting the subject or object by selecting the right "
+        "words directly from the sentence, if the extraction got the span wrong. "
+        "Corrections sync automatically back to the pipeline's training data.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
         "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
     )
@@ -183,7 +183,6 @@ if not st.session_state.authenticated:
 
 
 def make_triple_id(row):
-    """Stable identity for a triple, independent of file order or reruns."""
     key = f"{row.get('sentence','')}|{row.get('subject','')}|{row.get('relation','')}|{row.get('object','')}"
     return hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
 
@@ -212,8 +211,6 @@ def load_data():
 
 
 def load_existing_corrections():
-    """Pull previously synced corrections from GitHub so reloads know what's
-    already been judged. Returns (list_of_decisions, set_of_triple_ids)."""
     token = st.secrets.get("github_token")
     if not token:
         return [], set()
@@ -249,9 +246,6 @@ def load_existing_corrections():
 
 
 def sync_to_github(new_decisions):
-    """Push new decisions to GitHub via the Contents API, skipping anything
-    whose triple_id is already present. Requires github_token in Streamlit
-    secrets. Returns (success, message)."""
     token = st.secrets.get("github_token")
         return False, "No github_token found in app secrets. Add it under Settings → Secrets."
 
@@ -406,25 +400,78 @@ else:
 
 st.caption(f"Item {idx + 1} of {len(view_queue)}")
 
+# ── Word-click selection state, reset per item ──────────────────────────
+sel_subj_key = f"sel_subj_{row['triple_id']}"
+sel_obj_key = f"sel_obj_{row['triple_id']}"
+mode_key = f"sel_mode_{row['triple_id']}"
+
+if sel_subj_key not in st.session_state:
+    st.session_state[sel_subj_key] = []
+if sel_obj_key not in st.session_state:
+    st.session_state[sel_obj_key] = []
+if mode_key not in st.session_state:
+    st.session_state[mode_key] = "Subject"
+
+words = row.get("sentence", "").split()
+
 col1, col2 = st.columns([1.6, 1])
 
 with col1:
     st.markdown("**Sentence**")
     st.markdown(f'<div class="sentence-box">{row.get("sentence", "")}</div>', unsafe_allow_html=True)
 
-    st.markdown("<br>**Extracted triple**", unsafe_allow_html=True)
-    st.markdown('<div class="edit-hint">Subject and object are editable — fix them directly if the extraction got the span wrong.</div>', unsafe_allow_html=True)
+    st.markdown("<br>**Select subject &amp; object from the sentence**", unsafe_allow_html=True)
+    st.markdown(
+        '<div class="select-hint">🟦 = subject &nbsp;&nbsp; 🟩 = object &nbsp;&nbsp; '
+        'Choose a mode below, then click words to add or remove them.</div>',
+        unsafe_allow_html=True,
+    )
 
-    edit_col1, edit_col2 = st.columns(2)
-    with edit_col1:
-        edited_subject = st.text_input("Subject", value=row.get("subject", ""), key=f"subject_edit_{idx}")
-    with edit_col2:
-        edited_object = st.text_input("Object", value=row.get("object", ""), key=f"object_edit_{idx}")
+    st.session_state[mode_key] = st.radio(
+        "Selecting for", ["Subject", "Object"],
+        index=0 if st.session_state[mode_key] == "Subject" else 1,
+        key=f"mode_radio_{row['triple_id']}",
+        horizontal=True,
+        label_visibility="collapsed",
+    )
+
+    WORDS_PER_ROW = 7
+    for row_start in range(0, len(words), WORDS_PER_ROW):
+        row_words = words[row_start:row_start + WORDS_PER_ROW]
+        cols = st.columns(len(row_words))
+        for i, w in enumerate(row_words):
+            word_idx = row_start + i
+            in_subj = word_idx in st.session_state[sel_subj_key]
+            in_obj = word_idx in st.session_state[sel_obj_key]
+            label = f"🟦 {w}" if in_subj else (f"🟩 {w}" if in_obj else w)
+            with cols[i]:
+                if st.button(label, key=f"word_{row['triple_id']}_{word_idx}", use_container_width=True):
+                    target_key = sel_subj_key if st.session_state[mode_key] == "Subject" else sel_obj_key
+                    if word_idx in st.session_state[target_key]:
+                        st.session_state[target_key].remove(word_idx)
+                    else:
+                        st.session_state[target_key].append(word_idx)
+                    st.rerun()
+
+    selected_subject = " ".join(words[i] for i in sorted(st.session_state[sel_subj_key]))
+    selected_object = " ".join(words[i] for i in sorted(st.session_state[sel_obj_key]))
+
+    prev_col1, prev_col2, prev_col3 = st.columns([3, 3, 1])
+    with prev_col1:
+        st.markdown(f'<div class="selected-preview">🟦 Subject: {selected_subject or "—"}</div>', unsafe_allow_html=True)
+    with prev_col2:
+        st.markdown(f'<div class="selected-preview">🟩 Object: {selected_object or "—"}</div>', unsafe_allow_html=True)
+    with prev_col3:
+        if st.button("Clear", key=f"clear_{row['triple_id']}", use_container_width=True):
+            st.session_state[sel_subj_key] = []
+            st.session_state[sel_obj_key] = []
+            st.rerun()
 
     relation_text = row.get("relation", "")
     relation_display = f'{dbo_uri}  <span style="color:#8A938F;">({relation_text})</span>' if dbo_uri else relation_text
     st.markdown(
-        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{relation_display}</div></div>',
+        f'<div class="chip" style="margin-top:14px;"><div class="chip-label">Relation</div>'
+        f'<div class="chip-value">{relation_display}</div></div>',
         unsafe_allow_html=True,
     )
 
@@ -447,15 +494,18 @@ st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
 
 b1, b2, b3 = st.columns(3)
 
+
 def save_decision(action, **extra):
+    final_subj = selected_subject.strip() if selected_subject.strip() else row.get("subject", "")
+    final_obj = selected_object.strip() if selected_object.strip() else row.get("object", "")
     decision = {
         "triple_id": row.get("triple_id"),
         "sentence": row.get("sentence", ""),
         "subject": row.get("subject", ""),
         "relation": row.get("relation", ""),
         "object": row.get("object", ""),
-        "final_subject": edited_subject.strip(),
-        "final_object": edited_object.strip(),
+        "final_subject": final_subj,
+        "final_object": final_obj,
         "suggested_dbo_uri": dbo_uri,
         "suggested_score": score,
         "action": action,
@@ -466,7 +516,10 @@ def save_decision(action, **extra):
     st.session_state.idx += 1
     st.session_state.show_modify = False
     st.session_state.show_reject = False
+    st.session_state[sel_subj_key] = []
+    st.session_state[sel_obj_key] = []
     st.rerun()
+
 
 with b1:
     if st.button("✓  Accept", use_container_width=True, type="primary", disabled=not dbo_uri):
@@ -505,6 +558,8 @@ if st.button("Skip without deciding →"):
     st.session_state.idx += 1
     st.session_state.show_modify = False
     st.session_state.show_reject = False
+    st.session_state[sel_subj_key] = []
+    st.session_state[sel_obj_key] = []
     st.rerun()
 
 st.markdown(
