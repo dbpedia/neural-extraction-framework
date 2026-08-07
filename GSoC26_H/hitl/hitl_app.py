@@ -25,6 +25,13 @@ CANDIDATE_PATHS = [
 ]
 CANDIDATE_PATHS = [str(p) for p in CANDIDATE_PATHS]
 
+# NEW: where to find the precomputed real top-40 candidates per predicate
+TOP40_CANDIDATE_PATHS = [
+    _REPO_ROOT / "results" / "hitl_top40_candidates.json",
+    _REPO_ROOT / "data" / "hitl_top40_candidates.json",
+    "hitl_top40_candidates.json",
+]
+TOP40_CANDIDATE_PATHS = [str(p) for p in TOP40_CANDIDATE_PATHS]
 
 GITHUB_REPO = "singhhnitin/neural-extraction-framework"
 GITHUB_FILE_PATH = "GSoC26_H/results/hitl_corrections.jsonl"
@@ -142,9 +149,10 @@ with st.expander("About this tool"):
         "the relation needs to match one of DBpedia's standard properties (things like "
         "`dbo:birthPlace` or `dbo:builder`). A fine-tuned model plus an LLM disambiguation "
         "step propose a match; this tool is where a person confirms, corrects, or rejects "
-        "that proposal. Click **Modify** to correct the subject, object, or property using "
-        "dropdowns populated only with words from that sentence. Corrections sync "
-        "automatically back to the pipeline's training data.\n\n"
+        "that proposal. Click **Modify** to correct the subject, object, or property — the "
+        "property dropdown shows the real top-40 candidates the model actually considered "
+        "for this specific relation, with similarity scores. Corrections sync automatically "
+        "back to the pipeline's training data.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
         "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
     )
@@ -158,7 +166,11 @@ with st.expander("Connect your pipeline"):
         "- `GSoC26_H/data/alignment_results_full_20k.jsonl`\n"
         "- the app's own working directory\n"
         "- common Google Drive paths (for running from Colab)\n\n"
-        "If none are found, the queue falls back to a small demo set."
+        "If none are found, the queue falls back to a small demo set.\n\n"
+        "It also optionally looks for **`hitl_top40_candidates.json`** (precomputed "
+        "top-40 DBpedia property candidates per predicate, via `precompute_top40_for_hitl.py`) "
+        "in the same locations. If a predicate isn't found there, the Modify panel falls "
+        "back to a curated list of ~73 common properties."
     )
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
@@ -213,6 +225,19 @@ def load_data():
                         rows.append(json.loads(line))
             return rows, path
     return DEMO_DATA, None
+
+
+@st.cache_data
+def load_top40_candidates():
+    """Loads precomputed real top-40 DBpedia property candidates per
+    predicate (built offline by precompute_top40_for_hitl.py). Returns
+    an empty dict if the file isn't found -- callers must fall back to
+    the static curated list in that case."""
+    for path in TOP40_CANDIDATE_PATHS:
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+    return {}
 
 
 def load_existing_corrections():
@@ -314,11 +339,14 @@ def sync_to_github(new_decisions):
 all_rows, found_path = load_data()
 using_demo = found_path is None
 all_rows = add_ids(all_rows)
+top40_data = load_top40_candidates()
 
 if using_demo:
     st.info("**Demo mode** — showing 5 sample triples. See \"Connect your pipeline\" above to load real data.")
 else:
     st.caption(f"Connected · {len(all_rows):,} rows loaded from `{found_path}`")
+    if not top40_data:
+        st.caption("⚠ Real top-40 candidates file not found — Modify panel will use the curated fallback list.")
 
 if "queue" not in st.session_state:
     existing_decisions, corrected_ids = load_existing_corrections()
@@ -501,11 +529,29 @@ if st.session_state.get("show_modify"):
             key=f"obj_ms_{row['triple_id']}", label_visibility="collapsed",
         )
 
-    st.markdown("**DBpedia property**")
-    new_prop = st.selectbox(
-        "Correct dbo: property", options=PROPERTY_OPTIONS,
-        key=f"modify_select_{idx}", label_visibility="collapsed",
-    )
+    # ── Real top-40 candidates for THIS triple's relation, if available ──
+    relation_key = row.get("relation", "").strip()
+    real_candidates = top40_data.get(relation_key)
+
+    if real_candidates:
+        st.markdown("**DBpedia property** — real top-40 candidates for this relation, ranked by similarity")
+        label_to_uri = {}
+        display_options = []
+        for cand in real_candidates:
+            label = f"{cand['uri']}  ·  similarity {cand['score']:.3f}"
+            display_options.append(label)
+            label_to_uri[label] = cand["uri"]
+        chosen_label = st.selectbox(
+            "Correct dbo: property", options=display_options,
+            key=f"modify_select_{idx}", label_visibility="collapsed",
+        )
+        new_prop = label_to_uri[chosen_label]
+    else:
+        st.markdown("**DBpedia property** (curated list — real candidates not found for this relation)")
+        new_prop = st.selectbox(
+            "Correct dbo: property", options=PROPERTY_OPTIONS,
+            key=f"modify_select_{idx}", label_visibility="collapsed",
+        )
 
     if st.button("Save correction", key=f"save_mod_{idx}", type="primary"):
         final_subject = " ".join(w for w in words if w in new_subject_words) if new_subject_words else row.get("subject", "")
