@@ -95,26 +95,31 @@ st.markdown("""
 footer {visibility: hidden;}
 header[data-testid="stHeader"] {background: transparent;}
 html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-.block-container { max-width: 900px; padding-top: 2rem; padding-bottom: 4rem; }
+.block-container { max-width: 1120px; padding-top: 2rem; padding-bottom: 4rem; }
 .app-header { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
 .app-header .dbpedia-logo { height: 42px; width: auto; }
 .app-header .header-title { font-family: 'Lora', serif; font-weight: 600; font-size: 28px; color: #14181A; line-height: 1.1; }
 .app-header .header-subtitle { font-size: 14px; color: #5B6663; margin-top: 2px; }
-.app-divider { height: 1px; background: #E2E5E1; margin: 18px 0 28px 0; }
-.chip { border: 1px solid #E2E5E1; border-radius: 8px; padding: 10px 14px; background: #FFFFFF; }
-.chip-label { font-size: 10.5px; letter-spacing: 0.07em; color: #8A938F; text-transform: uppercase; margin-bottom: 5px; font-weight: 600; }
-.chip-value { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #14181A; word-break: break-word; }
-.sentence-box { font-family: 'JetBrains Mono', monospace; font-size: 17px; line-height: 2.1; color: #14181A; background: #FFFFFF; border: 1px solid #E2E5E1; border-left: 3px solid #0E7C7B; border-radius: 6px; padding: 16px 18px; }
-.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; }
+.app-divider { height: 1px; background: #E2E5E1; margin: 22px 0 28px 0; }
+.chip-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+.chip { border: 1px solid #E2E5E1; border-radius: 10px; padding: 14px 16px; background: #FFFFFF; flex: 1; min-width: 160px; }
+.chip-label { font-size: 10.5px; letter-spacing: 0.08em; color: #8A938F; text-transform: uppercase; margin-bottom: 6px; font-weight: 600; }
+.chip-value { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #14181A; word-break: break-word; }
+.sentence-box { font-family: 'JetBrains Mono', monospace; font-size: 17px; line-height: 1.9; color: #14181A; background: #FFFFFF; border: 1px solid #E2E5E1; border-left: 4px solid #0E7C7B; border-radius: 8px; padding: 18px 20px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; }
 .badge-high { background: #DCF5E8; color: #15803D; }
 .badge-none { background: #FEE2E2; color: #B91C1C; }
-.meter { height: 6px; background: #E9ECE9; border-radius: 4px; overflow: hidden; margin-top: 10px; }
-.meter-fill { height: 100%; border-radius: 4px; }
-.suggestion-uri { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: #0E7C7B; margin-top: 10px; }
-.suggestion-caption { font-size: 12.5px; color: #8A938F; margin-top: 8px; }
-.select-hint { font-size: 12.5px; color: #8A938F; margin: 4px 0 10px 0; }
-.selected-preview { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #14181A; background: #F5F7F6; border-radius: 6px; padding: 8px 12px; margin-top: 6px; }
-.stButton button { border-radius: 6px; font-weight: 600; }
+.confidence-card { background: #FFFFFF; border: 1px solid #E2E5E1; border-radius: 14px; padding: 24px; text-align: center; }
+.confidence-ring { width: 132px; height: 132px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 8px auto 14px auto; }
+.confidence-ring-inner { width: 100px; height: 100px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+.confidence-ring-value { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #14181A; }
+.confidence-ring-caption { font-size: 10px; color: #8A938F; text-transform: uppercase; letter-spacing: 0.06em; }
+.suggestion-uri { font-family: 'JetBrains Mono', monospace; font-size: 19px; font-weight: 600; color: #0E7C7B; margin-top: 4px; }
+.suggestion-caption { font-size: 12.5px; color: #8A938F; margin-top: 10px; }
+.modify-panel { background: #F7F9F8; border: 1px solid #E2E5E1; border-radius: 12px; padding: 20px 22px; margin-top: 16px; }
+.modify-panel-title { font-weight: 700; font-size: 15px; color: #14181A; margin-bottom: 4px; }
+.modify-panel-hint { font-size: 12.5px; color: #8A938F; margin-bottom: 16px; }
+.stButton button { border-radius: 8px; font-weight: 600; }
 .app-footer { text-align: center; font-size: 12.5px; color: #8A938F; margin-top: 48px; }
 </style>
 """, unsafe_allow_html=True)
@@ -137,9 +142,9 @@ with st.expander("About this tool"):
         "the relation needs to match one of DBpedia's standard properties (things like "
         "`dbo:birthPlace` or `dbo:builder`). A fine-tuned model plus an LLM disambiguation "
         "step propose a match; this tool is where a person confirms, corrects, or rejects "
-        "that proposal — including correcting the subject or object by selecting the right "
-        "words directly from the sentence, if the extraction got the span wrong. "
-        "Corrections sync automatically back to the pipeline's training data.\n\n"
+        "that proposal. Click **Modify** to correct the subject, object, or property using "
+        "dropdowns populated only with words from that sentence. Corrections sync "
+        "automatically back to the pipeline's training data.\n\n"
         "**DBpedia** extracts structured information from Wikipedia and publishes it as "
         "linked open data. This review queue supports the DBpedia Hindi Chapter's work "
     )
@@ -394,101 +399,48 @@ dbo_uri = row.get("dbo_uri")
 method = row.get("method", "")
 
 if dbo_uri:
-    badge_class, badge_text, meter_color = "badge-high", "Property suggested", "#15803D"
+    badge_class, badge_text = "badge-high", "Property suggested"
 else:
-    badge_class, badge_text, meter_color = "badge-none", "No property suggested", "#B91C1C"
+    badge_class, badge_text = "badge-none", "No property suggested"
 
 st.caption(f"Item {idx + 1} of {len(view_queue)}")
 
-# ── Word-click selection state, reset per item ──────────────────────────
-sel_subj_key = f"sel_subj_{row['triple_id']}"
-sel_obj_key = f"sel_obj_{row['triple_id']}"
-mode_key = f"sel_mode_{row['triple_id']}"
-
-if sel_subj_key not in st.session_state:
-    st.session_state[sel_subj_key] = []
-if sel_obj_key not in st.session_state:
-    st.session_state[sel_obj_key] = []
-if mode_key not in st.session_state:
-    st.session_state[mode_key] = "Subject"
-
 words = row.get("sentence", "").split()
 
-col1, col2 = st.columns([1.6, 1])
+col1, col2 = st.columns([1.5, 1])
 
 with col1:
     st.markdown("**Sentence**")
     st.markdown(f'<div class="sentence-box">{row.get("sentence", "")}</div>', unsafe_allow_html=True)
 
-    st.markdown("<br>**Select subject &amp; object from the sentence**", unsafe_allow_html=True)
-    st.markdown(
-        '<div class="select-hint">🟦 = subject &nbsp;&nbsp; 🟩 = object &nbsp;&nbsp; '
-        'Choose a mode below, then click words to add or remove them.</div>',
-        unsafe_allow_html=True,
-    )
-
-    st.session_state[mode_key] = st.radio(
-        "Selecting for", ["Subject", "Object"],
-        index=0 if st.session_state[mode_key] == "Subject" else 1,
-        key=f"mode_radio_{row['triple_id']}",
-        horizontal=True,
-        label_visibility="collapsed",
-    )
-
-    WORDS_PER_ROW = 7
-    for row_start in range(0, len(words), WORDS_PER_ROW):
-        row_words = words[row_start:row_start + WORDS_PER_ROW]
-        cols = st.columns(len(row_words))
-        for i, w in enumerate(row_words):
-            word_idx = row_start + i
-            in_subj = word_idx in st.session_state[sel_subj_key]
-            in_obj = word_idx in st.session_state[sel_obj_key]
-            label = f"🟦 {w}" if in_subj else (f"🟩 {w}" if in_obj else w)
-            with cols[i]:
-                if st.button(label, key=f"word_{row['triple_id']}_{word_idx}", use_container_width=True):
-                    target_key = sel_subj_key if st.session_state[mode_key] == "Subject" else sel_obj_key
-                    if word_idx in st.session_state[target_key]:
-                        st.session_state[target_key].remove(word_idx)
-                    else:
-                        st.session_state[target_key].append(word_idx)
-                    st.rerun()
-
-    selected_subject = " ".join(words[i] for i in sorted(st.session_state[sel_subj_key]))
-    selected_object = " ".join(words[i] for i in sorted(st.session_state[sel_obj_key]))
-
-    prev_col1, prev_col2, prev_col3 = st.columns([3, 3, 1])
-    with prev_col1:
-        st.markdown(f'<div class="selected-preview">🟦 Subject: {selected_subject or "—"}</div>', unsafe_allow_html=True)
-    with prev_col2:
-        st.markdown(f'<div class="selected-preview">🟩 Object: {selected_object or "—"}</div>', unsafe_allow_html=True)
-    with prev_col3:
-        if st.button("Clear", key=f"clear_{row['triple_id']}", use_container_width=True):
-            st.session_state[sel_subj_key] = []
-            st.session_state[sel_obj_key] = []
-            st.rerun()
-
     relation_text = row.get("relation", "")
     relation_display = f'{dbo_uri}  <span style="color:#8A938F;">({relation_text})</span>' if dbo_uri else relation_text
-    st.markdown(
-        f'<div class="chip" style="margin-top:14px;"><div class="chip-label">Relation</div>'
-        f'<div class="chip-value">{relation_display}</div></div>',
-        unsafe_allow_html=True,
+    chip_html = (
+        '<div class="chip-row">'
+        f'<div class="chip"><div class="chip-label">Subject</div><div class="chip-value">{row.get("subject","")}</div></div>'
+        f'<div class="chip"><div class="chip-label">Relation</div><div class="chip-value">{relation_display}</div></div>'
+        f'<div class="chip"><div class="chip-label">Object</div><div class="chip-value">{row.get("object","")}</div></div>'
+        '</div>'
     )
+    st.markdown(chip_html, unsafe_allow_html=True)
 
 with col2:
-    st.markdown("**Suggested mapping**")
-    st.markdown(f'<span class="badge {badge_class}">{badge_text}</span>', unsafe_allow_html=True)
-    if dbo_uri:
-        st.markdown(f'<div class="suggestion-uri">{dbo_uri}</div>', unsafe_allow_html=True)
-    else:
-        st.markdown('<div class="suggestion-uri" style="color:#8A938F;">No property suggested</div>', unsafe_allow_html=True)
-
     pct = max(0, min(100, score * 100))
-    meter_html = (
-        f'<div class="meter"><div class="meter-fill" style="width:{pct}%; background:{meter_color};"></div></div>'
-        f'<div class="suggestion-caption">Confidence {score:.2f} · matched via {method or "—"}</div>'
+    ring_color = "#15803D" if dbo_uri else "#B91C1C"
+    st.markdown(
+        f'<div class="confidence-card">'
+        f'<span class="badge {badge_class}">{badge_text}</span>'
+        f'<div class="confidence-ring" style="background: conic-gradient({ring_color} {pct}%, #E9ECE9 0);">'
+        f'<div class="confidence-ring-inner">'
+        f'<div class="confidence-ring-value">{score:.2f}</div>'
+        f'<div class="confidence-ring-caption">confidence</div>'
+        f'</div></div>'
+        + (f'<div class="suggestion-uri">{dbo_uri}</div>' if dbo_uri
+           else '<div class="suggestion-uri" style="color:#8A938F;">No property suggested</div>')
+        + f'<div class="suggestion-caption">matched via {method or "—"}</div>'
+        f'</div>',
+        unsafe_allow_html=True,
     )
-    st.markdown(meter_html, unsafe_allow_html=True)
 
 st.markdown('<div class="app-divider"></div>', unsafe_allow_html=True)
 
@@ -496,16 +448,12 @@ b1, b2, b3 = st.columns(3)
 
 
 def save_decision(action, **extra):
-    final_subj = selected_subject.strip() if selected_subject.strip() else row.get("subject", "")
-    final_obj = selected_object.strip() if selected_object.strip() else row.get("object", "")
     decision = {
         "triple_id": row.get("triple_id"),
         "sentence": row.get("sentence", ""),
         "subject": row.get("subject", ""),
         "relation": row.get("relation", ""),
         "object": row.get("object", ""),
-        "final_subject": final_subj,
-        "final_object": final_obj,
         "suggested_dbo_uri": dbo_uri,
         "suggested_score": score,
         "action": action,
@@ -516,14 +464,12 @@ def save_decision(action, **extra):
     st.session_state.idx += 1
     st.session_state.show_modify = False
     st.session_state.show_reject = False
-    st.session_state[sel_subj_key] = []
-    st.session_state[sel_obj_key] = []
     st.rerun()
 
 
 with b1:
     if st.button("✓  Accept", use_container_width=True, type="primary", disabled=not dbo_uri):
-        save_decision("accept", final_dbo_uri=dbo_uri)
+        save_decision("accept", final_dbo_uri=dbo_uri, final_subject=row.get("subject", ""), final_object=row.get("object", ""))
 with b2:
     if st.button("✎  Modify", use_container_width=True):
         st.session_state.show_modify = True
@@ -534,32 +480,54 @@ with b3:
         st.session_state.show_modify = False
 
 if st.session_state.get("show_modify"):
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("**Pick the correct property**")
+    default_subject_words = [w for w in row.get("subject", "").split() if w in words]
+    default_object_words = [w for w in row.get("object", "").split() if w in words]
+
+    st.markdown('<div class="modify-panel">', unsafe_allow_html=True)
+    st.markdown('<div class="modify-panel-title">Correct this triple</div>', unsafe_allow_html=True)
+    st.markdown('<div class="modify-panel-hint">Pick words from the sentence for subject/object, and the correct DBpedia property.</div>', unsafe_allow_html=True)
+
+    mcol1, mcol2 = st.columns(2)
+    with mcol1:
+        st.markdown("**Subject** (from sentence)")
+        new_subject_words = st.multiselect(
+            "Subject words", options=words, default=default_subject_words,
+            key=f"subj_ms_{row['triple_id']}", label_visibility="collapsed",
+        )
+    with mcol2:
+        st.markdown("**Object** (from sentence)")
+        new_object_words = st.multiselect(
+            "Object words", options=words, default=default_object_words,
+            key=f"obj_ms_{row['triple_id']}", label_visibility="collapsed",
+        )
+
+    st.markdown("**DBpedia property**")
     new_prop = st.selectbox(
-        "Correct dbo: property",
-        options=PROPERTY_OPTIONS,
-        key=f"modify_select_{idx}",
-        label_visibility="collapsed",
+        "Correct dbo: property", options=PROPERTY_OPTIONS,
+        key=f"modify_select_{idx}", label_visibility="collapsed",
     )
-    if st.button("Save correction", key=f"save_mod_{idx}"):
-        save_decision("modify", final_dbo_uri=new_prop)
+
+    if st.button("Save correction", key=f"save_mod_{idx}", type="primary"):
+        final_subject = " ".join(w for w in words if w in new_subject_words) if new_subject_words else row.get("subject", "")
+        final_object = " ".join(w for w in words if w in new_object_words) if new_object_words else row.get("object", "")
+        save_decision("modify", final_dbo_uri=new_prop, final_subject=final_subject, final_object=final_object)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 if st.session_state.get("show_reject"):
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown('<div class="modify-panel">', unsafe_allow_html=True)
     st.markdown("**Why is this wrong?**")
     error_type = st.radio("Error type", ERROR_TYPES, key=f"error_{idx}", label_visibility="collapsed")
     note = st.text_input("Note (optional)", key=f"note_{idx}")
-    if st.button("Save rejection", key=f"save_rej_{idx}"):
-        save_decision("reject", error_type=error_type, note=note, final_dbo_uri=None)
+    if st.button("Save rejection", key=f"save_rej_{idx}", type="primary"):
+        save_decision("reject", error_type=error_type, note=note, final_dbo_uri=None,
+                       final_subject=row.get("subject", ""), final_object=row.get("object", ""))
+    st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 if st.button("Skip without deciding →"):
     st.session_state.idx += 1
     st.session_state.show_modify = False
     st.session_state.show_reject = False
-    st.session_state[sel_subj_key] = []
-    st.session_state[sel_obj_key] = []
     st.rerun()
 
 st.markdown(
