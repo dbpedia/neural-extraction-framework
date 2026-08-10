@@ -1,0 +1,52 @@
+# DBpedia neuro-symbolic extraction service — full offline stack.
+#
+#   1) ./setup.sh            (one-time: seeds the index + store volumes)
+#   2) echo "OPENROUTER_API_KEY=sk-..." > .env
+#   3) docker compose up
+#   4) curl -X POST localhost:8000/extract -H 'Content-Type: application/json' \
+#        -d '{"text": "The song Mermaid is by the band Train."}'
+name: neural-extraction-framework
+
+services:
+  redis:
+    image: redis:7
+    command: redis-server --port 6380 --appendonly no --save ""
+    volumes:
+      - sf-index:/data
+    healthcheck:
+      # PING returns an error while the 1.4 GB index dump is loading (~3 min),
+      # so the pipeline only starts once the index is actually queryable.
+      test: ["CMD-SHELL", "redis-cli -p 6380 ping | grep -q PONG"]
+      interval: 10s
+      timeout: 3s
+      retries: 60
+      start_period: 30s
+
+  oxigraph:
+    image: ghcr.io/oxigraph/oxigraph:latest
+    command: serve-read-only --location /data --bind 0.0.0.0:7878
+    volumes:
+      - store:/data
+
+  pipeline:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - TARGET_MODEL=${TARGET_MODEL:-openai/gpt-5.6-luna}
+      - USE_TF=0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6380
+      - DBPEDIA_SPARQL_ENDPOINT=http://oxigraph:7878/query
+    depends_on:
+      redis:
+        condition: service_healthy
+      oxigraph:
+        condition: service_started
+    ports:
+      - "8000:8000"
+
+volumes:
+  sf-index:
+  store:

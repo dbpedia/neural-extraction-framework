@@ -1,8 +1,7 @@
-__pycache__
-*.pyc
 .git
-.gitignore
-.env
-venv
-assets
-benchmarks
+results_*
+*.rdb
+*.log
+*.ipynb
+__pycache__
+deploy/data

@@ -1,0 +1,7185 @@
+[
+  {
+    "id": "ont_13_food_test_1",
+    "sent": "Tomatoes, guanciale, cheese, olive oil are the main ingredients of the traditional Italian Amatriciana sauce.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Guanciale"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "\"Tomatoes, guanciale, cheese, olive oil\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Guanciale"
+      },
+      {
+        "sub": "Amatriciana",
+        "rel": "mainIngredient",
+        "obj": "Cheese"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Olive_oil"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "p": 0.2,
+    "r": 0.3333333333333333,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_13_food_test_2",
+    "sent": "Tomatoes, guanciale, cheese, olive oil are the main ingredients of Amatriciana sauce, which can be found in Italy.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Olive_oil"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "\"Tomatoes, guanciale, cheese, olive oil\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Guanciale"
+      },
+      {
+        "sub": "Amatriciana",
+        "rel": "mainIngredient",
+        "obj": "Cheese"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Olive_oil"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "p": 0.2,
+    "r": 0.3333333333333333,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_13_food_test_3",
+    "sent": "Tomatoes, guanciale, cheese and olive oil are the main ingredients of the Italian Amatriciana sauce as well as pecorino romano.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Pecorino_Romano"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "\"Tomatoes, guanciale, cheese, olive oil\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Guanciale"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Cheese"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "Olive_oil"
+      },
+      {
+        "sub": "Pecorino_Romano",
+        "rel": "mainIngredient",
+        "obj": "Tomatoes"
+      },
+      {
+        "sub": "Pecorino_Romano",
+        "rel": "mainIngredient",
+        "obj": "Guanciale"
+      },
+      {
+        "sub": "Pecorino_Romano",
+        "rel": "mainIngredient",
+        "obj": "Cheese"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_13_food_test_4",
+    "sent": "Amatriciana sauce can be found in Italy and is made from tomatoes, guanciale, cheese and olive oil.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "mainIngredient",
+        "obj": "\"Tomatoes, guanciale, cheese, olive oil\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Guanciale"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Cheese"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Olive_oil"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.6666666666666666,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_5",
+    "sent": "Amatriciana sauce is a traditional Italian sauce, from Italy, where the language is Italian, and the leader is Pietro Grasso.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Pietro_Grasso"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Pietro_Grasso"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_6",
+    "sent": "Amatriciana is a traditional Italian sauce from Lazio containing Olive oil.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "region",
+        "obj": "Lazio"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Olive_oil"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "region",
+        "obj": "Lazio"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Olive_oil"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_7",
+    "sent": "Pecorino Romano is an ingredient of Amatriciana sauce which comes from the Lazio region, in Italy.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "region",
+        "obj": "Lazio"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Pecorino_Romano"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "region",
+        "obj": "Lazio"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Pecorino_Romano"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_8",
+    "sent": "Tomato is an ingredient of Amatriciana sauce which comes from the Lazio region of Italy.",
+    "gold": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "region",
+        "obj": "Lazio"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "region",
+        "obj": "Lazio"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_9",
+    "sent": "Arem-arem is a food found nationwide in Indonesia, but is more specific to Java, and it uses the banana leaf as an ingredient.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "ingredient",
+        "obj": "Banana_leaf"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "\"Nationwide in Indonesia, but more specific to Java\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Java"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "ingredient",
+        "obj": "Banana_leaf"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_13_food_test_10",
+    "sent": "The Javanese cuisine dish of arem-arem has banana leaf in it and can be found in Indonesia.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "ingredient",
+        "obj": "Banana_leaf"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Javanese_cuisine"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem-arem",
+        "rel": "ingredient",
+        "obj": "Banana_leaf"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.6666666666666666,
+    "f1": 0.8
+  },
+  {
+    "id": "ont_13_food_test_11",
+    "sent": "Joko Widodo is the leader of Indonesia where the currency is the Indonesian rupiah and Arem-arem is a traditional dish.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "currency",
+        "obj": "Indonesian_rupiah"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "currency",
+        "obj": "Indonesian_rupiah"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_12",
+    "sent": "Arem arem originates from the country of Indonesia where Joko Widodo is the leader and Indonesian is the language.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "language",
+        "obj": "Indonesian_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem_arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "language",
+        "obj": "Indonesian_language"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_13",
+    "sent": "Arem-arem is a dish of Javanese cuisine, originating from the country of Indonesia, one of whose leaders is Jusuf Kalla.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Javanese_cuisine"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem-arem",
+        "rel": "cuisine",
+        "obj": "\"Javanese cuisine\""
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_14",
+    "sent": "Arem-arem is a food found in Indonesia, where the currency is Indonesian rupiah and Jusuf Kalla is a leader.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "currency",
+        "obj": "Indonesian_rupiah"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "currency",
+        "obj": "Indonesian_rupiah"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_15",
+    "sent": "In Indonesia; Jusuf Kalla is the leader, Indonesian is the language, and Arem-arem is commonly served.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "language",
+        "obj": "Indonesian_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "language",
+        "obj": "Indonesian_language"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_16",
+    "sent": "Found nationwide bit more specific to Java is the dish Arem-arem. The main ingredients of which are; compressed rice cooked in banana leaf with vegetables or minced meat fillings.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "ingredient",
+        "obj": "Banana_leaf"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "mainIngredient",
+        "obj": "\"compressed rice cooked in banana leaf with vegetables or minced meat fillings\""
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "\"Nationwide in Indonesia, but more specific to Java\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Java"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "mainIngredient",
+        "obj": "\"compressed rice\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_13_food_test_17",
+    "sent": "From Indonesia, Arem arem's main ingredients are, compressed rice cooked in banana leaf with vegetables or minced meat fillings.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "ingredient",
+        "obj": "Banana_leaf"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "mainIngredient",
+        "obj": "\"compressed rice cooked in banana leaf with vegetables or minced meat fillings\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem_arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem_arem",
+        "rel": "mainIngredient",
+        "obj": "\"Compressed rice cooked in banana leaf with vegetables or minced meat fillings\""
+      },
+      {
+        "sub": "Arem_arem",
+        "rel": "ingredient",
+        "obj": "\"Compressed rice\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_13_food_test_18",
+    "sent": "Arrabbiata sauce is from Italy, where the capital is Rome and Italian is the language.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_19",
+    "sent": "Arrabbiata sauce is from Italy where Sergio Mattarella is the leader and the capital is Rome.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Sergio_Mattarella"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Sergio_Mattarella"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_20",
+    "sent": "The sauce called arrabbiata can be found in Italy where Pietro Grasso is the leader and Rome is the capital city.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Pietro_Grasso"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Pietro_Grasso"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_21",
+    "sent": "Arrabbiata sauce is from Italy, where the language is Italian and Pietro Grasso is the leader.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Pietro_Grasso"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Pietro_Grasso"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_22",
+    "sent": "Chili pepper is a main ingredient of Arrabbiata sauce from Italy. Oregano can also be added.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "dishVariation",
+        "obj": "Oregano"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Chili_pepper"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "mainIngredient",
+        "obj": "Chili_pepper"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Oregano"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_23",
+    "sent": "Garlic is an ingredient in Arrabbiata sauce (found in Italy), which can also have oregano added to it.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "dishVariation",
+        "obj": "Oregano"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Garlic"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Garlic"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Oregano"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_24",
+    "sent": "Tomato, from the family of Solanaceae and the order of Solanales, is a key ingredient in an Arrabbiata sauce.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Tomato",
+        "rel": "order",
+        "obj": "Solanales"
+      },
+      {
+        "sub": "Tomato",
+        "rel": "family",
+        "obj": "Solanaceae"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "Tomato",
+        "rel": "family",
+        "obj": "Solanaceae"
+      },
+      {
+        "sub": "Tomato",
+        "rel": "order",
+        "obj": "\"Solanales\""
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_25",
+    "sent": "BLT is a variation of both the club sandwich and the bacon sandwich.",
+    "gold": [
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Club_sandwich"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Club_sandwich"
+      },
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Bacon_sandwich"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_13_food_test_26",
+    "sent": "Condiments are used in the preparation of a bacon sandwich. A variation of a bacon sandwich is the BLT which is a variation of a Club Sandwich.",
+    "gold": [
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Club_sandwich"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Condiment"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Condiment"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Club_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_27",
+    "sent": "The Bacon Explosion originates in the United States. It contains bacon and is served as a main course.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_28",
+    "sent": "Bacon is an ingredient in a Bacon Explosion which is from the Kansas City metropolitan area, in the United States.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "region",
+        "obj": "Kansas_City_metropolitan_area"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "region",
+        "obj": "Kansas_City_metropolitan_area"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_29",
+    "sent": "Sausage is an ingredient of a Bacon Explosion, a main course, which comes from the United States.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_30",
+    "sent": "The main ingredients in the American dish Bacon explosion is bacon and sausage.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "Bacon"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "\"Bacon, sausage\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_13_food_test_31",
+    "sent": "The Bacon Explosion originates from the Kansas city metropolitan area of the US and includes sausage among its ingredients.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "region",
+        "obj": "Kansas_City_metropolitan_area"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "region",
+        "obj": "Kansas_City_metropolitan_area"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "origin",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_32",
+    "sent": "Bacon explosion which contains bacon and sausage is a dish found in the United States.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "\"Bacon,sausage\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Dish\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_13_food_test_33",
+    "sent": "The Bacon Explosion originates from the United States and its main ingredients are bacon and sausage.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "\"Bacon,sausage\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_34",
+    "sent": "The capital of the United States is Washington D.C. One of the ethnic groups are African Americans and it is also home to the bacon explosion.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington_D.C."
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_35",
+    "sent": "The Bacon Explosion is from the United States where Asian Americans are one of the ethnic groups and the capital city is Washington D.C.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Asian_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Asian_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington_D.C."
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_36",
+    "sent": "The capital of the United States is Washington D.C. where White Americans are an ethnic group and the Bacon Explosion was invented.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "White_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington_D.C."
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "White_Americans"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_37",
+    "sent": "African American are an ethnic group in the U.S. whose leader is Barack Obama. The Bacon Explosion comes from that country.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_38",
+    "sent": "The country Bacon Explosion comes from is the United States. It is also the country where Barack Obama is the leader and Asian Americans are one of the ethnic groups.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Asian_Americans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Asian_Americans"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_39",
+    "sent": "Barack Obama leads the U.S. which is the country of the Bacon Explosion. Native Americans are an ethnic group in that country.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans_in_the_United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_40",
+    "sent": "Bacon Explosion comes from the United States, whose capital is Washington, D.C. and one of whose leaders is Joe Biden.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_41",
+    "sent": "Joe Biden is a leader in the U.S. which has a Native American group in it. The Bacon Explosion comes from the U.S.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans_in_the_United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_American"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_42",
+    "sent": "White Americans are an ethnic group in the U.S. and that country has a political leader called Joe Biden. The Bacon Explosion comes from the U.S.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "White_Americans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "White_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_43",
+    "sent": "Bacon Explosion comes from the United States where Asian Americans are one of the ethnic groups and John Roberts is a leader.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Asian_Americans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Asian_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_44",
+    "sent": "Bacon Explosion originates from the United States where the capital city is Washington DC and the leader is Paul Ryan.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Paul_Ryan"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Paul_Ryan"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_45",
+    "sent": "Bacon explosion is a main course dish that includes the ingredients sausage and bacon.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "Sausage"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_46",
+    "sent": "Bacon Explosion is served as a main course, it includes sausages and bacon.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "\"Main course\""
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "Bacon"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "course",
+        "obj": "Main_course"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_47",
+    "sent": "Popular in the UK, a bacon sandwich includes the ingredient bacon and can also be known as a bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, or bacon muffin.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, bacon muffin\""
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, Bacon sarnie, Rasher sandwich, Bacon sanger, Piece 'n bacon, Bacon cob, Bacon barm, Bacon muffin\""
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_48",
+    "sent": "A bacon sandwich is also known as a bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, or bacon muffin. It is a dish from the U.K. An ingredient in the sandwich is bread.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, bacon muffin\""
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bread"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, Bacon sarnie, Rasher sandwich, Bacon sanger, Piece 'n bacon, Bacon cob, Bacon barm, Bacon muffin\""
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bread"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_49",
+    "sent": "Bacon Sandwich is from United Kingdom. This sandwich ingredient is Brown sauce and can also be known as a bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, or bacon muffin.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, bacon muffin\""
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Brown_sauce"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Brown_sauce"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, bacon muffin\""
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_50",
+    "sent": "The UK dish of bacon sandwiches (ingredients include condiments) is also called bacon butty, rasher sandwich, piece 'n bacon, bacon barm, bacon sanger, bacon sarnie and bacon muffin.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, bacon muffin\""
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Condiment"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwiches",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, Rasher sandwich, Piece 'n bacon, Bacon barm, Bacon sanger, Bacon sarnie, Bacon muffin\""
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Condiment"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_51",
+    "sent": "Popular in the UK, bacon sandwiches (which can have ketchup as an ingredient) are also can also be known as a bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, or bacon muffin.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Ketchup"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece 'n bacon, bacon cob, bacon barm, bacon muffin\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "region",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Ketchup"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Bacon butty, Bacon sarnie, Rasher sandwich, Bacon sanger, Piece 'n bacon, Bacon cob, Bacon barm, Bacon muffin\""
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_52",
+    "sent": "Tomato is an ingredient in a BLT sandwich which is also known as a club sandwich or bacon sandwich.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Club_sandwich"
+      },
+      {
+        "sub": "BLT",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "BLT_sandwich",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      },
+      {
+        "sub": "BLT_sandwich",
+        "rel": "alternativeName",
+        "obj": "\"Club sandwich, Bacon sandwich\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_13_food_test_53",
+    "sent": "Brown sauce is an ingredient in a bacon sandwich which is considered a variation of A BLT, which is itself considered to be variation of a club sandwich.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Club_sandwich"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Brown_sauce"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Brown_sauce"
+      },
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Bacon_sandwich"
+      },
+      {
+        "sub": "Club_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_54",
+    "sent": "A variation of the BLT, a bacon sandwich, comes from the United Kingdom and has bacon as the main ingredient.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "mainIngredient",
+        "obj": "Bacon"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_55",
+    "sent": "Bread is an ingredient of a bacon sandwich, which is popular in the UK. Another variation for a bacon sandwich is a BLT.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bread"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Bread"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "region",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_56",
+    "sent": "Brown sauce is an ingredient of a Bacon Sandwich, a dish from the United Kingdom. Another variation for a bacon sandwich is a BLT.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Brown_sauce"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Brown_sauce"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_57",
+    "sent": "The UK dish BLT is a variation of the bacon sandwich which has ketchup as one of its ingredients.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Ketchup"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "BLT",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Ketchup"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_58",
+    "sent": "BLT is a variation of the club sandwich and the bacon sandwich. Ketchup can be an ingredient in a bacon sandwich.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Ketchup"
+      },
+      {
+        "sub": "BLT",
+        "rel": "dishVariation",
+        "obj": "Club_sandwich"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Club_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Ketchup"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_59",
+    "sent": "Bionico is from the Guadalajara region of Mexico, and it contains condensed milk.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_60",
+    "sent": "Bionico from Guadalajara region is found in Mexico and contains granola.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_61",
+    "sent": "Sour cream is an ingredient of Bionico, a food that can be found in Guadalajara, in Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_62",
+    "sent": "Bionico, a food found in the region of Jalisco, Mexico, contains condensed milk.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_63",
+    "sent": "Granola is an ingredient of Bionico which comes from the region Jalisco, in Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_64",
+    "sent": "Sour cream is an ingredient of Bionico which is a food found in the Jalisco region of Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_65",
+    "sent": "Bionico is a food found in Mexico. Mexico's currency is the Peso and a leader in Mexico is Enrique Pena Nieto.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_66",
+    "sent": "Enrique Pena Nieto is the leader of Mexico, where the language is Spanish and also where the food Bionico is found.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Spanish_language"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Spanish_language"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_67",
+    "sent": "Bionico is from Mexico where the leader is Silvano Aureoles Conejo and the language is Spanish.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Spanish_language"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Spanish_language"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_68",
+    "sent": "Bionico is a food found in Mexico, where Enrique Pena Nieto is the leader and Mexicans are the inhabitants.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "ethnicGroup",
+        "obj": "Mexicans"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_69",
+    "sent": "Bionico is a dish from Mexico, where Enrique Pena Nieto is a leader and Mexican Spanish is spoken.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Mexican_Spanish"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Mexican_Spanish"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_70",
+    "sent": "Bionico is a food found in Mexico, where Silvano Aureoles Conejo leads the Mexican people.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Mexican_people"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_71",
+    "sent": "Mexican Spanish is the language spoken in Mexico, where the leader is is Silvano Aureoles Conejo and the food found there is Bionico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Mexican_Spanish"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Mexican_Spanish"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_72",
+    "sent": "Enrique Pena Nieto and Silvano Aureoles Conejo are leaders in Mexico where they eat Bionico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_73",
+    "sent": "Granola is an ingredient of Bionico, a dish served for dessert. A Cookie is also a type of dessert.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_74",
+    "sent": "Granola is an ingredient of Bionico, a dish served as an alternative to Sandesh (confectionery) for dessert.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_13_food_test_75",
+    "sent": "The dessert dish bionico requires granola as one of its ingredients and can be varied using cottage cheese.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Cottage_cheese"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Cottage_cheese"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_76",
+    "sent": "A dish served for dessert, Bionico requires granola as one of its ingredients. It can also have honey added to it.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Honey"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Honey"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_77",
+    "sent": "Bionico contains raisins and is a dessert. Sandesh is a nice confectionery dessert.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "category",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_78",
+    "sent": "Bionico is a dessert that contains raisins. It can be varied using cottage cheese.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Cottage_cheese"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Cottage_cheese"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_79",
+    "sent": "Cake is served as a dessert, as is bionico, which contains the ingredient of sour cream.",
+    "gold": [
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cake"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "category",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "course",
+        "obj": "\"Cake\""
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_80",
+    "sent": "Ice cream is a type of dessert. So too is Bionico, which requires granola as one of its ingredients.",
+    "gold": [
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Ice_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Ice_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_81",
+    "sent": "Ice cream is a dessert, as is Bionico which contains raisins.",
+    "gold": [
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Ice_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Ice_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_82",
+    "sent": "Joko Widodo is the leader of Indonesia, where the capital is Jakarta and where the dish Bakso is from.",
+    "gold": [
+      {
+        "sub": "Indonesia",
+        "rel": "capital",
+        "obj": "Jakarta"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Bakso",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "capital",
+        "obj": "Jakarta"
+      },
+      {
+        "sub": "Bakso",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_83",
+    "sent": "Jusuf Kalla is the leader of Indonesia where the language is Indonesian and one of the local dishes is Bakso.",
+    "gold": [
+      {
+        "sub": "Indonesia",
+        "rel": "language",
+        "obj": "Indonesian_language"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Bakso",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "language",
+        "obj": "Indonesian_language"
+      },
+      {
+        "sub": "Bakso",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_84",
+    "sent": "Amatriciana sauce can be found in Italy, where the capital is Rome and where Laura Boldrini is the leader.",
+    "gold": [
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Laura_Boldrini"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Laura_Boldrini"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_85",
+    "sent": "Amatriciana sauce comes from Italy where Sergio Mattarella is a leader and the capital is Rome.",
+    "gold": [
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Sergio_Mattarella"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Sergio_Mattarella"
+      },
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_86",
+    "sent": "Rome is the capital of Italy, where Matteo Renzi is a leader, and where Amatriciana sauce can be found.",
+    "gold": [
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Matteo_Renzi"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Italy",
+        "rel": "capital",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Matteo_Renzi"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_87",
+    "sent": "The tomato is from the family of solanaceae and the genus Solanum, and is a key ingredient in Amatriciana sauce.",
+    "gold": [
+      {
+        "sub": "Tomato",
+        "rel": "family",
+        "obj": "Solanaceae"
+      },
+      {
+        "sub": "Tomato",
+        "rel": "genus",
+        "obj": "Solanum"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tomato",
+        "rel": "family",
+        "obj": "Solanaceae"
+      },
+      {
+        "sub": "Tomato",
+        "rel": "genus",
+        "obj": "Solanum"
+      },
+      {
+        "sub": "Amatriciana_sauce",
+        "rel": "ingredient",
+        "obj": "Tomato"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_88",
+    "sent": "The President is the leader of the U.S. An ethnic group there are African Americans. The dessert, Baked Alaska, is from the U.S.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leaderTitle",
+        "obj": "President_of_the_United_States"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "President"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_13_food_test_89",
+    "sent": "The ethnic group of native Americans are from the United States where The president is the leader and baked Alaska is a dish.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans_in_the_United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leaderTitle",
+        "obj": "President_of_the_United_States"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "President_of_the_United_States"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_90",
+    "sent": "Mexicans, the inhabitants of Mexico, can use their peso currency to purchase a dessert called Bionico. Bionico can be found in Guadalajara, Mexico, and is made from sour cream, chopped fruits, condensed milk, granola, coconut and raisins. They can also buy cookies, another dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped Fruits, Sour Cream, Condensed Milk, Granola, Shredded Coconut, Raisins\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "category",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "\"Chopped fruits\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Coconut"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5714285714285714,
+    "f1": 0.4210526315789474
+  },
+  {
+    "id": "ont_13_food_test_91",
+    "sent": "Bionico is a dish served for dessert in Mexico, where the currency is the peso, the dish contains granola.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_92",
+    "sent": "Bionico (a dish served for dessert) is a food found in Guadalajara in Mexico. The currency in Mexico is the Mexican peso inhabited by Mexicans.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "location",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_13_food_test_93",
+    "sent": "In the region of Jalisco, Mexico, is a food dish served for dessert called Bionico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_94",
+    "sent": "Bionico (served at the dessert course) is a food found in Mexico. The currency in Mexico is the Mexican peso inhabited by the Mexicans. Honey can be added to bionico.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Honey"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Honey"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.6,
+    "f1": 0.6
+  },
+  {
+    "id": "ont_13_food_test_95",
+    "sent": "Sour cream, chopped fruits, condensed milk, granola, raisins and shredded coconut are the main ingredients in Bionico which is a dessert served in Mexico where the local currency is the peso.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped Fruits, Sour Cream, Condensed Milk, Granola, Shredded Coconut, Raisins\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped fruits\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Shredded_coconut"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      }
+    ],
+    "p": 0.1111111111111111,
+    "r": 0.25,
+    "f1": 0.15384615384615383
+  },
+  {
+    "id": "ont_13_food_test_96",
+    "sent": "Bionico is a dish served for dessert, which contains raisins and is found in Mexico. The currency in Mexico is the Mexican peso.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_97",
+    "sent": "Mexico inhabited by Mexicans with peso as its currency has Silvano Aureoles Conejo as one of its leaders. Bionico is served as a dessert in Mexico and comes from Guadalajara. It has chopped fruits, sour cream, condensed milk, granola, shredded coconut and raisins as its main ingredients.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped Fruits, Sour Cream, Condensed Milk, Granola, Shredded Coconut, Raisins\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped fruit\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Shredded_coconut"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Raisin"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5714285714285714,
+    "f1": 0.4210526315789474
+  },
+  {
+    "id": "ont_13_food_test_98",
+    "sent": "Bionico is a dish found in Mexico served for dessert and cookie is also a dessert.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_13_food_test_99",
+    "sent": "Mexico is a country, and its people are called Mexicans. If you wanted to buy food there you would have to use their currency, which is the peso. Mexico has yummy desserts such as bionico. Bionico is made from several ingredients including sour cream, and it can be found in Guadalajara as well as Mexico. If you don\u2019t like bionico, you can go for a sandesh, another dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Bionico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Sandesh_(confectionery)",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.8571428571428571,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_13_food_test_100",
+    "sent": "Bionico is a dessert found in Mexico where peso is the currency. Cookie is also a dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_101",
+    "sent": "Bionico is a food found in Guadalajara, Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_102",
+    "sent": "Honey can be added to bionico, which is a food found in Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Honey"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Honey"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_103",
+    "sent": "Sandesh is a dessert, as is Bionico which contains granola and is from the Guadalajara region of Mexico. Mexico uses pesos as their currency and the people that live there are Mexicans.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Sandesh_(confectionery)",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Pesos"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "p": 0.5714285714285714,
+    "r": 0.5714285714285714,
+    "f1": 0.5714285714285714
+  },
+  {
+    "id": "ont_13_food_test_104",
+    "sent": "Mexico is inhabited by Mexican people and the currency is the peso. Bionico is a dessert containing raisins from the Mexican region of Guadalajara, which is served as a dessert course much like cookies.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "ethnicGroup",
+        "obj": "Mexican_people"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.42857142857142855,
+    "f1": 0.4615384615384615
+  },
+  {
+    "id": "ont_13_food_test_105",
+    "sent": "Bionico dessert is a food found in Mexico (currency: peso). Sandesh is also a dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_106",
+    "sent": "Bionico, a food found in Mexico, can be varied by using cottage cheese.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Cottage_cheese"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "dishVariation",
+        "obj": "Cottage_cheese"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_107",
+    "sent": "Bionico (a dish served for dessert) is a food made with condensed milk found in Mexico. Mexicans are people in Mexico, the currency in Mexico is the Mexican peso.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_13_food_test_108",
+    "sent": "Peso is currency used by Mexicans in Mexico. Bionico is a dessert that can be found in Guadalajara, Mexico. Cookies are also a type of dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Guadalajara",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "type",
+        "obj": "Cookie"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_109",
+    "sent": "Bionico is a food found in Mexico, served at the dessert course. The leader of Mexico (currency: peso) is Silvano Aureoles Conejo.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_13_food_test_110",
+    "sent": "Mexicans are people from Mexico, where the currency is the Mexican peso. Silvano Aureoles Conejo is the current leader of Mexico. Bionico, from the region Jalisco, is a food found in Mexico and served for dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      }
+    ],
+    "p": 0.8333333333333334,
+    "r": 0.8333333333333334,
+    "f1": 0.8333333333333334
+  },
+  {
+    "id": "ont_13_food_test_111",
+    "sent": "Bionico (served at the dessert course) is a food made with granola found in Mexico. The currency in Mexico is the peso inhabited by the Mexicans. Cookie is a type of dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_112",
+    "sent": "Bionico, a dessert made of chopped Fruits, sour cream, condensed milk, granola, shredded coconut and raisins, is found in Mexico where the leader is Silvano Aureoles Conejo, and its inhabitants, the Mexicans, use peso as their currency.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped Fruits, Sour Cream, Condensed Milk, Granola, Shredded Coconut, Raisins\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "\"Chopped fruits\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Shredded_coconut"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      }
+    ],
+    "p": 0.2727272727272727,
+    "r": 0.5,
+    "f1": 0.3529411764705882
+  },
+  {
+    "id": "ont_13_food_test_113",
+    "sent": "Bionico is a popular dessert from the Spanish speaking country of Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Spanish_language"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "language",
+        "obj": "Spanish_language"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_114",
+    "sent": "Bionico is a food found in Mexico from the region Jalisco.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_115",
+    "sent": "Mexico is inhabited by Mexicans and the currency used there is the Mexican peso. Bionico is a dish served for dessert there and sour cream is used to make this dish.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "ethnicGroup",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.6,
+    "f1": 0.6
+  },
+  {
+    "id": "ont_13_food_test_116",
+    "sent": "Mexicans are people from Mexico, which is a country from the Guadalajara region that is led by Silvano Aureoles Conejo. The Mexican peso is the currency used to buy such dishes as Bionico, a dessert found in Mexico that contains raisins,.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      }
+    ],
+    "p": 0.7142857142857143,
+    "r": 0.7142857142857143,
+    "f1": 0.7142857142857143
+  },
+  {
+    "id": "ont_13_food_test_117",
+    "sent": "Bionico is a dessert that comes from the Guadalajara region of Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "origin",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "origin",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_13_food_test_118",
+    "sent": "Bionico (contains raisins) is a food served at the dessert course found in Mexico. The currency in Mexico is the Mexican peso inhabited by the Mexicans.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_13_food_test_119",
+    "sent": "Bionico is a food found in Mexico served at the dessert course. A variation on dessert is cake.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cake"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cake"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_120",
+    "sent": "Bionico, a dessert found in Mexico along with Sandesh (confectionary), is made of sour cream, chopped fruits, condensed milk, granola, raisins and shredded coconut, and Mexicans, people living in Mexico, use the peso, the local currency, to buy it.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped Fruits, Sour Cream, Condensed Milk, Granola, Shredded Coconut, Raisins\""
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped fruits\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "Shredded_coconut"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "ethnicGroup",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      }
+    ],
+    "p": 0.18181818181818182,
+    "r": 0.3333333333333333,
+    "f1": 0.23529411764705885
+  },
+  {
+    "id": "ont_13_food_test_121",
+    "sent": "Bionico is a dish served for dessert in Mexico. Silvano Aureoles Conejo is one of the leaders in Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_122",
+    "sent": "Bionico (made with granola) is a food found in Guadalajara in Mexico. The currency in Mexico is the Mexican peso, and the country is inhabited by Mexicans.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_123",
+    "sent": "Much like Sandesh, Bionico is a dessert food containing chopped fruits, sour cream, condensed milk, granola, shredded coconut and raisins from the region of Guadalajara, Mexico, which is inhabited by Mexicans and uses pesos as its currency.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "mainIngredient",
+        "obj": "\"Chopped Fruits, Sour Cream, Condensed Milk, Granola, Shredded Coconut, Raisins\""
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "\"Chopped fruits\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Condensed_milk"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Shredded_coconut"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Guadalajara",
+        "rel": "ethnicGroup",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Guadalajara",
+        "rel": "currency",
+        "obj": "Pesos"
+      }
+    ],
+    "p": 0.18181818181818182,
+    "r": 0.2857142857142857,
+    "f1": 0.2222222222222222
+  },
+  {
+    "id": "ont_13_food_test_124",
+    "sent": "Bionico is a dessert found in Guadalajara in Mexico. The currency of Mexico is the peso.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Guadalajara",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_13_food_test_125",
+    "sent": "Bionico is a dessert in from Guadalajara, Mexico, where the leader is Silvano Aureoles Conejo. Mexicans, inhabitants of Mexico, use the peso as currency.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_126",
+    "sent": "The currency of Mexico is the peso and the local people are called Mexicans. In Mexico there is a region called Jalisco which makes a dessert called bionico that requires granola as one of its ingredients.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Jalisco",
+        "rel": "isPartOf",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      }
+    ],
+    "p": 0.8333333333333334,
+    "r": 1.0,
+    "f1": 0.9090909090909091
+  },
+  {
+    "id": "ont_13_food_test_127",
+    "sent": "Bionico is a dessert food found in Mexico where Enrique Pena Nieto is the leader.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Enrique_Pe\u00f1a_Nieto"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_128",
+    "sent": "Bionico is a dish served for dessert in the Jalisco region.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_129",
+    "sent": "Bionico is a dessert that requires granola as an ingredient and is found in Guadalajara, Mexico, which is led by Silvano Aureoles Conejo. It can be purchased by Mexicans, people living in Mexico, with their local currency called the peso.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "leader",
+        "obj": "Silvano_Aureoles_Conejo"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      }
+    ],
+    "p": 0.8333333333333334,
+    "r": 0.7142857142857143,
+    "f1": 0.7692307692307692
+  },
+  {
+    "id": "ont_13_food_test_130",
+    "sent": "Bionico (served at the dessert course) is a food found in the region of Jalisco in Mexico. The currency in Mexico is the Mexican peso inhabited by the Mexicans.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_13_food_test_131",
+    "sent": "Bionico (a dish served for dessert) is a food found in Mexico. Sandesh is a nice confectionery dessert.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_132",
+    "sent": "Mexico, inhabited by Mexicans, has the peso as their currency. Bionico is a dessert found in Guadalajara in Mexico. Sandesh (a confectionery) is also served as a dessert.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_133",
+    "sent": "Bionico is a dessert that can be found in Guadalajara.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "location",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Guadalajara"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_134",
+    "sent": "Mexicans inhabit Mexico, where the currency is the peso. Bionico is a food found in Mexico that requires granola as one of its ingredients, and is a dessert like Sandesh.",
+    "gold": [
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Mexican_peso"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "demonym",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Mexico",
+        "rel": "residence",
+        "obj": "Mexicans"
+      },
+      {
+        "sub": "Mexico",
+        "rel": "currency",
+        "obj": "Peso"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_13_food_test_135",
+    "sent": "Arem arem originates from the country of Indonesia, where two of the leaders are, Joko Widodo and Jusuf Kalla.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem_Arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Joko_Widodo"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_136",
+    "sent": "Arem-arem is a food found nationwide in Indonesia, but is more specific to Java. Jusuf Kalla is the leader of Indonesia.",
+    "gold": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "\"Nationwide in Indonesia, but more specific to Java\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arem-arem",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Arem-arem",
+        "rel": "region",
+        "obj": "Java"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_137",
+    "sent": "The leader of Italy is Sergio Mattarella, it is also where Italian is spoken and the arrabbiata sauce is from.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Sergio_Mattarella"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Italy",
+        "rel": "language",
+        "obj": "Italian_language"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Italy",
+        "rel": "leader",
+        "obj": "Sergio_Mattarella"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_138",
+    "sent": "Arrabbiata sauce, a traditional dish from Rome in Italy, has chili pepper as one of its important ingredients.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Chili_pepper"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "region",
+        "obj": "Rome"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "region",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Chili_pepper"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_139",
+    "sent": "Garlic is an ingredient in arrabbiata sauce which originates from the region of Rome, in Italy.",
+    "gold": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Garlic"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "region",
+        "obj": "Rome"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "region",
+        "obj": "Rome"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "country",
+        "obj": "Italy"
+      },
+      {
+        "sub": "Arrabbiata_sauce",
+        "rel": "ingredient",
+        "obj": "Garlic"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_140",
+    "sent": "Bacon and sausage are the main ingredients in a Bacon Explosion, which comes from the United States.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Bacon"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "mainIngredient",
+        "obj": "Sausage"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "ingredient",
+        "obj": "Sausage"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_13_food_test_141",
+    "sent": "One of the ethnic groups in the United States are native Americans, the country is also the home of the dish bacon explosion and has Washington D.C. as its capital city.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans_in_the_United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "Native_Americans"
+      },
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_142",
+    "sent": "The United States is the country of Bacon Explosion. Barack Obama is the leader and Washington D.C. is the capital.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington,_D.C."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Barack_Obama"
+      },
+      {
+        "sub": "United_States",
+        "rel": "capital",
+        "obj": "Washington_D.C."
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_143",
+    "sent": "The Bacon Explosion originated in the United States, where African Americans are an ethnic group and John Roberts is a leader.",
+    "gold": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_Explosion",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "ethnicGroup",
+        "obj": "African_Americans"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_144",
+    "sent": "Bacon sandwiches are variations of BLT and come from the U.K. Condiments are found in these sandwiches.",
+    "gold": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Condiment"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "dishVariation",
+        "obj": "BLT"
+      },
+      {
+        "sub": "Bacon_sandwiches",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Bacon_sandwich",
+        "rel": "ingredient",
+        "obj": "Condiment"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_145",
+    "sent": "Meringue is an ingredient of a Baked Alaska, which is from the New York region and France.",
+    "gold": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "France"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "region",
+        "obj": "New_York"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Meringue"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "France"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "region",
+        "obj": "New_York"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Meringue"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_146",
+    "sent": "Sponge cake is one of the ingredients in Baked Alaska, a dish from the New York region and found in the United States.",
+    "gold": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "region",
+        "obj": "New_York"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Sponge_cake"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Sponge_cake"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "region",
+        "obj": "New_York"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_147",
+    "sent": "Christmas pudding is an ingredient in the dessert Baked Alaska. Cookie is also a dessert.",
+    "gold": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Christmas_pudding"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cookie"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Christmas_pudding"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_148",
+    "sent": "Sandesh (confectionery) is a dish that can be served as a dessert. Another dish that is a dessert is Baked Alaska which has Christmas pudding as an ingredient.",
+    "gold": [
+      {
+        "sub": "Baked_Alaska",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Sandesh_(confectionery)"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Christmas_pudding"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Dessert",
+        "rel": "course",
+        "obj": "\"Sandesh (confectionery)\""
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "course",
+        "obj": "\"Dessert\""
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Baked_Alaska"
+      },
+      {
+        "sub": "Baked_Alaska",
+        "rel": "ingredient",
+        "obj": "Christmas_pudding"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_13_food_test_149",
+    "sent": "Bionico is a dessert containing sour cream from Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "type",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Sour_cream"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_150",
+    "sent": "Containing raisins, Bionico is found in the region of Jalisco, in Mexico.",
+    "gold": [
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Raisin"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "region",
+        "obj": "Jalisco"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "country",
+        "obj": "Mexico"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_151",
+    "sent": "One ingredient in Bakso is celery, which is a member of the genus Apium in the family Apiaceae.",
+    "gold": [
+      {
+        "sub": "Celery",
+        "rel": "genus",
+        "obj": "Apium"
+      },
+      {
+        "sub": "Bakso",
+        "rel": "ingredient",
+        "obj": "Celery"
+      },
+      {
+        "sub": "Celery",
+        "rel": "family",
+        "obj": "Apiaceae"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bakso",
+        "rel": "ingredient",
+        "obj": "Celery"
+      },
+      {
+        "sub": "Celery",
+        "rel": "genus",
+        "obj": "Apium"
+      },
+      {
+        "sub": "Celery",
+        "rel": "family",
+        "obj": "Apiaceae"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_13_food_test_152",
+    "sent": "Bionico is a dessert that requires granola as one of its ingredients; it can be eaten as an alternative to cake.",
+    "gold": [
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cake"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "course",
+        "obj": "Dessert"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Dessert"
+      },
+      {
+        "sub": "Bionico",
+        "rel": "ingredient",
+        "obj": "Granola"
+      },
+      {
+        "sub": "Dessert",
+        "rel": "dishVariation",
+        "obj": "Cake"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_13_food_test_153",
+    "sent": "Bakso is a dish from the country of Indonesia, where the capital is Jakarta and one of the leaders is Jusuf Kalla.",
+    "gold": [
+      {
+        "sub": "Indonesia",
+        "rel": "capital",
+        "obj": "Jakarta"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      },
+      {
+        "sub": "Bakso",
+        "rel": "country",
+        "obj": "Indonesia"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bakso",
+        "rel": "country",
+        "obj": "Indonesia"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "capital",
+        "obj": "Jakarta"
+      },
+      {
+        "sub": "Indonesia",
+        "rel": "leader",
+        "obj": "Jusuf_Kalla"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  }
+]

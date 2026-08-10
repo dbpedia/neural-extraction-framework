@@ -1,0 +1,16 @@
+# Bind-mount mode — for hosts that ALREADY have the data on disk
+# (no volume seeding, zero data duplication). Set the two paths and run:
+#
+#   INDEX_DIR=/root/projects/GSoC26_Extraction_Nakul/knowledge_graph_pipeline \
+#   STORE_DIR=/root/oxigraph/data \
+#   docker compose -f docker-compose.yml -f docker-compose.bind.yml up
+#
+# INDEX_DIR must contain dump.rdb; STORE_DIR is the oxigraph data directory.
+services:
+  redis:
+    volumes:
+      - ${INDEX_DIR:?set INDEX_DIR to the directory containing dump.rdb}:/data:ro
+
+  oxigraph:
+    volumes:
+      - ${STORE_DIR:?set STORE_DIR to the oxigraph data directory}:/data:ro

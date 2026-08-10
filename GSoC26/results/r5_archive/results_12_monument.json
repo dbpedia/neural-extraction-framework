@@ -1,0 +1,766 @@
+[
+  {
+    "id": "ont_12_monument_test_1",
+    "sent": "The 14th New Jersey Volunteer Infantry Monument which is located in the Monocacy National Battlefield was established on 11 July 1907. It falls within the category of Historic districts in the US.",
+    "gold": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "category",
+        "obj": "Historic_districts_in_the_United_States"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "district",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "established",
+        "obj": "\"1907-07-11\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "location",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "established",
+        "obj": "1907-07-11"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "category",
+        "obj": "Historic_districts_in_the_United_States"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_12_monument_test_2",
+    "sent": "Frederick, Maryland is the nearest city to Monocacy National Battlefield which is the location of the 14th New Jersey Volunteer Infantry Monument. The monument is categorised as a historic district in the US.",
+    "gold": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "category",
+        "obj": "Historic_districts_in_the_United_States"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "district",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "nearestCity",
+        "obj": "Frederick,_Maryland"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "nearestCity",
+        "obj": "Frederick,_Maryland"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "location",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "category",
+        "obj": "Historic_district"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "country",
+        "obj": "\"United States\""
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_12_monument_test_3",
+    "sent": "The 14th New Jersey Volunteer Infantry Monument (est. July 11th, 1907) is a historic district in the US provided by the National Park Service.",
+    "gold": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "category",
+        "obj": "Historic_districts_in_the_United_States"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "owningOrganisation",
+        "obj": "National_Park_Service"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "established",
+        "obj": "\"1907-07-11\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "established",
+        "obj": "1907-07-11"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "category",
+        "obj": "Historic_district"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "country",
+        "obj": "\"United States\""
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "owningOrganisation",
+        "obj": "National_Park_Service"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_12_monument_test_4",
+    "sent": "The 14th New Jersey Volunteer Infantry Monument in the United States was established on 11th July 1907, and belongs to the category of Historic districts.",
+    "gold": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "country",
+        "obj": "\"United States\""
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "category",
+        "obj": "Historic_districts_in_the_United_States"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "established",
+        "obj": "\"1907-07-11\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "established",
+        "obj": "1907-07-11"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "country",
+        "obj": "\"United States\""
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "category",
+        "obj": "Historic_districts"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_12_monument_test_5",
+    "sent": "Frederick Maryland is the nearest city to Monocacy National Battlefield where the 14th New Jersey Volunteer infantry monument is located. It was established on 11 July 1907.",
+    "gold": [
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "established",
+        "obj": "\"1907-07-11\""
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "district",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "nearestCity",
+        "obj": "Frederick,_Maryland"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "nearestCity",
+        "obj": "Frederick,_Maryland"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "location",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "established",
+        "obj": "1907-07-11"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_12_monument_test_6",
+    "sent": "The Baku Turkish Martyrs' Memorial is located in the capital city Baku in Azerbaijan where its leader is Artur Rasizade.",
+    "gold": [
+      {
+        "sub": "Azerbaijan",
+        "rel": "capital",
+        "obj": "Baku"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Baku"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "capital",
+        "obj": "Baku"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_12_monument_test_7",
+    "sent": "The Turkish martyrs memorial is located in Baku, Azerbaijan, which has Artur Rasizade as its Prime Minister and leader.",
+    "gold": [
+      {
+        "sub": "Azerbaijan",
+        "rel": "leaderTitle",
+        "obj": "Prime_Minister_of_Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Turkish_Martyrs_Memorial",
+        "rel": "location",
+        "obj": "\"Baku, Azerbaijan\""
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leaderTitle",
+        "obj": "Prime_Minister_of_Azerbaijan"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_12_monument_test_8",
+    "sent": "Huseyin Butuner and Hilmi Guner designed the Baku Turkish Martyrs memorial which is located in Azerbaijan. The official title of the leader of that country is the Prime Minister of Azerbaijan.",
+    "gold": [
+      {
+        "sub": "Azerbaijan",
+        "rel": "leaderTitle",
+        "obj": "Prime_Minister_of_Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "designer",
+        "obj": "\"Huseyin Butuner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leaderTitle",
+        "obj": "Prime_Minister_of_Azerbaijan"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_12_monument_test_9",
+    "sent": "Huseyin Butuner and Hilmi Guner designed the Baku Turkish Martyrs memorial in red granite and white marble. It is dedicated to the soldiers of the Ottoman army who died in the battle of Baku.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "\"Ottoman Army soldiers killed in the Battle of Baku\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "material",
+        "obj": "\"Red granite and white marble\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "designer",
+        "obj": "\"Huseyin Butuner, Hilmi Guner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "material",
+        "obj": "White_marble"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "Ottoman_Army"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_12_monument_test_10",
+    "sent": "The Baku Turkish Martyrs memorial is made of red granite and white marble and can be found in Azerbaijan. It is also known as Turk Sehitleri Aniti.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "nativeName",
+        "obj": "\"T\u00fcrk \u015eehitleri An\u0131t\u0131\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "material",
+        "obj": "\"Red granite and white marble\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "alias",
+        "obj": "\"Turk Sehitleri Aniti\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_12_monument_test_11",
+    "sent": "Huseyin Butuner and Hilmi Guner designed the Baku Turkish Martyrs memorial from red granite and white marble. The native name for this memorial is Turk Sehitleri Aniti.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "nativeName",
+        "obj": "\"T\u00fcrk \u015eehitleri An\u0131t\u0131\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "material",
+        "obj": "\"Red granite and white marble\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "designer",
+        "obj": "\"Huseyin Butuner, Hilmi Guner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "material",
+        "obj": "White_marble"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "officialName",
+        "obj": "\"Turk Sehitleri Aniti\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_12_monument_test_12",
+    "sent": "Frederick County, Maryland is the location of the Monocacy National Battlefield. The Battlefield is the location of the 14th New Jersey Volunteer Infantry Monument, which is categorised as a historic district of the US.",
+    "gold": [
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "location",
+        "obj": "Frederick_County,_Maryland"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "category",
+        "obj": "Historic_districts_in_the_United_States"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "district",
+        "obj": "Monocacy_National_Battlefield"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "location",
+        "obj": "Frederick_County,_Maryland"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "location",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "category",
+        "obj": "Historic_district"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "country",
+        "obj": "\"United States\""
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_12_monument_test_13",
+    "sent": "Frederick, Maryland, is the nearest city to the Monocacy National Battlefields situated in Frederick County. This district is the location of the 14th New Jersey Volunteer Infantry Monument.",
+    "gold": [
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "location",
+        "obj": "Frederick_County,_Maryland"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_Monument",
+        "rel": "district",
+        "obj": "Monocacy_National_Battlefield"
+      },
+      {
+        "sub": "Monocacy_National_Battlefield",
+        "rel": "nearestCity",
+        "obj": "Frederick,_Maryland"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Monocacy_National_Battlefields",
+        "rel": "nearestCity",
+        "obj": "Frederick_Maryland"
+      },
+      {
+        "sub": "14th_New_Jersey_Volunteer_Infantry_monument",
+        "rel": "location",
+        "obj": "Frederick_County,_Maryland"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_12_monument_test_14",
+    "sent": "The Native name of the Baku Turkish Martyrs' Memorial is \"T\u00fcrk Sehitleri Aniti\" which is located in Azerbaijan.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "nativeName",
+        "obj": "\"T\u00fcrk \u015eehitleri An\u0131t\u0131\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "nativeName",
+        "obj": "\"T\u00fcrk Sehitleri Aniti\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_12_monument_test_15",
+    "sent": "Baku Turkish Martyrs' Memorial is dedicated to the Ottoman Army soldiers killed in the Battle of Baku, which was designed by H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "\"Ottoman Army soldiers killed in the Battle of Baku\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "\"Ottoman Army soldiers killed in the Battle of Baku\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner, Hilmi G\u00fcner\""
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_12_monument_test_16",
+    "sent": "The Baku Turkish Martyrs' memorial which is dedicated to the soldiers of the Ottoman army who were killed in the Battle of Baku is located in Azerbaijan. At present Artur Rasizade is the leader of the country.",
+    "gold": [
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "\"Ottoman Army soldiers killed in the Battle of Baku\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "\"soldiers of the Ottoman Army\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_12_monument_test_17",
+    "sent": "The Baku Turkish Martyrs Memorial in Azerbaijan was designed by H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner and is dedicated to Ottoman Army soldiers killed in the Battle of Baku.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "dedicatedTo",
+        "obj": "\"Ottoman Army soldiers killed in the Battle of Baku\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "designer",
+        "obj": "\"Hilmi G\u00fcner\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_12_monument_test_18",
+    "sent": "Azerbaijan, where the leader is Artur Rasizade, is the location of the Baku Turkish Martyrs Memorial. The memorial was designed by Huseyin Butuner and Hilmi Guner.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Azerbaijan",
+        "rel": "leader",
+        "obj": "Artur_Rasizade"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "designer",
+        "obj": "\"Hilmi Guner\""
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_12_monument_test_19",
+    "sent": "The Baku Turkish Martyrs' Memorial was designed by Huseyin Butuner and Hilmi Guner, and is located in Azerbaijan, where it is called Turk Sehitleri Aniti.",
+    "gold": [
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "nativeName",
+        "obj": "\"T\u00fcrk \u015eehitleri An\u0131t\u0131\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"H\u00fcseyin B\u00fct\u00fcner and Hilmi G\u00fcner\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Baku_Turkish_Martyrs_Memorial",
+        "rel": "designer",
+        "obj": "\"Huseyin Butuner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "designer",
+        "obj": "\"Hilmi Guner\""
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "location",
+        "obj": "Azerbaijan"
+      },
+      {
+        "sub": "Baku_Turkish_Martyrs'_Memorial",
+        "rel": "nativeName",
+        "obj": "\"Turk Sehitleri Aniti\""
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  }
+]

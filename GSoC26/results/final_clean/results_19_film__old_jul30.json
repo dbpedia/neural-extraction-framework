@@ -1,0 +1,5152 @@
+[
+  {
+    "id": "ont_19_film_test_1",
+    "sent": "It's Great to be Young,a 1956 film starring Cecil Parker was composed by Louis Levy and written by Ted Willis.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis,_Baron_Willis"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_19_film_test_2",
+    "sent": "Super Capers is a 98 minute film with a $2000000.0 budget. It stars Tom Sizemore and Michael Rooker, and was written and directed by Ray Griggs.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 0.8333333333333334,
+    "r": 0.8333333333333334,
+    "f1": 0.8333333333333334
+  },
+  {
+    "id": "ont_19_film_test_3",
+    "sent": "Cecil Parker had a main role in It's Great to Be Young.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_4",
+    "sent": "The movie \"Super Capers\" was directed by Ray Griggs.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_5",
+    "sent": "Super Capers was distributed by the public company Lionsgate. It was also distributed by Roadside Attractions.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.6666666666666666,
+    "f1": 0.8
+  },
+  {
+    "id": "ont_19_film_test_6",
+    "sent": "John Mills had a main role in the movie It's Great to Be Young which has taken 282,838 pounds at the box office.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "gross",
+        "obj": "\"282838 pounds\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_7",
+    "sent": "Super Capers, a film written by Ray Griggs, is 98 minutes long. Danielle Harris was one of the stars of the movie.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Danielle_Harris"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Danielle_Harris"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_8",
+    "sent": "John Mills starred in the 1956 film It\u2019s Great to Be Young which featured cinematography by Gilbert Taylor.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_19_film_test_9",
+    "sent": "The 1956 movie It's Great to Be Young was directed by Cyril Frankel, starred Cecil Parker, and has a running time of 94 minutes.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_10",
+    "sent": "Director Ray Griggs, born in 1974, is the writer of the film Super Capers, starring Michael Rooker and Tom Sizemore.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Ray_Griggs_(director)",
+        "rel": "birthYear",
+        "obj": "1974"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Ray_Griggs",
+        "rel": "birthYear",
+        "obj": "1974"
+      },
+      {
+        "sub": "Ray_Griggs_(director)",
+        "rel": "occupation",
+        "obj": "Film_director"
+      },
+      {
+        "sub": "Ray_Griggs_(director)",
+        "rel": "writer",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.5,
+    "f1": 0.4444444444444445
+  },
+  {
+    "id": "ont_19_film_test_11",
+    "sent": "John Mills and Cecil Parker starred in the 1956 movie It's Great to Be Young which runs 94 minutes and had Gilbert Taylor as the cinematographer. The movie costed \u00a3282,838.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "budget",
+        "obj": "\"\u00a3282838\""
+      }
+    ],
+    "p": 0.16666666666666666,
+    "r": 0.2,
+    "f1": 0.1818181818181818
+  },
+  {
+    "id": "ont_19_film_test_12",
+    "sent": "Writer of the 1956 film It's Great to Be Young is Ted Willis.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis,_Baron_Willis"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_13",
+    "sent": "Tom Sizemore, who began acting in 1989, and Adam West have both starred in Super Capers.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "activeYearsStartYear",
+        "obj": "1989-01-01"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "1989"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Adam_West",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_14",
+    "sent": "The English-language film Super Capers was edited by Stacy Katzman and played by Michael Rooker.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_19_film_test_15",
+    "sent": "Tom Sizemore stars in Super Capers which starred Michael Rooker.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_16",
+    "sent": "Super Capers starred Michael Rooker, who was born in Jasper, Alabama.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthPlace",
+        "obj": "Jasper,_Alabama"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthPlace",
+        "obj": "Jasper,_Alabama"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_17",
+    "sent": "It's great to be young is a movie from 1956 that runs for 94 minutes. It stars Cecil Parker and it\u2019s edited by Max Benedict. Louis Levy composed the music.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "94"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editor",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.5,
+    "f1": 0.4444444444444445
+  },
+  {
+    "id": "ont_19_film_test_18",
+    "sent": "John Mills played the lead role and Cecil Parker had a main role in the movie It's Great to Be Young. The movie was released in 1956 and had a duration of 94 minutes. Cyril Frankel is the director and Louis Levy is the music composer of the movie.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_19",
+    "sent": "Gilbert Taylor was the cinematographer while Cyril Frankel was the director of the movie It's Great to Be Young. It came out in 1956 and lasted 94 minutes and accumulated 282,838 pounds.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Gilbert_Taylor",
+        "rel": "occupation",
+        "obj": "Cinematographer"
+      },
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "occupation",
+        "obj": "Film_director"
+      },
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "director",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_20",
+    "sent": "\u201cSuper Capers\u201d is a 98-minute-long movie starring Tom Lister Jr. Distributed by Lionsgate, the film grossed $30,955. Ray Griggs was the director of the film.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Lister,_Jr."
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Virgin_Records"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_21",
+    "sent": "The film Super Capers, distributed by Lionsgate and starring Justin Whalin, grossed $30,955.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "\"$30955\""
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_22",
+    "sent": "Super Capers, a film that had a running time of 98 minutes, stars Justin Whalin.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "\"98 minutes\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_23",
+    "sent": "Super Capers stars the actors Justin Whalin and Michael Rooker. Whalin was born in San Francisco and while the birth location of Rooker is unknown, he was born on April 6th, 1955.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Justin_Whalin",
+        "rel": "birthPlace",
+        "obj": "San_Francisco"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthDate",
+        "obj": "1955-04-06"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Justin_Whalin",
+        "rel": "birthPlace",
+        "obj": "San_Francisco"
+      },
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthDate",
+        "obj": "1955-04-06"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_24",
+    "sent": "Ted Willis wrote \u201cIt\u2019s great to be young\u201d a 1956 film starring Cecil Parker.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Ted_Willis,_Baron_Willis",
+        "rel": "writer",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_19_film_test_25",
+    "sent": "Super Capers, whose budget was 2000000, was lead by Adam West, and both written and directed by Ray Griggs.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_19_film_test_26",
+    "sent": "It's Great to Be Young is a 1956 film in which John Mills played a lead role. The film featured Gilbert Taylor as a cinematographer, and it received \u00a3282,838. The duration of the film is around 94 minutes.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "type",
+        "obj": "Film"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "\"\u00a3282838\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_19_film_test_27",
+    "sent": "The popular 1956 film, It's Great to Be Young, starred English actors John Mills and Cecil Parker, and was directed by Cyril Frankel. Cinematography was by Gilbert Taylor, with composition for the musical comedy by Louis Levy. The film's running time is 94 minutes, and, according to the Historical Journal of Film, Radio and Television, was produced for 282,838 pounds.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "budget",
+        "obj": "\"282838 pounds\""
+      }
+    ],
+    "p": 0.8333333333333334,
+    "r": 0.7142857142857143,
+    "f1": 0.7692307692307692
+  },
+  {
+    "id": "ont_19_film_test_28",
+    "sent": "It's Great to Be Young had Gilbert Taylor as cinematographer.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_29",
+    "sent": "Tom Sizemore starred in the 98.0 minutes long movie Super Capers which was distributed by Roadside Attractions.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "\"98.0 minutes\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_19_film_test_30",
+    "sent": "It's Great to Be Young, a 1956 film directed by Cyril Frankel, received \u00a3282,838. John Mills plays the lead in this 94-minute long movie.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "\"\u00a3282838\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_31",
+    "sent": "It's Great to Be Young (1956, 94 minutes) is a film edited by Max Benedict, who has been active in the film industry since 1947. The director of the movie is Cyril Frankel.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "Max_Benedict",
+        "rel": "activeYearsStartYear",
+        "obj": "1947-01-01"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editor",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "Max_Benedict",
+        "rel": "activeYearsStartYear",
+        "obj": "1947"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.2,
+    "r": 0.25,
+    "f1": 0.22222222222222224
+  },
+  {
+    "id": "ont_19_film_test_32",
+    "sent": "Tom Sizemore was married to Maeve Quinlan.",
+    "gold": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "spouse",
+        "obj": "Maeve_Quinlan"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "spouse",
+        "obj": "Maeve_Quinlan"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_33",
+    "sent": "It\u2019s Great to Be Young is a 1956 film that lasts 94 minutes. It was directed by Cyril Frankel and its writer was Ted Willis. John Mills played in the film, and it collected 282,838 at the box office. The film music was written by Louis Levy, and Gilbert Taylor served as a cinematographer.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis,_Baron_Willis"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "p": 0.5714285714285714,
+    "r": 0.5714285714285714,
+    "f1": 0.5714285714285714
+  },
+  {
+    "id": "ont_19_film_test_34",
+    "sent": "Distributor of the movie Super Capers is Roadside Attractions.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_35",
+    "sent": "The 1956 film 'It's great to be young', directed by Cyril Frankel, is 94 minutes long. The music was composed by Louis Levy, while the writer is Ted Willis.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "94"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis,_Baron_Willis"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_36",
+    "sent": "Super Capers is a 98.0 minute long English-language film starring Michael Rooker and Tom Sizemore. The film was edited by Stacy Katzman and distributed by Roadside Attractions.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_37",
+    "sent": "It's Great to Be Young (1956) stars John Mills, who was born in North Elmham.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "birthPlace",
+        "obj": "North_Elmham"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "birthPlace",
+        "obj": "North_Elmham"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_38",
+    "sent": "The 1956 movie , It's Great to be Young, was edited by Max Benedict who later died in 1986. The director was Cyril Frankel and the music composer was Louis Levy.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "Max_Benedict",
+        "rel": "deathYear",
+        "obj": "1986"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "Max_Benedict",
+        "rel": "deathYear",
+        "obj": "1986"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_39",
+    "sent": "It's Great to Be Young is a 1956 film that stars Cecil Parker and John Mills. The length of the movie is 94 minutes and written by Ted Willis. It\u2019s edited by Max Benedict and the score is composed by Louis Levy.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_40",
+    "sent": "Michael Rooker was born in the year 1955.",
+    "gold": [
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthYear",
+        "obj": "1955-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthYear",
+        "obj": "1955"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_41",
+    "sent": "Tom Sizemore began his career in 1989.",
+    "gold": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "activeYearsStartYear",
+        "obj": "1989-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "activeYearsStartYear",
+        "obj": "1989"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_42",
+    "sent": "Cecil Parker starred in the 1956 movie It's Great to Be Young, directed by Cyril Frankel.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_43",
+    "sent": "Michael R Burns plays an important role for the company Lionsgate.",
+    "gold": [
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Michael_R._Burns"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Michael_Burns_(executive)",
+        "rel": "keyPerson",
+        "obj": "Lionsgate"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_44",
+    "sent": "The film Super Capers is 98 minutes long. The budget was 2,000,000 but the gross income was only $30,955.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_45",
+    "sent": "Super Capers is a 98 minute English movie that was distributed by Roadside Attractions and Lionsgate. It was directed by Ray Griggs and edited by Stacy Katzman. The budget was $2,000,000.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000"
+      }
+    ],
+    "p": 0.2857142857142857,
+    "r": 0.2857142857142857,
+    "f1": 0.2857142857142857
+  },
+  {
+    "id": "ont_19_film_test_46",
+    "sent": "The English-language film, Super Capers, was edited by Stacy Katzman, and stars Michael Rooker and Tom Sizemore.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "British_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_47",
+    "sent": "It's Great to Be Young is a 1956 film by Gilbert Taylor's cinematography; it cost 282838 and starred John Mills.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "budget",
+        "obj": "282838"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_19_film_test_48",
+    "sent": "Super Capers was written by the director Ray Griggs.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 0.5,
+    "r": 1.0,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_49",
+    "sent": "The deathplace of John Mills was in Denham, Buckinghamshire.",
+    "gold": [
+      {
+        "sub": "John_Mills",
+        "rel": "deathPlace",
+        "obj": "Denham,_Buckinghamshire"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "deathPlace",
+        "obj": "Denham,_Buckinghamshire"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_50",
+    "sent": "At a length of 98 minutes, the movie Super Capers starred Michael Rooker and Tom Sizemore. The film was distributed by both Roadside Attractions and Lionsgate.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_51",
+    "sent": "Adam West had a main role in the movie Super Capers.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Adam_West",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_52",
+    "sent": "Super Capers was a film starring Justin Whalin distributed by Lionsgate and Roadside Attractions. Attractions was founded in 2003.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Roadside_Attractions",
+        "rel": "foundingYear",
+        "obj": "2003-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Roadside_Attractions",
+        "rel": "foundingYear",
+        "obj": "2003"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_19_film_test_53",
+    "sent": "Michael Rooker was born on April 6th 1955.",
+    "gold": [
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthDate",
+        "obj": "1955-04-06"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Michael_Rooker",
+        "rel": "birthDate",
+        "obj": "1955-04-06"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_54",
+    "sent": "Super Capers, distributed by Lionsgate and Roadside Attractions companies, is a movie starring Michael Rooker and Tom Sizemore.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_55",
+    "sent": "Cyril Frankel directed the 1956 film It's Great to Be Young which runs 94 minutes and costed \u00a3282,838. The movie is starring John Mills and in Gilbert Taylor's cinematography.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "director",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "budget",
+        "obj": "\"\u00a3282838\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_56",
+    "sent": "Super Capers is a 98 minute film starring Tom Lister Jr. Directed and written by Ray Griggs, he only made $30,955 from the film.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Lister,_Jr."
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Virgin_Records"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955"
+      }
+    ],
+    "p": 0.2,
+    "r": 0.25,
+    "f1": 0.22222222222222224
+  },
+  {
+    "id": "ont_19_film_test_57",
+    "sent": "John Mills, died in 2005, played leading role in the 1956 film It' Great to be young which was directed by Cyril Frankel. Cecil Parker also had a main role in the movie which was written by Ted Willis.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "deathYear",
+        "obj": "2005"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "deathYear",
+        "obj": "2005"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis,_Baron_Willis"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.4,
+    "f1": 0.3636363636363636
+  },
+  {
+    "id": "ont_19_film_test_58",
+    "sent": "Roadside Attractions and the public company Lionsgate distributed the English-language movie Super Capers with \"en\" as the ISO 639-1 code.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "English_language",
+        "rel": "iso6391Code",
+        "obj": "en"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Roadside_Attractions",
+        "rel": "distributor",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "distributor",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "iso6391Code",
+        "obj": "en"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "British_English"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_59",
+    "sent": "Super Capers is a movie starring Tom Sizemore and Michael Rooker. It\u2019s 98 minutes and plays in English. It is distributed by Lionsgate and Roadside Attractions. Stacy Katzman was the film editor.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "\"98 minutes\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      }
+    ],
+    "p": 0.5714285714285714,
+    "r": 0.5714285714285714,
+    "f1": 0.5714285714285714
+  },
+  {
+    "id": "ont_19_film_test_60",
+    "sent": "Michael Rooker starring to film Super Capers written by director Ray Griggs born in 1974.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Ray_Griggs_(director)",
+        "rel": "birthYear",
+        "obj": "1974"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Michael_Rooker",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Ray_Griggs",
+        "rel": "birthYear",
+        "obj": "1974"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_19_film_test_61",
+    "sent": "The 1956 movie It's Great to Be Young was directed by Cyril Frankel, composed by Louis Levy, and its length is 94 minutes.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_62",
+    "sent": "It's Great to Be Young is a 1956 film which was produced by Cyril Frankel, and starred John Mills and Cecil Parker.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "type",
+        "obj": "Film"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "producer",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.6666666666666666,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_63",
+    "sent": "The film Super Capers starred Justin Whalin.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_64",
+    "sent": "Louis Levy, who was born on November 20, 1894, is the music composer for the film \"It's Great to be Young.\"",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "Louis_Levy",
+        "rel": "birthDate",
+        "obj": "1894-11-20"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Louis_Levy",
+        "rel": "birthDate",
+        "obj": "1894-11-20"
+      },
+      {
+        "sub": "Louis_Levy",
+        "rel": "musicComposer",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_65",
+    "sent": "Super Capers, which is a movie written and directed by Ray Griggs, starred Danielle Harris.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Danielle_Harris"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Danielle_Harris"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_66",
+    "sent": "Super Capers is a film that stars Michael Rooker and is distributed by Roadside Attractions and Lionsgate. The budget for the film was $2,000,000.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_19_film_test_67",
+    "sent": "It's Great to Be Young was a film from 1956; its length is 94 minutes. John Mills had a main role in the film which accrued 282,838 pounds at the box office.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "\"282838 pounds\""
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_19_film_test_68",
+    "sent": "Super Capers made $30,955 and starred infamous actor, Adam West. It was written and directed by Ray Griggs.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "\"$30955\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_19_film_test_69",
+    "sent": "Super Capers, starring Michael Rooker and Tom Sizemore, is a movie in English.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_70",
+    "sent": "Super Capers is a 98 minute movie starring Michael Rooker and Tom Sizemore. Stacy Katzman edited Super Capers which was filmed in English.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "\"98 minute\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "Gerry_Conway"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_71",
+    "sent": "It's Great to Be Young is a 1956 film that lasted for 94 minutes. The directors and music composers were Cyril Frankel and Louis Levy. It cost 282,838 pounds to produce the movie.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "\"94 minutes\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "budget",
+        "obj": "\"282838 pounds\""
+      }
+    ],
+    "p": 0.4,
+    "r": 0.5,
+    "f1": 0.4444444444444445
+  },
+  {
+    "id": "ont_19_film_test_72",
+    "sent": "Super Capers is a film starring Michael Rooker and Tom Sizemore, who began his career in 1989. The language of the movie Super Capers is English, which is the spoken language in Great Britain.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "English_language",
+        "rel": "spokenIn",
+        "obj": "Great_Britain"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "activeYearsStartYear",
+        "obj": "1989-01-01"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "activeYearsStartYear",
+        "obj": "1989"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "British_English"
+      },
+      {
+        "sub": "British_English",
+        "rel": "spokenIn",
+        "obj": "Great_Britain"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_73",
+    "sent": "John Mills had a main role in the 94 minute movie It's Great to Be Young which took 282838 pounds at the box office. Louis Levy composed the music for the movie which had Gilbert Taylor as the cinematographer.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "94"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_74",
+    "sent": "Cecil Parker starred in the 1956 movie It's Great to Be Young which was written by Ted Willis and edited by Max Benedict.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis,_Baron_Willis"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editor",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_75",
+    "sent": "Super Capers, a movie directed by Ray Griggs, was distributed by both Lionsgate and Roadside Attractions and had a 98 minute run time.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_19_film_test_76",
+    "sent": "The film \"It's Great to Be Young\" starring John Mills was released in 1956. It was directed by Cyril Frankel and music was composed by Louis Levy. Cinematography is taken care by Gilbert Taylor, and duration of the film is 94 minutes. The film collected 282,838 pounds.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "94"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838"
+      }
+    ],
+    "p": 0.5714285714285714,
+    "r": 0.6666666666666666,
+    "f1": 0.6153846153846153
+  },
+  {
+    "id": "ont_19_film_test_77",
+    "sent": "Cyril Frankel, a television director, directed the 1956 movie It's Great to Be Young.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "occupation",
+        "obj": "Television_director"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "occupation",
+        "obj": "Television_director"
+      },
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "director",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_19_film_test_78",
+    "sent": "The duration of the film 'It's great to be young', from 1956, is 94 minutes.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "duration",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_79",
+    "sent": "John Mills was married to Aileen Raymond.",
+    "gold": [
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Aileen_Raymond"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Aileen_Raymond"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_80",
+    "sent": "Adam West had a main role in the movie Super Capers which was distributed by Roadside Attractions and Lionsgate.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_81",
+    "sent": "Lionsgate provides digital distribution service.",
+    "gold": [
+      {
+        "sub": "Lionsgate",
+        "rel": "service",
+        "obj": "Digital_distribution"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lionsgate",
+        "rel": "industry",
+        "obj": "Columbia_Pictures"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_82",
+    "sent": "Both Michael Rooker and Tom Sizemore starred in Super Capers which was edited by Stacy Katzman.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Michael_Rooker",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_83",
+    "sent": "The location of Lionsgate is in the United States.",
+    "gold": [
+      {
+        "sub": "Lionsgate",
+        "rel": "location",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lionsgate",
+        "rel": "location",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_84",
+    "sent": "Tom Sizemore stars in Super Capers alongside Michael Rooker who also appears in the movie. Super Capers is a film spoken in English that runs for 98 minutes.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "\"98 minutes\""
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_19_film_test_85",
+    "sent": "Super Capers' gross income was $30,955.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Aberdeen_F.C.",
+        "rel": "gross",
+        "obj": "\"$30955\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_86",
+    "sent": "The language of the movie Super Capers is English.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "British_English"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_87",
+    "sent": "Louis Levy is the music composer for the film \"It\"s great to Be Young\".",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Louis_Levy",
+        "rel": "musicComposer",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_88",
+    "sent": "Lionsgate is an entertainment company.",
+    "gold": [
+      {
+        "sub": "Lionsgate",
+        "rel": "industry",
+        "obj": "Entertainment"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_89",
+    "sent": "Juliet Mills is the daughter of John Mills.",
+    "gold": [
+      {
+        "sub": "John_Mills",
+        "rel": "child",
+        "obj": "Juliet_Mills"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Juliet_Mills",
+        "rel": "child",
+        "obj": "John_Mills"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_90",
+    "sent": "Lionsgate offers broadcast programming service.",
+    "gold": [
+      {
+        "sub": "Lionsgate",
+        "rel": "service",
+        "obj": "Broadcast_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lionsgate",
+        "rel": "service",
+        "obj": "CBS"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_91",
+    "sent": "Super Capers is a film distributed by Roadside Attractions, with digital distribution and broadcast programming service provided by Lionsgate.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "service",
+        "obj": "Digital_distribution"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "service",
+        "obj": "Broadcast_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.5,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_92",
+    "sent": "Cecil Parker, born in 1897, stars in the 1956 film It's Great to be Young.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "Cecil_Parker",
+        "rel": "birthYear",
+        "obj": "1897"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cecil_Parker",
+        "rel": "birthYear",
+        "obj": "1897"
+      },
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_93",
+    "sent": "One key person of Lionsgate is Jon Feltheimer.",
+    "gold": [
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Jon_Feltheimer"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Jon_Feltheimer"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_94",
+    "sent": "Max Benedict died in London.",
+    "gold": [
+      {
+        "sub": "Max_Benedict",
+        "rel": "deathPlace",
+        "obj": "London"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Max_Benedict",
+        "rel": "deathPlace",
+        "obj": "London"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_95",
+    "sent": "It's Great to Be Young is a 1956 film directed by Cyril Frankel, who was born in the UK.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "birthPlace",
+        "obj": "United_Kingdom"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "type",
+        "obj": "Film"
+      },
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "birthPlace",
+        "obj": "London"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_19_film_test_96",
+    "sent": "Lionsgate, the distributor for the movie Super Capers, has two key people: Jon Feltheimer and Michael R. Burns. Super Capers is directed by Ray Griggs and stars Michael Rooker.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Jon_Feltheimer"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Michael_R._Burns"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lionsgate",
+        "rel": "distributor",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Jon_Feltheimer"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "keyPerson",
+        "obj": "Michael_Burns_(executive)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.6,
+    "f1": 0.6
+  },
+  {
+    "id": "ont_19_film_test_97",
+    "sent": "Stacy Katzman edited Super Capers, a move with a 2000000.0 budget, which was written and directed by Ray Griggs and had a duration of 98 minutes and grossed $30.995.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30955.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Sam_Katzman",
+        "rel": "editor",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "gross",
+        "obj": "30.995"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_98",
+    "sent": "\"It's great to Be Young\" was written by the musical composer, Louis Levy, a native of England.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "Louis_Levy",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "Louis_Levy",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_99",
+    "sent": "Super Capers is a film starring Michael Rooker.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_100",
+    "sent": "Justin Whalin stars in Super Capers, which is written by director Ray Griggs.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Justin_Whalin"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Justin_Whalin",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "director",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_19_film_test_101",
+    "sent": "Released in 1956, the movie It's Great to be Young lasted for 94 minutes and grossed \u00a3282,838. The director was Cyril Frankel and Cecil Parker together with John Mills had main roles, whilst Gilbert Taylor was the cinematographer.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "282838.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "gross",
+        "obj": "\"\u00a3282838\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_102",
+    "sent": "Max Benedict began his career in 1947.",
+    "gold": [
+      {
+        "sub": "Max_Benedict",
+        "rel": "activeYearsStartYear",
+        "obj": "1947-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Max_Benedict",
+        "rel": "activeYearsStartYear",
+        "obj": "1947"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_103",
+    "sent": "John Mills is the spouse of Mary Hayley Bell.",
+    "gold": [
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Mary_Hayley_Bell"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Mary_Hayley_Bell"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_104",
+    "sent": "Justin Whalin was born in San Francisco.",
+    "gold": [
+      {
+        "sub": "Justin_Whalin",
+        "rel": "birthPlace",
+        "obj": "San_Francisco"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Justin_Whalin",
+        "rel": "birthPlace",
+        "obj": "San_Francisco"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_105",
+    "sent": "It's Great to be Young is a 1956 film starring Cecil Parker and John Mills. Mills was married to Aileen Raymond and Mary Hayley Bell.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Aileen_Raymond"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Mary_Hayley_Bell"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Aileen_Raymond"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "spouse",
+        "obj": "Mary_Hayley_Bell"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_106",
+    "sent": "In the film It's Great to Be Young, which was filmed in 1956 and lasted 94 minutes, Cyril Frankel was the director, Gilbert Taylor was the cinematographer. The film music composer was Louis Levy, and the main role was portrayed by Cecil Parker.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(album)",
+        "rel": "runtime",
+        "obj": "94"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.8,
+    "f1": 0.7272727272727272
+  },
+  {
+    "id": "ont_19_film_test_107",
+    "sent": "Louis Levy is the music composer of It's Great to Be Young (1956 film) in Gilbert Taylor's cinematography whereas Max Benedict its editor.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Louis_Levy",
+        "rel": "musicComposer",
+        "obj": "\"It's Great to Be Young (1956 film)\""
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "cinematography",
+        "obj": "Gilbert_Taylor"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editor",
+        "obj": "Max_Benedict"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_19_film_test_108",
+    "sent": "Super Capers is a 98-minute English-language movie that was edited by Stacy Katzman. It was written by Lionsgate and Roadside Attractions.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "British_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_19_film_test_109",
+    "sent": "Justin Whalin\u2019s job is a presenter.",
+    "gold": [
+      {
+        "sub": "Justin_Whalin",
+        "rel": "occupation",
+        "obj": "Presenter"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Justin_Whalin",
+        "rel": "occupation",
+        "obj": "Television_presenter"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_110",
+    "sent": "Cyril Frankel was born in the UK.",
+    "gold": [
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "birthPlace",
+        "obj": "United_Kingdom"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "birthPlace",
+        "obj": "London"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_111",
+    "sent": "Super Capers is a film starring Tom Lister Jr.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Lister,_Jr."
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Virgin_Records"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_112",
+    "sent": "It's Great to be Young is a 1956 film starring John Mills and Cecil Parker. Louis Levy composed the music for the film.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_113",
+    "sent": "It's Great to Be Young is a 1956 film directed by Cyril Frankel.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "type",
+        "obj": "Film"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 1.0,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_114",
+    "sent": "Tom Sizemore, who is an actor, stars in Super Capers.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "occupation",
+        "obj": "Actor"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "occupation",
+        "obj": "Actor"
+      },
+      {
+        "sub": "Tom_Sizemore",
+        "rel": "starring",
+        "obj": "Super_Capers"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_115",
+    "sent": "John Mills had a main role in the 1956 film It's Great to Be Young, starring alongside Cecil Parker. Mills died in Denham, Buckinghamshire.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "deathPlace",
+        "obj": "Denham,_Buckinghamshire"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "deathPlace",
+        "obj": "Denham,_Buckinghamshire"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_19_film_test_116",
+    "sent": "Super Capers starred Adam West, who was born in the year 1928.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Adam_West",
+        "rel": "birthYear",
+        "obj": "1928"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Adam_West"
+      },
+      {
+        "sub": "Adam_West",
+        "rel": "birthYear",
+        "obj": "1928"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_117",
+    "sent": "Cecil Parker, also known as Cecil Schwabe, starred in It\u2019s Great to Be Young alongside lead actor John Mills. The movie was released in 1956. Mills passed away in Denham, Buckinghamshire.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "Cecil_Parker",
+        "rel": "birthName",
+        "obj": "Cecil Schwabe"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "deathPlace",
+        "obj": "Denham,_Buckinghamshire"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cecil_Parker",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      },
+      {
+        "sub": "John_Mills",
+        "rel": "deathPlace",
+        "obj": "Denham,_Buckinghamshire"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_19_film_test_118",
+    "sent": "Cyril Frankel was a television director.",
+    "gold": [
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "occupation",
+        "obj": "Television_director"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Cyril_Frankel",
+        "rel": "occupation",
+        "obj": "Television_director"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_119",
+    "sent": "It's Great to Be Young, which is a 1956 film directed by Cyril Frankel, is 94 minutes in length.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.5,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_120",
+    "sent": "Hayley Mills is the child of John Mills.",
+    "gold": [
+      {
+        "sub": "John_Mills",
+        "rel": "child",
+        "obj": "Hayley_Mills"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Hayley_Mills",
+        "rel": "child",
+        "obj": "John_Mills"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_121",
+    "sent": "The language code (ISO 639-2) of the English language is eng.",
+    "gold": [
+      {
+        "sub": "English_language",
+        "rel": "iso6392Code",
+        "obj": "eng"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "English_language",
+        "rel": "iso6392Code",
+        "obj": "eng"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_19_film_test_122",
+    "sent": "Super Capers, an English-language movie, had a running time of 98 minutes and a 2,000,000 dollar budget. Super Capers was edited by Stacy Katzman, written by Ray Griggs, and starred Michael Rooker and Tom Sizemore.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "98.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "2000000.0"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "runtime",
+        "obj": "\"98 minutes\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "budget",
+        "obj": "\"2000000 dollar\""
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editor",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "writer",
+        "obj": "Ray_Griggs_(director)"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.42857142857142855,
+    "f1": 0.4615384615384615
+  },
+  {
+    "id": "ont_19_film_test_123",
+    "sent": "Featuring Cecil Parker as a main role, It's Great to Be Young was edited by Max Benedict. The composer of music for the film was Louis Levy.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editing",
+        "obj": "Max_Benedict"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "editor",
+        "obj": "Max_Benedict"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_19_film_test_124",
+    "sent": "It's Great to Be Young (a 1956 film directed by Cyril Frankel) is 94 minutes long. Louis Levy is the music composer for the film, while Cecil Parker had a main role in the film and Ted Willis is the writer.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "runtime",
+        "obj": "94.0"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "director",
+        "obj": "Cyril_Frankel"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "musicComposer",
+        "obj": "Louis_Levy"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "Cecil_Parker"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "writer",
+        "obj": "Ted_Willis"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_125",
+    "sent": "Super Capers is a film starring Michael Rooker and Tom Sizemore.The film was edited by Stacy Katzman, and the language is English. Roadside Attractions is the distributor of the movie.",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "Stacy_Katzman"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "English_language"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Michael_Rooker"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "starring",
+        "obj": "Tom_Sizemore"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "editing",
+        "obj": "James_Keach"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "language",
+        "obj": "American_English"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.6,
+    "f1": 0.6
+  },
+  {
+    "id": "ont_19_film_test_126",
+    "sent": "John Mills is playing the lead in the movie It's Great to Be Young, which was released in 1956.",
+    "gold": [
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "starring",
+        "obj": "John_Mills"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Mills",
+        "rel": "starring",
+        "obj": "It's_Great_to_Be_Young_(1956_film)"
+      },
+      {
+        "sub": "It's_Great_to_Be_Young_(1956_film)",
+        "rel": "releaseDate",
+        "obj": "1956"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_19_film_test_127",
+    "sent": "Super Capers was distributed by Roadside Attractions and Lionsgate (founded by Frank Giustra).",
+    "gold": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "foundedBy",
+        "obj": "Frank_Giustra"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Roadside_Attractions"
+      },
+      {
+        "sub": "Super_Capers",
+        "rel": "distributor",
+        "obj": "Lionsgate"
+      },
+      {
+        "sub": "Lionsgate",
+        "rel": "foundedBy",
+        "obj": "Frank_Giustra"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  }
+]
