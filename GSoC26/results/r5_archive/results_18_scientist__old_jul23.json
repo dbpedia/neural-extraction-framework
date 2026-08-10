@@ -1,0 +1,5626 @@
+[
+  {
+    "id": "ont_18_scientist_test_1",
+    "sent": "The Darlington town has an area code of 01325.",
+    "gold": [
+      {
+        "sub": "Darlington",
+        "rel": "areaCode",
+        "obj": "01325"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darlington",
+        "rel": "areaCode",
+        "obj": "01325"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_2",
+    "sent": "George Monson was married to Lady Anne Monson, a botanist, who died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "George_Monson_(died_1739)",
+        "rel": "spouse",
+        "obj": "Lady_Anne_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_3",
+    "sent": "Darinka Dentcheva developed a theory influenced by Andrzej Piotr Ruszczy\u0144ski.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_4",
+    "sent": "Lady Anne Monson's spouse was George Monson.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_5",
+    "sent": "Brandon Carter is a professional in the field of general relativity.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_6",
+    "sent": "Darinka Dentcheva, a Humboldt University graduate, is a mathematician working in the field of mathematical optimization.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematician"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_7",
+    "sent": "The zip code areas in Darlington are DL1, DL2, DL3.",
+    "gold": [
+      {
+        "sub": "Darlington",
+        "rel": "postalCode",
+        "obj": "\"DL1, DL2, DL3\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darlington",
+        "rel": "postalCode",
+        "obj": "DL1"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "postalCode",
+        "obj": "DL2"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "postalCode",
+        "obj": "DL3"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_8",
+    "sent": "The Kingdom of England used a unitary state form of government.",
+    "gold": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "governmentType",
+        "obj": "Unitary_state"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "governmentType",
+        "obj": "Unitary_state"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_9",
+    "sent": "United States is home to Darinka Dentcheva, where the Vice President is a title of one of its leaders.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "leaderTitle",
+        "obj": "\"Vice President\""
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "isPartOf",
+        "obj": "Darinka_Dentcheva"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leaderTitle",
+        "obj": "Vice_President"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_10",
+    "sent": "Lady Anne Monson, who was born in Darlington, died on 1776-02-18.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_11",
+    "sent": "Lady Anne Monson was born in Darlington and currently resides in India. India was founded on the 26th of January in 1950 and is currently lead by a President.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "leaderTitle",
+        "obj": "President"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "India",
+        "rel": "foundingDate",
+        "obj": "1950-01-26"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "foundingDate",
+        "obj": "1950-01-26"
+      },
+      {
+        "sub": "India",
+        "rel": "leaderTitle",
+        "obj": "President"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_12",
+    "sent": "Darinka Dentcheva is resident of new Jersey which has an area of water that is 3.544.04 meters squared and citizen of the United States where the motto is \"In God We Trust\".",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "areaOfWater",
+        "obj": "3544040000.0"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "motto",
+        "obj": "\"In God we trust\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "areaOfWater",
+        "obj": "\"3544.04 square\""
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.4,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_13",
+    "sent": "Lady Anne Monson, an English national, resided in India with spouse George Monson. With Botany as her professional field, she died on 1776-02-18.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Bill_English"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.6,
+    "f1": 0.6
+  },
+  {
+    "id": "ont_18_scientist_test_14",
+    "sent": "Influenced by Andrzej Piotr Ruszczynski, Darinka Dentcheva (born Jan. 1st, 1958) has become widely known for her work in Stochastic Programming, working in the field of Mathematical Optimization; she is a citizen of the United States.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.8,
+    "f1": 0.888888888888889
+  },
+  {
+    "id": "ont_18_scientist_test_15",
+    "sent": "Darinka Dentcheva is a resident of New Jersey, a state in the United States, which uses federalism as its type of governing system.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "United_States",
+        "rel": "governmentType",
+        "obj": "Federalism"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "type",
+        "obj": "Federalism"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_18_scientist_test_16",
+    "sent": "Darinka Dentcheva, a United States citizen, developed a theory in Mathematical Optimization, influenced by Andrzej Piotr Ruszczy\u0144ski . \"In God We Trust\" is the motto of the United States.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "motto",
+        "obj": "\"In God we trust\""
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Andrzej_Piotr_Ruszczy\u0144ski",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "nationality",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "United_States",
+        "rel": "motto",
+        "obj": "In_God_We_Trust"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.25,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_18_scientist_test_17",
+    "sent": "Darinka Dentcheva is a citizen of the United States.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_18",
+    "sent": "Darinka Dentcheva is known for her work with stochastic programming where she has a residence in the state of New Jersey and her alma mater is Humboldt University.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_19",
+    "sent": "Darinka Dentcheva (United States citizen) with birthdate as January 1, 1958 studied at Humboldt University. Her theory was influenced by Andrzej Piotr Ruszczy\u0144ski.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "nationality",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_20",
+    "sent": "Lady Anne Monson, born on January 1, 1726 in the Kingdom of England, studied botany.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_21",
+    "sent": "Brandon Carter (born in England) is known for the Carter constant as well as the No-hair theorem. His doctoral advisor is Dennis William Sciama.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_18_scientist_test_22",
+    "sent": "Brandon Carter (born in England) works in the field of general relativity and is best known for the Carter constant and the No-hair theorem.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_23",
+    "sent": "The Kingdom of England was founded in the year 927.",
+    "gold": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "foundingYear",
+        "obj": "0927"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "foundingYear",
+        "obj": "0927"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_24",
+    "sent": "Lady Anne Monson\u2019s nationality is English but currently resides in India, whose total area is 3,287,590 km^2. One of the leaders of India is Chief Justice.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "India",
+        "rel": "areaTotal",
+        "obj": "3287590000000.0"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "leaderTitle",
+        "obj": "Chief Justice"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Bill_English"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "areaTotal",
+        "obj": "3,287,590 km^2"
+      },
+      {
+        "sub": "India",
+        "rel": "leader",
+        "obj": "Chief_justice"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_18_scientist_test_25",
+    "sent": "Lady Anne Monson was born on January 1, 1726 in Darlington located in the Kingdom of England. Her residence was in India and she later died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "isPartOf",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_18_scientist_test_26",
+    "sent": "Darinka Dentcheva's residence is in New Jersey.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_27",
+    "sent": "Darinka Dentcheva was born in New Jersey which has a total population of 22,591.38.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "areaTotal",
+        "obj": "22591.38"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthPlace",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "populationTotal",
+        "obj": "22591.38"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_28",
+    "sent": "Darinka Dentcheva, born January 1st of 1958, was influenced by Andrzej Piotr Ruszczynski.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_29",
+    "sent": "Darinka Dentcheva is a citizen of the United States, the country where John Roberts is one of the leaders.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "John_Roberts",
+        "rel": "leader",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_30",
+    "sent": "India, at one time led by T.S. Thakur, was also where Lady Anne Monson lived most of her life.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "leader",
+        "obj": "T._S._Thakur"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "leader",
+        "obj": "Thakur_Ram_Lal"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_31",
+    "sent": "The Kingdom of England, the place where Lady Anne Monson was born, was a unitary state.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "governmentType",
+        "obj": "Unitary_state"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "type",
+        "obj": "Unitary_state"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_32",
+    "sent": "The demonym for people from the United States is American.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "demonym",
+        "obj": "American"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "United_States",
+        "rel": "demonym",
+        "obj": "American"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_33",
+    "sent": "Darinka Dentcheva is a mathematician working in the field of mathematical optimization.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_34",
+    "sent": "Darinka Dentcheva, known for her work with stochastic programming, was influenced by the work of Andrzej Piotr Ruszczynski. She attended Humboldt University and her professional field is Mathematical optimization.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "\"Mathematical optimization\""
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_35",
+    "sent": "Lady Anne Monson lived from January 1, 1726 to February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_36",
+    "sent": "Lady Anne Monson married George Monson was a British national but resided in India for most of her life. She died on February 18th, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_18_scientist_test_37",
+    "sent": "Brandon Carter is well known for Anthropic principle theory.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Anthropic_principle"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Anthropic_principle"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_38",
+    "sent": "Darinka Dentcheva, who resides in New Jersey, is a graduate of Humboldt University.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_39",
+    "sent": "English is commonly spoken in New Jersey.",
+    "gold": [
+      {
+        "sub": "New_Jersey",
+        "rel": "language",
+        "obj": "English_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Bill_English",
+        "rel": "language",
+        "obj": "New_Jersey"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_40",
+    "sent": "Lady Anne Monson was born on January 1, 1726 in the kingdom of England, where she lived and held British nationality. Lady Anne Monson\u2019s spouse is George Monson.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_41",
+    "sent": "The total population of the United States is over three hundred and twenty four million.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "populationTotal",
+        "obj": "324720797"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_42",
+    "sent": "Lady Anne Monson was born in Darlington on January 1, 1726, and died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_43",
+    "sent": "John Roberts is a leader in the United States, whereas Darinka Dentcheva only resides in the United States.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Roberts",
+        "rel": "leader",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_44",
+    "sent": "Lady Anne Monson was born in the Kingdom of England in a town called Darlington which is in the UK.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "country",
+        "obj": "United_Kingdom"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "isPartOf",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "isPartOf",
+        "obj": "Polydor_Records"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_18_scientist_test_45",
+    "sent": "Lady Anne Monson was born in Darlington but resided in India for most of her life. She was born on January 1, 1726 and died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_46",
+    "sent": "Lady Anne Monson was born in Darlington, England. Darlington is in the North East of England and has a grid reference of NZ289147.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "region",
+        "obj": "North_East_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "gridReference",
+        "obj": "NZ289147"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "location",
+        "obj": "Newcastle_upon_Tyne"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "gridReference",
+        "obj": "NZ289147"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.5,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_18_scientist_test_47",
+    "sent": "Brandon Carter, best known for the Carter constant and the No-hair theorem, is a professional in the field of general relativity. He was born in England and studied at the University of Cambridge, where he was advised by Dennis William Sciama.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.8333333333333334,
+    "r": 0.8333333333333334,
+    "f1": 0.8333333333333334
+  },
+  {
+    "id": "ont_18_scientist_test_48",
+    "sent": "Darinka Dentcheva, an American citizen known for her work with stochastic programming, developed a theory influenced by Andrzej Piotr Ruszczy\u0144ski.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "nationality",
+        "obj": "Americans"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_49",
+    "sent": "Brandon Carter, a specialist in General Relativity, is known for the Carter Constant.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_50",
+    "sent": "Lady Anne Monson was born in the Kingdom of England in Darlington, whose OS grid reference is NZ289147. Lady Anne Monson lived in the Kingdom of England, whose dissolution took place in 1707, and held British nationality.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "dissolutionYear",
+        "obj": "1707"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "gridReference",
+        "obj": "NZ289147"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "gridReference",
+        "obj": "NZ289147"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "dissolutionYear",
+        "obj": "1707"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.6,
+    "f1": 0.6
+  },
+  {
+    "id": "ont_18_scientist_test_51",
+    "sent": "Brandon Carter was born on January 1, 1942 and worked professionally in the field of General Relativity. Brandon Carter was known for the Carter Constant and his contributions to the no-hair theorem. Dennis William Sciama was his doctoral advisor.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_18_scientist_test_52",
+    "sent": "Lady Anne Monson was born in Darlington.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_53",
+    "sent": "Brandon Carter, who is well-known for the Anthropic principle theory, calls England his birthplace.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Anthropic_principle"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Anthropic_principle"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_54",
+    "sent": "Indian is the demonym for people from India.",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "demonym",
+        "obj": "Indian"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "demonym",
+        "obj": "people from India"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_55",
+    "sent": "Darinka Dentcheva, who is known for Stochastic programming, was born January 1, 1958.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_56",
+    "sent": "Darlington is in the North East England region.",
+    "gold": [
+      {
+        "sub": "Darlington",
+        "rel": "region",
+        "obj": "North_East_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darlington",
+        "rel": "isPartOf",
+        "obj": "North_East_England"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_57",
+    "sent": "The leader's title in India is \"President.\"",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "leaderTitle",
+        "obj": "President"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "leaderTitle",
+        "obj": "President"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_58",
+    "sent": "Darlington, population 106,000, was the birthplace of Lady Anne Monson.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "populationTotal",
+        "obj": "106000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darlington",
+        "rel": "populationTotal",
+        "obj": "106000"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "birthPlace",
+        "obj": "Lady_Anne_Monson"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_59",
+    "sent": "A Chief Justice is a leadership title in India.",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "leaderTitle",
+        "obj": "Chief Justice"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chief_justice",
+        "rel": "leaderTitle",
+        "obj": "India"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_60",
+    "sent": "Brandon Carter was born in England.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_61",
+    "sent": "Darinka Dentcheva was born on January 1st, 1958. She is a mathematician working in the field of mathematical optimization, and is known for her work with stochastic programming. One of her theories was influenced by Andrzej Piotr Ruszczy\u0144ski. She is a citizen of the United States and resides in New Jersey.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "January 1st, 1958"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematician"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_62",
+    "sent": "Lady Anne Monson, a British national was born in Darlington, Kingdom of England, on January 1, 1726. She resided in India for most of her life with spouse George Monson and died on February 18th, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.42857142857142855,
+    "f1": 0.4615384615384615
+  },
+  {
+    "id": "ont_18_scientist_test_63",
+    "sent": "Lady Anne Monson was born in Darlington, in the Kingdom of England, on January 1st, 1726. Her nationality was with the Kingdom of England, but her residence was in India. She passed away on February 18th, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "January 1st, 1726"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.5,
+    "f1": 0.5454545454545454
+  },
+  {
+    "id": "ont_18_scientist_test_64",
+    "sent": "India's total population is 1,293,057,000 and the country\u2019s demonym is Indian. Lady Anne Monson, born January 1, 1726, known for her study of botany, resided here most of her life.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "demonym",
+        "obj": "Indian"
+      },
+      {
+        "sub": "India",
+        "rel": "populationTotal",
+        "obj": "1293057000"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "populationTotal",
+        "obj": "1293057000"
+      },
+      {
+        "sub": "India",
+        "rel": "demonym",
+        "obj": "Indian"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "knownFor",
+        "obj": "Botany"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_18_scientist_test_65",
+    "sent": "Brandon Carter was born in England on January 1st, 1942. His contributions to the field of general relativity were conducted under Dennis William Sciama, his doctoral advisor.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "January 1st, 1942"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.25,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_18_scientist_test_66",
+    "sent": "Brandon Carter, born in England, had Dennis William Sciama as his doctoral advisor.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_67",
+    "sent": "India has reached the total population of 1,293,057,000.",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "populationTotal",
+        "obj": "1293057000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "populationTotal",
+        "obj": "1293057000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_68",
+    "sent": "Brandon Carter, who was born on 01-01-1942, goes to Dennis William Sciama for doctoral advice.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_69",
+    "sent": "Contributor to the no-hair theorem and developer of the Carter Constant, Brandon Carter, works in the field of General Relativity. He was born in England on January, 1 1942. He graduated from the University of Cambridge where he was under the doctoral advisement of Dennis William Sciama.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.8571428571428571,
+    "r": 0.8571428571428571,
+    "f1": 0.8571428571428571
+  },
+  {
+    "id": "ont_18_scientist_test_70",
+    "sent": "Lady Anne Monson works in the professional field of Botany and is married to George Monson. She is of the English nationality but currently resides in India.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Bill_English"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_71",
+    "sent": "Lady Anne Monson, who was born in the Kingdom of England, lived there, and held British nationality, died on February 18th, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_18_scientist_test_72",
+    "sent": "Darinka Dentcheva was born January 1, 1958. She attended Humboldt University and is a US citizen. Darinka Dentcheva is a mathematician who developed a theory influenced by Andrzej Piotr Ruszczynski in the field of mathematical optimization.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States_Army"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematician"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 0.4,
+    "r": 0.4,
+    "f1": 0.4000000000000001
+  },
+  {
+    "id": "ont_18_scientist_test_73",
+    "sent": "Brandon Carter, a University of Cambridge alum in the field of General Relativity, was born on January 1, 1942.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_74",
+    "sent": "Born in Darlington on January 1st, 1726, Lady Anne Monson lived in the Kingdom of England holding British nationality.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "January 1st, 1726"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "country",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_18_scientist_test_75",
+    "sent": "Lady Anne Monson was born in the Kingdom of England whose capital was previously Winchester.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "capital",
+        "obj": "Winchester"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "capital",
+        "obj": "Winchester"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_76",
+    "sent": "Darinka Dentcheva, born January 1, 1958, is a professional in the field of mathematical optimization known for Stochastic programming.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.6666666666666666,
+    "f1": 0.8
+  },
+  {
+    "id": "ont_18_scientist_test_77",
+    "sent": "Lady Anne Monson is from the Kingdom of England. She resided in India and was married to George Monson.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "country",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_18_scientist_test_78",
+    "sent": "Brandon Carter was born in 1942 on January, 1 and graduated from the University of Cambridge. He is best known for creating the Penrose diagram.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Penrose_diagram"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Penrose_diagram"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_79",
+    "sent": "Brandon Carter, born in England on January 1, 1942, had Dennis William Sciama as his doctoral advisor.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_80",
+    "sent": "Brandon Carter was born in England on January 1, 1942. He graduated from the University of Cambridge and the chancellor of the University was known as David Sainsbury. The doctoral advisor of Brandon Carter while he was at the University was Dennis William Sciama.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_18_scientist_test_81",
+    "sent": "Lady Anne Monson was born in Darlington, England making her nationality English.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_82",
+    "sent": "University of Cambridge is located in England.",
+    "gold": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "country",
+        "obj": "England"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_83",
+    "sent": "Mathematical optimization is the professional field of Andrzej Piotr Ruszczynski.",
+    "gold": [
+      {
+        "sub": "Andrzej_Piotr_Ruszczy\u0144ski",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Andrzej_Piotr_Ruszczy\u0144ski",
+        "rel": "professionalField",
+        "obj": "\"Mathematical optimization\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_84",
+    "sent": "Lady Anne Monson lived in the Kingdom of England and held British nationality but resided in India for most of her life. Pranab Mukherjee is the leader of India, which has a total area of 32875900000000.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "leader",
+        "obj": "Pranab_Mukherjee"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "India",
+        "rel": "areaTotal",
+        "obj": "3287590000000.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "country",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Raj"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Pranab_Mukherjee",
+        "rel": "leader",
+        "obj": "India"
+      },
+      {
+        "sub": "India",
+        "rel": "areaTotal",
+        "obj": "32875900000000"
+      }
+    ],
+    "p": 0.2,
+    "r": 0.25,
+    "f1": 0.22222222222222224
+  },
+  {
+    "id": "ont_18_scientist_test_85",
+    "sent": "Darinka Dentcheva, a citizen of the United States of America, attended Humboldt University and is known for her work with stochastic programming.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "longName",
+        "obj": "United States of America"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.5,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_18_scientist_test_86",
+    "sent": "University of Cambridge is affiliated with the League of European Research Universities and is the alma mater of Brandon Carter.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "affiliation",
+        "obj": "League_of_European_Research_Universities"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "affiliation",
+        "obj": "League_of_European_Research_Universities"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "almaMater",
+        "obj": "Brandon_Carter"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_87",
+    "sent": "Brandon Carter, known for the Carter constant and No-hair theorem, is a professional in the field of general relativity.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_88",
+    "sent": "Lady Anne Monson's nationality was with the Kingdom of England.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_89",
+    "sent": "India was founded on January 26, 1950.",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "foundingDate",
+        "obj": "1950-01-26"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "foundingDate",
+        "obj": "1950-01-26"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_90",
+    "sent": "Brandon Carter is known for the Carter constant and the No-hair theorem.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_91",
+    "sent": "Brandon Carter is known for the Carter constant.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_92",
+    "sent": "Lady Anne Monson was born in Darlington on January 1st, 1726.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "January 1st, 1726"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_93",
+    "sent": "Brandon Carter is known for his work with the Doomsday argument.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Doomsday_argument"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Doomsday_argument"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_94",
+    "sent": "Darinka Dentcheva currently resides in the US state of New Jersey, where one of the leaders of the country is the Vice President.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "leaderTitle",
+        "obj": "\"Vice President\""
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "New_Jersey",
+        "rel": "isPartOf",
+        "obj": "United_States_Navy"
+      },
+      {
+        "sub": "Vice_president",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_18_scientist_test_95",
+    "sent": "Botanist Lady Anne Monson was born in Darlington in the Kingdom of England. She lived from January 1st, 1726 to February 18th, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "January 1st, 1726"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.2,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_18_scientist_test_96",
+    "sent": "The OS grid reference for Darlington is NZ289147.",
+    "gold": [
+      {
+        "sub": "Darlington",
+        "rel": "gridReference",
+        "obj": "NZ289147"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darlington",
+        "rel": "gridReference",
+        "obj": "NZ289147"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_97",
+    "sent": "Darinka Dentcheva is known for her work with stochastic programming.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_98",
+    "sent": "Brandon Carter who was born in England, graduated from the University of Cambridge and developed General Relativity as his profession. His doctoral advisor was Dennis William Sciama.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_18_scientist_test_99",
+    "sent": "Lady Anne Monson was born in Darlington in the Kingdom of England on January 1, 1726. She was the spouse of George Monson. Lady Anne Monson died on 1776-02-18.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.6,
+    "f1": 0.6666666666666665
+  },
+  {
+    "id": "ont_18_scientist_test_100",
+    "sent": "Lady Anne Monson whose nationality was with the Kingdom of England, had a residence in India and died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_101",
+    "sent": "Dennis William Sciama was the doctoral advisor for Brandon Carter, known for the Carter Constant.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.5,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_102",
+    "sent": "Darinka Dentcheva (United States citizen) was born on January 1st, 1958. Mathematical optimization is her professional field.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "nationality",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "January 1st, 1958"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_103",
+    "sent": "Darinka Dentcheva worked in the field of mathematical optimization and was influenced by Andrzej Piotr Ruszczynski. She was born on January 1st 1989 and is a citizen of the United States.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "January 1st 1989"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.5,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_18_scientist_test_104",
+    "sent": "The University of Cambridge is the alma mater of Brandon Carter, who was born in England. David Sainsbury, also known as the Baron Sainsbury of Turville, and Leszek Borysiewicz are respectively the chancellor and vice chancellor of the University of Cambridge.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "viceChancellor",
+        "obj": "Leszek_Borysiewicz"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "almaMater",
+        "obj": "Brandon_Carter"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "David_Sainsbury,_Baron_Sainsbury_of_Turville",
+        "rel": "longName",
+        "obj": "\"Baron Sainsbury of Turville\""
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_105",
+    "sent": "Brandon Carter, whose alma mater is the University of Cambridge with Dennis William Sciama as his doctoral advisor, was born in England on January 1, 1942 and is known for the Doomsday argument.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Doomsday_argument"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Doomsday_argument"
+      }
+    ],
+    "p": 0.8,
+    "r": 0.8,
+    "f1": 0.8000000000000002
+  },
+  {
+    "id": "ont_18_scientist_test_106",
+    "sent": "Known for his contributions to the no-hair theorem, Brandon Carter was born on January 1st, 1942 in England.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "January 1st, 1942"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_107",
+    "sent": "Brandon Carter, who was born on January 1st, 1942, is a graduate from the University of Cambridge.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_108",
+    "sent": "Dennis William Sciama was the doctoral advisor of Brandon Carter, an England native, who contributed to the No-Hair Theorem, but is more famously known for the Carter Constant and his work in General Relativity.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "nationality",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.6,
+    "f1": 0.6666666666666665
+  },
+  {
+    "id": "ont_18_scientist_test_109",
+    "sent": "Lady Anne Monson professional field of study was botany.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_110",
+    "sent": "Darinka Dentcheva ( birth date January 1st, 1958) studied Mathematical optimization from Humboldt University. She is known for her work with stochastic programming.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "January 1st, 1958"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "\"Mathematical optimization\""
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_18_scientist_test_111",
+    "sent": "The motto of the United States is \"In God We Trust\".",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "motto",
+        "obj": "\"In God we trust\""
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_112",
+    "sent": "Darinka Dentcheva was born on January 1, 1958.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_113",
+    "sent": "Darinka Dentcheva, who was born on January 1, 1958 and was influenced by Andrzej Piotr Ruszczynski, is a United States Citizen. The area total of the United States is 9,833,520.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "areaTotal",
+        "obj": "9833520000000.0"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "areaTotal",
+        "obj": "9833520"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_18_scientist_test_114",
+    "sent": "Humboldt University is Darinka Dentcheva's alma mater.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Humboldt_University_of_Berlin",
+        "rel": "almaMater",
+        "obj": "Darinka_Dentcheva"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_115",
+    "sent": "Even though Darinka Dentcheva's alma mater is Humboldt University, she currently resides in New Jersey (United States).",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_18_scientist_test_116",
+    "sent": "Influenced by Andrzej Piotr Ruszczy\u0144ski, Darinka Dentcheva became a professional in the field of mathematical optimization.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.5,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_117",
+    "sent": "The long name for India is the Republic of India.",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "longName",
+        "obj": "\"Republic of India\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "longName",
+        "obj": "\"Republic of India\""
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_118",
+    "sent": "Darinka Dentcheva resides in New Jersey, USA. Her alma mater is Humboldt University. Darinka Dentcheva is known for stochastic programming and was influenced by Andrzej Piotr Ruszczynski.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.6,
+    "f1": 0.6666666666666665
+  },
+  {
+    "id": "ont_18_scientist_test_119",
+    "sent": "Darinka Dentcheva's professional field is Mathematical optimization, particularly with stochastic programming.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "\"Mathematical optimization\""
+      },
+      {
+        "sub": "Mathematical_optimization",
+        "rel": "type",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_120",
+    "sent": "Lady Anne Monson died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_121",
+    "sent": "Darinka Dentcheva, born on January 1st,1958, is a US citizen.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_122",
+    "sent": "Before her death on February 18, 1776, Lady Anne Monson was a resident of India married to George Monson.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "India"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_123",
+    "sent": "Physicist Brandon Carter, born January 1st, 1942, is a professional in the field of General Relativity. His doctoral advisor was Dennis William Sciama.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_124",
+    "sent": "The chancellor of the University of Cambridge is David Sainsbury, Baron Sainsbury of Turville.",
+    "gold": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_125",
+    "sent": "Darinka Dentcheva, a United States citizen born January 1, 1958, is a mathematician working in the field of mathematical optimization. She is known for her work with stochastic programming and developed a theory influenced by Andrzej Piotr Ruszczy\u0144ski. Humboldt University is her alma mater.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematician"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_126",
+    "sent": "Brandon Carter was born in England on January 1st, 1942. He is a physicist and a professional in the field of general relativity. Dennis William Sciama was his doctoral advisor. Carter is known for inventing the Carter constant and proving the no-hair theorem.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "January 1st, 1942"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "professionalField",
+        "obj": "General_relativity"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Carter_constant"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "No-hair_theorem"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_127",
+    "sent": "John Roberts is a leader in the United States, where Darinka Dentcheva resides (in New Jersey), and Joe Biden is also one of the leaders.",
+    "gold": [
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "John_Roberts"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leader",
+        "obj": "Joe_Biden"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "John_Roberts",
+        "rel": "leader",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "country",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Joe_Biden",
+        "rel": "leader",
+        "obj": "United_States_Army"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_18_scientist_test_128",
+    "sent": "Lady Anne Monson was born on January 1, 1726 in Darlington, the Kingdom of England.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "England_national_football_team",
+        "rel": "country",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_129",
+    "sent": "British national Lady Anne Monson lived in the Kingdom of England whose capital was Winchester.",
+    "gold": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "capital",
+        "obj": "Winchester"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Hong_Kong"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "residence",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "capital",
+        "obj": "Winchester"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.5,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_18_scientist_test_130",
+    "sent": "New Jersey has a total area of 22,591.38.",
+    "gold": [
+      {
+        "sub": "New_Jersey",
+        "rel": "areaTotal",
+        "obj": "22591.38"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "New_Jersey",
+        "rel": "areaTotal",
+        "obj": "22591.38"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_131",
+    "sent": "Lady Anne Monson was born in England and died on February 18th, 1776. She was a botanist and was married to George Monson.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "professionalField",
+        "obj": "Botany"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "spouse",
+        "obj": "George_Monson_(died_1739)"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.25,
+    "f1": 0.25
+  },
+  {
+    "id": "ont_18_scientist_test_132",
+    "sent": "Lady Anne Monson was born in Darlington which is located in Kingdom of England.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "isPartOf",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_133",
+    "sent": "Darinka Dentcheva's current residence is in New Jersey, United States where the most commonly spoken language is English.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "language",
+        "obj": "English_language"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.3333333333333333,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_134",
+    "sent": "Andrzej Piotr Ruszczy\u0144ski is known for his work with stochastic programming.",
+    "gold": [
+      {
+        "sub": "Andrzej_Piotr_Ruszczy\u0144ski",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_135",
+    "sent": "Lady Anne Monson was born in Darlington, located in the Kingdom of England, on January 1, 1726. She later died on February 18, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Darlington",
+        "rel": "isPartOf",
+        "obj": "Kingdom_of_England"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_18_scientist_test_136",
+    "sent": "Even though Darinka Dentcheva was never the Vice President, one of the leaders, of the United States, she was in fact a citizen of the United States.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "United_States",
+        "rel": "leaderTitle",
+        "obj": "\"Vice President\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "nationality",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_137",
+    "sent": "Brandon Carter was born on January 1st, 1942, in England. He graduated from the University of Cambridge, where his doctoral advisor was Dennis William Sciama. Carter is know for his Doomsday argument and for his work on the Anthropic Principle.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Anthropic_principle"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Doomsday_argument"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "January 1st, 1942"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Doomsday_argument"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "knownFor",
+        "obj": "Anthropic_principle"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_18_scientist_test_138",
+    "sent": "The birthdate of Lady Anne Monson is 1726-01-01.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_139",
+    "sent": "The total area of water in New Jersey is 3,544 square kilometers.",
+    "gold": [
+      {
+        "sub": "New_Jersey",
+        "rel": "areaOfWater",
+        "obj": "3544040000.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "New_Jersey",
+        "rel": "areaOfWater",
+        "obj": "\"3544 square kilometers\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_140",
+    "sent": "Brandon Carter (born in 1942 on January, 1) graduated from the University of Cambridge where David Sainsbury is the chancellor, who is also known as Baron Sainsbury of Turville. Dennis William Sciama was the advisor of Carter.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_William_Sciama"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthDate",
+        "obj": "1942-01-01"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "chancellor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      },
+      {
+        "sub": "David_Sainsbury,_Baron_Sainsbury_of_Turville",
+        "rel": "knownFor",
+        "obj": "David_Sainsbury,_Baron_Sainsbury_of_Turville"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "doctoralAdvisor",
+        "obj": "Dennis_W._Sciama"
+      }
+    ],
+    "p": 0.6,
+    "r": 0.75,
+    "f1": 0.6666666666666665
+  },
+  {
+    "id": "ont_18_scientist_test_141",
+    "sent": "The town of Darlington has a population of one hundred and six thousand.",
+    "gold": [
+      {
+        "sub": "Darlington",
+        "rel": "populationTotal",
+        "obj": "106000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darlington",
+        "rel": "populationTotal",
+        "obj": "106000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_142",
+    "sent": "Lady Anne Monson, a British national was born on January 1, 1726 in Darlington, in the Kingdom of England. She died on February 18th, 1776.",
+    "gold": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "1776-02-18"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "British_Empire"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthDate",
+        "obj": "1726-01-01"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "birthPlace",
+        "obj": "Darlington"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "deathDate",
+        "obj": "February 18th, 1776"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_18_scientist_test_143",
+    "sent": "Brandon Carter born in England attended University of Cambridge whose vice chancellor is Leszek Borysiewicz.",
+    "gold": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      },
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "viceChancellor",
+        "obj": "Leszek_Borysiewicz"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Brandon_Carter",
+        "rel": "birthPlace",
+        "obj": "England"
+      },
+      {
+        "sub": "Brandon_Carter",
+        "rel": "almaMater",
+        "obj": "University_of_Cambridge"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.6666666666666666,
+    "f1": 0.8
+  },
+  {
+    "id": "ont_18_scientist_test_144",
+    "sent": "Darinka Dentcheva, who was influenced by Andrzej Piotr Ruszczynski, is known for her work with stochastic programming.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_145",
+    "sent": "Kingdom of England is a unitary state form of government which is also Lady Anne Monson's nationality.",
+    "gold": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "governmentType",
+        "obj": "Unitary_state"
+      },
+      {
+        "sub": "Lady_Anne_Monson",
+        "rel": "nationality",
+        "obj": "Kingdom_of_England"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "type",
+        "obj": "Unitary_state"
+      },
+      {
+        "sub": "Kingdom_of_England",
+        "rel": "nationality",
+        "obj": "Lady_Anne_Monson"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_146",
+    "sent": "India has a total area of 3287590000000.0.",
+    "gold": [
+      {
+        "sub": "India",
+        "rel": "areaTotal",
+        "obj": "3287590000000.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "India",
+        "rel": "areaTotal",
+        "obj": "3287590000000.0"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_18_scientist_test_147",
+    "sent": "The University of Cambridge is a research university.",
+    "gold": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "type",
+        "obj": "Research_university"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "University_of_Cambridge",
+        "rel": "type",
+        "obj": "University_of_Toronto"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_18_scientist_test_148",
+    "sent": "American citizen Darinka Dentcheva was born on January 1st, 1958. After graduating from her alma mater Humboldt University, she began to work professionally in the field of Mathematical Optimization. This New Jersey resident is known for her work with stochastic programming, being heavily influenced by Andrzej Piotr Ruszczynski.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "1958-01-01"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "birthDate",
+        "obj": "January 1st, 1958"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "almaMater",
+        "obj": "Humboldt_University_of_Berlin"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "residence",
+        "obj": "New_Jersey"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "knownFor",
+        "obj": "Stochastic_programming"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "influencedBy",
+        "obj": "Andrzej_Piotr_Ruszczy\u0144ski"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.5714285714285714,
+    "f1": 0.6153846153846153
+  },
+  {
+    "id": "ont_18_scientist_test_149",
+    "sent": "Darinka Dentcheva is a citizen of the United States who works in the field of Mathematical optimization.",
+    "gold": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "Mathematical_optimization"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "citizenship",
+        "obj": "United_States"
+      },
+      {
+        "sub": "Darinka_Dentcheva",
+        "rel": "professionalField",
+        "obj": "\"Mathematical optimization\""
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  }
+]

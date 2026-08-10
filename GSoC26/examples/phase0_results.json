@@ -1,0 +1,523 @@
+[
+  {
+    "input": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski (Borzyszkowy, 4 August 1867-Winona, 1959) was a Polish-born Roman Catholic priest in Minnesota.",
+    "seconds": 62.0,
+    "output": {
+      "triples": {
+        "sentence": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski (Borzyszkowy, 4 August 1867-Winona, 1959) was a Polish-born Roman Catholic priest in Minnesota.",
+        "processed": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski (Borzyszkowy, 4 August 1867-Winona, 1959) was a Polish-born Roman Catholic priest in Minnesota.",
+        "extracted": [
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "birthPlace",
+            "object": "Borzyszkowy"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "birthDate",
+            "object": "4 August 1867"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "deathPlace",
+            "object": "Winona"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "deathDate",
+            "object": "1959"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "nationality",
+            "object": "Polish"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "religion",
+            "object": "Roman Catholic"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "occupation",
+            "object": "priest"
+          },
+          {
+            "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+            "predicate": "location",
+            "object": "Minnesota"
+          }
+        ],
+        "results": [
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "birthPlace",
+              "object": "Borzyszkowy"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Borzyszkowy>",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "birthPlace",
+            "obj": "Borzyszkowy",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "birthDate",
+              "object": "4 August 1867"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/birthDate> \"4 August 1867\"",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "birthDate",
+            "obj": "1867-08-04",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "deathPlace",
+              "object": "Winona"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/deathPlace> <http://dbpedia.org/resource/Winona>",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "deathPlace",
+            "obj": "Winona",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "deathDate",
+              "object": "1959"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/deathDate> \"1959\"",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "deathDate",
+            "obj": "1959",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "nationality",
+              "object": "Polish"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Polish>",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "nationality",
+            "obj": "Polish",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "religion",
+              "object": "Roman Catholic"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/religion> <http://dbpedia.org/resource/Roman_Catholic>",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "religion",
+            "obj": "Roman_Catholic",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "occupation",
+              "object": "priest"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Roman_Catholic_priest>",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "occupation",
+            "obj": "Roman_Catholic_priest",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "J\u00f3zef Franciszek Darzyn Ciemi\u0144ski",
+              "predicate": "location",
+              "object": "Minnesota"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski> <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Minnesota>",
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "location",
+            "obj": "Minnesota",
+            "kept": true
+          }
+        ],
+        "triples": [
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "birthPlace",
+            "obj": "Borzyszkowy"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "birthDate",
+            "obj": "1867-08-04"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "deathPlace",
+            "obj": "Winona"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "deathDate",
+            "obj": "1959"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "nationality",
+            "obj": "Polish"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "religion",
+            "obj": "Roman_Catholic"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "occupation",
+            "obj": "Roman_Catholic_priest"
+          },
+          {
+            "sub": "J\u00f3zef_Franciszek_Darzyn_Ciemi\u0144ski",
+            "rel": "location",
+            "obj": "Minnesota"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": "Medamarthy is a village in Srikakulam district of Andhra Pradesh in India.",
+    "seconds": 30.4,
+    "output": {
+      "triples": {
+        "sentence": "Medamarthy is a village in Srikakulam district of Andhra Pradesh in India.",
+        "processed": "Medamarthy is a village in Srikakulam district of Andhra Pradesh in India.",
+        "extracted": [
+          {
+            "subject": "Medamarthy",
+            "predicate": "type",
+            "object": "village"
+          },
+          {
+            "subject": "Medamarthy",
+            "predicate": "isPartOf",
+            "object": "Srikakulam district"
+          },
+          {
+            "subject": "Srikakulam district",
+            "predicate": "isPartOf",
+            "object": "Andhra Pradesh"
+          },
+          {
+            "subject": "Andhra Pradesh",
+            "predicate": "country",
+            "object": "India"
+          }
+        ],
+        "results": [
+          {
+            "raw": {
+              "subject": "Medamarthy",
+              "predicate": "type",
+              "object": "village"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Medamarthy> <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Village>",
+            "sub": "Medamarthy",
+            "rel": "type",
+            "obj": "Village",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Medamarthy",
+              "predicate": "isPartOf",
+              "object": "Srikakulam district"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Medamarthy> <http://dbpedia.org/ontology/isPartOf> <http://dbpedia.org/resource/Srikakulam_district>",
+            "sub": "Medamarthy",
+            "rel": "isPartOf",
+            "obj": "Srikakulam_district",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Srikakulam district",
+              "predicate": "isPartOf",
+              "object": "Andhra Pradesh"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Srikakulam_district> <http://dbpedia.org/ontology/isPartOf> <http://dbpedia.org/resource/Andhra_Pradesh>",
+            "sub": "Srikakulam_district",
+            "rel": "isPartOf",
+            "obj": "Andhra_Pradesh",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Andhra Pradesh",
+              "predicate": "country",
+              "object": "India"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Andhra_Pradesh> <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/India>",
+            "sub": "Andhra_Pradesh",
+            "rel": "country",
+            "obj": "India",
+            "kept": true
+          }
+        ],
+        "triples": [
+          {
+            "sub": "Medamarthy",
+            "rel": "type",
+            "obj": "Village"
+          },
+          {
+            "sub": "Medamarthy",
+            "rel": "isPartOf",
+            "obj": "Srikakulam_district"
+          },
+          {
+            "sub": "Srikakulam_district",
+            "rel": "isPartOf",
+            "obj": "Andhra_Pradesh"
+          },
+          {
+            "sub": "Andhra_Pradesh",
+            "rel": "country",
+            "obj": "India"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": "Winston-Salem State University (WSSU), a constituent institution of the University of North Carolina, is a historically black public research university located in Winston-Salem, North Carolina, United States. It is a member-school of the Thurgood Marshall College Fund. WSSU is a recognized university offering baccalaureate and graduate programs to a diverse student population.",
+    "seconds": 73.7,
+    "output": {
+      "triples": {
+        "sentence": "Winston-Salem State University (WSSU), a constituent institution of the University of North Carolina, is a historically black public research university located in Winston-Salem, North Carolina, United States. It is a member-school of the Thurgood Marshall College Fund. WSSU is a recognized university offering baccalaureate and graduate programs to a diverse student population.",
+        "processed": "Winston-Salem State University (WSSU), a constituent institution of the University of North Carolina, is a historically black public research university located in Winston-Salem, North Carolina, United States. It is a member-school of the Thurgood Marshall College Fund. WSSU is a recognized university offering baccalaureate and graduate programs to a diverse student population.",
+        "extracted": [
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "isPartOf",
+            "object": "University of North Carolina"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "type",
+            "object": "historically black public research university"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "location",
+            "object": "Winston-Salem, North Carolina"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "country",
+            "object": "United States"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "memberOf",
+            "object": "Thurgood Marshall College Fund"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "type",
+            "object": "recognized university"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "program",
+            "object": "baccalaureate programs"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "program",
+            "object": "graduate programs"
+          },
+          {
+            "subject": "Winston-Salem State University",
+            "predicate": "studentPopulation",
+            "object": "diverse student population"
+          }
+        ],
+        "results": [
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "isPartOf",
+              "object": "University of North Carolina"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/isPartOf> <http://dbpedia.org/resource/University_of_North_Carolina>",
+            "sub": "Winston-Salem_State_University",
+            "rel": "isPartOf",
+            "obj": "University_of_North_Carolina",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "type",
+              "object": "historically black public research university"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/historically_black_public_research_university>",
+            "sub": "Winston-Salem_State_University",
+            "rel": "type",
+            "obj": "\"historically black public research university, recognized university\"",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "location",
+              "object": "Winston-Salem, North Carolina"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Winston-Salem,_North_Carolina>",
+            "sub": "Winston-Salem_State_University",
+            "rel": "location",
+            "obj": "Winston-Salem,_North_Carolina",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "country",
+              "object": "United States"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/United_States>",
+            "sub": "Winston-Salem_State_University",
+            "rel": "country",
+            "obj": "United_States",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "memberOf",
+              "object": "Thurgood Marshall College Fund"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/member> <\"Thurgood Marshall College Fund\">",
+            "sub": "Winston-Salem_State_University",
+            "rel": "member",
+            "obj": "\"Thurgood Marshall College Fund\"",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "type",
+              "object": "recognized university"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/recognized_university>",
+            "sub": "Winston-Salem_State_University",
+            "rel": "type",
+            "obj": "\"recognized university\"",
+            "kept": false
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "program",
+              "object": "baccalaureate programs"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/programCost> \"baccalaureate programs\"",
+            "sub": "Winston-Salem_State_University",
+            "rel": "programCost",
+            "obj": "\"baccalaureate programs, graduate programs\"",
+            "kept": true
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "program",
+              "object": "graduate programs"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/programCost> \"graduate programs\"",
+            "sub": "Winston-Salem_State_University",
+            "rel": "programCost",
+            "obj": "\"graduate programs\"",
+            "kept": false
+          },
+          {
+            "raw": {
+              "subject": "Winston-Salem State University",
+              "predicate": "studentPopulation",
+              "object": "diverse student population"
+            },
+            "status": "APPROVED",
+            "final_triple": "<http://dbpedia.org/resource/Winston-Salem_State_University> <http://dbpedia.org/ontology/student> <http://dbpedia.org/resource/diverse_student_population>",
+            "sub": "Winston-Salem_State_University",
+            "rel": "student",
+            "obj": "\"diverse student population\"",
+            "kept": true
+          }
+        ],
+        "triples": [
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "isPartOf",
+            "obj": "University_of_North_Carolina"
+          },
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "type",
+            "obj": "\"historically black public research university, recognized university\""
+          },
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "location",
+            "obj": "Winston-Salem,_North_Carolina"
+          },
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "country",
+            "obj": "United_States"
+          },
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "member",
+            "obj": "\"Thurgood Marshall College Fund\""
+          },
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "programCost",
+            "obj": "\"baccalaureate programs, graduate programs\""
+          },
+          {
+            "sub": "Winston-Salem_State_University",
+            "rel": "student",
+            "obj": "\"diverse student population\""
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,2183 @@
+[
+  {
+    "id": "ont_7_company_test_1",
+    "sent": "Chinabank is a public company that was founded at the Insular Government of the Philippine Islands in Manila.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Manila"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_2",
+    "sent": "Chinabank is a publicly traded company founded in the capital, Manila.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Manila",
+        "rel": "type",
+        "obj": "Capital_city"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Publicly_traded_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_7_company_test_3",
+    "sent": "Chinabank was founded in Manila at the Insular Government of the Philippine Islands which was established on July 1,1901.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Insular_Government_of_the_Philippine_Islands",
+        "rel": "foundingDate",
+        "obj": "1901-07-01"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Insular_Government_of_the_Philippine_Islands",
+        "rel": "foundingDate",
+        "obj": "1901-07-01"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_7_company_test_4",
+    "sent": "Chinabank was founded in Manila which is the insular government of the Philippine Islands located in Metro Manila.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Manila",
+        "rel": "isPartOf",
+        "obj": "Metro_Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Manila",
+        "rel": "type",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      },
+      {
+        "sub": "Manila",
+        "rel": "capital",
+        "obj": "Philippine_Islands"
+      },
+      {
+        "sub": "Manila",
+        "rel": "location",
+        "obj": "Metro_Manila"
+      }
+    ],
+    "p": 0.25,
+    "r": 0.3333333333333333,
+    "f1": 0.28571428571428575
+  },
+  {
+    "id": "ont_7_company_test_5",
+    "sent": "Chinabank, a company that was founded on the August 16th,1920, has 5594 workers and a net income of 15,100,000,000.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfEmployees",
+        "obj": "5594"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfEmployees",
+        "obj": "5594"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_6",
+    "sent": "Chinabank, founded on 08-16-1920, offers banking services as well as having a net income of 15,100,000,000.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "service",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "service",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_7",
+    "sent": "Chinabank is a bank with 5594 employees that was founded on Aug. 16, 1920.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "service",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfEmployees",
+        "obj": "5594"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "industry",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfEmployees",
+        "obj": "5594"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_8",
+    "sent": "Chinabank, a banking service with 295 branches, was founded 1920-08-16.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "service",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_7_company_test_9",
+    "sent": "Chinabank, whose place of foundation was Manila, has 295 locations and a net income of 15,100,000,000.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_10",
+    "sent": "Chinabank is a public company which has 295 branches, and whose current net income is 15100000000.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_11",
+    "sent": "Chinabank, founded in the insular Government of the Philippine islands at Manila has 295 locations.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_12",
+    "sent": "Chinabank is a public company that was founded in Manila with 295 branches.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_13",
+    "sent": "Trane, founded in La Crosse, Wisconsin, is located in Swords, Dublin.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "isPartOf",
+        "obj": "Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      }
+    ],
+    "p": 1.0,
+    "r": 0.6666666666666666,
+    "f1": 0.8
+  },
+  {
+    "id": "ont_7_company_test_14",
+    "sent": "Trane was founded in 1913-01-01 in La Crosse, Wisconsin and now employs over 29000 people.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_15",
+    "sent": "Trane, whose products include HVAC, was founded in La Crosse, Wisconsin on 1913-01-01.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_16",
+    "sent": "Trane company was founded on the first of January 1913 in LaCrosse, Wisconsin and is located in Ireland.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane_Company",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane_Company",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_7_company_test_17",
+    "sent": "Trane located in Ireland was founded on 01-01-1913 and has 29,000 employees.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_18",
+    "sent": "Trane was founded on January 1, 1913 has 29,000 employees and produces HVAC.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_19",
+    "sent": "The location of Trane is in Ireland, a country in Europe. One of their product is HVAC.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      },
+      {
+        "sub": "Ireland",
+        "rel": "location",
+        "obj": "Europe"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Ireland",
+        "rel": "type",
+        "obj": "Country"
+      },
+      {
+        "sub": "Ireland",
+        "rel": "isPartOf",
+        "obj": "Europe"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.6666666666666666,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_7_company_test_20",
+    "sent": "Trane, a company in the building materials industry, is located in Swords, Dublin, Ireland.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Company"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "\"building materials industry\""
+      },
+      {
+        "sub": "Trane",
+        "rel": "city",
+        "obj": "SWORDS"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_7_company_test_21",
+    "sent": "Trane, a subsidiary company located in Swords, Dublin, has a net income of $556,300,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "type",
+        "obj": "Subsidiary"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "type",
+        "obj": "Subsidiary"
+      },
+      {
+        "sub": "Trane",
+        "rel": "city",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_22",
+    "sent": "Trane whose industry is building materials, produces HVAC and employs 29,000 people.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_material"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_23",
+    "sent": "Trane, a company founded on 1913-01-01 in Ireland, has an operating income of 875.4 million USD.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "country",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_24",
+    "sent": "Trane, founded in La Crosse, Wisconsin but located in Ireland, has an operating income of $875,400,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "country",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_25",
+    "sent": "Trane is in the building materials industry producing building management systems. One of the products offered by Trane is HVAC.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_Management_System"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_material"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_management_systems"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_7_company_test_26",
+    "sent": "Trane located in Swords, Dublin produces building management systems also located in Ireland.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_Management_System"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_management_systems"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_27",
+    "sent": "Trane, which manufactures building management systems, is located in Swords, Dublin, and has a net income of $556,300,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_Management_System"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_management_systems"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_28",
+    "sent": "With a revenue of 10264000000 and operating out of Swords, Dublin, Trane specializes in building management systems.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_Management_System"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "city",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_management_systems"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_7_company_test_29",
+    "sent": "Trane makes building management systems generating $10,264,000,000 in revenue resulting in $556,300,000 net income.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_Management_System"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_management_systems"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_30",
+    "sent": "Trane, which is a subsidiary that produces building management systems, has a revenue of $10,264,000,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_Management_System"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "type",
+        "obj": "Subsidiary"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "Building_management_systems"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "id": "ont_7_company_test_31",
+    "sent": "Trane, a company located in Swords, Dublin has a revenue of $10,264,000,000, with a net income of $556,300,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "city",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_32",
+    "sent": "Trane, a subsidiary company founded on 01-01-1913, has an operating income of $875,400,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "type",
+        "obj": "Subsidiary"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "\"Subsidiary company\""
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_33",
+    "sent": "Chinabank's location is the Philippines.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_34",
+    "sent": "The net income of Chinabank is 15,100,000,000, and they have 5594 workers total.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfEmployees",
+        "obj": "5594"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfEmployees",
+        "obj": "5594"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_35",
+    "sent": "Chinabank is a public company that was founded on 1920-08-16.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_36",
+    "sent": "Located in the Philippines, Chinabank has 295 locations.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_37",
+    "sent": "Manila is part of Metro Manila.",
+    "gold": [
+      {
+        "sub": "Manila",
+        "rel": "isPartOf",
+        "obj": "Metro_Manila"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Manila",
+        "rel": "isPartOf",
+        "obj": "Metro_Manila"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_38",
+    "sent": "La Crosse is a city in La Crosse County in the U.S. state of Wisconsin.",
+    "gold": [
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "isPartOf",
+        "obj": "La_Crosse_County,_Wisconsin"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "type",
+        "obj": "City"
+      },
+      {
+        "sub": "La_Crosse",
+        "rel": "isPartOf",
+        "obj": "La_Crosse_County"
+      },
+      {
+        "sub": "La_Crosse_County,_Wisconsin",
+        "rel": "isPartOf",
+        "obj": "Wisconsin"
+      },
+      {
+        "sub": "Wisconsin",
+        "rel": "country",
+        "obj": "United_States"
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_7_company_test_39",
+    "sent": "Trane (founded in 1913-01-01), is a building materials company that currently employs 29000 people, and whose main product is HVAC.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_material"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "product",
+        "obj": "HVAC"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_7_company_test_40",
+    "sent": "Chinabank is a publicly traded company founded in Manila at the time of the Insular Government the Philippine Islands. Manila is a capital city.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Manila",
+        "rel": "type",
+        "obj": "Capital_city"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Publicly_traded_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Manila",
+        "rel": "type",
+        "obj": "Capital_city"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.5,
+    "f1": 0.5714285714285715
+  },
+  {
+    "id": "ont_7_company_test_41",
+    "sent": "Trane, which was founded on January 1, 1913 in La Crosse, Wisconsin (a city 204 meters above sea level) and has a revenue of $10,264,000,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "elevationAboveTheSeaLevel",
+        "obj": "204.0"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "elevationAboveTheSeaLevel",
+        "obj": "204"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_7_company_test_42",
+    "sent": "The operating income of Trane is $875,400,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_43",
+    "sent": "La Crosse, Wisconsin is governed by a mayor.",
+    "gold": [
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "leaderTitle",
+        "obj": "Mayor"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "leaderTitle",
+        "obj": "\"Mayor\""
+      }
+    ],
+    "p": 0.0,
+    "r": 0.0,
+    "f1": 0.0
+  },
+  {
+    "id": "ont_7_company_test_44",
+    "sent": "Trane, the building materials producer, was founded on 01-01-1913 in Swords, Dublin, which is part of Leinster.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Swords,_Dublin",
+        "rel": "isPartOf",
+        "obj": "Leinster"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_material"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Swords,_Dublin",
+        "rel": "isPartOf",
+        "obj": "Leinster"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_7_company_test_45",
+    "sent": "Chinabank was founded on August 16,1920 and the bank has 295 centers and provides services to customers. Chinabank's net income is 15,100,000,000.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "service",
+        "obj": "Banking"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundingDate",
+        "obj": "1920-08-16"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "service",
+        "obj": "Customers"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "netIncome",
+        "obj": "15100000000"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_7_company_test_46",
+    "sent": "Chinabank is a publicly traded company located in the Philippines with 295 locations.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Public_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "type",
+        "obj": "Publicly_traded_company"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "numberOfLocations",
+        "obj": "295"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_47",
+    "sent": "The Trane company which is located in Ireland is in the building materials industry. It was founded on January 01, 1913 in LaCrosse, Wisconsin.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_material"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundingDate",
+        "obj": "1913-01-01"
+      }
+    ],
+    "p": 0.75,
+    "r": 0.75,
+    "f1": 0.75
+  },
+  {
+    "id": "ont_7_company_test_48",
+    "sent": "Manila, which is led by City Council, is Chinabank's founding place.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Manila",
+        "rel": "leaderTitle",
+        "obj": "\"City Council\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Manila",
+        "rel": "leader",
+        "obj": "City_council"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_7_company_test_49",
+    "sent": "La Crosse Wisconsin is 204.0 meters above sea level.",
+    "gold": [
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "elevationAboveTheSeaLevel",
+        "obj": "204.0"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "elevationAboveTheSeaLevel",
+        "obj": "204.0"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  },
+  {
+    "id": "ont_7_company_test_50",
+    "sent": "Trane, a company founded in LaCrosse, Wisconsin, has an operating income of $875.4 million and a net income of $556 million.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556000000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_51",
+    "sent": "Trane is a building materials company with an operating income of 875.4 million and a revenue of $10,264,000,000 USD.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_materials"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "industry",
+        "obj": "Building_material"
+      },
+      {
+        "sub": "Trane",
+        "rel": "operatingIncome",
+        "obj": "875400000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_52",
+    "sent": "The location of Trane is Swords Dublin where the County Manager is leader.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Swords,_Dublin",
+        "rel": "leaderTitle",
+        "obj": "\"County Manager\""
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Swords,_Dublin"
+      },
+      {
+        "sub": "Swords,_Dublin",
+        "rel": "leader",
+        "obj": "County_Manager"
+      }
+    ],
+    "p": 0.5,
+    "r": 0.5,
+    "f1": 0.5
+  },
+  {
+    "id": "ont_7_company_test_53",
+    "sent": "Chinabank was founded in Manila in the Philippines (under the Insular Government) and remains located there.",
+    "gold": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Insular_Government_of_the_Philippine_Islands"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Chinabank",
+        "rel": "foundationPlace",
+        "obj": "Manila"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Philippines"
+      },
+      {
+        "sub": "Chinabank",
+        "rel": "location",
+        "obj": "Manila"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_54",
+    "sent": "Trane is a subsidiary company founded in La Crosse, Wisconsin State, a city that has a total area of 58.38.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "La_Crosse,_Wisconsin",
+        "rel": "areaTotal",
+        "obj": "58.38"
+      },
+      {
+        "sub": "Trane",
+        "rel": "type",
+        "obj": "Subsidiary"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "type",
+        "obj": "Subsidiary"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "\"La Crosse, Wisconsin State\""
+      },
+      {
+        "sub": "La_Crosse",
+        "rel": "areaTotal",
+        "obj": "58.38"
+      }
+    ],
+    "p": 0.3333333333333333,
+    "r": 0.3333333333333333,
+    "f1": 0.3333333333333333
+  },
+  {
+    "id": "ont_7_company_test_55",
+    "sent": "The company Trane was founded in La Crosse, Wisconsin and is in Ireland in Europe.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Ireland",
+        "rel": "location",
+        "obj": "Europe"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "foundationPlace",
+        "obj": "La_Crosse,_Wisconsin"
+      },
+      {
+        "sub": "Trane",
+        "rel": "location",
+        "obj": "Ireland"
+      },
+      {
+        "sub": "Ireland",
+        "rel": "isPartOf",
+        "obj": "Europe"
+      }
+    ],
+    "p": 0.6666666666666666,
+    "r": 0.6666666666666666,
+    "f1": 0.6666666666666666
+  },
+  {
+    "id": "ont_7_company_test_56",
+    "sent": "Trane has 29,000 employees, its net income is $556,300,000 and revenue is $10,264,000,000.",
+    "gold": [
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      }
+    ],
+    "pred": [
+      {
+        "sub": "Trane",
+        "rel": "numberOfEmployees",
+        "obj": "29000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "netIncome",
+        "obj": "556300000"
+      },
+      {
+        "sub": "Trane",
+        "rel": "revenue",
+        "obj": "10264000000"
+      }
+    ],
+    "p": 1.0,
+    "r": 1.0,
+    "f1": 1.0
+  }
+]
