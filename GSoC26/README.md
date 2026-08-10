@@ -1,5 +1,12 @@
 # Neural Extraction Framework 2.0 (NEF 2.0)
 
+| **Project Details** | |
+|---|---|
+| GSoC Project | [Neural Extraction Framework GSoC'26 @DBpedia](https://github.com/dbpedia/neural-extraction-framework/tree/main/GSoC26) |
+| Contributor | [Nakul Singh](https://github.com/NakulSingh156) |
+| Mentors | Tommaso Soru, Ara Yeroyan, Mayank Kejriwal, Nandana Mihindukulasooriya |
+| Blog | [nakulsingh156.github.io](https://nakulsingh156.github.io) |
+
 **GSoC 2026 · DBpedia** — the next iteration of DBpedia's Neural Extraction
 Framework: an LLM + knowledge-base pipeline that turns natural-language
 sentences into verified DBpedia triples, fully offline except the LLM call.
