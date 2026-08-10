@@ -1,7 +1,7 @@
 # Neural Extraction Framework 2.0 — Final Benchmark Report
 
 **GSoC 2026 · DBpedia · Nakul Singh** · mentors: Ara, Tommaso Soru
-Code: this repository, frozen at tag [`v14-final`](../../releases/tag/v14-final) · Image: `ghcr.io/nakulsingh156/neural-extraction-framework:v2.0`
+Code frozen at tag [`v14-final`](https://github.com/NakulSingh156/dbpedia-neuro-symbolic-extraction/releases/tag/v14-final) · Image: `ghcr.io/nakulsingh156/neural-extraction-framework:v2.0`
 
 ## Summary
 
