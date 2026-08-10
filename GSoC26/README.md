@@ -44,7 +44,7 @@ flowchart LR
 
 | | |
 |---|---|
-| Benchmark | Text2KGBench `dbpedia_webnlg` — 19 domains, 2,014 sentences, exact-triple metric |
+| Benchmark | [Text2KGBench](https://github.com/cenguix/Text2KGBench) `dbpedia_webnlg` (ISWC 2023) — 19 domains, 2,014 sentences, exact-triple metric |
 | **Macro F1** | **0.6317** (frozen tag `v14-final`; per-domain scores in `results/final_clean/`) |
 | Baseline | NEF with GPT-4o: 0.628 (model ~20× the per-token price; ≈$30–35 full-benchmark spend vs our ≈$8–10) |
 | Model | `openai/gpt-5.6-luna` via OpenRouter, temperature 0 — endpoint swappable to any OpenAI-compatible API, incl. local vLLM/Ollama for a 100% offline deployment |
@@ -82,8 +82,23 @@ curl -X POST localhost:8000/extract -H "Content-Type: application/json" \
 | `tests/` · `examples/` | Offline validation tests · Phase-0 abstract traces |
 | `REPORT.md` · `SCALING_PROPOSAL.md` · `GSOC_SUBMISSION.md` | Final report · Wikipedia-scale study · submission text |
 
-## Acknowledgements
+## Future work
 
-Built during **Google Summer of Code 2026** with the **DBpedia** organisation, mentored
-by **Ara Yeroyan** and **Tommaso Soru**. Benchmark: [Text2KGBench](https://github.com/cenguix/Text2KGBench)
-(ISWC 2023). Baseline comparison: DBpedia NEF (GPT-4o).
+- **Anonymous-node grounding** — the deepest open problem in text-to-KG extraction:
+  sentences assert facts about entities they never name (*"Marie Antoinette's
+  husband was killed in the war"*). The plan: represent the unnamed entity as a
+  **blank node with constraints — i.e. as a query** — and ground it against the
+  local store *only when the answer is unique* (`?x : spouse(Marie_Antoinette, ?x)`
+  → `Louis_XVI`, tagged as KB-grounded inference, distinct from extraction).
+  Ambiguous or unanswerable descriptions stay as provenance-tagged blank nodes —
+  the faithfulness principle extended to identity itself. A scoped implementation
+  plus a purpose-built test set (named-entity gold rewritten into descriptions) is
+  the planned flagship contribution of a publication.
+- **Wikipedia-scale extraction** — running the pipeline over all 4.64 M English
+  abstracts (≈10.5 M sentences) to produce a provenance-tagged Databus dataset:
+  full phased cost/time study in [`SCALING_PROPOSAL.md`](SCALING_PROPOSAL.md),
+  first traced examples already in [`examples/`](examples/).
+- **Generalisation** — the `wikidata_tekgen` half of Text2KGBench, testing the
+  approach beyond DBpedia.
+- **Model-scaling ablation** — same pipeline with GPT-4o and with self-hosted open
+  models, isolating pipeline contribution from model contribution.
