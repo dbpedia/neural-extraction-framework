@@ -85,5 +85,5 @@ curl -X POST localhost:8000/extract -H "Content-Type: application/json" \
 ## Acknowledgements
 
 Built during **Google Summer of Code 2026** with the **DBpedia** organisation, mentored
-by **Ara** and **Tommaso Soru**. Benchmark: [Text2KGBench](https://github.com/cenguix/Text2KGBench)
+by **Ara Yeroyan** and **Tommaso Soru**. Benchmark: [Text2KGBench](https://github.com/cenguix/Text2KGBench)
 (ISWC 2023). Baseline comparison: DBpedia NEF (GPT-4o).
