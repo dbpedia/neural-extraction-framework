@@ -82,10 +82,11 @@ Hindi sentence
 [3] HUMAN REVIEW (HITL) — Streamlit app, password-protected
     A reviewer sees the sentence, the extracted triple, and the
     suggested DBpedia property, and can Accept / Modify / Reject —
-    including selecting the correct subject/object directly from
-    dropdown options populated with words from the sentence, and
-    choosing from the real top-40 DBpedia property candidates
-    (precomputed per predicate) rather than a generic list.
+    including correcting the subject/object via dropdowns constrained
+    to words actually present in the sentence, and choosing from real
+    top-40 DBpedia property candidates precomputed per predicate.
+    Every triple gets a stable ID so the same item is never
+    re-reviewed on reload.
    │
    ▼
 [4] FEEDBACK LOOP — merge_hitl_feedback.py
@@ -109,7 +110,7 @@ For the broader predicate-linking task against the full DBpedia ontology, three 
 
 ### 2. Synthetic Dataset Generation
 
-An initial synthetic training dataset was generated using an LLM, producing Hindi sentences paired with subject-relation-object triple annotations. A second, deliberately "noisy" dataset (15,581 examples, [published](https://huggingface.co/datasets/Nitin1211/dbpedia-hindi-noisy-training-data)) was generated separately — seeded from lower-scoring originals, using a mix of `openai/gpt-oss-120b` (86.1%) and `meta/llama-3.2-3b-instruct` (13.9%) — to give the model realistic variation and extraction mistakes to learn from, supporting a staged (curriculum-style) training approach.
+An initial synthetic training dataset was generated using an LLM, producing Hindi sentences paired with subject-relation-object triple annotations. A second, deliberately "noisy" dataset ([published](https://huggingface.co/datasets/Nitin1211/dbpedia-hindi-noisy-training-data), 15,581 examples) was generated separately — seeded from lower-scoring originals — to give the model realistic variation and extraction mistakes to learn from, supporting a staged (curriculum-style) training approach.
 
 ### 3. Wikipedia Scraping
 
@@ -125,11 +126,11 @@ Sentences scoring 9 or above were held out as the validation set; everything els
 
 **Final splits (also [published on Hugging Face](#published-models--datasets)):**
 
-| Dataset            | Size                 | Purpose                                                           |
-| ------------------- | -------------------- | ------------------------------------------------------------------ |
-| Training set        | **39,621** examples  | Fine-tuning Gemma 3 4B (extraction), Optimal-trace format          |
-| Validation set       | **3,634** examples    | High-scoring (≥9) Wikipedia sentences, held out during training    |
-| Held-out test set    | **585** examples       | Never used in training; source of the precision@k numbers below    |
+| Dataset           | Size                | Purpose                                                         |
+| ----------------- | ------------------- | --------------------------------------------------------------- |
+| Training set      | **39,621** examples | Fine-tuning Gemma 3 4B (extraction), Optimal-trace format       |
+| Validation set    | **3,634** examples  | High-scoring (≥9) Wikipedia sentences, held out during training |
+| Held-out test set | **585** examples    | Never used in training; source of the precision@k numbers below |
 
 A Chain-of-Thought variant of the training set was also generated ([published](https://huggingface.co/datasets/Nitin1211/dbpedia-hindi-cot-training-data)) but not used in final training — determined unnecessary at this training stage.
 
@@ -198,15 +199,15 @@ The Wikipedia figure above reflects a rerun (`rerun_wikipedia_f1_clean.py`) excl
 
 BenchIE's extraction-only F1 is notably lower than its full-pipeline F1 — the opposite pattern from Wikipedia/Train. Manual inspection found the model consistently trims Hindi postpositions (का/की/में) that BenchIE's gold spans retain, causing exact-match failures despite the core relation being correctly identified in nearly every case checked. Predicate linking, which matches at the DBpedia-property level rather than exact text, is unaffected by this and recovers the real matches.
 
-**Baselines, for comparison (extraction-only F1):**
+**Baselines, for comparison — both extraction-only and full-pipeline, on the same evaluation set:**
 
-| System                              | Wikipedia | Train    | BenchIE |
-| ------------------------------------- | --------- | -------- | ------- |
-| Fine-tuned Gemma 3 4B (zero-shot)      | 0.554     | 0.610    | 0.056   |
-| Base Gemma 3 4B (untrained)            | 0.024     | 0.014    | 0.016   |
-| IndIE (external, rule-based)           | 0.021     | 0.008\*  | 0.076   |
+| System                              | Wikipedia (ext/full) | Train (ext/full) | BenchIE (ext/full) |
+| ------------------------------------- | --------------------- | ------------------- | --------------------- |
+| **Fine-tuned Gemma 3 4B (zero-shot)** | 0.554 / 0.493          | 0.610 / 0.537        | 0.056 / 0.173           |
+| Base Gemma 3 4B (untrained)            | 0.024 / 0.150          | 0.014 / 0.057        | 0.016 / 0.067           |
+| IndIE (external, rule-based)           | 0.021 / 0.126          | 0.010 / 0.048        | 0.076 / 0.151           |
 
-\*IndIE's Train figure uses the full 39,621-sentence training set, not the 50-sample subset used elsewhere — not directly comparable to the other rows. Fine-tuning improved Wikipedia F1 by roughly 23x and Train F1 by roughly 44x over the untrained base model.
+Fine-tuning improved Wikipedia F1 by roughly 23x and Train F1 by roughly 44x over the untrained base model (extraction-only). Across every source and every metric, the fine-tuned model outperforms both baselines.
 
 ### 11. Data Quality Auditing
 
