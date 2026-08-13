@@ -27,8 +27,13 @@ output quality at each step.
    Reviewers and downstream users can filter by trust level; the unverified
    slice *is the product*.
 3. **Benchmark-validated quality.** Macro F1 0.6317 on Text2KGBench
-   dbpedia_webnlg — parity with the GPT-4o NEF 1.0 baseline (0.628) at 3–4×
-   lower end-to-end cost ([REPORT.md](REPORT.md)).
+   dbpedia_webnlg — level with the GPT-4o NEF 1.0 baseline (0.628) at 3–4×
+   lower end-to-end cost ([REPORT.md](REPORT.md)). *Note: that comparison
+   varies both method and base model, so it does not by itself establish that
+   the method is responsible for the result — see the controlled experiment in
+   §4. For the purposes of this proposal what matters is the absolute quality
+   level, which is what the Phase 0/1 audits re-measure in the open domain
+   anyway.*
 4. **Fully open, reproducible stack.** Local surface-form index + local SPARQL
    store, both built from Databus artifacts; the only external call is an
    OpenAI-compatible LLM endpoint — swappable for a self-hosted open model.
@@ -53,7 +58,7 @@ parse-artifact literals; sentence split on terminal punctuation):
 | **Total sentences (full corpus)** | **≈ 10.5 M** | 4.64 M × 2.26 |
 
 *Scope note:* these are **short** abstracts (lead paragraph). Long abstracts
-(`long_abstracts_en.ttl`) run ~2–3× more sentences; everything below scales
+(`long_abstracts_en.ttl`) run ≈2–3× more sentences; everything below scales
 linearly if DBpedia prefers that target.
 
 ## 4. Cost model
@@ -67,13 +72,13 @@ from the account's Activity page.]
 
 | Scope | Abstracts | Sentences | LLM cost | Wall-clock @ 50 concurrent |
 |---|---|---|---|---|
-| **Phase 0 — review batch** | 100 | ~226 | **< $2** | ~ 1 hour |
-| **Phase 1 — pilot** | 100 k | ~226 k | **≈ $0.9–1.1 k** | ~ 1.5 days |
-| **Phase 2** | 1 M | ~2.26 M | ≈ $9–11 k | ~ 2 weeks |
-| **Phase 3 — full corpus** | 4.64 M | ~10.5 M | **≈ $42–53 k** | ~ 9 weeks |
+| **Phase 0 — review batch** | 100 | ≈226 | **< $2** | ≈ 1 hour |
+| **Phase 1 — pilot** | 100 k | ≈226 k | **≈ $0.9–1.1 k** | ≈ 1.5 days |
+| **Phase 2** | 1 M | ≈2.26 M | ≈ $9–11 k | ≈ 2 weeks |
+| **Phase 3 — full corpus** | 4.64 M | ≈10.5 M | **≈ $42–53 k** | ≈ 9 weeks |
 
-Throughput math: measured ~27 s/sentence end-to-end is LLM-latency-bound (the
-local index and store answer in milliseconds), so it parallelises to ~C/27
+Throughput math: measured ≈27 s/sentence end-to-end is LLM-latency-bound (the
+local index and store answer in milliseconds), so it parallelises to ≈C/27
 sentences/s at concurrency C. C = 50 → ≈ 160 k sentences/day per orchestrator;
 scales linearly with workers/API limits. Infrastructure beyond the LLM: the
 current 8 GB VPS already hosts index + store + pipeline (≈ €10–15/month class).
@@ -81,18 +86,33 @@ current 8 GB VPS already hosts index + store + pipeline (≈ €10–15/month cl
 ### Option B — self-hosted open model (cheaper at scale, needs a quality pilot)
 
 The endpoint is OpenAI-compatible; a vLLM-served open model on one rented GPU
-(A100/H100 class, ~$1.5–3/hr on Runpod/Lambda-class pricing) turns cost from
+(A100/H100 class, ≈$1.5–3/hr on Runpod/Lambda-class pricing) turns cost from
 per-token to per-hour. At realistic batched-serving throughput this lands the
 **full corpus in the low-thousands of dollars** — but output quality with an
 open model on the v14 pipeline is unmeasured (our LLaMA-3.3-70B number, 0.4387,
 predates the index/gate/fixes). **Phase 1 should include a benchmark re-run of
-one open model (~$0 API cost if self-hosted) before committing Option B.**
+one open model (≈$0 API cost if self-hosted) before committing Option B.**
 
-### Model-scaling ablation (recommended, one-time, ≈ $50)
+### Controlled model experiment (required for publication, ≈ $180–200)
 
-Same pipeline, GPT-4o, 5-domain benchmark subset — isolates pipeline-vs-model
-contribution and tells DBpedia what quality ceiling to expect if it ever wants
-to pay for a premium model. Strengthens any publication as well.
+The headline benchmark comparison changes two variables at once — method
+(NEF 1.0 → NEF 2.0) *and* base model (GPT-4o → GPT-5.6 Luna) — so it cannot
+separate "the pipeline is better" from "the model is better". Holding the model
+fixed resolves it:
+
+| | NEF 1.0 (method) | NEF 2.0 (method) |
+|---|---|---|
+| **GPT-4o** | 0.628 (published) | **to be measured** |
+| **GPT-5.6 Luna** | optional 4th cell | 0.6317 (measured) |
+
+Running NEF 2.0 on GPT-4o over the full benchmark (≈$180–200, ≈16 h) gives a
+clean method-vs-method comparison at a fixed model, and turns the Luna run into
+a separate, honest efficiency result rather than a confounded quality claim.
+Recommended sequencing: a 3-domain pilot (≈$25) first, since prompts and
+thresholds were tuned with Luna in the loop.
+
+This is a benchmark experiment, not part of the abstract-extraction budget, but
+it belongs in the same funding conversation.
 
 ## 5. Quality control plan
 
@@ -123,7 +143,7 @@ to pay for a premium model. Strengthens any publication as well.
 | 0 | 100 abstracts through the deployed stack; traced outputs shared for mentor review | < $2 | mentors judge output quality |
 | 1 | 100 k abstracts + 200-triple precision audit + open-model benchmark re-run | ≈ $1 k | audited precision acceptable; Option A vs B decision |
 | 2 | 1 M abstracts, first Databus release (beta) | ≈ $10 k | community/DBpedia review of beta dataset |
-| 3 | Full corpus + versioned Databus release | ≈ $45–55 k (A) or ~10× less (B) | — |
+| 3 | Full corpus + versioned Databus release | ≈ $45–55 k (A) or ≈10× less (B) | — |
 
 **The ask to DBpedia**: sponsor Phase 1 (≈ $1 k + review time). Phases 2–3 only
 on the strength of Phase 1's audited numbers.
@@ -142,7 +162,7 @@ on the strength of Phase 1's audited numbers.
 Three abstracts — a person, a place, an organisation — through the **deployed
 container** (`nef2` image, real index + store). Raw request/response JSON:
 [`examples/phase0_results.json`](examples/phase0_results.json).
-Timing: 30–74 s/abstract, consistent with the benchmark's ~27 s/sentence.
+Timing: 30–74 s/abstract, consistent with the benchmark's ≈27 s/sentence.
 
 **1 · Person (long-tail, diacritics, dates)** — *"Józef Franciszek Darzyn
 Ciemiński (Borzyszkowy, 4 August 1867 – Winona, 1959) was a Polish-born Roman
@@ -195,5 +215,5 @@ for literal objects), or fixed before any large spend.
 - Unit cost: measured benchmark spend (OpenRouter pricing page, 2026-08;
   invoice to be attached).
 - Benchmark result and variance: [REPORT.md](REPORT.md), tag `final-results-0.6317`.
-- NEF 1.0 baseline cost: mentor-reported (~$30–35 full benchmark), exact figure
+- NEF 1.0 baseline cost: mentor-reported (≈$30–35 full benchmark), exact figure
   to be confirmed by mentors.
