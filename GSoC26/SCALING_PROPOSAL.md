@@ -47,15 +47,26 @@ load 2026-06-27):
 SELECT (COUNT(*) AS ?c) WHERE { ?s rdfs:comment ?o }        # → 4,643,098
 ```
 
-Sentence statistics from a 400-abstract sample (`STRLEN > 40` filter to skip
-parse-artifact literals; sentence split on terminal punctuation):
+Sentence statistics from a **stratified sample of 5,000 abstracts** — 20 evenly
+spaced strata of 250 across the full 4.64 M rows, so the sample is not a single
+contiguous block. Sentence splitting protects abbreviations (`Dr.`, `St.`,
+`U.S.`), initials (`J. R. R.`) and decimals before splitting on terminal
+punctuation; segments under 15 characters are discarded.
 
 | Quantity | Value | Source |
 |---|---|---|
-| English short abstracts | **4,643,098** | count query above, our snapshot |
-| Sentences per abstract | **2.26 mean / 2 median** | 400-abstract sample |
-| Words per abstract | 44.8 mean | same sample |
-| **Total sentences (full corpus)** | **≈ 10.5 M** | 4.64 M × 2.26 |
+| Rows with `rdfs:comment` | **4,643,098** | count query above, our snapshot |
+| Parse-artifact rows (≤ 40 chars) | **5.2 %** | 262 of 5,000 sampled |
+| Usable abstracts | **≈ 4.40 M** | 4.64 M × 94.8 % |
+| Sentences per abstract | **2.31 mean / 2 median** (95 % CI ± 0.03) | 5,000-abstract sample |
+| Words per abstract | 47.3 mean (95 % CI ± 0.6) | same sample |
+| **Total sentences (full corpus)** | **≈ 10.2 M** | 4.40 M × 2.31 |
+
+*Robustness:* computing the total two ways — every row including artifacts
+(4.64 M × 2.19) versus usable abstracts only (4.40 M × 2.31) — gives 10.18 M and
+10.17 M respectively, so the estimate is not sensitive to how artifacts are
+handled. An earlier 400-abstract, naive-split sample gave 10.5 M; the refined
+method lands within 3 % of it.
 
 *Scope note:* these are **short** abstracts (lead paragraph). Long abstracts
 (`long_abstracts_en.ttl`) run ≈2–3× more sentences; everything below scales
@@ -72,10 +83,10 @@ from the account's Activity page.]
 
 | Scope | Abstracts | Sentences | LLM cost | Wall-clock @ 50 concurrent |
 |---|---|---|---|---|
-| **Phase 0 — review batch** | 100 | ≈226 | **< $2** | ≈ 1 hour |
-| **Phase 1 — pilot** | 100 k | ≈226 k | **≈ $0.9–1.1 k** | ≈ 1.5 days |
-| **Phase 2** | 1 M | ≈2.26 M | ≈ $9–11 k | ≈ 2 weeks |
-| **Phase 3 — full corpus** | 4.64 M | ≈10.5 M | **≈ $42–53 k** | ≈ 9 weeks |
+| **Phase 0 — review batch** | 100 | ≈231 | **< $2** | ≈ 1 hour |
+| **Phase 1 — pilot** | 100 k | ≈231 k | **≈ $0.9–1.2 k** | ≈ 1.5 days |
+| **Phase 2** | 1 M | ≈2.31 M | ≈ $9–12 k | ≈ 2 weeks |
+| **Phase 3 — full corpus** | 4.40 M | ≈10.2 M | **≈ $41–51 k** | ≈ 9 weeks |
 
 Throughput math: measured ≈27 s/sentence end-to-end is LLM-latency-bound (the
 local index and store answer in milliseconds), so it parallelises to ≈C/27
@@ -143,7 +154,7 @@ it belongs in the same funding conversation.
 | 0 | 100 abstracts through the deployed stack; traced outputs shared for mentor review | < $2 | mentors judge output quality |
 | 1 | 100 k abstracts + 200-triple precision audit + open-model benchmark re-run | ≈ $1 k | audited precision acceptable; Option A vs B decision |
 | 2 | 1 M abstracts, first Databus release (beta) | ≈ $10 k | community/DBpedia review of beta dataset |
-| 3 | Full corpus + versioned Databus release | ≈ $45–55 k (A) or ≈10× less (B) | — |
+| 3 | Full corpus + versioned Databus release | ≈ $41–51 k (A) or ≈10× less (B) | — |
 
 **The ask to DBpedia**: sponsor Phase 1 (≈ $1 k + review time). Phases 2–3 only
 on the strength of Phase 1's audited numbers.
