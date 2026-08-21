@@ -24,9 +24,8 @@ docker pull ghcr.io/nakulsingh156/neural-extraction-framework:v2.0
 ## Project goals
 
 NEF 1.0 (GSoC'25) established that an LLM plus DBpedia could turn prose into
-triples, but depended on live external services for entity linking and had no
-way to tell a correct extraction from a confident hallucination. NEF 2.0 set out
-to close both gaps:
+triples, but had no way to tell a correct extraction from a confident hallucination. NEF 2.0 set out
+to close the gap:
 
 1. **Remove the external dependency.** Replace live DBpedia Lookup calls with a
    local surface-form index, so entity resolution is millisecond-fast,
