@@ -21,6 +21,30 @@ sentences into verified DBpedia triples, fully offline except the LLM call.
 docker pull ghcr.io/nakulsingh156/neural-extraction-framework:v2.0
 ```
 
+## Project goals
+
+NEF 1.0 (GSoC'25) established that an LLM plus DBpedia could turn prose into
+triples, but depended on live external services for entity linking and had no
+way to tell a correct extraction from a confident hallucination. NEF 2.0 set out
+to close both gaps:
+
+1. **Remove the external dependency.** Replace live DBpedia Lookup calls with a
+   local surface-form index, so entity resolution is millisecond-fast,
+   reproducible, and works offline.
+2. **Make every triple accountable.** Verify each output against DBpedia and tag
+   it `verified` or `faithful-unverified`, so a fact asserted by the sentence but
+   absent from the KB is preserved as new knowledge rather than deleted as noise.
+3. **Extract every fact in a sentence**, not just one relation per sentence.
+4. **Match the GPT-4o baseline at materially lower cost**, on Text2KGBench
+   `dbpedia_webnlg`, 19 domains, 2,014 sentences, exact-triple F1.
+5. **Ship something DBpedia can actually run**: containerised, documented,
+   reproducible from a single command.
+
+All five were met. Macro F1 **0.6317** against the published GPT-4o baseline's
+0.628, at ≈3–4× lower end-to-end cost, with the full stack running offline apart
+from the LLM call. Work beyond these goals, the open-domain Wikipedia-scale
+study and anonymous-node grounding is in *Future work* below.
+
 ## How it works
 
 ```mermaid
@@ -88,6 +112,25 @@ curl -X POST localhost:8000/extract -H "Content-Type: application/json" \
 | `docs/` | `CHANGES.md` fix history · `REPRODUCIBILITY.md` recipe · `RUNBOOK.md` ops notes |
 | `tests/` · `examples/` | Offline validation tests · Phase-0 abstract traces |
 | `REPORT.md` · `SCALING_PROPOSAL.md` · `GSOC_SUBMISSION.md` | Final report · Wikipedia-scale study · submission text |
+
+## Merged upstream
+
+All work is merged into DBpedia's official repository — this directory *is* the
+contribution, not a fork or a mirror.
+
+| PR | Scope | Files |
+|---|---|---|
+| [#59](https://github.com/dbpedia/neural-extraction-framework/pull/59) | NEF 2.0 — pipeline, local index, SPARQL gate, benchmark results, docs, tests | 117 |
+| [#32](https://github.com/dbpedia/neural-extraction-framework/pull/32) | Docker packaging and deployment | 26 |
+| [#65](https://github.com/dbpedia/neural-extraction-framework/pull/65) | Scaling proposal — 5,000-abstract stratified corpus study + sampling script | 2 |
+| [#64](https://github.com/dbpedia/neural-extraction-framework/pull/64) | Scaling proposal — method/model confound flagged, controlled experiment specified | 1 |
+| [#62](https://github.com/dbpedia/neural-extraction-framework/pull/62) | Final benchmark report corrections | 1 |
+| [#60](https://github.com/dbpedia/neural-extraction-framework/pull/60), [#61](https://github.com/dbpedia/neural-extraction-framework/pull/61) | README — future-work roadmap | 2 |
+
+**Commit history:**
+[all commits touching `GSoC26/`](https://github.com/dbpedia/neural-extraction-framework/commits/main/GSoC26)
+· [all pull requests](https://github.com/dbpedia/neural-extraction-framework/pulls?q=is%3Apr+author%3ANakulSingh156)
+
 
 ## Future work
 
