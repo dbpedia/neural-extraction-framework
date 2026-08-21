@@ -37,13 +37,13 @@ to close both gaps:
 3. **Extract every fact in a sentence**, not just one relation per sentence.
 4. **Match the GPT-4o baseline at materially lower cost**, on Text2KGBench
    `dbpedia_webnlg`, 19 domains, 2,014 sentences, exact-triple F1.
-5. **Ship something DBpedia can actually run**: containerised, documented,
+5. **Ship something DBpedia can actually run**, containerised, documented,
    reproducible from a single command.
 
 All five were met. Macro F1 **0.6317** against the published GPT-4o baseline's
 0.628, at ≈3–4× lower end-to-end cost, with the full stack running offline apart
-from the LLM call. Work beyond these goals, the open-domain Wikipedia-scale
-study and anonymous-node grounding is in *Future work* below.
+from the LLM call. Work beyond these goals, the open domain Wikipedia scale
+study and anonymous node grounding is in *Future work* below.
 
 ## How it works
 
@@ -115,9 +115,7 @@ curl -X POST localhost:8000/extract -H "Content-Type: application/json" \
 
 ## Merged upstream
 
-All work is merged into DBpedia's official repository — this directory *is* the
-contribution, not a fork or a mirror.
-
+All work is merged into DBpedia's official repository.
 | PR | Scope | Files |
 |---|---|---|
 | [#59](https://github.com/dbpedia/neural-extraction-framework/pull/59) | NEF 2.0 — pipeline, local index, SPARQL gate, benchmark results, docs, tests | 117 |
