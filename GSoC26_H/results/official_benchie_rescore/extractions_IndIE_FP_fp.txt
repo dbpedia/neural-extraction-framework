@@ -1,0 +1,177 @@
+1	शक्तिरूपी माया की	dbo:resolution	कार्यरूप जगत को देखकर ही
+2	अंगुलि चिह्न विज्ञान प्रतियोगिता	dbo:event	अखिल भारतीय पुलिस डयूटी मीट
+3	विवादित अंगुलि चिह्नों का	dbo:transmission	उपक्रमों द्वारा
+4	यह एजेंट	dbo:uses	बारह पुस्तकों
+6	नवीनतम वेतनमानों को	dbo:currentlyUsedFor	01 अप्रैल 2009 से
+6	कंपनी में	dbo:currentlyUsedFor	नवीनतम वेतनमानों को
+7	सुनवाई	dbo:startDate	साबरमती केंद्रीय जेल के अंदर
+8	वे	dbo:position	न्यायाधीश
+8	06 अक्टूबर 1989 को	dbo:position	वे
+9	06 प्रतिशत	dbo:personFunction	जिनका कोई विशेष धर्म नहीं था
+10	इम्पीरियल पोस्टल सर्विस द्वारा	dbo:launchDate	पहला डाक टिकट
+10	1 अक्टूबर 1854 को	dbo:launchDate	इम्पीरियल पोस्टल सर्विस द्वारा
+11	आंध्र ने	dbo:discoverer	कर्नूल को
+11	दर्जा	dbo:discoverer	1 अक्टूबर 1953 को
+12	दूसरा सीज़न	dbo:releaseDate	1 अक्टूबर 2008 को
+12	न्यूजीलैंड	dbo:releaseDate	1 अक्टूबर 2008 को
+12	ऑस्ट्रेलिया में	dbo:releaseDate	1 अक्टूबर 2008 को
+14	यह देश	dbo:liberationDate	1 अक्टूबर , 1960 को
+14	शासन से	dbo:liberationDate	इंग्लैंड के
+15	अंग्रेजों द्वारा	dbo:transmission	चन्द्रसिंह को
+15	1 अगस्त 1915 में	dbo:transmission	अन्य गढ़वाली सैनिकों के साथ
+15	फ्रांस	dbo:transmission	अन्य गढ़वाली सैनिकों के साथ
+16	इसे	dbo:statusYear	1 अप्रैल 1946 को
+16	गोविन्द बल्लभ पन्त	dbo:builder	मुख्य मन्त्री
+16	इसके पहले	dbo:builder	घोषित किया गया
+17	एक आन्दोलन	dbo:startDate	स्वतन्त्रता आन्दोलन के साथ ही
+18	एक अनूठी आभा	dbo:appearance	बाल्यकाल से ही
+18	चेहरे पर	dbo:appearance	कर्मा के
+19	सोनू	dbo:formerPartner	एक प्रमुख हस्ती
+19	तब से	dbo:formerPartner	अब तक ,
+19	भारतीय संगीत जगत में	dbo:formerPartner	अब तक ,
+21	सोवियत दस्तों ने	dbo:liberationDate	प्राग को
+21	क़ब्ज़ा करने के बाद	dbo:liberationDate	बर्लिन पर
+22	पद्म श्री सम्मान	dbo:award	राष्ट्रपति से
+23	वित्तीय सहायता भी	dbo:award	पूरी करने तक
+23	सभी बच्चों को	dbo:completionDate	दी जाती है
+23	पूरी करने तक दी जाती है	dbo:education	स्कूल की
+24	यह स्थान	dbo:touristicSite	आज भी
+25	पाणिनीय व्याकरण ही	dbo:representative	इस सम्बन्ध में
+25	वेदाङ्ग का	dbo:representative	पाणिनीय व्याकरण ही
+26	मैं	dbo:religion	इस श्रेष्ठ तत्त्व की
+27	उल्लेख	dbo:isPartOf	पांच नदियों में से
+27	ऋग्वेद में	dbo:isPartOf	उल्लेख
+27	हिमाचल प्रदेश में	dbo:drainsFrom	पांच नदियों में से
+28	उन्होंने	dbo:sp	बच्चे को देने से
+29	तुलनात्मक अध्ययन	dbo:relatedTo	सभी सामाजिक विज्ञानों से
+31	यह शहर	dbo:dbo:touristicSite	वर्तमान में
+32	सिलकोट ,	dbo:comment	गंगोलीहाट तहसील में
+33	तकनीकी केंद्र को	dbo:successor	तिरुवनंतपुरम में
+34	दोनों मामले	dbo:sheading	सर लुइस शर्ट
+35	मृत्यु	dbo:discontinued	किसी बीमारी की वजह से
+35	28 नवम्बर 1694 को	dbo:discontinued	मृत्यु
+36	विक्रम ने	dbo:philosophy	एक हल
+36	तो	dbo:dbo:existence	कोई मतैक्य
+37	सन 1696 में	dbo:fight	एक बार
+37	शाही सेना से	dbo:fight	पंचायती सेना का
+38	मर्लगोंड ,	dbo:comment	कुभीर मण्डल में
+39	अनेक ग्रन्थ	dbo:author	बाद में
+39	दर्शन पक्ष पर	dbo:author	व्याकरण के
+40	निदेशक	dbo:builder	1975 में
+40	इलाहाबाद में	dbo:builder	नवनिर्मित मेहता अनुसंधान संस्थान में
+41	नाम	dbo:maintainedBy	नाम पर
+42	कुछ लोग	dbo:interest	रहना
+42	इस आपाधापी से दूर	dbo:residence	घर पर ही
+43	मार्च 2001 में	dbo:reopened	एक बार
+43	अट्ठाइसवें रक्षा सचिव के रूप में	dbo:reopened	उनकी
+44	सर वाईकर के द्वारा	dbo:foundation	3 मार्च 1884 को
+44	इसकी रचना की	dbo:foundation	3 मार्च 1884 को
+45	वह	dbo:relation	इस तकनीक के लिए
+46	त्रिदेवनाथ बैनर्जी को	dbo:honours	क्षेत्र में
+46	सन 1961 में	dbo:honours	पद्म भूषण से
+47	उन्होने	dbo:musicBy	मराठी के अतिरिक्त
+47	हिन्दी फिल्मों के लिए भी	dbo:musicBy	उन्होने
+48	औद्योगिक रूप से	dbo:usedFor	अनेक प्रक्रियाओं में
+50	द डार्क नाईट राइसेस को	dbo:releaseDate	अमेरिका ,
+50	20 जुलाई 2012 को	dbo:releaseDate	अमेरिका ,
+50	20 जुलाई 2012 को	dbo:releaseDate	संयुक्त राजशाही
+50	20 जुलाई 2012 को	dbo:releaseDate	कनाडा में
+51	यह	dbo:uses	हर साल
+51	फ्रैंकफर्ट शहर मे	dbo:uses	जर्मनी के
+52	द्रौपदी ने	dbo:consecration	गले में
+53	यह त्यौहार	dbo:feastDay	पूरे उत्तर भारत में
+53	राम नवमी के दौरान	dbo:feastDay	पूरे उत्तर भारत में
+54	व्यापक उपयोग	dbo:dbo:prominence	भोजन में
+55	कार्ल ने	dbo:editor	उपेक्षित जीवविज्ञान उद्यान को भी
+57	यह	dbo:knownFor	नाम से
+58	अधिक संपर्क	dbo:residence	चीन
+58	अधिक संपर्क	dbo:residence	जापान से
+59	कश्यप ने	dbo:discoverer	शेष
+59	कुछ घड़ी	dbo:dbo:noteOnRestingPlace	आयु में
+60	मोमबत्तियाँ भी	dbo:currentlyUsedFor	खानों में
+61	उन्होंने	dbo:author	कहानियाँ
+61	इस शैली में	dbo:author	उन्होंने
+61	उन्होंने	dbo:author	उपन्यास
+62	वो	dbo:chief	पहले दलित
+63	उन्होंने	dbo:presenter	वार्षिक बजट
+63	6 जुलाई 2009 को	dbo:presenter	उन्होंने
+64	स्थानीय आबादी	dbo:influencedBy	लगभग पूरी तरह से
+64	व्यापार पर	dbo:influencedBy	चाय के
+65	इसे साथ ही	dbo:currentlyUsedFor	आधारभूत प्रोफ़ाइल में भी
+66	उन्हें	dbo:otherName	नाम से
+68	ज्यादातर अंश	dbo:inflow	पाकिस्तान में
+69	अंदरूनी भाग	dbo:isPartOf	लीबियाई रेगिस्तान का
+69	सीवा नख़लिस्तान	dbo:location	जिसमें
+70	राजधानी	dbo:city	जो अग्रणी योगदानकर्त्ता
+70	त्वरित आर्थिक	dbo:currentStatus	भारत में
+72	एक कहानी संग्रह	dbo:publicationDate	उनका
+72	दो निबंध संग्रह	dbo:publicationDate	उनका
+73	पद्मनाभ दत्त ने	dbo:author	सुपद्य व्याकरण
+74	फ्लोरिडा राज्य	dbo:location	पश्चिम में
+75	यह क्रिकेट मैदान	dbo:location	होबार्ट शहर में
+78	कुछ लोगों ने	dbo:subdivisions	इसे
+78	दृष्टि से	dbo:subdivisions	इंडोचायनीज़
+78	दृष्टि से	dbo:subdivisions	इंडोमलायन उपक्षेत्रों में
+79	प्रयोगशील प्रवृत्तियाँ	dbo:provides	उनको
+80	वर्षों को	dbo:description	5364 ईसा पूर्व
+81	विश्वामित्र द्वारा	dbo:costumeDesigner	जयमाल
+81	सीता राम को	dbo:costumeDesigner	स्वरघोष के मध्य
+82	विभिन्न स्रोत	dbo:suppreddedDate	इस तथ्य पर
+82	इस तथ्य पर	dbo:end	एजिंकोर्ट स्क्वायर
+82	इस तथ्य पर	dbo:end	नाम
+82	इस तथ्य पर	dbo:end	किस वर्ष में
+83	विभिन्न विभाग	dbo:ist	प्रत्येक भाग के अंतर्गत
+83	विभिन्न विभाग	dbo:ist	जिनके अलगअलग अध्यक्ष
+84	एकलों के बीच	dbo:launchDate	एक लंबे अंतराल के बाद ,
+84	एल्बम से	dbo:launchDate	2006 के मध्य में
+85	उस दौर में	dbo:criteria	उनके सामने
+86	बहुत से विकासों ने	dbo:improvedBy	परिणामों को
+86	1900 के आसपास	dbo:improvedBy	निमोनिया से
+86	पीड़ित लोगों के लिये	dbo:improvedBy	निमोनिया से
+87	प्रचार	dbo:contributor	पिता के समान
+87	प्रसार में	dbo:contributor	पिता के समान
+88	मामले	dbo:author	उदाहरणार्थ ,
+88	संपर्क में भी	dbo:author	केवल 1 -- 3 माह के
+88	मेसोथेलियोमा	dbo:origin	मामले
+89	प्राणी	dbo:hasJunctionWith	इश -- एस में
+89	वास्तव में	dbo:hasJunctionWith	प्राणी
+89	इश -- एस में	dbo:opponents	इश -- डू में
+89	इश -- एस में	dbo:opponents	दो प्राणियों का
+90	ये तीनों अक्ष	dbo:requirement	एकबिन्दुगामी भी
+90	उस तल में	dbo:requirement	ये तीनों अक्ष
+91	पुराने तरीके	dbo:change	विकासशील देशों में ,
+91	अपने ही पड़ोस में	dbo:change	तेजी से
+92	शुरुआत	dbo:releaseDate	जिसे
+92	शुरुआत	dbo:releaseDate	17 फ़रवरी 2012 को
+93	खाद्य एवं पेय पदार्थो को	dbo:protectionStatus	मक्खियों से
+94	यह ,	dbo:reference	राष्ट्रीयता को
+94	राष्ट्रीयता को	dbo:reference	गाड़ी निर्माता
+94	राष्ट्रीयता को	dbo:reference	चालक की
+95	सड़क मार्ग	dbo:service	रत्नागिरी के लिए
+96	छपाई में	dbo:originallyUsedFor	ब्लाकों का
+96	ब्लाकों का	dbo:builder	शिल्पी -- सुथार
+97	यह शब्द	dbo:origin	सरकारी इकाई के लिये
+97	प्रयोग में	dbo:origin	सरकारी इकाई के लिये
+97	विधि	dbo:producer	सरकारी इकाई के लिये
+98	यह	dbo:location	बलिया जिले में
+98	बलिया शहर से	dbo:location	पश्चिम में
+99	उन्होने	dbo:perpetrator	उसेक बाद
+100	सर्वप्रथम	dbo:activity	प्रत्येक खिलाड़ी के लिये
+100	प्रत्येक खिलाड़ी के लिये किया जाता है	dbo:throwingSide	निर्धारण
+100	प्रत्येक खिलाड़ी के लिये किया जाता है	dbo:throwingSide	पासा
+101	हाइपरयूरीसेमिया ,	dbo:activity	मूल कारण
+104	दक्षिण भारत में	dbo:focus	उन दिनों
+106	प्रकृति आधारित निर्माण को	dbo:influenced	और भी कुछ निम्नलिखित कारण
+107	2010 को ' ' दर्शन -- परिषद् ' ' के	dbo:completionDate	नाम से
+108	यहीं पर	dbo:deathDate	सन 1533 में
+108	अल्पायु में	dbo:deathDate	दिन
+108	उनका	dbo:deathDate	दिन
+109	इसे	dbo:alternativeName	यह देखा जाता है अक्सर
+109	तालाब में	dbo:appearance	कहा जाता है
+110	वे	dbo:builder	तीसरे ब्रिटिश प्रबंधक
+110	2008 में	dbo:builder	वे
+110	तीसरे ब्रिटिश प्रबंधक	dbo:wins	यूरोपियन कप
+110	तीसरे ब्रिटिश प्रबंधक	dbo:wins	जिन्होंने
+110	तीसरे ब्रिटिश प्रबंधक	dbo:wins	एकाधिक अवसर पर
+111	मॉस से	dbo:block	मिट्टी में
+112	वर्तमान रूप	dbo:typeOfStorage	प्राचीन इतिहास कथाओं उपदेशों आदि का
