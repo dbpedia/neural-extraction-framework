@@ -2,3 +2,12 @@ System,Precision,Recall,F1,TPs,FPs,FNs,Silent_Sentences,Predicate_Normalization_
 IndIE (rule-based),0.4377,0.4854,0.4603,116,149,123,24,68.5,2.7,0.0,28.9,0.0,102,4,0,43,0
 Zero-shot Gemma-3-1B,0.0,0.0,0.0,0,23,304,89,43.5,39.1,17.4,0.0,0.0,10,9,4,0,0
 GSoC25_H (Gemma-3-12B + IndIE + ReAct),0.2141,0.584,0.3133,146,536,104,6,81.9,8.8,1.1,8.2,0.0,439,47,6,44,0
+---
+
+## Note on Current Model — Not Directly Comparable
+
+The current fine-tuned pipeline (Gemma 3 4B + F2LLM-1.7B) achieves **F1 = 0.173** on BenchIE, measured using the triple-level set-matching methodology in `normalize_full_scale.py` — a different scoring approach than the per-error-type classifier (`error_taxonomy.py`) used for the rows above.
+
+An attempt was made to score the current model using `error_taxonomy.py` directly for a like-for-like comparison. This surfaced a genuine bug in that script's copula-detection logic: it checks whether any Hindi copula word appears anywhere as a *substring* of the predicted predicate, rather than checking for a whole-word match. Since most grammatically correct Hindi verb phrases legitimately contain a copula substring (e.g. "है" inside "सििद्ध होती है"), this caused a majority of genuinely correct predictions to be misclassified as `predicate_placeholder` errors — confirmed by manual inspection, which found several byte-identical gold/predicted matches wrongly flagged this way.
+
+Given this, no new row has been added to the table above — doing so would risk publishing a result that reflects the classifier's own limitation rather than the model's actual performance. The F1 = 0.173 figure from `normalize_full_scale.py` remains the trustworthy current-model number for BenchIE.

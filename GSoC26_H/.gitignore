@@ -6,6 +6,7 @@ dist/
 build/
 .eggs/
 *.egg
+
 .env
 .venv/
 venv/
@@ -27,7 +28,6 @@ data/feedback/
 
 # Keep ontology properties (small, curated)
 !data/ontology/dbpedia_properties.json
-!data/ontology/property_descriptions_hi.json
 
 # Jupyter
 .ipynb_checkpoints/
@@ -37,13 +37,15 @@ data/feedback/
 .cache/
 *.hf_cache/
 
-# Streamlit
+# Streamlit — protects local secrets.toml; hitl/.streamlit/config.toml stays
+# tracked separately since it was already committed before this rule existed
 .streamlit/
 
-# Colab credentials
-*.json
-!data/ontology/*.json
-!configs/*.json
+# Colab / Google credentials — narrow, not a blanket *.json rule
+client_secret*.json
+service-account*.json
+token.json
+credentials.json
 
 # OS
 .DS_Store

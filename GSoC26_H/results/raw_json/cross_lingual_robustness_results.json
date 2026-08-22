@@ -1,0 +1,702 @@
+[
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત ભારતના પશ્ચિમ ભાગમાં આવેલું રાજ્ય છે.",
+    "predicted": "गुजरात | है | राज्य\nगुजरात | property | राज्य\nभारत | property | भाग\nपશ્ચિમ | property | भाग\nઆવેલું | property | राज्य",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગાંધીનગર ગુજરાત રાજ્યની રાજધાની છે.",
+    "predicted": "गांधीનગર | है | गुजरात राज्य की राजधनी\nगुजरात राज्य | property | राजधनी",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "અમદાવાદ ગુજરાતનું સૌથી મોટું શહેર છે.",
+    "predicted": "અમદાવાદ | है | गुजरातનું सबसे बड़ी शहर\nसबसे बड़ी | property | शहर\nगुजरात | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "સાબરમતી નદી અમદાવાદ શહેરમાંથી પસાર થાય છે.",
+    "predicted": "સાબરમતી નદી | પસાર થાય છે | અમદાવાદ શહેરમાં\nસાબરમતી | property | નદી\nઅમદાવાદ | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "મહાત્મા ગાંધીનો જન્મ પોરબંદરમાં થયો હતો.",
+    "predicted": "महाત્મા गांधीનો जन्म | થયો હતો | પોरबंदर\nमहाત્મા गांधी | property | जन्म",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "સરદાર વલ્લભભાઈ પટેલ ગુજરાતના પ્રખ્યાત નેતા હતા.",
+    "predicted": "સરદાર વલ્લભભાઈ પટેલ | હતા | ગુજરાતના પ્રખ્યાત નેતા\nप्रખ્યાત | property | નેતા\nगुजरातના | property | નેતા",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાતી ભાષા ઇન્ડો-આર્યન ભાષા પરિવારની છે.",
+    "predicted": "ગુજરાતી ભાષા | છે | ઇન્ડો-આર્યન ભાષા પરિવારની\nઇન્ડો-આર્યન | property | ભાષા\nगुजराती | property | ભાષા",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "સોમનાથ મંદિર ગુજરાતના પ્રસિદ્ધ મંદિરોમાંનું એક છે.",
+    "predicted": "સોમનાથ મંદિર | છે | एक\nप्रसिद्ध | property | મંદिરો\nएक | property | प्रसिद्ध મંદिરોમાંનું\nगुजरात | property | प्रसिद्ध મંદिરો",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગીર રાષ્ટ્રીય ઉદ્યાન એશિયાઈ સિંહો માટે જાણીતું છે.",
+    "predicted": "ગીર રાષ્ટ્રીય ઉદ્યાન | જાણીતું છે | એશિયાઈ સિંહો માટે\nરાષ્ટ્રીય | property | ઉદ્યાન\nગીર | property | ઉદ્યાન\nએશિયાઈ | property | સિંહો",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "વડોદરા ગુજરાતનું સાંસ્કૃતિક શહેર ગણાય છે.",
+    "predicted": "વડોદરા | ગણાય છે | गुजरातનું સાંસ્કૃતિક શહેર\nगुजरात | property | સાંસ્કૃતિક શહેર\nसांસ્કૃતિક | property | શહેર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "સુરત શહેર હીરાના વેપાર માટે પ્રખ્યાત છે.",
+    "predicted": "सुरत शहर | प्रખ્યાત है | हીરાના વેપાર के लिए\nसुरत | property | शहर\nહીરા | property | व्यापार",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "નર્મદા નદી ગુજરાત રાજ્યની મુખ્ય નદી છે.",
+    "predicted": "નર્મદા નદી | છે | गुजरात राज्यની મુખ્ય નદી\nमुख्य | property | નદી\nगुजरात राज्य | property | નદી",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "કચ્છનું રણ ગુજરાતના પ્રખ્યાત પ્રવાસન સ્થળોમાંનું એક છે.",
+    "predicted": "કચ્છનું રણ | છે | एक\nप्रખ્યાત | property | સ્થળો\nएक | property | સ્થળો\nप्रવાસન | property | સ્થળો\nगुजरात | property | સ્થળો\nकच्छ | property | રણ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "દ્વારકા શહેર ભગવાન કૃષ્ણ સાથે સંકળાયેલું છે.",
+    "predicted": "દ્વારકા શહેર | સંકળાયેલું છે | ભગવાન કૃષ્ણ સાથે",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત રાજ્યની સ્થાપના ૧૯૬૦માં થઈ હતી.",
+    "predicted": "गुजरात राज्य | property | स्थापના\n१ | property | ९६०\n१ ९६०માં | property | થઈ હતી\nस्थापना | થઈ હતી | NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "વિક્રમ સારાભાઈ ભારતીય અવકાશ કાર્યક્રમના પિતા ગણાય છે.",
+    "predicted": "वિક્રમ સારાભાઈ ભારતીय | ગણાય છે | પિતા\nभारतीय | property | અવકાશ કાર્યક્રમ\nअवકાશ | property | કાર્યક્રમ\nપિતા | property | भारतीय અવકાશ કાર્યક્રમના",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "અક્ષરધામ મંદિર ગાંધીનગરમાં આવેલું છે.",
+    "predicted": "અક્ષરધામ મંદિર | આવેલું છે | ગાંધીનગરમાં\nઅક્ષરધામ | property | મંદિર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાતમાં ગરબા નૃત્ય ખૂબ જ લોકપ્રિય છે.",
+    "predicted": "गरबा नૃત્ય | है | बहुत ही लोकप्रिय\nलोकप्रिय | property | गरबा नૃત્ય\nबहुत ही | property | लोकप्रिय",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "રાજકોટ શહેર સૌરાષ્ટ્ર વિસ્તારમાં આવેલું છે.",
+    "predicted": "राजકોટ शहर | આવેલું છે | સૌરાષ્ટ્ર વિસ્તારમાં\nराजકોટ | property | शहर\nसૌરાષ્ટ્ર | property | વિસ્તાર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ભાવનગર શહેર ગુજરાતના દરિયાકિનારે આવેલું છે.",
+    "predicted": "ભાવનગર શહેર | આવેલું છે | गुजरातના દરિયાકિનારે\nगुजरात | property | દરિયાકિનારે",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ધોળાવીરા સિંધુ ખીણ સંસ્કૃતિનું એક મહત્વનું સ્થળ છે.",
+    "predicted": "ધોળાવીરા | है | सिંધુ ખીણ સંસ્કૃતિનું एक મહત્વનું સ્થળ\nएक | property | સ્થળ\nमहान्त्वનું | property | સ્થળ\nसिંધુ | property | खીણ\nसिंधु खીણ | property | संस्कૃતિ\nसंस्कૃતિ | property | સ્થળ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "લોથલ પ્રાચીન બંદર નગર તરીકે જાણીતું છે.",
+    "predicted": "લોથલ | જાણીતું છે | પ્રાચીન બંદર નગર તરીકે\nપ્રાચીન | property | બંદર નગર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "જુનાગઢ શહેર ગિરનાર પર્વતની તળેટીમાં આવેલું છે.",
+    "predicted": "જુનાગઢ શહેર | આવેલું છે | ગિરનાર પર્વતની તળેટીમાં\nજુનાગઢ | property | શહેર\nगिरનાર | property | પર્વત\nगिरનાર પર્વત | property | તળેટી",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "પાટણ શહેર રાણી કી વાવ માટે પ્રખ્યાત છે.",
+    "predicted": "પાટણ શહેર | प्रખ્યાत है | राणी કી वाव\nराणी | property | वाव",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ચાંપાનેર એક ઐતિહાસિક શહેર છે.",
+    "predicted": "चाંપાનેર | છે | एक ઐતિહાસિક શહેર\nઐતિહાસિક | property | शहर\nएक | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત રાજ્યની સરહદ પાકિસ્તાન સાથે જોડાયેલી છે.",
+    "predicted": "गुजरात राज्य | property | राज्य\nगुजरात राज्यની | property | राज्य\nराज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nराज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property | राज्य\nगुजरात राज्य | property |",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "તાપી નદી સુરત શહેરમાંથી પસાર થાય છે.",
+    "predicted": "તાપી નદી | પસાર થાય છે | સુરત શહેરમાંથી\nતાપી | property | નદી\nસુરત | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "સ્ટેચ્યુ ઓફ યુનિટી નર્મદા જિલ્લામાં આવેલું છે.",
+    "predicted": "स्टेચ્યુ ऑफ युनिटी | આવેલું છે | नર્મदा જિલ્લા में\nनર્મदा | property | जिला\nआવેલું | property | स्टेच्यु",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત ભારતના સૌથી વધુ ઔદ્યોગિક રાજ્યોમાંનું એક છે.",
+    "predicted": "गुजरात | है | भारत के सबसे अधिक ઔદ્યોગિક राज्यों में से एक\nसबसे अधिक | property | ઔદ્યોગિક राज્યો\nઔદ્યોગિક | property | राज્યો\nएक | property | राज્યો\nभारत | property | राज्यों",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "કાંકરિયા તળાવ અમદાવાદનું પ્રખ્યાત સ્થળ છે.",
+    "predicted": "કાંકરિયા તળાવ | है | અમદાવાદનું प्रખ્યાત સ્થળ\nप्रખ્યાત | property | સ્થળ\nઅમદાવાદ | property | સ્થળ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "મોઢેરાનું સૂર્ય મંદિર સ્થાપત્યકળા માટે જાણીતું છે.",
+    "predicted": "મોઢેરાનું સૂર્ય મંદિર | જાણીતું છે | સ્થાપત્યકળા માટે\nમોઢેરા | property | સૂર્ય મંદિર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત યુનિવર્સિટી અમદાવાદમાં આવેલી છે.",
+    "predicted": "गुजरात युनिवर्सिटी | है | अहमदाबाद में\nगुजरात | property | युनिवर्सिटी\nअहमदाबाद में | property | है",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ભુજ શહેર કચ્છ જિલ્લાનું મુખ્ય શહેર છે.",
+    "predicted": "ભુજ શહેર | છે | કચ્છ જિલ્લાનું મુખ્ય શહેર\nमुख्य | property | શહેર\nકચ્છ જિલ્લા | property | મુખ્ય શહેર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ડાંગ જિલ્લો ગુજરાતનો સૌથી નાનો જિલ્લો છે.",
+    "predicted": "ડાંગ જિલ્લો | છે | गुजरातનો सबसे छोटी જિલ્લો\nसबसे छोटी | property | જિલ્લો\nगुजरात | property | જિલ્લો",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "પોળોનું જંગલ સાબરકાંઠા જિલ્લામાં આવેલું છે.",
+    "predicted": "પોળોનું જંગલ | આવેલું છે | સાબરકાંઠા જિલ્લામાં\nપોળો | property | જંગલ\nસાબરકાંઠા | property | જિલ્લા",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાતમાં નવરાત્રિ ઉત્સવ ખૂબ ધામધૂમથી ઉજવાય છે.",
+    "predicted": "નવરાત્રિ ઉત્સવ | ઉજવાય છે | NONE\nનવરાત્રિ | property | ઉત્સવ\nबहुत | property | धम्धूम",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "કવિ નર્મદ ગુજરાતી સાહિત્યના મહત્વના કવિ હતા.",
+    "predicted": "કવિ નર્મદ | હતા | ગુજરાતી સાહિત્યના મહત્વના કવિ\nગુજરાતી | property | સાહિત્ય\nમહત્વના | property | કવિ\nસાહિત્યના | property | કવિ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ઝવેરચંદ મેઘાણી ગુજરાતી લોકસાહિત્યના જાણીતા લેખક હતા.",
+    "predicted": "ઝવેરચંદ મેઘાણી | હતા | જાણીતા લેખક\nજાણીતા | property | લેખક\nગુજરાતી લોકસાહિત્યના | property | લેખક",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત રાજ્યનું પ્રાણી એશિયાઈ સિંહ છે.",
+    "predicted": "गुजरात राज्यનું પ્રાણી | છે | एशियाई सिंह\nगुजरात | property | राज्य\nराज्य | property | પ્રાણી\nएशियाई | property | सिंह",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાતનું રાજ્ય પક્ષી સુરખાબ છે.",
+    "predicted": "ગુજરાતનું રાજ્ય | છે | પક્ષી સુરખાબ\nગુજરાત | property | राज्य\nપક્ષી | property | સુરખાબ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "પાલિતાણા જૈન યાત્રાધામ તરીકે પ્રખ્યાત છે.",
+    "predicted": "પાલિતાણા | property | जैन યાત્રાધામ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "શેત્રુંજય પર્વત પાલિતાણા નજીક આવેલો છે.",
+    "predicted": "शेત્રુંજય પર્વત | આવેલો | પાલિતાણા નજીક\nनजदीक | property | પાલિताણા",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "કંડલા બંદર ગુજરાતનું મહત્વનું બંદર છે.",
+    "predicted": "કંડલા બંદર | છે | બંદર\nમહત્વનું | property | બંદર\nગુજરાતનું | property | બંદર",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત રાજ્યમાં કુલ ૩૩ જિલ્લાઓ છે.",
+    "predicted": "कुल ३३ જિલ્લાઓ | છે | NONE\nकुल | property | ३३ જિલ્લાઓ\n३३ | property | જિલ્લાઓ",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "નવસારી શહેર દક્ષિણ ગુજરાતમાં આવેલું છે.",
+    "predicted": "નવસારી શહેર | આવેલું છે | દક્ષિણ ગુજરાતમાં\nનવસારી | property | શહેર\nદક્ષિણ | property | ગુજરાત",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "વલસાડ જિલ્લો ગુજરાતના દક્ષિણ છેડે આવેલો છે.",
+    "predicted": "વલસાડ જિલ્લો | આવેલો | ગુજરાતના દક્ષિણ છેડે\nદક્ષિણ | property | છેડે\nગુજરાત | property | દક્ષિણ છેડે",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ડભોઇ શહેર તેના ઐતિહાસિક કિલ્લા માટે જાણીતું છે.",
+    "predicted": "ડભોઇ શહેર | જાણીતું છે | તેના ઐતિહાસિક કિલ્લા માટે\nઐતિહાસિક | property | કિલ્લા\nડભોઇ | property | શહેર\nતેના | property | કિલ્લા",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત સાહિત્ય અકાદમી ગુજરાતી ભાષાના વિકાસ માટે કાર્ય કરે છે.",
+    "predicted": "गुजरात साहि‍त्य अ‍कादमी | कार्य करे | कार्य\nगुजराती | property | भाषा\nगुजराती भाषा | property | विकास",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "સાપુતારા ગુજરાતનું એકમાત્ર હિલ સ્ટેશન છે.",
+    "predicted": "સાપુતારા | છે | હિલ સ્ટેશન\nગુજરાત | property | હિલ સ્ટેશન\nएक | property | હિલ સ્ટેશન\nહિલ | property | સ્ટેશન",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Gujarati",
+    "sentence": "ગુજરાત રાજ્યની મુખ્ય ભાષા ગુજરાતી છે.",
+    "predicted": "गुजरात राज्य | property | मुख्य भाषा\nमुख्य | property | भाषा\nगुजरात राज्यની मुख्य भाषा | है | ગુજરાતી",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान भारत रो सगळा सु मोटो राज्य है।",
+    "predicted": "राजस्थान | है | भारत रो सगळा सु मोटो राज्य\nसगळा | property | राज्य\nसु | property | राज्य\nमोटो | property | राज्य",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "जयपुर राजस्थान री राजधानी है।",
+    "predicted": "जयपुर | है | राजस्थान री राजधानी\nराजस्थान | property | राजधानी",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "जयपुर नै गुलाबी नगर भी कैवै।",
+    "predicted": "गुलाबी | property | नगर\nजयपुर | property | नगर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "थार रो रेगिस्तान राजस्थान मायं है।",
+    "predicted": "थार | property | रेगिस्तान\nराजस्थान | property | मायं",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "उदयपुर नै झीलां रो शहर कैवै।",
+    "predicted": "उदयपुर | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "जोधपुर नै नीलो शहर भी कैवै।",
+    "predicted": "जोधपुर | property | नीलो शहर\nनीलो | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "मारवाड़ी भाषा राजस्थान रै मारवाड़ क्षेत्र मायं बोलीजै।",
+    "predicted": "मारवाड़ी | property | भाषा\nराजस्थान | property | रै\nमारवाड़ | property | क्षेत्र",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "अरावली पर्वत माळा राजस्थान मायं है।",
+    "predicted": "अरावली पर्वत माळा | है | राजस्थान\nअरावली | property | पर्वत माळा",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "मेहरानगढ़ किलो जोधपुर सहर मायं है।",
+    "predicted": "मेहरानगढ़ किलो जोधपुर सहर | है | मायं\nमेहरानगढ़ | property | किलो\nजोधपुर | property | सहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "पुष्कर मायं हर साल ऊंट रो मेळो लागै।",
+    "predicted": "हर | property | साल\nहर साल | property | लागै",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "बीकानेर अपणी मिठाई अर नमकीन कारण जाणीजै।",
+    "predicted": "NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "चित्तौड़गढ़ रो किलो भारत रा सगळा सु मोटा किलां मायं आवै।",
+    "predicted": "सगळा | property | किलां\nमोटा | property | किलां",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राणा प्रताप मेवाड़ रा प्रसिद्ध राजा हा।",
+    "predicted": "राणा प्रताप | हा | मेवाड़ रा प्रसिद्ध राजा\nप्रसिद्ध | property | राजा\nराणा प्रताप | property | मेवाड़ रा प्रसिद्ध राजा",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "जैसलमेर नै सोनो शहर भी कैवै।",
+    "predicted": "जैसलमेर | property | शहर\nसोनो | property | शहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "हवा महल जयपुर सहर री पिछाण है।",
+    "predicted": "हवा महल जयपुर सहर | है | री पिछाण\nहवा | property | महल\nजयपुर | property | सहर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान मायं ऊंट नै रेगिस्तान रो जहाज कैवै।",
+    "predicted": "राजस्थान | property | मायं",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "अजमेर मायं ख्वाजा साहब री दरगाह है।",
+    "predicted": "अजमेर मायं ख्वाजा साहब री दरगाह | है | NONE\nअजमेर मायं ख्वाजा साहब | property | दरगाह",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "माउंट आबू राजस्थान रो एकलो हिल स्टेशन है।",
+    "predicted": "माउंट आबू राजस्थान रो | है | एकलो हिल स्टेशन\nएकलो | property | हिल स्टेशन",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "दिलवाड़ा रा जैन मंदिर आबू पर्वत माथै है।",
+    "predicted": "दिलवाड़ा रा जैन मंदिर | है | आबू पर्वत माथै\nजैन | property | मंदिर\nआबू | property | पर्वत",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "कोटा शहर चंबल नदी रे किनारे बसियो है।",
+    "predicted": "कोटा शहर | बसियो है | चंबल नदी रे किनारे\n कोटा | property | शहर\nचंबल | property | नदी",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "उदयपुर री पिछोला झील घणी सुंदर है।",
+    "predicted": "उदयपुर री पिछोला झील घणी सुंदर | है | सुंदर\nसुंदर | property | उदयपुर री पिछोला झील घणी",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान री राजभाषा हिंदी है पण राजस्थानी भी बोलीजै।",
+    "predicted": "राजस्थान री राजभाषा | है | हिंदी\nराजस्थानी | बोलीजै | NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "गंगा नहर राजस्थान रा कई जिलां मायं पाणी पूगावै।",
+    "predicted": "गंगा नहर | पूगावै | पाणी\nगंगा नहर | property | राजस्थान रा कई जिलां मायं",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "जालोर सुपारी अर अनार खातर जाणीजै।",
+    "predicted": "NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "भरतपुर मायं केवलादेव राष्ट्रीय उद्यान है।",
+    "predicted": "भरतपुर मायं केवलादेव राष्ट्रीय उद्यान | है | NONE\nराष्ट्रीय | property | उद्यान",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "पाली शहर मारवाड़ क्षेत्र रो हिस्सो है।",
+    "predicted": "पाली शहर | है | मारवाड़ क्षेत्र रो हिस्सो\nपाली | property | शहर\nमारवाड़ | property | क्षेत्र",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "बाड़मेर रो हस्तशिल्प घणो प्रसिद्ध है।",
+    "predicted": "बाड़मेर रो हस्तशिल्प | प्रसिद्ध है | घणो\nरो | property | हस्तशिल्प",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "सांभर झील भारत री सगळा सु मोटी खारे पाणी री झील है।",
+    "predicted": "सांभर झील | है | भारत री सगळा सु मोटी खारे पाणी री झील\nसगळा | property | झील\nमोटी | property | झील\nखारे | property | पाणी\nभारत | property | सगळा सु मोटी खारे पाणी री झील",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "अलवर शहर सरिस्का अभयारण्य खातर जाणीजो जावै।",
+    "predicted": "अलवर | property | शहर\nसरिस्का | property | अभयारण्य",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "टोंक शहर बनास नदी रे किनारे है।",
+    "predicted": "टोंक शहर | है | बनास नदी रे किनारे\nटोंक | property | शहर\nबनास | property | नदी",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान रो लोक नृत्य घूमर घणो मशहूर है।",
+    "predicted": "राजस्थान रो लोक नृत्य घूमर घणो | मशहूर है | NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "करणी माता रो मंदिर बीकानेर नजीक देशनोक मायं है।",
+    "predicted": "करणी माता रो मंदिर | है | बीकानेर नजीक देशनोक मायं\nकरणी माता | property | मंदिर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "सीकर शेखावाटी क्षेत्र रो मुख्य शहर है।",
+    "predicted": "सीकर शेखावाटी क्षेत्र | है | मुख्य शहर\nमुख्य | property | शहर\nशेखावाटी | property | क्षेत्र",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "नागौर अपणी मेहंदी अर पशु मेळा खातर जाणीजै।",
+    "predicted": "NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "रणथंभौर राष्ट्रीय उद्यान बाघां खातर प्रसिद्ध है।",
+    "predicted": "रणथंभौर राष्ट्रीय उद्यान | प्रसिद्ध है | बाघां खातर\nराष्ट्रीय | property | उद्यान\nरणथंभौर | property | उद्यान",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "उदयपुर नै पूरब रो वेनिस भी कैवै।",
+    "predicted": "उदयपुर | पूरब रो वेनिस भी कैवै | NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "जैसलमेर रो किलो सोनार किलो कहीजै।",
+    "predicted": "NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान मायं गणगौर तीज घणा उत्साह सु मनाईजै।",
+    "predicted": "राजस्थान | property | मायं\nमायं | property | गणगौर\nगणगौर | property | तीज\nतीज | property | घणा\nघणा | property | उत्साह\nउत्साह | property | सु",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "मीरा बाई मेवाड़ री प्रसिद्ध भक्त कवयित्री ही।",
+    "predicted": "मीरा बाई | प्रसिद्ध | भक्त कवयित्री\nप्रसिद्ध | property | भक्त कवयित्री\nभक्त | property | कवयित्री",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "पृथ्वीराज चौहान दिल्ली अर अजमेर रा राजा हा।",
+    "predicted": "पृथ्वीराज चौहान | रा राजा हा | दिल्ली अर अजमेर रा राजा\nपृथ्वीराज चौहान | property | दिल्ली अर अजमेर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान रो राज्य पशु ऊंट है।",
+    "predicted": "राजस्थान रो राज्य पशु | है | ऊंट\nराज्य | property | पशु",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान रो राज्य पक्षी गोडावण है।",
+    "predicted": "राजस्थान रो राज्य पक्षी | है | गोडावण\nराज्य | property | पक्षी",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "डूंगरपुर अर बांसवाड़ा नै वागड़ क्षेत्र कैवै।",
+    "predicted": "अर | property | डूंगरपुर\nबांसवाड़ा | property | नै\nवागड़ | property | क्षेत्र",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "हाड़ौती बोली कोटा अर बूंदी क्षेत्र मायं बोलीजै।",
+    "predicted": "हाड़ौती | property | बोली\n कोटा | property | क्षेत्र\nबूंदी | property | क्षेत्र",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "मेवाड़ी बोली उदयपुर क्षेत्र री खास बोली है।",
+    "predicted": "मेवाड़ी बोली | है | उदयपुर क्षेत्र री खास बोली\nमेवाड़ी | property | बोली\nउदयपुर | property | क्षेत्र\nरी | property | खास बोली\nखास | property | बोली",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "ढूंढाड़ी बोली जयपुर क्षेत्र मायं बोलीजै।",
+    "predicted": "NONE",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "शेखावाटी क्षेत्र अपणी हवेलियां खातर जाणीजै।",
+    "predicted": "शेखावाटी | property | क्षेत्र\nअपणी | property | हवेलियां",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "बूंदी अपणी बावड़ियां खातर मशहूर है।",
+    "predicted": "बूंदी अपणी बावड़ियां खातर | है | मशहूर\nमशहूर | property | बूंदी अपणी बावड़ियां खातर",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "चंबल नदी राजस्थान अर मध्यप्रदेश दोनूं मायं बहै।",
+    "predicted": "चंबल नदी | बहै | राजस्थान अर मध्यप्रदेश दोनूं मायं\nदोनूं | property | मायं",
+    "crashed": false,
+    "produced_output": true
+  },
+  {
+    "language": "Rajasthani",
+    "sentence": "राजस्थान रो क्षेत्रफल भारत रा सगळा राज्यां सु ज्यादा है।",
+    "predicted": "राजस्थान रो क्षेत्रफल | है | भारत रा सगळा राज्यां सु ज्यादा\nसगळा | property | राज्यां\nज्यादा | property | क्षेत्रफल",
+    "crashed": false,
+    "produced_output": true
+  }
+]

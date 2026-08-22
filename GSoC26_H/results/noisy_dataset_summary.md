@@ -16,6 +16,15 @@ with flawed few-shot examples (score < 8 from the original 20K set), the noise c
 from genuine semantic mistakes being imitated, not from a model's inability to follow
 instructions. This produces more realistic, instructive training noise.
 
+
+**Correction (added after verification against the actual generated data):** the reasoning above was the intended design, but the real generated dataset does not fully match it. Direct inspection of `noisy_synthetic_data_3b_model.jsonl`'s `generator_model` field shows two models were actually used:
+
+| Generator | Count | % |
+|---|---|---|
+| `openai/gpt-oss-120b` | 13,423 | 86.1% |
+| `meta/llama-3.2-3b-instruct` | 2,158 | 13.9% |
+
+The majority (86.1%) does follow the intended single-strong-model approach described above. The remaining 13.9% used a smaller model -- the exact scenario this document argues against -- for reasons not captured in this document. This is stated here plainly rather than silently corrected, so the record reflects what was actually generated, not just what was intended.
 **Prompt strategy (reusing Aditya's infrastructure from synthetic_data_gen_2.py):**
 - 6 flawed examples (score < 8) as few-shot seeds
 - 3 generation strategies with fixed weights:
@@ -53,3 +62,13 @@ Google Drive (`synthetic_bench_hindie_data_gpt_oss_120b-scored.jsonl` for the
 original 20K; `noisy_synthetic_data_3b_model.jsonl` for the newly generated set).
 
 The generation script is at `src/finetune/generate_noisy_data.py`.
+
+---
+
+## Update — Confirmed Usage in Final Training (Current Status)
+
+Confirmed directly in `prepare_data.py`: the noisy dataset described in this document was successfully generated and merged into the base training pool alongside the original 20K set (`"Loading base training set (20K + noisy 15K, already slug format)..."`), matching this document's ~15,000–16,000 target.
+
+**Final training set actually used for fine-tuning:** 39,621 examples (`exp1_train_optimal_only.jsonl`), confirmed as the exact file referenced in the real training configuration.
+
+**Downstream result:** the extraction model (Gemma 3 4B, QLoRA) fine-tuned on this combined pool reached Wikipedia F1 = 0.692 and Train F1 = 0.795 at the selected learning rate (2e-4), with valid_format_rate of 98–100%.

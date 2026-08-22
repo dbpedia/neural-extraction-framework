@@ -1,0 +1,4514 @@
+{
+  "model_name": "IndIE",
+  "strategy": "reofficial",
+  "sentences": [
+    {
+      "sent_id": "1",
+      "text": "कार्यरूप जगत को देखकर ही शक्तिरूपी माया की सििद्ध होती है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "शक्तिरूपी माया की",
+            "सििद्ध होती है",
+            "कार्यरूप जगत को देखकर ही"
+          ],
+          "matched_golden": "[शक्तिरूपी]{a} माया की --> सििद्ध होती है --> [कार्यरूप]{b} जगत को देखकर [ही]",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "2",
+      "text": "अखिल भारतीय पुलिस डयूटी मीट ( 1958 से ) में अंगुलि चिह्न विज्ञान प्रतियोगिता आयोजित करना .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "अंगुलि चिह्न विज्ञान प्रतियोगिता",
+            "आयोजित करना",
+            "अखिल भारतीय पुलिस डयूटी मीट"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अखिल भारतीय पुलिस डयूटी मीट",
+            "है",
+            "( 1958 से  )"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "अखिल भारतीय पुलिस डयूटी मीट [( 1958 से )]{a} में --> आयोजित करना --> [अंगुलि चिह्न विज्ञान]{b} प्रतियोगिता"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "3",
+      "text": "केन्द्रीय सरकार के विभागों एवं भारत सरकार के उपक्रमों द्वारा भेजे गए विवादित अंगुलि चिह्नों का परीक्षण करना .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "विवादित अंगुलि चिह्नों का",
+            "भेजे गए",
+            "उपक्रमों द्वारा"
+          ]
+        },
+        {
+          "model_extraction": [
+            "उपक्रमों द्वारा",
+            "है",
+            "विभागों"
+          ]
+        },
+        {
+          "model_extraction": [
+            "विभागों",
+            "है",
+            "केन्द्रीय सरकार के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "भारत सरकार के",
+            "है",
+            "केन्द्रीय सरकार के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[विवादित]{a} अंगुलि चिह्नों का --> परीक्षण करना --> [केन्द्रीय सरकार के विभागों एवं] भारत सरकार के उपक्रमों द्वारा"
+        },
+        {
+          "type": "essential",
+          "extraction": "[केन्द्रीय]{b} सरकार के विभागों --> द्वारा भेजे गए --> [विवादित]{a} अंगुलि चिह्नों का"
+        },
+        {
+          "type": "essential",
+          "extraction": "[भारत]{c} सरकार के उपक्रमों --> द्वारा भेजे गए --> [विवादित]{a} अंगुलि चिह्नों का"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 4,
+        "FN": 3
+      }
+    },
+    {
+      "sent_id": "4",
+      "text": "007 के गुप्त नाम से प्रसिद्ध यह एजेंट फ़्लेमिंग की बारह पुस्तकों व दो लघुकथाओं में मौजूद है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 3",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "गुप्त नाम से",
+            "है",
+            "007 के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "बारह पुस्तकों",
+            "है",
+            "फ़्लेमिंग की"
+          ]
+        },
+        {
+          "model_extraction": [
+            "दो लघुकथाओं में",
+            "है",
+            "फ़्लेमिंग की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[007 के गुप्त नाम से प्रसिद्ध]{a} यह एजेंट --> मौजूद है --> [फ़्लेमिंग की]{b} बारह पुस्तकों व दो लघुकथाओं में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "5",
+      "text": "01 अगस्त 1907 को उन्होंने अपनी एक पत्रिका ' साधु ' शुरू की .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "उन्होंने",
+            "की",
+            "एक पत्रिका ' साधु ' शुरू"
+          ]
+        },
+        {
+          "model_extraction": [
+            "01 अगस्त 1907 को",
+            "की",
+            "उन्होंने"
+          ]
+        },
+        {
+          "model_extraction": [
+            "एक पत्रिका ' साधु ' शुरू",
+            "है",
+            "अपनी"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[01 अगस्त 1907 को]{a} उन्होंने --> शुरू की --> [अपनी] [एक पत्रिका]{b} साधु"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "6",
+      "text": "01 अप्रैल 2009 से कंपनी में नवीनतम वेतनमानों को लागू किया गया है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "नवीनतम वेतनमानों को",
+            "लागू किया गया है",
+            "01 अप्रैल 2009 से"
+          ],
+          "matched_golden": "01 अप्रैल 2009 से --> लागू किया गया है --> नवीनतम वेतनमानों को |OR| 01 अप्रैल 2009 से --> property --> लागू किया गया है |OR| 01 अप्रैल 2009 से --> लागू किया गया है --> कंपनी में",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "कंपनी में",
+            "लागू किया गया है",
+            "नवीनतम वेतनमानों को"
+          ],
+          "matched_golden": "[01 अप्रैल 2009 से]{a} कंपनी में --> लागू किया गया है --> नवीनतम वेतनमानों को",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "7",
+      "text": "01 जून : गोधरा ट्रेन कांड की सुनवाई अहमदाबाद के साबरमती केंद्रीय जेल के अंदर शुरू हुई .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सुनवाई",
+            "है",
+            "गोधरा ट्रेन कांड की"
+          ]
+        },
+        {
+          "model_extraction": [
+            "गोधरा ट्रेन कांड की",
+            "है",
+            "01 जून :"
+          ]
+        },
+        {
+          "model_extraction": [
+            "साबरमती केंद्रीय जेल के अंदर",
+            "है",
+            "अहमदाबाद के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[गोधरा]{a} ट्रेन कांड की --> सुनवाई शुरू हुई --> [अहमदाबाद के]{b} साबरमती केंद्रीय जेल के अंदर"
+        },
+        {
+          "type": "essential",
+          "extraction": "01 जून --> सुनवाई शुरू हुई --> [गोधरा]{a} ट्रेन कांड की |OR| 01 जून --> property --> सुनवाई शुरू हुई"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "8",
+      "text": "06 अक्टूबर 1989 को वे सर्वोच्च न्यायालय की न्यायाधीश नियुक्त हुई .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "वे",
+            "नियुक्त हुई",
+            "न्यायाधीश"
+          ],
+          "matched_golden": "[06 अक्टूबर 1989 को]{a} वे [सर्वोच्च न्यायालय की]{b} --> नियुक्त हुई --> न्यायाधीश",
+          "match_type": "satisfied but with a,b"
+        },
+        {
+          "model_extraction": [
+            "06 अक्टूबर 1989 को",
+            "नियुक्त हुई",
+            "वे"
+          ],
+          "matched_golden": "06 अक्टूबर 1989 को --> नियुक्त हुई --> न्यायाधीश |OR| 06 अक्टूबर 1989 को --> नियुक्त हुई --> वे |OR| 06 अक्टूबर 1989 को --> property --> नियुक्त हुई",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "न्यायाधीश",
+            "है",
+            "सर्वोच्च न्यायालय की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[06 अक्टूबर 1989 को]{a} वे [सर्वोच्च न्यायालय की]{b} --> नियुक्त हुई --> न्यायाधीश",
+          "needs": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "9",
+      "text": "06 प्रतिशत ऐसे लोग थे जिनका कोई विशेष धर्म नहीं था .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "06 प्रतिशत",
+            "ऐसे लोग थे",
+            "जिनका कोई विशेष धर्म नहीं था"
+          ],
+          "matched_golden": "06 प्रतिशत --> [ऐसे] लोग थे --> जिनका कोई विशेष धर्म नहीं था",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "10",
+      "text": "1 अक्टूबर 1854 को इम्पीरियल पोस्टल सर्विस द्वारा पहला डाक टिकट जारी किया गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "इम्पीरियल पोस्टल सर्विस द्वारा",
+            "जारी किया गया",
+            "पहला डाक टिकट"
+          ],
+          "matched_golden": "[1 अक्टूबर 1854 को]{a} इम्पीरियल पोस्टल सर्विस द्वारा --> जारी किया गया --> [पहला]{b} डाक टिकट",
+          "match_type": "satisfied but with a"
+        },
+        {
+          "model_extraction": [
+            "1 अक्टूबर 1854 को",
+            "जारी किया गया",
+            "इम्पीरियल पोस्टल सर्विस द्वारा"
+          ],
+          "matched_golden": "1 अक्टूबर 1854 को --> जारी किया गया --> [पहला]{b} डाक टिकट |OR| 1 अक्टूबर 1854 को --> जारी किया गया --> [पहला डाक टिकट] इम्पीरियल पोस्टल सर्विस द्वारा |OR| 1 अक्टूबर 1854 को --> property --> जारी किया गया",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "11",
+      "text": "1 अक्टूबर 1953 को आंध्र ने कर्नूल को अपनी राजधानी के साथ राज्य का दर्जा पाया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "आंध्र ने",
+            "पाया",
+            "कर्नूल को"
+          ],
+          "matched_golden": "[1 अक्टूबर 1953 को]{a} आंध्र ने --> पाया --> कर्नूल [को] [अपनी राजधानी]{c}",
+          "match_type": "satisfied but with a,c"
+        },
+        {
+          "model_extraction": [
+            "दर्जा",
+            "पाया",
+            "1 अक्टूबर 1953 को"
+          ],
+          "matched_golden": "1 अक्टूबर 1953 को --> पाया --> दर्जा |OR| 1 अक्टूबर 1953 को --> property --> पाया",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "दर्जा",
+            "है",
+            "राज्य का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[1 अक्टूबर 1953 को]{a} आंध्र ने --> पाया --> कर्नूल [को] [अपनी राजधानी]{c}",
+          "needs": [
+            "a",
+            "c"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "[1 अक्टूबर 1953 को]{a} आंध्र ने --> दर्जा पाया --> राज्य का"
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "12",
+      "text": "1 अक्टूबर 2008 को न्यूजीलैंड और ऑस्ट्रेलिया में दूसरा सीज़न ज़ारी किया गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "दूसरा सीज़न",
+            "ज़ारी किया गया",
+            "1 अक्टूबर 2008 को"
+          ],
+          "matched_golden": "1 अक्टूबर 2008 को --> ज़ारी किया गया --> [दूसरा]{c} सीज़न |OR| 1 अक्टूबर 2008 को --> property --> ज़ारी किया गया |OR| 1 अक्टूबर 2008 को --> ज़ारी किया गया --> [न्यूजीलैंड और]{b} ऑस्ट्रेलिया में",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "न्यूजीलैंड",
+            "ज़ारी किया गया",
+            "1 अक्टूबर 2008 को"
+          ]
+        },
+        {
+          "model_extraction": [
+            "ऑस्ट्रेलिया में",
+            "ज़ारी किया गया",
+            "1 अक्टूबर 2008 को"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[1 अक्टूबर 2008 को]{a} [न्यूजीलैंड और]{b} ऑस्ट्रेलिया में --> ज़ारी किया गया --> [दूसरा]{c} सीज़न"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "13",
+      "text": "1 अक्टूबर को , रॉबर्ट आइगर ने सीईओ के रूप में माइकल आइजनर का स्थान लिया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "रॉबर्ट आइगर ने",
+            "लिया",
+            "स्थान"
+          ]
+        },
+        {
+          "model_extraction": [
+            "1 अक्टूबर को ,",
+            "लिया",
+            "रॉबर्ट आइगर ने"
+          ]
+        },
+        {
+          "model_extraction": [
+            "स्थान",
+            "है",
+            "माइकल आइजनर का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[1 अक्टूबर को ,]{a} रॉबर्ट आइगर ने --> स्थान लिया --> सीईओ के रूप में"
+        },
+        {
+          "type": "essential",
+          "extraction": "[1 अक्टूबर को ,]{a} रॉबर्ट आइगर ने --> स्थान लिया --> माइकल आइजनर का"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "14",
+      "text": "1 अक्टूबर , 1960 को यह देश इंग्लैंड के शासन से आजाद हुआ .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "यह देश",
+            "आजाद हुआ",
+            "1 अक्टूबर , 1960 को"
+          ]
+        },
+        {
+          "model_extraction": [
+            "शासन से",
+            "आजाद हुआ",
+            "इंग्लैंड के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[1 अक्टूबर , 1960 को]{a} यह देश --> आजाद हुआ --> [इंग्लैंड के]{b} शासन से"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "15",
+      "text": "1 अगस्त 1915 में चन्द्रसिंह को अन्य गढ़वाली सैनिकों के साथ अंग्रेजों द्वारा फ्रांस भेज दिया गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "अंग्रेजों द्वारा",
+            "भेज दिया गया",
+            "चन्द्रसिंह को"
+          ],
+          "matched_golden": "अंग्रेजों द्वारा --> भेज दिया गया --> चन्द्रसिंह को |OR| अंग्रेजों द्वारा --> भेज दिया गया --> फ्रांस",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "1 अगस्त 1915 में",
+            "भेज दिया गया",
+            "अन्य गढ़वाली सैनिकों के साथ"
+          ]
+        },
+        {
+          "model_extraction": [
+            "फ्रांस",
+            "भेज दिया गया",
+            "अन्य गढ़वाली सैनिकों के साथ"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[1 अगस्त 1915 में]{a} चन्द्रसिंह को --> भेज दिया गया --> फ्रांस"
+        },
+        {
+          "type": "essential",
+          "extraction": "[अन्य] [गढ़वाली]{b} सैनिकों के साथ --> भेज दिया गया --> चन्द्रसिंह को"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "16",
+      "text": "1 अप्रैल 1946 को इसे स्वायत्तशासी प्रान्त घोषित किया गया और गोविन्द बल्लभ पन्त इसके पहले मुख्य मन्त्री बने .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "इसे",
+            "घोषित किया गया",
+            "1 अप्रैल 1946 को"
+          ],
+          "matched_golden": "1 अप्रैल 1946 को --> घोषित किया गया --> [स्वायत्तशासी]{b} प्रान्त |OR| 1 अप्रैल 1946 को --> घोषित किया गया --> इसे |OR| 1 अप्रैल 1946 को --> property --> घोषित किया गया",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "गोविन्द बल्लभ पन्त",
+            "बने",
+            "मुख्य मन्त्री"
+          ],
+          "matched_golden": "गोविन्द बल्लभ पन्त --> बने --> [इसके पहले]{c} मुख्य मन्त्री |OR| गोविंद बल्लभ पंत --> बने --> [इसके पहले]{c} मुख्य मंत्री",
+          "match_type": "satisfied but with c"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "इसके पहले",
+            "बने",
+            "घोषित किया गया"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[1 अप्रैल 1946 को]{a} इसे --> घोषित किया गया --> [स्वायत्तशासी]{b} प्रान्त"
+        },
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "गोविन्द बल्लभ पन्त --> बने --> [इसके पहले]{c} मुख्य मन्त्री |OR| गोविंद बल्लभ पंत --> बने --> [इसके पहले]{c} मुख्य मंत्री",
+          "needs": [
+            "c"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "17",
+      "text": "हिन्दी प्रचार सभा एक आन्दोलन थी जो भारत के स्वतन्त्रता आन्दोलन के साथ ही आरम्भ हुई .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "हिन्दी प्रचार सभा",
+            "एक आन्दोलन थी",
+            "जो आरम्भ हुई"
+          ]
+        },
+        {
+          "model_extraction": [
+            "एक आन्दोलन",
+            "आरम्भ हुई",
+            "स्वतन्त्रता आन्दोलन के साथ ही"
+          ]
+        },
+        {
+          "model_extraction": [
+            "स्वतन्त्रता आन्दोलन के साथ ही",
+            "है",
+            "भारत के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "हिन्दी प्रचार सभा --> थी --> एक आन्दोलन"
+        },
+        {
+          "type": "essential",
+          "extraction": "हिन्दी प्रचार सभा --> आरम्भ हुई --> [भारत के]{a} स्वतन्त्रता आन्दोलन के साथ |OR| जो --> आरम्भ हुई --> [भारत के]{a} स्वतन्त्रता आन्दोलन के साथ"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "18",
+      "text": "बाल्यकाल से ही कर्मा के चेहरे पर एक अनूठी आभा दिखाई पड़ती थी .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "एक अनूठी आभा",
+            "दिखाई पड़ती थी",
+            "बाल्यकाल से ही"
+          ],
+          "matched_golden": "बाल्यकाल से ही --> property --> [कर्मा के]{b} चेहरे पर |OR| बाल्यकाल से ही --> दिखाई पड़ती थी --> [कर्मा के]{b} चेहरे पर |OR| बाल्यकाल से ही --> दिखाई पड़ती थी --> [एक अनूठी]{c} आभा",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "चेहरे पर",
+            "दिखाई पड़ती थी",
+            "कर्मा के"
+          ],
+          "matched_golden": "कर्मा के --> property --> चेहरे पर |OR| कर्मा के --> दिखाई पड़ती थी --> चेहरे पर",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[बाल्यकाल से ही]{a} [कर्मा के]{b} चेहरे पर --> दिखाई पड़ती थी --> [एक अनूठी]{c} आभा |OR| बाल्यकाल से ही --> दिखाई पड़ती थी --> [कर्मा के]{b} चेहरे पर [एक अनूठी]{c} आभा"
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "19",
+      "text": "तब से अब तक , सोनू भारतीय संगीत जगत में एक प्रमुख हस्ती बन चुके हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "सोनू",
+            "बन चुके हैं",
+            "एक प्रमुख हस्ती"
+          ],
+          "matched_golden": "सोनू [भारतीय संगीत जगत में]{a} --> बन चुके हैं --> एक प्रमुख हस्ती |OR| [सोनू]{a} [भारतीय]{b} संगीत जगत में --> बन चुके हैं --> एक प्रमुख हस्ती",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "तब से",
+            "बन चुके हैं",
+            "अब तक ,"
+          ]
+        },
+        {
+          "model_extraction": [
+            "भारतीय संगीत जगत में",
+            "बन चुके हैं",
+            "अब तक ,"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "सोनू [भारतीय संगीत जगत में]{a} --> बन चुके हैं --> एक प्रमुख हस्ती |OR| [सोनू]{a} [भारतीय]{b} संगीत जगत में --> बन चुके हैं --> एक प्रमुख हस्ती",
+          "needs": [
+            "a"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "सोनू --> बन चुके हैं --> तब से [अब तक]{c}"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "20",
+      "text": "कोप्पेन मौसम वर्गीकरण मौसम आकलन के लिए प्रयोग किया जाने वाला सबसे अधिक प्रयोगनीय मौसम वर्गीकरण है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "कोप्पेन मौसम वर्गीकरण --> है --> [सबसे अधिक प्रयोगनीय]{a} मौसम वर्गीकरण"
+        },
+        {
+          "type": "essential",
+          "extraction": "कोप्पेन मौसम वर्गीकरण --> property --> मौसम आकलन के लिए [प्रयोग किया जाने वाला]"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "21",
+      "text": "बर्लिन पर क़ब्ज़ा करने के बाद सोवियत दस्तों ने चेकोस्लोवाकिया की राजधानी प्राग को आज़ाद कराया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "सोवियत दस्तों ने",
+            "आज़ाद कराया",
+            "प्राग को"
+          ],
+          "matched_golden": "सोवियत दस्तों ने --> आज़ाद कराया --> [चेकोस्लोवाकिया की राजधानी]{a} प्राग को",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "क़ब्ज़ा करने के बाद",
+            "आज़ाद कराया",
+            "बर्लिन पर"
+          ]
+        },
+        {
+          "model_extraction": [
+            "प्राग को",
+            "है",
+            "राजधानी"
+          ]
+        },
+        {
+          "model_extraction": [
+            "राजधानी",
+            "है",
+            "चेकोस्लोवाकिया की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "सोवियत दस्तों ने --> आज़ाद कराया --> [चेकोस्लोवाकिया की राजधानी]{a} प्राग को",
+          "needs": [
+            "a"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "सोवियत दस्तों ने --> property --> बर्लिन पर क़ब्ज़ा [करने के बाद] |OR| बर्लिन पर क़ब्ज़ा [करने के बाद] --> आज़ाद कराया --> सोवियत दस्तों ने |OR| बर्लिन पर क़ब्ज़ा [करने के बाद] --> आज़ाद कराया --> [चेकोस्लोवाकिया की राजधानी]{a} प्राग को"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "22",
+      "text": "योग एवं शिक्षा के क्षेत्र में राष्ट्रपति से पद्म श्री सम्मान प्राप्त करने वाले वे प्रथम भारतीय हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 3",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "वे",
+            "प्रथम भारतीय हैं",
+            "क्षेत्र में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[योग एवं]{a} शिक्षा के क्षेत्र में --> [वे] प्रथम भारतीय हैं --> [राष्ट्रपति से]{b} पद्म श्री सम्मान प्राप्त करने वाले [वे]"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "23",
+      "text": "सभी बच्चों को स्कूल की पढ़ाई पूरी करने तक वित्तीय सहायता भी दी जाती है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "वित्तीय सहायता भी",
+            "दी जाती है",
+            "पूरी करने तक"
+          ]
+        },
+        {
+          "model_extraction": [
+            "सभी बच्चों को",
+            "पूरी करने तक",
+            "दी जाती है"
+          ]
+        },
+        {
+          "model_extraction": [
+            "पूरी करने तक दी जाती है",
+            "पढ़ाई",
+            "स्कूल की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[सभी] बच्चों को --> [भी] दी जाती है --> [वित्तीय]{b} सहायता [भी]"
+        },
+        {
+          "type": "essential",
+          "extraction": "[स्कूल की]{a} पढ़ाई पूरी करने तक --> [भी] दी जाती है --> [वित्तीय]{b} सहायता [भी]"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "24",
+      "text": "आज भी यह स्थान क्षेत्र के लोगों के लिए दर्शनीय केन्द्र है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह स्थान",
+            "दर्शनीय केन्द्र है",
+            "आज भी"
+          ],
+          "matched_golden": "यह स्थान --> दर्शनीय केन्द्र है --> आज भी",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "दर्शनीय केन्द्र",
+            "है",
+            "लोगों के लिए"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "यह स्थान --> दर्शनीय केन्द्र है --> [क्षेत्र के]{a} लोगों के लिए"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "25",
+      "text": "इस सम्बन्ध में पाणिनीय व्याकरण ही वेदाङ्ग का प्रतिनिधित्व करता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "पाणिनीय व्याकरण ही",
+            "प्रतिनिधित्व करता है",
+            "इस सम्बन्ध में"
+          ],
+          "matched_golden": "इस सम्बन्ध में --> [प्रतिनिधित्व]{a} करता है --> पाणिनीय व्याकरण [ही]",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "वेदाङ्ग का",
+            "प्रतिनिधित्व करता है",
+            "पाणिनीय व्याकरण ही"
+          ],
+          "matched_golden": "पाणिनीय व्याकरण [ही] --> [प्रतिनिधित्व]{a} करता है --> वेदाङ्ग का",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "26",
+      "text": "मैं शब्द की आत्मा समझकर ही इस श्रेष्ठ तत्त्व की उपासना करता हूं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "मैं",
+            "उपासना करता हूं",
+            "इस श्रेष्ठ तत्त्व की"
+          ],
+          "matched_golden": "मैं --> उपासना करता हूं --> [इस श्रेष्ठ]{b} तत्त्व की",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "इस श्रेष्ठ तत्त्व की उपासना करता हूं",
+            "समझकर ही",
+            "आत्मा"
+          ]
+        },
+        {
+          "model_extraction": [
+            "आत्मा",
+            "है",
+            "शब्द की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[शब्द की]{a} आत्मा समझकर [ही] --> उपासना करता हूं --> मैं"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "27",
+      "text": "हिमाचल प्रदेश में बहने वाली पांच नदियों में से चार का उल्लेख ऋग्वेद में मिलता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "हिमाचल प्रदेश में",
+            "बहने वाली",
+            "पांच नदियों में से"
+          ],
+          "matched_golden": "हिमाचल प्रदेश में --> बहने वाली --> पांच नदियों में [से]",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "उल्लेख",
+            "मिलता है",
+            "पांच नदियों में से"
+          ]
+        },
+        {
+          "model_extraction": [
+            "ऋग्वेद में",
+            "मिलता है",
+            "उल्लेख"
+          ]
+        },
+        {
+          "model_extraction": [
+            "उल्लेख",
+            "है",
+            "चार का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[हिमाचल प्रदेश में बहने वाली पांच नदियों में से]{a} चार का --> उल्लेख मिलता है --> ऋग्वेद में"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "28",
+      "text": "उन्होंने बच्चे को देने से स्पष्ट इंकार कर दिया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "उन्होंने",
+            "स्पष्ट इंकार कर दिया",
+            "बच्चे को देने से"
+          ],
+          "matched_golden": "उन्होंने --> [स्पष्ट] इंकार कर दिया --> [बच्चे को]{a} देने से",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "29",
+      "text": "शिक्षा का तुलनात्मक अध्ययन सभी सामाजिक विज्ञानों से जुड़ा है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "तुलनात्मक अध्ययन",
+            "जुड़ा है",
+            "सभी सामाजिक विज्ञानों से"
+          ],
+          "matched_golden": "[शिक्षा का]{a} तुलनात्मक अध्ययन --> जुड़ा है --> सभी सामाजिक विज्ञानों से",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "तुलनात्मक अध्ययन",
+            "है",
+            "शिक्षा का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[शिक्षा का]{a} तुलनात्मक अध्ययन --> जुड़ा है --> सभी सामाजिक विज्ञानों से",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "30",
+      "text": "गुजरात क्वीन एक्स्प्रेस 9110 भारतीय रेल द्वारा संचालित एक मेल एक्स्प्रेस ट्रेन है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "9110",
+            "भारतीय रेल द्वारा",
+            "संचालित"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "गुजरात क्वीन एक्स्प्रेस [9110]{a} --> है --> भारतीय रेल द्वारा संचालित [एक] मेल एक्स्प्रेस ट्रेन"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "31",
+      "text": "वर्तमान में यह शहर पश्चिम बंगाल का प्रमुख हिल स्टेशन है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 4",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "यह शहर",
+            "प्रमुख हिल स्टेशन है",
+            "वर्तमान में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[वर्तमान में]{b} यह शहर --> है --> [पश्चिम बंगाल का]{a} प्रमुख हिल स्टेशन"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "32",
+      "text": "सिलकोट , गंगोलीहाट तहसील में भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के पिथोरागढ जिले का एक गाँव है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 3",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "एक गाँव",
+            "है",
+            "उत्तराखण्ड राज्य के अन्तर्गत"
+          ]
+        },
+        {
+          "model_extraction": [
+            "एक गाँव",
+            "है",
+            "पिथोरागढ जिले का"
+          ]
+        },
+        {
+          "model_extraction": [
+            "उत्तराखण्ड राज्य के अन्तर्गत",
+            "है",
+            "भारत के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "पिथोरागढ जिले का",
+            "है",
+            "कुमाऊँ मण्डल के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "सिलकोट , गंगोलीहाट तहसील में [भारत के उत्तराखण्ड राज्य के अन्तर्गत कुमाऊँ मण्डल के]{a} पिथोरागढ --> एक गाँव है --> जिले का"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 4,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "33",
+      "text": "एयर लाइन के तकनीकी केंद्र को तिरुवनंतपुरम में स्थानापन्न करना है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "तकनीकी केंद्र को",
+            "स्थानापन्न करना है",
+            "तिरुवनंतपुरम में"
+          ],
+          "matched_golden": "[एयर लाइन के]{a} तकनीकी केंद्र को --> स्थानापन्न करना है --> तिरुवनंतपुरम में",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "तकनीकी केंद्र को",
+            "है",
+            "एयर लाइन के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[एयर लाइन के]{a} तकनीकी केंद्र को --> स्थानापन्न करना है --> तिरुवनंतपुरम में",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "34",
+      "text": "चीफ कोर्ट के मुख्य न्यायाधीश सर लुइस शर्ट और विशेष न्यायाधीश मोहम्मद रजा के सामने दोनों मामले पेश हुए .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "दोनों मामले",
+            "पेश हुए",
+            "सर लुइस शर्ट"
+          ],
+          "matched_golden": "[चीफ कोर्ट के मुख्य न्यायाधीश]{c} सर लुइस शर्ट --> पेश हुए --> दोनों मामले",
+          "match_type": "satisfied but with c"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सर लुइस शर्ट",
+            "है",
+            "मुख्य न्यायाधीश"
+          ]
+        },
+        {
+          "model_extraction": [
+            "विशेष न्यायाधीश मोहम्मद रजा के सामने",
+            "है",
+            "मुख्य न्यायाधीश"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[चीफ कोर्ट के मुख्य न्यायाधीश सर लुइस शर्ट और]{a} [विशेष न्यायाधीश]{b} मोहम्मद रजा के सामने --> पेश हुए --> दोनों मामले"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "35",
+      "text": "किसी बीमारी की वजह से बाशो की मृत्यु 28 नवम्बर 1694 को हो गई .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "मृत्यु",
+            "हो गई",
+            "किसी बीमारी की वजह से"
+          ]
+        },
+        {
+          "model_extraction": [
+            "28 नवम्बर 1694 को",
+            "हो गई",
+            "मृत्यु"
+          ]
+        },
+        {
+          "model_extraction": [
+            "मृत्यु",
+            "है",
+            "बाशो की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "बाशो की --> मृत्यु हो गई --> 28 नवम्बर 1694 को"
+        },
+        {
+          "type": "essential",
+          "extraction": "बाशो की --> मृत्यु हो गई --> [किसी] बीमारी [की वजह] से"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "36",
+      "text": "जब कोई मतैक्य नहीं हुआ तो विक्रम ने एक हल सोचा .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "विक्रम ने",
+            "सोचा",
+            "एक हल"
+          ],
+          "matched_golden": "विक्रम ने --> सोचा --> एक हल",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "तो",
+            "नहीं हुआ",
+            "कोई मतैक्य"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "विक्रम ने --> सोचा --> जब कोई मतैक्य नहीं हुआ |OR| जब कोई मतैक्य नहीं हुआ --> सोचा --> एक हल"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "37",
+      "text": "सन 1696 में एक बार फिर शाही सेना से पंचायती सेना का मुकाबला हुआ .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "शाही सेना से",
+            "मुकाबला हुआ फिर",
+            "पंचायती सेना का"
+          ],
+          "matched_golden": "शाही सेना से --> मुकाबला हुआ [फिर] --> पंचायती सेना का",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सन 1696 में",
+            "मुकाबला हुआ फिर",
+            "एक बार"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "सन 1696 में --> मुकाबला हुआ [फिर] --> पंचायती सेना का"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "38",
+      "text": "मर्लगोंड , कुभीर मण्डल में भारत के आन्ध्रप्रदेश राज्य के अन्तर्गत के अदिलाबादु जिले का एक गाँव है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 4",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "अदिलाबादु जिले का",
+            "है",
+            "आन्ध्रप्रदेश राज्य के अन्तर्गत के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "आन्ध्रप्रदेश राज्य के अन्तर्गत के",
+            "है",
+            "भारत के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "मर्लगोंड --> एक गाँव है --> [अदिलाबादु]{a} जिले का"
+        },
+        {
+          "type": "essential",
+          "extraction": "मर्लगोंड --> एक गाँव है --> [कुभीर]{b} मण्डल में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "39",
+      "text": "बाद में व्याकरण के दर्शन पक्ष पर अनेक ग्रन्थ लिखे गये .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "अनेक ग्रन्थ",
+            "लिखे गये",
+            "बाद में"
+          ],
+          "matched_golden": "बाद में --> लिखे गये --> अनेक ग्रन्थ",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "दर्शन पक्ष पर",
+            "लिखे गये",
+            "व्याकरण के"
+          ],
+          "matched_golden": "व्याकरण के --> property --> दर्शन पक्ष पर |OR| व्याकरण के --> लिखे गये --> दर्शन पक्ष पर",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[व्याकरण के]{a} दर्शन पक्ष पर --> लिखे गये --> अनेक ग्रन्थ"
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "40",
+      "text": "1975 में इलाहाबाद में नवनिर्मित मेहता अनुसंधान संस्थान में निदेशक बने .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "निदेशक",
+            "बने",
+            "1975 में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "इलाहाबाद में",
+            "बने",
+            "नवनिर्मित मेहता अनुसंधान संस्थान में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[1975 में]{a} [इलाहाबाद में]{b} नवनिर्मित मेहता --> निदेशक बने --> अनुसंधान संस्थान में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "41",
+      "text": "उनके नाम पर इस जगह का नाम रुस्तम खान रखा गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "नाम",
+            "रखा गया",
+            "नाम पर"
+          ]
+        },
+        {
+          "model_extraction": [
+            "नाम पर",
+            "है",
+            "उनके"
+          ]
+        },
+        {
+          "model_extraction": [
+            "नाम",
+            "है",
+            "इस जगह का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "उनके नाम पर --> रखा गया --> जगह का नाम [रुस्तम खान]{a}"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "42",
+      "text": "कुछ लोग इस आपाधापी से दूर अपने घर पर ही रहना पसंद करते हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "इस आपाधापी से दूर",
+            "रहना",
+            "घर पर ही"
+          ]
+        },
+        {
+          "model_extraction": [
+            "घर पर ही",
+            "है",
+            "अपने"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "कुछ लोग --> पसंद करते हैं --> [इस आपाधापी से दूर]{b} [अपने घर पर ही]{a} रहना"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "43",
+      "text": "मार्च 2001 में एक बार फिर अमरीका के अट्ठाइसवें रक्षा सचिव के रूप में उनकी वापसी हुई .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "मार्च 2001 में",
+            "वापसी हुई फिर",
+            "एक बार"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अट्ठाइसवें रक्षा सचिव के रूप में",
+            "वापसी हुई फिर",
+            "उनकी"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अट्ठाइसवें रक्षा सचिव के रूप में",
+            "है",
+            "अमरीका के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[अमरीका के]{a} [अट्ठाइसवें]{b} रक्षा सचिव के रूप में --> वापसी हुई --> उनकी"
+        },
+        {
+          "type": "essential",
+          "extraction": "मार्च 2001 में --> वापसी हुई --> उनकी"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "44",
+      "text": "इसकी रचना की आधारशिला 3 मार्च 1884 को सर वाईकर के द्वारा रखी गयी थी .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "सर वाईकर के द्वारा",
+            "आधारशिला रखी गयी थी",
+            "3 मार्च 1884 को"
+          ],
+          "matched_golden": "3 मार्च 1884 को --> आधारशिला रखी गयी थी --> सर वाईकर के द्वारा",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "इसकी रचना की",
+            "आधारशिला रखी गयी थी",
+            "3 मार्च 1884 को"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[इसकी]{a} रचना की --> आधारशिला रखी गयी थी --> सर वाईकर के द्वारा"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "45",
+      "text": "इस तकनीक के लिए वह विभिन्न टेलीविजन कंपनियों से संपर्क में है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "वह",
+            "संपर्क में है",
+            "इस तकनीक के लिए"
+          ],
+          "matched_golden": "इस तकनीक के लिए --> संपर्क में है --> विभिन्न टेलीविजन कंपनियों से |OR| इस तकनीक के लिए --> संपर्क में है --> वह",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "संपर्क में",
+            "है",
+            "विभिन्न टेलीविजन कंपनियों से"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "वह --> संपर्क में है --> विभिन्न टेलीविजन कंपनियों से"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "46",
+      "text": "त्रिदेवनाथ बैनर्जी को चिकित्सा विज्ञान के क्षेत्र में सन 1961 में पद्म भूषण से सम्मानित किया गया था .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "त्रिदेवनाथ बैनर्जी को",
+            "सम्मानित किया गया था",
+            "क्षेत्र में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "क्षेत्र में",
+            "है",
+            "चिकित्सा विज्ञान के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "त्रिदेवनाथ बैनर्जी को [चिकित्सा विज्ञान के क्षेत्र में]{a} --> सम्मानित किया गया था --> पद्म भूषण से"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "47",
+      "text": "मराठी के अतिरिक्त उन्होने हिन्दी फिल्मों के लिए भी संगीत रचना की .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "हिन्दी फिल्मों के लिए भी",
+            "संगीत रचना की",
+            "उन्होने"
+          ],
+          "matched_golden": "उन्होने --> संगीत रचना की --> [मराठी के अतिरिक्त]{a} हिन्दी फिल्मों के लिए [भी]",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "उन्होने",
+            "संगीत रचना की",
+            "मराठी के अतिरिक्त"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "उन्होने --> संगीत रचना की --> [मराठी के अतिरिक्त]{a} हिन्दी फिल्मों के लिए [भी]",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "48",
+      "text": "काइटिन का औद्योगिक रूप से अनेक प्रक्रियाओं में उपयोग किया जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "औद्योगिक रूप से",
+            "उपयोग किया जाता है",
+            "अनेक प्रक्रियाओं में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "औद्योगिक रूप से",
+            "है",
+            "काइटिन का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "काइटिन का --> उपयोग किया जाता है --> [औद्योगिक रूप से]{a} अनेक प्रक्रियाओं में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "49",
+      "text": "हिंदूओं और मुस्लिमों के सभी पर्व मिलजुल कर मनाए जाते हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सभी पर्व",
+            "है",
+            "हिंदूओं"
+          ]
+        },
+        {
+          "model_extraction": [
+            "सभी पर्व",
+            "है",
+            "मुस्लिमों के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[हिंदूओं और मुस्लिमों के]{a} सभी पर्व --> मनाए जाते हैं --> मिलजुल कर"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "50",
+      "text": "द डार्क नाईट राइसेस को अमेरिका , संयुक्त राजशाही व कनाडा में 20 जुलाई 2012 को रिलीज़ किया गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "द डार्क नाईट राइसेस को",
+            "रिलीज़ किया गया",
+            "अमेरिका ,"
+          ],
+          "matched_golden": "द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> अमेरिका [, संयुक्त राजशाही व कनाडा में]{a}",
+          "match_type": "satisfied but with a"
+        },
+        {
+          "model_extraction": [
+            "20 जुलाई 2012 को",
+            "रिलीज़ किया गया",
+            "अमेरिका ,"
+          ],
+          "matched_golden": "द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> 20 जुलाई 2012 को |OR| अमेरिका [, संयुक्त राजशाही व कनाडा में]{b} --> रिलीज़ किया गया --> 20 जुलाई 2012 को",
+          "match_type": "satisfied but with b"
+        },
+        {
+          "model_extraction": [
+            "20 जुलाई 2012 को",
+            "रिलीज़ किया गया",
+            "संयुक्त राजशाही"
+          ],
+          "matched_golden": "20 जुलाई 2012 को --> रिलीज़ किया गया --> संयुक्त राजशाही [व कनाडा में]{d}",
+          "match_type": "satisfied but with d"
+        },
+        {
+          "model_extraction": [
+            "20 जुलाई 2012 को",
+            "रिलीज़ किया गया",
+            "कनाडा में"
+          ],
+          "matched_golden": "20 जुलाई 2012 को --> रिलीज़ किया गया --> [व] कनाडा में",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "द डार्क नाईट राइसेस को --> रिलीज़ किया गया --> अमेरिका [, संयुक्त राजशाही व कनाडा में]{a}",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 4,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "51",
+      "text": "यह हर साल जर्मनी के फ्रैंकफर्ट शहर मे लगाया जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह",
+            "लगाया जाता है",
+            "हर साल"
+          ],
+          "matched_golden": "यह --> लगाया जाता है --> हर साल |OR| [जर्मनी के]{a} फ्रैंकफर्ट शहर मे --> लगाया जाता है --> हर साल |OR| [जर्मनी के]{a} फ्रैंकफर्ट शहर में --> लगाया जाता है --> हर साल",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "फ्रैंकफर्ट शहर मे",
+            "लगाया जाता है",
+            "जर्मनी के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "यह --> लगाया जाता है --> [जर्मनी के]{a} फ्रैंकफर्ट शहर मे |OR| यह --> लगाया जाता है --> [जर्मनी के]{a} फ्रैंकफर्ट शहर में"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "52",
+      "text": "द्रौपदी ने आगे बढ़ कर अर्जुन के गले में वरमाला डाल दिया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "द्रौपदी ने",
+            "वरमाला डाल दिया",
+            "गले में"
+          ],
+          "matched_golden": "द्रौपदी ने [आगे बढ़ कर] --> वरमाला डाल दिया --> [आगे बढ़ कर] [अर्जुन के]{a} गले में",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "गले में",
+            "है",
+            "अर्जुन के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "द्रौपदी ने [आगे बढ़ कर] --> वरमाला डाल दिया --> [आगे बढ़ कर] [अर्जुन के]{a} गले में",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "53",
+      "text": "यह त्यौहार पूरे उत्तर भारत में राम नवमी के दौरान मनाया जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह त्यौहार",
+            "मनाया जाता है",
+            "पूरे उत्तर भारत में"
+          ],
+          "matched_golden": "पूरे उत्तर भारत में --> मनाया जाता है --> यह त्यौहार",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "राम नवमी के दौरान",
+            "मनाया जाता है",
+            "पूरे उत्तर भारत में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "यह [त्यौहार]{b} [पूरे उत्तर भारत में]{a} --> मनाया जाता है --> राम नवमी के दौरान"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "54",
+      "text": "तटीय कर्नाटक के भोजन में समुद्री भोजन , नारियल और नारियल तेल का व्यापक उपयोग उल्लेखनीय है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "व्यापक उपयोग",
+            "उल्लेखनीय है",
+            "भोजन में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "भोजन में",
+            "है",
+            "तटीय कर्नाटक के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "व्यापक उपयोग",
+            "है",
+            "समुद्री भोजन ,"
+          ]
+        },
+        {
+          "model_extraction": [
+            "व्यापक उपयोग",
+            "है",
+            "नारियल"
+          ]
+        },
+        {
+          "model_extraction": [
+            "व्यापक उपयोग",
+            "है",
+            "नारियल तेल का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[तटीय]{b} [कर्नाटक के]{c} भोजन में --> उल्लेखनीय है --> [समुद्री भोजन , नारियल और]{a} नारियल तेल का [व्यापक] उपयोग"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 5,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "55",
+      "text": "कार्ल ने वहां अध्ययन के साथ ही वहां के उपेक्षित जीवविज्ञान उद्यान को भी सुधारा .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "कार्ल ने",
+            "सुधारा",
+            "उपेक्षित जीवविज्ञान उद्यान को भी"
+          ],
+          "matched_golden": "कार्ल ने --> सुधारा --> [वहां के]{a} उपेक्षित जीवविज्ञान उद्यान को [भी]",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "उपेक्षित जीवविज्ञान उद्यान को भी",
+            "है",
+            "वहां के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "कार्ल ने --> सुधारा --> [वहां के]{a} उपेक्षित जीवविज्ञान उद्यान को [भी]",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "56",
+      "text": "सिफियस चतुर्थ की श्रेणी के तारों को सिफीड कहते हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "तारों को",
+            "कहते हैं",
+            "श्रेणी के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "श्रेणी के",
+            "है",
+            "सिफियस चतुर्थ की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[सिफियस चतुर्थ की]{a} [श्रेणी के] तारों को --> [कहते] हैं --> सिफीड"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "57",
+      "text": "यह ' प्राथमिक विधि अध्यारोप ' के नाम से प्रसिद्ध है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह",
+            "प्रसिद्ध है",
+            "नाम से"
+          ],
+          "matched_golden": "यह --> प्रसिद्ध है --> [प्राथमिक विधि अध्यारोप के]{a} नाम से",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "नाम से",
+            "है",
+            "' प्राथमिक विधि अध्यारोप ' के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "यह --> प्रसिद्ध है --> [प्राथमिक विधि अध्यारोप के]{a} नाम से",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "58",
+      "text": "चीन तथा जापान से इस देश का अधिक संपर्क रहा है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "अधिक संपर्क",
+            "रहा है",
+            "चीन"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अधिक संपर्क",
+            "रहा है",
+            "जापान से"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अधिक संपर्क",
+            "है",
+            "इस देश का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "इस देश का --> [अधिक] संपर्क रहा है --> चीन [तथा जापान से]{a}"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "59",
+      "text": "कश्यप ने तत्काल ज्योतिष गणना करके पता लगाया कि राजा की आयु में कुछ घड़ी शेष हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "कुछ घड़ी",
+            "शेष हैं",
+            "आयु में"
+          ],
+          "matched_golden": "कुछ घड़ी --> शेष हैं --> [राजा की]{b} आयु में",
+          "match_type": "satisfied but with b"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "कश्यप ने",
+            "पता लगाया",
+            "शेष"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "कश्यप ने --> पता लगाया --> [तत्काल] ज्योतिष गणना करके"
+        },
+        {
+          "type": "essential",
+          "extraction": "कश्यप ने --> पता लगाया --> [राजा की]{b} आयु में [कुछ घड़ी शेष हैं]{a} |OR| [तत्काल] ज्योतिष गणना करके --> पता लगाया --> [राजा की]{b} आयु में [कुछ घड़ी शेष हैं]{a}"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "60",
+      "text": "अभ्रक आदि की खानों में मोमबत्तियाँ भी प्रयुक्त होती है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "मोमबत्तियाँ भी",
+            "प्रयुक्त होती है",
+            "खानों में"
+          ],
+          "matched_golden": "[अभ्रक आदि की]{a} खानों में --> प्रयुक्त होती है --> मोमबत्तियाँ [भी] |OR| [अभ्रक की]{a} खानों में --> प्रयुक्त होती है --> मोमबत्तियाँ [भी]",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "खानों में",
+            "है",
+            "अभ्रक आदि की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[अभ्रक आदि की]{a} खानों में --> प्रयुक्त होती है --> मोमबत्तियाँ [भी] |OR| [अभ्रक की]{a} खानों में --> प्रयुक्त होती है --> मोमबत्तियाँ [भी]",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "61",
+      "text": "इस शैली में उन्होंने कहानियाँ और उपन्यास लिखे हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "उन्होंने",
+            "लिखे हैं",
+            "कहानियाँ"
+          ],
+          "matched_golden": "उन्होंने --> लिखे हैं --> कहानियाँ [और उपन्यास]{a}",
+          "match_type": "satisfied but with a"
+        },
+        {
+          "model_extraction": [
+            "इस शैली में",
+            "लिखे हैं",
+            "उन्होंने"
+          ],
+          "matched_golden": "उन्होंने --> लिखे हैं --> इस शैली में |OR| कहानियाँ [और उपन्यास]{a} --> लिखे हैं --> इस शैली में",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "उन्होंने",
+            "लिखे हैं",
+            "उपन्यास"
+          ],
+          "matched_golden": "उन्होंने --> लिखे हैं --> [और] उपन्यास",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 3,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "62",
+      "text": "वो पहले दलित और पहले मलयाली मुख्य न्यायाधीश हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "वो",
+            "मुख्य न्यायाधीश हैं",
+            "पहले दलित"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "वो --> हैं --> [पहले दलित]{a} [और] पहले मलयाली मुख्य न्यायाधीश"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "63",
+      "text": "6 जुलाई 2009 को उन्होंने सरकार का वार्षिक बजट पेश किया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "उन्होंने",
+            "पेश किया",
+            "वार्षिक बजट"
+          ],
+          "matched_golden": "[6 जुलाई 2009 को]{a} उन्होंने --> पेश किया --> [सरकार का]{b} [वार्षिक]{c} बजट",
+          "match_type": "satisfied but with a,b"
+        },
+        {
+          "model_extraction": [
+            "6 जुलाई 2009 को",
+            "पेश किया",
+            "उन्होंने"
+          ],
+          "matched_golden": "6 जुलाई 2009 को --> पेश किया --> [सरकार का]{b} वार्षिक बजट |OR| 6 जुलाई 2009 को --> पेश किया --> उन्होंने",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "वार्षिक बजट",
+            "है",
+            "सरकार का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[6 जुलाई 2009 को]{a} उन्होंने --> पेश किया --> [सरकार का]{b} [वार्षिक]{c} बजट",
+          "needs": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "64",
+      "text": "स्थानीय आबादी लगभग पूरी तरह से चाय के व्यापार पर निर्भर रहती है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "स्थानीय आबादी",
+            "निर्भर रहती है",
+            "लगभग पूरी तरह से"
+          ],
+          "matched_golden": "[लगभग] पूरी तरह से --> निर्भर रहती है --> [चाय के]{b} व्यापार पर |OR| [लगभग] पूरी तरह से --> निर्भर रहती है --> स्थानीय आबादी",
+          "match_type": "satisfied"
+        },
+        {
+          "model_extraction": [
+            "व्यापार पर",
+            "निर्भर रहती है",
+            "चाय के"
+          ],
+          "matched_golden": "चाय के --> निर्भर रहती है --> व्यापार पर",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "स्थानीय आबादी --> निर्भर रहती है --> [लगभग] [पूरी तरह से]{a} [चाय के]{b} व्यापार पर"
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "65",
+      "text": "इसे साथ ही आधारभूत प्रोफ़ाइल में भी लागू किया जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "इसे साथ ही",
+            "लागू किया जाता है",
+            "आधारभूत प्रोफ़ाइल में भी"
+          ],
+          "matched_golden": "इसे [साथ ही] --> लागू किया जाता है --> आधारभूत प्रोफ़ाइल में [भी]",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "66",
+      "text": "उन्हें उत्कल मणि के नाम से जाना जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "उन्हें",
+            "जाना जाता है",
+            "नाम से"
+          ],
+          "matched_golden": "उन्हें --> जाना जाता है --> [उत्कल मणि के]{a} नाम से",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "नाम से",
+            "है",
+            "उत्कल मणि के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "उन्हें --> जाना जाता है --> [उत्कल मणि के]{a} नाम से",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "67",
+      "text": "अधिक जानकारी के लिए , कृपया फ्रेंच फ्लेमिश को देखें .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "कृपया",
+            "देखें",
+            "फ्रेंच फ्लेमिश को"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "फ्रेंच फ्लेमिश को --> देखें --> अधिक जानकारी के लिए"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "68",
+      "text": "इस नदी का ज्यादातर अंश पाकिस्तान में प्रवाहित होता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "ज्यादातर अंश",
+            "प्रवाहित होता है",
+            "पाकिस्तान में"
+          ],
+          "matched_golden": "[इस नदी का]{a} ज्यादातर अंश --> प्रवाहित होता है --> पाकिस्तान में",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "ज्यादातर अंश",
+            "है",
+            "इस नदी का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[इस नदी का]{a} ज्यादातर अंश --> प्रवाहित होता है --> पाकिस्तान में",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "69",
+      "text": "मत्रूह मुहाफ़ज़ाह का अंदरूनी भाग लीबियाई रेगिस्तान का हिस्सा है , जिसमें सीवा नख़लिस्तान ( ओएसिस ) भी स्थित है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "अंदरूनी भाग",
+            "हिस्सा है ,",
+            "लीबियाई रेगिस्तान का"
+          ],
+          "matched_golden": "[मत्रूह मुहाफ़ज़ाह का]{a} अंदरूनी भाग --> हिस्सा है --> लीबियाई रेगिस्तान का",
+          "match_type": "satisfied but with a"
+        },
+        {
+          "model_extraction": [
+            "सीवा नख़लिस्तान",
+            "स्थित है",
+            "जिसमें"
+          ],
+          "matched_golden": "जिसमें --> स्थित है --> सीवा नख़लिस्तान [( ओएसिस )]{b}",
+          "match_type": "satisfied but with b"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "अंदरूनी भाग",
+            "है",
+            "मत्रूह मुहाफ़ज़ाह का"
+          ]
+        },
+        {
+          "model_extraction": [
+            "सीवा नख़लिस्तान",
+            "है",
+            "( ओएसिस )"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[मत्रूह मुहाफ़ज़ाह का]{a} अंदरूनी भाग --> हिस्सा है --> लीबियाई रेगिस्तान का",
+          "needs": [
+            "a"
+          ]
+        },
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "जिसमें --> स्थित है --> सीवा नख़लिस्तान [( ओएसिस )]{b}",
+          "needs": [
+            "b"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 2,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "70",
+      "text": "राज्य की राजधानी बंगलुरु शहर है , जो भारत में हो रही त्वरित आर्थिक एवं प्रौद्योगिकी का अग्रणी योगदानकर्त्ता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "राजधानी",
+            "बंगलुरु शहर है ,",
+            "जो अग्रणी योगदानकर्त्ता"
+          ]
+        },
+        {
+          "model_extraction": [
+            "त्वरित आर्थिक",
+            "हो रही",
+            "भारत में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[राज्य की]{a} राजधानी --> है --> बंगलुरु शहर"
+        },
+        {
+          "type": "essential",
+          "extraction": "[जो भारत में हो रही]{b} [त्वरित] आर्थिक एवं प्रौद्योगिकी का --> है --> [अग्रणी] योगदानकर्त्ता |OR| बंगलुरु शहर --> है --> [त्वरित] आर्थिक एवं प्रौद्योगिकी का अग्रणी योगदानकर्त्ता |OR| बंगलुरु शहर --> [अग्रणी] योगदानकर्त्ता है --> [त्वरित] आर्थिक एवं प्रौद्योगिकी का"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "71",
+      "text": "ये अपनी रहस्यमयी और भयावह कहानियों के लिए प्रसिद्ध हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "ये",
+            "प्रसिद्ध हैं",
+            "कहानियों के लिए"
+          ],
+          "matched_golden": "ये --> प्रसिद्ध हैं --> [अपनी] [रहस्यमयी और भयावह]{a} कहानियों के लिए",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "ये --> प्रसिद्ध हैं --> [अपनी] [रहस्यमयी और भयावह]{a} कहानियों के लिए",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "72",
+      "text": "उनका एक कहानी संग्रह और दो निबंध संग्रह प्रकाशित हुए हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "एक कहानी संग्रह",
+            "प्रकाशित हुए हैं",
+            "उनका"
+          ],
+          "matched_golden": "उनका --> प्रकाशित हुए हैं --> एक कहानी संग्रह [और दो निबंध संग्रह]{a}",
+          "match_type": "satisfied but with a"
+        },
+        {
+          "model_extraction": [
+            "दो निबंध संग्रह",
+            "प्रकाशित हुए हैं",
+            "उनका"
+          ],
+          "matched_golden": "उनका --> प्रकाशित हुए हैं --> [और] दो निबंध संग्रह",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "73",
+      "text": "पद्मनाभ दत्त ने ( 15 वीं शताब्दी ) सुपद्य व्याकरण लिखा है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "पद्मनाभ दत्त ने",
+            "लिखा है",
+            "सुपद्य व्याकरण"
+          ],
+          "matched_golden": "पद्मनाभ दत्त ने --> लिखा है --> सुपद्य व्याकरण",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सुपद्य व्याकरण",
+            "है",
+            "15 वीं शताब्दी )"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "( 15 वीं शताब्दी ) --> property --> सुपद्य व्याकरण"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "74",
+      "text": "इसके पश्चिम में अलबामा और दक्षिण में फ्लोरिडा राज्य स्थित हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "फ्लोरिडा राज्य",
+            "स्थित हैं",
+            "पश्चिम में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "स्थित",
+            "हैं",
+            "अलबामा"
+          ]
+        },
+        {
+          "model_extraction": [
+            "स्थित",
+            "हैं",
+            "दक्षिण में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "इसके पश्चिम में --> स्थित हैं --> अलबामा"
+        },
+        {
+          "type": "essential",
+          "extraction": "[इसके] दक्षिण में --> स्थित हैं --> फ्लोरिडा [राज्य]{a}"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "75",
+      "text": "यह क्रिकेट मैदान ऑस्ट्रेलिया के होबार्ट शहर में स्थित है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह क्रिकेट मैदान",
+            "स्थित है",
+            "होबार्ट शहर में"
+          ],
+          "matched_golden": "यह क्रिकेट मैदान --> स्थित है --> [ऑस्ट्रेलिया के]{a} होबार्ट शहर में",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "होबार्ट शहर में",
+            "है",
+            "ऑस्ट्रेलिया के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "यह क्रिकेट मैदान --> स्थित है --> [ऑस्ट्रेलिया के]{a} होबार्ट शहर में",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "76",
+      "text": "निम्नलिखित सूचना नियम का एक सरलीकृत सारांश है , पूरी प्रतिलिपि नहीं है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "निम्नलिखित सूचना नियम का",
+            "एक सरलीकृत सारांश है ,",
+            "पूरी प्रतिलिपि नहीं है"
+          ],
+          "matched_golden": "निम्नलिखित सूचना [नियम का] --> [एक] [सरलीकृत]{a} सारांश है --> पूरी प्रतिलिपि नहीं है",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "निम्नलिखित सूचना --> [एक] [सरलीकृत]{a} सारांश है --> नियम का"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "77",
+      "text": "आत्यन्तिक प्रलय योगीजनों के ज्ञान के द्वारा ब्रह्म में लीन हो जाने को कहते हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "आत्यन्तिक प्रलय --> [कहते] हैं --> [योगीजनों के ज्ञान के द्वारा]{a} ब्रह्म में लीन हो जाने को"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "78",
+      "text": "जंगलों की विशेषता की दृष्टि से कुछ लोगों ने इसे इंडोचायनीज़ और इंडोमलायन उपक्षेत्रों में विभाजित किया है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "कुछ लोगों ने",
+            "विभाजित किया है",
+            "इसे"
+          ],
+          "matched_golden": "इसे --> विभाजित किया है --> कुछ लोगों ने",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "दृष्टि से",
+            "विभाजित किया है",
+            "इंडोचायनीज़"
+          ]
+        },
+        {
+          "model_extraction": [
+            "दृष्टि से",
+            "है",
+            "विशेषता की"
+          ]
+        },
+        {
+          "model_extraction": [
+            "दृष्टि से",
+            "विभाजित किया है",
+            "इंडोमलायन उपक्षेत्रों में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "इसे --> विभाजित किया है --> इंडोचायनीज़ [और इंडोमलायन उपक्षेत्रों में]{a} |OR| इसे --> विभाजित किया है --> [इंडोचायनीज़]{b} [और] इंडोमलायन उपक्षेत्रों में"
+        },
+        {
+          "type": "essential",
+          "extraction": "इसे --> विभाजित किया है --> जंगलों की विशेषता की दृष्टि से"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "79",
+      "text": "पर , प्रयोगशील प्रवृत्तियाँ उनको प्रश्रय देने लगी होंगी !",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "प्रयोगशील प्रवृत्तियाँ",
+            "प्रश्रय देने लगी होंगी",
+            "उनको"
+          ],
+          "matched_golden": "[पर ,] उनको --> प्रश्रय देने लगी होंगी --> प्रयोगशील प्रवृत्तियाँ",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "80",
+      "text": "5364 ईसा पूर्व ईसा मसीह के जन्म से पूर्व के वर्षों को दर्शाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "वर्षों को",
+            "दर्शाता है",
+            "5364 ईसा पूर्व"
+          ],
+          "matched_golden": "5364 ईसा पूर्व --> दर्शाता है --> [ईसा मसीह के जन्म से पूर्व के]{a} वर्षों को",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "वर्षों को",
+            "है",
+            "जन्म से पूर्व के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "जन्म से पूर्व के",
+            "है",
+            "ईसा मसीह के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "5364 ईसा पूर्व --> दर्शाता है --> [ईसा मसीह के जन्म से पूर्व के]{a} वर्षों को",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "81",
+      "text": "विश्वामित्र द्वारा वैदिक मन्त्रों के स्वरघोष के मध्य सीता राम को जयमाल पहनाती हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "विश्वामित्र द्वारा",
+            "पहनाती हैं",
+            "जयमाल"
+          ]
+        },
+        {
+          "model_extraction": [
+            "सीता राम को",
+            "पहनाती हैं",
+            "स्वरघोष के मध्य"
+          ]
+        },
+        {
+          "model_extraction": [
+            "स्वरघोष के मध्य",
+            "है",
+            "वैदिक मन्त्रों के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "सीता --> पहनाती हैं --> राम को जयमाल"
+        },
+        {
+          "type": "essential",
+          "extraction": "[विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> पहनाती हैं --> राम को जयमाल |OR| [विश्वामित्र द्वारा]{a} वैदिक मन्त्रों [के स्वरघोष] के मध्य --> पहनाती हैं --> सीता"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "82",
+      "text": "विभिन्न स्रोत इस तथ्य पर बटे हुए हैं कि आखिर किस वर्ष में स्थान का नाम एजिंकोर्ट स्क्वायर पड़ा .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "विभिन्न स्रोत",
+            "बटे हुए हैं",
+            "इस तथ्य पर"
+          ],
+          "matched_golden": "विभिन्न स्रोत --> बटे हुए हैं --> [इस] तथ्य पर",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "इस तथ्य पर",
+            "पड़ा आखिर",
+            "एजिंकोर्ट स्क्वायर"
+          ]
+        },
+        {
+          "model_extraction": [
+            "इस तथ्य पर",
+            "पड़ा आखिर",
+            "नाम"
+          ]
+        },
+        {
+          "model_extraction": [
+            "इस तथ्य पर",
+            "पड़ा आखिर",
+            "किस वर्ष में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "नाम",
+            "है",
+            "स्थान का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[इस] तथ्य [पर] --> property --> [कि] [आखिर] किस वर्ष में [स्थान का नाम एजिंकोर्ट स्क्वायर पड़ा]{a}"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 4,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "83",
+      "text": "प्रत्येक भाग के अंतर्गत विभिन्न विभाग होते हैं जिनके अलगअलग अध्यक्ष होते हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "विभिन्न विभाग",
+            "होते हैं",
+            "प्रत्येक भाग के अंतर्गत"
+          ],
+          "matched_golden": "प्रत्येक भाग के अंतर्गत --> [होते] हैं --> [विभिन्न] विभाग",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "विभिन्न विभाग",
+            "होते हैं",
+            "जिनके अलगअलग अध्यक्ष"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "विभिन्न विभाग --> जिनके होते हैं --> [अलगअलग] अध्यक्ष |OR| जिनके --> [होते] हैं --> [अलगअलग] अध्यक्ष"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "84",
+      "text": "एकलों के बीच एक लंबे अंतराल के बाद , एल्बम से तीसरा कट 2006 के मध्य में जारी किया गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "एकलों के बीच",
+            "जारी किया गया",
+            "एक लंबे अंतराल के बाद ,"
+          ],
+          "matched_golden": "[एल्बम से]{a} तीसरा कट --> जारी किया गया --> एक लंबे अंतराल के बाद |OR| एकलों के बीच --> जारी किया गया --> एक लंबे अंतराल के बाद",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "एल्बम से",
+            "जारी किया गया",
+            "2006 के मध्य में"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[एल्बम से]{a} तीसरा कट --> जारी किया गया --> 2006 के मध्य में"
+        },
+        {
+          "type": "essential",
+          "extraction": "[एल्बम से]{a} तीसरा कट --> जारी किया गया --> एकलों के बीच"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "85",
+      "text": "चूंकि उस दौर में उनके सामने कोई और मानक नहीं थे , अतः सब कामचलाऊ व्यवस्था उन्हें स्वयं करनी पड़ी .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "उस दौर में",
+            "कोई और मानक नहीं थे ,",
+            "उनके सामने"
+          ],
+          "matched_golden": "उनके सामने --> [कोई] [और] मानक नहीं थे --> [चूंकि] उस दौर में",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "उन्हें --> [स्वयं] करनी पड़ी --> [अतः] [सब] कामचलाऊ व्यवस्था"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "86",
+      "text": "1900 के आसपास बहुत से विकासों ने निमोनिया से पीड़ित लोगों के लिये परिणामों को बेहतर कर दिया था .",
+      "status": "analyzed",
+      "best_cluster": "cluster 2",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "1900 के आसपास",
+            "बेहतर कर दिया था",
+            "निमोनिया से"
+          ]
+        },
+        {
+          "model_extraction": [
+            "पीड़ित लोगों के लिये",
+            "बेहतर कर दिया था",
+            "निमोनिया से"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[निमोनिया से]{a} [पीड़ित] लोगों के लिये --> परिणामों को बेहतर कर दिया था --> [1900 के आसपास]{b} [बहुत से] विकासों ने"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "87",
+      "text": "सांप्रदायिक सिद्धांतों के प्रचार और प्रसार में अपने पिता के समान आपका भी बहुत योगदान है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "प्रचार",
+            "बहुत योगदान है",
+            "पिता के समान"
+          ]
+        },
+        {
+          "model_extraction": [
+            "बहुत योगदान",
+            "है",
+            "आपका भी"
+          ]
+        },
+        {
+          "model_extraction": [
+            "प्रसार में",
+            "बहुत योगदान है",
+            "पिता के समान"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "आपका [भी] --> [बहुत] योगदान है --> [सांप्रदायिक सिद्धांतों के]{a} प्रचार और प्रसार में"
+        },
+        {
+          "type": "essential",
+          "extraction": "[अपने] पिता के समान --> [बहुत] योगदान है --> आपका [भी] |OR| [अपने] पिता के समान --> [बहुत] योगदान है --> [सांप्रदायिक सिद्धांतों के]{a} प्रचार और प्रसार में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "88",
+      "text": "उदाहरणार्थ , केवल 1 -- 3 माह के संपर्क में भी मेसोथेलियोमा उत्पन्न होने के मामले लेखबद्ध किये गये हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "मेसोथेलियोमा",
+            "उत्पन्न होने के",
+            "मामले"
+          ],
+          "matched_golden": "मामले --> property --> मेसोथेलियोमा उत्पन्न होने के |OR| मामले --> उत्पन्न होने के --> मेसोथेलियोमा",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "मामले",
+            "लेखबद्ध किये गये हैं",
+            "उदाहरणार्थ ,"
+          ]
+        },
+        {
+          "model_extraction": [
+            "संपर्क में भी",
+            "लेखबद्ध किये गये हैं",
+            "केवल 1 -- 3 माह के"
+          ]
+        },
+        {
+          "model_extraction": [
+            "मामले",
+            "है",
+            "उत्पन्न होने के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "केवल 1 -- 3 माह के संपर्क में [भी] --> लेखबद्ध किये गये हैं --> [मेसोथेलियोमा उत्पन्न होने के]{a} मामले"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "89",
+      "text": "जहां इश -- डू में दो प्राणियों का सामना होता है , इश -- एस में प्राणी वास्तव में मिलते नहीं है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "प्राणी",
+            "मिलते नहीं है",
+            "इश -- एस में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "वास्तव में",
+            "मिलते नहीं है",
+            "प्राणी"
+          ]
+        },
+        {
+          "model_extraction": [
+            "इश -- एस में",
+            "सामना होता है ,",
+            "इश -- डू में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "इश -- एस में",
+            "सामना होता है ,",
+            "दो प्राणियों का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "इश -- डू में --> सामना होता है --> दो प्राणियों का"
+        },
+        {
+          "type": "essential",
+          "extraction": "इश -- एस में --> [वास्तव में] मिलते नहीं है --> प्राणी |OR| इश -- एस में --> प्राणी मिलते नहीं है --> पवास्तव में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 4,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "90",
+      "text": "ये तीनों अक्ष उस तल में एकबिन्दुगामी भी होने चाहिये .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "ये तीनों अक्ष",
+            "होने चाहिये",
+            "एकबिन्दुगामी भी"
+          ]
+        },
+        {
+          "model_extraction": [
+            "उस तल में",
+            "होने चाहिये",
+            "ये तीनों अक्ष"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "ये तीनों अक्ष --> एकबिन्दुगामी [भी] होने चाहिये --> उस तल में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "91",
+      "text": "विकासशील देशों में , अपने ही पड़ोस में किसानों के दूध विपणन के पुराने तरीके तेजी से बदल रहे हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "पुराने तरीके",
+            "बदल रहे हैं",
+            "विकासशील देशों में ,"
+          ],
+          "matched_golden": "[किसानों के]{a} [दूध विपणन के]{b} [पुराने] तरीके --> [तेजी से] बदल रहे हैं --> विकासशील देशों में",
+          "match_type": "satisfied but with a,b"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "अपने ही पड़ोस में",
+            "बदल रहे हैं",
+            "तेजी से"
+          ]
+        },
+        {
+          "model_extraction": [
+            "पुराने तरीके",
+            "है",
+            "दूध विपणन के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "[किसानों के]{a} [दूध विपणन के]{b} [पुराने] तरीके --> [तेजी से] बदल रहे हैं --> विकासशील देशों में",
+          "needs": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "[किसानों के]{a} [दूध विपणन के]{b} [पुराने] तरीके --> [तेजी से] बदल रहे हैं --> अपने ही पड़ोस में"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 2,
+        "FN": 3
+      }
+    },
+    {
+      "sent_id": "92",
+      "text": "उन्होंने अपने बोलीवुड करियर की शुरुआत एक दीवाना था से की जिसे 17 फ़रवरी 2012 को रिलीज़ किया गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "उन्होंने",
+            "एक दीवाना था से",
+            "शुरुआत"
+          ]
+        },
+        {
+          "model_extraction": [
+            "शुरुआत",
+            "है",
+            "बोलीवुड करियर की"
+          ]
+        },
+        {
+          "model_extraction": [
+            "शुरुआत",
+            "रिलीज़ किया गया",
+            "जिसे"
+          ]
+        },
+        {
+          "model_extraction": [
+            "शुरुआत",
+            "रिलीज़ किया गया",
+            "17 फ़रवरी 2012 को"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "उन्होंने --> [अपने] बोलीवुड करियर की शुरुआत की --> एक दीवाना था से"
+        },
+        {
+          "type": "essential",
+          "extraction": "जिसे --> रिलीज़ किया गया --> 17 फ़रवरी 2012 को |OR| एक दीवाना था [से] --> रिलीज़ किया गया --> 17 फ़रवरी 2012 को"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 4,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "93",
+      "text": "इस रोग के प्रतिषेधात्मक उपचार में भी मक्खियों से खाद्य एवं पेय पदार्थो को बचाना अत्यंत आवश्यक है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "खाद्य एवं पेय पदार्थो को",
+            "बचाना",
+            "मक्खियों से"
+          ],
+          "matched_golden": "मक्खियों से --> बचाना --> [खाद्य एवं] पेय पदार्थो को |OR| मक्खियों से --> बचाना --> खाद्य [एवं पेय] पदार्थो को",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "बचाना",
+            "है",
+            "अत्यंत आवश्यक"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[इस रोग के]{a} [प्रतिषेधात्मक] उपचार में [भी] --> [अत्यंत] आवश्यक है --> [मक्खियों से]{b} [खाद्य एवं] पेय पदार्थो को बचाना"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "94",
+      "text": "यह , प्रतिस्पर्धी टीम की राष्ट्रीयता को संदर्भित करता है , न कि गाड़ी निर्माता या चालक की राष्ट्रीयता को .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह ,",
+            "संदर्भित करता है ,",
+            "राष्ट्रीयता को"
+          ],
+          "matched_golden": "यह --> संदर्भित करता है --> [प्रतिस्पर्धी] [टीम की]{a} राष्ट्रीयता को",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "राष्ट्रीयता को",
+            "संदर्भित करता है ,",
+            "गाड़ी निर्माता"
+          ]
+        },
+        {
+          "model_extraction": [
+            "राष्ट्रीयता को",
+            "है",
+            "प्रतिस्पर्धी टीम की"
+          ]
+        },
+        {
+          "model_extraction": [
+            "राष्ट्रीयता को",
+            "संदर्भित करता है ,",
+            "चालक की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "यह --> संदर्भित करता है --> [प्रतिस्पर्धी] [टीम की]{a} राष्ट्रीयता को",
+          "needs": [
+            "a"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "यह --> संदर्भित करता है --> न कि [गाड़ी निर्माता या] चालक की राष्ट्रीयता को |OR| यह --> संदर्भित करता है --> न कि गाड़ी निर्माता [या चालक] की राष्ट्रीयता को"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 3,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "95",
+      "text": "सड़क मार्ग रत्नागिरी के लिए मुंबई से सीधी बस सेवा है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "सड़क मार्ग",
+            "सीधी बस सेवा है",
+            "रत्नागिरी के लिए"
+          ],
+          "matched_golden": "सड़क मार्ग --> [सीधी] बस सेवा है --> रत्नागिरी के लिए |OR| रत्नागिरी के लिए --> [सीधी] बस सेवा है --> मुंबई से",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सीधी बस सेवा",
+            "है",
+            "मुंबई से"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "सड़क मार्ग --> [सीधी] बस सेवा है --> मुंबई से"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "96",
+      "text": "छपाई में लकड़ी के ब्लाकों का प्रयोग होता था , जिसका निर्माण शिल्पी -- सुथार करते थे .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "छपाई में",
+            "प्रयोग होता था ,",
+            "ब्लाकों का"
+          ],
+          "matched_golden": "छपाई में --> प्रयोग होता था --> [लकड़ी के]{a} ब्लाकों का",
+          "match_type": "satisfied but with a"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "ब्लाकों का",
+            "जिसका निर्माण करते थे",
+            "शिल्पी -- सुथार"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "छपाई में --> प्रयोग होता था --> [लकड़ी के]{a} ब्लाकों का",
+          "needs": [
+            "a"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "जिसका --> निर्माण करते थे --> शिल्पी -- सुथार |OR| [लकड़ी के]{a} ब्लाकों का --> निर्माण करते थे --> शिल्पी -- सुथार"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "97",
+      "text": "यह शब्द विधि बनाने वाली सरकारी इकाई के लिये प्रयोग में आता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "यह शब्द",
+            "आता है",
+            "सरकारी इकाई के लिये"
+          ]
+        },
+        {
+          "model_extraction": [
+            "प्रयोग में",
+            "आता है",
+            "सरकारी इकाई के लिये"
+          ]
+        },
+        {
+          "model_extraction": [
+            "विधि",
+            "बनाने वाली",
+            "सरकारी इकाई के लिये"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "यह [शब्द]{b} --> प्रयोग में आता है --> [विधि बनाने वाली]{a} सरकारी इकाई के लिये"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "98",
+      "text": "यह उत्तर प्रदेश के बलिया जिले में स्थित है और बलिया शहर से थोड़ी दूर पश्चिम में स्थित है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "यह",
+            "स्थित है",
+            "बलिया जिले में"
+          ],
+          "matched_golden": "यह --> स्थित है --> [उत्तर प्रदेश के]{a} बलिया जिले में",
+          "match_type": "satisfied but with a"
+        },
+        {
+          "model_extraction": [
+            "बलिया शहर से",
+            "स्थित है",
+            "पश्चिम में"
+          ],
+          "matched_golden": "पश्चिम में --> स्थित है --> बलिया शहर से",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "बलिया जिले में",
+            "है",
+            "उत्तर प्रदेश के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential_with_unmatched_compensatory",
+          "extraction": "यह --> स्थित है --> [उत्तर प्रदेश के]{a} बलिया जिले में",
+          "needs": [
+            "a"
+          ]
+        },
+        {
+          "type": "essential",
+          "extraction": "यह --> स्थित है --> बलिया शहर से थोड़ी दूर [पश्चिम में]{b} |OR| यह --> स्थित है --> बलिया शहर से [थोड़ी दूर] पश्चिम में"
+        }
+      ],
+      "summary": {
+        "TP": 2,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "99",
+      "text": "उसेक बाद उन्होने पिता की हत्या नहीं करवाई जैसाकि अन्य सम्राट किया करते थे .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "उन्होने",
+            "हत्या नहीं करवाई",
+            "उसेक बाद"
+          ],
+          "matched_golden": "उन्होने --> हत्या नहीं करवाई --> उसेक बाद",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "हत्या नहीं करवाई",
+            "है",
+            "पिता की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "उन्होने --> हत्या नहीं करवाई --> पिता की"
+        },
+        {
+          "type": "essential",
+          "extraction": "अन्य सम्राट --> [किया] करते थे --> [पिता की]{a} हत्या"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "100",
+      "text": "सर्वप्रथम प्रत्येक खिलाड़ी के लिये हवाओं की स्थिति का निर्धारण पासा फेंककर किया जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "सर्वप्रथम",
+            "किया जाता है",
+            "प्रत्येक खिलाड़ी के लिये"
+          ]
+        },
+        {
+          "model_extraction": [
+            "प्रत्येक खिलाड़ी के लिये किया जाता है",
+            "फेंककर",
+            "निर्धारण"
+          ]
+        },
+        {
+          "model_extraction": [
+            "प्रत्येक खिलाड़ी के लिये किया जाता है",
+            "फेंककर",
+            "पासा"
+          ]
+        },
+        {
+          "model_extraction": [
+            "निर्धारण",
+            "है",
+            "स्थिति का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "हवाओं की स्थिति का --> निर्धारण किया जाता है --> पासा फेंककर"
+        },
+        {
+          "type": "essential",
+          "extraction": "प्रत्येक खिलाड़ी के लिये --> निर्धारण किया जाता है --> हवाओं की स्थिति का"
+        },
+        {
+          "type": "essential",
+          "extraction": "सर्वप्रथम --> निर्धारण किया जाता है --> प्रत्येक खिलाड़ी के लिये |OR| सर्वप्रथम --> निर्धारण किया जाता है --> हवाओं की स्थिति का"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 4,
+        "FN": 3
+      }
+    },
+    {
+      "sent_id": "101",
+      "text": "हाइपरयूरीसेमिया , वात रोग का मूल कारण होता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "हाइपरयूरीसेमिया ,",
+            "होता है",
+            "मूल कारण"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "हाइपरयूरीसेमिया --> मूल कारण होता है --> वात रोग का |OR| हाइपरयूरीसेमिया --> होता है --> वात रोग का मूल कारण"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "102",
+      "text": "यही कारण है कि विश्व भर में केरल अपनी आयुर्वेदिक चिकित्सा शैली के कारण प्रसिद्ध है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "प्रसिद्ध",
+            "है",
+            "यही कारण"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "केरल --> प्रसिद्ध है --> [अपनी] आयुर्वेदिक चिकित्सा शैली के कारण"
+        },
+        {
+          "type": "essential",
+          "extraction": "केरल --> प्रसिद्ध है --> विश्व भर में"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "103",
+      "text": "इसका उदगम स्थान सिरमोर राज्य के अंतगर्त हिमालय पर्वत के नीचे का ढलुवा भाग है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "उदगम स्थान",
+            "ढलुवा भाग है",
+            "अंतगर्त हिमालय पर्वत के नीचे का"
+          ]
+        },
+        {
+          "model_extraction": [
+            "उदगम स्थान",
+            "है",
+            "इसका"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अंतगर्त हिमालय पर्वत के नीचे का",
+            "है",
+            "सिरमोर राज्य के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "इसका --> उदगम स्थान है --> [सिरमोर राज्य के अंतगर्त]{a} हिमालय पर्वत [के नीचे का ढलुवा भाग]{b}"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 3,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "104",
+      "text": "दक्षिण भारत में उन दिनों परम्परागत चित्रकला का ही प्राधान्य था .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "दक्षिण भारत में",
+            "प्राधान्य था",
+            "उन दिनों"
+          ],
+          "matched_golden": "उन दिनों --> प्राधान्य था --> परम्परागत चित्रकला का [ही] |OR| उन दिनों --> प्राधान्य था --> दक्षिण भारत में",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "प्राधान्य",
+            "था",
+            "परम्परागत चित्रकला का ही"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "[उन दिनों] दक्षिण भारत में --> प्राधान्य था --> परम्परागत चित्रकला का [ही]"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "105",
+      "text": "ये कहानियाँ किसी देश या समय की हो सकती हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "ये कहानियाँ",
+            "हो सकती हैं",
+            "किसी देश"
+          ]
+        },
+        {
+          "model_extraction": [
+            "ये कहानियाँ",
+            "हो सकती हैं",
+            "समय की"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "ये [कहानियाँ]{a} --> हो सकती हैं --> किसी [देश या] समय की |OR| ये [कहानियाँ]{a} --> हो सकती हैं --> किसी देश [या समय] की"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "106",
+      "text": "और भी कुछ निम्नलिखित कारण हैं जोकि प्रकृति आधारित निर्माण को प्रोत्साहित करते हैं .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "प्रकृति आधारित निर्माण को",
+            "प्रोत्साहित करते हैं",
+            "और भी कुछ निम्नलिखित कारण"
+          ],
+          "matched_golden": "[और भी] [कुछ] निम्नलिखित कारण --> प्रोत्साहित करते हैं --> प्रकृति आधारित निर्माण को",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "107",
+      "text": "2010 को ' ' दर्शन -- परिषद् ' ' के नाम से सम्पन्न हुआ .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "2010 को ' ' दर्शन -- परिषद् ' ' के",
+            "सम्पन्न हुआ",
+            "नाम से"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "2010 को --> सम्पन्न हुआ --> दर्शन -- परिषद् [के नाम से]"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "108",
+      "text": "यहीं पर सन 1533 में 47 वर्ष की अल्पायु में रथयात्रा के दिन उनका देहांत हो गया .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "यहीं पर",
+            "देहांत हो गया",
+            "सन 1533 में"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अल्पायु में",
+            "देहांत हो गया",
+            "दिन"
+          ]
+        },
+        {
+          "model_extraction": [
+            "उनका",
+            "देहांत हो गया",
+            "दिन"
+          ]
+        },
+        {
+          "model_extraction": [
+            "अल्पायु में",
+            "है",
+            "47 वर्ष की"
+          ]
+        },
+        {
+          "model_extraction": [
+            "दिन",
+            "है",
+            "रथयात्रा के"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "यहीं पर --> देहांत हो गया --> उनका"
+        },
+        {
+          "type": "essential",
+          "extraction": "सन 1533 में --> देहांत हो गया --> उनका"
+        },
+        {
+          "type": "essential",
+          "extraction": "47 वर्ष की [अल्पायु में]{a} --> देहांत हो गया --> उनका"
+        },
+        {
+          "type": "essential",
+          "extraction": "रथयात्रा के दिन --> देहांत हो गया --> उनका"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 5,
+        "FN": 4
+      }
+    },
+    {
+      "sent_id": "109",
+      "text": "इसे पाण्सिल्क भी कहा जाता है क्योंकि यह तालाब में अक्सर देखा जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "इसे",
+            "कहा जाता है",
+            "यह देखा जाता है अक्सर"
+          ]
+        },
+        {
+          "model_extraction": [
+            "तालाब में",
+            "देखा जाता है अक्सर",
+            "कहा जाता है"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "इसे --> कहा जाता है --> पाण्सिल्क [भी]"
+        },
+        {
+          "type": "essential",
+          "extraction": "यह --> [अक्सर] देखा जाता है --> तालाब में [अक्सर]"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 2
+      }
+    },
+    {
+      "sent_id": "110",
+      "text": "2008 में वे तीसरे ब्रिटिश प्रबंधक बने जिन्होंने एकाधिक अवसर पर यूरोपियन कप जीता .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "वे",
+            "बने",
+            "तीसरे ब्रिटिश प्रबंधक"
+          ],
+          "matched_golden": "वे --> बने --> [तीसरे] ब्रिटिश प्रबंधक",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "2008 में",
+            "बने",
+            "वे"
+          ]
+        },
+        {
+          "model_extraction": [
+            "तीसरे ब्रिटिश प्रबंधक",
+            "जीता",
+            "यूरोपियन कप"
+          ]
+        },
+        {
+          "model_extraction": [
+            "तीसरे ब्रिटिश प्रबंधक",
+            "जीता",
+            "जिन्होंने"
+          ]
+        },
+        {
+          "model_extraction": [
+            "तीसरे ब्रिटिश प्रबंधक",
+            "जीता",
+            "एकाधिक अवसर पर"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "जिन्होंने --> जीता --> यूरोपियन कप [एकाधिक अवसर पर] |OR| जिन्होंने --> [एकाधिक अवसर पर] जीता --> यूरोपियन कप"
+        }
+      ],
+      "summary": {
+        "TP": 1,
+        "FP": 4,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "111",
+      "text": "मॉस से मिट्टी में जल रोक रखा जाता है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [
+        {
+          "model_extraction": [
+            "मॉस से",
+            "जल रोक रखा जाता है",
+            "मिट्टी में"
+          ],
+          "matched_golden": "मॉस से --> जल रोक रखा जाता है --> मिट्टी में",
+          "match_type": "satisfied"
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "summary": {
+        "TP": 1,
+        "FP": 0,
+        "FN": 0
+      }
+    },
+    {
+      "sent_id": "112",
+      "text": "महाभारत का वर्तमान रूप प्राचीन इतिहास कथाओं उपदेशों आदि का भण्डार है .",
+      "status": "analyzed",
+      "best_cluster": "cluster 1",
+      "true_positives": [],
+      "false_positives": [
+        {
+          "model_extraction": [
+            "वर्तमान रूप",
+            "भण्डार है",
+            "प्राचीन इतिहास कथाओं उपदेशों आदि का"
+          ]
+        },
+        {
+          "model_extraction": [
+            "वर्तमान रूप",
+            "है",
+            "महाभारत का"
+          ]
+        }
+      ],
+      "false_negatives": [
+        {
+          "type": "essential",
+          "extraction": "महाभारत [का वर्तमान रूप]{a} --> भण्डार है --> प्राचीन [इतिहास] [कथाओं] उपदेशों आदि का |OR| महाभारत [का वर्तमान रूप] --> भण्डार है --> प्राचीन इतिहास [कथाओं] [उपदेशों] आदि का"
+        }
+      ],
+      "summary": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "77",
+      "text": "आत्यन्तिक प्रलय योगीजनों के ज्ञान के द्वारा ब्रह्म में लीन हो जाने को कहते हैं .",
+      "status": "missed_sentence",
+      "summary": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 1
+      }
+    },
+    {
+      "sent_id": "20",
+      "text": "कोप्पेन मौसम वर्गीकरण मौसम आकलन के लिए प्रयोग किया जाने वाला सबसे अधिक प्रयोगनीय मौसम वर्गीकरण है .",
+      "status": "missed_sentence",
+      "summary": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 2
+      }
+    }
+  ],
+  "overall_stats": {
+    "total_true_positives": 83,
+    "total_false_positives": 183,
+    "total_false_negatives": 141,
+    "precision": 0.31203007518796994,
+    "recall": 0.3705357142857143,
+    "f1_score": 0.33877551020408164,
+    "note": "3 FNs are from 2 sentences with no model-generated extractions."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "original": {
+    "1": 0.32980358667805293,
+    "5": 0.6040990606319385,
+    "10": 0.6927412467976088
+  },
+  "finetuned_v2": {
+    "1": 0.37779675491033304,
+    "5": 0.7058923996584117,
+    "10": 0.7853116994022203
+  },
+  "gold_set_size": 5855,
+  "gold_set": "8B-built (unbiased)",
+  "encoding": "SentenceTransformer wrapper (identical for both)"
+}
