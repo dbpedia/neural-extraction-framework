@@ -4,7 +4,6 @@ import os
 import redis
 import pandas as pd
 import time
-from typing import List, Dict
 
 
 class RedisEntityLinking:
@@ -28,7 +27,7 @@ class RedisEntityLinking:
         except Exception as e:
             print(f"Redis connection error: {e}")
             raise
-    
+
     def calculate_redirect(self, source):
         result = self.redis_redir.get(source)
         if result is None:
