@@ -16,6 +16,15 @@ with flawed few-shot examples (score < 8 from the original 20K set), the noise c
 from genuine semantic mistakes being imitated, not from a model's inability to follow
 instructions. This produces more realistic, instructive training noise.
 
+
+**Correction (added after verification against the actual generated data):** the reasoning above was the intended design, but the real generated dataset does not fully match it. Direct inspection of `noisy_synthetic_data_3b_model.jsonl`'s `generator_model` field shows two models were actually used:
+
+| Generator | Count | % |
+|---|---|---|
+| `openai/gpt-oss-120b` | 13,423 | 86.1% |
+| `meta/llama-3.2-3b-instruct` | 2,158 | 13.9% |
+
+The majority (86.1%) does follow the intended single-strong-model approach described above. The remaining 13.9% used a smaller model -- the exact scenario this document argues against -- for reasons not captured in this document. This is stated here plainly rather than silently corrected, so the record reflects what was actually generated, not just what was intended.
 **Prompt strategy (reusing Aditya's infrastructure from synthetic_data_gen_2.py):**
 - 6 flawed examples (score < 8) as few-shot seeds
 - 3 generation strategies with fixed weights:
