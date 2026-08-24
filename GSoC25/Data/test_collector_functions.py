@@ -1,17 +1,18 @@
 # Test file for the new collector.py functions
+#
+# Run from the repository root:
+# python -m GSoC25.Data.test_collector_functions
 
-import sys
-from pathlib import Path
 import argparse
 
-# Add project root to Python path
-try:
-    script_path = Path(__file__).resolve()
-    PROJECT_ROOT = script_path.parent.parent.parent  # Go up 3 levels to reach project root
-except NameError:
-    PROJECT_ROOT = Path().resolve()
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
+from GSoC25.Data.collector import (
+    get_sentences_with_entities,
+    get_predicates_between,
+    get_entity_types,
+    get_text_of_wiki_page
+)
+
+import argparse
 
 from GSoC25.Data.collector import (
     get_sentences_with_entities,
