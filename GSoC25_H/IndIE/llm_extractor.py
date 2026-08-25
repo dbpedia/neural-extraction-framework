@@ -1,64 +1,28 @@
 import json
-import ollama
 import time
 import re
-from typing import List, Dict, Any, Tuple
-from dataclasses import dataclass
+import sys
+import os
+from typing import List, Dict
 
-@dataclass
-class ModelConfig:
-    """Configuration for the LLM model."""
-    name: str = "gemma3:12b-it-qat"
-    temperature: float = 0.1
-    top_p: float = 0.9
-    num_predict: int = 2000
+# Add parent directory to path to allow importing from src
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-class LLMInterface:
-    """Interface for interacting with the language model via Ollama."""
-    def __init__(self, model_config: ModelConfig, max_retries: int = 2, timeout: int = 60):
-        self.model_config = model_config
-        self.max_retries = max_retries
-        self.client = ollama.Client(timeout=timeout)
-
-    def generate_response(self, messages: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """
-        Generates a response from the LLM, with retries for handling errors.
-        """
-        retries = 0
-        while retries < self.max_retries:
-            try:
-                response = self.client.chat(
-                    model=self.model_config.name,
-                    messages=messages,
-                    options={
-                        "temperature": self.model_config.temperature,
-                        "top_p": self.model_config.top_p,
-                        "num_predict": self.model_config.num_predict
-                    }
-                )
-                return response
-
-            except Exception as e:
-                retries += 1
-                print(f"Error calling model '{self.model_config.name}': {e}. Retrying ({retries}/{self.max_retries})...")
-                time.sleep(2 ** retries)
-        
-        print(f"Failed to get a valid response from model '{self.model_config.name}' after {self.max_retries} retries.")
-        return None
+from src.llm_core import LLMService, ModelConfig
 
 class LLMExtractor:
     def __init__(self, model_name="gemma3:12b-it-qat", temperature=0.05, max_retries=3, timeout=120):
+        # USES NEW SHARED CONFIG FROM SRC
         self.model_config = ModelConfig(
             name=model_name,
-            temperature=temperature,  # Lower temperature for more focused extractions
-            top_p=0.8,  # Slightly more focused sampling
-            num_predict=1500  # Reduced to encourage concise outputs
+            temperature=temperature,
+            top_p=0.8,
+            num_predict=1500,
+            timeout=timeout,
+            max_retries=max_retries
         )
-        self.llm_interface = LLMInterface(
-            model_config=self.model_config,
-            max_retries=max_retries,
-            timeout=timeout
-        )
+        # USES NEW SHARED SERVICE FROM SRC
+        self.llm_interface = LLMService(model_config=self.model_config)
         
         # Quality patterns for filtering false positives
         self.low_quality_patterns = [
@@ -941,4 +905,4 @@ def quick_test():
     return result
 
 if __name__ == "__main__":
-    test_llm_extractor() 
+    test_llm_extractor()

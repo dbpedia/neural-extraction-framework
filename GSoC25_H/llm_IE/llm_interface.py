@@ -1,12 +1,15 @@
+import sys
 import os
-import requests
 import time
-import re
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Dict, List, Optional
 from dataclasses import dataclass, field
 
-from config import ModelConfig
+# Add parent directory to path to allow importing from src
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.llm_core import LLMService, ModelConfig as SharedConfig
 from output_parser import OutputParser
+from config import ModelConfig
 
 @dataclass
 class ExtractionResult:
@@ -18,69 +21,44 @@ class ExtractionResult:
     error: Optional[str] = None
 
 class OllamaInterface:
-    """Unified interface for interacting with Ollama models"""
+    """
+    Unified interface for interacting with Ollama models.
+    Refactored to use the shared src.llm_core.LLMService instead of raw requests.
+    """
 
     def __init__(self, model_config: ModelConfig, base_url: str = "http://localhost:11434"):
-        self.model_config = model_config
-        self.base_url = base_url.rstrip('/')
-        self.api_endpoint = f"{self.base_url}/api"
         self.output_parser = OutputParser()
         
-        if not self._is_available():
-            print(f"Warning: Ollama model '{self.model_config.name}' not found locally. Trying to pull it...")
-            if not self._pull_model():
-                raise ConnectionError(f"Failed to pull or connect to Ollama model {self.model_config.name}")
-
-    def _is_available(self) -> bool:
-        """Check if the Ollama model is available locally"""
-        try:
-            response = requests.get(f"{self.api_endpoint}/tags")
-            response.raise_for_status()
-            models = response.json().get("models", [])
-            return any(m['name'] == self.model_config.name for m in models)
-        except requests.exceptions.RequestException:
-            return False
-
-    def _generate_text(self, prompt: str) -> str:
-        """Generic text generation using the configured Ollama model."""
-        start_time = time.time()
+        # ADAPTER: Convert local llm_IE config to the Shared Config
+        # We map 'max_tokens' (from llm_IE) to 'num_predict' (shared core)
+        shared_config = SharedConfig(
+            name=model_config.name,
+            host=base_url,  # <--- Fix: Pass the base_url here!
+            temperature=model_config.temperature,
+            top_p=model_config.top_p,
+            num_predict=getattr(model_config, 'max_tokens', 2000),
+            timeout=getattr(model_config, 'timeout', 60),
+            max_retries=getattr(model_config, 'max_retries', 3)
+        )
         
-        payload = {
-            "model": self.model_config.name,
-            "prompt": prompt,
-            "stream": False,
-            "options": {
-                "temperature": self.model_config.temperature,
-                "top_p": self.model_config.top_p,
-                "top_k": self.model_config.top_k,
-                "num_predict": self.model_config.max_tokens,
-            }
-        }
-        
-        try:
-            response = requests.post(
-                f"{self.api_endpoint}/generate",
-                json=payload,
-                timeout=self.model_config.timeout,
-                headers={"Content-Type": "application/json"}
-            )
-            response.raise_for_status()
-            
-            result = response.json()
-            return result.get("response", "").strip()
-
-        except requests.exceptions.RequestException as e:
-            print(f"Error during Ollama API request: {e}")
-            return ""
+        # Initialize the shared service
+        self.service = LLMService(shared_config)
 
     def extract_relations(self, sentence: str, prompt: str) -> ExtractionResult:
-        """Extracts relations from a sentence using a given prompt."""
+        """Extracts relations from a sentence using the shared LLM service."""
+        # Fix: Explicitly mark 'sentence' as unused to satisfy linter
+        _ = sentence 
+        
         start_time = time.time()
         
-        raw_output = self._generate_text(prompt)
+        # Prepare standard message format for the shared service
+        messages = [{"role": "user", "content": prompt}]
+        
+        # Use shared service (Handles retries and connection automatically)
+        response = self.service.generate_response(messages)
         processing_time = time.time() - start_time
         
-        if not raw_output:
+        if not response:
             return ExtractionResult(
                 success=False,
                 raw_output="",
@@ -88,6 +66,10 @@ class OllamaInterface:
                 error="Failed to generate text from model."
             )
         
+        # Extract text content from the Ollama response dictionary
+        raw_output = response.get("message", {}).get("content", "").strip()
+        
+        # Parse output using existing parser
         parsed_triplets, _ = self.output_parser.parse_and_format(raw_output)
         
         return ExtractionResult(
@@ -96,19 +78,3 @@ class OllamaInterface:
             parsed_triplets=parsed_triplets,
             processing_time=processing_time
         )
-
-    def _pull_model(self) -> bool:
-        """Pull the model from the Ollama registry."""
-        print(f"Pulling model: {self.model_config.name}. This may take a while...")
-        try:
-            response = requests.post(
-                f"{self.api_endpoint}/pull",
-                json={"name": self.model_config.name, "stream": False},
-                timeout=300  # 5-minute timeout for pulling
-            )
-            response.raise_for_status()
-            print(f"Model '{self.model_config.name}' pulled successfully.")
-            return True
-        except requests.exceptions.RequestException as e:
-            print(f"Failed to pull model '{self.model_config.name}': {e}")
-            return False 
