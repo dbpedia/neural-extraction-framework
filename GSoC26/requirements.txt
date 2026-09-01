@@ -1,0 +1,26 @@
+# NEF 2.0 (GSoC26) — Python dependencies.
+#
+# Mirrors the pip install in deploy/Dockerfile, plus the packages the scripts/
+# tooling imports. Install with:  pip install -r requirements.txt
+#
+# The pipeline additionally needs a Redis server (surface-form index) and an
+# oxigraph SPARQL store; see deploy/DEPLOY.md and docs/RUNBOOK.md.
+
+# --- pipeline core (src/autonomous_pipeline_v13.py) ---
+rdflib
+redis
+pydantic
+requests
+numpy
+scikit-learn
+langchain-core
+langchain-openai
+langgraph
+sentence-transformers
+
+# --- API service (deploy/serve.py) ---
+fastapi
+uvicorn
+
+# --- index build / benchmark tooling (scripts/, src/repair_tiers.py) ---
+tqdm
