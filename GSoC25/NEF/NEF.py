@@ -9,6 +9,12 @@ import numpy as np
 from urllib.parse import quote
 from getpass import getpass
 
+from pydantic import ValidationError
+try:
+    from .output_schema import DisambiguationResult
+except ImportError:
+    from output_schema import DisambiguationResult
+
 # =============== Gemini client bootstrap ===============
 try:
     from google import genai
@@ -280,13 +286,6 @@ class LLMDisambiguator:
             i = 0
         return max(0, min(i, len(lst) - 1))
 
-    @staticmethod
-    def _get_json(text: Optional[str]) -> Dict[str, Any]:
-        try:
-            return json.loads((text or "").strip() or "{}")
-        except Exception:
-            return {}
-
     # --------------------- main entrypoint ---------------------
 
     def disambiguate_triple(
@@ -332,46 +331,56 @@ class LLMDisambiguator:
         subj_list_text = self._fmt_indexed(subject_candidates)
         obj_list_text  = self._fmt_indexed(object_candidates)
 
-        prompt = f"""Pick the best RDF triple using ONLY these options.
+        prompt = f"""
+        Analyze the context and disambiguate the triple by selecting the correct Subject, Predicate, and Object.
 
-Allowed predicate URIs:
-{pred_list_text}
+        Context: {context}
 
-Subject candidates (choose by INDEX):
-{subj_list_text}
+        Allowed Predicates (Select one URI):
+        {pred_list_text}
 
-Object candidates (choose by INDEX):
-{obj_list_text}
+        Subject Candidates (Select by Index):
+        {subj_list_text}
 
-Context (helps decide, but does NOT add new options):
-{context}
+        Object Candidates (Select by Index):
+        {obj_list_text}
+        """
 
-Return ONLY strict JSON on one line (no prose):
-{{"subject_index": 0, "predicate": "URI", "object_index": 0}}
-Rules:
-- "predicate" MUST be exactly one URI from Allowed predicate URIs.
-- "subject_index" MUST be an integer index from Subject candidates.
-- "object_index" MUST be an integer index from Object candidates.
-- Do not invent or modify URIs. Do not swap roles.
-"""
+        generation_config = types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=DisambiguationResult  # <--- The Pydantic class output
+        )
+        
 
         # Call the model (Gemini client style)
         resp = self.client.models.generate_content(
             model=self.model_name,
             contents=prompt,
-            config={"response_mime_type": "application/json"},
+            config=generation_config
         )
 
-        data = self._get_json(getattr(resp, "text", None))
+        try:
+            data = DisambiguationResult.model_validate_json(resp.text)
+            pred_uri = data.predicate_uri
+            s_idx = data.subject_index
+            o_idx = data.object_index
 
-        # Validate predicate
-        pred_uri = data.get("predicate", "")
-        if pred_uri not in allowed:
-            pred_uri = allowed[0]
+            # Validate predicate
+            if pred_uri not in allowed:
+                if self.verbose:
+                    print(f"Hallucination detected {pred_uri}")
+                pred_uri = None      ## if none
+
+        except (ValidationError, ValueError) as e:
+            if self.verbose:
+                print(f"Disambiguation validation failed: {e}")
+            pred_uri=None
+            s_idx=0
+            o_idx=0
 
         # Clamp indices and map to URIs
-        si = self._safe_idx(subject_candidates, data.get("subject_index", 0))
-        oi = self._safe_idx(object_candidates,  data.get("object_index", 0))
+        si = self._safe_idx(subject_candidates, s_idx)
+        oi = self._safe_idx(object_candidates,  o_idx)
 
         s_uri = subject_candidates[si][0] if (subject_candidates and si is not None) else ""
         o_uri = object_candidates[oi][0] if (object_candidates and oi is not None) else ""
@@ -392,7 +401,7 @@ Rules:
         # Build meta (compatible with your previous code)
         chosen_sim, rank0 = sim_map.get(pred_uri, (None, None))
         meta = {
-            "label": "candidate",
+            "label": "candidate" if pred_uri else "hallucination_rejected",
             "chosen_similarity": float(chosen_sim) if chosen_sim is not None else None,
             "rank_in_topk": (rank0 + 1) if rank0 is not None else None,
             "topk": total_k,
