@@ -149,3 +149,17 @@ All work is merged into DBpedia's official repository.
   approach beyond DBpedia.
 - **Model-scaling ablation** — same pipeline with GPT-4o and with self-hosted open
   models, isolating pipeline contribution from model contribution.
+
+### Local Setup & Troubleshooting
+
+If you are setting up the pipeline locally and encounter a `ModuleNotFoundError` for `text2kg_harness` or a missing `Text2KGBench` error, follow these steps:
+
+1. **Clone the Benchmark Data:** The evaluation scripts require the Text2KGBench dataset to run. Clone it directly into your working directory:
+   ```bash
+   git clone https://github.com/cenguix/Text2KGBench.git
+   ```
+
+2. **Set the Python Path:** The scripts reside in the `scripts/` directory but depend on modules in `src/`. Run your commands with `PYTHONPATH=src` to resolve import errors:
+   ```bash
+   PYTHONPATH=src python3 scripts/run_text2kg.py --help
+   ```
