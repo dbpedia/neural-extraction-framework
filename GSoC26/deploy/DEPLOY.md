@@ -17,13 +17,17 @@ leaves the host except for the LLM request.
 ```bash
 git clone <repo> && cd <repo>/deploy
 
-# 1. Get the two data snapshots into deploy/data/
-#      data/dump.rdb        <- surface-form index snapshot
-#      data/oxigraph/       <- triple-store snapshot
-#    Published on the DBpedia Databus (artifact URIs added on release):
-#      https://databus.dbpedia.org/<account>/surface-form-index/<version>
-#      https://databus.dbpedia.org/<account>/extraction-store/<version>
-#    (or copy them from your build machine)
+# 1. Prepare data artifacts in deploy/data/
+#      data/dump.rdb        <- Redis surface-form index snapshot (~1.4 GB)
+#      data/oxigraph/       <- oxigraph triple-store directory (~15-18 GB)
+#
+#    Note: Direct Databus pre-built snapshots are not hosted publicly yet.
+#    You can generate them locally:
+#      - Surface-form index (dump.rdb): Follow docs/README_INDEX.md
+#        (download_dumps.py -> build_index.py -> build_popularity.py -> rescore_index.py)
+#      - Triple store (oxigraph/): Follow docs/REPRODUCIBILITY.md § Local SPARQL store
+#        (bulk load required English DBpedia dumps using oxigraph-server / load script)
+#    Alternatively, copy both pre-built artifacts directly from your build machine into deploy/data/.
 
 # 2. Seed the Docker volumes (one time)
 ./setup.sh
@@ -67,26 +71,34 @@ baseline (0.628) at ~1/20th the cost. See `REPRODUCIBILITY.md`.
 
 ## Resource requirements
 
-- **RAM:** ≥6 GB for the stack (Redis holds the index in memory: ~3 GB; the
+- **RAM:** ≥6 GB for running the stack (Redis holds the index in memory: ~3 GB; the
   pipeline loads an embedding model: ~1 GB). 8 GB host minimum recommended.
-- **Disk:** index snapshot 1.4 GB + oxigraph store size.
+  For rebuilding the index from scratch, at least 8-16 GB system RAM is recommended.
+- **Disk:**
+  - Runtime container deployment: index snapshot ~1.4 GB (`dump.rdb`) + oxigraph store ~15 GB (~16.4 GB total).
+  - Local index rebuild from dumps: ~18-20 GB temporary disk for raw bz2 dumps, decompressed streaming, and Redis working memory.
+- **Wall-clock build cost:**
+  - Redis surface-form index build: ~2-4 hours depending on disk I/O and network bandwidth (`download_dumps.py`, `build_index.py`, `build_popularity.py`, `rescore_index.py`).
+  - Oxigraph triple-store load: ~1.5-3 hours for bulk-loading the 9 core DBpedia TTL dumps.
 - Run Redis only via this compose file (never as a pipeline child process),
   and never run a second Redis on the host — measured failure mode: memory
   exhaustion degrades extraction quality via per-sentence timeouts.
 
 ## Prebuilt image
 
-No build needed — the image is published:
+The pipeline service image is publicly available on GitHub Container Registry (GHCR):
 
 ```bash
 docker pull ghcr.io/nakulsingh156/neural-extraction-framework:v2.0
 ```
 
+By default, `docker compose up` will build the local Dockerfile if changes are being developed. To use the prebuilt image with compose directly without building locally, set `image: ghcr.io/nakulsingh156/neural-extraction-framework:v2.0` on the `pipeline` service in `docker-compose.yml`.
+
 **Different API port** (e.g. 8000 is taken on your host): append a uvicorn
 command to the `docker run`, or override `command:` in compose:
 
 ```bash
-docker run ... neural-extraction-framework:v2.0 uvicorn serve:app --host 0.0.0.0 --port 8010
+docker run ... ghcr.io/nakulsingh156/neural-extraction-framework:v2.0 uvicorn serve:app --host 0.0.0.0 --port 8010
 ```
 
 ## Operational notes

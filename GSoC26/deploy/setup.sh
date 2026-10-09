@@ -12,8 +12,8 @@ PROJECT="neural-extraction-framework"   # must match `name:` in docker-compose.y
 VOL_INDEX="${PROJECT}_sf-index"
 VOL_STORE="${PROJECT}_store"
 
-[ -f data/dump.rdb ]   || { echo "missing data/dump.rdb — see DEPLOY.md";   exit 1; }
-[ -d data/oxigraph ]   || { echo "missing data/oxigraph/ — see DEPLOY.md";  exit 1; }
+[ -f data/dump.rdb ]   || { echo "missing data/dump.rdb — build or copy data snapshot as described in DEPLOY.md";   exit 1; }
+[ -d data/oxigraph ]   || { echo "missing data/oxigraph/ — load or copy oxigraph store as described in DEPLOY.md";  exit 1; }
 
 docker volume create "$VOL_INDEX" >/dev/null
 docker volume create "$VOL_STORE" >/dev/null
