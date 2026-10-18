@@ -10,125 +10,17 @@ import string
 import os
 from typing import Dict, List, Tuple, Any
 
-# --- Hindi-BenchIE Core Logic ---
-# Functions adapted from https://github.com/ritwikmishra/hindi-benchie hindi-benchie/code.py
+import sys
 
-def compare_clean_golden_ext_with_oie_ext(ext_g: List[str], ext_oie: str) -> str:
-    """Word-level comparison of a golden extraction part and a model extraction."""
-    ext_oie_list = ext_oie.split('\t')
-    assert len(ext_g) == len(ext_oie_list)
-    
-    bw = []
-    for g_part, o_part in zip(ext_g, ext_oie_list):
-        ol = o_part.split()
-        gl = g_part.split()
-        tbw = []
-        i, j = 0, 0
-        while i < len(ol) and j < len(gl):
-            if ol[i] != re.sub(r'\]|\[|\{[a-z]+\}', '', gl[j]):  # match failed
-                if '[' == gl[j][0]:
-                    bracket_start, bracket_end = j, j
-                    while ']' not in gl[bracket_end]:
-                        bracket_end += 1
-                    if '{' in gl[bracket_end] and '}' in gl[bracket_end]:
-                        tbw.append(re.search(r'\{[a-z]+\}', gl[bracket_end])[0][1:-1])
-                    gl = gl[:bracket_start] + gl[bracket_end + 1:]
-                    continue
-                else:
-                    break
-            else:
-                i += 1
-                j += 1
-        
-        if i == len(ol):
-            while j != len(gl) and '[' == gl[j][0]:
-                bracket_start, bracket_end = j, j
-                while ']' not in gl[bracket_end]:
-                    bracket_end += 1
-                if '{' in gl[bracket_end] and '}' in gl[bracket_end]:
-                    tbw.append(re.search(r'\{[a-z]+\}', gl[bracket_end])[0][1:-1])
-                gl = gl[:bracket_start] + gl[bracket_end + 1:]
-            
-            if j == len(gl):
-                bw.extend(tbw)
-            else:
-                return 'not satisfied'
-        else:
-            return 'not satisfied'
+# Allow this script to run directly from the llm_IE directory.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-    if bw:
-        return 'satisfied but with ' + ','.join(bw)
-    else:
-        return 'satisfied'
-
-def compare_raw_golden_ext_with_oie_ext(ext_golden: str, ext_oie: str, default_passive: bool) -> str:
-    """Compares a raw golden extraction string with a model extraction, handling |OR| and passives."""
-    ext_golden_options = ext_golden.split(' |OR| ')
-    bl = []
-
-    for ext_g_option in ext_golden_options:
-        passive = default_passive
-        if ' <--{not allowed in passive}' in ext_g_option:
-            passive = False
-            ext_g_option = ext_g_option.replace(' <--{not allowed in passive}', '')
-        elif ' <--{allowed in passive}' in ext_g_option:
-            passive = True
-            ext_g_option = ext_g_option.replace(' <--{allowed in passive}', '')
-
-        ext_g_parts = ext_g_option.split(' --> ')
-        b = compare_clean_golden_ext_with_oie_ext(ext_g_parts, ext_oie)
-
-        if b == 'satisfied':
-            return b
-
-        if passive and b != 'satisfied' and len(ext_g_parts) == 3:
-            t = ext_g_parts[2]
-            ext_g_parts[2] = ext_g_parts[0]
-            ext_g_parts[0] = t
-            b2 = compare_clean_golden_ext_with_oie_ext(ext_g_parts, ext_oie)
-            if b2 == 'satisfied':
-                return b2
-            bl.append(b2)
-        
-        if 'satisfied but' in b:
-            bl.append(b)
-        else:
-            bl.append('not satisfied')
-
-    satisfied_but_options = [b for b in bl if 'satisfied but' in b]
-    if satisfied_but_options:
-        return sorted(satisfied_but_options, key=len)[0]
-    
-    return 'not satisfied'
-
-def fn_sb(cd: Dict, cel: List[str], fn: int = 0) -> int:
-    """Helper function to calculate false negatives based on compensatory relations."""
-    i = 0
-    while i < len(cel):
-        ce = cel[i]
-        if ce in cd and 'not satisfied' == cd[ce]:
-            fn += 1
-            cd[ce] = 'X'
-        elif ce in cd and 'satisfied but' in cd[ce]:
-            cel2 = cd[ce].split()[-1].split(',')
-            fn = fn_sb(cd, cel2, fn)
-        i += 1
-    return fn
-
-def n_extractions_in_smallest_cluster(golden_dict: Dict, sent_key: str) -> int:
-    """Calculates the number of essential extractions in the smallest cluster."""
-    sent_clusters = golden_dict.get(sent_key, {})
-    if not sent_clusters:
-        return 0
-    
-    min_essentials = float('inf')
-    
-    for cluster_data in sent_clusters.values():
-        num_essentials = len(cluster_data.get('essential', []))
-        if num_essentials < min_essentials:
-            min_essentials = num_essentials
-            
-    return min_essentials if min_essentials != float('inf') else 0
+from shared.benchie_utils import (
+    compare_clean_golden_ext_with_oie_ext,
+    compare_raw_golden_ext_with_oie_ext,
+    fn_sb,
+    n_extractions_in_smallest_cluster,
+)
 
 # --- Main Comparison Class ---
 

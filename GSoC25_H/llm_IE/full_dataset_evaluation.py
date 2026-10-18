@@ -2,45 +2,39 @@
 """
 Full dataset evaluation script - runs on all 112 sentences
 """
-
 import os
+import sys
 import time
 import traceback
 from typing import Dict
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from shared.benchie_utils import parse_benchie_sentences
+
 
 from llm_interface import OllamaInterface
 from config import config
 from prompt_templates import PromptTemplateManager
 
+
 class BenchieDataLoader:
-    """Load and parse Hindi-Benchie golden standard data"""
-    
+    """Load and parse Hindi-BenchIE golden standard data."""
+
     def __init__(self, golden_standard_path: str):
         self.golden_standard_path = golden_standard_path
         self.sentences = {}
         self.load_data()
-    
+
     def load_data(self):
-        """Load sentences from golden standard file"""
-        with open(self.golden_standard_path, 'r', encoding='utf-8') as f:
+        """Load sentences from the golden standard file."""
+        with open(self.golden_standard_path, "r", encoding="utf-8") as f:
             content = f.read()
-        
-        # Parse the benchie format
-        sections = content.split('==================================================================================================================================================================================')
-        
-        for section in sections:
-            if 'sent_id:' in section:
-                lines = section.strip().split('\n')
-                if len(lines) > 0:
-                    # Extract sentence ID and text
-                    first_line = lines[0]
-                    if '\t' in first_line:
-                        sent_info, sentence = first_line.split('\t', 1)
-                        sent_id = sent_info.replace('sent_id:', '').strip()
-                        self.sentences[sent_id] = sentence.strip()
-    
+
+        self.sentences = parse_benchie_sentences(content)
+
     def get_all_sentences(self) -> Dict[str, str]:
-        """Get all sentences"""
+        """Get all sentences."""
         return self.sentences
 
 def run_full_dataset_evaluation():
