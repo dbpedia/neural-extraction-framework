@@ -1,15 +1,27 @@
-# Using this file to keep these models downloaded on the local system.
+"""On-demand loading of models and NLTK resources."""
 
-# Transformer models for relation extraction 
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from functools import lru_cache
 
-# Transformer models for entity linking
-genre_tokenizer = AutoTokenizer.from_pretrained("facebook/genre-linking-blink")
-genre_model = AutoModelForSeq2SeqLM.from_pretrained("facebook/genre-linking-blink")
-print("Downloaded GENRE")
+GENRE_MODEL_NAME = "facebook/genre-linking-blink"
 
-# NLTK models
-import nltk
-nltk.download('punkt')
-print("nltk punkt downloaded")
 
+@lru_cache(maxsize=1)
+def load_models():
+    """Load and cache the GENRE tokenizer and model on first request."""
+    from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
+    tokenizer = AutoTokenizer.from_pretrained(GENRE_MODEL_NAME)
+    model = AutoModelForSeq2SeqLM.from_pretrained(GENRE_MODEL_NAME)
+
+    return tokenizer, model
+
+
+def ensure_nltk_resources():
+    """Ensure the NLTK punkt resource is available, downloading it if needed."""
+    import nltk
+
+    try:
+        nltk.data.find("tokenizers/punkt")
+    except LookupError:
+        if not nltk.download("punkt", quiet=True):
+            raise RuntimeError("Failed to download the NLTK 'punkt' resource.")
