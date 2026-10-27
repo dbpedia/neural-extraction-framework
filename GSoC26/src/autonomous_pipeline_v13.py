@@ -39,7 +39,8 @@ SETUP
               sentence-transformers scikit-learn numpy requests
 
   export OPENROUTER_API_KEY="sk-or-v1-..."
-  Place dbpedia.owl in the working directory.
+  dbpedia.owl is found automatically (GSoC26/data/ in the repo, next to this
+  file in the Docker image). Override with: export DBPEDIA_OWL_PATH=/path/to/dbpedia.owl
 ================================================================================
 """
 
@@ -253,8 +254,40 @@ ONTOLOGY_RULES: Dict[str, Dict] = {}
 DATATYPE_PROPERTIES: set = set()
 
 
-def load_full_dbpedia_ontology(file_path="dbpedia.owl"):
+def _find_ontology_file():
+    """
+    Locate dbpedia.owl without depending on the working directory.
+
+    A bare "dbpedia.owl" only resolved when the process was started from the
+    folder holding it (true in the Docker image, where it is copied next to this
+    file — false everywhere else, since the repo keeps it in GSoC26/data/). On a
+    miss the loader only warns, so predicate linking, the whitelist and the
+    domain/range checks were silently disabled for any run from src/, tests/ or
+    a notebook. Order: DBPEDIA_OWL_PATH, cwd (old behaviour), this file's dir
+    (Docker), ../data (repo), data/ (notebook cell run from GSoC26/, where
+    `here` falls back to the cwd).
+    """
+    env = os.environ.get("DBPEDIA_OWL_PATH")
+    if env:
+        return os.path.abspath(os.path.expanduser(env))   # os.environ never expands '~'
+
+    # __file__ is undefined inside a Jupyter cell — never touch it unguarded.
+    here = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
+    for cand in [
+        os.path.join(os.getcwd(), "dbpedia.owl"),
+        os.path.join(here, "dbpedia.owl"),
+        os.path.join(here, "..", "data", "dbpedia.owl"),
+        os.path.join(here, "data", "dbpedia.owl"),
+    ]:
+        if os.path.isfile(cand):
+            return os.path.abspath(cand)
+    return "dbpedia.owl"   # let the loader print its not-found warning
+
+
+def load_full_dbpedia_ontology(file_path=None):
     """Parses the DBpedia OWL file, isolating English nodes and preventing string pollution."""
+    if file_path is None:
+        file_path = _find_ontology_file()
     print(f"📖 Loading full ontology from {file_path}...")
     g = rdflib.Graph()
     try:
