@@ -12,6 +12,22 @@ import os, sys
 os.environ.setdefault("USE_TF", "0")
 os.environ.setdefault("OPENROUTER_API_KEY", "dummy")   # pass serve.py's 503 guard; no LLM is called
 
+import numpy as np
+import sentence_transformers
+
+
+class _OfflineEmbedder:
+    """Stands in for all-MiniLM-L6-v2 so importing the pipeline downloads nothing.
+    These tests never compare embeddings; they only need encode() to return arrays."""
+    def __init__(self, *args, **kwargs): pass
+    def encode(self, texts, *args, **kwargs):
+        if isinstance(texts, str):
+            return np.zeros(384, dtype=np.float32)
+        return np.zeros((len(texts), 384), dtype=np.float32)
+
+
+sentence_transformers.SentenceTransformer = _OfflineEmbedder   # before the pipeline import
+
 import autonomous_pipeline_v13 as pl
 from langgraph.graph import StateGraph, END
 
@@ -103,6 +119,15 @@ check("exact fact -> verified", status.get("artist"), "verified")
 check("unverified URI triple -> faithful-unverified", status.get("producer"), "faithful-unverified")
 check("literal -> faithful-unverified", status.get("releaseDate"), "faithful-unverified")
 check("sub/rel/obj unchanged", out["triples"][0]["obj"], "Train_(band)")
+
+# The gate verified <artist>, but an alias remap emits a different predicate,
+# so the emitted triple is not the verified fact.
+pl.compiled_triple_graph = _Graph()
+out = pl.extract_all_triples("The song Mermaid is by the band Train.", verbose=False,
+                             predicate_aliases={"artist": "musicalArtist"})
+status = {t["rel"]: t["status"] for t in out["triples"]}
+check("alias-remapped triple -> faithful-unverified",
+      status.get("musicalArtist"), "faithful-unverified")
 
 print("== POST /extract ==")
 import serve

@@ -2857,7 +2857,11 @@ def extract_all_triples(sentence, allowed_predicates=None, literal_predicates=No
                     obj = _restore_middle_initial(_local_name(uris[2]),
                                                   str(t.get("object", "")))
                     obj = _canonicalize_comma_compound(obj, t.get("object", ""))
-                    verified = bool(out.get("gate_verified"))
+                    # The gate checked the triple in `uris`; the alias remap and
+                    # name fixes above can change it, so only keep "verified"
+                    # when the emitted triple is still that exact fact.
+                    verified = (bool(out.get("gate_verified"))
+                                and (sub, rel, obj) == tuple(_local_name(u) for u in uris))
 
         results.append({"raw": t, "status": status, "final_triple": final,
                         "sub": sub, "rel": rel, "obj": obj, "kept": kept,
