@@ -19,9 +19,9 @@ if getattr(_candidate, "__name__", "") == "extract_all_triples_safe":
     _candidate = _orig_extract_all_triples      # already wrapped: don't re-wrap
 _orig_extract_all_triples = _candidate          # the REAL pipeline function
 
-def extract_all_triples_safe(sentence, allowed_predicates=None,
-                             literal_predicates=None, predicate_ranges=None,
-                             quote_hints=None, verbose=False):
+def extract_all_triples_safe(sentence, *args, verbose=False, **kwargs):
+    # Forward every pipeline argument (predicate_aliases, value_formats,
+    # fewshot_examples, ...) so the wrapper keeps the pipeline's signature.
     result = {"sentence": sentence, "processed": sentence,
               "extracted": [], "results": [], "triples": []}
     done = threading.Event()
@@ -29,11 +29,8 @@ def extract_all_triples_safe(sentence, allowed_predicates=None,
 
     def _work():
         try:
-            box["r"] = _orig_extract_all_triples(
-                sentence, allowed_predicates=allowed_predicates,
-                literal_predicates=literal_predicates,
-                predicate_ranges=predicate_ranges, quote_hints=quote_hints,
-                verbose=verbose)
+            box["r"] = _orig_extract_all_triples(sentence, *args, verbose=verbose,
+                                                 **kwargs)
         except Exception as e:
             box["err"] = e
         finally:
