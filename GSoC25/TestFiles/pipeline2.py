@@ -259,6 +259,9 @@ class RedisEntityLinking:
             except Exception as e:
                 print(f"✗ Redis connection error: {e}")
                 self.available = False
+         except Exception as e:
+            print(f"✗ Redis unavailable: {e}")
+            self.available = False
     
     def calculate_redirect(self, source):
         """Calculate redirects recursively"""
