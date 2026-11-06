@@ -242,6 +242,7 @@ class RedisEntityLinking:
     """Redis-based entity linking"""
     
     def __init__(self, host=None, port=None, password=None):
+         """Connect to Redis; if that fails, set self.available = False."""
          self.host = host or os.environ.get('NEF_REDIS_HOST')
          self.port = port or os.environ.get('NEF_REDIS_PORT')
          self.password = password or os.environ.get('NEF_REDIS_PASSWORD')
@@ -259,6 +260,9 @@ class RedisEntityLinking:
             except Exception as e:
                 print(f"✗ Redis connection error: {e}")
                 self.available = False
+         except Exception as e:
+            print(f"[!] Redis unavailable: {e}")
+            self.available = False
     
     def calculate_redirect(self, source):
         """Calculate redirects recursively"""
