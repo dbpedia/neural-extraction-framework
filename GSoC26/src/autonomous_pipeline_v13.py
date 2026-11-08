@@ -672,6 +672,10 @@ class GraphState(TypedDict):
     literal_predicates: Optional[set]
     predicate_ranges: Optional[Dict]
     quote_hints: Optional[Dict]
+    # True only when the SPARQL gate found the exact emitted triple stored in
+    # DBpedia (Tier 1, or the inverted-exact ASK before a swap). Every other
+    # accept path — Tier 1.5/2, fail-open, literal objects — is unverified.
+    gate_verified: Optional[bool]
 
 
 class PreprocessedSentence(BaseModel):
@@ -1521,11 +1525,15 @@ def node_3_math_engine(state: GraphState):
 # ================================================================================
 # 5. SPARQL VERIFICATION GATE & NODE 4: THE DIAGNOSTIC JUDGE
 # ================================================================================
-def verify_override_schema(sub_uri, pred_uri, obj_uri, rule):
+def verify_override_schema(sub_uri, pred_uri, obj_uri, rule, trace=None):
     """
     Two-tier gate:
       Tier 1 — exact triple ASK. Strongest possible verification.
       Tier 2 — both URIs exist. WEAKER: does NOT verify the predicate at all.
+
+    The return value only says accept / reject / swap / demote. Pass a dict as
+    `trace` to also learn whether the triple was VERIFIED (the exact fact is in
+    DBpedia, either direction): trace["verified"] is set True only on that path.
 
     FIX 4: v8's Tier-2 branch printed "Domain (X) and Range (Y) compliance
     verified" — which was false. Nothing about domain/range was checked there.
@@ -1541,6 +1549,8 @@ def verify_override_schema(sub_uri, pred_uri, obj_uri, rule):
         )
         if r.status_code == 200 and r.json().get('boolean'):
             print("   ✅ SPARQL GATE [Tier 1]: Exact Triple verified in DBpedia!")
+            if trace is not None:
+                trace["verified"] = True
             return True
     except Exception:
         pass
@@ -1581,6 +1591,8 @@ def verify_override_schema(sub_uri, pred_uri, obj_uri, rule):
             and _ask(f"ASK {{ <{obj_uri}> <{pred_uri}> <{sub_uri}> }}")):
         print("   🔄 SPARQL GATE: triple verified in the INVERTED direction — "
               "our subject/object order contradicts DBpedia's.")
+        if trace is not None:
+            trace["verified"] = True   # after the caller's swap it is the exact stored fact
         return "INVERTED"
 
     # --- TIER 1.6: range-membership direction check ---
@@ -2081,6 +2093,7 @@ def node_4_judge(state: GraphState):
     # RE_SEARCH with the SAME queries as a default, so the repeat-guard below would
     # otherwise see "identical queries" and approve a triple the gate just refused.
     gate_rejected = False
+    gate_trace = {}
     if v_status in ["APPROVED", "OVERRIDE"]:
         # LITERAL OBJECTS bypass the URI-pair gate: there is no object URI to
         # verify and no edge to check. A datatype triple like
@@ -2092,7 +2105,8 @@ def node_4_judge(state: GraphState):
         else:
             uris = re.findall(r'<(.*?)>', final_triple_str)
             if len(uris) == 3:
-                gate_result = verify_override_schema(uris[0], uris[1], uris[2], rule)
+                gate_result = verify_override_schema(uris[0], uris[1], uris[2], rule,
+                                                     trace=gate_trace)
                 if gate_result == "INVERTED":
                     # DBpedia stores this fact the other way round — swap so the
                     # emitted triple follows the ontology direction.
@@ -2303,7 +2317,10 @@ def node_4_judge(state: GraphState):
         "final_triple": final_triple_str,
         "retry_count": current_retry + 1,
         "math_weights": new_weights,
-        "suggested_predicate": suggested_pred
+        "suggested_predicate": suggested_pred,
+        # Set on EVERY pass so a verdict from an earlier RE_SEARCH loop can't
+        # leak onto the triple this pass emits.
+        "gate_verified": bool(gate_trace.get("verified")),
     }
 
     if v_status == "RE_SEARCH":
@@ -2709,7 +2726,8 @@ def extract_all_triples(sentence, allowed_predicates=None, literal_predicates=No
             "obj": "Abilene,_Texas"  or  '"1913-01-01"',
             "kept": bool
           } ],
-        "triples": [ {"sub","rel","obj"}, ... ]             # the KEPT ones, benchmark format
+        "triples": [ {"sub","rel","obj","status"}, ... ]    # the KEPT ones, benchmark format
+                                                            # + "verified" / "faithful-unverified"
       }
     """
     if verbose:
@@ -2789,6 +2807,7 @@ def extract_all_triples(sentence, allowed_predicates=None, literal_predicates=No
                          or re.match(r'^<([^>]*)>\s+<([^>]*)>\s+<"(.*)">\s*$', final))
 
         kept = False
+        verified = False   # literal objects are never verified (the gate skips them)
         sub = rel = obj = ""
         if status in ("APPROVED", "OVERRIDE"):
             if literal_match:
@@ -2838,9 +2857,15 @@ def extract_all_triples(sentence, allowed_predicates=None, literal_predicates=No
                     obj = _restore_middle_initial(_local_name(uris[2]),
                                                   str(t.get("object", "")))
                     obj = _canonicalize_comma_compound(obj, t.get("object", ""))
+                    # The gate checked the triple in `uris`; the alias remap and
+                    # name fixes above can change it, so only keep "verified"
+                    # when the emitted triple is still that exact fact.
+                    verified = (bool(out.get("gate_verified"))
+                                and (sub, rel, obj) == tuple(_local_name(u) for u in uris))
 
         results.append({"raw": t, "status": status, "final_triple": final,
-                        "sub": sub, "rel": rel, "obj": obj, "kept": kept})
+                        "sub": sub, "rel": rel, "obj": obj, "kept": kept,
+                        "verified": verified})
 
     # ── BUG B FIX: DEDUPE ─────────────────────────────────────────────────────
     # Observed on "Trane, whose products include HVAC, was founded in La Crosse,
@@ -2888,7 +2913,11 @@ def extract_all_triples(sentence, allowed_predicates=None, literal_predicates=No
                 print(f"   ⚠️ Duplicate dropped: ({r['sub']}, {r['rel']}, {r['obj']})")
             continue
         seen.add(key)
-        triples.append({"sub": r["sub"], "rel": r["rel"], "obj": r["obj"]})
+        # status: "verified" = the exact fact is already in DBpedia; otherwise the
+        # sentence asserts it but DBpedia doesn't (faithfulness principle).
+        # The scorer reads only sub/rel/obj, so this does not touch the metric.
+        triples.append({"sub": r["sub"], "rel": r["rel"], "obj": r["obj"],
+                        "status": "verified" if r.get("verified") else "faithful-unverified"})
 
     if verbose:
         print("\n" + "=" * 78)

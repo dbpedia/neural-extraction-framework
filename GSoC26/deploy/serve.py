@@ -35,5 +35,7 @@ def extract(req: ExtractRequest):
             status_code=503,
             detail="OPENROUTER_API_KEY is not configured — set it in deploy/.env and restart.",
         )
-    results = pl.extract_all_triples(req.text)
-    return {"triples": results}
+    # extract_all_triples() returns the whole per-sentence record (sentence,
+    # extracted, results, triples); the endpoint contract is the kept triples only.
+    out = pl.extract_all_triples(req.text, verbose=False)
+    return {"triples": out["triples"]}
