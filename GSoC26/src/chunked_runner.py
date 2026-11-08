@@ -83,7 +83,9 @@ def chunked_domain(slug, chunk_size=22, chunk_cooldown=45, save_every_chunk=True
                                           value_formats=vformats,
                                           fewshot_examples=fewshot, verbose=False)
                 pred = out["triples"]
-            except Exception:
+            except Exception as e:
+                # still scored as a miss, but say why instead of a silent F1=0
+                print(f"   ⚠️ sentence errored: {str(e)[:80]}", flush=True)
                 pred = []
             p, r, f = score_sentence(pred, gt)
             results[sid] = {"id":sid,"sent":sent,"gold":gt,"pred":pred,"p":p,"r":r,"f1":f}
