@@ -119,6 +119,19 @@ Each folder has its own README with detailed setup instructions.
 
 ### 4. Run the tests
 
+The tests need the GSoC26 pipeline dependencies, which the base setup does
+not install (the root `requirements.txt` only installs `streamlit`). Install
+them first — see [`CONTRIBUTING.md`](CONTRIBUTING.md) §3 for the package list:
+
+```bash
+pip install rdflib redis pydantic requests numpy \
+    langchain-core langchain-openai langgraph \
+    sentence-transformers rank-bm25 fastapi uvicorn \
+    scikit-learn tqdm
+```
+
+Then run the offline gate tests:
+
 ```bash
 cd GSoC26/tests
 USE_TF=0 PYTHONPATH=../src python3 test_gate_patches.py
