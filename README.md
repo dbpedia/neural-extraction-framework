@@ -36,11 +36,12 @@ This repository hosts Google Summer of Code (GSoC) projects that advance neural 
 
 ### 🏆 Recent Contributions
 
+- **GSoC 2026**: NEF 2.0 — LLM extraction with a local surface-form index and a SPARQL verification gate; macro F1 0.6317 on Text2KGBench `dbpedia_webnlg`
 - **GSoC 2025**: Enhanced English and Hindi Information Extraction pipelines with SLM integration, link prediction, and predicate linking
-- **GSoC 2024**: Language model integration and pipeline optimization
-- **GSoC 2023**: Advanced relation extraction methods
-- **GSoC 2022**: Relation extraction pipeline improvements
-- **GSoC 2021**: Initial neural framework development
+- **GSoC 2024**: Language model integration and pipeline optimization — entity linking, predicate suggestion, and RDF export
+- **GSoC 2023**: Relation extraction, coreference resolution, NER, and entity linking pipeline
+- **GSoC 2022**: First neural extraction framework — building a knowledge graph from text with NLP
+- **GSoC 2021**: Causal relation classifier (mentors Tommaso Soru, Thiago Castro Ferreira, Zheyuan Bai)
 
 ---
 
@@ -80,6 +81,64 @@ cd GSoC25_H  # Example: Hindi Chapter
 
 ---
 
+## 🧭 New Contributor Guide
+
+New here? Start here — no prior DBpedia knowledge needed. The full guide lives
+in [`CONTRIBUTING.md`](CONTRIBUTING.md); this is the short version.
+
+### 1. Find a task
+
+- **Open issues:** [github.com/dbpedia/neural-extraction-framework/issues](https://github.com/dbpedia/neural-extraction-framework/issues)
+- **Good first issues:** [label filter](https://github.com/dbpedia/neural-extraction-framework/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) — the label is used lightly, so also browse small unlabeled issues; the `GSoC26` ones about the current pipeline are a good place to look.
+- **Bigger picture:** the [GSoC ideas list](https://forum.dbpedia.org/c/projects/gsoc/8) on the forum shows what the mentors want built next.
+
+### 2. Base setup (all projects)
+
+```bash
+git clone https://github.com/dbpedia/neural-extraction-framework.git
+cd neural-extraction-framework
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Prerequisites: Python 3.8+ (3.11+ recommended) and Git. Note the root
+`requirements.txt` only installs `streamlit` — each GSoC folder carries its
+own dependencies (see `CONTRIBUTING.md` §3). The GSoC26 pipeline additionally
+needs Docker (to run the service) and an OpenRouter API key — the LLM is the
+only non-local, paid component — and the full local stack needs ≥6 GB RAM.
+
+### 3. Pick a project folder
+
+| Folder | What it is |
+|---|---|
+| `GSoC26/` | NEF 2.0 — the current pipeline (LLM + local index + SPARQL gate). Start here. |
+| `GSoC25/`, `GSoC25_H/` | English + Hindi IE pipelines (2025) |
+| `GSoC24/`–`GSoC21/` | Earlier pipelines — reference / prior work |
+
+Each folder has its own README with detailed setup instructions.
+
+### 4. Run the tests
+
+```bash
+cd GSoC26/tests
+USE_TF=0 PYTHONPATH=../src python3 test_gate_patches.py
+```
+
+There is no repo-wide test runner yet — tests live next to the code they
+cover and have different requirements (some need Redis, an LLM key, or the
+Text2KGBench data). See [`CONTRIBUTING.md`](CONTRIBUTING.md) §5 for the full
+table, including what each test needs and what was verified to pass.
+
+### 5. Contribute
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the fork → branch → PR workflow,
+where to ask questions, and the known setup gotchas found by a first-time
+contributor.
+
+---
+
+---
+
 ## 🎓 Project Structure
 
 Each GSoC directory typically contains:
@@ -94,7 +153,9 @@ Each GSoC directory typically contains:
 ---
 
 ### 🤝 Contributing
-We appreciate all contributions! To contribute:
+We appreciate all contributions! The full guide — prerequisites, setup,
+running the pipeline and the tests, and the fork → branch → PR workflow — is
+in [`CONTRIBUTING.md`](CONTRIBUTING.md). In short:
 
 - Fork the repository
 - Create a feature branch (git checkout -b feature/amazing-feature)
@@ -102,7 +163,7 @@ We appreciate all contributions! To contribute:
 - Push to the branch (git push origin feature/amazing-feature)
 - Open a Pull Request
 
-Please ensure your code follows the project's coding standards and includes appropriate tests.
+Please ensure your code follows the project's coding standards and includes appropriate tests. If you are unsure whether an approach is wanted, comment on the issue first.
 
 ---
 
