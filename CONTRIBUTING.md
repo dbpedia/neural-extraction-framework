@@ -71,7 +71,7 @@ enough:
 | `GSoC25/` | English IE pipeline (2025) | `GSoC25/Readme.md`; `pip install -r GSoC25/requirements.txt`; needs `GEMINI_API_KEY` + Redis |
 | `GSoC25_H/` | Hindi IE pipeline (2025) | `GSoC25_H/requirements.txt` |
 | `GSoC26_H/` | Hindi chapter work (2026) | `GSoC26_H/requirements.txt` |
-| `GSoC24/`, `GSoC23/`, `GSoC22/`, `GSoC21/` | Earlier pipelines — reference / prior work | Each folder has its own README + `requirements.txt` |
+| `GSoC24/`, `GSoC23/`, `GSoC21/` | Earlier pipelines — reference / prior work | Each folder has its own README + `requirements.txt` |
 
 ### Installing the GSoC26 dependencies (verified)
 
@@ -109,15 +109,24 @@ Two things that bite on a fresh machine:
 ### As a service (Docker — the supported path)
 
 See [`GSoC26/deploy/DEPLOY.md`](GSoC26/deploy/DEPLOY.md). In short, three
-containers (Redis index, oxigraph store, pipeline API) behind one endpoint:
+containers (Redis index, oxigraph store, pipeline API) behind one endpoint.
+Before starting the stack:
+
+1. Put the data snapshots in `deploy/data/` (`dump.rdb` + `oxigraph/`),
+   published on the DBpedia Databus (links in DEPLOY.md).
+2. Set `OPENROUTER_API_KEY` in `.env`.
+
+Then start the stack — run `./setup.sh` once to seed the Docker volumes:
 
 ```bash
 cd GSoC26/deploy
-# 1. Put the data snapshots in deploy/data/ (dump.rdb + oxigraph/),
-#    published on the DBpedia Databus (links in DEPLOY.md)
-# 2. ./setup.sh        # seed the Docker volumes (one time)
-# 3. Set OPENROUTER_API_KEY in .env
-# 4. docker compose up
+./setup.sh
+docker compose up -d
+```
+
+Once the stack is up, send a test extraction request:
+
+```bash
 curl -X POST localhost:8000/extract -H "Content-Type: application/json" \
   -d '{"text": "The song Mermaid is by the band Train."}'
 # -> {"triples": [{"sub": "Mermaid_(Train_song)", "rel": "artist",
@@ -156,8 +165,8 @@ USE_TF=0 PYTHONPATH=../src python3 test_gate_patches.py
 
 | Test | Needs | Status (verified 27 Nov 2026) |
 |---|---|---|
-| `GSoC26/tests/test_gate_patches.py` | Python deps only (§3); no network, no LLM, no Redis | ✅ **10/10 passed** |
-| `GSoC26/tests/test_date_style.py` | Above + a `Text2KGBench` checkout (`git clone https://github.com/cenguix/Text2KGBench.git`, then point the harness at `Text2KGBench/data/dbpedia_webnlg`) | Not runnable without the benchmark data |
+| GSoC26/tests/test_gate_patches.py | Python deps (§3); all-MiniLM-L6-v2 must be cached or downloadable; no LLM, no Redis | ✅ 10/10 passed |
+| `GSoC26/tests/test_date_style.py` | Above + a `Text2KGBench` checkout (`git clone https://github.com/cenguix/Text2KGBench.git`, then point the harness at `Text2KGBench/data/dbpedia_webnlg`) | ✅ **12/12 passed** against a real Text2KGBench checkout |
 | `GSoC26/tests/test_index.py` | A live Redis on port 6380 with the 16.2M-entry surface-form index imported (`GSoC26/scripts/import_index.py`, ~10 min, ~2.6 GiB RAM — see `GSoC26/docs/RUNBOOK.md`) | Not runnable without the index; expect 4/5 — the Arion case fails by design (a WebNLG artifact URI) |
 | `GSoC25/Data/test_collector_functions.py`, `GSoC25/EntityLinking/*`, `GSoC25/RelationExtraction/*`, `GSoC25/TestFiles/*` | GSoC25 deps + Redis and (for integration tests) API keys | Per-folder; run from inside `GSoC25/` with its requirements installed |
 
