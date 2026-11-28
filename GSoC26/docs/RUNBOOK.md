@@ -45,8 +45,9 @@ export USE_TF=0                       # REQUIRED if TensorFlow is installed and
                                       # transformers' lazy TF import at C level
 ```
 
-`dbpedia.owl` must sit in the working directory — **see §7, this file differs
-between machines and it matters.**
+`dbpedia.owl` is resolved relative to the pipeline module, so it is found
+from any working directory as long as it sits at `GSoC26/data/dbpedia.owl`
+— **see §7, this file differs between machines and it matters.**
 
 ## 5. Flags (module-level constants in autonomous_pipeline_v13.py)
 
