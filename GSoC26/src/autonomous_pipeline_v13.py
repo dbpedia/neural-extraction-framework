@@ -39,11 +39,13 @@ SETUP
               sentence-transformers scikit-learn numpy requests
 
   export OPENROUTER_API_KEY="sk-or-v1-..."
-  Place dbpedia.owl in the working directory.
+  dbpedia.owl is resolved relative to this file (GSoC26/data/dbpedia.owl);
+  a path relative to the working directory still works.
 ================================================================================
 """
 
 import os
+from pathlib import Path
 import sys
 import re
 import time
@@ -253,14 +255,47 @@ ONTOLOGY_RULES: Dict[str, Dict] = {}
 DATATYPE_PROPERTIES: set = set()
 
 
+def _resolve_ontology_path(file_path):
+    """Resolve dbpedia.owl without depending on the working directory.
+
+    Search order for a relative path:
+      1. as given (cwd-relative — the old behaviour for anyone running
+         from GSoC26/data or passing their own path),
+      2. <this file>/../data/<file_path> — the repo layout, where the
+         snapshot ships at GSoC26/data/dbpedia.owl,
+      3. <this file>/<file_path> — beside the module.
+    An absolute path is used as-is.
+    Returns the first candidate that exists, else None.
+    """
+    candidate = Path(file_path)
+    if candidate.is_absolute():
+        return candidate if candidate.is_file() else None
+    candidates = [
+        candidate,
+        Path(__file__).resolve().parent.parent / "data" / file_path,
+        Path(__file__).resolve().parent / file_path,
+    ]
+    for c in candidates:
+        if c.is_file():
+            return c
+    return None
+
+
 def load_full_dbpedia_ontology(file_path="dbpedia.owl"):
     """Parses the DBpedia OWL file, isolating English nodes and preventing string pollution."""
-    print(f"📖 Loading full ontology from {file_path}...")
+    resolved = _resolve_ontology_path(file_path)
+    if resolved is None:
+        print(f"⚠️ '{file_path}' not found. Ontology grounding DISABLED — predicate linking "
+              f"will fall back to naive slugification and domain/range checks will be vacuous.")
+        print("    Searched: the working directory, GSoC26/data/ (relative to this file), "
+              "and GSoC26/src/. Place dbpedia.owl in GSoC26/data/ or pass its path.")
+        return
+    print(f"📖 Loading full ontology from {resolved}...")
     g = rdflib.Graph()
     try:
-        g.parse(file_path, format="xml")
+        g.parse(str(resolved), format="xml")
     except FileNotFoundError:
-        print(f"⚠️ '{file_path}' not found. Ontology grounding DISABLED — predicate linking "
+        print(f"⚠️ '{resolved}' not found. Ontology grounding DISABLED — predicate linking "
               f"will fall back to naive slugification and domain/range checks will be vacuous.")
         return
 
